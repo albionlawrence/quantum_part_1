@@ -1,0 +1,11 @@
+# Classical Mechanics
+
+For the next few weeks we will focus on reviewing some basic aspects of classical mechanics and introducing the Lagrangian and Hamiltonian formalisms. There are a number of reasons we are doing this within what is nominally a quantum mechanics course.
+
+- The Lagrangian and Hamiltonian formulations are important concepts in their own right that are not always taught at the undergraduate level. (For example, while PHYS 100a covers it and is popular, it is not required).
+
+- Quantum mechanics is a microscopic theory from which classical mechanics (which gives as accounting of macroscopic phenomena that matches observations) must emerge in the appropriate limit; this is the essence of Bohr's *Correspondence Principle*. To understand this limit, we need to understand classical mechanics.
+
+- The two basic formulations of quantum mechanics -- the Feynman Path Integral and the Schr&ouml;dinger equation -- are built from mathematical objects that also appear in the Lagrangian and Hamiltonian formalisms
+
+- There are many cases in which some concept or some technique in quantum mechanics aslo appears in classical mechanics. We can get a lot of insight by studying both in parallel.
