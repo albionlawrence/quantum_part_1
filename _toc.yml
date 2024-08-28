@@ -6,5 +6,7 @@ root: intro
 chapters:
   - file: chapter0/Overview.md
   - file: chapter1/Intro_Classical.md
+    sections:
+    - file: chapter1/Newton.md
 # - file: notebooks
 # - file: markdown-notebooks

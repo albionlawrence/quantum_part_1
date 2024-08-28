@@ -1,0 +1,27 @@
+# Newton's Laws
+
+## The second law 
+
+The classic presentation of Newton's second law of motion is the famous
+
+```{math}
+:label: newton_second
+\begin{align}
+{\vec F}_{k = 1,ldots N}(t) & = m_k {\vec a}_k \\
+& \equiv m_k \ddot{\vec x}_k(t) \\
+& \equiv m_k \frac{d^2}{dt^2} {\vec x}_k(t)
+\end{align}
+```
+
+
+
+where we have written this for $N$ particles with masses $m_k$ and positions ${\vec x}_k(t)$ in 3 dimensions. This is a *second order differential equation in time*. The upshot of this is that if we know the positions and velocities of the particles at some initial time $t_i$, we know the trajectories at all time. To start with, at time $t_i + \Delta t$,
+
+```{math}
+:label: newton_evolve
+\begin{align}
+{\vec x}_k(t_i + \Delta t) & = {\vecx}_k(t_i) + \Delta t \dot{\vec x}_k(t_1)\\
+\dot{\vec x}_k(t_i + \Delta t) & = \dot{\vec x}_k(t_i) + \Delta t \ddot{\vec x}_k(t_i) \\
+& = \dot{\vec x}_k(t_i) + \Delta t {\vec F}_k(t_i)
+\end{align}
+```

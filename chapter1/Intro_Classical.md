@@ -8,4 +8,4 @@ For the next few weeks we will focus on reviewing some basic aspects of classica
 
 - The two basic formulations of quantum mechanics -- the Feynman Path Integral and the Schr&ouml;dinger equation -- are built from mathematical objects that also appear in the Lagrangian and Hamiltonian formalisms
 
-- There are many cases in which some concept or some technique in quantum mechanics aslo appears in classical mechanics. We can get a lot of insight by studying both in parallel.
+- There are many cases in which some concept or some technique in quantum mechanics also appears in classical mechanics. We can get a lot of insight by studying both in parallel.

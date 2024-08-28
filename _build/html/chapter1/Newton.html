@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Overview &#8212; Physics 162a</title>
+    <title>Newtonian mechanics. &#8212; Physics 162a</title>
   
   
   
@@ -59,11 +59,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle"], "bra": ["\\langle#1|"], "brket": ["\\langle#1|#2\\rangle"], "vev": ["\\langle #1 \\rangle"], "half": ["\\frac{1}{2}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter0/Overview';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter1/Newton';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Classical Mechanics" href="../chapter1/Intro_Classical.html" />
-    <link rel="prev" title="Physics 162a: Quantum Mechanics 1" href="../intro.html" />
+    <link rel="prev" title="Classical Mechanics" href="Intro_Classical.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,8 +175,11 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Intro_Classical.html">Classical Mechanics</a><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Newtonian mechanics.</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 
     </div>
@@ -232,7 +234,7 @@
       
       
       
-      <li><a href="../_sources/chapter0/Overview.md" target="_blank"
+      <li><a href="../_sources/chapter1/Newton.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -316,7 +318,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Overview</h1>
+    <h1>Newtonian mechanics.</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -326,9 +328,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-do-we-use-quantum-mechanics">When do we use quantum mechanics?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-importance-of-classical-mechanics">The importance of classical mechanics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline-of-the-course">Outline of the course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-second-law">The second law</a></li>
 </ul>
             </nav>
         </div>
@@ -340,47 +340,35 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h1>
-<section id="when-do-we-use-quantum-mechanics">
-<h2>When do we use quantum mechanics?<a class="headerlink" href="#when-do-we-use-quantum-mechanics" title="Link to this heading">#</a></h2>
-<p>Quantum mechanics emerged to explain <em>microscopic</em> phenomena that is well outside of our sensory experience (for the most part). That is, it describes:</p>
-<ul class="simple">
-<li><p>subatomic particles (electrons, protons, neutrons, quarks, photons,…)</p></li>
-<li><p>nuclear physics</p></li>
-<li><p>atomic physics</p></li>
-<li><p>molecular dynamics</p></li>
-</ul>
-<p>It also governs the collective behavior of matter at <em>low temperatures</em>, suitably defined, such as:</p>
-<ul class="simple">
-<li><p>Superfluids</p></li>
-<li><p>Superconductors</p></li>
-<li><p>Cold atom systems</p></li>
-<li><p>White dwarves and neutron stars (no, really)</p></li>
-</ul>
-<p>At this point we should be asking “microscopic compared to what? Low temperature compared to what?” We hope to make this clear during the course. Clearly the dimensional quatity <span class="math notranslate nohighlight">\(\hbar \sim 1.05 \times 10^{-34} m^2 kg/s\)</span>, with units of <span class="math notranslate nohighlight">\((energy) \times (time)\)</span>, plays a role. For atomic physics, we are talking about scales of order angstroms, and energies of order electron volts.</p>
-<p>Our own sensory experience is well outside of this regime; for our survival we need to detect animals of order meters, understand weather patterns and geography over kilometers, and so on. So it should not surprise us that quantum mechanics is in many ways very different from classical mechanics. My personal feeling is that much of the angst people feel over the odder implicatons of quantum mechanics stem from forgetting this large disparity between the scales of the quantum and classical worlds.</p>
-</section>
-<section id="the-importance-of-classical-mechanics">
-<h2>The importance of classical mechanics<a class="headerlink" href="#the-importance-of-classical-mechanics" title="Link to this heading">#</a></h2>
-<p>On the other hand, classical mechanics is still important:</p>
-<ul class="simple">
-<li><p>It does an excellent job of making predictions in its regime of validity.</p></li>
-<li><p>It provides a benchmark for quantum mechanics. Classical mechanics should emerge from quantum mechanics, if we are doing things right. This is a version of Bohr’s famous <em>correspondence principle</em>.</p></li>
-<li><p>Basic structures and conceopts in classical mechanics (Hamiltonians, Lagrangians, the role of symmetries, and so on) have their counterpart in quantum mechanics, and understanding the former gives considerable insight into the latter.</p></li>
-<li><p>Calculational techniques in quantum mechanics have surprising uses in classical mechanics and statistical mechanics.</p></li>
-</ul>
-<p>So we will be spending time on both subjects.</p>
-</section>
-<section id="outline-of-the-course">
-<h2>Outline of the course<a class="headerlink" href="#outline-of-the-course" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Lagrangian and Hamiltonian classical mechanics.</p></li>
-<li><p>Linear algebra and Hilbert spaces. This is the correct language for quantum mechanics for very physical reasons; the linearity in linear algebra is tied directly to the fact that we can linearly superpose states to get new states and thus to phenomena such as the interference pattern of double-slit experiments.</p></li>
-<li><p>The Rules of Quantum Mechanics</p></li>
-<li><p>Applications to simple examples of one-dimensional nonrelativistic systems.</p></li>
-<li><p>Introduction to three-dimensional systems and angular momentum.</p></li>
-</ol>
+  <section class="tex2jax_ignore mathjax_ignore" id="newtonian-mechanics">
+<h1>Newtonian mechanics.<a class="headerlink" href="#newtonian-mechanics" title="Link to this heading">#</a></h1>
+<section id="the-second-law">
+<h2>The second law<a class="headerlink" href="#the-second-law" title="Link to this heading">#</a></h2>
+<p>The classic presentation of Newton’s second law of motion is the famous</p>
+<div class="math notranslate nohighlight" id="equation-newton-second">
+<span class="eqno">(1)<a class="headerlink" href="#equation-newton-second" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+{\vec F}_{k = 1,ldots N}(t) &amp; = m_k {\vec a}_k \\
+&amp; \equiv m_k \ddot{\vec x}_k(t) \\
+&amp; \equiv m_k \frac{d^2}{dt^2} {\vec x}_k(t)
+\end{align}\end{split}\]</div>
+<p>where we have written this for <span class="math notranslate nohighlight">\(N\)</span> particles with masses <span class="math notranslate nohighlight">\(m_k\)</span> and positions <span class="math notranslate nohighlight">\({\vec x}_k(t)\)</span> in 3 dimensions. It is important that the force is considered to be a known function of time and of the positions and velocities at that time. This equation is the core of Newtonian mechanics. (The first and third laws are also deep and important of course).</p>
+<p>This is a <em>second order differential equation in time</em>. The upshot of this is that if we know the positions and velocities of the particles at some initial time <span class="math notranslate nohighlight">\(t_i\)</span>, we know the trajectories at all time. To start with, at time <span class="math notranslate nohighlight">\(t_i + \Delta t\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-newton-evolve">
+<span class="eqno">(2)<a class="headerlink" href="#equation-newton-evolve" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+{\vec x}_k(t_i + \Delta t) &amp; = {\vec x}_k(t_i) + \Delta t \dot{\vec x}_k(t_1) + \ldots\\
+\dot{\vec x}_k(t_i + \Delta t) &amp; = \dot{\vec x}_k(t_i) + \Delta t \ddot{\vec x}_k(t_i) + \ldots \\
+&amp; = \dot{\vec x}_k(t_i) + \Delta t {\vec F}_k(t_i) + \ldots
+\end{align}\end{split}\]</div>
+<p>where we have used the Taylor expansion in the small time scale <span class="math notranslate nohighlight">\(\Delta t\)</span>, and dropped all terms of order <span class="math notranslate nohighlight">\({\cal O}(\Delta t^2)\)</span>. So with the initial conditions and the force given at initial time <span class="math notranslate nohighlight">\(t_i\)</span>, we then know the positions and velocities at <span class="math notranslate nohighlight">\(t_i + \Delta t\)</span>. The same argument gives us the positions and velocitie s at ttime <span class="math notranslate nohighlight">\(t_i + 2 \Delta t\)</span> and so forth. Of course we still have the higher-order terms, but eventually we can take the limit <span class="math notranslate nohighlight">\(\Delta t \to 0\)</span> and we get a contionuous trajectory determined by the initial positions and velocities.</p>
+<p>Note that this interative process is essentially how we would solve the problems on a computer, though we might find a more sophisticated representation of teh time derivative to control the <span class="math notranslate nohighlight">\({\cal O}(\Delta t^2)\)</span> errors.</p>
+<p>The form given above is not the most general form of Newton’s laws. In general, we write them as</p>
+<div class="math notranslate nohighlight" id="equation-second-general">
+<span class="eqno">(3)<a class="headerlink" href="#equation-second-general" title="Link to this equation">#</a></span>\[{\vec F}_k(t) = \dot{\vec p}_k({\vec x}(t), \dot{\vec x}(t))\]</div>
+<p>where <span class="math notranslate nohighlight">\({\vec p}\)</span> is the <em>momentum</em>. In the classic version of Newton’s laws, <span class="math notranslate nohighlight">\({\vec p}+k = m_k {\vec x}_k\)</span>. But there are many cases where the momentum tyhat appears is a more complicated function of positions and velocities. One is the case of a particle inn a magnetic field, which we will discuss later. Another is the case of particle mechanics in special relativity, where the s[atial momentum is:</p>
+<div class="math notranslate nohighlight" id="equation-sr-momentum">
+<span class="eqno">(4)<a class="headerlink" href="#equation-sr-momentum" title="Link to this equation">#</a></span>\[{\vec p}_k = \frac{m_k \dot{\vec x}_k}{\sqrt{1 - \dot{\vec x}_k^2/c^2}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(c = 3\times 10^8\ m/s\)</span> is the speed of light. (The story look smore like the classic version if we work with 4-vectors and proper time, but we will shelve that for now.) This more general form of <span class="math notranslate nohighlight">\({\vec p}\)</span> is called <em>generalized momentum</em>.</p>
+<p>Generalized momentum emerges naturally from Lagrangian mechanics, which will be one reason to adopt it. Another reason is that it allows us to compute trajectories of systems from the initial and final positions <span class="math notranslate nohighlight">\({\vec x}_k(t_i), {\vec x}_k(t_f)\)</span>. That you should be able to do this seems reasonable. Given initial positions and velocities you can deduce the final positions, tyhe equations are deterministic, and the amount of data you specify each way is the same. (Actually it is more complicated than that because there can be multiple trajectories with didderent initial velocities and the same final positions: consider two particles moving in opposite directions on a circle, and bumping into each other later on).</p>
 </section>
 </section>
 
@@ -397,7 +385,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapter0"
+            path: "./chapter1"
         },
         predefinedOutput: true
     }
@@ -415,22 +403,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="Intro_Classical.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Physics 162a: Quantum Mechanics 1</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../chapter1/Intro_Classical.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Classical Mechanics</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -448,9 +427,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-do-we-use-quantum-mechanics">When do we use quantum mechanics?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-importance-of-classical-mechanics">The importance of classical mechanics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline-of-the-course">Outline of the course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-second-law">The second law</a></li>
 </ul>
   </nav></div>
 

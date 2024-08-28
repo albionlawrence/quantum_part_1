@@ -30,7 +30,7 @@ execute:
 # Parse and render settings
 parse:
   myst_enable_extensions:  # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
-    # - amsmath
+    - amsmath
     - colon_fence
     # - deflist
     - dollarmath
@@ -94,3 +94,12 @@ sphinx:
         html_theme_options:
          logo:
           text: "Physics 162a <br /> Prof. Albion Lawrence <br />  Brandeis University"
+        mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+        mathjax3_config:
+          tex:
+            macros:
+              "ket": ["|#1\\rangle"]
+              "bra": ["\\langle#1|"]
+              "brket": ["\\langle#1|#2\\rangle"]
+              "vev": ["\\langle #1 \\rangle"]
+              "half": ["\\frac{1}{2}"]

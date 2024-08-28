@@ -57,10 +57,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle"], "bra": ["\\langle#1|"], "brket": ["\\langle#1|#2\\rangle"], "vev": ["\\langle #1 \\rangle"], "half": ["\\frac{1}{2}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter1/Intro_Classical';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Physics 162a: Quantum Mechanics 1" href="../intro.html" />
+    <link rel="next" title="Newtonian mechanics." href="Newton.html" />
+    <link rel="prev" title="Overview" href="../chapter0/Overview.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,7 +176,11 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Classical Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Classical Mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Newton.html">Newtonian mechanics.</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 
     </div>
@@ -331,8 +338,10 @@ document.write(`
 <li><p>The Lagrangian and Hamiltonian formulations are important concepts in their own right that are not always taught at the undergraduate level. (For example, while PHYS 100a covers it and is popular, it is not required).</p></li>
 <li><p>Quantum mechanics is a microscopic theory from which classical mechanics (which gives as accounting of macroscopic phenomena that matches observations) must emerge in the appropriate limit; this is the essence of Bohr’s <em>Correspondence Principle</em>. To understand this limit, we need to understand classical mechanics.</p></li>
 <li><p>The two basic formulations of quantum mechanics – the Feynman Path Integral and the Schrödinger equation – are built from mathematical objects that also appear in the Lagrangian and Hamiltonian formalisms</p></li>
-<li><p>There are many cases in which some concept or some technique in quantum mechanics aslo appears in classical mechanics. We can get a lot of insight by studying both in parallel.</p></li>
+<li><p>There are many cases in which some concept or some technique in quantum mechanics also appears in classical mechanics. We can get a lot of insight by studying both in parallel.</p></li>
 </ul>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -366,13 +375,22 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="../chapter0/Overview.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Physics 162a: Quantum Mechanics 1</p>
+        <p class="prev-next-title">Overview</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="Newton.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Newtonian mechanics.</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
