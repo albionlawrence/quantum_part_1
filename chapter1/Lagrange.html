@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Overview &#8212; Physics 162a</title>
+    <title>Lagrangian Mechanics &#8212; Physics 162a</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle"], "bra": ["\\langle#1|"], "brket": ["\\langle#1|#2\\rangle"], "vev": ["\\langle #1 \\rangle"], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter0/Overview';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter1/Lagrange';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Classical Mechanics" href="../chapter1/Intro_Classical.html" />
-    <link rel="prev" title="Physics 162a: Quantum Mechanics 1" href="../intro.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="Newtonian mechanics." href="Newton.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,12 +176,13 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Overview</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter1/Newton.html">Newtonian mechanics.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter1/Lagrange.html">Lagrangian Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Intro_Classical.html">Classical Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Newton.html">Newtonian mechanics.</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lagrangian Mechanics</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 </ul>
 
     </div>
@@ -236,7 +237,7 @@
       
       
       
-      <li><a href="../_sources/chapter0/Overview.md" target="_blank"
+      <li><a href="../_sources/chapter1/Lagrange.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -320,7 +321,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Overview</h1>
+    <h1>Lagrangian Mechanics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -330,9 +331,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-do-we-use-quantum-mechanics">When do we use quantum mechanics?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-importance-of-classical-mechanics">The importance of classical mechanics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline-of-the-course">Outline of the course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-of-stationary-action">Principle of Stationary Action</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-euler-lagrange-equations">The Euler-Lagrange equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-lagrange-equation-and-generalized-coordinates">Euler-Lagrange equation and generalized coordinates</a></li>
 </ul>
             </nav>
         </div>
@@ -344,46 +345,67 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h1>
-<section id="when-do-we-use-quantum-mechanics">
-<h2>When do we use quantum mechanics?<a class="headerlink" href="#when-do-we-use-quantum-mechanics" title="Link to this heading">#</a></h2>
-<p>Quantum mechanics emerged to explain <em>microscopic</em> phenomena that is well outside of our sensory experience (for the most part). That is, it describes:</p>
-<ul class="simple">
-<li><p>subatomic particles (electrons, protons, neutrons, quarks, photons,…)</p></li>
-<li><p>nuclear physics</p></li>
-<li><p>atomic physics</p></li>
-<li><p>molecular dynamics</p></li>
-</ul>
-<p>It also governs the collective behavior of matter at <em>low temperatures</em>, suitably defined, such as:</p>
-<ul class="simple">
-<li><p>Superfluids</p></li>
-<li><p>Superconductors</p></li>
-<li><p>Cold atom systems</p></li>
-<li><p>White dwarves and neutron stars (no, really)</p></li>
-</ul>
-<p>At this point we should be asking “microscopic compared to what? Low temperature compared to what?” We hope to make this clear during the course. Clearly the dimensional quatity <span class="math notranslate nohighlight">\(\hbar \sim 1.05 \times 10^{-34} m^2 kg/s\)</span>, with units of <span class="math notranslate nohighlight">\((energy) \times (time)\)</span>, plays a role. For atomic physics, we are talking about scales of order angstroms, and energies of order electron volts.</p>
-<p>Our own sensory experience is well outside of this regime; for our survival we need to detect animals of order meters, understand weather patterns and geography over kilometers, and so on. So it should not surprise us that quantum mechanics is in many ways very different from classical mechanics. My personal feeling is that much of the angst people feel over the odder implicatons of quantum mechanics stem from forgetting this large disparity between the scales of the quantum and classical worlds.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="lagrangian-mechanics">
+<h1>Lagrangian Mechanics<a class="headerlink" href="#lagrangian-mechanics" title="Link to this heading">#</a></h1>
+<section id="principle-of-stationary-action">
+<h2>Principle of Stationary Action<a class="headerlink" href="#principle-of-stationary-action" title="Link to this heading">#</a></h2>
+<p>The basic object in Lagrangian mechanics is…you guessed it…a <em>Lagrangian</em>; this is a function of the positions and velocities of one or several particles:</p>
+<div class="math notranslate nohighlight" id="equation-lagrangian">
+<span class="eqno">(6)<a class="headerlink" href="#equation-lagrangian" title="Link to this equation">#</a></span>\[L = L(x^a_k(t), {\dot x}^a_k(t), t)\]</div>
+<p>where <span class="math notranslate nohighlight">\(a \in \{1,\ldots,d\}\)</span> is the coordinate index for particles in <span class="math notranslate nohighlight">\(d\)</span> dimensions (for example, if <span class="math notranslate nohighlight">\(d = 3\)</span> we might call <span class="math notranslate nohighlight">\(x^1 \equiv x\)</span>, <span class="math notranslate nohighlight">\(x^2 \equiv y\)</span>, <span class="math notranslate nohighlight">\(x^3 \equiv z\)</span>), and <span class="math notranslate nohighlight">\(k = 1,\ldots,M\)</span> labels different particles. Note that <span class="math notranslate nohighlight">\(L\)</span> is a <em>function</em> of <span class="math notranslate nohighlight">\(x, {\dot x}\)</span> at a fixed time; thus, even if there is no explicit <span class="math notranslate nohighlight">\(t\)</span>-dependence, if <span class="math notranslate nohighlight">\(x^a(t)\)</span> is a known trajectory, <span class="math notranslate nohighlight">\(L\)</span> depends on <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Given <span class="math notranslate nohighlight">\(L\)</span>, and initial and final times <span class="math notranslate nohighlight">\(t_{i,f}\)</span> we can define an <em>action functional</em> (usually called just the action):</p>
+<div class="math notranslate nohighlight" id="equation-action-definition">
+<span class="eqno">(7)<a class="headerlink" href="#equation-action-definition" title="Link to this equation">#</a></span>\[S[\{x(t)\}] = \int_{t_i}^{t_f} dt L( x^a_k(t), {\dot x}^a_k(t), t)\]</div>
+<p>For any trajectory <span class="math notranslate nohighlight">\(x^i(t)\)</span>, defined between <span class="math notranslate nohighlight">\(t_i\)</span> and <span class="math notranslate nohighlight">\(t_f\)</span>, the action is a real number. We call it a “functional” because it can be thought of as a function whose dependent variables are not a collection of discrete numbers, but functions.</p>
+<p>The principle of stationary action (sometimes call the “principle of least action”, but this is something of a misnomer). We consider all paths with fixed coordinates at <span class="math notranslate nohighlight">\(t_{i,f}\)</span>, defined as</p>
+<div class="math notranslate nohighlight">
+\[x^a_{k, } = x^a_k(t_i)\ ; \ \ x^a_{k,f} = x^a_k(t_f)\]</div>
+<p>A “classical trajectory” <span class="math notranslate nohighlight">\(x^a_{k,c}\)</span> is one that satisfies the boundary conditions and one for which the action does not change if we make an infinitestimal change of the path. That is, consider two trajectories:</p>
+<div class="math notranslate nohighlight">
+\[	x^a_{k,c}(t)\ ; \ x^a_{k,c}(t) + \epsilon \delta x^a_k\]</div>
+<p>satisfying the same boundary conditions. This means that <span class="math notranslate nohighlight">\(\delta x^a_{k}(t_{i,f)) = 0\)</span>. We take <span class="math notranslate nohighlight">\(\eps \ll 1\)</span> to be a small dimensionless parameters. For small enough <span class="math notranslate nohighlight">\(\eps\)</span> we can therefore expand</p>
+<div class="math notranslate nohighlight">
+\[S[\{x^a_{k,c}(t) + \epsilon \delta x^a_k)\}] = S[\{x^a_k(t)\}] + \eps \delta S^{(1)} + \eps^2 \delta S^{(2)} + {\cal O}(\eps^3)\]</div>
+<p>If <span class="math notranslate nohighlight">\(\Delta^{(1)}S[\{x^a_{k,c}\}] = 0\)</span>, then <span class="math notranslate nohighlight">\(x^a_{k,c}\)</span> is a classical trajectory.</p>
 </section>
-<section id="the-importance-of-classical-mechanics">
-<h2>The importance of classical mechanics<a class="headerlink" href="#the-importance-of-classical-mechanics" title="Link to this heading">#</a></h2>
-<p>On the other hand, classical mechanics is still important:</p>
-<ul class="simple">
-<li><p>It does an excellent job of making predictions in its regime of validity.</p></li>
-<li><p>It provides a benchmark for quantum mechanics. Classical mechanics should emerge from quantum mechanics, if we are doing things right. This is a version of Bohr’s famous <em>correspondence principle</em>.</p></li>
-<li><p>Basic structures and conceopts in classical mechanics (Hamiltonians, Lagrangians, the role of symmetries, and so on) have their counterpart in quantum mechanics, and understanding the former gives considerable insight into the latter.</p></li>
-<li><p>Calculational techniques in quantum mechanics have surprising uses in classical mechanics and statistical mechanics.</p></li>
-</ul>
-<p>So we will be spending time on both subjects.</p>
+<section id="the-euler-lagrange-equations">
+<h2>The Euler-Lagrange equations<a class="headerlink" href="#the-euler-lagrange-equations" title="Link to this heading">#</a></h2>
+<p>So far this is all fairly abstract. In fact the principle of stationary action leads to a set of differential equations known as the <em>Euler-Lagrange</em> equations which generalize Newton’s second law. We can write down these equations explicitly in terms of <span class="math notranslate nohighlight">\(L\)</span>, by computing <span class="math notranslate nohighlight">\(S^{(1)}\)</span>. Let us cary out the expansion explicitly:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+S[\{x^a_{k,c}(t) + \epsilon \delta x^a_k)\}] &amp; = S[\{x^a_k(t)\}] + \eps \delta S^{(1)}+ \ldots \\
+&amp; = \int_{t_i}^{t_f} dt L(x^a_{k,c}(t) + \epsilon \delta x^a_k, \dot{x}^a_{k,c}(t) + \epsilon \delta \dot{x^a_k}) + {\cal O}(\eps^2)\\
+&amp; = S[\{x^a_k(t)\}] + \eps \int_{t_i}^{t_f} \left[ \delta x^a_k \frac{\del L}{\del x^a_k(t)} + \delta {\dot x}^a_k(t) \frac{\del L}{\del \dot{x}^a_k(t)}\right]\big|_{x = x_c}
++ {\cal O}(\eps^2)
+\end{align}\end{split}\]</div>
+<p>where we are using the Einstein summation notation (see Appendix). Note that <span class="math notranslate nohighlight">\(L\)</span> is a standard function of the coordinates and velocities at a fixed time <span class="math notranslate nohighlight">\(t\)</span>, so that this makes sense. Now, recall that <span class="math notranslate nohighlight">\(\delta \dot{x} = \frac{d}{dt} \delta x\)</span>. Integrating the second term in the last line by parts, we find that</p>
+<div class="math notranslate nohighlight">
+\[\delta S^{(2)} = \int_{t_i}^{t_f} dt \delta x^a_k \left[ \frac{\del L}{\del x^a_k} - \frac{d}{dt} \frac{\del L}{\del \dot{x}^a_k}\right]\Big|_{x = x_c} + \delta x^a_k \frac{\del L}{\del \dot{x}^a_k} \Big|^{t = t_f}_{t = t_i} \]</div>
+<p>Now, by the boundary conditions, <span class="math notranslate nohighlight">\(\delta x^a_k(t_{i,f}) = 0\)</span> so that the final boundary term vanishes. We have demanded that <span class="math notranslate nohighlight">\(\delta S^{(1)}\)</span> vanish for <em>any</em> infinitesimal deformation of <span class="math notranslate nohighlight">\(x^a_{k,c}\)</span>, that is for <em>any</em> <span class="math notranslate nohighlight">\(\delta x^a_{k,c}\)</span> vanishing at <span class="math notranslate nohighlight">\(t_{i,f}\)</span> (at least, if <span class="math notranslate nohighlight">\(\eps\)</span> is sufficiently small). Thus, the principle of stationary action is equivalent to the <em>Euler-Lagrange equations</em>:</p>
+<div class="math notranslate nohighlight" id="equation-euler-lagrange">
+<span class="eqno">(8)<a class="headerlink" href="#equation-euler-lagrange" title="Link to this equation">#</a></span>\[\frac{\delta S}{\delta x^a_k(t)}\Big|_{x = x_c} \equiv \frac{\del L}{\del x^a_i(t)}(x^a_{k,c}, \dot{x}^a_{k,c}(t)) - \frac{d}{dt} \frac{\del L}{\del \dot{x}^a_i(t)}(x^a\
+_{k,c}, \dot{x}^a_{k,c}(t)) = 0\]</div>
+<p>Note that this defines a <em>functional derivative</em> of <span class="math notranslate nohighlight">\(S\)</span>. <span class="math notranslate nohighlight">\(\frac{\delta S}{\delta x}\)</span>.</p>
+<p>Without going any further, we can see that this will define <span class="math notranslate nohighlight">\(d M\)</span> second order differential equations in time for the <span class="math notranslate nohighlight">\(dM\)</span> variables <span class="math notranslate nohighlight">\(x^a_k\)</span>.</p>
+<p>This formalism naturally includes Newton’s laws. Consider the following Lagrangian for a single particle with mass <span class="math notranslate nohighlight">\(m\)</span> in <span class="math notranslate nohighlight">\(d\)</span> dimensions:</p>
+<div class="math notranslate nohighlight" id="equation-newton-lag">
+<span class="eqno">(9)<a class="headerlink" href="#equation-newton-lag" title="Link to this equation">#</a></span>\[L = \half m \dot{\vec x} \cdot \dot{\vec x} - V({\vec x})\]</div>
+<p>Here <span class="math notranslate nohighlight">\({\vec V}\cdot{\vec V} = V^j V^j\)</span> for any vector <span class="math notranslate nohighlight">\({\vec V}\)</span>, where <span class="math notranslate nohighlight">\(j\)</span> labels the components. The Euler-Lagrange equations give us:</p>
+<div class="math notranslate nohighlight" id="equation-el-newton">
+<span class="eqno">(10)<a class="headerlink" href="#equation-el-newton" title="Link to this equation">#</a></span>\[- \frac{\del V}{\del x^i} - m \frac{d}{dt} \dot{x}^i = 0
+\Rightarrow m \ddot{x}^i = - \left(\vec{\nabla} V\right)^i \equiv F^i\]</div>
+<p>Here <span class="math notranslate nohighlight">\({\vec F} = - \vec{\nabla} V\)</span> is the conservative force associated to the potential <span class="math notranslate nohighlight">\(V\)</span>. Note that we have a definite restriction on systems which are well-described by Lagrangian dynamics: many forces are not easily or usefully described in the Lagrangian framework. A classic example is a particle subject to a frictional force linear in velocity:</p>
+<div class="math notranslate nohighlight" id="equation-friction-example">
+<span class="eqno">(11)<a class="headerlink" href="#equation-friction-example" title="Link to this equation">#</a></span>\[m \ddot{x} = - \lambda \dot{x} - V'(x)\]</div>
+<p>(It is not impossible to get this from a variational principle directly in terms of <span class="math notranslate nohighlight">\(x\)</span> but this formulation ends up not being especially useful. More insight can be gained by embedding the system in a larger system so that the dynamics of <span class="math notranslate nohighlight">\(x\)</span> alone has friction; the energy lost by friction is exchanged with the larger system. But then the dynamics of all of the degrees of freedom can be described by a more conventional if complicated Lagrangian.)</p>
+<p>On the other hand, this formalism allows us to generalize away from Newton’s laws in many other directions, including other velocity-dependent forces such as the Lorentz force, and provides new tools for constraining the motion.</p>
 </section>
-<section id="outline-of-the-course">
-<h2>Outline of the course<a class="headerlink" href="#outline-of-the-course" title="Link to this heading">#</a></h2>
+<section id="euler-lagrange-equation-and-generalized-coordinates">
+<h2>Euler-Lagrange equation and generalized coordinates<a class="headerlink" href="#euler-lagrange-equation-and-generalized-coordinates" title="Link to this heading">#</a></h2>
+<p>As we know, there is a lot more to classical mechanics than just the motion of a collection of point particles in Euclidean space. Other systems include:</p>
 <ol class="arabic simple">
-<li><p>Lagrangian and Hamiltonian classical mechanics.</p></li>
-<li><p>Linear algebra and Hilbert spaces. This is the correct language for quantum mechanics for very physical reasons; the linearity in linear algebra is tied directly to the fact that we can linearly superpose states to get new states and thus to phenomena such as the interference pattern of double-slit experiments.</p></li>
-<li><p>The Rules of Quantum Mechanics</p></li>
-<li><p>Applications to simple examples of one-dimensional nonrelativistic systems.</p></li>
-<li><p>Introduction to three-dimensional systems and angular momentum.</p></li>
+<li><p>The motion of the orientational degrees of freedom of a rigid body such as a top or a satellite.</p></li>
+<li><p>The dynamics of some elastic system such as a rubber sheet or even a piece of metal.</p></li>
 </ol>
 </section>
 </section>
@@ -401,7 +423,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapter0"
+            path: "./chapter1"
         },
         predefinedOutput: true
     }
@@ -419,20 +441,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="Newton.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Physics 162a: Quantum Mechanics 1</p>
+        <p class="prev-next-title">Newtonian mechanics.</p>
       </div>
     </a>
     <a class="right-next"
-       href="../chapter1/Intro_Classical.html"
+       href="../appendix.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Classical Mechanics</p>
+        <p class="prev-next-title">Appendix</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -452,9 +474,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-do-we-use-quantum-mechanics">When do we use quantum mechanics?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-importance-of-classical-mechanics">The importance of classical mechanics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline-of-the-course">Outline of the course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-of-stationary-action">Principle of Stationary Action</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-euler-lagrange-equations">The Euler-Lagrange equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-lagrange-equation-and-generalized-coordinates">Euler-Lagrange equation and generalized coordinates</a></li>
 </ul>
   </nav></div>
 
