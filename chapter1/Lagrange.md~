@@ -1,0 +1,14 @@
+# Lagrangian Mechanics
+
+## Principle of Stationary Action
+
+The basic object in Lagrangian mechanics is...you guessed it...a *Lagrangian*; this is a function of the positions and velocities of one or several particles:
+
+```{math}
+:label: Lagrangian
+L = L(x^i_k(t), {\dot x}^i_k(t), t)
+```
+
+where $i \in \{1,\ldots,d\}$ is the coordinate index for particles in $d$ dimensions (for example, if $d = 3$ we might call $x^1 \equiv x$, $x^2 \equiv y$, $x^3 \equiv z$), and $k = 1,\ldots,M$ labels different particles. For now we will focus on the case of a single particle and $d$ between $1$ and $3$. Note that $L$ is a *function* of $x, {\dot kx}$ at a fixed time; thus, even if there is no explicit $t$-dependence, if $x^i(t)$ is a known trajectory, $L$ depends on $t$.
+
+Given 

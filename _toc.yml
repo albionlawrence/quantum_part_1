@@ -8,5 +8,7 @@ chapters:
   - file: chapter1/Intro_Classical.md
     sections:
     - file: chapter1/Newton.md
+    - file: chapter1/Lagrange.md
+  - file: appendix.md
 # - file: notebooks
 # - file: markdown-notebooks

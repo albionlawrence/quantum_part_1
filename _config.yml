@@ -103,3 +103,5 @@ sphinx:
               "brket": ["\\langle#1|#2\\rangle"]
               "vev": ["\\langle #1 \\rangle"]
               "half": ["\\frac{1}{2}"]
+              "eps": ["\\epsilon"]
+              "del": ["\\partial"]
