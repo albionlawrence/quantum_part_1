@@ -332,6 +332,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">Notation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-and-partial-derivatives">Derivatives and partial derivatives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-useful-tensors">Some useful tensors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einstein-summation-convention">Einstein summation convention</a></li>
 </ul>
 </li>
@@ -352,19 +353,34 @@ document.write(`
 <h2>Notation<a class="headerlink" href="#notation" title="Link to this heading">#</a></h2>
 <section id="derivatives-and-partial-derivatives">
 <h3>Derivatives and partial derivatives<a class="headerlink" href="#derivatives-and-partial-derivatives" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>I will often write</p></li>
-</ul>
+<p>I will often write</p>
 <div class="math notranslate nohighlight" id="equation-part-der">
-<span class="eqno">(12)<a class="headerlink" href="#equation-part-der" title="Link to this equation">#</a></span>\[\del_i \equiv \frac{\partial}{\partial x^i}\]</div>
+<span class="eqno">(31)<a class="headerlink" href="#equation-part-der" title="Link to this equation">#</a></span>\[\del_i \equiv \frac{\partial}{\partial x^i}\]</div>
+</section>
+<section id="some-useful-tensors">
+<h3>Some useful tensors<a class="headerlink" href="#some-useful-tensors" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>The Kronecker delta function. If <span class="math notranslate nohighlight">\(I,J = i,\ldots,N\)</span> are some indices then</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-kronecker">
+<span class="eqno">(32)<a class="headerlink" href="#equation-kronecker" title="Link to this equation">#</a></span>\[\begin{split}\delta^I_J = \begin{cases} 1 &amp; I = J \\ 0 &amp; I \neq J \end{cases}\end{split}\]</div>
 </section>
 <section id="einstein-summation-convention">
 <h3>Einstein summation convention<a class="headerlink" href="#einstein-summation-convention" title="Link to this heading">#</a></h3>
-<p>The Einstein summation convention is that all repeated indices are summed over unless otherwise stated explicitly. Thus, for some <span class="math notranslate nohighlight">\(d\)</span>-dimensional vector <span class="math notranslate nohighlight">\(V^i\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[V^i V^i \equiv \sum_{j = 1}^d V^j V^j\]</div>
+<p>The Einstein summation convention is that all repeated indices are summed over unless otherwise stated explicitly. Thus, for some <span class="math notranslate nohighlight">\(d\)</span>-dimensional vectors <span class="math notranslate nohighlight">\(V^i\)</span>, <span class="math notranslate nohighlight">\(W^i\)</span></p>
+<div class="math notranslate nohighlight" id="equation-einstein-def">
+<span class="eqno">(33)<a class="headerlink" href="#equation-einstein-def" title="Link to this equation">#</a></span>\[V^i W^i \equiv \sum_{j = 1}^d V^j W^j\]</div>
 <p>Technically speaking I am being a little careless. In curved spaces (for example, on the sphere), there are geometrically distinct objects <span class="math notranslate nohighlight">\(V^i\)</span>, <span class="math notranslate nohighlight">\(V_i\)</span>, and I should only be summing over pairs of indices in which one is raised and one is lowered. In Euclidean space, however, there is a standard map which states that numerically, <span class="math notranslate nohighlight">\(V^i = V_i\)</span>, so I will ignore this issue for the time being.</p>
-<p>(We can think of <span class="math notranslate nohighlight">\(V^i\)</span> as an element of a vector spave, and <span class="math notranslate nohighlight">\(V_i\)</span> its dual vector; we will discuss this language when we get to linear algebra).</p>
+<p>(We can think of <span class="math notranslate nohighlight">\(V^i, W^i\)</span> as elements of a vector space, and <span class="math notranslate nohighlight">\(V_i, W_i\)</span> their dual vectors; we will discuss this language when we get to linear algebra).</p>
+<p>Derivatives of expressions involving the Einstein summation convention often confuse people. For a venerak vector field <span class="math notranslate nohighlight">\(V^I(x)\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\del}{\del x^J} V^I W_I = W^I \del_J V^I + V^I \del_J W^I\]</div>
+<p>Now if <span class="math notranslate nohighlight">\(V^I = W^I = x^I\)</span>, then <span class="math notranslate nohighlight">\(\del_J x^I = \delta^I_J\)</span>. You can convince yourselves that</p>
+<div class="math notranslate nohighlight">
+\[\delta^I_J V^I = V^J\]</div>
+<p>and therefore,</p>
+<div class="math notranslate nohighlight">
+\[\del_J (x^I x^I) = 2 x^J\]</div>
 </section>
 </section>
 </section>
@@ -426,6 +442,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">Notation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-and-partial-derivatives">Derivatives and partial derivatives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-useful-tensors">Some useful tensors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einstein-summation-convention">Einstein summation convention</a></li>
 </ul>
 </li>
