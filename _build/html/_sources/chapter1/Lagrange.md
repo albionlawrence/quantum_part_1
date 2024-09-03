@@ -293,7 +293,7 @@ With a little bit of work you can show that the generalied second law $\frac{d p
 m \ddot{x}^i = \frac{e}{c} \dot{\vec {x}} \cdot \times \vec{B}
 ```
 
-Note that the finnal equations of motion depend on the magnetic field $B$ and not on the vector potential $A$. People often assume that the physical fields are the electromagnetic fields, and $A$ is not unquely determined since the "gauge transformation"
+Note that the final equations of motion depend on the magnetic field $B$ and not on the vector potential $A$. People often assume that the physical fields are the electromagnetic fields, and $A$ is not unquely determined since the "gauge transformation"
 
 ```{math}
 \vec{A} \to \vec{A} + \vec{\nabla} \Lambda
