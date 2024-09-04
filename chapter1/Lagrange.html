@@ -491,23 +491,36 @@ m \ddot{r} &amp; = - \del_r V\\
 <section id="particle-in-a-magnetic-field">
 <h3>Particle in a magnetic field<a class="headerlink" href="#particle-in-a-magnetic-field" title="Link to this heading">#</a></h3>
 <p>Alternatively we consider the case where we have standard coordinates but a nontrivial generalized momentum. That is, consider a particle with mass <span class="math notranslate nohighlight">\(m\)</span> and charge <span class="math notranslate nohighlight">\(e\)</span> in a static magnetic field <span class="math notranslate nohighlight">\(\vec{B}\)</span>. Maxwell’s equations (assuming no magnetic monoploes; we haven’t observed them at any rate) imply that <span class="math notranslate nohighlight">\(\vec{\nabla} \cdot \vec{B} = \)</span>, which means that in Euclidean space without any holes we can use the Poincar’e theorem to write</p>
-<div class="math notranslate nohighlight">
-\[\vec{B} = \vec{\nabla} \times \vec {A}\]</div>
+<div class="math notranslate nohighlight" id="equation-vector-potential">
+<span class="eqno">(31)<a class="headerlink" href="#equation-vector-potential" title="Link to this equation">#</a></span>\[\vec{B} = \vec{\nabla} \times \vec {A}\]</div>
 <p>for some <span class="math notranslate nohighlight">\(\vec{A}\)</span>. I claim the correct Lagrangian for a particle in this field is:</p>
-<div class="math notranslate nohighlight">
-\[L = \half m \dot{\vec{x}}^2 + \frac{e}{c} \dot{\vec{x}} \cdot \vec{A}(x)\]</div>
+<div class="math notranslate nohighlight" id="equation-charged-particle-b">
+<span class="eqno">(32)<a class="headerlink" href="#equation-charged-particle-b" title="Link to this equation">#</a></span>\[L = \half m \dot{\vec{x}}^2 + \frac{e}{c} \dot{\vec{x}} \cdot \vec{A}(x)\]</div>
 <p>The generalized momentum is</p>
-<div class="math notranslate nohighlight">
-\[p_i = \frac{\del L}{\del \dot{x}^i} = m \dot{x}^i + \frac{e}{c} A^i\]</div>
+<div class="math notranslate nohighlight" id="equation-b-gen-mom">
+<span class="eqno">(33)<a class="headerlink" href="#equation-b-gen-mom" title="Link to this equation">#</a></span>\[p_i = \frac{\del L}{\del \dot{x}^i} = m \dot{x}^i + \frac{e}{c} A^i\]</div>
 <p>and the generalized force is</p>
-<div class="math notranslate nohighlight">
-\[{\cal F}^i = \frac{\del L}{\del x^i} = \frac{e}{c} \dot{x}^j \del_i A^j\]</div>
-<p>With a little bit of work you can show that the generalied second law <span class="math notranslate nohighlight">\(\frac{d p^i}{dt} = {\cal F}^i\)</span> yields the Lorentz force law:</p>
-<div class="math notranslate nohighlight">
-\[m \ddot{x}^i = \frac{e}{c} \dot{\vec {x}} \cdot \times \vec{B}\]</div>
+<div class="math notranslate nohighlight" id="equation-b-gen-force">
+<span class="eqno">(34)<a class="headerlink" href="#equation-b-gen-force" title="Link to this equation">#</a></span>\[{\cal F}^i = \frac{\del L}{\del x^i} = \frac{e}{c} \dot{x}^j \del_i A^j\]</div>
+<p>The Euler-Lagrange equations become</p>
+<div class="math notranslate nohighlight" id="equation-b-el">
+<span class="eqno">(35)<a class="headerlink" href="#equation-b-el" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+	\frac{d p^i}{dt} &amp; = m \ddot{x}^i + \frac{e}{c} \dot{x}^j \del_j A^i\\
+	&amp; = {\cal F} \\
+	&amp; = \frac{e}{c} \dot{x}^j \del_i A^j
+\end{align}\end{split}\]</div>
+<p>so that</p>
+<div class="math notranslate nohighlight" id="equation-b-eom">
+<span class="eqno">(36)<a class="headerlink" href="#equation-b-eom" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+m \ddot x^i &amp; = \frac{e}{c} {\dot x}^j (\del_i A^j - \del_j A^i)\\
+&amp; = \frac{e}{c} {\dot x}^j \epsilon_{ijk} (\vec{\nabla}\times {\vec A})^k\\
+&amp; = \frac{e}{c} {\dot x}^j \epsilon_{ijk} B^k \\
+&amp; = \frac{e}{c} (\dot{\vec{x}}\times\vec{B})^i
+\end{align}\end{split}\]</div>
+<p>which is the Lorentz force law.</p>
 <p>Note that the final equations of motion depend on the magnetic field <span class="math notranslate nohighlight">\(B\)</span> and not on the vector potential <span class="math notranslate nohighlight">\(A\)</span>. People often assume that the physical fields are the electromagnetic fields, and <span class="math notranslate nohighlight">\(A\)</span> is not unquely determined since the “gauge transformation”</p>
-<div class="math notranslate nohighlight">
-\[\vec{A} \to \vec{A} + \vec{\nabla} \Lambda\]</div>
+<div class="math notranslate nohighlight" id="equation-gauge-trans">
+<span class="eqno">(37)<a class="headerlink" href="#equation-gauge-trans" title="Link to this equation">#</a></span>\[\vec{A} \to \vec{A} + \vec{\nabla} \Lambda\]</div>
 <p>does not change <span class="math notranslate nohighlight">\(E\)</span> or <span class="math notranslate nohighlight">\(B\)</span>. The generalized momentum <em>does</em> depend explicitly on <span class="math notranslate nohighlight">\({\cal A}\)</span>, and so in this case is not invariant under gauge transformation.</p>
 </section>
 </section>
