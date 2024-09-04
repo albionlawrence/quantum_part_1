@@ -266,36 +266,60 @@ which you can also show are the equations of motion by applying the transformati
 Alternatively we consider the case where we have standard coordinates but a nontrivial generalized momentum. That is, consider a particle with mass $m$ and charge $e$ in a static magnetic field $\vec{B}$. Maxwell's equations (assuming no magnetic monoploes; we haven't observed them at any rate) imply that $\vec{\nabla} \cdot \vec{B} = $, which means that in Euclidean space without any holes we can use the Poincar\'e theorem to write
 
 ```{math}
+:label: vector_potential
 \vec{B} = \vec{\nabla} \times \vec {A}
 ```
 
 for some $\vec{A}$. I claim the correct Lagrangian for a particle in this field is:
 
 ```{math}
+:label: charged_particle_B
 L = \half m \dot{\vec{x}}^2 + \frac{e}{c} \dot{\vec{x}} \cdot \vec{A}(x)
 ```
 
 The generalized momentum is
 
 ```{math}
+:label: B_gen_mom
 p_i = \frac{\del L}{\del \dot{x}^i} = m \dot{x}^i + \frac{e}{c} A^i
 ```
 
 and the generalized force is
 
 ```{math}
+:label: B_gen_force
 {\cal F}^i = \frac{\del L}{\del x^i} = \frac{e}{c} \dot{x}^j \del_i A^j
 ```
 
-With a little bit of work you can show that the generalied second law $\frac{d p^i}{dt} = {\cal F}^i$ yields the Lorentz force law:
+The Euler-Lagrange equations become
 
 ```{math}
-m \ddot{x}^i = \frac{e}{c} \dot{\vec {x}} \cdot \times \vec{B}
+:label: B_EL
+\begin{align}
+	\frac{d p^i}{dt} & = m \ddot{x}^i + \frac{e}{c} \dot{x}^j \del_j A^i\\
+	& = {\cal F} \\
+	& = \frac{e}{c} \dot{x}^j \del_i A^j
+\end{align}
 ```
+
+so that
+
+```{math}
+:label: B_eom
+\begin{align}
+m \ddot x^i & = \frac{e}{c} {\dot x}^j (\del_i A^j - \del_j A^i)\\
+& = \frac{e}{c} {\dot x}^j \epsilon_{ijk} (\vec{\nabla}\times {\vec A})^k\\
+& = \frac{e}{c} {\dot x}^j \epsilon_{ijk} B^k \\
+& = \frac{e}{c} (\dot{\vec{x}}\times\vec{B})^i
+\end{align}
+```
+
+which is the Lorentz force law.
 
 Note that the final equations of motion depend on the magnetic field $B$ and not on the vector potential $A$. People often assume that the physical fields are the electromagnetic fields, and $A$ is not unquely determined since the "gauge transformation"
 
 ```{math}
+:label: gauge_trans
 \vec{A} \to \vec{A} + \vec{\nabla} \Lambda
 ```
 
