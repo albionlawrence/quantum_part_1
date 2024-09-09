@@ -77,7 +77,7 @@ z_R(x) & = z_R(x(t)) + (x - x(t)) z'_R(x(t)) + \half (x - x(t))^2 z''_R(x(t)) \\
 \end{align}
 ```
 
-![Osculating circle][Osculating.png)
+![Osculating circle](Osculating.png)
 
 To solve this we demand that 
 
@@ -136,16 +136,16 @@ N & = mg \cos\theta + \frac{m \dot{x}^2 z''}{\left(1 + (z')^2\right)^{3/2}\cos^2
 In the end, the only force in the $x$ direction is the horizontal component of the normal force, 
 
 ```{math} 
-N_x = |N| \sin\theta = |N|\frac{z'}{\sqrt{1 + (z')^2}}
+N_x = |N| \sin\theta = - |N|\frac{z'}{\sqrt{1 + (z')^2}}
 ```
 
-So that
+Note the minus sign; you can see from the pifcture that the force in the x direction is positive if the slope of teh bead is negative. We end up with:
 
 ```{math}
-m \ddot{x} = N_x = \frac{m g z' + m \dot{x}^2 z' z''}{1 + (z')^2}
+m \ddot{x} = N_x = \frac{m g z' - m \dot{x}^2 z' z''}{1 + (z')^2}
 ```
 
 Note that the total force depends on the velocity $\dot{x}$ as well as the position.
 
-This is quite complicated! It turns out there is a much easier way to impose constraints, which will become apparent once we introduce teh Lagrangian formulation of classical mechanics.
+This is quite complicated! It turns out there is a much easier way to impose constraints, which will become apparent once we introduce the Lagrangian formulation of classical mechanics.
 

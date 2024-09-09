@@ -178,8 +178,11 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="chapter1/Newton.html">Newtonian mechanics.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter1/Lagrange.html">Lagrangian Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter1/Constraints.html">Constrained Lagrangian Systems</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
 
     </div>
@@ -371,18 +374,30 @@ that is being called.</p>
 <p>Here is a note</p>
 </div>
 <p>It will be rendered in a special box when you build your book.</p>
-<p>Here is an inline directive to refer to a document: <a class="reference internal" href="markdown-notebooks.html"><span class="doc">Notebooks with MyST Markdown</span></a>.</p>
+<p>Here is an inline directive to refer to a document: <span class="xref std std-doc">markdown-notebooks</span>.</p>
 </section>
 <section id="citations">
 <h2>Citations<a class="headerlink" href="#citations" title="Link to this heading">#</a></h2>
 <p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
 the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: .</p>
+this: <span id="id1">[]</span>.</p>
 <p>Moreover, you can insert a bibliography into your page with this syntax:
 The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
 render properly.
 For example, if the references for your book are stored in <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>,
 then the bibliography is inserted with:</p>
+<div class="docutils container" id="id2">
+<div role="list" class="citation-list">
+<div class="citation" id="id4" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Com14<span class="fn-bracket">]</span></span>
+<p>E.D. Commins. <em>Quantum Mechanics</em>. Cambridge University Press, 2014. ISBN 9781107063990.</p>
+</div>
+<div class="citation" id="id3" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>GPS02<span class="fn-bracket">]</span></span>
+<p>H. Goldstein, C.P. Poole, and J.L. Safko. <em>Classical Mechanics</em>. Addison Wesley, 2002. ISBN 9780201657029.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="learn-more">
 <h2>Learn more<a class="headerlink" href="#learn-more" title="Link to this heading">#</a></h2>

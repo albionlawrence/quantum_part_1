@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Appendix &#8212; Physics 162a</title>
+    <title>Bibliography &#8212; Physics 162a</title>
   
   
   
@@ -57,13 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle"], "bra": ["\\langle#1|"], "brket": ["\\langle#1|#2\\rangle"], "vev": ["\\langle #1 \\rangle"], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'appendix';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'bibliography';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Bibliography" href="bibliography.html" />
-    <link rel="prev" title="Constrained Lagrangian Systems" href="chapter1/Constraints.html" />
+    <link rel="prev" title="Appendix" href="appendix.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,8 +180,8 @@
 <li class="toctree-l2"><a class="reference internal" href="chapter1/Constraints.html">Constrained Lagrangian Systems</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Appendix</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Appendix</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Bibliography</a></li>
 </ul>
 
     </div>
@@ -239,7 +236,7 @@
       
       
       
-      <li><a href="_sources/appendix.md" target="_blank"
+      <li><a href="_sources/bibliography.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -310,9 +307,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -323,25 +318,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Appendix</h1>
+    <h1>Bibliography</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">Notation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-and-partial-derivatives">Derivatives and partial derivatives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-useful-tensors">Some useful tensors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einstein-summation-convention">Einstein summation convention</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-the-totally-antisymmetric-tensor">More on the totally antisymmetric tensor</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -351,70 +332,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="appendix">
-<h1>Appendix<a class="headerlink" href="#appendix" title="Link to this heading">#</a></h1>
-<section id="notation">
-<h2>Notation<a class="headerlink" href="#notation" title="Link to this heading">#</a></h2>
-<section id="derivatives-and-partial-derivatives">
-<h3>Derivatives and partial derivatives<a class="headerlink" href="#derivatives-and-partial-derivatives" title="Link to this heading">#</a></h3>
-<p>I will often write</p>
-<div class="math notranslate nohighlight" id="equation-part-der">
-<span class="eqno">(59)<a class="headerlink" href="#equation-part-der" title="Link to this equation">#</a></span>\[\del_i \equiv \frac{\partial}{\partial x^i}\]</div>
-</section>
-<section id="some-useful-tensors">
-<h3>Some useful tensors<a class="headerlink" href="#some-useful-tensors" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>The Kronecker delta function. If <span class="math notranslate nohighlight">\(I,J = i,\ldots,N\)</span> are some indices then</p></li>
-</ol>
-<div class="math notranslate nohighlight" id="equation-kronecker">
-<span class="eqno">(60)<a class="headerlink" href="#equation-kronecker" title="Link to this equation">#</a></span>\[\begin{split}\delta^I_J = \begin{cases} 1 &amp; I = J \\ 0 &amp; I \neq J \end{cases}\end{split}\]</div>
-<ol class="arabic simple" start="2">
-<li><p>The totally antisymmetric tensor</p></li>
-</ol>
-<p>In <span class="math notranslate nohighlight">\(d\)</span> dimensions, the tensor <span class="math notranslate nohighlight">\(\epsilon_{i_1,\ldots, i_d}\)</span> is totally antisymmetric in the exchange of all indices. Thus the only nonvanishing components are ones for which <span class="math notranslate nohighlight">\(i_1,\ldots,i_d\)</span> are a permutation of <span class="math notranslate nohighlight">\(1,2,\ldots,d\)</span>. We fix the tensor completely by edemanding that <span class="math notranslate nohighlight">\(\epsilon_{1,2,\ldots,d} = 1\)</span>.</p>
-</section>
-<section id="einstein-summation-convention">
-<h3>Einstein summation convention<a class="headerlink" href="#einstein-summation-convention" title="Link to this heading">#</a></h3>
-<p>The Einstein summation convention is that all repeated indices are summed over unless otherwise stated explicitly. Thus, for some <span class="math notranslate nohighlight">\(d\)</span>-dimensional vectors <span class="math notranslate nohighlight">\(V^i\)</span>, <span class="math notranslate nohighlight">\(W^i\)</span></p>
-<div class="math notranslate nohighlight" id="equation-einstein-def">
-<span class="eqno">(61)<a class="headerlink" href="#equation-einstein-def" title="Link to this equation">#</a></span>\[V^i W^i \equiv \sum_{j = 1}^d V^j W^j\]</div>
-<p>Technically speaking I am being a little careless. In curved spaces (for example, on the sphere), there are geometrically distinct objects <span class="math notranslate nohighlight">\(V^i\)</span>, <span class="math notranslate nohighlight">\(V_i\)</span>, and I should only be summing over pairs of indices in which one is raised and one is lowered. In Euclidean space, however, there is a standard map which states that numerically, <span class="math notranslate nohighlight">\(V^i = V_i\)</span>, so I will ignore this issue for the time being.</p>
-<p>(We can think of <span class="math notranslate nohighlight">\(V^i, W^i\)</span> as elements of a vector space, and <span class="math notranslate nohighlight">\(V_i, W_i\)</span> their dual vectors; we will discuss this language when we get to linear algebra).</p>
-<p>Derivatives of expressions involving the Einstein summation convention often confuse people. For a general vector field <span class="math notranslate nohighlight">\(V^I(x)\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[ \frac{\del}{\del x^J} V^I W_I = W^I \del_J V^I + V^I \del_J W^I\]</div>
-<p>Now if <span class="math notranslate nohighlight">\(V^I = W^I = x^I\)</span>, then <span class="math notranslate nohighlight">\(\del_J x^I = \delta^I_J\)</span>. You can convince yourselves that</p>
-<div class="math notranslate nohighlight">
-\[\delta^I_J V^I = V^J\]</div>
-<p>and therefore,</p>
-<div class="math notranslate nohighlight">
-\[\del_J (x^I x^I) = 2 x^J\]</div>
-</section>
-<section id="more-on-the-totally-antisymmetric-tensor">
-<h3>More on the totally antisymmetric tensor<a class="headerlink" href="#more-on-the-totally-antisymmetric-tensor" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Contraction identities in <span class="math notranslate nohighlight">\(d\)</span> dimensions
-A. <span class="math notranslate nohighlight">\(\epsilon_{i_1,\ldots,i_d}\epsilon^{i_1,\ldots,i_d} = d!\)</span>.
-B. In <span class="math notranslate nohighlight">\(d - 2\)</span>, <span class="math notranslate nohighlight">\(\epsilon_{ij} \epsilon^{ik} = \delta^k_j\)</span>.
-C. In <span class="math notranslate nohighlight">\(d = 3\)</span>, <span class="math notranslate nohighlight">\(\epsilon_{kmn}\epsilon^{k i j} = \delta^i_m \delta^j_n - \delta^i_n \delta^j_m\)</span>.
-D. In <span class="math notranslate nohighlight">\(d = 3\)</span>, <span class="math notranslate nohighlight">\(\epsilon_{ijk}\epsilon^{ijl} = 2\delta^l_k\)</span>.
-E. There are similar identities in higher dimensions, which we will leave aside for now.</p></li>
-<li><p>Definition of cross product.</p></li>
-</ol>
-<p>For general <span class="math notranslate nohighlight">\(d\)</span>, the cross product of two vectors <span class="math notranslate nohighlight">\(U^i V^i\)</span> is a <span class="math notranslate nohighlight">\(d-2\)</span>-rank tensor:</p>
-<div class="math notranslate nohighlight" id="equation-d-cross-product">
-<span class="eqno">(62)<a class="headerlink" href="#equation-d-cross-product" title="Link to this equation">#</a></span>\[({\vec U} \times {\vec V})_{i_1,\ldots,i_{d-2}} = \epsilon_{i_1,\ldots,i_{d-2}, i_{d--1}, i_d} U^{i_{d-1}} V^{i_d}\]</div>
-<p>For <span class="math notranslate nohighlight">\(d = 2\)</span>, this is a scalar (actuaklly a “pseudo-scalar”):</p>
-<div class="math notranslate nohighlight" id="equation-two-d-cross">
-<span class="eqno">(63)<a class="headerlink" href="#equation-two-d-cross" title="Link to this equation">#</a></span>\[({\vec U}\times {\vec V}) = \epsilon_{ij} U^i V^j = A^1 V^2 - U^2 V^1\]</div>
-<p>For <span class="math notranslate nohighlight">\(d = 3\)</span>,</p>
-<div class="math notranslate nohighlight" id="equation-three-d-cross">
-<span class="eqno">(64)<a class="headerlink" href="#equation-three-d-cross" title="Link to this equation">#</a></span>\[({\vec U}\times {\vec V})^i = \epsilon_{ijk} U^j V^k\]</div>
-<p>Or alternatively,</p>
-<div class="math notranslate nohighlight" id="equation-three-d-cross-two">
-<span class="eqno">(65)<a class="headerlink" href="#equation-three-d-cross-two" title="Link to this equation">#</a></span>\[U^i V^j - U^j V^i = \epsilon_{ijk} ({\vec U}\times {\vec B})^k\]</div>
-</section>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="bibliography">
+<h1>Bibliography<a class="headerlink" href="#bibliography" title="Link to this heading">#</a></h1>
+<div class="docutils container" id="id1">
+<div role="list" class="citation-list">
+<div class="citation" id="id3" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Com14<span class="fn-bracket">]</span></span>
+<p>E.D. Commins. <em>Quantum Mechanics</em>. Cambridge University Press, 2014. ISBN 9781107063990.</p>
+</div>
+<div class="citation" id="id2" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>GPS02<span class="fn-bracket">]</span></span>
+<p>H. Goldstein, C.P. Poole, and J.L. Safko. <em>Classical Mechanics</em>. Addison Wesley, 2002. ISBN 9780201657029.</p>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -448,22 +379,13 @@ E. There are similar identities in higher dimensions, which we will leave aside 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="chapter1/Constraints.html"
+       href="appendix.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Constrained Lagrangian Systems</p>
+        <p class="prev-next-title">Appendix</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="bibliography.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bibliography</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -471,27 +393,6 @@ E. There are similar identities in higher dimensions, which we will leave aside 
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">Notation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-and-partial-derivatives">Derivatives and partial derivatives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-useful-tensors">Some useful tensors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einstein-summation-convention">Einstein summation convention</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-the-totally-antisymmetric-tensor">More on the totally antisymmetric tensor</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

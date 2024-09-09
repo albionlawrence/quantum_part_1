@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter1/Lagrange';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="next" title="Constrained Lagrangian Systems" href="Constraints.html" />
     <link rel="prev" title="Newtonian mechanics." href="Newton.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -180,9 +180,11 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Intro_Classical.html">Classical Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Newton.html">Newtonian mechanics.</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Lagrangian Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Constraints.html">Constrained Lagrangian Systems</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
 
     </div>
@@ -334,8 +336,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-of-stationary-action">Principle of Stationary Action</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-euler-lagrange-equations">The Euler-Lagrange equations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-lagrange-equation-and-generalized-coordinates">Euler-Lagrange equation and generalized coordinates</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-of-coordinates">Change of coordinates</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-magnetic-field">Particle in a magnetic field</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-of-coordinates">Change of coordinates</a></li>
 </ul>
 </li>
 </ul>
@@ -430,43 +432,78 @@ _{k,c}, \dot{x}^a_{k,c}(t)) = 0\]</div>
 <span class="eqno">(21)<a class="headerlink" href="#equation-gen-second" title="Link to this equation">#</a></span>\[\frac{d}{dt} p_I = {\cal F}_I\]</div>
 <p>which clearly takes the form of Newton’s second law.</p>
 <p>All of this discussion has been fairly abstract, so let us study a few examples.</p>
+<section id="particle-in-a-magnetic-field">
+<h3>Particle in a magnetic field<a class="headerlink" href="#particle-in-a-magnetic-field" title="Link to this heading">#</a></h3>
+<p>Alternatively we consider the case where we have standard coordinates but a nontrivial generalized momentum. That is, consider a particle with mass <span class="math notranslate nohighlight">\(m\)</span> and charge <span class="math notranslate nohighlight">\(e\)</span> in a static magnetic field <span class="math notranslate nohighlight">\(\vec{B}\)</span>. Maxwell’s equations (assuming no magnetic monoploes; we haven’t observed them at any rate) imply that <span class="math notranslate nohighlight">\(\vec{\nabla} \cdot \vec{B} = \)</span>, which means that in Euclidean space without any holes we can use the Poincar’e theorem to write</p>
+<div class="math notranslate nohighlight" id="equation-vector-potential">
+<span class="eqno">(22)<a class="headerlink" href="#equation-vector-potential" title="Link to this equation">#</a></span>\[\vec{B} = \vec{\nabla} \times \vec {A}\]</div>
+<p>for some <span class="math notranslate nohighlight">\(\vec{A}\)</span>. I claim the correct Lagrangian for a particle in this field is:</p>
+<div class="math notranslate nohighlight" id="equation-charged-particle-b">
+<span class="eqno">(23)<a class="headerlink" href="#equation-charged-particle-b" title="Link to this equation">#</a></span>\[L = \half m \dot{\vec{x}}^2 + \frac{e}{c} \dot{\vec{x}} \cdot \vec{A}(x)\]</div>
+<p>The generalized momentum is</p>
+<div class="math notranslate nohighlight" id="equation-b-gen-mom">
+<span class="eqno">(24)<a class="headerlink" href="#equation-b-gen-mom" title="Link to this equation">#</a></span>\[p_i = \frac{\del L}{\del \dot{x}^i} = m \dot{x}^i + \frac{e}{c} A^i\]</div>
+<p>and the generalized force is</p>
+<div class="math notranslate nohighlight" id="equation-b-gen-force">
+<span class="eqno">(25)<a class="headerlink" href="#equation-b-gen-force" title="Link to this equation">#</a></span>\[{\cal F}^i = \frac{\del L}{\del x^i} = \frac{e}{c} \dot{x}^j \del_i A^j\]</div>
+<p>The Euler-Lagrange equations become</p>
+<div class="math notranslate nohighlight" id="equation-b-el">
+<span class="eqno">(26)<a class="headerlink" href="#equation-b-el" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+	\frac{d p^i}{dt} &amp; = m \ddot{x}^i + \frac{e}{c} \dot{x}^j \del_j A^i\\
+	&amp; = {\cal F} \\
+	&amp; = \frac{e}{c} \dot{x}^j \del_i A^j
+\end{align}\end{split}\]</div>
+<p>so that</p>
+<div class="math notranslate nohighlight" id="equation-b-eom">
+<span class="eqno">(27)<a class="headerlink" href="#equation-b-eom" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+m \ddot x^i &amp; = \frac{e}{c} {\dot x}^j (\del_i A^j - \del_j A^i)\\
+&amp; = \frac{e}{c} {\dot x}^j \epsilon_{ijk} (\vec{\nabla}\times {\vec A})^k\\
+&amp; = \frac{e}{c} {\dot x}^j \epsilon_{ijk} B^k \\
+&amp; = \frac{e}{c} (\dot{\vec{x}}\times\vec{B})^i
+\end{align}\end{split}\]</div>
+<p>which is the Lorentz force law.</p>
+<p>Note that the final equations of motion depend on the magnetic field <span class="math notranslate nohighlight">\(B\)</span> and not on the vector potential <span class="math notranslate nohighlight">\(A\)</span>. People often assume that the physical fields are the electromagnetic fields, and <span class="math notranslate nohighlight">\(A\)</span> is not unquely determined since the “gauge transformation”</p>
+<div class="math notranslate nohighlight" id="equation-gauge-trans">
+<span class="eqno">(28)<a class="headerlink" href="#equation-gauge-trans" title="Link to this equation">#</a></span>\[\vec{A} \to \vec{A} + \vec{\nabla} \Lambda\]</div>
+<p>does not change <span class="math notranslate nohighlight">\(E\)</span> or <span class="math notranslate nohighlight">\(B\)</span>. The generalized momentum <em>does</em> depend explicitly on <span class="math notranslate nohighlight">\({\cal A}\)</span>, and so in this case is not invariant under gauge transformations.</p>
+</section>
 <section id="change-of-coordinates">
 <h3>Change of coordinates<a class="headerlink" href="#change-of-coordinates" title="Link to this heading">#</a></h3>
 <p>One route is to change coordinates from <span class="math notranslate nohighlight">\(x^a_k\)</span> to <span class="math notranslate nohighlight">\(q^{I = 1,\ldots Md}\)</span>.
 In this case we can write</p>
 <div class="math notranslate nohighlight" id="equation-change-coords-lag">
-<span class="eqno">(22)<a class="headerlink" href="#equation-change-coords-lag" title="Link to this equation">#</a></span>\[ L(x, \dot{x}) = L(x(q), \dot{x}(q,\dot q) = \tilde{L}(q, \dot{q})\]</div>
+<span class="eqno">(29)<a class="headerlink" href="#equation-change-coords-lag" title="Link to this equation">#</a></span>\[ L(x, \dot{x}) = L(x(q), \dot{x}(q,\dot q) = \tilde{L}(q, \dot{q})\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight" id="equation-gc-chain">
-<span class="eqno">(23)<a class="headerlink" href="#equation-gc-chain" title="Link to this equation">#</a></span>\[\dot{x}^a_k = \dot{q}^I \frac{\del x^a_k}{\del q^I}\]</div>
+<span class="eqno">(30)<a class="headerlink" href="#equation-gc-chain" title="Link to this equation">#</a></span>\[\dot{x}^a_k = \dot{q}^I \frac{\del x^a_k}{\del q^I}\]</div>
 <p>We can think of</p>
 <div class="math notranslate nohighlight" id="equation-jacobian-mat">
-<span class="eqno">(24)<a class="headerlink" href="#equation-jacobian-mat" title="Link to this equation">#</a></span>\[{\cal M}(ak\; I) = \frac{\del x^a_k}{\del q^I}\]</div>
+<span class="eqno">(31)<a class="headerlink" href="#equation-jacobian-mat" title="Link to this equation">#</a></span>\[{\cal M}(ak\; I) = \frac{\del x^a_k}{\del q^I}\]</div>
 <p>as an <span class="math notranslate nohighlight">\(dM \times dM\)</span> matrix at a given value of <span class="math notranslate nohighlight">\(q^I\)</span>; this is the “Jacobian” of the coordinate transformation between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(q\)</span>, and it is an invertible matrix if the coordinate transformation is itself non-singular (is a good coordinate transformation). In particular, we can define the inverse Jacobian as</p>
 <div class="math notranslate nohighlight" id="equation-inverse-jacobian">
-<span class="eqno">(25)<a class="headerlink" href="#equation-inverse-jacobian" title="Link to this equation">#</a></span>\[{\cal M}^{-1}(I\; ak)\]</div>
+<span class="eqno">(32)<a class="headerlink" href="#equation-inverse-jacobian" title="Link to this equation">#</a></span>\[{\cal M}^{-1}(I\; ak)\]</div>
 <p>By the chain rule,</p>
 <div class="math notranslate nohighlight" id="equation-jac-inv-jac">
-<span class="eqno">(26)<a class="headerlink" href="#equation-jac-inv-jac" title="Link to this equation">#</a></span>\[{\cal M}(I'\; ak) {\cal M}(ak, I) = \frac{\del q^{I'}}{\del x^a_k} \frac{\del x^a_k}{q^I} = \frac{\del q^{I'}}{\del q^I} = \delta^I_{I'}\]</div>
+<span class="eqno">(33)<a class="headerlink" href="#equation-jac-inv-jac" title="Link to this equation">#</a></span>\[{\cal M}(I'\; ak) {\cal M}(ak, I) = \frac{\del q^{I'}}{\del x^a_k} \frac{\del x^a_k}{q^I} = \frac{\del q^{I'}}{\del q^I} = \delta^I_{I'}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\delta^I_{I'}\)</span> is the Kronecker delta symbol (see the Appendix for a definition). We can similarly show that</p>
 <div class="math notranslate nohighlight" id="equation-jac-jac-inv">
-<span class="eqno">(27)<a class="headerlink" href="#equation-jac-jac-inv" title="Link to this equation">#</a></span>\[{\cal M}(ak\; I) {\cal M}^{-1}(I\; a'k') = \delta^a_{a'} \delta^k_{k'}\]</div>
+<span class="eqno">(34)<a class="headerlink" href="#equation-jac-jac-inv" title="Link to this equation">#</a></span>\[{\cal M}(ak\; I) {\cal M}^{-1}(I\; a'k') = \delta^a_{a'} \delta^k_{k'}\]</div>
 <p>It is straightforward to show that the Euler-Lagrange equations for <span class="math notranslate nohighlight">\(x\)</span> derived from <span class="math notranslate nohighlight">\(L\)</span>, and the equations for <span class="math notranslate nohighlight">\(q(t)\)</span> derived from <span class="math notranslate nohighlight">\({\tilde L}\)</span>, are equivalent. That is,</p>
 <div class="math notranslate nohighlight">
 \[\frac{\del L}{\del x^a_k} - \frac{d}{dt} \frac{\del L}{\del\dot{x}^a_k} = 0 \Leftrightarrow \frac{\del {\tilde L}}{\del q^I} - \frac{d}{dt} \frac{\del {\tilde L}}{\del \dot{q}^I} = 0\]</div>
 <p>The point is that you can perform your coordinate transformations at the level of the Lagrangian, and <em>then</em> compute the Euler-Lagrange equations in the new coordinates, which is often easier than computing the change of variables at the level of the equations of motion.</p>
 <p>As an example, consider a single particle in two dimensions with the Lagrangian</p>
 <div class="math notranslate nohighlight" id="equation-twod-lagr">
-<span class="eqno">(28)<a class="headerlink" href="#equation-twod-lagr" title="Link to this equation">#</a></span>\[L = \half m (\dot{x}^2 + \dot{y}^2) - V(r = \sqrt{x^2 + y^2})\]</div>
+<span class="eqno">(35)<a class="headerlink" href="#equation-twod-lagr" title="Link to this equation">#</a></span>\[L = \half m (\dot{x}^2 + \dot{y}^2) - V(r = \sqrt{x^2 + y^2})\]</div>
 <p>The Euler-Lagrange equations are:</p>
 <div class="math notranslate nohighlight" id="equation-twod-el">
-<span class="eqno">(29)<a class="headerlink" href="#equation-twod-el" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(36)<a class="headerlink" href="#equation-twod-el" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 m \ddot{x} &amp; = - \del_x V = - \frac{x}{r} V'(r)\\
 m \ddot{y} &amp; = = \del_y V = - \frac{y}{r} V'(r)\\
 \end{align}\end{split}\]</div>
 <p>We can consider instead polar coordinates <span class="math notranslate nohighlight">\((r,\phi)\)</span>, defined by:</p>
 <div class="math notranslate nohighlight" id="equation-polar-coords">
-<span class="eqno">(30)<a class="headerlink" href="#equation-polar-coords" title="Link to this equation">#</a></span>\[x = r \cos\phi\ , \ \ y = r \sin \phi\]</div>
+<span class="eqno">(37)<a class="headerlink" href="#equation-polar-coords" title="Link to this equation">#</a></span>\[x = r \cos\phi\ , \ \ y = r \sin \phi\]</div>
 <p>To change to equations in polar coordinates, we find:</p>
 <div class="math notranslate nohighlight">
 \[\ddot{x} = \ddot{r}\cos\phi - 2 \dot{r} \dot{\phi} \sin\phi - r \ddot\phi\cos\phi\]</div>
@@ -486,42 +523,7 @@ p_{\phi} &amp; = \frac{\del L}{\del\dot{\phi}} = m r^2 \dot \phi = m r v^{\phi} 
 m \ddot{r} &amp; = - \del_r V\\
 \frac{d}{dt} m r^2 \phi &amp; = \frac{d}{dt} \ell = 0
 \end{align}\end{split}\]</div>
-<p>which you can also show are the equations of motion by applying the transformation from Euclidean to polar coordinates to the Euler-Lagrange equations for <span class="math notranslate nohighlight">\(x,y\)</span>. Note that <span class="math notranslate nohighlight">\(V = V(r)\)</span> inplies that there is no generalized force associated to the generalized momentum or angular momentum <span class="math notranslate nohighlight">\(\ell\)</span>; in other words, there is no torque. There would be torque (aga a generalixed force in teh angular direction) if <span class="math notranslate nohighlight">\(V\)</span> had any <span class="math notranslate nohighlight">\(\phi\)</span>-dependence in it. The relationship between the independence of <span class="math notranslate nohighlight">\(L\)</span> of certain coordinates, and a conservation law such as the conservation of angular momentum, is a general story we will return to below.</p>
-</section>
-<section id="particle-in-a-magnetic-field">
-<h3>Particle in a magnetic field<a class="headerlink" href="#particle-in-a-magnetic-field" title="Link to this heading">#</a></h3>
-<p>Alternatively we consider the case where we have standard coordinates but a nontrivial generalized momentum. That is, consider a particle with mass <span class="math notranslate nohighlight">\(m\)</span> and charge <span class="math notranslate nohighlight">\(e\)</span> in a static magnetic field <span class="math notranslate nohighlight">\(\vec{B}\)</span>. Maxwell’s equations (assuming no magnetic monoploes; we haven’t observed them at any rate) imply that <span class="math notranslate nohighlight">\(\vec{\nabla} \cdot \vec{B} = \)</span>, which means that in Euclidean space without any holes we can use the Poincar’e theorem to write</p>
-<div class="math notranslate nohighlight" id="equation-vector-potential">
-<span class="eqno">(31)<a class="headerlink" href="#equation-vector-potential" title="Link to this equation">#</a></span>\[\vec{B} = \vec{\nabla} \times \vec {A}\]</div>
-<p>for some <span class="math notranslate nohighlight">\(\vec{A}\)</span>. I claim the correct Lagrangian for a particle in this field is:</p>
-<div class="math notranslate nohighlight" id="equation-charged-particle-b">
-<span class="eqno">(32)<a class="headerlink" href="#equation-charged-particle-b" title="Link to this equation">#</a></span>\[L = \half m \dot{\vec{x}}^2 + \frac{e}{c} \dot{\vec{x}} \cdot \vec{A}(x)\]</div>
-<p>The generalized momentum is</p>
-<div class="math notranslate nohighlight" id="equation-b-gen-mom">
-<span class="eqno">(33)<a class="headerlink" href="#equation-b-gen-mom" title="Link to this equation">#</a></span>\[p_i = \frac{\del L}{\del \dot{x}^i} = m \dot{x}^i + \frac{e}{c} A^i\]</div>
-<p>and the generalized force is</p>
-<div class="math notranslate nohighlight" id="equation-b-gen-force">
-<span class="eqno">(34)<a class="headerlink" href="#equation-b-gen-force" title="Link to this equation">#</a></span>\[{\cal F}^i = \frac{\del L}{\del x^i} = \frac{e}{c} \dot{x}^j \del_i A^j\]</div>
-<p>The Euler-Lagrange equations become</p>
-<div class="math notranslate nohighlight" id="equation-b-el">
-<span class="eqno">(35)<a class="headerlink" href="#equation-b-el" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-	\frac{d p^i}{dt} &amp; = m \ddot{x}^i + \frac{e}{c} \dot{x}^j \del_j A^i\\
-	&amp; = {\cal F} \\
-	&amp; = \frac{e}{c} \dot{x}^j \del_i A^j
-\end{align}\end{split}\]</div>
-<p>so that</p>
-<div class="math notranslate nohighlight" id="equation-b-eom">
-<span class="eqno">(36)<a class="headerlink" href="#equation-b-eom" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-m \ddot x^i &amp; = \frac{e}{c} {\dot x}^j (\del_i A^j - \del_j A^i)\\
-&amp; = \frac{e}{c} {\dot x}^j \epsilon_{ijk} (\vec{\nabla}\times {\vec A})^k\\
-&amp; = \frac{e}{c} {\dot x}^j \epsilon_{ijk} B^k \\
-&amp; = \frac{e}{c} (\dot{\vec{x}}\times\vec{B})^i
-\end{align}\end{split}\]</div>
-<p>which is the Lorentz force law.</p>
-<p>Note that the final equations of motion depend on the magnetic field <span class="math notranslate nohighlight">\(B\)</span> and not on the vector potential <span class="math notranslate nohighlight">\(A\)</span>. People often assume that the physical fields are the electromagnetic fields, and <span class="math notranslate nohighlight">\(A\)</span> is not unquely determined since the “gauge transformation”</p>
-<div class="math notranslate nohighlight" id="equation-gauge-trans">
-<span class="eqno">(37)<a class="headerlink" href="#equation-gauge-trans" title="Link to this equation">#</a></span>\[\vec{A} \to \vec{A} + \vec{\nabla} \Lambda\]</div>
-<p>does not change <span class="math notranslate nohighlight">\(E\)</span> or <span class="math notranslate nohighlight">\(B\)</span>. The generalized momentum <em>does</em> depend explicitly on <span class="math notranslate nohighlight">\({\cal A}\)</span>, and so in this case is not invariant under gauge transformation.</p>
+<p>which you can also show are the equations of motion by applying the transformation from Euclidean to polar coordinates to the Euler-Lagrange equations for <span class="math notranslate nohighlight">\(x,y\)</span>. Note that <span class="math notranslate nohighlight">\(V = V(r)\)</span> inplies that there is no generalized force associated to the generalized momentum or angular momentum <span class="math notranslate nohighlight">\(\ell\)</span>; in other words, there is no torque. There would be torque (aka a generalized force in the angular direction) if <span class="math notranslate nohighlight">\(V\)</span> had any <span class="math notranslate nohighlight">\(\phi\)</span>-dependence in it. The relationship between the independence of <span class="math notranslate nohighlight">\(L\)</span> of certain coordinates, and a conservation law such as the conservation of angular momentum, is a general story we will return to below.</p>
 </section>
 </section>
 </section>
@@ -566,11 +568,11 @@ m \ddot x^i &amp; = \frac{e}{c} {\dot x}^j (\del_i A^j - \del_j A^i)\\
       </div>
     </a>
     <a class="right-next"
-       href="../appendix.html"
+       href="Constraints.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix</p>
+        <p class="prev-next-title">Constrained Lagrangian Systems</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -593,8 +595,8 @@ m \ddot x^i &amp; = \frac{e}{c} {\dot x}^j (\del_i A^j - \del_j A^i)\\
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-of-stationary-action">Principle of Stationary Action</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-euler-lagrange-equations">The Euler-Lagrange equations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-lagrange-equation-and-generalized-coordinates">Euler-Lagrange equation and generalized coordinates</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-of-coordinates">Change of coordinates</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-magnetic-field">Particle in a magnetic field</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-of-coordinates">Change of coordinates</a></li>
 </ul>
 </li>
 </ul>
