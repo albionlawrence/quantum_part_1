@@ -180,8 +180,11 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Intro_Classical.html">Classical Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Newtonian mechanics.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Lagrange.html">Lagrangian Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Constraints.html">Constrained Lagrangian Systems</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
 
     </div>
@@ -392,7 +395,7 @@ z(x) &amp; = z(x(t)) + (x - x(t)) z'(x(t)) + \half (x - x(t))^2 z''(x(t)) \\
 z_R(x) &amp; = z_R(x(t)) + (x - x(t)) z'_R(x(t)) + \half (x - x(t))^2 z''_R(x(t)) \\
 &amp; \qquad \qquad + \frac{1}{6} (x - x(t))^3 z'''_R(x(t)) + \ldots
 \end{align}\end{split}\]</div>
-<p>![Osculating circle][Osculating.png)</p>
+<p><img alt="Osculating circle" src="../_images/Osculating.png" /></p>
 <p>To solve this we demand that</p>
 <ol class="arabic simple">
 <li><p>The direction <span class="math notranslate nohighlight">\({\hat n}\)</span> from <span class="math notranslate nohighlight">\((x(t), z(x(t))\)</span> along the diameter of the circle is identical to the direction normal to the curve, and</p></li>
@@ -428,12 +431,12 @@ N &amp; = mg \cos\theta + \frac{m \dot{x}^2 z''}{\left(1 + (z')^2\right)^{3/2}\c
 \end{align}\end{split}\]</div>
 <p>In the end, the only force in the <span class="math notranslate nohighlight">\(x\)</span> direction is the horizontal component of the normal force,</p>
 <div class="math notranslate nohighlight">
-\[N_x = |N| \sin\theta = |N|\frac{z'}{\sqrt{1 + (z')^2}}\]</div>
-<p>So that</p>
+\[N_x = |N| \sin\theta = - |N|\frac{z'}{\sqrt{1 + (z')^2}}\]</div>
+<p>Note the minus sign; you can see from the pifcture that the force in the x direction is positive if the slope of teh bead is negative. We end up with:</p>
 <div class="math notranslate nohighlight">
-\[m \ddot{x} = N_x = \frac{m g z' + m \dot{x}^2 z' z''}{1 + (z')^2}\]</div>
+\[m \ddot{x} = N_x = \frac{m g z' - m \dot{x}^2 z' z''}{1 + (z')^2}\]</div>
 <p>Note that the total force depends on the velocity <span class="math notranslate nohighlight">\(\dot{x}\)</span> as well as the position.</p>
-<p>This is quite complicated! It turns out there is a much easier way to impose constraints, which will become apparent once we introduce teh Lagrangian formulation of classical mechanics.</p>
+<p>This is quite complicated! It turns out there is a much easier way to impose constraints, which will become apparent once we introduce the Lagrangian formulation of classical mechanics.</p>
 </section>
 </section>
 

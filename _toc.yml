@@ -4,11 +4,13 @@
 format: jb-book
 root: intro
 chapters:
-  - file: chapter0/Overview.md
-  - file: chapter1/Intro_Classical.md
+  - file: chapter0/Overview
+  - file: chapter1/Intro_Classical
     sections:
-    - file: chapter1/Newton.md
-    - file: chapter1/Lagrange.md
-  - file: appendix.md
+    - file: chapter1/Newton
+    - file: chapter1/Lagrange
+    - file: chapter1/Constraints
+  - file: appendix
+  - file: bibliography
 # - file: notebooks
 # - file: markdown-notebooks

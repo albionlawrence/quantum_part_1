@@ -1,0 +1,63 @@
+# Constrained Lagrangian Systems
+
+I advertised that one advantage of Lagrangian dynamics is the ability to easily incorporate constraints. I should have said, *some* constraints; there are some that Lagrangian mechanics cannot handle (just as the framework does poorly with friction). Still when it works, it is very powerful.
+
+So we will open by describing different types of constraints, and then move to redoing the mead-on-a-wire example we covered in the first week of the course.
+
+## Holonomic and non-holonomic constraints
+
+### Holonomic constraints
+
+These are constraints that can be simply written as a set of algebraic equations on the space of coordinates, that us, 
+
+```{math}
+:label: constraint_equations
+f_{\alpha}(q^I) = 0
+```
+
+where $I = 1, \ldots D$ and $\alpha = 1,\ldots, m < D$. This is $m$ equations in $D$ unknowns. The solutions form an $n = D - m$-dimensional space of solutions (under the right conditions, called a *submanifold*); while $m$ is called the *codimension* of this space. Roughly the codimension is the number of directions that is in some sense perpendicular to this space.
+
+![single constraint](Constraint-1.png)
+
+1. As a simple example, for a single particle in $d = 3$, $f_1 = z = 0$ defines the $x-y$ plane. Similarly, $y = 0$ defines the $x-z$ plane. In each case the dimension of the space of solutions is $2$ and the codimension $1$.
+
+2. In this language the $x$ axis satisfies $f_1 = z = 0$, $f_2 = y = 0$. The $x$ axis is the intersection of the $xy$ and $xz$ planes. The dimension of the space of solutions is $1$ and the codimension $2$.
+
+3. A more complicated example is $x^2 + y^2 - R^2 = 0$ in $D = 2$, which describes a circle with radius $R$.
+
+4. The constraint equation $f_1 = x^2 + y^2 + z^2 - R^2 = 0$ defines a sphere of radius $R$ in $3$ dimensions. If we also include $f_2 = z- \ell$ with $\ell < < R$, then we have a circle parallel to the $x-y$ plane, with  radius $\sqrt{R^2 - \ell^2}$
+
+We can parameterize the space of solutions with a set of coordinates $s^i$, so that $q^I(s^i)$ lies on the space of solutions. This paramaterization may have to be *local*; for example, in the case of a sphere, we often use different parameters to describe the northern and southern hemisphere.
+
+These will turn out to be simply dealth with in Lagrangian mechanics via Lagrange multiplier techniques.
+
+### Non-holonomic constraints.
+
+This is basically every other type of constraint and there are several ways a constraint can fail to be holonomic.
+
+1. Non-integrable constraint. Let is impose constraints locally on each point of the ambient space. That is, locally at each point $q^I_0$, we demand that motion away from this point by an infinitestimal $\delta q^I$ must satisfy
+
+```{math}
+:label: local_constraint
+F_{I,\alpha}(q^I_0) \delta q^I = 0
+```
+
+Locally, in some infinitesimal neighborhood, this will look like a holonomic constraint. But there is no guarantee that this will hold globally. This failure will hold if $F_I$ is not integrable, that is if we cannot write it as
+
+```{math}
+:label: integrability
+F_{I,\alpha}(q^I_0) = \frac{\del f_{\alpha}}{\del q^I} \Big|_{q^I = q^I_0}
+```
+
+wuth $f_{\alpha}(q^I_0) = 0$ (which we can achieve by a constant shift of $f$). If we *can* satisfy {eq}`integrability`, then {eq}`local_constraint` becomes 
+
+```{math}
+:label: infinitesimal_holonomic
+\begin{align}
+f_{\alpha}(q^I_0) + \delta q^I) & = f_{\alpha}(q^I_0) + \frac{\del f_{\alpha}}{\del q^I}(q^I_0) \delta q^I + {\cal O}(\delta q^2) \\
+& \equiv f_{\alpha}(q^I_0) F_{I,\alpha} \delta q^I + {\cal O}(\delta q^2)
+\end{align}
+```
+
+Otherwise 
+

@@ -70,6 +70,9 @@ latex:
   latex_engine              : pdflatex  # one of 'pdflatex', 'xelatex' (recommended for unicode), 'luatex', 'platex', 'uplatex'
   use_jupyterbook_latex     : true # use sphinx-jupyterbook-latex for pdf builds as default
 
+bibtex_bibfiles:
+  - quantum.bib
+
 #######################################################################################
 # Launch button settings
 launch_buttons:
@@ -94,6 +97,7 @@ sphinx:
         html_theme_options:
          logo:
           text: "Physics 162a <br /> Prof. Albion Lawrence <br />  Brandeis University"
+        bibtex_reference_style: author_year
         mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
         mathjax3_config:
           tex:
