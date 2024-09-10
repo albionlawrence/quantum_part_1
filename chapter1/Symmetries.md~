@@ -1,0 +1,46 @@
+# Symmetries and conservation laws
+
+Consider a Lagrangian $L(q^I, \dot{q}^I)$. A *symmetry* is a transformation
+
+```{math}
+:label: gen_transf
+q^I \to (q^I)'(q^I)
+```
+
+such that
+
+```{math}
+:label: symmetry_condition
+L(q^I, \dot{q}^I) = L((q^I)', (\dot{q}^I)') + \frac{d\Lambda(q,\dot q)}{dt}
+```
+
+where $(\dot{q}^I)' = \frac{d}{dt} (q^I)'$. The last term in {eq}`gen_trans` is a total derivative; thus (as one can see by studying the resulting action) it does not contribute to the equations of motion. 
+
+In other words, the action is invariant up to a boundary term.
+
+## Example: cyclic coordinates
+
+The simplest example is a Lagrangian which does not even depend on soem subset of the coordinates, only their velocities. Consider $L(q^I, \dot{q}^I)$ to be independent of $q^k$ for some $k$ (but *still depend on* $\dot{q}^k$). Then the transformation $q^k \to (q^k)' = q^k + \alpha$ for $\alpha$ a constant real number. Clearly $\dot{q}^k$ is invariant, so the entire Lagrangian is. We call $q^k$ a *cyclic coordinate*.
+
+What does this mean for the equations of motion? Well, we know that 
+
+```{math}
+:label: cyclic_force
+{\cal F}_k = \frac{\del L}{\del q^k} = 0
+```
+
+The Euler-Lagrange equations for $q^k$ become:
+
+```
+:label: cyclic_el
+\dot{p}^k = \frac{\del L}{\del \dot{q}^k} = 0
+```
+
+In other words, the generalized momentum $p^k$ is *conserved*.
+
+Some examples:
+
+1. Consider $L = \half m(\dot{x}^2 + \dot{y}^2 + \dot{z}^2) - V(x,y)$. Then $z$ is a cyclic coordinate, and the momentum $p_z = m \dot{z}$ is conserved, as a result of invariance of the action under translations in teh $z$ direction.
+
+2. A particle in polar coordinates in a central force, $L = \half m (\dot{r}^2 + r^2 \dot{\phi}^2) - V(r)$. We studied this last time; the cyclic coordinate is $\phi$ and the conserved conjugate momentum os $p_{\phi} = m r^2 \dot{\phi}$ which is the angular momentum. Thus, invariance under rotations implies the conservation of angular momentum.
+

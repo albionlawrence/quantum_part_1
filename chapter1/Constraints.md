@@ -198,7 +198,8 @@ m \ddot{x} = \frac{m g z' - m z'z''\dot{x}^2}{1 + (z'(x))^2}
 
 This is exactly what we got in our treatment via Newton's laws where we computed the explicit normal force, only it was much easier! NB -- an earlier draft of that section had the wrong sign in front of the second term on the RHS of {eq}`bead_lag_eom_2`. I found that sign mistake by doing the correct calculation above.
 
-### Consistency of ${\tilde L}(s,\dot s}$ (introductory part)
+### Consistency of our solution for the constraints
+
 
 The full equations of motion for a system constrained to a subspace of the configuration space by a normal force is:
 

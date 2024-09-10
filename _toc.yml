@@ -10,6 +10,7 @@ chapters:
     - file: chapter1/Newton
     - file: chapter1/Lagrange
     - file: chapter1/Constraints
+    - file: chapter1/Symmetries
   - file: appendix
   - file: bibliography
 # - file: notebooks
