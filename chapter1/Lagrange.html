@@ -337,7 +337,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-euler-lagrange-equations">The Euler-Lagrange equations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-lagrange-equation-and-generalized-coordinates">Euler-Lagrange equation and generalized coordinates</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-magnetic-field">Particle in a magnetic field</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-of-coordinates">Change of coordinates</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangians-and-coordinate-changes">Lagrangians and coordinate changes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-statement">General statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-changing-to-polar-coordinates">Example: changing to polar coordinates</a></li>
 </ul>
 </li>
 </ul>
@@ -467,43 +471,75 @@ m \ddot x^i &amp; = \frac{e}{c} {\dot x}^j (\del_i A^j - \del_j A^i)\\
 <span class="eqno">(28)<a class="headerlink" href="#equation-gauge-trans" title="Link to this equation">#</a></span>\[\vec{A} \to \vec{A} + \vec{\nabla} \Lambda\]</div>
 <p>does not change <span class="math notranslate nohighlight">\(E\)</span> or <span class="math notranslate nohighlight">\(B\)</span>. The generalized momentum <em>does</em> depend explicitly on <span class="math notranslate nohighlight">\({\cal A}\)</span>, and so in this case is not invariant under gauge transformations.</p>
 </section>
-<section id="change-of-coordinates">
-<h3>Change of coordinates<a class="headerlink" href="#change-of-coordinates" title="Link to this heading">#</a></h3>
-<p>One route is to change coordinates from <span class="math notranslate nohighlight">\(x^a_k\)</span> to <span class="math notranslate nohighlight">\(q^{I = 1,\ldots Md}\)</span>.
+</section>
+<section id="lagrangians-and-coordinate-changes">
+<h2>Lagrangians and coordinate changes<a class="headerlink" href="#lagrangians-and-coordinate-changes" title="Link to this heading">#</a></h2>
+<section id="general-statement">
+<h3>General statement<a class="headerlink" href="#general-statement" title="Link to this heading">#</a></h3>
+<p>Consider a change of coordinates from <span class="math notranslate nohighlight">\(x^a_k\)</span> to <span class="math notranslate nohighlight">\(q^{I = 1,\ldots Md}\)</span>.
 In this case we can write</p>
 <div class="math notranslate nohighlight" id="equation-change-coords-lag">
 <span class="eqno">(29)<a class="headerlink" href="#equation-change-coords-lag" title="Link to this equation">#</a></span>\[ L(x, \dot{x}) = L(x(q), \dot{x}(q,\dot q) = \tilde{L}(q, \dot{q})\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight" id="equation-gc-chain">
 <span class="eqno">(30)<a class="headerlink" href="#equation-gc-chain" title="Link to this equation">#</a></span>\[\dot{x}^a_k = \dot{q}^I \frac{\del x^a_k}{\del q^I}\]</div>
-<p>We can think of</p>
+<p>We claim that the Euler-Lagrange equations for <span class="math notranslate nohighlight">\(x^a_k\)</span> derived from <span class="math notranslate nohighlight">\(L\)</span> and the Euler-Lagrange equations for <span class="math notranslate nohighlight">\(q^I\)</span> derived from <span class="math notranslate nohighlight">\({\tilde L}\)</span> are in fact equivalent. That is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\del L}{\del x^a_k} - \frac{d}{dt} \frac{\del L}{\del\dot{x}^a_k} = 0 \Leftrightarrow \frac{\del {\tilde L}}{\del q^I} - \frac{d}{dt} \frac{\del {\tilde L}}{\del \dot{q}^I} = 0\]</div>
+<p>The point is that you can perform your coordinate transformations at the level of the Lagrangian, and <em>then</em> compute the Euler-Lagrange equations in the new coordinates, which is often easier than computing the change of variables at the level of the equations of motion.</p>
+<p>To start with, the partial derivatives in <a class="reference internal" href="#equation-gc-chain">(30)</a></p>
 <div class="math notranslate nohighlight" id="equation-jacobian-mat">
-<span class="eqno">(31)<a class="headerlink" href="#equation-jacobian-mat" title="Link to this equation">#</a></span>\[{\cal M}(ak\; I) = \frac{\del x^a_k}{\del q^I}\]</div>
-<p>as an <span class="math notranslate nohighlight">\(dM \times dM\)</span> matrix at a given value of <span class="math notranslate nohighlight">\(q^I\)</span>; this is the “Jacobian” of the coordinate transformation between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(q\)</span>, and it is an invertible matrix if the coordinate transformation is itself non-singular (is a good coordinate transformation). In particular, we can define the inverse Jacobian as</p>
+<span class="eqno">(31)<a class="headerlink" href="#equation-jacobian-mat" title="Link to this equation">#</a></span>\[{\cal M}(ak\ ; I) = \frac{\del x^a_k}{\del q^I}\]</div>
+<p>can be thought of as an <span class="math notranslate nohighlight">\(dM \times dM\)</span> matrix at a given value of <span class="math notranslate nohighlight">\(q^I\)</span>; this is the “Jacobian” of the coordinate transformation between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(q\)</span>, and it is an invertible matrix if the coordinate transformation is itself non-singular (is a good coordinate transformation). In particular, we can define the inverse Jacobian as</p>
 <div class="math notranslate nohighlight" id="equation-inverse-jacobian">
-<span class="eqno">(32)<a class="headerlink" href="#equation-inverse-jacobian" title="Link to this equation">#</a></span>\[{\cal M}^{-1}(I\; ak)\]</div>
+<span class="eqno">(32)<a class="headerlink" href="#equation-inverse-jacobian" title="Link to this equation">#</a></span>\[{\cal M}^{-1}(I\ ; ak)\]</div>
 <p>By the chain rule,</p>
 <div class="math notranslate nohighlight" id="equation-jac-inv-jac">
 <span class="eqno">(33)<a class="headerlink" href="#equation-jac-inv-jac" title="Link to this equation">#</a></span>\[{\cal M}(I'\; ak) {\cal M}(ak, I) = \frac{\del q^{I'}}{\del x^a_k} \frac{\del x^a_k}{q^I} = \frac{\del q^{I'}}{\del q^I} = \delta^I_{I'}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\delta^I_{I'}\)</span> is the Kronecker delta symbol (see the Appendix for a definition). We can similarly show that</p>
 <div class="math notranslate nohighlight" id="equation-jac-jac-inv">
 <span class="eqno">(34)<a class="headerlink" href="#equation-jac-jac-inv" title="Link to this equation">#</a></span>\[{\cal M}(ak\; I) {\cal M}^{-1}(I\; a'k') = \delta^a_{a'} \delta^k_{k'}\]</div>
-<p>It is straightforward to show that the Euler-Lagrange equations for <span class="math notranslate nohighlight">\(x\)</span> derived from <span class="math notranslate nohighlight">\(L\)</span>, and the equations for <span class="math notranslate nohighlight">\(q(t)\)</span> derived from <span class="math notranslate nohighlight">\({\tilde L}\)</span>, are equivalent. That is,</p>
-<div class="math notranslate nohighlight">
-\[\frac{\del L}{\del x^a_k} - \frac{d}{dt} \frac{\del L}{\del\dot{x}^a_k} = 0 \Leftrightarrow \frac{\del {\tilde L}}{\del q^I} - \frac{d}{dt} \frac{\del {\tilde L}}{\del \dot{q}^I} = 0\]</div>
-<p>The point is that you can perform your coordinate transformations at the level of the Lagrangian, and <em>then</em> compute the Euler-Lagrange equations in the new coordinates, which is often easier than computing the change of variables at the level of the equations of motion.</p>
-<p>As an example, consider a single particle in two dimensions with the Lagrangian</p>
+<p>To see why invertability is important let us think of the canse of <span class="math notranslate nohighlight">\(dM = 1\)</span>. Then the matrix is just <span class="math notranslate nohighlight">\({\cal M} = \frac{\del x}{\del q}\)</span>. Consider a particular point <span class="math notranslate nohighlight">\(q_0\)</span> about which we wish to study the coordinate transformation. the value of <span class="math notranslate nohighlight">\(x\)</span> is <span class="math notranslate nohighlight">\(x_0 = x(q_0)\)</span>. At an infinitesimal distance <span class="math notranslate nohighlight">\(\delta q\)</span> away from <span class="math notranslate nohighlight">\(q_0\)</span>, we have</p>
+<div class="math notranslate nohighlight" id="equation-oned-transf">
+<span class="eqno">(35)<a class="headerlink" href="#equation-oned-transf" title="Link to this equation">#</a></span>\[x(q_0 + \delta q) = x_0 + \frac{\del x}{\del q} \delta q + {\cal O}(\delta q^2)\]</div>
+<p>Now the inverse of <span class="math notranslate nohighlight">\(\frac{\del x}{\del q}\)</span> is just <span class="math notranslate nohighlight">\(\left(\frac{\del x}{\del q}\right)^{-1}\)</span>, so <span class="math notranslate nohighlight">\({\cal M}\)</span> fails to be invertible if it is zero. If it is zero at <span class="math notranslate nohighlight">\(q_0\)</span> the <span class="math notranslate nohighlight">\(x = x_0 + {\cal O}(\delta q^2)\)</span>. In ither words, at leading order in <span class="math notranslate nohighlight">\(\delta q\)</span>,<span class="math notranslate nohighlight">\(x\)</span> does not change and at this order the coordinate change from <span class="math notranslate nohighlight">\(q \to x\)</span> is a many-to-one map. For the rest of this section we will assume the coordinate transformation is invertible but there are many cases where it fails to be at least at a point: a good example is the transformation from Catrtesian to polar coordinates in <span class="math notranslate nohighlight">\(d = 2\)</span>, for which the origin is a singular point.</p>
+<p>Now,</p>
+<div class="math notranslate nohighlight" id="equation-gen-mom-transf">
+<span class="eqno">(36)<a class="headerlink" href="#equation-gen-mom-transf" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+p_I &amp; = \frac{\partial {\tilde L}}{\partial \dot{q}^I}\\
+&amp; = \frac{\del}{\del \dot{q}^I} L(x(q), {\cal M}(ak; I) \dot{q}^I)\\
+&amp; = {\cal M}(ak\ ; I) p^a_k
+\end{align}\end{split}\]</div>
+<p>while</p>
+<div class="math notranslate nohighlight" id="equation-gen-force-transf">
+<span class="eqno">(37)<a class="headerlink" href="#equation-gen-force-transf" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+{\cal F}_I &amp; = \frac{\del}{\del q^I} L(x(q), {\cal M}(ak\ ; I) \dot{q}^I) \\
+&amp; = {\cal M}(ak\ ; I) {\cal F}^a_k + \frac{\del {\cal M}(ak\ ; J)}{\del q^I} \dot{q}^J p^a_k 
+\end{align}\end{split}\]</div>
+<p>The Euler-Lagrange equations we derive from <span class="math notranslate nohighlight">\({\tilde L}\)</span> for <span class="math notranslate nohighlight">\(q^I\)</span> are:</p>
+<div class="math notranslate nohighlight" id="equation-transf-el">
+<span class="eqno">(38)<a class="headerlink" href="#equation-transf-el" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\frac{d}{dt} p_I - {\cal F}_I &amp; = \frac{d}{dt} \left(\frac{\del x^a_k}{\del q^I} p_a^k\right) - \frac{\del x^a_k}{\del q^I} {\cal F}^a_k - \frac{\del^2 x^a_k}{\del q^I \del q^J} \dot{q}^J p^a_k \\
+&amp; = \frac{\del x^a_k}{\del q^I}\left({\dot p}^a_k - {\cal F}^a_k\right)
++ \frac{\del^2 x^a_k}{\del q^J \del q^I} \dot{q}^J p_a^k -  \frac{\del^2 x^a_k}{\del q^I \del q^J} \dot{q}^J p^a_k \\
+&amp; = {\cal M}(ak\ ; I) \left(\dot{p}^a_k - {\cal F}^a_k\right)
+\end{align}\end{split}\]</div>
+<p>The second line follows from applying Leibniz’s rule to the time derivative of <span class="math notranslate nohighlight">\({\cal M} p\)</span>. The last line is an invertible matrix times the Euler-Lagrange equations for <span class="math notranslate nohighlight">\(x^a_k\)</span> derived from <span class="math notranslate nohighlight">\(L\)</span>. Thus the two forms of the Euler-Lagrange equations are equivalent; one vanishes if and only if the other does (assuming the coordinate transformation is invertible).</p>
+</section>
+<section id="example-changing-to-polar-coordinates">
+<h3>Example: changing to polar coordinates<a class="headerlink" href="#example-changing-to-polar-coordinates" title="Link to this heading">#</a></h3>
+<p>Consider a single particle in two dimensions with the Lagrangian</p>
 <div class="math notranslate nohighlight" id="equation-twod-lagr">
-<span class="eqno">(35)<a class="headerlink" href="#equation-twod-lagr" title="Link to this equation">#</a></span>\[L = \half m (\dot{x}^2 + \dot{y}^2) - V(r = \sqrt{x^2 + y^2})\]</div>
+<span class="eqno">(39)<a class="headerlink" href="#equation-twod-lagr" title="Link to this equation">#</a></span>\[L = \half m (\dot{x}^2 + \dot{y}^2) - V(r = \sqrt{x^2 + y^2})\]</div>
 <p>The Euler-Lagrange equations are:</p>
 <div class="math notranslate nohighlight" id="equation-twod-el">
-<span class="eqno">(36)<a class="headerlink" href="#equation-twod-el" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(40)<a class="headerlink" href="#equation-twod-el" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 m \ddot{x} &amp; = - \del_x V = - \frac{x}{r} V'(r)\\
 m \ddot{y} &amp; = = \del_y V = - \frac{y}{r} V'(r)\\
 \end{align}\end{split}\]</div>
 <p>We can consider instead polar coordinates <span class="math notranslate nohighlight">\((r,\phi)\)</span>, defined by:</p>
 <div class="math notranslate nohighlight" id="equation-polar-coords">
-<span class="eqno">(37)<a class="headerlink" href="#equation-polar-coords" title="Link to this equation">#</a></span>\[x = r \cos\phi\ , \ \ y = r \sin \phi\]</div>
+<span class="eqno">(41)<a class="headerlink" href="#equation-polar-coords" title="Link to this equation">#</a></span>\[x = r \cos\phi\ , \ \ y = r \sin \phi\]</div>
 <p>To change to equations in polar coordinates, we find:</p>
 <div class="math notranslate nohighlight">
 \[\ddot{x} = \ddot{r}\cos\phi - 2 \dot{r} \dot{\phi} \sin\phi - r \ddot\phi\cos\phi\]</div>
@@ -596,7 +632,11 @@ m \ddot{r} &amp; = - \del_r V\\
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-euler-lagrange-equations">The Euler-Lagrange equations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-lagrange-equation-and-generalized-coordinates">Euler-Lagrange equation and generalized coordinates</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-magnetic-field">Particle in a magnetic field</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-of-coordinates">Change of coordinates</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangians-and-coordinate-changes">Lagrangians and coordinate changes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-statement">General statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-changing-to-polar-coordinates">Example: changing to polar coordinates</a></li>
 </ul>
 </li>
 </ul>
