@@ -364,7 +364,7 @@ document.write(`
 <h3>Holonomic constraints<a class="headerlink" href="#holonomic-constraints" title="Link to this heading">#</a></h3>
 <p>These are constraints that can be simply written as a set of algebraic equations on the space of coordinates, that us,</p>
 <div class="math notranslate nohighlight" id="equation-constraint-equations">
-<span class="eqno">(38)<a class="headerlink" href="#equation-constraint-equations" title="Link to this equation">#</a></span>\[f_{\alpha}(q^I) = 0\]</div>
+<span class="eqno">(42)<a class="headerlink" href="#equation-constraint-equations" title="Link to this equation">#</a></span>\[f_{\alpha}(q^I) = 0\]</div>
 <p>where <span class="math notranslate nohighlight">\(I = 1, \ldots D\)</span> and <span class="math notranslate nohighlight">\(\alpha = 1,\ldots, m &lt; D\)</span>. This is <span class="math notranslate nohighlight">\(m\)</span> equations in <span class="math notranslate nohighlight">\(D\)</span> unknowns. The solutions form an <span class="math notranslate nohighlight">\(n = D - m\)</span>-dimensional space of solutions (under the right conditions, called a <em>submanifold</em>); while <span class="math notranslate nohighlight">\(m\)</span> is called the <em>codimension</em> of this space. Roughly the codimension is the number of directions that is in some sense perpendicular to this space.</p>
 <p><img alt="single constraint" src="../_images/Constraint-1.png" /></p>
 <ol class="arabic simple">
@@ -383,13 +383,13 @@ document.write(`
 <li><p>Non-integrable constraint. Let is impose constraints locally on each point of the ambient space. That is, locally at each point <span class="math notranslate nohighlight">\(q^I_0\)</span>, we demand that motion away from this point by an infinitestimal <span class="math notranslate nohighlight">\(\delta q^I\)</span> must satisfy</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-local-constraint">
-<span class="eqno">(39)<a class="headerlink" href="#equation-local-constraint" title="Link to this equation">#</a></span>\[F_{I,\alpha}(q^I_0) \delta q^I = 0\]</div>
+<span class="eqno">(43)<a class="headerlink" href="#equation-local-constraint" title="Link to this equation">#</a></span>\[F_{I,\alpha}(q^I_0) \delta q^I = 0\]</div>
 <p>Locally, in some infinitesimal neighborhood, this will look like a holonomic constraint. But there is no guarantee that this will hold globally. This failure will hold if <span class="math notranslate nohighlight">\(F_I\)</span> is not integrable, that is if we cannot write it as</p>
 <div class="math notranslate nohighlight" id="equation-integrability">
-<span class="eqno">(40)<a class="headerlink" href="#equation-integrability" title="Link to this equation">#</a></span>\[F_{I,\alpha}(q^I_0) = \frac{\del f_{\alpha}}{\del q^I} \Big|_{q^I = q^I_0}\]</div>
-<p>wuth <span class="math notranslate nohighlight">\(f_{\alpha}(q^I_0) = 0\)</span> (which we can achieve by a constant shift of <span class="math notranslate nohighlight">\(f\)</span>). If we <em>can</em> satisfy <a class="reference internal" href="#equation-integrability">(40)</a>, then <a class="reference internal" href="#equation-local-constraint">(39)</a> becomes</p>
+<span class="eqno">(44)<a class="headerlink" href="#equation-integrability" title="Link to this equation">#</a></span>\[F_{I,\alpha}(q^I_0) = \frac{\del f_{\alpha}}{\del q^I} \Big|_{q^I = q^I_0}\]</div>
+<p>wuth <span class="math notranslate nohighlight">\(f_{\alpha}(q^I_0) = 0\)</span> (which we can achieve by a constant shift of <span class="math notranslate nohighlight">\(f\)</span>). If we <em>can</em> satisfy <a class="reference internal" href="#equation-integrability">(44)</a>, then <a class="reference internal" href="#equation-local-constraint">(43)</a> becomes</p>
 <div class="math notranslate nohighlight" id="equation-infinitesimal-holonomic">
-<span class="eqno">(41)<a class="headerlink" href="#equation-infinitesimal-holonomic" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(45)<a class="headerlink" href="#equation-infinitesimal-holonomic" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 f_{\alpha}(q^I_0) + \delta q^I) &amp; = f_{\alpha}(q^I_0) + \frac{\del f_{\alpha}}{\del q^I}(q^I_0) \delta q^I + {\cal O}(\delta q^2) \\
 &amp; \equiv f_{\alpha}(q^I_0) F_{I,\alpha} \delta q^I + {\cal O}(\delta q^2)
 \end{align}\end{split}\]</div>
@@ -398,7 +398,7 @@ f_{\alpha}(q^I_0) + \delta q^I) &amp; = f_{\alpha}(q^I_0) + \frac{\del f_{\alpha
 <p>The configuration space is described by the contact point of the disc on the x-y plane with coordinates <span class="math notranslate nohighlight">\((x,y)\)</span>; the angle <span class="math notranslate nohighlight">\(\theta\)</span> between the <span class="math notranslate nohighlight">\(x\)</span>-axis direction and perpendicular to the disc; and the angle <span class="math notranslate nohighlight">\(\phi\)</span> describing the angle of a reference point on the disk’s edge, with respect to the <span class="math notranslate nohighlight">\(z\)</span> axis.</p>
 <p>The total speed of the disc is <span class="math notranslate nohighlight">\(a {\dot \phi}\)</span>; this translates to velocities:</p>
 <div class="math notranslate nohighlight" id="equation-disc-constraint">
-<span class="eqno">(42)<a class="headerlink" href="#equation-disc-constraint" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(46)<a class="headerlink" href="#equation-disc-constraint" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \dot{x} &amp; = a \dot{\phi} \sin\theta\\
 \dot{y} &amp; = - a \dot{\phi} \cos\theta
 \end{align}\end{split}\]</div>
@@ -408,23 +408,23 @@ f_{\alpha}(q^I_0) + \delta q^I) &amp; = f_{\alpha}(q^I_0) + \frac{\del f_{\alpha
 F_{I, 2} \delta q^I &amp; = \delta y + a\cos\theta \delta \phi\end{split}\]</div>
 <p>Starting with the first equation, there are no functions <span class="math notranslate nohighlight">\(f_1\)</span> for which <span class="math notranslate nohighlight">\(\frac{\del f_1}{\del x} = 1\)</span>, <span class="math notranslate nohighlight">\(\frac{\del f_1}{\del y}= 0\)</span>,  <span class="math notranslate nohighlight">\(\frac{\del f_1}{\del \phi} = - a \sin\theta\)</span>, <span class="math notranslate nohighlight">\(\frac{\del f_1}{\del \theta} = 0\)</span>. The last two equations make thisclear, as you can’t have the <span class="math notranslate nohighlight">\(\phi\)</span> derivative of <span class="math notranslate nohighlight">\(f_1\)</span> be <span class="math notranslate nohighlight">\(\theta\)</span>-dependent while <span class="math notranslate nohighlight">\(f_1\)</span> has a vanishing <span class="math notranslate nohighlight">\(\theta\)</span>-derivative. A more algorithic wat to detect whether <span class="math notranslate nohighlight">\(F_i = \frac{\del f}{\del q^I}\)</span> for some <span class="math notranslate nohighlight">\(f\)</span> is to note that if it is, then</p>
 <div class="math notranslate nohighlight" id="equation-integrability-condition">
-<span class="eqno">(43)<a class="headerlink" href="#equation-integrability-condition" title="Link to this equation">#</a></span>\[\frac{\del^2 f}{\del q^I \del q^J} - \frac{\del^2 f}{\del q^J \del q^I} = 0\]</div>
-<p>since it doesn’t matter in which order you take partial derivatives. Thus, for the constraint <a class="reference internal" href="#equation-local-constraint">(39)</a> to be integrable, we must have</p>
+<span class="eqno">(47)<a class="headerlink" href="#equation-integrability-condition" title="Link to this equation">#</a></span>\[\frac{\del^2 f}{\del q^I \del q^J} - \frac{\del^2 f}{\del q^J \del q^I} = 0\]</div>
+<p>since it doesn’t matter in which order you take partial derivatives. Thus, for the constraint <a class="reference internal" href="#equation-local-constraint">(43)</a> to be integrable, we must have</p>
 <div class="math notranslate nohighlight" id="equation-ic-local">
-<span class="eqno">(44)<a class="headerlink" href="#equation-ic-local" title="Link to this equation">#</a></span>\[\frac{\del}{\del q^I} F_{J,alpha} - \frac{\del}{\del q^J} F_{I,\alpha} = 0\]</div>
+<span class="eqno">(48)<a class="headerlink" href="#equation-ic-local" title="Link to this equation">#</a></span>\[\frac{\del}{\del q^I} F_{J,alpha} - \frac{\del}{\del q^J} F_{I,\alpha} = 0\]</div>
 <p>In fact, one can argue that in a finite “star-shaped” region, Poincare’s theorem states that if this condition is met, a function <span class="math notranslate nohighlight">\(f_{\alpha}\)</span> must exist so that <span class="math notranslate nohighlight">\(F_{I,\alpha} = \nabla_I f_{\alpha}\)</span>.</p>
 <ol class="arabic simple" start="2">
 <li><p>Inequality constraints. Consider, in two dimensions, a particle on a rectangular billiard table with length <span class="math notranslate nohighlight">\(L_x\)</span> in the <span class="math notranslate nohighlight">\(x\)</span> direction and <span class="math notranslate nohighlight">\(L_y\)</span> in teh <span class="math notranslate nohighlight">\(y\)</span> direction. The particle is subject to the constraints</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-billiard-constraints">
-<span class="eqno">(45)<a class="headerlink" href="#equation-billiard-constraints" title="Link to this equation">#</a></span>\[0 \leq x \leq L_x\ ; \ \ 0 \leq y \leq L_y\]</div>
+<span class="eqno">(49)<a class="headerlink" href="#equation-billiard-constraints" title="Link to this equation">#</a></span>\[0 \leq x \leq L_x\ ; \ \ 0 \leq y \leq L_y\]</div>
 <p><img alt="Billiard table" src="../_images/Billiard_table.png" /></p>
 <p>Clearly these cannot be written as the derivative of a function.</p>
 <ol class="arabic simple" start="3">
 <li><p>Velocity-dependent constraints. If the constraints are of the form</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-linear-vel-constraints">
-<span class="eqno">(46)<a class="headerlink" href="#equation-linear-vel-constraints" title="Link to this equation">#</a></span>\[F_{I,\alpha}(q) \dot{q}^I = 0\]</div>
+<span class="eqno">(50)<a class="headerlink" href="#equation-linear-vel-constraints" title="Link to this equation">#</a></span>\[F_{I,\alpha}(q) \dot{q}^I = 0\]</div>
 <p>and <span class="math notranslate nohighlight">\(\frac{\del F_{I,\alpha}}{\del q^J} - \frac{\del F_{J,\alpha}}{\del q^I} = 0\)</span> then (under appropriate conditions on the region of interest) by writing <span class="math notranslate nohighlight">\(\det q^I = \delta q^I \delta t\)</span>, we can convert these to holonomic constraints. If <span class="math notranslate nohighlight">\(F_{I,\alpha}\)</span> is not so constrained, the constraints are nonholonomic. Also, if <span class="math notranslate nohighlight">\(F_{I,\alpha}\)</span> containsadditional dependence on <span class="math notranslate nohighlight">\(\dot{q}^I\)</span>, the constraints are nonholonomic.</p>
 </section>
 </section>
@@ -434,19 +434,19 @@ F_{I, 2} \delta q^I &amp; = \delta y + a\cos\theta \delta \phi\end{split}\]</div
 <h3>Example: a bead on a wire<a class="headerlink" href="#example-a-bead-on-a-wire" title="Link to this heading">#</a></h3>
 <p>We can impose the constraints in teh Lagrangian by adding an additional set of coordinates <span class="math notranslate nohighlight">\(\lambda_{\alpha}\)</span> known as Lagrange multiplies, so that the full Lagrangian is:</p>
 <div class="math notranslate nohighlight" id="equation-lagrange-multiplier">
-<span class="eqno">(47)<a class="headerlink" href="#equation-lagrange-multiplier" title="Link to this equation">#</a></span>\[L  = L_0(q^I,\dot{q}^I) + \lambda_{\alpha} f^{\alpha}(q^I)\]</div>
+<span class="eqno">(51)<a class="headerlink" href="#equation-lagrange-multiplier" title="Link to this equation">#</a></span>\[L  = L_0(q^I,\dot{q}^I) + \lambda_{\alpha} f^{\alpha}(q^I)\]</div>
 <p>where <span class="math notranslate nohighlight">\(L_0\)</span> captures the kinetic energy of the particle, and any forces that do not follow from the constraint. In the bead on a wire example, this would be the gravitational force.</p>
 <p>Applying the Euler-Langrange equations, the fact that <span class="math notranslate nohighlight">\(\dot{\lambda}\)</span> dies not appear means that the associated generalized momentum <span class="math notranslate nohighlight">\(p_{\alpha} \frac{\del L
 }{\del \dot{\lambda}_{\alpha}} = 0\)</span>. The Euler-Lagrange equation then states:</p>
 <div class="math notranslate nohighlight" id="equation-el-lm">
-<span class="eqno">(48)<a class="headerlink" href="#equation-el-lm" title="Link to this equation">#</a></span>\[\frac{\del L}{\del \lambda^{\alpha}} = f^{alpha} = 0\]</div>
+<span class="eqno">(52)<a class="headerlink" href="#equation-el-lm" title="Link to this equation">#</a></span>\[\frac{\del L}{\del \lambda^{\alpha}} = f^{alpha} = 0\]</div>
 <p>which is the constraint equation. Note however that we have a new generalized force:</p>
 <div class="math notranslate nohighlight" id="equation-constraint-force">
-<span class="eqno">(49)<a class="headerlink" href="#equation-constraint-force" title="Link to this equation">#</a></span>\[Q_I^{constraint} = - \lambda_{\alpha} \frac{\del f_{\alpha}}{\del q^I}\]</div>
+<span class="eqno">(53)<a class="headerlink" href="#equation-constraint-force" title="Link to this equation">#</a></span>\[Q_I^{constraint} = - \lambda_{\alpha} \frac{\del f_{\alpha}}{\del q^I}\]</div>
 <p>This force is a gradient of <span class="math notranslate nohighlight">\(f\)</span> which means it acts perpendicularly to the level sets of <span class="math notranslate nohighlight">\(f\)</span> which include the constraint surface. Thus, it is the normal force. <span class="math notranslate nohighlight">\(\lambda\)</span> can be set to ensure that Newton’s laws for <span class="math notranslate nohighlight">\(q^I\)</span> do not take one off of the constraint surface.</p>
 <p>We can solve for this constraint by finding coordinates <span class="math notranslate nohighlight">\(s^i\)</span> living on the constraint surface, so that <span class="math notranslate nohighlight">\(f_{\alpha}(q^I(s^i)) = 0\)</span> for all <span class="math notranslate nohighlight">\(s^i\)</span>. We can then write</p>
 <div class="math notranslate nohighlight" id="equation-solved-lagrangian">
-<span class="eqno">(50)<a class="headerlink" href="#equation-solved-lagrangian" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(54)<a class="headerlink" href="#equation-solved-lagrangian" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 L &amp; = L_0(q(s), \frac{d}{dt} q(s)) - \lambda_{\alpha}f_{\alpha}(q(s)) \\
 &amp; = L_0(q(s), \dot{s}^i \frac{\del q^I}{\del s^i})\\
 &amp; \equiv {\tilde L}(s, \dot{s})
@@ -454,32 +454,32 @@ L &amp; = L_0(q(s), \frac{d}{dt} q(s)) - \lambda_{\alpha}f_{\alpha}(q(s)) \\
 <p>We then simply apply the Euler-Lagrange equations to <span class="math notranslate nohighlight">\({\tilde L}\)</span>. In fact a little work is needed to show that this gives the correct equations, equivalent to the full equations of motion for <span class="math notranslate nohighlight">\(q^I\)</span> with the normal force included. I will start this in the section below and assign the rest in the next problem set.</p>
 <p>To see how this works, let us go back to the bead on the wire example, for which <span class="math notranslate nohighlight">\(f = z - z(x)\)</span>. In this case. We just need a single coordinate along the wire, which we take to be <span class="math notranslate nohighlight">\(s = x\)</span>. Then</p>
 <div class="math notranslate nohighlight" id="equation-bead-lagrangian">
-<span class="eqno">(51)<a class="headerlink" href="#equation-bead-lagrangian" title="Link to this equation">#</a></span>\[{\tilde L}(x, \dot{x}) = \half m \dot{x}^2]\left(1 + (z'(x))^2\right) + m g z(x)\]</div>
+<span class="eqno">(55)<a class="headerlink" href="#equation-bead-lagrangian" title="Link to this equation">#</a></span>\[{\tilde L}(x, \dot{x}) = \half m \dot{x}^2]\left(1 + (z'(x))^2\right) + m g z(x)\]</div>
 <p>The generalized momentum is</p>
 <div class="math notranslate nohighlight" id="equation-bean-genmom">
-<span class="eqno">(52)<a class="headerlink" href="#equation-bean-genmom" title="Link to this equation">#</a></span>\[p = \frac{\del L}{\del \dot{x}} = m (1 + (z'(x))^2) \dot{x}\]</div>
+<span class="eqno">(56)<a class="headerlink" href="#equation-bean-genmom" title="Link to this equation">#</a></span>\[p = \frac{\del L}{\del \dot{x}} = m (1 + (z'(x))^2) \dot{x}\]</div>
 <p>and the generalized force is:</p>
 <div class="math notranslate nohighlight" id="equation-bead-genforce">
-<span class="eqno">(53)<a class="headerlink" href="#equation-bead-genforce" title="Link to this equation">#</a></span>\[{\cal F} = \frac{\del {\tilde L}}{\del x} = m \dot{x}^2 z' z'' + m g z'\]</div>
+<span class="eqno">(57)<a class="headerlink" href="#equation-bead-genforce" title="Link to this equation">#</a></span>\[{\cal F} = \frac{\del {\tilde L}}{\del x} = m \dot{x}^2 z' z'' + m g z'\]</div>
 <p>So <span class="math notranslate nohighlight">\(\dot{p} = {\cal F}\)</span> gives us</p>
 <div class="math notranslate nohighlight" id="equation-bead-lag-eom">
-<span class="eqno">(54)<a class="headerlink" href="#equation-bead-lag-eom" title="Link to this equation">#</a></span>\[m (1 + (z'(x))^2) \ddot{x} + 2 m z'z'' \dot{x}^2 = m\dot{x}^2 z'z'' + m g z'\]</div>
+<span class="eqno">(58)<a class="headerlink" href="#equation-bead-lag-eom" title="Link to this equation">#</a></span>\[m (1 + (z'(x))^2) \ddot{x} + 2 m z'z'' \dot{x}^2 = m\dot{x}^2 z'z'' + m g z'\]</div>
 <p>or</p>
 <div class="math notranslate nohighlight" id="equation-bead-lag-eom-2">
-<span class="eqno">(55)<a class="headerlink" href="#equation-bead-lag-eom-2" title="Link to this equation">#</a></span>\[m \ddot{x} = \frac{m g z' - m z'z''\dot{x}^2}{1 + (z'(x))^2}\]</div>
-<p>This is exactly what we got in our treatment via Newton’s laws where we computed the explicit normal force, only it was much easier! NB – an earlier draft of that section had the wrong sign in front of the second term on the RHS of <a class="reference internal" href="#equation-bead-lag-eom-2">(55)</a>. I found that sign mistake by doing the correct calculation above.</p>
+<span class="eqno">(59)<a class="headerlink" href="#equation-bead-lag-eom-2" title="Link to this equation">#</a></span>\[m \ddot{x} = \frac{m g z' - m z'z''\dot{x}^2}{1 + (z'(x))^2}\]</div>
+<p>This is exactly what we got in our treatment via Newton’s laws where we computed the explicit normal force, only it was much easier! NB – an earlier draft of that section had the wrong sign in front of the second term on the RHS of <a class="reference internal" href="#equation-bead-lag-eom-2">(59)</a>. I found that sign mistake by doing the correct calculation above.</p>
 </section>
 <section id="consistency-of-tilde-l-s-dot-s-introductory-part">
 <h3>Consistency of <span class="math notranslate nohighlight">\({\tilde L}(s,\dot s}\)</span> (introductory part)<a class="headerlink" href="#consistency-of-tilde-l-s-dot-s-introductory-part" title="Link to this heading">#</a></h3>
 <p>The full equations of motion for a system constrained to a subspace of the configuration space by a normal force is:</p>
 <div class="math notranslate nohighlight" id="equation-eom-with-normal">
-<span class="eqno">(56)<a class="headerlink" href="#equation-eom-with-normal" title="Link to this equation">#</a></span>\[\dot{p}_I - F_I - N_I = 0\]</div>
+<span class="eqno">(60)<a class="headerlink" href="#equation-eom-with-normal" title="Link to this equation">#</a></span>\[\dot{p}_I - F_I - N_I = 0\]</div>
 <p>Iw we consider <span class="math notranslate nohighlight">\(\delta q^I\)</span> to be an infinitesimal motion along the constraint surface. This means that <span class="math notranslate nohighlight">\(N_I \delta q^I = 0\)</span> since the normal force is always perpendicular to this surface, and we can write</p>
 <div class="math notranslate nohighlight" id="equation-dalembert">
-<span class="eqno">(57)<a class="headerlink" href="#equation-dalembert" title="Link to this equation">#</a></span>\[(\dot{p}_I - F_I) \delta q^I = 0\]</div>
+<span class="eqno">(61)<a class="headerlink" href="#equation-dalembert" title="Link to this equation">#</a></span>\[(\dot{p}_I - F_I) \delta q^I = 0\]</div>
 <p>Now if <span class="math notranslate nohighlight">\(s^i\)</span> parameterize the constraint surface, then for <span class="math notranslate nohighlight">\(\delta q^I\)</span> along this surface we can write</p>
 <div class="math notranslate nohighlight" id="equation-dalembert-reduced">
-<span class="eqno">(58)<a class="headerlink" href="#equation-dalembert-reduced" title="Link to this equation">#</a></span>\[(\dot{p}_I - F_I) \frac{\del q^I}{\del s^i} \delta s^i = 0\]</div>
+<span class="eqno">(62)<a class="headerlink" href="#equation-dalembert-reduced" title="Link to this equation">#</a></span>\[(\dot{p}_I - F_I) \frac{\del q^I}{\del s^i} \delta s^i = 0\]</div>
 <p>Thuis should hold for any <span class="math notranslate nohighlight">\(\delta s^i\)</span> along the constraining surface. The goal is to show that <span class="math notranslate nohighlight">\((\dot{p}_I - F_I) \frac{\del q^I}{\del s^i} = 0\)</span> is equivalent to the equations of motion derived from <span class="math notranslate nohighlight">\({\tilde L}\)</span>. We will leave this as a problem for the student to solve.</p>
 </section>
 </section>

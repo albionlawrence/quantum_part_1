@@ -216,9 +216,11 @@ Note that the final equations of motion depend on the magnetic field $B$ and not
 
 does not change $E$ or $B$. The generalized momentum *does* depend explicitly on ${\cal A}$, and so in this case is not invariant under gauge transformations.
 
-### Change of coordinates
+## Lagrangians and coordinate changes
 
-One route is to change coordinates from $x^a_k$ to $q^{I = 1,\ldots Md}$.
+### General statement
+
+Consider a change of coordinates from $x^a_k$ to $q^{I = 1,\ldots Md}$.
 In this case we can write
 ```{math}
  :label: change_coords_lag
@@ -232,18 +234,27 @@ where
 \dot{x}^a_k = \dot{q}^I \frac{\del x^a_k}{\del q^I}
 ```
 
-We can think of 
+We claim that the Euler-Lagrange equations for $x^a_k$ derived from $L$ and the Euler-Lagrange equations for $q^I$ derived from ${\tilde L}$ are in fact equivalent. That is,
+
+```{math}
+\frac{\del L}{\del x^a_k} - \frac{d}{dt} \frac{\del L}{\del\dot{x}^a_k} = 0 \Leftrightarrow \frac{\del {\tilde L}}{\del q^I} - \frac{d}{dt} \frac{\del {\tilde L}}{\del \dot{q}^I} = 0
+```
+
+The point is that you can perform your coordinate transformations at the level of the Lagrangian, and *then* compute the Euler-Lagrange equations in the new coordinates, which is often easier than computing the change of variables at the level of the equations of motion.
+
+
+To start with, the partial derivatives in {eq}`gc_chain`
 
 ```{math}
 :label: jacobian_mat
-{\cal M}(ak\; I) = \frac{\del x^a_k}{\del q^I}
+{\cal M}(ak\ ; I) = \frac{\del x^a_k}{\del q^I}
 ```
 
-as an $dM \times dM$ matrix at a given value of $q^I$; this is the "Jacobian" of the coordinate transformation between $x$ and $q$, and it is an invertible matrix if the coordinate transformation is itself non-singular (is a good coordinate transformation). In particular, we can define the inverse Jacobian as
+can be thought of as an $dM \times dM$ matrix at a given value of $q^I$; this is the "Jacobian" of the coordinate transformation between $x$ and $q$, and it is an invertible matrix if the coordinate transformation is itself non-singular (is a good coordinate transformation). In particular, we can define the inverse Jacobian as
 
 ```{math}
 :label: inverse_Jacobian
-{\cal M}^{-1}(I\; ak)
+{\cal M}^{-1}(I\ ; ak)
 ```
 
 By the chain rule, 
@@ -260,15 +271,53 @@ where $\delta^I_{I'}$ is the Kronecker delta symbol (see the Appendix for a defi
 {\cal M}(ak\; I) {\cal M}^{-1}(I\; a'k') = \delta^a_{a'} \delta^k_{k'}
 ```
 
-It is straightforward to show that the Euler-Lagrange equations for $x$ derived from $L$, and the equations for $q(t)$ derived from ${\tilde L}$, are equivalent. That is, 
+To see why invertability is important let us think of the canse of $dM = 1$. Then the matrix is just ${\cal M} = \frac{\del x}{\del q}$. Consider a particular point $q_0$ about which we wish to study the coordinate transformation. the value of $x$ is $x_0 = x(q_0)$. At an infinitesimal distance $\delta q$ away from $q_0$, we have
 
 ```{math}
-\frac{\del L}{\del x^a_k} - \frac{d}{dt} \frac{\del L}{\del\dot{x}^a_k} = 0 \Leftrightarrow \frac{\del {\tilde L}}{\del q^I} - \frac{d}{dt} \frac{\del {\tilde L}}{\del \dot{q}^I} = 0
+:label: oned_transf
+x(q_0 + \delta q) = x_0 + \frac{\del x}{\del q} \delta q + {\cal O}(\delta q^2)
 ```
 
-The point is that you can perform your coordinate transformations at the level of the Lagrangian, and *then* compute the Euler-Lagrange equations in the new coordinates, which is often easier than computing the change of variables at the level of the equations of motion.
+Now the inverse of $\frac{\del x}{\del q}$ is just $\left(\frac{\del x}{\del q}\right)^{-1}$, so ${\cal M}$ fails to be invertible if it is zero. If it is zero at $q_0$ the $x = x_0 + {\cal O}(\delta q^2)$. In ither words, at leading order in $\delta q$,$x$ does not change and at this order the coordinate change from $q \to x$ is a many-to-one map. For the rest of this section we will assume the coordinate transformation is invertible but there are many cases where it fails to be at least at a point: a good example is the transformation from Catrtesian to polar coordinates in $d = 2$, for which the origin is a singular point.
 
-As an example, consider a single particle in two dimensions with the Lagrangian
+Now, 
+
+```{math}
+:label: gen_mom_transf
+\begin{align}
+p_I & = \frac{\partial {\tilde L}}{\partial \dot{q}^I}\\
+& = \frac{\del}{\del \dot{q}^I} L(x(q), {\cal M}(ak; I) \dot{q}^I)\\
+& = {\cal M}(ak\ ; I) p^a_k
+\end{align}
+```
+
+while
+
+```{math}
+:label: gen_force_transf
+\begin{align}
+{\cal F}_I & = \frac{\del}{\del q^I} L(x(q), {\cal M}(ak\ ; I) \dot{q}^I) \\
+& = {\cal M}(ak\ ; I) {\cal F}^a_k + \frac{\del {\cal M}(ak\ ; J)}{\del q^I} \dot{q}^J p^a_k 
+\end{align}
+```
+
+The Euler-Lagrange equations we derive from ${\tilde L}$ for $q^I$ are:
+
+```{math}
+:label: transf_el
+\begin{align}
+\frac{d}{dt} p_I - {\cal F}_I & = \frac{d}{dt} \left(\frac{\del x^a_k}{\del q^I} p_a^k\right) - \frac{\del x^a_k}{\del q^I} {\cal F}^a_k - \frac{\del^2 x^a_k}{\del q^I \del q^J} \dot{q}^J p^a_k \\
+& = \frac{\del x^a_k}{\del q^I}\left({\dot p}^a_k - {\cal F}^a_k\right)
++ \frac{\del^2 x^a_k}{\del q^J \del q^I} \dot{q}^J p_a^k -  \frac{\del^2 x^a_k}{\del q^I \del q^J} \dot{q}^J p^a_k \\
+& = {\cal M}(ak\ ; I) \left(\dot{p}^a_k - {\cal F}^a_k\right)
+\end{align}
+```
+
+The second line follows from applying Leibniz's rule to the time derivative of ${\cal M} p$. The last line is an invertible matrix times the Euler-Lagrange equations for $x^a_k$ derived from $L$. Thus the two forms of the Euler-Lagrange equations are equivalent; one vanishes if and only if the other does (assuming the coordinate transformation is invertible).
+
+### Example: changing to polar coordinates
+
+Consider a single particle in two dimensions with the Lagrangian
 
 ```{math}
 :label: twod_lagr
