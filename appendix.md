@@ -2,6 +2,12 @@
 
 ## Notation
 
+### Some useful math symbols
+
+- $\forall$: "For all"
+- $\exists$: "There exists"
+- $\ni$: "such that"
+
 ### Derivatives and partial derivatives
 
 I will often write
