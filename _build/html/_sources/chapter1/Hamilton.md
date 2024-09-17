@@ -120,7 +120,7 @@ Start with the Lagrangian
 L(\vec{x},\dot{\vec{x}}) = \half m \dot{\vec{x}}^2 - V({\vec x})
 ```
 
-The generalixed momentum is
+The generalized momentum is
 
 ```{math}
 :label: nr_gen_mom
@@ -159,3 +159,72 @@ m\ddot{x}^i = - \frac{\del V}{\del x^i}
 
 Note that this gives three second order differential equation; Hamilton's equations give a natural unpacking of this equation into six *first*-order differential equations which are often easier to integrate (analytically or numerically).
 
+2. Free particle in polar coordinates
+
+Here we start with 
+
+```{math}
+:label: free_polar
+L = \half m (\dot{r}^2 + r^2 \dot{\phi}^2)
+```
+
+The generalzied momenta are:
+
+```{math}
+:label: polargenmom
+\begin{align} 
+p_r & = m \dot{r} \Rightarrow \dot{r} = \frac{p_r}{m}\\
+p_{\phi} & = m r^2 \dot{\phi} \Rightarrow \dot{\phi} = \frac{p_{\phi}}{m r^2}
+\end{align}
+```
+
+Thus the Hamiltonian is:
+
+```{math}
+:label: polar_ham
+\begin{align}
+H & = p_r \dot{r} + p_{\phi} \dot{\phi} - \half m (\dot{r}^2 + r^2 \dot{\phi}^2)\\
+& = \frac{p_r^2}{2m} + \frac{p_{\phi}^2}{2 m r^2}
+\end{align}
+```
+
+Hamilton's equations become:
+
+```{math}
+:label: polar_he
+\begin{align}
+\dot{r} & = \frac{\del H}{\del p_r} = \frac{p_r}{m}\\
+\dot{p}_r & = - \frac{\del H}{\del r} = \frac{p_{\phi}^2}{m r^3}\\
+\dot{\phi} & = \frac{\del H}{\del p_{\phi}} = \frac{p_{\phi}}{m r^2}\\
+\dot{p_{\phi}} & = - \frac{\del H}{\del \phi} = 0
+\end{align}
+```
+
+Note that this last equation is a re-statement of the conservaton of angular momentum, following from $\phi$ being a cyclic coordinate.
+
+3. Charged prrticle in a magnetic field. 
+
+As we stated before, if $\vec{B} = \vec{\nabla}\times\vec{A}$ for the vector potential $\vec{A}$,the Lagrangian is:
+
+```{math}
+:label: cpb_lag
+L = \half m \dot{\vec{x}}^2 + \frac{e}{c} \dot{\vec{x}}\cdot \vec{A}
+```
+
+The conjugate momentum is
+
+```{math}
+:label: cpb_cmom
+p_i = \frac{\del L}{\del \dot{x}^i} = m \dot{x}^i + \frac{e}{c} A^i \Rightarrow \dot{x}^i = \frac{1}{m} \left(p_i - \frac{e}{c} A^i\right)
+```
+
+With a little work we find:
+
+```{math}
+:label: cpb_ham
+\begin{align}
+H & = p_i \dot{x^i} - \half m \dot{\vec{x}}^2 - \frac{e}{c} \dot{\vec{x}}\cdot\vec{A}\\
+& = \frac{1}{m} p_i \left(p_i - \frac{e}{c} A_i\right) - \frac{m}{2 m^2}\left({\vec p} - \frac{e}{c} \vec{A}\right)^2 - \frac{e}{mc} \left({\vec p} - \frac{e}{c} \vec{A}\right)^2 - \frac{e}{mc} \left({\vec p} - \frac{e}{c} \vec{A}\right)\cdot\vec{A}\\
+& = \frac{1}{2m}\left(\vec{p} - \frac{e}{c}\vec{A}\right)^2
+\end{align}
+```
