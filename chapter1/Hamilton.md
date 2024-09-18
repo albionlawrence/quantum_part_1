@@ -42,7 +42,7 @@ then we can rewrite the equations of motion as
 \end{align}
 ```
 
-Note that when the Lagrangian is time-independent, the quantity {eq}`hamil` is exactly the quantity which we showed, via Noether's theorem, is conserved. $H$, called the *Hamiltonian* is the energy of this system. The equations {eq}`he_intro_ are known as *Hamilton's Equations* and they are completely equivalent to the Euler-Lagrange equations.
+Note that when the Lagrangian is time-independent, the quantity {eq}`hamilt` is exactly the quantity which we showed, via Noether's theorem, is conserved. $H$, called the *Hamiltonian* is the energy of this system. The equations {eq}`he_intro_ are known as *Hamilton's Equations* and they are completely equivalent to the Euler-Lagrange equations.
 
 Why would we daopt this formalism?
 
@@ -224,7 +224,78 @@ With a little work we find:
 :label: cpb_ham
 \begin{align}
 H & = p_i \dot{x^i} - \half m \dot{\vec{x}}^2 - \frac{e}{c} \dot{\vec{x}}\cdot\vec{A}\\
-& = \frac{1}{m} p_i \left(p_i - \frac{e}{c} A_i\right) - \frac{m}{2 m^2}\left({\vec p} - \frac{e}{c} \vec{A}\right)^2 - \frac{e}{mc} \left({\vec p} - \frac{e}{c} \vec{A}\right)^2 - \frac{e}{mc} \left({\vec p} - \frac{e}{c} \vec{A}\right)\cdot\vec{A}\\
+& = \frac{1}{m} p_i \left(p_i - \frac{e}{c} A_i\right) - \frac{m}{2 m^2}\left({\vec p} - \frac{e}{c} \vec{A}\right)^2 - \frac{e}{mc} \left({\vec p} - \frac{e}{c} \vec{A}\right)^2 \\
+& \ \ \ - \frac{e}{mc} \left({\vec p} - \frac{e}{c} \vec{A}\right)\cdot\vec{A}\\
 & = \frac{1}{2m}\left(\vec{p} - \frac{e}{c}\vec{A}\right)^2
 \end{align}
 ```
+
+## Poisson brackets
+
+Poisson brackets will seem like a simple rewriting of Hamilton's equations, but they are an important part of the geometry of classical mechanics; yield Noether's theorem as a near-tautology; and have an important quantum-mechanical analog.
+
+We can see them emerge as follows, and along the way introduce another important concept. Any *observable quantity* $A$ in classical mechanics should be a function of the state of the system, and thus of phase space: $A = A(q^I, p_I)$. (It could be constant in which case classical mechanics has nothing to say about it.). Two examples are the $i$th component of angular momentum $L_i = \half \eps_{ijk} x^j p_k$; and the energy which is the Hamiltonian itself $H(q, p)$. 
+
+
+How does this observable change along classical trajectories?
+
+```{math}
+:label: observable_flow
+\begin{align}
+\frac{dA}{dt} & = \frac{d q^I}{dt} \frac{\del A}{\del q^I} + \frac{d p_I}{dt} \frac{\del A}{\del p_I} \\
+& = \frac{\del H}{\del p_I} \frac{\del A}{\del q_I} - \frac{\del H}{\del q^I}\frac{\del A}{\del p_I}\\
+& \equiv \{A,H\}
+\end{align}
+```
+
+The first line is just the chain rule; the second uses Hamilton's equations; the last introduces the *Poisson bracket*. More generally, for two observables $A, B$, the Poisson bracket is defined as:
+
+```{math}
+:label: pb_def
+\{A, B\} \equiv \frac{\del A}{\del q^I}\frac{\del B}{\del p_I} - \frac{\del A}{\del p_I}\frac{\del B}{\del q^I}
+```
+
+and satisfies two important properties:
+
+1. *Antisymmetry*: $\{A,B\} = - \{B,A\}$. 
+
+2. *Jacobi identity*: $\{A,\{B,C\}\} + \{C,\{A,B\}\} + \{B, \{C,A\}\} = 0$.
+
+Finally, the phase space variables we have written so far satisfy simple, "canonical" Poisson bracket relations:
+
+```{math}
+:label: canonical_brackets
+\begin{align}
+\{q^I, q^J\} & = 0 \\
+\{p_I, p_J\} & = 0\\
+\{q^I, p_J\} & = \delta^I_J
+\end{align}
+```
+
+Note that given what we drivaed at the top, $\frac{dA}{dt} = \{A, H\}$, the Hamiltonian *generates flows in phase space* of all observable quantities. These include the positions and momenta themselves; Hamilton's equations can be compactly written as
+
+```{math}
+:label: pb_hamilton
+\begin{align}
+\frac{d q^I}{dt} & = \{q^I , H\}\\
+\frac{d p_I}{dt} & = \{p_I, H\}
+\end{align}
+```
+
+The minus sign in the second part of Hamilton's equations is taken care of by the sign in the definition of the bracket, needed for the antisymmetry property.
+
+The Poisson bracket is a central object in classical mechanics in defining the geometry of phase space and deriving consequences of teh dynamics. One consequence we will not derive here is Liouville's theorem, which states that if we take a small volume of phase space and evolve each point forward using Hamilton's equations, the volume does not change. 
+
+## Infinitesimal transformations and symmetries
+
+An important part of classical mechanics is defining *canonical transformations*: transformations of the phase space variables that do not disturb the form of Hamilton's equations: that is, we fine new variables $Q^A, P_A$ such that
+
+```{math}
+:label: new_ham
+\begin{align}
+\frac{d Q^A}{dt} & = \frac{\del H}{\del P_A}\\
+\frac{d P_A}{dt} & = - \frac{\del A}{\del Q^A}
+\end{align}
+```
+
+These transformations will also preserve the form of the Poisson bracket, so that $\{Q^A, Q^B\} = 0$ ; $\{P_A,P_B\} = 0$; $\{Q^A,p_B\} = \delta^A_B$.

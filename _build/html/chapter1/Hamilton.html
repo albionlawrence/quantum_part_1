@@ -177,13 +177,13 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Intro_Classical.html">Classical Mechanics</a><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Intro_Classical.html">Classical Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Newton.html">Newtonian mechanics.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Lagrange.html">Lagrangian Mechanics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Constraints.html">Constrained Lagrangian Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Symmetries.html">Symmetries and conservation laws</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Hamiltonian Mechanics</a></li>
-</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
@@ -340,6 +340,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-brackets">Poisson brackets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-transformations-and-symmetries">Infinitesimal transformations and symmetries</a></li>
 </ul>
             </nav>
         </div>
@@ -374,7 +376,7 @@ document.write(`
 \dot{q}^I &amp; = \frac{\del H}{\del p_I}\\
 \dot{p}_I &amp; = - \frac{\del H}{\del q^I}
 \end{align}\end{split}\]</div>
-<p>Note that when the Lagrangian is time-independent, the quantity <code class="xref eq docutils literal notranslate"><span class="pre">hamil</span></code> is exactly the quantity which we showed, via Noether’s theorem, is conserved. <span class="math notranslate nohighlight">\(H\)</span>, called the <em>Hamiltonian</em> is the energy of this system. The equations {eq}`he_intro_ are known as <em>Hamilton’s Equations</em> and they are completely equivalent to the Euler-Lagrange equations.</p>
+<p>Note that when the Lagrangian is time-independent, the quantity <a class="reference internal" href="#equation-hamilt">(78)</a> is exactly the quantity which we showed, via Noether’s theorem, is conserved. <span class="math notranslate nohighlight">\(H\)</span>, called the <em>Hamiltonian</em> is the energy of this system. The equations {eq}`he_intro_ are known as <em>Hamilton’s Equations</em> and they are completely equivalent to the Euler-Lagrange equations.</p>
 <p>Why would we daopt this formalism?</p>
 <ol class="arabic simple">
 <li><p>If <span class="math notranslate nohighlight">\(I \in (1,\ldots, D)\)</span>, Hamilton’s equations are <span class="math notranslate nohighlight">\(2D\)</span> first order differential equations. If we specify the data <span class="math notranslate nohighlight">\((q^I,p_I)\)</span> at any initial time <span class="math notranslate nohighlight">\(t_0\)</span>,  these equations have a unique solution for all future times. Thus the state of the system at any time is copmpletely described by <span class="math notranslate nohighlight">\((q^I, p_I)\)</span>. The set of all states so specified is known as <em>phase space</em>. Thus, the space of states is given by <span class="math notranslate nohighlight">\(2D\)</span> independent variables, and we can formulate mechanics as an initial value problem.</p></li>
@@ -477,10 +479,56 @@ H &amp; = p_r \dot{r} + p_{\phi} \dot{\phi} - \half m (\dot{r}^2 + r^2 \dot{\phi
 <div class="math notranslate nohighlight" id="equation-cpb-ham">
 <span class="eqno">(98)<a class="headerlink" href="#equation-cpb-ham" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 H &amp; = p_i \dot{x^i} - \half m \dot{\vec{x}}^2 - \frac{e}{c} \dot{\vec{x}}\cdot\vec{A}\\
-&amp; = \frac{1}{m} p_i \left(p_i - \frac{e}{c} A_i\right) - \frac{m}{2 m^2}\left({\vec p} - \frac{e}{c} \vec{A}\right)^2 - \frac{e}{mc} \left({\vec p} - \frac{e}{c} \vec{A}\right)^2 - \frac{e}{mc} \left({\vec p} - \frac{e}{c} \vec{A}\right)\cdot\vec{A}\\
+&amp; = \frac{1}{m} p_i \left(p_i - \frac{e}{c} A_i\right) - \frac{m}{2 m^2}\left({\vec p} - \frac{e}{c} \vec{A}\right)^2 - \frac{e}{mc} \left({\vec p} - \frac{e}{c} \vec{A}\right)^2 \\
+&amp; \ \ \ - \frac{e}{mc} \left({\vec p} - \frac{e}{c} \vec{A}\right)\cdot\vec{A}\\
 &amp; = \frac{1}{2m}\left(\vec{p} - \frac{e}{c}\vec{A}\right)^2
 \end{align}\end{split}\]</div>
 </section>
+</section>
+<section id="poisson-brackets">
+<h2>Poisson brackets<a class="headerlink" href="#poisson-brackets" title="Link to this heading">#</a></h2>
+<p>Poisson brackets will seem like a simple rewriting of Hamilton’s equations, but they are an important part of the geometry of classical mechanics; yield Noether’s theorem as a near-tautology; and have an important quantum-mechanical analog.</p>
+<p>We can see them emerge as follows, and along the way introduce another important concept. Any <em>observable quantity</em> <span class="math notranslate nohighlight">\(A\)</span> in classical mechanics should be a function of the state of the system, and thus of phase space: <span class="math notranslate nohighlight">\(A = A(q^I, p_I)\)</span>. (It could be constant in which case classical mechanics has nothing to say about it.). Two examples are the <span class="math notranslate nohighlight">\(i\)</span>th component of angular momentum <span class="math notranslate nohighlight">\(L_i = \half \eps_{ijk} x^j p_k\)</span>; and the energy which is the Hamiltonian itself <span class="math notranslate nohighlight">\(H(q, p)\)</span>.</p>
+<p>How does this observable change along classical trajectories?</p>
+<div class="math notranslate nohighlight" id="equation-observable-flow">
+<span class="eqno">(99)<a class="headerlink" href="#equation-observable-flow" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\frac{dA}{dt} &amp; = \frac{d q^I}{dt} \frac{\del A}{\del q^I} + \frac{d p_I}{dt} \frac{\del A}{\del p_I} \\
+&amp; = \frac{\del H}{\del p_I} \frac{\del A}{\del q_I} - \frac{\del H}{\del q^I}\frac{\del A}{\del p_I}\\
+&amp; \equiv \{A,H\}
+\end{align}\end{split}\]</div>
+<p>The first line is just the chain rule; the second uses Hamilton’s equations; the last introduces the <em>Poisson bracket</em>. More generally, for two observables <span class="math notranslate nohighlight">\(A, B\)</span>, the Poisson bracket is defined as:</p>
+<div class="math notranslate nohighlight" id="equation-pb-def">
+<span class="eqno">(100)<a class="headerlink" href="#equation-pb-def" title="Link to this equation">#</a></span>\[\{A, B\} \equiv \frac{\del A}{\del q^I}\frac{\del B}{\del p_I} - \frac{\del A}{\del p_I}\frac{\del B}{\del q^I}\]</div>
+<p>and satisfies two important properties:</p>
+<ol class="arabic simple">
+<li><p><em>Antisymmetry</em>: <span class="math notranslate nohighlight">\(\{A,B\} = - \{B,A\}\)</span>.</p></li>
+<li><p><em>Jacobi identity</em>: <span class="math notranslate nohighlight">\(\{A,\{B,C\}\} + \{C,\{A,B\}\} + \{B, \{C,A\}\} = 0\)</span>.</p></li>
+</ol>
+<p>Finally, the phase space variables we have written so far satisfy simple, “canonical” Poisson bracket relations:</p>
+<div class="math notranslate nohighlight" id="equation-canonical-brackets">
+<span class="eqno">(101)<a class="headerlink" href="#equation-canonical-brackets" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\{q^I, q^J\} &amp; = 0 \\
+\{p_I, p_J\} &amp; = 0\\
+\{q^I, p_J\} &amp; = \delta^I_J
+\end{align}\end{split}\]</div>
+<p>Note that given what we drivaed at the top, <span class="math notranslate nohighlight">\(\frac{dA}{dt} = \{A, H\}\)</span>, the Hamiltonian <em>generates flows in phase space</em> of all observable quantities. These include the positions and momenta themselves; Hamilton’s equations can be compactly written as</p>
+<div class="math notranslate nohighlight" id="equation-pb-hamilton">
+<span class="eqno">(102)<a class="headerlink" href="#equation-pb-hamilton" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\frac{d q^I}{dt} &amp; = \{q^I , H\}\\
+\frac{d p_I}{dt} &amp; = \{p_I, H\}
+\end{align}\end{split}\]</div>
+<p>The minus sign in the second part of Hamilton’s equations is taken care of by the sign in the definition of the bracket, needed for the antisymmetry property.</p>
+<p>The Poisson bracket is a central object in classical mechanics in defining the geometry of phase space and deriving consequences of teh dynamics. One consequence we will not derive here is Liouville’s theorem, which states that if we take a small volume of phase space and evolve each point forward using Hamilton’s equations, the volume does not change.</p>
+</section>
+<section id="infinitesimal-transformations-and-symmetries">
+<h2>Infinitesimal transformations and symmetries<a class="headerlink" href="#infinitesimal-transformations-and-symmetries" title="Link to this heading">#</a></h2>
+<p>An important part of classical mechanics is defining <em>canonical transformations</em>: transformations of the phase space variables that do not disturb the form of Hamilton’s equations: that is, we fine new variables <span class="math notranslate nohighlight">\(Q^A, P_A\)</span> such that</p>
+<div class="math notranslate nohighlight" id="equation-new-ham">
+<span class="eqno">(103)<a class="headerlink" href="#equation-new-ham" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\frac{d Q^A}{dt} &amp; = \frac{\del H}{\del P_A}\\
+\frac{d P_A}{dt} &amp; = - \frac{\del A}{\del Q^A}
+\end{align}\end{split}\]</div>
+<p>These transformations will also preserve the form of the Poisson bracket, so that <span class="math notranslate nohighlight">\(\{Q^A, Q^B\} = 0\)</span> ; <span class="math notranslate nohighlight">\(\{P_A,P_B\} = 0\)</span>; <span class="math notranslate nohighlight">\(\{Q^A,p_B\} = \delta^A_B\)</span>.</p>
 </section>
 </section>
 
@@ -553,6 +601,8 @@ H &amp; = p_i \dot{x^i} - \half m \dot{\vec{x}}^2 - \frac{e}{c} \dot{\vec{x}}\cd
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-brackets">Poisson brackets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-transformations-and-symmetries">Infinitesimal transformations and symmetries</a></li>
 </ul>
   </nav></div>
 
