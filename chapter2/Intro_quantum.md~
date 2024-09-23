@@ -1,0 +1,10 @@
+# Introduction to quantum mechanics
+
+I will start with a quasi-historical, phenomenological discussion of some basic aspects of quantum mechanics:
+
+1. The need for a new dimensionful quantity $\hbar with units [Energy $\times$ time].
+2. The quantization of the energy of light with frequency $\omega$ into parcels ("photons") with energy $\hbar \omega$,
+3. The fact that quantum states can be written as complex vectors, and that the sum of two such vectors is another legitimate quantum state.
+4. The probabilistic nature of the outcome of quantum measurements.
+
+These are all important; point (3) motivates a serious survey/review of linear algebra, which is also needed to discuss (4) more precisely.

@@ -12,6 +12,7 @@ chapters:
     - file: chapter1/Constraints
     - file: chapter1/Symmetries
     - file: chapter1/Hamilton
+  - file: chapter2/Intro_quantum
   - file: appendix
   - file: bibliography
 # - file: notebooks
