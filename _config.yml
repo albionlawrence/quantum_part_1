@@ -102,10 +102,11 @@ sphinx:
         mathjax3_config:
           tex:
             macros:
-              "ket": ["|#1\\rangle"]
-              "bra": ["\\langle#1|"]
-              "brket": ["\\langle#1|#2\\rangle"]
-              "vev": ["\\langle #1 \\rangle"]
+              "ket": ["|#1\\rangle",1]
+              "bra": ["\\langle#1|",1]
+              "brket": ["\\langle#1|#2\\rangle",1,2]
+              "vev": ["\\langle #1 \\rangle",1]
               "half": ["\\frac{1}{2}"]
               "eps": ["\\epsilon"]
               "del": ["\\partial"]
+              "CE": ["\\cal{E}"]

@@ -57,7 +57,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle"], "bra": ["\\langle#1|"], "brket": ["\\langle#1|#2\\rangle"], "vev": ["\\langle #1 \\rangle"], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 1, 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter2/Intro_quantum';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -177,13 +177,13 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Newton.html">Newtonian mechanics.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Lagrange.html">Lagrangian Mechanics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Constraints.html">Constrained Lagrangian Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Symmetries.html">Symmetries and conservation laws</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Hamilton.html">Hamiltonian Mechanics</a></li>
-</ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to quantum mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -337,11 +337,15 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blackbody-radiation">Blackbody radiation</a></li>
+<<<<<<< HEAD
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photon-polarization">Photon polarization</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-description">Classical description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-description">Quantum description</a></li>
 </ul>
 </li>
+=======
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-photoelectric-effect">The photoelectric effect</a></li>
+>>>>>>> b4025e7085c39e80aa22703fcfd19b3ada6204e9
 </ul>
             </nav>
         </div>
@@ -368,25 +372,69 @@ document.write(`
 <p>Consider a cavity with walls at some temperature <span class="math notranslate nohighlight">\(T\)</span>, such that the electromagnetic field inside of the cavity is at equilibrium with the walls</p>
 <p><img alt="black body model" src="../_images/blackbody.jpeg" /></p>
 <p>What is the expected energy density inside the cavity? We could (following many textbooks) try to comute this from classical electromagnetism, but we will appeal to dimensional analysis.</p>
-<p>The total energy denisty should be an integral over all allowed frequencies:</p>
+<p>The total energy density should be an integral over all allowed frequencies:</p>
 <div class="math notranslate nohighlight" id="equation-energy-density">
-<span class="eqno">(111)<a class="headerlink" href="#equation-energy-density" title="Link to this equation">#</a></span>\[E(T) = \int_0^{\infty} E(T,\omega)\]</div>
-<p>Assuming that the box is very large compared to the wavelengt of the light inside, and that we are asking aboput the energy density which should (for a large box) be independent ot the box size, We have the following dimensionful quantities:</p>
+<span class="eqno">(111)<a class="headerlink" href="#equation-energy-density" title="Link to this equation">#</a></span>\[\CE(T) = \int_0^{\infty} \CE(T,\omega)\]</div>
+<p>Here we are assuming that the volume of the box only appears in the total energy <span class="math notranslate nohighlight">\(E = V \CE(T)\)</span>, which is a thermodynamically extensive quantity. This makes sense if the box is very large compared to the wavelength of the light inside.</p>
+<p>We have the following dimensionful quantities available to construct <span class="math notranslate nohighlight">\(\CE(T,\omega)\)</span>:</p>
 <ol class="arabic simple">
 <li><p>The frequency <span class="math notranslate nohighlight">\(\omega\)</span>.</p></li>
 <li><p>The temperature writen as a thermal energy <span class="math notranslate nohighlight">\(k_B T\)</span>.</p></li>
 <li><p>The speed of light <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
 </ol>
-<p>To get an energy density we can make an energy from <span class="math notranslate nohighlight">\(k_B T\)</span> and a length scale <span class="math notranslate nohighlight">\(c/\omega\)</span> (proportional to the wavelenngth). <span class="math notranslate nohighlight">\(E(T,\omega)\)</span> should have units of energy denisty per frequency. The only combination of the above yielding a quantity with the rigt dimensions is:</p>
+<p>To get an energy density we can make an energy from <span class="math notranslate nohighlight">\(k_B T\)</span> and a length scale <span class="math notranslate nohighlight">\(c/\omega\)</span> (proportional to the wavelength). <span class="math notranslate nohighlight">\(\CE(T,\omega)\)</span> should have units of energy denisty per frequency. The only combination of the above yielding a quantity with the right dimensions is:</p>
 <div class="math notranslate nohighlight" id="equation-en-dens-dimanalysis">
-<span class="eqno">(112)<a class="headerlink" href="#equation-en-dens-dimanalysis" title="Link to this equation">#</a></span>\[E(T, omega) = A k_B T \left(\frac{\omega}{c}\right)^3 \frac{1}{\omega}\]</div>
-<p>where <span class="math notranslate nohighlight">\(A\)</span> is a dimensionless constant that requires a first-principles calculation to obtain.</p>
+<span class="eqno">(112)<a class="headerlink" href="#equation-en-dens-dimanalysis" title="Link to this equation">#</a></span>\[\CE(T, omega) = A k_B T \left(\frac{\omega}{c}\right)^3 \frac{1}{\omega} = A \frac{k_B T}{c^3} \omega^2\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> is a dimensionless constant that requires a first-principles calculation to obtain. This is called the “Rayleigh” law and <span class="math notranslate nohighlight">\(A\)</span> was calculated by Rayleigh in 1900.</p>
 <p>The total energy is thus</p>
 <div class="math notranslate nohighlight" id="equation-total-energy-divergent">
-<span class="eqno">(113)<a class="headerlink" href="#equation-total-energy-divergent" title="Link to this equation">#</a></span>\[E(T) = \left(\frac{A k_B T}{c^3}\right) \int_0^{\infty} d\omega \omega^2 = \infty\]</div>
-<p>This is sometimes termed the “ultraviolet catastrophe”. Possible outs are (a) there is a maximum possible frequency for the electromagnetic field, or (b) we need to introduce some other dimensionful constant so that <span class="math notranslate nohighlight">\(E(T,omega)\)</span> becomes a function that falls off rapidly at large <span class="math notranslate nohighlight">\(\omega\)</span>. Note that either requires some new dimensionful constant; the former requires at least a maximum frequency <span class="math notranslate nohighlight">\(\Omega\)</span>.</p>
-<p>We will describe a solution of the type (b), as this produces a spectrum which is in agreement with the data; this was Planck’s original goal. Plank’s guess ammounted to introducing a new fundamental constant <span class="math notranslate nohighlight">\(\hbar\)</span> with units [Energy <span class="math notranslate nohighlight">\(\times\)</span> time]. Thus, <span class="math notranslate nohighlight">\(\hbar \omega\)</span> is now an energy scale intronsic to the system.</p>
-<p>Now consider an electromagnetic field with a given polarization and wave vector <span class="math notranslate nohighlight">\({\vec k}\)</span>, such that <span class="math notranslate nohighlight">\(\omega = 2\pi c |{\vec k}|\)</span>.</p>
+<span class="eqno">(113)<a class="headerlink" href="#equation-total-energy-divergent" title="Link to this equation">#</a></span>\[\CE(T) = \left(\frac{A k_B T}{c^3}\right) \int_0^{\infty} d\omega \omega^2 = \infty\]</div>
+<p>This is sometimes termed the “ultraviolet catastrophe”.  What is needed is some new dimensionful scale, so that the integral is better behaved. One possibility is to just assume that the electromagnetic field has a largest possible frequency <span class="math notranslate nohighlight">\(\omega_{max}\)</span> and the integral is cut off.</p>
+<p>However, the real issue is that the black body spectrum does not look like this. <span class="math notranslate nohighlight">\(\CE(\omega,T)\)</span> is observable, for example by poking a small hole in the side of the black body and measuring the spectrum of teh emitted power (as illustrated above). It was already known that at high frequencies the black body spectrum follows the (phenomenological) Wien law <span class="math notranslate nohighlight">\(\CE(\omega,T) \sim \omega^3 e^{-c \omega/(k_B T}\)</span>, where <span class="math notranslate nohighlight">\(c\)</span> is some constant (which must have units of [energy <span class="math notranslate nohighlight">\(\times\)</span> time].)</p>
+<p>Planck deduced a functional form that he later justifies with a hypothesis. We well cheat and start with that hypothesis. Let us fix the polarization state and the wavenumber <span class="math notranslate nohighlight">\({\vec k}\)</span> of a mode of the electromagnetic field (ignoring boundary conditions and such, this is all very handwavy to make a point). We assume that each mode has an energy that is an integer multiple of <span class="math notranslate nohighlight">\(\omega\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-planck-rule">
+<span class="eqno">(114)<a class="headerlink" href="#equation-planck-rule" title="Link to this equation">#</a></span>\[\CE({\vec k}, {\hat n}_{pol}, \omega) = n \hbar \omega  ; \ \ n = \{0, 1,2,\ldots\}\]</div>
+<p>whefre <span class="math notranslate nohighlight">\({\hat n}_{pol}\)</span> denotes one of teh two independent polarization states (linear, circular, etc). To get an expression appropriate for thermal equilibrium, we must do statistical mechanics. Boltzmann’s hypopthesis states that the probability of the mode being in the state labelled by <span class="math notranslate nohighlight">\(n\)</span> is:</p>
+<div class="math notranslate nohighlight" id="equation-boltzmann">
+<span class="eqno">(115)<a class="headerlink" href="#equation-boltzmann" title="Link to this equation">#</a></span>\[p_n = \frac{e^{-n \hbar \omega/(k_B T)}}{\sum_{m = 0}^{\infty} e^{-n \hbar \omega/(k_B T)}} = e^{-n\hbar\omega/(k_B T)}\left(1 - e^{-\hbar \omega/(k_B T)}\right)\]</div>
+<p>where we have used the classic formula <span class="math notranslate nohighlight">\(\sum_{N = 0}^{\infty} x^N = \frac{1}{1 - x}\)</span> for <span class="math notranslate nohighlight">\(x &lt; 1\)</span>. To get the thermodynamic behavior, we need to compute the average energy per mode using the above probability distribution:</p>
+<div class="math notranslate nohighlight" id="equation-average-bb-ed">
+<span class="eqno">(116)<a class="headerlink" href="#equation-average-bb-ed" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\vev{\CE_n} &amp; = \sum_n \CE_n p_n \\
+&amp; = \sum_n n \hbar \omega \left(1 - e^{-\hbar\omega/(k_B T)}\right) e^{-n\hbar\omega/(k_B T)} \\
+&amp; = \left(1 - e^{-\hbar\omega/(k_B T)}\right) (k_B T)^2 \frac{\del}{\del (k_B T)} \sum_n e^{-n\beta \omega/(k_B T)}\\
+&amp; = \frac{\hbar\omega e^{-\hbar\omega/(k_B T)}}{1 - e^{-\hbar\omega/(k_B T)}} \\
+&amp; = \frac{\hbar\omega}{e^{\hbar\omega/(k_B T)} - 1}
+\end{align}\end{split}\]</div>
+<p>If we carefully sum over all wavenumbers (with fixed frequency) and polarizations, we get:</p>
+<div class="math notranslate nohighlight" id="equation-planck-spectrum">
+<span class="eqno">(117)<a class="headerlink" href="#equation-planck-spectrum" title="Link to this equation">#</a></span>\[\CE(\omega, T) = \frac{\hbar \omega^3}{\pi^2 c^3} \frac{1}{e^{\hbar \omega/(k_B T)} - 1}\]</div>
+<p>One can show that this takes the Rayleigh form for <span class="math notranslate nohighlight">\(\hbar\omega \ll k_B T\)</span> and the Wien form for <span class="math notranslate nohighlight">\(\hbar\omega \gg k_B T\)</span>.
+Finally, to tie this back to our earlier dimensional analysis, we can rewrite it as:</p>
+<div class="math notranslate nohighlight" id="equation-planck-scaling">
+<span class="eqno">(118)<a class="headerlink" href="#equation-planck-scaling" title="Link to this equation">#</a></span>\[\CE(\omega,T) = k_B T\frac{\omega^2}{c^3} f\left(\frac{\hbar\omega}{k_B T}\right)\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-planck-sf">
+<span class="eqno">(119)<a class="headerlink" href="#equation-planck-sf" title="Link to this equation">#</a></span>\[f(x) &amp; = \frac{1}{\pi^2} \frac{x}{e^x - 1)\]</div>
+<p>In other words, the fact that we can create a new energy scale <span class="math notranslate nohighlight">\(\hbar\omega\)</span> is what allows us to write a functional form for <span class="math notranslate nohighlight">\(\CE(\omega,T)\)</span> consistent with the observed high- and low-frequency limits. Note that we now know the soure of this quantization (and we will say more about it below): light comes in “packets” consisting of individual particles known as <em>photons</em> with energy <span class="math notranslate nohighlight">\(\hbar\omega\)</span>.</p>
+<p>This <em>black body spectrum</em> is observed with exquisite prediction. As an example, a prediction of the hot big bang theory is that the early universe had a phase in which electrons, protons, and photons were in a state of thermal equilibrium with temperature <span class="math notranslate nohighlight">\(T \sim 3000K\)</span>. The photons would then have the black body spectrum at this temperature. At <span class="math notranslate nohighlight">\(t \sim 10^5\)</span> years after the big bang, the electrons and protons combined to form neutral hydrogen. The photons retained the blackbody spectrum; however, as the universe expanded, the photons redshifted. The functional form of the blackboddy spectrum is known to be retained, with the temperature appearing as a parameter that decreases with redshift. Thus, we should see a
+“cosmic microwave background radiation” (CMBR) today, a blackbody spectrum parametyerized by a temperature <span class="math notranslate nohighlight">\(T \sim 2.73K\)</span>. This has been observed to exquisite precision by the Cosmic Background Explorer (COBE) satellite which announced their results in 1992. (Different parts of the spectrum had been observed by earlier ground-based and balloon-borne experiments. This is a long and fascinating story with some interesting wrong turns. COBE showed that the spctrum was <em>truly</em> a blackbody spectrum from the Rayleigh through to the Wien range). There are small deviations from this, represented by local deciations in temperature, to a part in <span class="math notranslate nohighlight">\(10^5\)</span>. This is consistent with the hot big bang theory, and inn fact these small flcutuations are the seed for the cosmic structure we see today.</p>
+</section>
+<section id="the-photoelectric-effect">
+<h2>The photoelectric effect<a class="headerlink" href="#the-photoelectric-effect" title="Link to this heading">#</a></h2>
+<p>The next phenomenon was famously discussed by Einstein during his <em>annus mirabilis</em> of 1905. Consider a beam of light with frequency <span class="math notranslate nohighlight">\(\omega\)</span> shining on an electrode comprised of some particular metal. A cathode can be reached by electons in the metal if they can travel across some voltage drop <span class="math notranslate nohighlight">\(V\)</span>.</p>
+<p>Hertz observed the following in 1887:</p>
+<ol class="arabic simple">
+<li><p>The plates emit electrons (and no positvely charged particles)</p></li>
+<li><p>Whether the plate emits electrons depends only on the frequency of the incoming light, and not on its intensity.</p></li>
+<li><p>The magnitude of tte current in the cathode <em>is</em> proportional to the frequency</p></li>
+<li><p>The energy of each photoelectron (as measured by mmeasuring for what <span class="math notranslate nohighlight">\(V\)</span> an electron hits the cathode) is independent of the intensity of the light, and is linear in frequency, above some critical frequency <span class="math notranslate nohighlight">\(\omega_c\)</span> which depends on the metal (and not on the photon frequency).</p></li>
+</ol>
+<p><img alt="Photelectric effect" src="../_images/photoelectric.jpeg" /></p>
+<p>Einstein’s interpretation was that light consistened of single particles or <em>\photons</em>, each of which carries an energy <span class="math notranslate nohighlight">\(\hbar \omega\)</span>. Electrons acquire kinetic energy by absorbing a single photon. To be ejected from the metal, the electron must cross a potential barrier <span class="math notranslate nohighlight">\(W = \hbar \omega_c\)</span> which is intrinsic to that metal (<span class="math notranslate nohighlight">\(W\)</span> is called the <em>work function</em> of the metal). The kinetic energy is for frequencies higher than <span class="math notranslate nohighlight">\(\omega_c\)</span> is thus</p>
+<div class="math notranslate nohighlight" id="equation-pe-ke">
+<span class="eqno">(120)<a class="headerlink" href="#equation-pe-ke" title="Link to this equation">#</a></span>\[\half m v^2 = \hbar(\omega - \omega_c)\theta(\omega - \omega_c)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta(x)\)</span> is the Heaviside step function. The point here is that the packets of energy Placnk suggested could be interpreted as a single quantum or particle of light called a <em>photon</em> whose energy is related to their frequency by the dimensionfuil constant <span class="math notranslate nohighlight">\(\hbar\)</span>. Increasing the intensity of light does not change the energy of each photon, but the number of photons. If there is not a single photon with enough energy to eject an electron, no electron will be ejected.</p>
 </section>
 <section id="photon-polarization">
 <h2>Photon polarization<a class="headerlink" href="#photon-polarization" title="Link to this heading">#</a></h2>
@@ -518,11 +566,15 @@ equivalently <span class="math notranslate nohighlight">\({\vec E}_c = E({\hat x
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blackbody-radiation">Blackbody radiation</a></li>
+<<<<<<< HEAD
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photon-polarization">Photon polarization</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-description">Classical description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-description">Quantum description</a></li>
 </ul>
 </li>
+=======
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-photoelectric-effect">The photoelectric effect</a></li>
+>>>>>>> b4025e7085c39e80aa22703fcfd19b3ada6204e9
 </ul>
   </nav></div>
 
