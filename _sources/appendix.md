@@ -78,7 +78,7 @@ For general $d$, the cross product of two vectors $U^i V^i$ is a $d-2$-rank tens
 ({\vec U} \times {\vec V})_{i_1,\ldots,i_{d-2}} = \epsilon_{i_1,\ldots,i_{d-2}, i_{d--1}, i_d} U^{i_{d-1}} V^{i_d}
 ```
 
-For $d = 2$, this is a scalar (actuaklly a "pseudo-scalar"):
+For $d = 2$, this is a scalar (actually a "pseudo-scalar"):
 
 ```{math}
 :label: two_d_cross
@@ -99,4 +99,11 @@ Or alternatively,
 U^i V^j - U^j V^i = \epsilon_{ijk} ({\vec U}\times {\vec B})^k
 ```
 
+## Some useful functions
 
+1. The Heaviside step function $\theta(x)$:
+
+```{math}
+:label: step_function
+\theta(x) = \begin{cases} 0, & \text{if}\ x < 0 \\ 1, & \text{if} x > 0 \end{cases}
+```
