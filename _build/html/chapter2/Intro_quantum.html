@@ -177,13 +177,13 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Newton.html">Newtonian mechanics.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Lagrange.html">Lagrangian Mechanics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Constraints.html">Constrained Lagrangian Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Symmetries.html">Symmetries and conservation laws</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Hamilton.html">Hamiltonian Mechanics</a></li>
-</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</ul>
 </details></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to quantum mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -337,15 +337,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blackbody-radiation">Blackbody radiation</a></li>
-<<<<<<< HEAD
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-photoelectric-effect">The photoelectric effect</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photon-polarization">Photon polarization</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-description">Classical description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-description">Quantum description</a></li>
 </ul>
 </li>
-=======
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-photoelectric-effect">The photoelectric effect</a></li>
->>>>>>> b4025e7085c39e80aa22703fcfd19b3ada6204e9
 </ul>
             </nav>
         </div>
@@ -435,6 +432,7 @@ Finally, to tie this back to our earlier dimensional analysis, we can rewrite it
 <div class="math notranslate nohighlight" id="equation-pe-ke">
 <span class="eqno">(120)<a class="headerlink" href="#equation-pe-ke" title="Link to this equation">#</a></span>\[\half m v^2 = \hbar(\omega - \omega_c)\theta(\omega - \omega_c)\]</div>
 <p>where <span class="math notranslate nohighlight">\(\theta(x)\)</span> is the Heaviside step function. The point here is that the packets of energy Placnk suggested could be interpreted as a single quantum or particle of light called a <em>photon</em> whose energy is related to their frequency by the dimensionfuil constant <span class="math notranslate nohighlight">\(\hbar\)</span>. Increasing the intensity of light does not change the energy of each photon, but the number of photons. If there is not a single photon with enough energy to eject an electron, no electron will be ejected.</p>
+<p>Now consider an electromagnetic field with a given polarization and wave vector <span class="math notranslate nohighlight">\({\vec k}\)</span>, such that <span class="math notranslate nohighlight">\(\omega = 2\pi c |{\vec k}|\)</span>.</p>
 </section>
 <section id="photon-polarization">
 <h2>Photon polarization<a class="headerlink" href="#photon-polarization" title="Link to this heading">#</a></h2>
@@ -442,13 +440,13 @@ Finally, to tie this back to our earlier dimensional analysis, we can rewrite it
 <h3>Classical description<a class="headerlink" href="#classical-description" title="Link to this heading">#</a></h3>
 <p>Consider an electromagnetic field propagating in a vacuum along the <span class="math notranslate nohighlight">\(z\)</span> direction. The most general solution to Maxwell’s equations in this case is:</p>
 <div class="math notranslate nohighlight" id="equation-propagating-em">
-<span class="eqno">(114)<a class="headerlink" href="#equation-propagating-em" title="Link to this equation">#</a></span>\[{\vec E} = \text{Re}\ \left\{ \left[ E_x {\hat x} + E_y {\hat y} \right]e^{i (kx - \omega t)}\right\} = \text{Re}\left\{ {\vec E}_c e^{i (kx - \omega t)} \right\}\]</div>
+<span class="eqno">(121)<a class="headerlink" href="#equation-propagating-em" title="Link to this equation">#</a></span>\[{\vec E} = \text{Re}\ \left\{ \left[ E_x {\hat x} + E_y {\hat y} \right]e^{i (kx - \omega t)}\right\} = \text{Re}\left\{ {\vec E}_c e^{i (kx - \omega t)} \right\}\]</div>
 <p>where <span class="math notranslate nohighlight">\(E_{x,y} \in \mathbb{C}\)</span> so that <span class="math notranslate nohighlight">\(E_i = |E_i| e^{i\delta_i}\)</span>, and <span class="math notranslate nohighlight">\(\omega = c k\)</span>. We can rewrite this as</p>
 <div class="math notranslate nohighlight" id="equation-real-propagating">
-<span class="eqno">(115)<a class="headerlink" href="#equation-real-propagating" title="Link to this equation">#</a></span>\[{\vec E} = |E_x|\cos(kz - \omega t+ \delta_x) {\hat x} + |E_y| \cos(kx - \omega t + \delta_y)\]</div>
+<span class="eqno">(122)<a class="headerlink" href="#equation-real-propagating" title="Link to this equation">#</a></span>\[{\vec E} = |E_x|\cos(kz - \omega t+ \delta_x) {\hat x} + |E_y| \cos(kx - \omega t + \delta_y)\]</div>
 <p>The magnetic field <span class="math notranslate nohighlight">\({\vec H}\)</span> can be determined from the Maxwell equation</p>
 <div class="math notranslate nohighlight" id="equation-determine-h">
-<span class="eqno">(116)<a class="headerlink" href="#equation-determine-h" title="Link to this equation">#</a></span>\[\nabla \times {\vec E} + \frac{1}{c}\frac{\del}{\del t}\vec{H}\]</div>
+<span class="eqno">(123)<a class="headerlink" href="#equation-determine-h" title="Link to this equation">#</a></span>\[\nabla \times {\vec E} + \frac{1}{c}\frac{\del}{\del t}\vec{H}\]</div>
 <p>This supports various polarization states such as</p>
 <ol class="arabic simple">
 <li><p>Linear/plane polarization: <span class="math notranslate nohighlight">\({\vec E}_x = E e^{i\delta} {\hat n}\)</span> where <span class="math notranslate nohighlight">\(E\)</span> is a positive real number and <span class="math notranslate nohighlight">\({\hat n}\)</span> a unit vector in the <span class="math notranslate nohighlight">\(x-y\)</span> plane. In particular <span class="math notranslate nohighlight">\({\hat n} = {\hat x}, {\hat y}\)</span> correspond to plane polarization along the <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-axis respectively.</p></li>
@@ -459,33 +457,33 @@ Finally, to tie this back to our earlier dimensional analysis, we can rewrite it
 equivalently <span class="math notranslate nohighlight">\({\vec E}_c = E({\hat x} - i {\hat y})e^{i\delta}\)</span>. Thus:</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-lcp">
-<span class="eqno">(117)<a class="headerlink" href="#equation-lcp" title="Link to this equation">#</a></span>\[{\vec E}_{LCP} = E\left(\cos(kz - \omega t + \delta){\hat x} + \sin (kz - \omega t + \delta) {\hat y}\right)\]</div>
+<span class="eqno">(124)<a class="headerlink" href="#equation-lcp" title="Link to this equation">#</a></span>\[{\vec E}_{LCP} = E\left(\cos(kz - \omega t + \delta){\hat x} + \sin (kz - \omega t + \delta) {\hat y}\right)\]</div>
 <ul class="simple">
 <li><p><strong>Right circular polarization (RCP)</strong>: <span class="math notranslate nohighlight">\(E_y = i E_x = i e^{i\delta}\)</span> or <span class="math notranslate nohighlight">\({\vec E}_c = E({\hat x} + i {\hat y})e^{i\delta}\)</span>. Thus:</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-rcp">
-<span class="eqno">(118)<a class="headerlink" href="#equation-rcp" title="Link to this equation">#</a></span>\[{\vec E}_{RCP} = E\left(\cos(kz - \omega t + \delta){\hat x} + \sin (kz - \omega t + \delta) {\hat y}\right)\]</div>
+<span class="eqno">(125)<a class="headerlink" href="#equation-rcp" title="Link to this equation">#</a></span>\[{\vec E}_{RCP} = E\left(\cos(kz - \omega t + \delta){\hat x} + \sin (kz - \omega t + \delta) {\hat y}\right)\]</div>
 <p>Note that for any plane wave, <span class="math notranslate nohighlight">\({\vec E}_c\)</span> can be written as a linear combination of left- and right-circular polarizations, or as <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-plane polarizations.</p>
 <p>The energy density is</p>
 <div class="math notranslate nohighlight" id="equation-maxwell-ed">
-<span class="eqno">(119)<a class="headerlink" href="#equation-maxwell-ed" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(126)<a class="headerlink" href="#equation-maxwell-ed" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \cal{E} &amp; = \frac{1}{8\pi}\left[ {\vec E}^2 + {\vec H}^2\right]\\
 &amp; = \frac{1}{4\pi} \left[|E_x|^2\cos^2(kz - \omega t + \delta_x) + |E_y|^2\cos^2(kz - \omega t + \delta_y)\right]
 \end{align}\end{split}\]</div>
 <p>Assuming the field propagates in some volume <span class="math notranslate nohighlight">\(V\)</span>, the total energy is</p>
 <div class="math notranslate nohighlight" id="equation-total-energy">
-<span class="eqno">(120)<a class="headerlink" href="#equation-total-energy" title="Link to this equation">#</a></span>\[U = \int d^2 x z {\cal E} = \frac{V}{2\times 4\pi} \left[|E_x|^2 + |E_y|^2\right]\]</div>
+<span class="eqno">(127)<a class="headerlink" href="#equation-total-energy" title="Link to this equation">#</a></span>\[U = \int d^2 x z {\cal E} = \frac{V}{2\times 4\pi} \left[|E_x|^2 + |E_y|^2\right]\]</div>
 <p>the factor of 2 in the denominator comes from integrating the <span class="math notranslate nohighlight">\(\cos^2\)</span> factors over <span class="math notranslate nohighlight">\(z\)</span>.</p>
-<p>Now let us pass our beam through a polarizer. We call an “x-polarizer” one which admits only light polarized along the <span class="math notranslate nohighlight">\({\hat x}\)</span> direction, so that <span class="math notranslate nohighlight">\(E_x\)</span> remains unchanged by <span class="math notranslate nohighlight">\(E_y\)</span> is set to zero. In general, we can consider a polarizer aligned along any complex unit vector <span class="math notranslate nohighlight">\({\hat n}\)</span> so that any initial light wave described by <a class="reference internal" href="#equation-propagating-em">(114)</a> becomes</p>
+<p>Now let us pass our beam through a polarizer. We call an “x-polarizer” one which admits only light polarized along the <span class="math notranslate nohighlight">\({\hat x}\)</span> direction, so that <span class="math notranslate nohighlight">\(E_x\)</span> remains unchanged by <span class="math notranslate nohighlight">\(E_y\)</span> is set to zero. In general, we can consider a polarizer aligned along any complex unit vector <span class="math notranslate nohighlight">\({\hat n}\)</span> so that any initial light wave described by <a class="reference internal" href="#equation-propagating-em">(121)</a> becomes</p>
 <div class="math notranslate nohighlight" id="equation-polarized-em">
-<span class="eqno">(121)<a class="headerlink" href="#equation-polarized-em" title="Link to this equation">#</a></span>\[{\vec E}_{after} = \text{Re}\left\{ {\vec E}_c \cdot {\hat n} {\hat n} e^{i(kz - \omega t)} \right\}\]</div>
+<span class="eqno">(128)<a class="headerlink" href="#equation-polarized-em" title="Link to this equation">#</a></span>\[{\vec E}_{after} = \text{Re}\left\{ {\vec E}_c \cdot {\hat n} {\hat n} e^{i(kz - \omega t)} \right\}\]</div>
 <p>For a polarizer aligned along <span class="math notranslate nohighlight">\({\hat x}\)</span>, <span class="math notranslate nohighlight">\({\hat n} = {\hat x}\)</span>; for a polarizer admitting LCP, <span class="math notranslate nohighlight">\({\hat n}_{LCP} = \frac{1}{\sqrt{2}} \left({\hat x} - i {\hat y}\right)\)</span>; for a polarizer admitting RCP, <span class="math notranslate nohighlight">\({\hat n}_{RCP} = \frac{1}{\sqrt{2}}\left({\hat x} + i {\hat y}\right)\)</span>.</p>
 <p>This generally reduces the energy of the beam of light. For example, we can show that if we consider light polarized along <span class="math notranslate nohighlight">\({\hat n} = \frac{1}{\sqrt{2}} \left(\hat{x} + {\hat y}\right)\)</span>, that is at a <span class="math notranslate nohighlight">\(45^{\circ}\)</span> angle fromthe <span class="math notranslate nohighlight">\(x\)</span>-axis, and pass it through a polatizer aligned along the <span class="math notranslate nohighlight">\(x\)</span> axis,</p>
 <div class="math notranslate nohighlight" id="equation-field-reduction">
-<span class="eqno">(122)<a class="headerlink" href="#equation-field-reduction" title="Link to this equation">#</a></span>\[{\vec E} = E\cos(kx - \omega t + \delta)\left({\hat x} + {\hat y}\right) \rightarrow E\cos(kx - \omega t + \delta){\hat x}\]</div>
+<span class="eqno">(129)<a class="headerlink" href="#equation-field-reduction" title="Link to this equation">#</a></span>\[{\vec E} = E\cos(kx - \omega t + \delta)\left({\hat x} + {\hat y}\right) \rightarrow E\cos(kx - \omega t + \delta){\hat x}\]</div>
 <p>The energy is in this case cut in half:</p>
 <div class="math notranslate nohighlight" id="equation-energy-reduction">
-<span class="eqno">(123)<a class="headerlink" href="#equation-energy-reduction" title="Link to this equation">#</a></span>\[U_{init} = \frac{V}{8\pi}\times 2 \times |E|^2 \rightarrow U_{after} = \frac{V}{8\pi}|E|^2 = \half U_{init}\]</div>
+<span class="eqno">(130)<a class="headerlink" href="#equation-energy-reduction" title="Link to this equation">#</a></span>\[U_{init} = \frac{V}{8\pi}\times 2 \times |E|^2 \rightarrow U_{after} = \frac{V}{8\pi}|E|^2 = \half U_{init}\]</div>
 </section>
 <section id="quantum-description">
 <h3>Quantum description<a class="headerlink" href="#quantum-description" title="Link to this heading">#</a></h3>
@@ -496,7 +494,7 @@ equivalently <span class="math notranslate nohighlight">\({\vec E}_c = E({\hat x
 </ul>
 <p>Our best available interpretation is that <em>each</em> photon has a <span class="math notranslate nohighlight">\(50\%\)</span> chance of passing through this polarizer. For typical classical beams one can see that <span class="math notranslate nohighlight">\(N \gg 1\)</span>, so that the law of large numbers/central limit theorem tells us</p>
 <div class="math notranslate nohighlight" id="equation-lln-polarizer">
-<span class="eqno">(124)<a class="headerlink" href="#equation-lln-polarizer" title="Link to this equation">#</a></span>\[N \to N\left(\half + {\cal O}\left(\frac{1}{\sqrt{N}}\right)\right)\]</div>
+<span class="eqno">(131)<a class="headerlink" href="#equation-lln-polarizer" title="Link to this equation">#</a></span>\[N \to N\left(\half + {\cal O}\left(\frac{1}{\sqrt{N}}\right)\right)\]</div>
 </section>
 </section>
 </section>
@@ -566,15 +564,12 @@ equivalently <span class="math notranslate nohighlight">\({\vec E}_c = E({\hat x
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blackbody-radiation">Blackbody radiation</a></li>
-<<<<<<< HEAD
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-photoelectric-effect">The photoelectric effect</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photon-polarization">Photon polarization</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-description">Classical description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-description">Quantum description</a></li>
 </ul>
 </li>
-=======
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-photoelectric-effect">The photoelectric effect</a></li>
->>>>>>> b4025e7085c39e80aa22703fcfd19b3ada6204e9
 </ul>
   </nav></div>
 
