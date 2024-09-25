@@ -236,4 +236,20 @@ Our best available interpretation is that *each* photon has a $50\%$ chance of p
 N \to N\left(\half + {\cal O}\left(\frac{1}{\sqrt{N}}\right)\right)
 ```
 
+For more general polarizations, 
 
+```{math}
+:label: gen_pol
+\begin{align}
+{\vec E} = \text{RE}\ \left[ E_x e^{i(kx - \omega t)} {\hat x} + E_y e^{i(kx - \omega t)} {\hat y}\right]\\
+U_{initial} & = \frac{V}{8\pi}\left(|E_x|^2 + |E_y|^2\right)\\
+U_{final} & = \frac{V}{8\pi} |E_x|^2
+\end{align}
+```
+
+So the probability of a single photon passing through the polarizer, given the polarization state listed above, is
+
+```{math}
+:label: single_photon_prob
+p = \frac{N_{final}}{N_{init}} \frac{\hbar\omega}{\hbar\omega} = \frac{U_{final}}{U_{init}} = \frac{|E_x|^2}{|E_x|^2 + |E_y|^2}
+```

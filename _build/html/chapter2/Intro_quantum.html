@@ -177,13 +177,13 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Newton.html">Newtonian mechanics.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Lagrange.html">Lagrangian Mechanics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Constraints.html">Constrained Lagrangian Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Symmetries.html">Symmetries and conservation laws</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Hamilton.html">Hamiltonian Mechanics</a></li>
-</ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to quantum mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -495,6 +495,16 @@ equivalently <span class="math notranslate nohighlight">\({\vec E}_c = E({\hat x
 <p>Our best available interpretation is that <em>each</em> photon has a <span class="math notranslate nohighlight">\(50\%\)</span> chance of passing through this polarizer. For typical classical beams one can see that <span class="math notranslate nohighlight">\(N \gg 1\)</span>, so that the law of large numbers/central limit theorem tells us</p>
 <div class="math notranslate nohighlight" id="equation-lln-polarizer">
 <span class="eqno">(131)<a class="headerlink" href="#equation-lln-polarizer" title="Link to this equation">#</a></span>\[N \to N\left(\half + {\cal O}\left(\frac{1}{\sqrt{N}}\right)\right)\]</div>
+<p>For more general polarizations,</p>
+<div class="math notranslate nohighlight" id="equation-gen-pol">
+<span class="eqno">(132)<a class="headerlink" href="#equation-gen-pol" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+{\vec E} = \text{RE}\ \left[ E_x e^{i(kx - \omega t)} {\hat x} + E_y e^{i(kx - \omega t)} {\hat y}\right]\\
+U_{initial} &amp; = \frac{V}{8\pi}\left(|E_x|^2 + |E_y|^2\right)\\
+U_{final} &amp; = \frac{V}{8\pi} |E_x|^2
+\end{align}\end{split}\]</div>
+<p>So the probability of a single photon passing through the polarizer, given the polarization state listed above, is</p>
+<div class="math notranslate nohighlight" id="equation-single-photon-prob">
+<span class="eqno">(133)<a class="headerlink" href="#equation-single-photon-prob" title="Link to this equation">#</a></span>\[p = \frac{N_{final}}{N_{init}} \frac{\hbar\omega}{\hbar\omega} = \frac{U_{final}}{U_{init}} = \frac{|E_x|^2}{|E_x|^2 + |E_y|^2}\]</div>
 </section>
 </section>
 </section>
