@@ -110,3 +110,6 @@ sphinx:
               "eps": ["\\epsilon"]
               "del": ["\\partial"]
               "CE": ["\\cal{E}"]
+              "CF": ["\\mathbb{F}"]
+              "CC": ["\\mathbb{C}"]
+              "CR": ["\\mathbb{R}"]

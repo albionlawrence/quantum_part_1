@@ -57,12 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 1, 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 1, 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter2/Intro_quantum';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="next" title="Linear algebra" href="../chapter3/Intro_linear_algebra.html" />
     <link rel="prev" title="Hamiltonian Mechanics" href="../chapter1/Hamilton.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -186,6 +186,11 @@
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to quantum mechanics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/Intro_linear_algebra.html">Linear algebra</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Vector_spaces.html">Vector spaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Linear_operators.html">Linear operators</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -495,38 +500,6 @@ equivalently <span class="math notranslate nohighlight">\({\vec E}_c = E({\hat x
 <p>Our best available interpretation is that <em>each</em> photon has a <span class="math notranslate nohighlight">\(50\%\)</span> chance of passing through this polarizer. For typical classical beams one can see that <span class="math notranslate nohighlight">\(N \gg 1\)</span>, so that the law of large numbers/central limit theorem tells us</p>
 <div class="math notranslate nohighlight" id="equation-lln-polarizer">
 <span class="eqno">(131)<a class="headerlink" href="#equation-lln-polarizer" title="Link to this equation">#</a></span>\[N \to N\left(\half + {\cal O}\left(\frac{1}{\sqrt{N}}\right)\right)\]</div>
-<<<<<<< HEAD
-<p>For a more general polarization states, the probability of the photon passing through the polarizer aligned along the <span class="math notranslate nohighlight">\(x\)</span>-axis is</p>
-<div class="math notranslate nohighlight" id="equation-lin-polarizer-general">
-<span class="eqno">(132)<a class="headerlink" href="#equation-lin-polarizer-general" title="Link to this equation">#</a></span>\[p = \frac{|E_x|^2}{|E_x|^2 + |E_y|^2} sim \frac{N_f}{N}\]</div>
-<p>For  single photon with fixed frequency and wavenumber,</p>
-<div class="math notranslate nohighlight" id="equation-sp-energy">
-<span class="eqno">(133)<a class="headerlink" href="#equation-sp-energy" title="Link to this equation">#</a></span>\[U_{tot} = \frac{V}{8\pi} \left(|E_x|^2 + |E_y|^2\right) = \hbar \omega\]</div>
-<p>For an electric field satisfying this relation, we can write a “state vector” that describes the photon polarization:</p>
-<div class="math notranslate nohighlight" id="equation-state-vector-photon">
-<span class="eqno">(134)<a class="headerlink" href="#equation-state-vector-photon" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-&amp; \ket{\psi} \equiv \begin{pmatrix} \psi_x \\ \psi_y \end{pmatrix}\\
-&amp; psi_i = \sqrt{\frac{V}{8\pi \hbar \omega}} E_i
-\end{align}\end{split}\]</div>
-<p>The notation <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> should here be understood in this way, as shorthand for a vector (here a two-dimensional vector with complex entries). Using <a class="reference internal" href="#equation-sp-energy">(133)</a> we can see that <span class="math notranslate nohighlight">\(|\psi_x|^2 + |\psi_y|^2 = 1\)</span>, apnd that <span class="math notranslate nohighlight">\(p_x = |\psi_x|^2\)</span>. Similarly, the probability of the same photon passing through a polarizer aligned alongthe <span class="math notranslate nohighlight">\(y\)</span> axis is <span class="math notranslate nohighlight">\(p_y = |\psi_y|^2\)</span>. It is as if the two possible outcomes are that the photon is polarized along the <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> axis. On the other hand, we could rotate both polarizers by (say) <span class="math notranslate nohighlight">\(17^{\circ}\)</span> and do the same experiment and the probability of the photon passing through each of the two perpendictular polarizers will sum to <span class="math notranslate nohighlight">\(1\)</span>.</p>
-<p>Finally, not that there is a <em>linear structure</em> to the space of photon polarizations, in that we can add two polarization vectors and get another polarization vector, up to the overall normalization constraint <a class="reference internal" href="#equation-sp-energy">(133)</a> for a single photon. In particular, if we define</p>
-<div class="math notranslate nohighlight" id="equation-linear-basis">
-<span class="eqno">(135)<a class="headerlink" href="#equation-linear-basis" title="Link to this equation">#</a></span>\[\begin{split}&amp; \ket{\psi_x} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}\\
-&amp; \ket{\psi_y} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}\end{split}\]</div>
-<p>then <em>any</em> polarization can be described by the linear combination</p>
-<div class="math notranslate nohighlight" id="equation-linear-combo">
-<span class="eqno">(136)<a class="headerlink" href="#equation-linear-combo" title="Link to this equation">#</a></span>\[\begin{split}\alpha \ket{\psi_x} + \beta \ket{\psi_y} = \begin{pmatrix} \alpha \\ \beta \end{pmatrix}\end{split}\]</div>
-<p>with <span class="math notranslate nohighlight">\(\alpha,\beta \in \mathbb{C}\)</span>, and <span class="math notranslate nohighlight">\(|\alpha|^2 + |\beta|^2 = 1\)</span>. Similarly, we can consider the circular polarization states:</p>
-<div class="math notranslate nohighlight" id="equation-circular-basis">
-<span class="eqno">(137)<a class="headerlink" href="#equation-circular-basis" title="Link to this equation">#</a></span>\[\begin{split}&amp; \ket{\psi_{RCP}} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ i \end{pmatrix}\\
-&amp; \ket{\psi_{LCP}} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -i \end{pmatrix}\end{split}\]</div>
-<p>You can show that any polarization state satisfying <a class="reference internal" href="#equation-sp-energy">(133)</a> can be written as</p>
-<div class="math notranslate nohighlight" id="equation-circular-combo">
-<span class="eqno">(138)<a class="headerlink" href="#equation-circular-combo" title="Link to this equation">#</a></span>\[\begin{split}{\tilde\alpha} \ket{\psi_{RCP}} + {\tilde\beta} \ket{\psi_{LCP}} = \frac{1}{\sqrt{2}}\begin{pmatrix} {\tilde \alpha} + {\tilde \beta} \\ i ({\tilde\alpha} - {\tilde\beta}) \end{pmatrix}\end{split}\]</div>
-<p>with <span class="math notranslate nohighlight">\({\tilde\alpha}, {\tilde\beta} \in \mathbb{C}\)</span>, if <span class="math notranslate nohighlight">\(|{\tilde\alpha}|^2 + |{\tilde\beta}|^2 = 1\)</span>.</p>
-<p>The essential point here is that the states of the photon are described by a 2-coponent vector; these vectord can be added to describe other polarization states; and the components are related <em>by taking the absolute value squared</em> to the probability of certai exoperiments yielding a certain outcome.</p>
-<p>This hints at a very general structure for describing physical states and teh reults of mesurement in quantum mechanics. To set this up we need to lay down the correct mathematical language for describing such vectors, namely linear algebra.</p>
-=======
 <p>For more general polarizations,</p>
 <div class="math notranslate nohighlight" id="equation-gen-pol">
 <span class="eqno">(132)<a class="headerlink" href="#equation-gen-pol" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
@@ -537,7 +510,37 @@ U_{final} &amp; = \frac{V}{8\pi} |E_x|^2
 <p>So the probability of a single photon passing through the polarizer, given the polarization state listed above, is</p>
 <div class="math notranslate nohighlight" id="equation-single-photon-prob">
 <span class="eqno">(133)<a class="headerlink" href="#equation-single-photon-prob" title="Link to this equation">#</a></span>\[p = \frac{N_{final}}{N_{init}} \frac{\hbar\omega}{\hbar\omega} = \frac{U_{final}}{U_{init}} = \frac{|E_x|^2}{|E_x|^2 + |E_y|^2}\]</div>
->>>>>>> c56f454e75747faeb188ec40fdcc7dab47136b6b
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+For a more general polarization states, the probability of the photon passing through the polarizer aligned along the <span class="math notranslate nohighlight">\(x\)</span>-axis is</p>
+<div class="math notranslate nohighlight" id="equation-lin-polarizer-general">
+<span class="eqno">(134)<a class="headerlink" href="#equation-lin-polarizer-general" title="Link to this equation">#</a></span>\[p = \frac{|E_x|^2}{|E_x|^2 + |E_y|^2} sim \frac{N_f}{N}\]</div>
+<p>For  single photon with fixed frequency and wavenumber,</p>
+<div class="math notranslate nohighlight" id="equation-sp-energy">
+<span class="eqno">(135)<a class="headerlink" href="#equation-sp-energy" title="Link to this equation">#</a></span>\[U_{tot} = \frac{V}{8\pi} \left(|E_x|^2 + |E_y|^2\right) = \hbar \omega\]</div>
+<p>For an electric field satisfying this relation, we can write a “state vector” that describes the photon polarization:</p>
+<div class="math notranslate nohighlight" id="equation-state-vector-photon">
+<span class="eqno">(136)<a class="headerlink" href="#equation-state-vector-photon" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+&amp; \ket{\psi} \equiv \begin{pmatrix} \psi_x \\ \psi_y \end{pmatrix}\\
+&amp; psi_i = \sqrt{\frac{V}{8\pi \hbar \omega}} E_i
+\end{align}\end{split}\]</div>
+<p>The notation <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> should here be understood in this way, as shorthand for a vector (here a two-dimensional vector with complex entries). Using <a class="reference internal" href="#equation-sp-energy">(135)</a> we can see that <span class="math notranslate nohighlight">\(|\psi_x|^2 + |\psi_y|^2 = 1\)</span>, apnd that <span class="math notranslate nohighlight">\(p_x = |\psi_x|^2\)</span>. Similarly, the probability of the same photon passing through a polarizer aligned alongthe <span class="math notranslate nohighlight">\(y\)</span> axis is <span class="math notranslate nohighlight">\(p_y = |\psi_y|^2\)</span>. It is as if the two possible outcomes are that the photon is polarized along the <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> axis. On the other hand, we could rotate both polarizers by (say) <span class="math notranslate nohighlight">\(17^{\circ}\)</span> and do the same experiment and the probability of the photon passing through each of the two perpendictular polarizers will sum to <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>Finally, not that there is a <em>linear structure</em> to the space of photon polarizations, in that we can add two polarization vectors and get another polarization vector, up to the overall normalization constraint <a class="reference internal" href="#equation-sp-energy">(135)</a> for a single photon. In particular, if we define</p>
+<div class="math notranslate nohighlight" id="equation-linear-basis">
+<span class="eqno">(137)<a class="headerlink" href="#equation-linear-basis" title="Link to this equation">#</a></span>\[\begin{split}&amp; \ket{\psi_x} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}\\
+&amp; \ket{\psi_y} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}\end{split}\]</div>
+<p>then <em>any</em> polarization can be described by the linear combination</p>
+<div class="math notranslate nohighlight" id="equation-linear-combo">
+<span class="eqno">(138)<a class="headerlink" href="#equation-linear-combo" title="Link to this equation">#</a></span>\[\begin{split}\alpha \ket{\psi_x} + \beta \ket{\psi_y} = \begin{pmatrix} \alpha \\ \beta \end{pmatrix}\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\alpha,\beta \in \mathbb{C}\)</span>, and <span class="math notranslate nohighlight">\(|\alpha|^2 + |\beta|^2 = 1\)</span>. Similarly, we can consider the circular polarization states:</p>
+<div class="math notranslate nohighlight" id="equation-circular-basis">
+<span class="eqno">(139)<a class="headerlink" href="#equation-circular-basis" title="Link to this equation">#</a></span>\[\begin{split}&amp; \ket{\psi_{RCP}} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ i \end{pmatrix}\\
+&amp; \ket{\psi_{LCP}} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -i \end{pmatrix}\end{split}\]</div>
+<p>You can show that any polarization state satisfying <a class="reference internal" href="#equation-sp-energy">(135)</a> can be written as</p>
+<div class="math notranslate nohighlight" id="equation-circular-combo">
+<span class="eqno">(140)<a class="headerlink" href="#equation-circular-combo" title="Link to this equation">#</a></span>\[\begin{split}{\tilde\alpha} \ket{\psi_{RCP}} + {\tilde\beta} \ket{\psi_{LCP}} = \frac{1}{\sqrt{2}}\begin{pmatrix} {\tilde \alpha} + {\tilde \beta} \\ i ({\tilde\alpha} - {\tilde\beta}) \end{pmatrix}\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\({\tilde\alpha}, {\tilde\beta} \in \mathbb{C}\)</span>, if <span class="math notranslate nohighlight">\(|{\tilde\alpha}|^2 + |{\tilde\beta}|^2 = 1\)</span>.</p>
+<p>The essential point here is that the states of the photon are described by a 2-coponent vector; these vectord can be added to describe other polarization states; and the components are related <em>by taking the absolute value squared</em> to the probability of certai exoperiments yielding a certain outcome.</p>
+<p>This hints at a very general structure for describing physical states and teh reults of mesurement in quantum mechanics. To set this up we need to lay down the correct mathematical language for describing such vectors, namely linear algebra.</p>
 </section>
 </section>
 </section>
@@ -582,11 +585,11 @@ U_{final} &amp; = \frac{V}{8\pi} |E_x|^2
       </div>
     </a>
     <a class="right-next"
-       href="../appendix.html"
+       href="../chapter3/Intro_linear_algebra.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix</p>
+        <p class="prev-next-title">Linear algebra</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

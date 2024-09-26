@@ -167,4 +167,5 @@ for $a_k,b_k \in \mathbb{C}$ different numbers. The point is that if this is tru
 :label: add_fakes
 \ket{0} = \ket{v} - \ket{v} = \sum_{k = 1}^n a_k \ket{k} - \sum_{k = 1}^n b_k \ket{k} = \sum_{k = 1}^n (a_k + b_k)\ket{k}
 ```
-but this cannot be zero of $a_k,b_k$ differ in any way, so we have a contradiction to our supposition.
+but this cannot be zero of $a_k,b_k$ differ in any way, so we have a contradiction to our supposition. Thus $a_k = b_k$.
+

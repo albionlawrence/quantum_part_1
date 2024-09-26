@@ -16,6 +16,7 @@ chapters:
   - file: chapter3/Intro_linear_algebra
     sections:
     - file: chapter3/Vector_spaces
+    - file: chapter3/Linear_operators
   - file: appendix
   - file: bibliography
 # - file: notebooks
