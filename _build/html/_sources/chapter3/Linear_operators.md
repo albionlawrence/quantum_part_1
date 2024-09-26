@@ -1,3 +1,4 @@
+
 # Linear operators
 
 In classical mechanics we saw that the states of the system were described as points on phase space. Observables of the system were functions on phase space, that could be described as generators of infinitesimal transformations.
@@ -61,3 +62,71 @@ T \ket{a_0,a_1,\ldots} = \ket{a_1,2 a_2,3 a_3,\ldots} = \sum_{k = 1}^{\infty}k_{
 ```
 
 are linear operators on $V$.
+
+6. As a next step, consider the vector space of swuare-integrable complex functions. You can convince yourself that multiplication by $x$ and differentiation are linear operators. There are some subtleties here; it can be that these take the function out of the Hilbert space (eg multiplication can, if $f$ falls off as $1/|x|$ at infinity).
+
+## Operator algebras
+
+In general we can combine operators to form new linear operator in various ways: technically, they define an *algebra:
+
+1. Operators can be added: for operators $A_1,A_2$ acting on a vector space $V$, we can define
+```{math}
+:label: add_ops
+(a A_1 + b A_2)\ket{v} \equiv a (A_1 \ket{v}) + b (A_2 \ket{v})
+```
+for any $\ket{v} \in V$, and $a,b \in \CF$.
+
+It is straightforward to see that $(a A_1 + b A_2)$ is thus a linear operator, Note that $A + \varnothing = A$ under this rule, $A_1 + A_2 = A_2 + A_1$, and if $a = 0$, $a A = \varnothing$.
+
+2. We can also multiply operators. For any two linear operators $A_1,A_2$, we define
+```{math}
+:label: op_mult
+(A_1 A_2)\ket{v} = A_1(A_2\ket{v})
+```
+With a little work you can show that $A_1 A_2$ is a linear operator. Note that if $\bf{1}$ is the identity operator, $\bf{1} A = A \bf{1} = A$. Multiplication is *associative*: that is, if $A_3$ is also a linear operator, $((A_1 A_2) A_3) = (A_1(A_2 A_3))$. However, it does not have to be commutative. For example, for $V = \CC^n$ with operators equal to $n\times n$ matrices, operator multiplication is just matrix multiplication which is certainly not commutative. Consider $V = \CC^2$, and operators
+```{math}
+	A_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0\end{pmatrix}\ ; \ \ A_2 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}
+```
+then operator multiplication is simply matrix multiplication which we know is not commutative. In part
+```{math}
+A_1 A_2 = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}\ ; \ \ A_2 A_1 = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} = - A_1 A_2 \neq A_1 A_2
+```
+
+In general we measure the lack of commutativity with the *commutator*:
+```{math}
+:label: commutator
+[A_1,A_2] = A_1 A_2 - A_2 A_1
+```
+Note that the commutator is itself a linear operator.
+
+## Kernel, range, and inverse
+
+### Kernel of an operator
+
+1. **Definition**: Consider a vector space $V$ and a linear operator $A$ acting on it. The *kernel$ of $A$ is defined as
+```{math}
+:label: kernel
+\text{Ker}(A) = \left\{ \ket{v}\in V | A\ket{v} = \ket{0} \right\}
+```
+As an example, consider $V = \CC^4$, and the operator
+```{math}
+A = \begin{pmatrix} a & 0 & 0 & b \\ c & 0 & 0 & d \\ e & 0 & 0 & f \\ g & 0 & 0 & h\end{pmatrix{
+```
+for $a,\ldots h \in \CC$. With a little work you can show that
+```{matrix}
+\text{Ker}(A) = \left\{ \begin{pmatrix} 0 \\ c_1 \\ c_2 \\ 0 \end{pmatrix} \forall c_{1,2} \in \CC \right\}
+```
+
+Note that this is a vector subspace of $\CC^4$. This is no accident, as we can prove:
+
+2. **Theorem**. For any vector space $V$ and linear operator $A$ acting on it, $\text{Ker}(A)$ is a vector subspace of $V$. (The proof in your problem set for the week).
+
+3. **Definition**. A linear operator $A$ acting on a vector space $V$ is *injectove* or *one-to-one* if
+```{math}
+:label: injective
+A\ket{v} = A\ket{w} \Rightarrow \ket{v} = \ket{w}
+```
+
+![injective map](injective.png)
+
+4. **Theorem**. A linear operator $A$ is injective if and only if $\text{Ker}(A) = 0$.

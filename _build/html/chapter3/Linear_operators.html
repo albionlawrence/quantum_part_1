@@ -345,6 +345,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-algebras">Operator algebras</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-range-and-inverse">Kernel, range, and inverse</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-of-an-operator">Kernel of an operator</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -406,6 +411,61 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[T \ket{a_0,a_1,\ldots} = \ket{a_1,2 a_2,3 a_3,\ldots} = \sum_{k = 1}^{\infty}k_{k-1} k x^k = \frac{d}{dx} \sum_{k = 0}^{\infty} a_k x^k\]</div>
 <p>are linear operators on <span class="math notranslate nohighlight">\(V\)</span>.</p>
+<ol class="arabic simple" start="6">
+<li><p>As a next step, consider the vector space of swuare-integrable complex functions. You can convince yourself that multiplication by <span class="math notranslate nohighlight">\(x\)</span> and differentiation are linear operators. There are some subtleties here; it can be that these take the function out of the Hilbert space (eg multiplication can, if <span class="math notranslate nohighlight">\(f\)</span> falls off as <span class="math notranslate nohighlight">\(1/|x|\)</span> at infinity).</p></li>
+</ol>
+</section>
+</section>
+<section id="operator-algebras">
+<h2>Operator algebras<a class="headerlink" href="#operator-algebras" title="Link to this heading">#</a></h2>
+<p>In general we can combine operators to form new linear operator in various ways: technically, they define an *algebra:</p>
+<ol class="arabic simple">
+<li><p>Operators can be added: for operators <span class="math notranslate nohighlight">\(A_1,A_2\)</span> acting on a vector space <span class="math notranslate nohighlight">\(V\)</span>, we can define</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-add-ops">
+<span class="eqno">(158)<a class="headerlink" href="#equation-add-ops" title="Link to this equation">#</a></span>\[(a A_1 + b A_2)\ket{v} \equiv a (A_1 \ket{v}) + b (A_2 \ket{v})\]</div>
+<p>for any <span class="math notranslate nohighlight">\(\ket{v} \in V\)</span>, and <span class="math notranslate nohighlight">\(a,b \in \CF\)</span>.</p>
+<p>It is straightforward to see that <span class="math notranslate nohighlight">\((a A_1 + b A_2)\)</span> is thus a linear operator, Note that <span class="math notranslate nohighlight">\(A + \varnothing = A\)</span> under this rule, <span class="math notranslate nohighlight">\(A_1 + A_2 = A_2 + A_1\)</span>, and if <span class="math notranslate nohighlight">\(a = 0\)</span>, <span class="math notranslate nohighlight">\(a A = \varnothing\)</span>.</p>
+<ol class="arabic simple" start="2">
+<li><p>We can also multiply operators. For any two linear operators <span class="math notranslate nohighlight">\(A_1,A_2\)</span>, we define</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-op-mult">
+<span class="eqno">(159)<a class="headerlink" href="#equation-op-mult" title="Link to this equation">#</a></span>\[(A_1 A_2)\ket{v} = A_1(A_2\ket{v})\]</div>
+<p>With a little work you can show that <span class="math notranslate nohighlight">\(A_1 A_2\)</span> is a linear operator. Note that if <span class="math notranslate nohighlight">\(\bf{1}\)</span> is the identity operator, <span class="math notranslate nohighlight">\(\bf{1} A = A \bf{1} = A\)</span>. Multiplication is <em>associative</em>: that is, if <span class="math notranslate nohighlight">\(A_3\)</span> is also a linear operator, <span class="math notranslate nohighlight">\(((A_1 A_2) A_3) = (A_1(A_2 A_3))\)</span>. However, it does not have to be commutative. For example, for <span class="math notranslate nohighlight">\(V = \CC^n\)</span> with operators equal to <span class="math notranslate nohighlight">\(n\times n\)</span> matrices, operator multiplication is just matrix multiplication which is certainly not commutative. Consider <span class="math notranslate nohighlight">\(V = \CC^2\)</span>, and operators</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}	A_1 = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0\end{pmatrix}\ ; \ \ A_2 = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}\end{split}\]</div>
+<p>then operator multiplication is simply matrix multiplication which we know is not commutative. In part</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A_1 A_2 = \begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}\ ; \ \ A_2 A_1 = \begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix} = - A_1 A_2 \neq A_1 A_2\end{split}\]</div>
+<p>In general we measure the lack of commutativity with the <em>commutator</em>:</p>
+<div class="math notranslate nohighlight" id="equation-commutator">
+<span class="eqno">(160)<a class="headerlink" href="#equation-commutator" title="Link to this equation">#</a></span>\[[A_1,A_2] = A_1 A_2 - A_2 A_1\]</div>
+<p>Note that the commutator is itself a linear operator.</p>
+</section>
+<section id="kernel-range-and-inverse">
+<h2>Kernel, range, and inverse<a class="headerlink" href="#kernel-range-and-inverse" title="Link to this heading">#</a></h2>
+<section id="kernel-of-an-operator">
+<h3>Kernel of an operator<a class="headerlink" href="#kernel-of-an-operator" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Definition</strong>: Consider a vector space <span class="math notranslate nohighlight">\(V\)</span> and a linear operator <span class="math notranslate nohighlight">\(A\)</span> acting on it. The *kernel<span class="math notranslate nohighlight">\( of \)</span>A$ is defined as</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-kernel">
+<span class="eqno">(161)<a class="headerlink" href="#equation-kernel" title="Link to this equation">#</a></span>\[\text{Ker}(A) = \left\{ \ket{v}\in V | A\ket{v} = \ket{0} \right\}\]</div>
+<p>As an example, consider <span class="math notranslate nohighlight">\(V = \CC^4\)</span>, and the operator</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix} a &amp; 0 &amp; 0 &amp; b \\ c &amp; 0 &amp; 0 &amp; d \\ e &amp; 0 &amp; 0 &amp; f \\ g &amp; 0 &amp; 0 &amp; h\end{pmatrix{\end{split}\]</div>
+<p>for <span class="math notranslate nohighlight">\(a,\ldots h \in \CC\)</span>. With a little work you can show that</p>
+<p>Note that this is a vector subspace of <span class="math notranslate nohighlight">\(\CC^4\)</span>. This is no accident, as we can prove:</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Theorem</strong>. For any vector space <span class="math notranslate nohighlight">\(V\)</span> and linear operator <span class="math notranslate nohighlight">\(A\)</span> acting on it, <span class="math notranslate nohighlight">\(\text{Ker}(A)\)</span> is a vector subspace of <span class="math notranslate nohighlight">\(V\)</span>. (The proof in your problem set for the week).</p></li>
+<li><p><strong>Definition</strong>. A linear operator <span class="math notranslate nohighlight">\(A\)</span> acting on a vector space <span class="math notranslate nohighlight">\(V\)</span> is <em>injectove</em> or <em>one-to-one</em> if</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-injective">
+<span class="eqno">(162)<a class="headerlink" href="#equation-injective" title="Link to this equation">#</a></span>\[A\ket{v} = A\ket{w} \Rightarrow \ket{v} = \ket{w}\]</div>
+<p><img alt="injective map" src="../_images/injective.png" /></p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Theorem</strong>. A linear operator <span class="math notranslate nohighlight">\(A\)</span> is injective if and only if <span class="math notranslate nohighlight">\(\text{Ker}(A) = 0\)</span>.</p></li>
+</ol>
 </section>
 </section>
 </section>
@@ -476,6 +536,11 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">Definitions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-algebras">Operator algebras</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-range-and-inverse">Kernel, range, and inverse</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-of-an-operator">Kernel of an operator</a></li>
 </ul>
 </li>
 </ul>
