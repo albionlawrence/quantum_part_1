@@ -25,7 +25,7 @@ f(a \ket{v} + b \ket{w}) = a^* f(\ket{v}) + b^* f(\ket{w})\ \ \ \forall a,b \in 
 ```
 where $a^*, b^*$ are the complex conjugates of $a,b$ respectively. This is important for defining adjoint vectors and normas of vectors.
 
-3. Let $V$ be a vector space pver $\CF$. A **linear operator** *f* is a linear map $F: V \to V$. 
+3. Let $V$ be a vector space over $\CF$. A **linear operator** *f* is a linear map $F: V \to V$. 
 
 For $\CF = \CC$, an **antilinear operator** *g* is an antilinear map $g: V \to V$. 
 
@@ -40,3 +40,24 @@ Abstractly we usually denote operators by capital letters $A$ and the action of 
 2. The zero operator $\varnothing: \ket{V} \to \ket{0}$.
 
 3. More generally, scalar multiplication by any scalar in $\CF$ is a linear operator.
+
+4. For $C = \CC^n$, $n \times n$ matrices acting on column vectors by the usual rules of matrix multiplication are all linear operators. In fact one can represent any finite-dimensional vector space of dimension $n$ by $\CC^n$, and every operator as a matrix acting on $\CC^n$.
+
+5. A more interesting example: consider the (infinite-dimensional) space of all polynomials. We can represent these as 
+```{math}
+\ket{a_0,a_1,a_2,\ldots} = \sum_{k = 0}^{\infty} a_k x^k
+```
+The following operators
+- shifts or multiplication by $x$
+
+```{math}
+S\ket{a_0,a_1,\ldots} = \ket{0,a_0,a_1,\ldots} = \sum_{k = 0}^{\infty} a_k x^{k+1} = x \sum_{k = 0}^{\infty} a_k x^{k}
+```
+
+- derivatives with repect to $x$
+
+```{math}
+T \ket{a_0,a_1,\ldots} = \ket{a_1,2 a_2,3 a_3,\ldots} = \sum_{k = 1}^{\infty}k_{k-1} k x^k = \frac{d}{dx} \sum_{k = 0}^{\infty} a_k x^k
+```
+
+are linear operators on $V$.

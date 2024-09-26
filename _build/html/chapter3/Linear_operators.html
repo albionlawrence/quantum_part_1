@@ -378,7 +378,7 @@ document.write(`
 <span class="eqno">(157)<a class="headerlink" href="#equation-antilinear-map" title="Link to this equation">#</a></span>\[f(a \ket{v} + b \ket{w}) = a^* f(\ket{v}) + b^* f(\ket{w})\ \ \ \forall a,b \in \ \CF\ ,\ \ \ket{v},\ket{w} \in V_1\]</div>
 <p>where <span class="math notranslate nohighlight">\(a^*, b^*\)</span> are the complex conjugates of <span class="math notranslate nohighlight">\(a,b\)</span> respectively. This is important for defining adjoint vectors and normas of vectors.</p>
 <ol class="arabic simple" start="3">
-<li><p>Let <span class="math notranslate nohighlight">\(V\)</span> be a vector space pver <span class="math notranslate nohighlight">\(\CF\)</span>. A <strong>linear operator</strong> <em>f</em> is a linear map <span class="math notranslate nohighlight">\(F: V \to V\)</span>.</p></li>
+<li><p>Let <span class="math notranslate nohighlight">\(V\)</span> be a vector space over <span class="math notranslate nohighlight">\(\CF\)</span>. A <strong>linear operator</strong> <em>f</em> is a linear map <span class="math notranslate nohighlight">\(F: V \to V\)</span>.</p></li>
 </ol>
 <p>For <span class="math notranslate nohighlight">\(\CF = \CC\)</span>, an <strong>antilinear operator</strong> <em>g</em> is an antilinear map <span class="math notranslate nohighlight">\(g: V \to V\)</span>.</p>
 <p>Antilinear operators include the operator that implements time reversal, which is important in various condensed matter physics and particle physics contexts.</p>
@@ -389,7 +389,23 @@ document.write(`
 <li><p>The identity operator <span class="math notranslate nohighlight">\({\bf 1}\ket{v} = \ket{v} \forall \ket{v}\)</span>.</p></li>
 <li><p>The zero operator <span class="math notranslate nohighlight">\(\varnothing: \ket{V} \to \ket{0}\)</span>.</p></li>
 <li><p>More generally, scalar multiplication by any scalar in <span class="math notranslate nohighlight">\(\CF\)</span> is a linear operator.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(C = \CC^n\)</span>, <span class="math notranslate nohighlight">\(n \times n\)</span> matrices acting on column vectors by the usual rules of matrix multiplication are all linear operators. In fact one can represent any finite-dimensional vector space of dimension <span class="math notranslate nohighlight">\(n\)</span> by <span class="math notranslate nohighlight">\(\CC^n\)</span>, and every operator as a matrix acting on <span class="math notranslate nohighlight">\(\CC^n\)</span>.</p></li>
+<li><p>A more interesting example: consider the (infinite-dimensional) space of all polynomials. We can represent these as</p></li>
 </ol>
+<div class="math notranslate nohighlight">
+\[\ket{a_0,a_1,a_2,\ldots} = \sum_{k = 0}^{\infty} a_k x^k\]</div>
+<p>The following operators</p>
+<ul class="simple">
+<li><p>shifts or multiplication by <span class="math notranslate nohighlight">\(x\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[S\ket{a_0,a_1,\ldots} = \ket{0,a_0,a_1,\ldots} = \sum_{k = 0}^{\infty} a_k x^{k+1} = x \sum_{k = 0}^{\infty} a_k x^{k}\]</div>
+<ul class="simple">
+<li><p>derivatives with repect to <span class="math notranslate nohighlight">\(x\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[T \ket{a_0,a_1,\ldots} = \ket{a_1,2 a_2,3 a_3,\ldots} = \sum_{k = 1}^{\infty}k_{k-1} k x^k = \frac{d}{dx} \sum_{k = 0}^{\infty} a_k x^k\]</div>
+<p>are linear operators on <span class="math notranslate nohighlight">\(V\)</span>.</p>
 </section>
 </section>
 </section>

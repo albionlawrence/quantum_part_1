@@ -145,7 +145,7 @@ as we can see because
 ```{math}
 \ket{n} = \sin\left(\frac{n\pi x}{L}\right)
 ```
-are linearly independent. Similarly, for $n$th order polynomials, the monomials $\ket{k} = x^k$ are a subspace of the space of $n$th order polynomials.
+are linearly independent. Similarly, for $n$th order polynomials, the monomials $\ket{k} = x^k$ are a linearly independent set of $n$th order polynomials.
 
 ### Dimension of a vector space
 
