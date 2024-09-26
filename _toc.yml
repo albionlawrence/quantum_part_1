@@ -13,6 +13,9 @@ chapters:
     - file: chapter1/Symmetries
     - file: chapter1/Hamilton
   - file: chapter2/Intro_quantum
+  - file: chapter3/Intro_linear_algebra
+    sections:
+    - file: chapter3/Vector_spaces
   - file: appendix
   - file: bibliography
 # - file: notebooks

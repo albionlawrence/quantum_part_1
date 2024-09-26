@@ -237,3 +237,64 @@ N \to N\left(\half + {\cal O}\left(\frac{1}{\sqrt{N}}\right)\right)
 ```
 
 
+For a more general polarization states, the probability of the photon passing through the polarizer aligned along the $x$-axis is
+
+```{math}
+:label: lin_polarizer_general
+p = \frac{|E_x|^2}{|E_x|^2 + |E_y|^2} sim \frac{N_f}{N}
+```
+
+For  single photon with fixed frequency and wavenumber, 
+
+```{math}
+:label: sp_energy
+U_{tot} = \frac{V}{8\pi} \left(|E_x|^2 + |E_y|^2\right) = \hbar \omega
+```
+
+For an electric field satisfying this relation, we can write a "state vector" that describes the photon polarization:
+
+```{math}
+:label: state_vector_photon
+\begin{align}
+& \ket{\psi} \equiv \begin{pmatrix} \psi_x \\ \psi_y \end{pmatrix}\\
+& psi_i = \sqrt{\frac{V}{8\pi \hbar \omega}} E_i
+\end{align}
+```
+
+The notation $\ket{\psi}$ should here be understood in this way, as shorthand for a vector (here a two-dimensional vector with complex entries). Using {eq}`sp_energy` we can see that $|\psi_x|^2 + |\psi_y|^2 = 1$, apnd that $p_x = |\psi_x|^2$. Similarly, the probability of the same photon passing through a polarizer aligned alongthe $y$ axis is $p_y = |\psi_y|^2$. It is as if the two possible outcomes are that the photon is polarized along the $x$ or $y$ axis. On the other hand, we could rotate both polarizers by (say) $17^{\circ}$ and do the same experiment and the probability of the photon passing through each of the two perpendictular polarizers will sum to $1$. 
+
+Finally, not that there is a *linear structure* to the space of photon polarizations, in that we can add two polarization vectors and get another polarization vector, up to the overall normalization constraint {eq}`sp_energy` for a single photon. In particular, if we define
+
+```{math}
+:label: linear_basis 
+& \ket{\psi_x} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}\\
+& \ket{\psi_y} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+```
+
+then *any* polarization can be described by the linear combination
+
+```{math}
+:label: linear_combo
+\alpha \ket{\psi_x} + \beta \ket{\psi_y} = \begin{pmatrix} \alpha \\ \beta \end{pmatrix}
+```
+
+with $\alpha,\beta \in \mathbb{C}$, and $|\alpha|^2 + |\beta|^2 = 1$. Similarly, we can consider the circular polarization states:
+
+```{math}
+:label: circular_basis
+& \ket{\psi_{RCP}} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ i \end{pmatrix}\\
+& \ket{\psi_{LCP}} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -i \end{pmatrix}
+```
+
+You can show that any polarization state satisfying {eq}`sp_energy` can be written as
+
+```{math}
+:label: circular_combo
+{\tilde\alpha} \ket{\psi_{RCP}} + {\tilde\beta} \ket{\psi_{LCP}} = \frac{1}{\sqrt{2}}\begin{pmatrix} {\tilde \alpha} + {\tilde \beta} \\ i ({\tilde\alpha} - {\tilde\beta}) \end{pmatrix}
+```
+
+with ${\tilde\alpha}, {\tilde\beta} \in \mathbb{C}$, if $|{\tilde\alpha}|^2 + |{\tilde\beta}|^2 = 1$. 
+
+The essential point here is that the states of the photon are described by a 2-coponent vector; these vectord can be added to describe other polarization states; and the components are related *by taking the absolute value squared* to the probability of certai exoperiments yielding a certain outcome.
+
+This hints at a very general structure for describing physical states and teh reults of mesurement in quantum mechanics. To set this up we need to lay down the correct mathematical language for describing such vectors, namely linear algebra.
