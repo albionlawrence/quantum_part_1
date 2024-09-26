@@ -236,7 +236,9 @@ Our best available interpretation is that *each* photon has a $50\%$ chance of p
 N \to N\left(\half + {\cal O}\left(\frac{1}{\sqrt{N}}\right)\right)
 ```
 
+For more general polarizations, 
 
+<<<<<<< HEAD
 For a more general polarization states, the probability of the photon passing through the polarizer aligned along the $x$-axis is
 
 ```{math}
@@ -298,3 +300,20 @@ with ${\tilde\alpha}, {\tilde\beta} \in \mathbb{C}$, if $|{\tilde\alpha}|^2 + |{
 The essential point here is that the states of the photon are described by a 2-coponent vector; these vectord can be added to describe other polarization states; and the components are related *by taking the absolute value squared* to the probability of certai exoperiments yielding a certain outcome.
 
 This hints at a very general structure for describing physical states and teh reults of mesurement in quantum mechanics. To set this up we need to lay down the correct mathematical language for describing such vectors, namely linear algebra.
+=======
+```{math}
+:label: gen_pol
+\begin{align}
+{\vec E} = \text{RE}\ \left[ E_x e^{i(kx - \omega t)} {\hat x} + E_y e^{i(kx - \omega t)} {\hat y}\right]\\
+U_{initial} & = \frac{V}{8\pi}\left(|E_x|^2 + |E_y|^2\right)\\
+U_{final} & = \frac{V}{8\pi} |E_x|^2
+\end{align}
+```
+
+So the probability of a single photon passing through the polarizer, given the polarization state listed above, is
+
+```{math}
+:label: single_photon_prob
+p = \frac{N_{final}}{N_{init}} \frac{\hbar\omega}{\hbar\omega} = \frac{U_{final}}{U_{init}} = \frac{|E_x|^2}{|E_x|^2 + |E_y|^2}
+```
+>>>>>>> c56f454e75747faeb188ec40fdcc7dab47136b6b
