@@ -177,19 +177,19 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Newton.html">Newtonian mechanics.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Lagrange.html">Lagrangian Mechanics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Constraints.html">Constrained Lagrangian Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Symmetries.html">Symmetries and conservation laws</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Hamilton.html">Hamiltonian Mechanics</a></li>
-</ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter2/Intro_quantum.html">Introduction to quantum mechanics</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Intro_linear_algebra.html">Linear algebra</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Intro_linear_algebra.html">Linear algebra</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Vector_spaces.html">Vector spaces</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Linear operators</a></li>
-</ul>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
@@ -352,6 +352,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverses">Inverses</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-representations">Matrix representations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-of-basis">Changes of basis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-and-eigenvectors">Eigenvalues and eigenvectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Eigenvalues and eigenvectors</a></li>
 </ul>
             </nav>
         </div>
@@ -376,7 +380,7 @@ document.write(`
 \[f: V_1 \to V_2\]</div>
 <p>such that</p>
 <div class="math notranslate nohighlight" id="equation-linear-map">
-<span class="eqno">(156)<a class="headerlink" href="#equation-linear-map" title="Link to this equation">#</a></span>\[\begin{split}f(a \ket{v} + b \ket{w}) = a f(\ket{v}) + b f(\ket{w})\ \ \ \forall a,b \in \\CF\ ,\ \ \ket{v},\ket{w} \in V_1\end{split}\]</div>
+<span class="eqno">(156)<a class="headerlink" href="#equation-linear-map" title="Link to this equation">#</a></span>\[f(a \ket{v} + b \ket{w}) = a f(\ket{v}) + b f(\ket{w})\ \ \ \forall a,b \in \CF\ ,\ \ \ket{v},\ket{w} \in V_1\]</div>
 <p>Note that we can easily prove with this that for the zero vector <span class="math notranslate nohighlight">\(\ket{0}_1 \in V_1\)</span>, <span class="math notranslate nohighlight">\(f(\ket{0}_1) = \ket{0}_2 \in V_2\)</span> where <span class="math notranslate nohighlight">\(\ket{0}_2\)</span> is the zero vector.</p>
 <ol class="arabic simple" start="2">
 <li><p>For vector spaces <span class="math notranslate nohighlight">\(V_1, V_2\)</span>, over the <em>complex</em> numbers <span class="math notranslate nohighlight">\(\CC\)</span>, an <strong>antilinear map</strong> <span class="math notranslate nohighlight">\(f\)</span> is a map <span class="math notranslate nohighlight">\(f: V_1 \to V_2\)</span> such that</p></li>
@@ -455,8 +459,8 @@ document.write(`
 <span class="eqno">(161)<a class="headerlink" href="#equation-kernel" title="Link to this equation">#</a></span>\[\text{Ker}(A) = \left\{ \ket{v}\in V | A\ket{v} = \ket{0} \right\}\]</div>
 <p>As an example, consider <span class="math notranslate nohighlight">\(V = \CC^4\)</span>, and the operator</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}A = \begin{pmatrix} a &amp; 0 &amp; 0 &amp; b \\ c &amp; 0 &amp; 0 &amp; d \\ e &amp; 0 &amp; 0 &amp; f \\ g &amp; 0 &amp; 0 &amp; h\end{pmatrix}\end{split}\]</div>
-<p>for <span class="math notranslate nohighlight">\(a,\ldots h \in \CC\)</span>. With a little work you can show that</p>
+\[\begin{split}A = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 1 \\ 1 &amp; 0 &amp; 0 &amp; -1 \\ 1 &amp; 0 &amp; 0 &amp; 1 \\ 1 &amp; 0 &amp; 0 &amp; -1\end{pmatrix}\end{split}\]</div>
+<p>You can show that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\text{Ker}(A) = \left\{ \begin{pmatrix} 0 \\ c_1 \\ c_2 \\ 0 \end{pmatrix}\ \  \forall\ c_{1,2} \in \CC \right\}\end{split}\]</div>
 <p>Note that this is a vector subspace of <span class="math notranslate nohighlight">\(\CC^4\)</span>. This is no accident, as we can prove:</p>
@@ -481,7 +485,7 @@ document.write(`
 <span class="eqno">(163)<a class="headerlink" href="#equation-range-op" title="Link to this equation">#</a></span>\[\text{Range}(A) = \{A\ket{v}\ \forall \ket{v} \in V\}\]</div>
 <p>As an example consider <span class="math notranslate nohighlight">\(V = \CC^4\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}	A = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ a &amp; b &amp; c &amp; d \\ e &amp; f &amp; g &amp; h \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}\end{split}\]</div>
+\[\begin{split}	A = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; -1 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}\end{split}\]</div>
 <p>Then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\text{Range}{A} = \{ \begin{pmatrix} 0 \\ c_1 \\ c_2 \\ 0 \end{pmatrix}\ \forall\ c_{1,2} \in \CC \}\end{split}\]</div>
@@ -581,10 +585,151 @@ T_R^{-1} T \ket{a_0,a_1,a_2,\ldots} &amp; = T_R^{-1} \ket{a_1,2 a_2,\ldots}\\
 <p><strong>Proof</strong>. <span class="math notranslate nohighlight">\(A_L^{-1} A A_R^{-1} = A_L^{-1} = A_R^{-1}\)</span> by associativity of operator multiplication.</p>
 <ol class="arabic simple" start="8">
 <li><p><strong>Theorem</strong>. <span class="math notranslate nohighlight">\(A\)</span> is invertible if and only if it is one-to-one and onto.</p></li>
-<li><p><strong>Theorem</strong>. Consider <span class="math notranslate nohighlight">\(V\)</span> such that<span class="math notranslate nohighlight">\(dim(V) = d &lt; \infty\)</span>. Then <span class="math notranslate nohighlight">\(A\)</span> being invertible, <span class="math notranslate nohighlight">\(A\)</span> being one-to-one, and <span class="math notranslate nohighlight">\(A\)</span> being onto are all equivalent.</p></li>
+<li><p><strong>Theorem</strong>. Consider <span class="math notranslate nohighlight">\(V\)</span> such that <span class="math notranslate nohighlight">\(dim(V) = d &lt; \infty\)</span>. Then <span class="math notranslate nohighlight">\(A\)</span> being invertible, <span class="math notranslate nohighlight">\(A\)</span> being one-to-one, and <span class="math notranslate nohighlight">\(A\)</span> being onto are all equivalent.</p></li>
 </ol>
-<p><strong>Proof</strong>. This follows form the rank-nullity theorem. We have shown that <span class="math notranslate nohighlight">\(A\)</span> being invertible means it is one-to-one and onto. If <span class="math notranslate nohighlight">\(A\)</span> is one-to-one, then <span class="math notranslate nohighlight">\(\text{dim}(\text{Ker}(A)) = 0\)</span>, so by the rank-nullity theorem <span class="math notranslate nohighlight">\(A\)</span> has rank <span class="math notranslate nohighlight">\(n\)</span>; this means <span class="math notranslate nohighlight">\(A\)</span> has all of <span class="math notranslate nohighlight">\(V\)</span> as its image so it is onto. Similarly if <span class="math notranslate nohighlight">\(A\)</span> is onto, the rank-nullity theorem shows that <span class="math notranslate nohighlight">\(\text{dim}(\text{Ker}(A)) = 0\)</span> so <span class="math notranslate nohighlight">\(A\)</span> is one-to-one.</p>
+<p><strong>Proof</strong>. This follows from the rank-nullity theorem. We have shown that <span class="math notranslate nohighlight">\(A\)</span> being invertible means it is one-to-one and onto. If <span class="math notranslate nohighlight">\(A\)</span> is one-to-one, then <span class="math notranslate nohighlight">\(\text{dim}(\text{Ker}(A)) = 0\)</span>, so by the rank-nullity theorem <span class="math notranslate nohighlight">\(A\)</span> has rank <span class="math notranslate nohighlight">\(n\)</span>; this means <span class="math notranslate nohighlight">\(A\)</span> has all of <span class="math notranslate nohighlight">\(V\)</span> as its image so it is onto. Similarly if <span class="math notranslate nohighlight">\(A\)</span> is onto, the rank-nullity theorem shows that <span class="math notranslate nohighlight">\(\text{dim}(\text{Ker}(A)) = 0\)</span> so <span class="math notranslate nohighlight">\(A\)</span> is one-to-one.</p>
 </section>
+</section>
+<section id="matrix-representations">
+<h2>Matrix representations<a class="headerlink" href="#matrix-representations" title="Link to this heading">#</a></h2>
+<p>I stated before that for <span class="math notranslate nohighlight">\(V = \CC^n\)</span>, all linear operators can be represented as matrices. In fact, this is true for <em>any</em> finite-dimensional vector space.</p>
+<p>Consider a vector space <span class="math notranslate nohighlight">\(V\)</span> with dimension <span class="math notranslate nohighlight">\(n\)</span>. It will have  basis I can label <span class="math notranslate nohighlight">\(\ket{k}\)</span>, <span class="math notranslate nohighlight">\(k = 1,\ldots,n\)</span>. COnsider a linear operator <span class="math notranslate nohighlight">\(A\)</span>. Since we can write any state in this basis, we can write</p>
+<div class="math notranslate nohighlight" id="equation-matrix-rep">
+<span class="eqno">(165)<a class="headerlink" href="#equation-matrix-rep" title="Link to this equation">#</a></span>\[A\ket{k} = \sum_m A_{mk} \ket{m}\]</div>
+<p><span class="math notranslate nohighlight">\(A_{km}\)</span> here define <span class="math notranslate nohighlight">\(n^2\)</span> complex numbers, and can be thought of as an <span class="math notranslate nohighlight">\(n\times n\)</span> matrix.</p>
+<p>Next, consider a general vector <span class="math notranslate nohighlight">\(\ket{v} = \sum_k v_k \ket{k}\)</span>. Then</p>
+<div class="math notranslate nohighlight" id="equation-operator-rep">
+<span class="eqno">(166)<a class="headerlink" href="#equation-operator-rep" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+A\ket{v} &amp; = \ket{v'} = \sum_k v'_k \ket{k} \\
+&amp; = \sum_k v_k A \ket{k} \\
+&amp; = \sum_{k,\ell} v_k A_{\ell k} \ket{\ell}
+\end{align}\end{split}\]</div>
+<p>Since the expansion in a given basis is unique, we have <span class="math notranslate nohighlight">\(v'_{\ell} = A_{\ell k} v_k\)</span>.</p>
+<p>In other words, given any basis, we can represent a vector as a set of <span class="math notranslate nohighlight">\(n\)</span> complex numbers <span class="math notranslate nohighlight">\(v_k\)</span>. Of course we can arrange these numbers as a column vector</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\ket{v} \to \begin{pmatrix} v_1 \\ \vdots \\ v_n \end{pmatrix}\end{split}\]</div>
+<p>The action of the operator on that vector produces a new vector which can also be represented by a column vector</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A\ket{v} = \ket{v'} = \begin{pmatrix} v'_1 \\ \vdots \\ v'_n \end{pmatrix} = 
+\begin{pmatrix} A_{11} &amp; \ldots A_{1n} \\ \vdots &amp; \vdots &amp; \vdots \\
+A_{n1} &amp; \ldots &amp; A_{nn} \end{pmatrix} \begin{pmatrix} v_1 \\ \vdots \\ v_n \end{pmatrix}\end{split}\]</div>
+<p>In other words, every finite-dimensional vector space can be represented by <span class="math notranslate nohighlight">\(\CC^n\)</span> (as the space of <span class="math notranslate nohighlight">\(n\)</span>-dimensional column vectors), and every linear operator can be realized as an <span class="math notranslate nohighlight">\(n\times n\)</span> matrix acting on column vectors.</p>
+<p>You can show further (on your own time), that in the basis above, given two operators <span class="math notranslate nohighlight">\(A,B\)</span>, <span class="math notranslate nohighlight">\((AB)_{k\ell} = A_{km}B_{m\ell}\)</span>; that is, operator multiplication is just matrix multiplication.</p>
+</section>
+<section id="changes-of-basis">
+<h2>Changes of basis<a class="headerlink" href="#changes-of-basis" title="Link to this heading">#</a></h2>
+<p>The representation of vectors and operators as column vectors and matrices is basis-dependent. However, if we understand what the change of basis is, we can compute what a given vector and operator looks like in the new basis.</p>
+<p>Consider two bases <span class="math notranslate nohighlight">\(\ket{k}, \ket{\tilde{k}}\)</span>. We can expand the basis vectors on the second in terms of the first:</p>
+<div class="math notranslate nohighlight" id="equation-basis-change">
+<span class="eqno">(167)<a class="headerlink" href="#equation-basis-change" title="Link to this equation">#</a></span>\[\ket{\tilde{k}} = \sum_{\ell} U_{\ell k} \ket{\ell}\]</div>
+<p>where <span class="math notranslate nohighlight">\(U_{\ell k}\)</span> are <span class="math notranslate nohighlight">\(n^2\)</span> complex numbers. Note that <span class="math notranslate nohighlight">\(U\)</span> is an invertible matrix as we can write</p>
+<div class="math notranslate nohighlight" id="equation-inverse-change">
+<span class="eqno">(174)<a class="headerlink" href="#equation-inverse-change" title="Link to this equation">#</a></span>\[\ket{k} = \sum_m V_{mk}\ket{\tilde{m}} = \sum_{mn} U_{n m} V_{m k} \ket{k}\]</div>
+<p>This only makes sense if <span class="math notranslate nohighlight">\(U_{nm} V_{mk} = \delta_{nk}\)</span>. We can run this in the opposite direction by swapping the tilde’dd and non-tilde’d bases in the above. The result is that <span class="math notranslate nohighlight">\(V\)</span> is a left and right inverse for <span class="math notranslate nohighlight">\(U\)</span>, and thus <span class="math notranslate nohighlight">\(V = U^{-1}\)</span> as a matrix.</p>
+<p>How do operators look in the new basis? If we write</p>
+<div class="math notranslate nohighlight" id="equation-op-change">
+<span class="eqno">(175)<a class="headerlink" href="#equation-op-change" title="Link to this equation">#</a></span>\[A\ket{\tilde{k}} = \sum_{\ell} \tilde{A}_{\ell k} \ket{\tilde{\ell}}\]</div>
+<p>then making the change of bases <span class="math notranslate nohighlight">\(\ket{\tilde{k}} = U_{\ell k} \ket{\ell}\)</span> on both sides, we find</p>
+<div class="math notranslate nohighlight">
+\[\tilde{A}_{k\ell} = U^{-1}_{km} A_{mn} U_{n\ell}\]</div>
+<p>Note here that the matrix <span class="math notranslate nohighlight">\(U\)</span> maps between bases, and <span class="math notranslate nohighlight">\(A,\tilde{A}\)</span> are defined with respect to different basis.</p>
+<p>The choice of basis is (at this stage) arbitrary, and one can ask what aspects of an operator are independent of the choice of basis. There are two particularly important quantities one can form:</p>
+<ol class="arabic simple">
+<li><p>Given any basis <span class="math notranslate nohighlight">\(\ket{k}\)</span> of <span class="math notranslate nohighlight">\(V\)</span>, and an operator <span class="math notranslate nohighlight">\(A\)</span> represented by the matrix <span class="math notranslate nohighlight">\(A_{k\ell}\)</span>, the <em>trace</em> of <span class="math notranslate nohighlight">\(A\)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-trace-def">
+<span class="eqno">(176)<a class="headerlink" href="#equation-trace-def" title="Link to this equation">#</a></span>\[\text{Tr}(A) = \sum_k A_{kk}\]</div>
+<p>is independent of the choice of basis. To see this,</p>
+<div class="math notranslate nohighlight" id="equation-trace-new-basis">
+<span class="eqno">(177)<a class="headerlink" href="#equation-trace-new-basis" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\text{Tr}(\tilde{A}) &amp; = U^{-1}_{mk} A_{kl} U_{lm} \\
+&amp; = U_{lm} U^{-1}_{mk} A_{kl} = \delta_{lk} A_{kl} = A_{kk} = \text{Tr}(A)
+\end{align}\end{split}\]</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Definition</strong>. The <em>determinant</em> of a matrix is also basis-independent. I will defer to your undergraduate linear algebra class to recall how to define the determinant of a matrix. The fact that it is basis independent comes from the fact that <span class="math notranslate nohighlight">\(\text{Det}(AB) = \text{Det}(A)\text{Det}(B) = \text{Det}(BA)\)</span>. Thus</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-det-change">
+<span class="eqno">(178)<a class="headerlink" href="#equation-det-change" title="Link to this equation">#</a></span>\[\text{Det}(\tilde{A}) = \text{Det}(U^{-1} A U) = \text{Det}(U U^{-1} A) = \text{Det}(A)\]</div>
+</section>
+<section id="eigenvalues-and-eigenvectors">
+<h2>Eigenvalues and eigenvectors<a class="headerlink" href="#eigenvalues-and-eigenvectors" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Definition</strong>. Consider a vector space <span class="math notranslate nohighlight">\(V\)</span> and a linear operator <span class="math notranslate nohighlight">\(A\)</span> acting on it. If there is a vector <span class="math notranslate nohighlight">\(\ket{v}\)</span> and a complex number <span class="math notranslate nohighlight">\(\lambda\)</span> such that</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-evec-def">
+<span class="eqno">(179)<a class="headerlink" href="#equation-evec-def" title="Link to this equation">#</a></span>\[A \ket{v} = \lambda \ket{v}\]</div>
+<p>then we call <span class="math notranslate nohighlight">\(\ket{v}\)</span> an <em>eigenvector</em> of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span> the associated <em>eigenvalue</em>.</p>
+<p>Note that for any eigenvector <span class="math notranslate nohighlight">\(\ket{v}\)</span> and any constant <span class="math notranslate nohighlight">\(c \in \CC\)</span>, <span class="math notranslate nohighlight">\(c\ket{v}\)</span> is also an eigenvector with the same eigenvalue.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Definition</strong>. Let <span class="math notranslate nohighlight">\(\ket{v_k}\)</span> be <span class="math notranslate nohighlight">\(K \leq \text{dim}(V)\)</span> linearly independent eigenvectors of <span class="math notranslate nohighlight">\(A\)</span> with the <em>same</em> eigenvalue <span class="math notranslate nohighlight">\(\lambda\)</span>. Then <span class="math notranslate nohighlight">\(\lambda\)</span> is called a <em>degenerate</em> eigenvalue, and <span class="math notranslate nohighlight">\(\ket{v_k}\)</span> span a <em>degenerate subspace</em> associated with <span class="math notranslate nohighlight">\(A,\lambda\)</span>. We can show there is a maximal set of such linearly independent eigenvectors for a fixed eigenvalue. These fprm the basis of a subspace of <span class="math notranslate nohighlight">\(V\)</span> valled the <em>degenerate subspace</em> associated with <span class="math notranslate nohighlight">\(\lambda\)</span>. The dimension of this subspace is called the <em>geometric multiplicity</em> of the eigenvalue.</p></li>
+<li><p>With a little thought you can show that the basis vectors for two degenerate subspaces associated to distinct eigenvalues are a linearly independent set of vectors.</p></li>
+<li><p>We can rewrite the eigenvalue equation above as</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[(A - \lambda \bf{1})\ket{v} = 0\]</div>
+<p>This means that <span class="math notranslate nohighlight">\(\text{Ker}(A - \lambda \bf{1})\)</span> is nontrivial, and therefore <span class="math notranslate nohighlight">\(A - \lambda \bf{1}\)</span> is not an invertibel operator.</p>
+<p>It is a basic fact that any operator <span class="math notranslate nohighlight">\(A\)</span> is invertible <em>if and only if</em> <span class="math notranslate nohighlight">\(\text{Det}(A) \neq 0\)</span>. Thus, to find the eigenvalues of a matrix, we can solve the equation <span class="math notranslate nohighlight">\(\text{Det}(A - \lambda \bf{1}) = 0\)</span>. For <span class="math notranslate nohighlight">\(V\)</span> with dimension <span class="math notranslate nohighlight">\(n\)</span>, this is an <span class="math notranslate nohighlight">\(n\)</span>th order polynomial equation. A simple example is a <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix acting on <span class="math notranslate nohighlight">\(\CC^2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\end{split}\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\text{Det}(A - \lambda \bf{1}) = \text{\Det}
+You can show further (on your own time), that in the basis above, given two operators $A,B$, $(AB)_{k\ell} = A_{km}B_{m\ell}$; that is, operator multiplication is just matrix multiplication.\\## Changes of basis\\The representation of vectors and operators as column vectors and matrices is basis-dependent. However, if we understand what the change of basis is, we can compute what a given vector and operator looks like in the new basis.\\Consider two bases $\ket{k}, \ket{\tilde{k}}$. We can expand the basis vectors on the second in terms of the first:
+```{math}
+:label: basis_change 
+\ket{\tilde{k}} = \sum_{\ell} U_{\ell k} \ket{\ell}\end{aligned}\end{align} \]</div>
+<p>where <span class="math notranslate nohighlight">\(U_{\ell k}\)</span> are <span class="math notranslate nohighlight">\(n^2\)</span> complex numbers. Note that <span class="math notranslate nohighlight">\(U\)</span> is an invertible matrix as we can write</p>
+<div class="math notranslate nohighlight" id="equation-inverse-change">
+<span class="eqno">(174)<a class="headerlink" href="#equation-inverse-change" title="Link to this equation">#</a></span>\[\ket{k} = \sum_m V_{mk}\ket{\tilde{m}} = \sum_{mn} U_{n m} V_{m k} \ket{k}\]</div>
+<p>This only makes sense if <span class="math notranslate nohighlight">\(U_{nm} V_{mk} = \delta_{nk}\)</span>. We can run this in the opposite direction by swapping the tilde’dd and non-tilde’d bases in the above. The result is that <span class="math notranslate nohighlight">\(V\)</span> is a left and right inverse for <span class="math notranslate nohighlight">\(U\)</span>, and thus <span class="math notranslate nohighlight">\(V = U^{-1}\)</span> as a matrix.</p>
+<p>How do operators look in the new basis? If we write</p>
+<div class="math notranslate nohighlight" id="equation-op-change">
+<span class="eqno">(175)<a class="headerlink" href="#equation-op-change" title="Link to this equation">#</a></span>\[A\ket{\tilde{k}} = \sum_{\ell} \tilde{A}_{\ell k} \ket{\tilde{\ell}}\]</div>
+<p>then making the change of bases <span class="math notranslate nohighlight">\(\ket{\tilde{k}} = U_{\ell k} \ket{\ell}\)</span> on both sides, we find</p>
+<div class="math notranslate nohighlight">
+\[\tilde{A}_{k\ell} = U^{-1}_{km} A_{mn} U_{n\ell}\]</div>
+<p>Note here that the matrix <span class="math notranslate nohighlight">\(U\)</span> maps between bases, and <span class="math notranslate nohighlight">\(A,\tilde{A}\)</span> are defined with respect to different basis.</p>
+<p>The choice of basis is (at this stage) arbitrary, and one can ask what aspects of an operator are independent of the choice of basis. There are two particularly important quantities one can form:</p>
+<ol class="arabic simple">
+<li><p>Given any basis <span class="math notranslate nohighlight">\(\ket{k}\)</span> of <span class="math notranslate nohighlight">\(V\)</span>, and an operator <span class="math notranslate nohighlight">\(A\)</span> represented by the matrix <span class="math notranslate nohighlight">\(A_{k\ell}\)</span>, the <em>trace</em> of <span class="math notranslate nohighlight">\(A\)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-trace-def">
+<span class="eqno">(176)<a class="headerlink" href="#equation-trace-def" title="Link to this equation">#</a></span>\[\text{Tr}(A) = \sum_k A_{kk}\]</div>
+<p>is independent of the choice of basis. To see this,</p>
+<div class="math notranslate nohighlight" id="equation-trace-new-basis">
+<span class="eqno">(177)<a class="headerlink" href="#equation-trace-new-basis" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\text{Tr}(\tilde{A}) &amp; = U^{-1}_{mk} A_{kl} U_{lm} \\
+&amp; = U_{lm} U^{-1}_{mk} A_{kl} = \delta_{lk} A_{kl} = A_{kk} = \text{Tr}(A)
+\end{align}\end{split}\]</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Definition</strong>. The <em>determinant</em> of a matrix is also basis-independent. I will defer to your undergraduate linear algebra class to recall how to define the determinant of a matrix. The fact that it is basis independent comes from the fact that <span class="math notranslate nohighlight">\(\text{Det}(AB) = \text{Det}(A)\text{Det}(B) = \text{Det}(BA)\)</span>. Thus</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-det-change">
+<span class="eqno">(178)<a class="headerlink" href="#equation-det-change" title="Link to this equation">#</a></span>\[\text{Det}(\tilde{A}) = \text{Det}(U^{-1} A U) = \text{Det}(U U^{-1} A) = \text{Det}(A)\]</div>
+</section>
+<section id="id2">
+<h2>Eigenvalues and eigenvectors<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Definition</strong>. Consider a vector space <span class="math notranslate nohighlight">\(V\)</span> and a linear operator <span class="math notranslate nohighlight">\(A\)</span> acting on it. If there is a vector <span class="math notranslate nohighlight">\(\ket{v}\)</span> and a complex number <span class="math notranslate nohighlight">\(\lambda\)</span> such that</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-evec-def">
+<span class="eqno">(179)<a class="headerlink" href="#equation-evec-def" title="Link to this equation">#</a></span>\[A \ket{v} = \lambda \ket{v}\]</div>
+<p>then we call <span class="math notranslate nohighlight">\(\ket{v}\)</span> an <em>eigenvector</em> of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span> the associated <em>eigenvalue</em>.</p>
+<p>Note that for any eigenvector <span class="math notranslate nohighlight">\(\ket{v}\)</span> and any constant <span class="math notranslate nohighlight">\(c \in \CC\)</span>, <span class="math notranslate nohighlight">\(c\ket{v}\)</span> is also an eigenvector with the same eigenvalue.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Definition</strong>. Let <span class="math notranslate nohighlight">\(\ket{v_k}\)</span> be <span class="math notranslate nohighlight">\(K \leq \text{dim}(V)\)</span> linearly independent eigenvectors of <span class="math notranslate nohighlight">\(A\)</span> with the <em>same</em> eigenvalue <span class="math notranslate nohighlight">\(\lambda\)</span>. Then <span class="math notranslate nohighlight">\(\lambda\)</span> is called a <em>degenerate</em> eigenvalue, and <span class="math notranslate nohighlight">\(\ket{v_k}\)</span> span a <em>degenerate subspace</em> associated with <span class="math notranslate nohighlight">\(A,\lambda\)</span>. We can show there is a maximal set of such linearly independent eigenvectors for a fixed eigenvalue. These fprm the basis of a subspace of <span class="math notranslate nohighlight">\(V\)</span> valled the <em>degenerate subspace</em> associated with <span class="math notranslate nohighlight">\(\lambda\)</span>. The dimension of this subspace is called the <em>geometric multiplicity</em> of the eigenvalue.</p></li>
+<li><p>With a little thought you can show that the basis vectors for two degenerate subspaces associated to distinct eigenvalues are a linearly independent set of vectors.</p></li>
+<li><p>We can rewrite the eigenvalue equation above as</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[(A - \lambda \bf{1})\ket{v} = 0\]</div>
+<p>This means that <span class="math notranslate nohighlight">\(\text{Ker}(A - \lambda \bf{1})\)</span> is nontrivial, and therefore <span class="math notranslate nohighlight">\(A - \lambda \bf{1}\)</span> is not an invertibel operator.</p>
+<p>It is a basic fact that any operator <span class="math notranslate nohighlight">\(A\)</span> is invertible <em>if and only if</em> <span class="math notranslate nohighlight">\(\text{Det}(A) \neq 0\)</span>. Thus, to find the eigenvalues of a matrix, we can solve the equation <span class="math notranslate nohighlight">\(\text{Det}(A - \lambda \bf{1}) = 0\)</span>. For <span class="math notranslate nohighlight">\(V\)</span> with dimension <span class="math notranslate nohighlight">\(n\)</span>, this is an <span class="math notranslate nohighlight">\(n\)</span>th order polynomial equation. A simple example is a <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix acting on <span class="math notranslate nohighlight">\(\CC^2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+A &amp; = \begin{pmatrix} a - \lambda &amp; b \\ c &amp; d - \lambda \end{pmatrix}\\
+&amp; = 
+\end{align}\end{split}\]</div>
 </section>
 </section>
 
@@ -663,6 +808,10 @@ T_R^{-1} T \ket{a_0,a_1,a_2,\ldots} &amp; = T_R^{-1} \ket{a_1,2 a_2,\ldots}\\
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverses">Inverses</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-representations">Matrix representations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-of-basis">Changes of basis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-and-eigenvectors">Eigenvalues and eigenvectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Eigenvalues and eigenvectors</a></li>
 </ul>
   </nav></div>
 
