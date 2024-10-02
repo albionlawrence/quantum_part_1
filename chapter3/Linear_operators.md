@@ -1,4 +1,3 @@
-
 # Linear operators
 
 In classical mechanics we saw that the states of the system were described as points on phase space. Observables of the system were functions on phase space, that could be described as generators of infinitesimal transformations.
@@ -397,84 +396,6 @@ is independent of the choice of basis. To see this,
 \text{Det}(\tilde{A}) = \text{Det}(U^{-1} A U) = \text{Det}(U U^{-1} A) = \text{Det}(A)
 ```
 
-## Eigenvalues and eigenvectors
-
-1. **Definition**. Consider a vector space $V$ and a linear operator $A$ acting on it. If there is a vector $\ket{v}$ and a complex number $\lambda$ such that 
-```{math}
-:label: evec_def
-A \ket{v} = \lambda \ket{v}
-```
-then we call $\ket{v}$ an *eigenvector* of $A$ and $\lambda$ the associated *eigenvalue*.
-
-Note that for any eigenvector $\ket{v}$ and any constant $c \in \CC$, $c\ket{v}$ is also an eigenvector with the same eigenvalue.
-
-2. **Definition**. Let $\ket{v_k}$ be $K \leq \text{dim}(V)$ linearly independent eigenvectors of $A$ with the *same* eigenvalue $\lambda$. Then $\lambda$ is called a *degenerate* eigenvalue, and $\ket{v_k}$ span a *degenerate subspace* associated with $A,\lambda$. We can show there is a maximal set of such linearly independent eigenvectors for a fixed eigenvalue. These fprm the basis of a subspace of $V$ valled the *degenerate subspace* associated with $\lambda$. The dimension of this subspace is called the *geometric multiplicity* of the eigenvalue.
-
-3. With a little thought you can show that the basis vectors for two degenerate subspaces associated to distinct eigenvalues are a linearly independent set of vectors.
-
-4. We can rewrite the eigenvalue equation above as
-```{math}
-(A - \lambda \bf{1})\ket{v} = 0
-```
-This means that $\text{Ker}(A - \lambda \bf{1})$ is nontrivial, and therefore $A - \lambda \bf{1}$ is not an invertibel operator.
-
-It is a basic fact that any operator $A$ is invertible *if and only if* $\text{Det}(A) \neq 0$. Thus, to find the eigenvalues of a matrix, we can solve the equation $\text{Det}(A - \lambda \bf{1}) = 0$. For $V$ with dimension $n$, this is an $n$th order polynomial equation. A simple example is a $2\times 2$ matrix acting on $\CC^2$:
-```{math}
-A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}
-```
-Then
-```{math}
-\text{Det}(A - \lambda \bf{1}) = \text{\Det}
-You can show further (on your own time), that in the basis above, given two operators $A,B$, $(AB)_{k\ell} = A_{km}B_{m\ell}$; that is, operator multiplication is just matrix multiplication.
-
-## Changes of basis
-
-The representation of vectors and operators as column vectors and matrices is basis-dependent. However, if we understand what the change of basis is, we can compute what a given vector and operator looks like in the new basis.
-
-Consider two bases $\ket{k}, \ket{\tilde{k}}$. We can expand the basis vectors on the second in terms of the first:
-```{math}
-:label: basis_change 
-\ket{\tilde{k}} = \sum_{\ell} U_{\ell k} \ket{\ell}
-```
-where $U_{\ell k}$ are $n^2$ complex numbers. Note that $U$ is an invertible matrix as we can write
-```{math}
-:label: inverse_change
-\ket{k} = \sum_m V_{mk}\ket{\tilde{m}} = \sum_{mn} U_{n m} V_{m k} \ket{k}
-```
-This only makes sense if $U_{nm} V_{mk} = \delta_{nk}$. We can run this in the opposite direction by swapping the tilde'dd and non-tilde'd bases in the above. The result is that $V$ is a left and right inverse for $U$, and thus $V = U^{-1}$ as a matrix.
-
-How do operators look in the new basis? If we write
-```{math}
-:label: op_change
-A\ket{\tilde{k}} = \sum_{\ell} \tilde{A}_{\ell k} \ket{\tilde{\ell}}
-```
-then making the change of bases $\ket{\tilde{k}} = U_{\ell k} \ket{\ell}$ on both sides, we find
-```{math}
-\tilde{A}_{k\ell} = U^{-1}_{km} A_{mn} U_{n\ell}
-```
-Note here that the matrix $U$ maps between bases, and $A,\tilde{A}$ are defined with respect to different basis.
-
-The choice of basis is (at this stage) arbitrary, and one can ask what aspects of an operator are independent of the choice of basis. There are two particularly important quantities one can form:
-
-1. Given any basis $\ket{k}$ of $V$, and an operator $A$ represented by the matrix $A_{k\ell}$, the *trace* of $A$:
-```{math}
-:label: trace_def
-\text{Tr}(A) = \sum_k A_{kk}
-```
-is independent of the choice of basis. To see this, 
-```{math}
-:label: trace_new_basis
-\begin{align}
-\text{Tr}(\tilde{A}) & = U^{-1}_{mk} A_{kl} U_{lm} \\
-& = U_{lm} U^{-1}_{mk} A_{kl} = \delta_{lk} A_{kl} = A_{kk} = \text{Tr}(A)
-\end{align}
-```
-
-2. **Definition**. The *determinant* of a matrix is also basis-independent. I will defer to your undergraduate linear algebra class to recall how to define the determinant of a matrix. The fact that it is basis independent comes from the fact that $\text{Det}(AB) = \text{Det}(A)\text{Det}(B) = \text{Det}(BA)$. Thus
-```{math}
-:label: det_change
-\text{Det}(\tilde{A}) = \text{Det}(U^{-1} A U) = \text{Det}(U U^{-1} A) = \text{Det}(A)
-```
 
 ## Eigenvalues and eigenvectors
 
@@ -497,11 +418,72 @@ Note that for any eigenvector $\ket{v}$ and any constant $c \in \CC$, $c\ket{v}$
 ```
 This means that $\text{Ker}(A - \lambda \bf{1})$ is nontrivial, and therefore $A - \lambda \bf{1}$ is not an invertibel operator.
 
-It is a basic fact that any operator $A$ is invertible *if and only if* $\text{Det}(A) \neq 0$. Thus, to find the eigenvalues of a matrix, we can solve the equation $\text{Det}(A - \lambda \bf{1}) = 0$. For $V$ with dimension $n$, this is an $n$th order polynomial equation. A simple example is a $2\times 2$ matrix acting on $\CC^2$:
+It is a basic fact that any operator $A$ is invertible *if and only if* $\text{Det}(A) \neq 0$. The reson is as follows. There is a standard formula in linear algebra for the inverse:
+```{math}
+:label: inverse_formula
+A^{-1}_{mn} = \frac{(\text{cofactor}\ A)_{mn}}{\text{Det}(A)}
+```
+where the cofactor is the determinant of the $(n-1)\times(n-1)$-dimensional matrix corresponding to $A$ with the $m$th row and the $n$th column deleted. This fails to be well defined precisely when the denominator vanishes.
+
+
+Thus, to find the eigenvalues of a matrix, we can solve the equation $\text{Det}(A - \lambda \bf{1}) = 0$. For $V$ with dimension $n$, this is an $n$th order polynomial equation. A simple example is a $2\times 2$ matrix acting on $\CC^2$:
 ```{math}
 \begin{align}
-A & = \begin{pmatrix} a - \lambda & b \\ c & d - \lambda \end{pmatrix}\\
-& = 
+\text{Det}(A - \lambda \bf{1}) & = \text{Det} \begin{pmatrix} a - \lambda & b \\ c & d - \lambda \end{pmatrix}\\
+& = (a - \lambda)(d - \lambda) - bc = \lambda^2 - (a + d) \lambda + ad - bc
 \end{align}
+```
+This is equal to zero when
+```{math}
+\begin{align}
+\text{Det}(A - \lambda \bf{1}) = 0 \Rightarrow \lambda & = \half(a + d) \pm \half \sqrt{(a + d)^2 - 4(ad - bc)} \\
+& = \half(a+d) \pm \half \sqrt{(a - d)^2 + 4 bc}
+\end{align}
+```
+
+## Functions of operators
+
+Lastly, we will need to define the concept of a function of an operator. Thet $f(x)$ be a complex-valued function of a complex argument. How can we define $f(A)$? The clearest way is via a Taylor series. That is, if
+```{math}
+f(x) = f_0 + f_1 x + f_2 x^2 + \ldots
+```
+then we can define
+```{math}
+f(A) = f_0 \bf{1} + f_1 A + f_2 A^2 + \ldots
+```
+(We will find other ways to descibr operators once we have introduced Hermitian operators).
+
+
+A particularly important example is the exponential of an operator:
+```{math}
+\text{exp}(A) = \sum_{n = 0}^{\infty} \frac{1}{n!} A^n
+```
+It is straightforward to show that $e^{\lambda A} e^{-\lambda A} = \bf{1}$. First, we can use the power series representation to show that
+```{math}
+\frac{d}{d\lambda} e^{\lambda A} = A e^{\lambda A} = e^{\lambda A} A\ ;
+```
+Thus
+```{math}
+\frac{d}{d\lambda} e^{\lambda A} e^{-\lambda A} = e^{\lambda A} A e^{-\lambda A} + e^{\lambda A} (-a) e^{-\lambda A} = 0
+```
+In other words, $e^{\lambda A} e^{-\lambda A}$ is $\lambda$-independent, so we can find its value by setting $\lambda = 1$.
+
+On the other hand, while for orderinary numbers $a,b$, $e^a e^b = e^{a + b}$ this fails to be true when re replac e $a,b$ with operators. To see this, we will loot at the first few terms in the Taylor series
+```{math}
+\begin{align}
+e^{\lambda A} e^{\lambda B} & = (1 + \lambda A + \half \lambda^2 A^2 + \ldots)(1 + \lambda B + \half \lambda^2 B^2)\\
+& = 1 + \lambda(A + B) + \half \lambda^2 (A^2 + B^2 + 2 AB)
+\end{align}
+```
+On the other hand,
+```{math}
+e^{\lambda(A + B)} = 1 + \lambda (A + B) + \half \lambda^2 (A + B)^2 + \ldots \\
+& = 1 + \lambda(A + B) + \half \lambda^2 (A^2 + B^2 + AB + BA) + \ldots
+```
+These two are only equal if $AB = BA$, that is, if $[A,B] = 0$. 
+
+In the intermediate case that $[A,B] = c \bf{1}$, with $c \in \CC$, one can (with a great deal of work) prove the very usefuil *Baker-Campbell-Haussdorf formula*:
+```{math}
+e^A e^B = e^{A + B + \half [A,B]}
 ```
 
