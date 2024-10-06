@@ -1,0 +1,630 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Adjoints and inner products &#8212; Physics 162a</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter3/Adjoint';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="Linear operators" href="Linear_operators.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dogs_quantum.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/dogs_quantum.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Physics 162a <br /> Prof. Albion Lawrence <br />  Brandeis University</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Newton.html">Newtonian mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Lagrange.html">Lagrangian Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Constraints.html">Constrained Lagrangian Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Symmetries.html">Symmetries and conservation laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Hamilton.html">Hamiltonian Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Intro_quantum.html">Introduction to quantum mechanics</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Intro_linear_algebra.html">Linear algebra</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Vector_spaces.html">Vector spaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linear_operators.html">Linear operators</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Adjoints and inner products</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter3/Adjoint.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Adjoints and inner products</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dual-vector-spaces">Dual vector spaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-and-notation">Properties and notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adjoint-maps">Adjoint maps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties">Properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-definitions-and-a-comment">Additional definitions and a comment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-of-operators">Actions of operators</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="adjoints-and-inner-products">
+<h1>Adjoints and inner products<a class="headerlink" href="#adjoints-and-inner-products" title="Link to this heading">#</a></h1>
+<section id="dual-vector-spaces">
+<h2>Dual vector spaces<a class="headerlink" href="#dual-vector-spaces" title="Link to this heading">#</a></h2>
+<section id="definition">
+<h3>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(V\)</span> be a vector space over <span class="math notranslate nohighlight">\(\CC\)</span>. the <em>dual vector space</em> <span class="math notranslate nohighlight">\(V^*\)</span> is the space of all linear maps <span class="math notranslate nohighlight">\(f:V \to \CC\)</span>.</p>
+</section>
+<section id="properties-and-notation">
+<h3>Properties and notation<a class="headerlink" href="#properties-and-notation" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(V^*\)</span> is a vector space.</p></li>
+</ol>
+<p>Consider linear maps <span class="math notranslate nohighlight">\(f_{1,2}\)</span>, and <span class="math notranslate nohighlight">\(a,b \in \CC\)</span>. Then we can define a linear map <span class="math notranslate nohighlight">\(a f_1 * b f_2\)</span> by their action on a vector <span class="math notranslate nohighlight">\(\ket{v}\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-sum-of-linear">
+<span class="eqno">(175)<a class="headerlink" href="#equation-sum-of-linear" title="Link to this equation">#</a></span>\[(a f_1 + b f_2)(\ket{v}) = a f_1(\ket{v}) + b f_2(\ket{v})\]</div>
+<p>One can show that this defines a linear map: for any <span class="math notranslate nohighlight">\(c,d\in \CC\)</span> and <span class="math notranslate nohighlight">\(\ket{v_{1,2}} \in V\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[(a f_1 + b f_2)(c \ket{v_1} + d \ket{v_2}) = c (a f_1 + b f_2)\ket{v_1} + d (a f_1 + b f_2)(\ket{v_2})\]</div>
+<p>which follows from <span class="math notranslate nohighlight">\(f_{1,2}\)</span> being linear maps/</p>
+<ol class="arabic simple" start="2">
+<li><p><span class="math notranslate nohighlight">\(\text{dim}(V^*) = \text{dim}(V)\)</span>. It is instructive to show this. Consider a basis <span class="math notranslate nohighlight">\(\ket{i}\)</span> of <span class="math notranslate nohighlight">\(V\)</span>, <span class="math notranslate nohighlight">\(i = 1,\ldots d = \text{dim}(V)\)</span>. A general vector <span class="math notranslate nohighlight">\(\ket{v}\)</span> can be expressed as</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\ket{v} = \sum_{i = 1}^d c_i \ket{i}\]</div>
+<p>for a unique set of coefficients <span class="math notranslate nohighlight">\(c_i \in \CC\)</span>. Now</p>
+<div class="math notranslate nohighlight">
+\[f(\ket{v}) = \sum_{i = 1}^d c_c f(\ket{i})\]</div>
+<p>Thus, the map <span class="math notranslate nohighlight">\(f\)</span> is completely specified by <span class="math notranslate nohighlight">\(d\)</span> complex numbers <span class="math notranslate nohighlight">\(f(\ket{i}) = c_i \in CC\)</span>. Thus, if we define <span class="math notranslate nohighlight">\(f_i\)</span> by <span class="math notranslate nohighlight">\(f_i(\ket{j}) = \delta_{ij}\)</span>, we can show that each <span class="math notranslate nohighlight">\(f_i\)</span> is a linear map. Furthermore, <span class="math notranslate nohighlight">\(f_i\)</span> is linearly independent of <span class="math notranslate nohighlight">\(f_{j \neq i}\)</span> (you should convince yourself of this).</p>
+<p>Any function <span class="math notranslate nohighlight">\(f\)</span> can always be written as <span class="math notranslate nohighlight">\(f = \sum_{i = 1}^d c_i f_i\)</span>, so this basis is maximal, and <span class="math notranslate nohighlight">\(f_i\)</span> form a complete basis for <span class="math notranslate nohighlight">\(V^*\)</span>. There are <span class="math notranslate nohighlight">\(d\)</span> such independent basis functions, so <span class="math notranslate nohighlight">\(\text{dim}(V^*) = d\)</span>.</p>
+<ol class="arabic simple" start="3">
+<li><p><em>Notation</em>. We can express <span class="math notranslate nohighlight">\(f \in V^*\)</span> as a “bra vector” <span class="math notranslate nohighlight">\(\bra{f}\)</span>. We then call elements <span class="math notranslate nohighlight">\(\ket{v} \in V\)</span> “ket vectors”. We can then write</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\brket{f}{v} \equiv f(\ket{v})\]</div>
+<p>as a “bra(c)ket”. I didn’t do this, please blame Dirac. Anyhow the notation is unfortunately standard. With this notation we can define the linear structure of <span class="math notranslate nohighlight">\(V^*\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\bra{a f_1 + b f_2} = a \bra{f_1} + b \bra{f_2}\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Finally, The dual vector space for <span class="math notranslate nohighlight">\(V^*\)</span> is <span class="math notranslate nohighlight">\(V\)</span>, or <span class="math notranslate nohighlight">\((V^*)^* = V\)</span>: for any <span class="math notranslate nohighlight">\(\ket{v}\)</span> the map from <span class="math notranslate nohighlight">\(V^* \to \CC\)</span> is just <span class="math notranslate nohighlight">\(\ket{v}: f \to \brket{f}{v}\)</span>.</p></li>
+</ol>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<p>If <span class="math notranslate nohighlight">\(V = \CC^3\)</span> is represented as the space of column vectors. we can represent <span class="math notranslate nohighlight">\(V^*\)</span> as the set of row vectors. That is, consider a basis</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\ket{1} = \begin{pmatrix}1 \\ 0 \\ 0 \end{pmatrix}\ ; \ket{2} = \begin{pmatrix}0 \\ 1 \\ 0 \end{pmatrix}\ ; \ket{3} = \begin{pmatrix}0 \\ 0 \\ 1 \end{pmatrix}\end{split}\]</div>
+<p>We can define any linear map <span class="math notranslate nohighlight">\(f\)</span> by <span class="math notranslate nohighlight">\(f(\ket{i} = c_i\)</span>. Then if <span class="math notranslate nohighlight">\(\ket{v} = \sum_i a_i \ket{i}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f(\ket{v}) = \sum_i c_i a_i = \begin{pmatrix} c_1 &amp; c_2 &amp; c_3 \end{pmatrix} \begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix}\end{split}\]</div>
+</section>
+</section>
+<section id="adjoint-maps">
+<h2>Adjoint maps<a class="headerlink" href="#adjoint-maps" title="Link to this heading">#</a></h2>
+<p>Since <span class="math notranslate nohighlight">\(\dim V = \dim V^*\)</span>, we expect that there is an isomorphism (a map that is one-to-one and onto) between them. Choosing such a map leads to a choice of “inner product” on <span class="math notranslate nohighlight">\(V\)</span> itself: a way of assigning to <span class="math notranslate nohighlight">\(\ket{v}\)</span> a number corresponding to some notion of its length.</p>
+<section id="id1">
+<h3>Definition<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(V\)</span> be a vector space over <span class="math notranslate nohighlight">\(\CC\)</span>. An <em>adjoint map</em> is a map <span class="math notranslate nohighlight">\(A: V \to V^*\)</span>, which we denote by <span class="math notranslate nohighlight">\(A\ket{v} \equiv \bra{f_v}\)</span> with the properties</p>
+<ol class="arabic simple">
+<li><p>Skew symmetry: <span class="math notranslate nohighlight">\(\brket{f_w}{v} = \brket{f_v}{w}^*\)</span>.</p></li>
+<li><p>Positive semi-definiteness:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\brket{f_v}{v} \equiv ||v||^2 \geq 0\ ; ||v|| = 0\ \text{iff}\ \ket{v} = 0\]</div>
+<p>In general we write <span class="math notranslate nohighlight">\(\bra{f_v} = \bra{v}\)</span>.</p>
+</section>
+<section id="properties">
+<h3>Properties<a class="headerlink" href="#properties" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><em>Antilinearity</em>. Using skew-symmetry you can show that for <span class="math notranslate nohighlight">\(\ket{v_{1,2}} \in V\)</span>, <span class="math notranslate nohighlight">\(a, b \in \CC\)</span>,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\bra{a v_1 + b v_2} = a^* \bra{v_1} + b^* \bra{v_2}\]</div>
+<ol class="arabic simple" start="2">
+<li><p><em>Schwarz inequality</em></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[|\brket{v}{w}| \leq ||v||\ ||w||\]</div>
+<ol class="arabic simple" start="3">
+<li><p><em>Triangle inequality</em></p></li>
+</ol>
+</section>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(V = \CC^3\)</span>.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}A\begin{pmatrix} c_1 \\ c_2 \\ c_3 \end{pmatrix} = \begin{pmatrix} c_1^* &amp; c_2^* &amp; c_2^* \end{pmatrix}\end{split}\]</div>
+<p>If</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\ket{v} = \begin{pmatrix} c_1 \\ c_2 \\ c_3 \end{pmatrix}\ , \ket{w} = \begin{pmatrix} d_1 \\ d_2 \\ d_3 \end{pmatrix}\end{split}\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[\brket{v}{w} = c_1^* d_1 + c_2^* d_2 + c_3^* d_3\]</div>
+<ol class="arabic simple" start="2">
+<li><p><span class="math notranslate nohighlight">\(V = M_2(\CC)\)</span>.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\brket{M_1}{M_2} = \text{tr} (M_1^{*})^T M_2) = \sum_{i,j} (M_1)^*_{ij} (M_2)_{ij}\]</div>
+</section>
+<section id="additional-definitions-and-a-comment">
+<h3>Additional definitions and a comment<a class="headerlink" href="#additional-definitions-and-a-comment" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\brket{v}{w}\)</span> is the <em>inner product</em> of <span class="math notranslate nohighlight">\(\ket{v}\)</span>, <span class="math notranslate nohighlight">\(\ket{w}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(||v||^2 = \brket{v}{v}\)</span> is called the <em>norm</em> of <span class="math notranslate nohighlight">\(\ket{v}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(V\)</span> with an adjoint map is called an <em>inner product space</em>.</p></li>
+<li><p>An inner product space (over <span class="math notranslate nohighlight">\(\CC\)</span>) is called a <em>Hilbert space</em> if either:</p></li>
+</ol>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\text{dim}(V) &lt; \infty\)</span>, or</p></li>
+<li><p>Cauchy sequences in <span class="math notranslate nohighlight">\(V\)</span> are complete.</p></li>
+</ul>
+<p>To explain the last possibility, note that <span class="math notranslate nohighlight">\(\ket{v_i}\)</span>, <span class="math notranslate nohighlight">\(i = 1,\ldots,\infty\)</span> is a <em>Cuachy sequence</em> if for any <span class="math notranslate nohighlight">\(\eps &gt; 0\)</span>, there exists some integer <span class="math notranslate nohighlight">\(N\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[|| v_n - v_m || &lt; \eps\ \forall n, m \geq N\]</div>
+<p>Such a sequence is <em>complete</em> if it converges to a vector in <span class="math notranslate nohighlight">\(V\)</span>.</p>
+<ol class="arabic simple" start="4">
+<li><p>There is no unique adjoint map.</p></li>
+</ol>
+</section>
+<section id="actions-of-operators">
+<h3>Actions of operators<a class="headerlink" href="#actions-of-operators" title="Link to this heading">#</a></h3>
+<p>Goven a linear operator <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\ket{v} \in V\)</span>, <span class="math notranslate nohighlight">\(A\ket{v}\)</span> is a vector and <span class="math notranslate nohighlight">\(\bra{w} A \ket{v}\)</span> is a complex number. We can therefore define <span class="math notranslate nohighlight">\(\bra{A w} \equiv \bra{w} A\)</span> such that <span class="math notranslate nohighlight">\(\brket{A w}{v} = \bra{w} A \ket{v}\)</span>.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Linear_operators.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Linear operators</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendix.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dual-vector-spaces">Dual vector spaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-and-notation">Properties and notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adjoint-maps">Adjoint maps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties">Properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-definitions-and-a-comment">Additional definitions and a comment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-of-operators">Actions of operators</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Albion Lawrence
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
