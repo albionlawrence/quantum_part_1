@@ -104,7 +104,7 @@ sphinx:
             macros:
               "ket": ["|#1\\rangle",1]
               "bra": ["\\langle#1|",1]
-              "brket": ["\\langle#1|#2\\rangle",1,2]
+              "brket": ["\\langle#1|#2\\rangle",2]
               "vev": ["\\langle #1 \\rangle",1]
               "half": ["\\frac{1}{2}"]
               "eps": ["\\epsilon"]

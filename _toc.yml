@@ -17,6 +17,7 @@ chapters:
     sections:
     - file: chapter3/Vector_spaces
     - file: chapter3/Linear_operators
+    - file: chapter3/Adjoint
   - file: appendix
   - file: bibliography
 # - file: notebooks
