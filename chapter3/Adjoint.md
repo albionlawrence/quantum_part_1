@@ -63,7 +63,7 @@ Since $\dim V = \dim V^*$, we expect that there is an isomorphism (a map that is
 
 ### Definition
 
-Let $V$ be a vector space over $\CC$. An *adjoint map* is a map $A: V \to V^*$, which we denote by $A\ket{v} \equiv \bra{f_v}$ with the properties
+Let $V$ be a vector space over $\CC$. An *adjoint map* is a map $\cal{A}: V \to V^*$, which we denote by $A\ket{v} \equiv \bra{f_v}$ with the properties
 
 1. Skew symmetry: $\brket{f_w}{v} = \brket{f_v}{w}^*$.
 2. Positive semi-definiteness: 
@@ -131,3 +131,140 @@ Such a sequence is *complete* if it converges to a vector in $V$.
 ### Actions of operators
 
 Goven a linear operator $A$ and $\ket{v} \in V$, $A\ket{v}$ is a vector and $\bra{w} A \ket{v}$ is a complex number. We can therefore define $\bra{A w} \equiv \bra{w} A$ such that $\brket{A w}{v} = \bra{w} A \ket{v}$.
+
+## Orthonormal bases
+
+### Definitions
+
+Let $V$ be a vector space over $\CC$.
+
+1. $\ket{v} \in V$ is a *normal vector* if $||v||^2 = \brket{v}{v} = 1$.
+
+2. $\ket{v},\ket{w} \in V$ are *orthogonal* if $\brket{v}{w} = 0$.
+
+3. An *orthonormal basis* is a basis $\ket{i} \in V$, $i = 1,\ldots,d = \text{dim} V$ such that for $\cal{A}: \ket{i} \to \bra{i}$, \brket{i}{j} = \delta_{ij}$. 
+
+### Examples
+
+1. We can write $\ket{v} = \sum_i v_i \ket{i}$; the antilienarity of the adjoint map means that $\bra{v} = \sum_i \bra{i} v^*_i$. This means that 
+```{math}
+:label: on_norm
+\brket{v}{v} = \sum_{i,j} v^*_i \brket{i}{j} v_j = \sum_i |v_i|^2
+```
+ Similarly, for $\ket{w} = \sum_i w_i \ket{i}$, 
+ ```{math}
+ :label: inner_product_on_basis
+ \brket{w}{v} = \sum_i w^*_i v_i
+ ```
+ This works if we idenfity 
+ ```{math}
+ :label: ket_in_on_basis
+ \ket{v} \to \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix}
+ ```
+and thus
+```{math}
+:label: bra_in_on_basis
+\bra{v} \to \begin{pmatrix} v_1^* & v_2^* & \ldots & v_n^* \end{pmatrix}
+```
+The basis element $\ket{i}$ is a column vector with all zeros except a $1$ in the $i$th row.
+
+2. If $V = M_2(\CC)$, the space of $2\times 2$ complex matrices,
+a natural inner product is
+```{math}
+\brket{m}{n} = \text{tr} (m^T)^* n
+```
+where $m,n$ are $2\times 2$ matrices. This clearly defines an adjoint map from $\ket{n}$ to a linear map. An orthonormal basis is:
+```{math}
+:label: matrix_on_basis
+\ket{1} \to \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} \ ; \ \ 
+\ket{2} \to \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}\ ; \ \ 
+\ket{3} \to \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}\ ; \ \ 
+\ket{4} \to \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}
+```
+
+### The Gram-Schmidt machine
+
+**Theorem**: every finite-dimensional vector space has an orthonormal basis.
+
+**Proof (partial)**: Given a basis $\ket{v_1},\ket{v_2},\ldots,\ket{v_d}$, we can construct a basis iteratively. Define
+```{math}
+:label: gs_machine
+\begin{align}
+\ket{1} & = \frac{\ket{v_1}}{||v_1||}\\
+\ket{2} & = \frac{\ket{v_2} - \brket{1}{v_2}\ket{1}}{\sqrt{||v_2||^2 - |\brket{1}{v_2}|^2}}\\
+\ket{k} & = \frac{\ket{v_k} - \sum_{n = 0}^{k-1} \ket{n}\brket{n}{v_k}}{\sqrt{||v_k||^2 = \sum_{n = 1}^{k-1} |\brket{v_k}{n}|^2}}
+\end{align}
+```
+
+### Matrix elements of operators
+
+Since $\ket{i}$ is a basis, we can write the action of operators in this basis: $A\ket{j} = A_{ij}\ket{i}$. As notation, we will sometimes write
+```{math}
+:label: operator_rep
+A = \ket{i} A_{ij} \ket{j}
+```
+We understand this to mean
+```{math}
+A\ket{v} = \sum_{i,j} \ket{i} A_{ij} \brket{j}{v} = \sum_{i,j}A_{ij} v_j \ket{i}
+```
+where $\ket{v} = \sum_i v_i \ket{i}$, and for dual vectors $\bra{v} = \sum_i \bra{i} v_i^*$,
+```{math}
+\bra{v} A = \sum_{i,k} \bra{i} v^*_k A_{ki}
+```
+Thus
+```{math}
+\bra{v} A \ket{w} = \sum_{i,j} v^*_i A_{ij} w_j
+```
+
+A particularly important example is the identity operator $\bf{1}$ for which $\bf{1}_{ij} = \delta_{ij}$. This can be represented as above by:
+
+```{math}
+:label: resolution_of_identity
+{\bf 1} = \sum_i \ket{i}\bra{i}
+```
+
+for any orthonormal basis. This is called a *resolution of the identity*, associated to a given basis.
+
+In this basis, an important operator on $A$ is the *transpose*. That is given a linear operator $A$, we can define the transpose $A^T$ via its matrix elements
+```{math}
+:label: transpose_def
+(A^T)_{ij} = A_{ji}
+```
+In particular, we can write
+```{math}
+\bra{v}A = \bra{i} v^*_k A_{ki} = \bra{i} (A^T)_{ik} v^*_k
+```
+
+### Adjoints of operators
+
+The vector $A\ket{v} \equiv \ket{Av} = A_{lk} v_k \ket{l}$ has a natural adjoint
+```{math}
+{\cal A} : A\ket{v} \to \bra{l} v_k^* A_{lk}^* = \bra{l} v_k^* (A^T)^*_{kl} \equiv \bra{v} A^{\dagger}
+```
+which defines the *Hermitian conjugate* $A^{\dagger}$. We can either define it as ${\cal A}: A\ket{v} \to \bra{a} A^{\dagger}$ or via its matrix elements in an orthonormal basis,
+```{math}
+:label: hermitian_def
+A^{\dagger}_{ij} = (A^T)^*_{ij} = A^*_{ji}
+```
+
+### Hermitian and unitary operators
+
+1. **Definition**. A *Hermitian operator* is an opertator $A = A^{\dagger}$.
+
+Note that this does not mean the operator has real matrix elements. The following operator on $\CC^2$ is Hermitian:
+```{math}
+\sigma_y = \begin{pmatrix} 0 & i \\ -i & 0 \end{pmatrix}
+```
+
+2. **Definition**. A *Unitary operator* is an operator $U$ such that $U^{|dagger} = U^{-1}$. 
+
+An important property of this operator is that it is *norm-preserving*:
+```{math}
+|| U\ket{v}||^2 = \bra{v} U^{\dagger} U \ket{v} = \bra{v} U^{-1} U \ket{v} = \brket{v}{v} = ||v||^2
+```
+
+An example of a unitary operator acting on $\CC^2$: 
+```{math}
+U = \begin{pmatrix} \cos\theta & \sin\theta e^{i\phi} \\ - \sin\theta e^{-i\phi} & \cos\theta \end{pmatrix}
+```
+

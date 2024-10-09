@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Linear algebra &#8212; Physics 162a</title>
+    <title>Spectra of Hermitian and Unitary Operators &#8212; Physics 162a</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter3/Intro_linear_algebra';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter3/Operator_spectra';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Vector spaces" href="Vector_spaces.html" />
-    <link rel="prev" title="Introduction to quantum mechanics" href="../chapter2/Intro_quantum.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="Adjoints and inner products" href="Adjoint.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,11 +186,11 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter2/Intro_quantum.html">Introduction to quantum mechanics</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Linear algebra</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Intro_linear_algebra.html">Linear algebra</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Vector_spaces.html">Vector spaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Linear_operators.html">Linear operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Adjoint.html">Adjoints and inner products</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Operator_spectra.html">Spectra of Hermitian and Unitary Operators</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Spectra of Hermitian and Unitary Operators</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -249,7 +249,7 @@
       
       
       
-      <li><a href="../_sources/chapter3/Intro_linear_algebra.md" target="_blank"
+      <li><a href="../_sources/chapter3/Operator_spectra.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -320,7 +320,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -331,11 +333,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Linear algebra</h1>
+    <h1>Spectra of Hermitian and Unitary Operators</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-and-eigenvectors-for-hermitian-operators">Eigenvalues and eigenvectors for Hermitian operators</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -345,13 +355,43 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="linear-algebra">
-<h1>Linear algebra<a class="headerlink" href="#linear-algebra" title="Link to this heading">#</a></h1>
-<p>A good physical theory comes with a precise mathematical scaffolding that contains just enough structure – no more and no less – needed to describe all possible experiments.</p>
-<p>As we have argued in the previous chapter, decribing quantum states seems to involve vectors with complex components which can be added together to form other quantum states. This is the province of linear algebra. The goal of this section is to describe the linear algebra of <em>Hilbert spaces</em>, a particular “vector spavce” with complex-valued vectors that contains precisely what we need to do quantum mechanics.</p>
-<p>This language makes quantum mechanics both easier and more difficult than classical mechanics. On the one hand, the dynamical equations are linear and there is a simple linear structure to the s[ace of possilble physical states. In classical mechanics the equations of motion can be nonlinear and the space of states can have a very complex, curved geometry for which points are not well-represented by vectors. On the other hand, the description of physics states in terms of fairly abstract-seeming vectors is abstract and confusing. Hopefully it will become at least less confusing as the year goes on.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="spectra-of-hermitian-and-unitary-operators">
+<h1>Spectra of Hermitian and Unitary Operators<a class="headerlink" href="#spectra-of-hermitian-and-unitary-operators" title="Link to this heading">#</a></h1>
+<p>The following is <em>central</em> to the workings of quantum mechanics.</p>
+<section id="eigenvalues-and-eigenvectors-for-hermitian-operators">
+<h2>Eigenvalues and eigenvectors for Hermitian operators<a class="headerlink" href="#eigenvalues-and-eigenvectors-for-hermitian-operators" title="Link to this heading">#</a></h2>
+<p>Consider a Hermitian operator <span class="math notranslate nohighlight">\(A = A^{\dagger}\)</span>.</p>
+<ol class="arabic simple">
+<li><p>*<strong>Theorem</strong>. The eigenvalues of <span class="math notranslate nohighlight">\(A\)</span> are real.</p></li>
+</ol>
+<p><strong>Proof</strong>. Consider a normalized eigenvector <span class="math notranslate nohighlight">\(\ket{a}\)</span> (||a|| = 1<span class="math notranslate nohighlight">\() such that \)</span>A \ket{a} = a \ket{a}<span class="math notranslate nohighlight">\(. This means that \)</span>\bra{a} A \ket{a} = a$. By the skew-symmetry of the adjoint,</p>
+<div class="math notranslate nohighlight">
+\[a^* = \bra{a} A \ket{a}^* = \bra{a} A^{\dagger} \ket{a} = \bra{a} A \ket{a} = a\]</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Theorem</strong>. Eigenvectors of <span class="math notranslate nohighlight">\(A = A^{\dagger}\)</span> with <em>distinct</em> eigenvalues are orthogonal</p></li>
+</ol>
+<p><strong>Proof</strong> Consider eigenvectors <span class="math notranslate nohighlight">\(\ket{a}, \ket{b}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[A\ket{a} = a \ket{a}\ ; \ \ A \ket{b} = b \ket{b} \]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[\bra{b} A \ket{a} = \brket{b}{a} a = b \brket{b}{a}\]</div>
+<p>for <span class="math notranslate nohighlight">\(a \neq b\)</span> this is only possible if <span class="math notranslate nohighlight">\(\brket{b}{a} = 0\)</span>.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Theorem</strong>. The eigenvectors of <span class="math notranslate nohighlight">\(A = A^{\dagger}\)</span> can be constructed to form an orthonormal basis <span class="math notranslate nohighlight">\(\ket{a_i}\)</span> such that <span class="math notranslate nohighlight">\(A\ket{a_i} = a_i \ket{a_i}\)</span>.</p></li>
+</ol>
+<p>I will only sketch a proof.</p>
+<ul class="simple">
+<li><p>The eigenvalues satisfy <span class="math notranslate nohighlight">\(\text{det}(A - a {\bf 1}) = 0\)</span> is a <span class="math notranslate nohighlight">\(D\)</span>th-order polynomial equation in <span class="math notranslate nohighlight">\(a\)</span> (where <span class="math notranslate nohighlight">\(d = \text{dim}(V)\)</span>). Thus</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\text{det}(A - a {\bf 1}) = c \prod_{I = 1}^d (a - a_i)\]</div>
+<p>There are always <span class="math notranslate nohighlight">\(d\)</span> complex roots to this equation. If <span class="math notranslate nohighlight">\(A = A^{\dagger}\)</span> all eigenbvalues are real so all <span class="math notranslate nohighlight">\(a_i\)</span> are real. There are still <span class="math notranslate nohighlight">\(d\)</span> roots.
+Hhere <span class="math notranslate nohighlight">\(a_i\)</span> are the eigenvalues. If <span class="math notranslate nohighlight">\(a_i \neq a_j\)</span> for <span class="math notranslate nohighlight">\(i \neq j\)</span>, we are done, as <span class="math notranslate nohighlight">\(\brket{a_i}{a_j} = \delta_{ij}\)</span> and there are <span class="math notranslate nohighlight">\(d\)</span> such eigenvectors.</p>
+<ul class="simple">
+<li><p>If there are <span class="math notranslate nohighlight">\(d_k\)</span> identical eigenvalues, one needs to show (and I will not) that this means the space of vectors which are eigenvectors of <span class="math notranslate nohighlight">\(A\)</span> with eignevalue <span class="math notranslate nohighlight">\(a_k\)</span> form a <span class="math notranslate nohighlight">\(d_k\)</span>-dimensional subspace. This can mbe made into an orthonormal basis via teh Gram-Schmidt machine.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -385,20 +425,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../chapter2/Intro_quantum.html"
+       href="Adjoint.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction to quantum mechanics</p>
+        <p class="prev-next-title">Adjoints and inner products</p>
       </div>
     </a>
     <a class="right-next"
-       href="Vector_spaces.html"
+       href="../appendix.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Vector spaces</p>
+        <p class="prev-next-title">Appendix</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -408,6 +448,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-and-eigenvectors-for-hermitian-operators">Eigenvalues and eigenvectors for Hermitian operators</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
