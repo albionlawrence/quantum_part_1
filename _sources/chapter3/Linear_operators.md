@@ -347,6 +347,7 @@ In other words, every finite-dimensional vector space can be represented by $\CC
 
 You can show further (on your own time), that in the basis above, given two operators $A,B$, $(AB)_{k\ell} = A_{km}B_{m\ell}$; that is, operator multiplication is just matrix multiplication.
 
+(changes_of_basis)= 
 ## Changes of basis
 
 The representation of vectors and operators as column vectors and matrices is basis-dependent. However, if we understand what the change of basis is, we can compute what a given vector and operator looks like in the new basis.
