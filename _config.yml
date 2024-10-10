@@ -113,3 +113,4 @@ sphinx:
               "CF": ["\\mathbb{F}"]
               "CC": ["\\mathbb{C}"]
               "CR": ["\\mathbb{R}"]
+              "CZ": ["\\mathbb{Z}"]

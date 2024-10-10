@@ -111,6 +111,12 @@ then
 \brket{M_1}{M_2} = \text{tr} (M_1^{*})^T M_2) = \sum_{i,j} (M_1)^*_{ij} (M_2)_{ij}
 ```
 
+3. $V = L^2(\CR)$, the space of complex square-integrable functions on the real line where $\ket{\psi}$ is represented by the function $\psi(x)$. A good inner product, which defines an adjoint map, is
+```{math}
+:label: L2adjoint
+\brket{\chi}{\psi} = \int_{-\infty}^{\infty} dx \chi(x)^* \psi(x)
+```
+
 ### Additional definitions and a comment
 
 1. $\brket{v}{w}$ is the *inner product* of $\ket{v}$, $\ket{w}$.
@@ -182,9 +188,15 @@ where $m,n$ are $2\times 2$ matrices. This clearly defines an adjoint map from $
 \ket{4} \to \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}
 ```
 
+3. Consider the vector space of complex functions on the interval $0,L$ with Dirichlet boundary condittions. You can convince yourself that the basis
+```{math}
+\ket{n} \to \psi_n(x) = \sqrt{\frac{2}{L}} \sin \frac{n\pi x}{L}
+```
+is orthonormal with respect to the inner product {eq}`L2adjoint`
+
 ### The Gram-Schmidt machine
 
-**Theorem**: every finite-dimensional vector space has an orthonormal basis.
+**Theorem**: every finite-dimensional vector space or infinite dimensional vector space with a countable basis has an orthonormal basis.
 
 **Proof (partial)**: Given a basis $\ket{v_1},\ket{v_2},\ldots,\ket{v_d}$, we can construct a basis iteratively. Define
 ```{math}
@@ -201,7 +213,7 @@ where $m,n$ are $2\times 2$ matrices. This clearly defines an adjoint map from $
 Since $\ket{i}$ is a basis, we can write the action of operators in this basis: $A\ket{j} = A_{ij}\ket{i}$. As notation, we will sometimes write
 ```{math}
 :label: operator_rep
-A = \ket{i} A_{ij} \ket{j}
+A = \bra{i} A_{ij} \ket{j}
 ```
 We understand this to mean
 ```{math}
@@ -249,22 +261,43 @@ A^{\dagger}_{ij} = (A^T)^*_{ij} = A^*_{ji}
 
 ### Hermitian and unitary operators
 
-1. **Definition**. A *Hermitian operator* is an opertator $A = A^{\dagger}$.
+1. **Definition**. A *Hermitian operator* is an operator $A = A^{\dagger}$.
 
 Note that this does not mean the operator has real matrix elements. The following operator on $\CC^2$ is Hermitian:
 ```{math}
 \sigma_y = \begin{pmatrix} 0 & i \\ -i & 0 \end{pmatrix}
 ```
 
-2. **Definition**. A *Unitary operator* is an operator $U$ such that $U^{|dagger} = U^{-1}$. 
+2. **Definition**. A *Unitary operator* is an operator $U$ such that $U^{\dagger} = U^{-1}$. 
 
 An important property of this operator is that it is *norm-preserving*:
 ```{math}
 || U\ket{v}||^2 = \bra{v} U^{\dagger} U \ket{v} = \bra{v} U^{-1} U \ket{v} = \brket{v}{v} = ||v||^2
 ```
 
-An example of a unitary operator acting on $\CC^2$: 
+1. An example of a unitary operator acting on $\CC^2$: 
 ```{math}
 U = \begin{pmatrix} \cos\theta & \sin\theta e^{i\phi} \\ - \sin\theta e^{-i\phi} & \cos\theta \end{pmatrix}
 ```
 
+2. Two nontrivial examples for $L^2(\CR)$:
+- The position operator ${\hat x}: \psi(x) \to x \psi(x)$. Since
+```{math}
+\begin{align}
+\bra{\chi} \hat{x} ket{\psi} & = \int dx \chi^* (x \psi(x)) = \int dx (x\chi)^* \psi \\
+& = \brket{\chi}{x\psi} = \brket{x\chi}{\psi}
+\end{align}
+```
+as expected for a Hermitian operator.
+- the operator $\hat{p} = - i\hbar \frac{\del}{\del x}$, when acting on $\psi(x)$. 
+```{math}
+\begin{align}
+\bra{\chi} {\hat p}\ket{\psi} & = \int_{-\infty}^{\infty} \chi^* (-i\hbar) \frac{\del \psi}{\del x}\\
+& = (-i \hbar) \int_{-\infty}^{\infty} dx \frac{\del}{\del x} (\chi^* \psi) + i \hbar \int dx \frac{\del \chi^*}{\del x} \psi \\
+& = - i \hbar \chi^* \psi \Big|_{-\infty}^{\infty} + \int_{-\infty}^{\infty} dx\left(-i\hbar \frac{\del \chi}{\del x}\right)^*\psi\\
+& = \bra{\chi}{\hat p}^{\dagger} \ket{\psi}
+\end{align}
+```
+The second line follows from integration by larts, and the boundary terms vanish because $\psi$ is sequare integrable. In other words for every $\ket{\psi},\ket{\chi}$, $\bra{\chi} {\hat p} \ket{\psi} = \bra{\chi} {\hat p}^{\dagger} \ket{\psi}$. From this we can deduce that ${\hat p} = {\hat p}^{\dagger}$.
+
+The same argument follows for the case of complex functions with periodic boundary conditions. For *Dirichlet* boundary conditions, ${\hat p}$ fails to be an operator on teh Hilbert space, as the derivative of a function with Dirichlet boundary conditions does not in general satisfy Dirichlet boundary conditions. (Similarly for Neumann boundary conditions).
