@@ -96,6 +96,50 @@ d = d_W + d_{W^{\perp}}
 ```
 The only solutions are $a = 1$ or $a = 0$.
 
-- Eigenvectors with zero eigenvalue span $\text{Ker}(\CP)$.
+- **Theorem**. Eigenvectors with zero eigenvalue span $\text{Ker}(\CP)$. (Stated without proof).
 
-- Eigenvectors with unit eigenvalue span $(\text{Ker}(\CP))^{\perp}$ which is also the range of $\CP$. 
+- ${\bf 1} - \CP$ is also a projection operator. 
+
+- **Theorem**. Eigenvectors with unit eigenvalue span $(\text{Ker}(\CP))^{\perp}= \text{Ker}({\bf 1} - \CP)$ which is also the range of $\CP$
+
+- In an orthonormal basis of eigenvectors of $\CP$, we can write a matrix representation of $\CP$ as:
+```{math}
+\CP = \begin{pmatrix} {\bf 1}_{d_P\times d_P} & {\bf 0}_{d_P \times d_{P^{\perp}}} \\ {\bf 0}_{d_{P^{\perp}}\times d_{P^{\perp}}} & {\bf 0}_{d_{P^{\perp}} \times d_{P^{\perp}}}
+\end{pmatrix}
+```
+where $\text{dim}(\text{range}(\CP)) = d_P$ and $\text{dim}(\text{Ker}(\CP)) = d_{P^{\perp}}$. If the eigenvectors of $\CP$ with unit eigenvalues are $\ket{i}$, $i \in \{1, \ldots , d_P\}$, then we can also write
+```{math}
+:label: abstract_proj_rep
+\CP = \sum_{i = 1}^{d_P} \ket{i}\bra{i}
+```
+In the latter case, we can show this is Hermitian by first realizing that
+```{math}
+:label: adjoint_vectorrep
+\left(\ket{\chi}\bra{\psi}\right)^{\dagger} = \ket{\psi}\bra{\chi}
+```
+(can you shouw this?), and then showing that
+```{math}
+:label: projection_squared
+\CP^2 = \sum_i \ket{i}\bra{i} \sum_j \ket{j}\bra{j} = \sum_{i,j} \ket{i}\brket{i}{j}\bra{j} = \sum_{i,j} \ket{i}\delta_{ij} \bra{j} = \CP
+```
+
+### Spectral representation of Hermitian operators
+
+Consider a vector space $V$ and a Hermitian operator $A: V\to V$ with a basis of eigenstates $\ket{a_i,\alpha_i}$, where $A\ket{a_i,\alpha_i} = a_i \ket{a_i,\alpha_i}$, $\alpha_i \in \{1,\ldots,d_i\}$, and $\brket{a_i,\alpha_i}{a_j,\alpha_j} = \delta_{ij}\delta_{\alpha_i,\alpha_j}$. Here if $d_i > 1$ then $a_i$ is a degenerate eigenvalue and $d_i$ is the degree of degeneracy. We can write a projection operator 
+```{math}
+\CP_i = \sum_{\alpha_i = 1}^{d_i} \ket{a_i,\alpha_i}\bra{a_i,\alpha_i}
+```
+which projects onto the subspace $V_i \subset V$ of vectors with eigenvalue $a_i$. We can then write the operator $A$ as
+```{math}
+:label: spectral_rep 
+A = \sum_i a_i \CP_i
+```
+The right hand side has the same eigenvalues and eigenvector as $A$, by construction; thus it has the same matrix elements in a basis of eigenvectors of $A$, and so must be the same operator as $A$.
+
+Note that the fact that $\ket{a_i,\alpha_i}$ are a complete orthonormal basis for $V$ means that
+```{math}
+:label: evector_resolution_identity
+{\bf 1} = \sum_{i,\alpha_i} \ket{a_i,\alpha_i}\bra{a_i,\alpha_i} = \sum_i \CP_i
+```
+
+

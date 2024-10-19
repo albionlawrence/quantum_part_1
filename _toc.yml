@@ -19,6 +19,9 @@ chapters:
     - file: chapter3/Linear_operators
     - file: chapter3/Adjoint
     - file: chapter3/Operator_spectra
+  - file: chapter4/Quantum_rules
+    sections:
+    - file: chapter4/Axioms
   - file: appendix
   - file: bibliography
 # - file: notebooks

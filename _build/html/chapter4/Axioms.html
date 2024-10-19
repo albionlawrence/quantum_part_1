@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Axioms of Quantum Mechanics. &#8212; Physics 162a</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter4/Axioms';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="The Rules of Quantum Mechanics" href="Quantum_rules.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dogs_quantum.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/dogs_quantum.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Physics 162a <br /> Prof. Albion Lawrence <br />  Brandeis University</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Newton.html">Newtonian mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Lagrange.html">Lagrangian Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Constraints.html">Constrained Lagrangian Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Symmetries.html">Symmetries and conservation laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Hamilton.html">Hamiltonian Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Intro_quantum.html">Introduction to quantum mechanics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/Intro_linear_algebra.html">Linear algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Vector_spaces.html">Vector spaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Linear_operators.html">Linear operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Adjoint.html">Adjoints and inner products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Operator_spectra.html">Spectra of Hermitian and Unitary Operators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Quantum_rules.html">The Rules of Quantum Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">The Axioms of Quantum Mechanics.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter4/Axioms.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Axioms of Quantum Mechanics.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-axioms-of-quantum-mechanics">
+<h1>The Axioms of Quantum Mechanics.<a class="headerlink" href="#the-axioms-of-quantum-mechanics" title="Link to this heading">#</a></h1>
+<p>One can make a case taht the best way to introduce quantum mechanics is to just jump right in. The rules are comparatively simple, if somewhat abstract. We will take that approach and then proceed to applying the rules to various examples. In this way we can build some intuition for how the rules work.</p>
+<p>A good reason for doing this is that the rules are very different from how we approach classical mechanics. Furthermore, they yield predictions that have withstood over a century of experimental tests. So perhaps we should just state what the rules are and get used to them. The infamous philosophivcal puzzles amount to: where do these rules come from? We will allude to these, and in coming lectures eliminate one class of possibilities.</p>
+<p>I will state the rules in a somewhat different order and grouping as compared to Commins. (Also one of his rules can be derived as a consequence). It comes to the same in the end, and you should read both.</p>
+<ol class="arabic simple">
+<li><p>The space of physical states of a quantum system is a Hilbert space <span class="math notranslate nohighlight">\(\cH\)</span>. (COntrast with classical mechanics, for which the space of states is a <em>phase space</em> of positions and momenta).</p></li>
+</ol>
+<p>Some examples:</p>
+<ul class="simple">
+<li><p>For photons traveling with fixed direction and wavenumber, the space of photon polarizations is <span class="math notranslate nohighlight">\(\cH = \CC^2\)</span>.</p></li>
+<li><p>The spin states of neutrons, protons, and electrons are also described by <span class="math notranslate nohighlight">\(\cH = \CC^2\)</span>. Such particles are called “spin-<span class="math notranslate nohighlight">\(\half\)</span>” particles and there are many others! (Muons, tau leptons, neutrinos, quarks.)</p></li>
+<li><p>The states of a spinless, nonrelativistic particle in three dimensions is <span class="math notranslate nohighlight">\(\cH = L^2(\CR^3)\)</span></p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Observable quantities are eigenvalues of (bounded) Hermitian operators. As a shorthand, we typically refer to the operators themselves as “observables”, which I will do here. That is, for any quantity such as position, momentum, polzarization, or spin, there is an associated operator and the allowed results of a measurement are the eigenvalues of that operator.</p></li>
+<li><p>Given a state <span class="math notranslate nohighlight">\(\ket{\psi} \in \cH\)</span>, a measruement of an observable <span class="math notranslate nohighlight">\(A\)</span> yields an eigenvalue <span class="math notranslate nohighlight">\(a\)</span> with probability</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-born-rule">
+<span class="eqno">(194)<a class="headerlink" href="#equation-born-rule" title="Link to this equation">#</a></span>\[p(a) = \frac{\bra{\psi} \CP_a \ket{\psi}}{\brket{\psi}{\psi}}\]</div>
+<p>This rule is sometimes called the <em>Born rule</em>. The resolution of the identity shown in <a class="reference internal" href="../chapter3/Operator_spectra.html#equation-evector-resolution-identity">(193)</a> shows that these atre consistent probabilities:</p>
+<div class="math notranslate nohighlight" id="equation-sum-of-results">
+<span class="eqno">(195)<a class="headerlink" href="#equation-sum-of-results" title="Link to this equation">#</a></span>\[\sum_i p(a_i) = \sum_i \frac{\bra{\psi} \CP_{a_i} \ket{\psi}}{\brket{\psi}{\psi}} = \frac{\bra{\psi} \CP_{a_i}{\bf 1} \ket{\psi}}{\brket{\psi}{\psi}} = 1\]</div>
+<p>For this reason, we often impose the requirement <span class="math notranslate nohighlight">\(\brket{\psi}{\psi} = 1\)</span> on physical states. This amounts to scaling <span class="math notranslate nohighlight">\(\ket{\psi} \to \frac{1}{||\psi||}\ket{\psi}\)</span>.</p>
+<p>It is fair to ask what I mean by such a probability. As some might know, there are two major interpretations of probability: the “Bayesian approach” in which the probability quantifies ones estimation of the likelihood of an event (eg, how much would you bet on <span class="math notranslate nohighlight">\(X\)</span> happening?) and the “frequentist approach” in which the probability corresponds to the frequency that a given outcomes happens after repeated experiments. Practically it is this latter approach that one takes in testing a given prediction of probabilities. That is one repeats an experiment <span class="math notranslate nohighlight">\(N\)</span> times, and records the number of times <span class="math notranslate nohighlight">\(N(a)\)</span> that a measurement yields result <span class="math notranslate nohighlight">\(a\)</span>. Then</p>
+<div class="math notranslate nohighlight">
+\[p(a) = \lim\limits_{N \to \infty} \frac{N(a)}{N}\]</div>
+<p>The Born rule naturally yields a result which Commins gives the status of an independent rule. Let us do a set of repeated experiments as above, in which we prepare a fixed state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>, measure some observable <span class="math notranslate nohighlight">\(A\)</span>, and ask what the <em>average</em> result is. For a finite number <span class="math notranslate nohighlight">\(N_{experiments}\)</span> of experiments, we will denote this average as <span class="math notranslate nohighlight">\({\overline A}\)</span>, which is:</p>
+<div class="math notranslate nohighlight" id="equation-operator-av">
+<span class="eqno">(196)<a class="headerlink" href="#equation-operator-av" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+{\overline A} &amp; = \frac{1}{N_{experiments}} \sum_{experiments} a(experiment)\\
+&amp; = \frac{a N(a)}{N_{experiments}}
+\end{align}\end{split}\]</div>
+<p>In the limit <span class="math notranslate nohighlight">\(N_{experiments} \to \infty\)</span>, we call <span class="math notranslate nohighlight">\({\overline A}\)</span> the <em>expectation values</em> of <span class="math notranslate nohighlight">\(A\)</span>, defnotes <span class="math notranslate nohighlight">\(\vev{A}\)</span>. This becomes (if we take <span class="math notranslate nohighlight">\(\brket{\psi}{\psi} = 1\)</span>)</p>
+<div class="math notranslate nohighlight" id="equation-operator-ev">
+<span class="eqno">(197)<a class="headerlink" href="#equation-operator-ev" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\vev{A} &amp; = \lim\limits_{N_{experiments}\to\infty} \overline(A) \\
+&amp; = \sum_i p(a_i) a_i \\
+&amp; = \sum_i \bra{\psi} \CP_i \ket{\psi} a_i \\
+&amp; = \bra{\psi} \sum_i a_i \CP_i \ket{\psi}\\
+&amp; = \bra{\psi} A \ket{\psi}
+\end{align}\end{split}\]</div>
+<p>The probabilistic nature of measurement is a big part of people’s discomfort with quantum mechanics (cf Einstein’s famous statement, “God does not play dice with the world”). Much of the work in searching for an interpretation of quantum mechanics comes from looking for an underlying deterministic framework that would yield such probabilities, perhaps via the existence of unobserved or “hidden” variables. The simple acceptance of this axiom and the following one as the true reality of the world is called the “Copenhagen interpretation”. While I will present a powerful critique of/constraint on hidden variables theories shortly, I won’t dwell much on this fascinating subject. The axioms have withstood the test of experiment and it is important to understand what is actually observed before diving into the philosophical side of the subject.</p>
+<ol class="arabic simple" start="4">
+<li><p>Immediately after a measurement corresponding to an observable <span class="math notranslate nohighlight">\(A\)</span> yields the result <span class="math notranslate nohighlight">\(a\)</span>, the wavefunction “collapses” to the subspace of eigenvectors of <span class="math notranslate nohighlight">\(a\)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-measurement-result">
+<span class="eqno">(198)<a class="headerlink" href="#equation-measurement-result" title="Link to this equation">#</a></span>\[\ket{\psi} \to \frac{1}{\bra{\psi} \CP_a \ket{\psi}} \CP_a \ket{\psi}\]</div>
+<p>This “collapse of the wavefunction” is the other mystery of quantum mechanics. How does this happen? For now we will take it as given, since this is what is actually seen in experiments.</p>
+<p>My personal prejudice is that this is related to the fact that actual measurements involve coupling a large, complicated measuring device (well descvribed by classical physics) to a small quantum system. If I have time, we will model this process later once we have explored various quantum systems; it points to a plausible if very uncomfortable interpretation of the Born rule and collapse of teh wavefunction, known as the “Many Worlds Interpretation”.</p>
+<ol class="arabic simple" start="5">
+<li><p>Absent external intervention through a measurement, the time evolution of an <em>isolated</em> quantum system is described by a unitary operator:</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-quantum-dynamics">
+<span class="eqno">(199)<a class="headerlink" href="#equation-quantum-dynamics" title="Link to this equation">#</a></span>\[\ket{\psi(t)} = U(t,t_0) \ket{\psi(t_0)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(t &gt; t_0\)</span> and <span class="math notranslate nohighlight">\(\ket{\psi(t)}\)</span> is the quantum state of the system at time <span class="math notranslate nohighlight">\(t\)</span>. Unitarity means that <span class="math notranslate nohighlight">\(\brket{\psi(t)}{\psi(t)} = \brket{\psi(t_0)}{\psi(t_0)}\)</span>, so that <span class="math notranslate nohighlight">\(\ket{\psi(t)}\)</span> continues to yield sensible probabilities. Note that what we mean by isolated actually takes osme careful work. For example, we will discuss the evolution of charged particles in an electromagnetic field, and take that filed to be described by some fixed background. In fact the field itself is a quantum system, and we cannot really treat the electron as isolated; one must specify the joint quantum evolution of the full system of field plus charged particle. Practically speaking we can ofetn ignore this issue and treat the electron as a quantum system whose dynamical evolution is specified by some particular operator <span class="math notranslate nohighlight">\(U(t,t_0)\)</span>.</p>
+<p>This rule implies a differential form of the dynamical equations which brings us a bit closer to what we are familiar with in classical mechanics. Given <span class="math notranslate nohighlight">\(\ket{\psi(t)}\)</span>, the state an infinitesimal time later is <span class="math notranslate nohighlight">\(\ket{\psi(t + \delta t)} = \ket{\psi(t)} + \delta t \frac{d}{dt} \ket{\psi(t)}\)</span>. Given the above evolution equations,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\frac{d}{dt} \ket{\psi(t)} &amp; = \frac{d}{dt} U(t,t_0) \ket{\psi(0)}\\
+&amp; = \frac{d}{dt} U(t,t_0)U^{\dagger} U \ket{\psi(u)}\\
+&amp; = \frac{d}{dt} U U^{\dagger} \ket{\psi(t)}
+\end{align}\end{split}\]</div>
+<p>Now since <span class="math notranslate nohighlight">\(U U^{\dagger} = {\bf 1}\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-deriv-of-resolution">
+<span class="eqno">(200)<a class="headerlink" href="#equation-deriv-of-resolution" title="Link to this equation">#</a></span>\[\frac{d}{dt} (U U^{\dagger}) = \frac{dU}{dt} U^{\dagger} + U \frac{d U^{\dagger}}{dt} = 0\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\frac{dU}{dt} U^{\dagger} = - U \frac{d U^{\dagger}}{dt}\]</div>
+<p>Now using <span class="math notranslate nohighlight">\((AB)^{\dagger} = B^{\dagger} A^{\dagger}\)</span>, we know that</p>
+<div class="math notranslate nohighlight">
+\[\left(\frac{dU}{dt} U^{\dagger}\right)^{\dagger} = U \frac{d U^{\dagger}}{dt} = - \frac{d U}{d t} U^{\dagger}\]</div>
+<p>where the last equality comes from <a class="reference internal" href="#equation-deriv-of-resolution">(200)</a>. If we define</p>
+<div class="math notranslate nohighlight" id="equation-ham-def">
+<span class="eqno">(201)<a class="headerlink" href="#equation-ham-def" title="Link to this equation">#</a></span>\[H(t) = i \hbar \frac{d U}{dt} U^{\dagger}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\hbar\)</span> having units of <span class="math notranslate nohighlight">\((\text{energy}\times\text{time})\)</span>, then <span class="math notranslate nohighlight">\(H\)</span> is a Hermitian operator with units of energy, and the system satisfies the <em>time-dependent Schroedinger equation</em></p>
+<div class="math notranslate nohighlight" id="equation-tdse">
+<span class="eqno">(202)<a class="headerlink" href="#equation-tdse" title="Link to this equation">#</a></span>\[i\hbar \frac{d}{dt} \ket{\psi(t)} = H(t) \ket{\psi(t)}\]</div>
+<p>We will identify <span class="math notranslate nohighlight">\(H\)</span> with the observable corresponding to the energy of the system. I will simply assert at this point that in situations in which classical mechanics can be expected to apply (the “classical limit”), this identification will be consistent with the expected classical dynamics.</p>
+<p>The dynamics of the system are completely specified by <span class="math notranslate nohighlight">\(H(t)\)</span>, or equivalently by <span class="math notranslate nohighlight">\(U(t)\)</span>; given <span class="math notranslate nohighlight">\(\ket{\psi(t_0)}\)</span>, we know <span class="math notranslate nohighlight">\(\ket{\psi(t)}\)</span> for all future times. In this sense quantum dynamics is <em>completely deterministic and causal</em>. It is only the introduction of the measurement hypothesis which introduces any nondeterminism into the theory. Again, we might relax even about this if we recall that a measuring device is a complicated object with over <span class="math notranslate nohighlight">\(10^{23}\)</span> atoms well described by classical mechanics, and before we really become concerned about the axioms we should understand whether measurement can be well modeled via unitary quantum dynamics. But again, for now we can just accept that the axioms have served us well for over a century, providing a foundation on which modern physics, chemistry, and engineering (atomic, nuclear, and particle physics, “hard” condensed matter physics, superfluids, modern electronics, materials science, and so on and so on.)</p>
+<p>Two more comments.</p>
+<p>A. Since we often in practice measure expectation values of operators,</p>
+<div class="math notranslate nohighlight" id="equation-ev-time">
+<span class="eqno">(203)<a class="headerlink" href="#equation-ev-time" title="Link to this equation">#</a></span>\[\vev{A}(t) = \bra{\psi(t_0)} U^{\dagger}(t,t_0) A U(t,t_0) \ket{\psi}\]</div>
+<p>we can adopt an equivalent formalism known as the <em>Heisenberg picture</em> in which the states do not evolve, but</p>
+<div class="math notranslate nohighlight">
+\[A_H = U^{\dagger}(t,t_0) A U(t,t_0)\]</div>
+<p>We sometimes denote the original operator as the <em>Schroedinger picture</em> <span class="math notranslate nohighlight">\(A_S\)</span> and <span class="math notranslate nohighlight">\(\ket{\psi(t)}\)</span> as the state in the Schroedinger picture. If <span class="math notranslate nohighlight">\(A_S(t)\)</span> itself has some time dependence (eg you are measuring polarization along some axis which is changing with time because the photon is moving through a bent fiber optic cable or some such), then we can write</p>
+<div class="math notranslate nohighlight" id="equation-heisenberg-evolution">
+<span class="eqno">(204)<a class="headerlink" href="#equation-heisenberg-evolution" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\frac{d A_H}{dt} &amp; = \frac{d U^{\dagger}}{dt} A_S U + U^{\dagger} \frac{\del A_S}{\del t} U + U^{\dagger} A_S \frac{dU}{dt}\\
+&amp; = \frac{d U^{\dagger}}{dt} U U^{\dagger} A_S U + U^{\dagger} A_S U U^{\dagger} \frac{dU}{dt} + U^{\dagger} \frac{\del A_S}{\del t} U\\
+&amp; = \frac{i}{i\hbar} [A_H(t),H(t)] + \left(\frac{\del A_S}{\del t}\right)_H
+\end{align}\end{split}\]</div>
+<p>where the second line comes from <span class="math notranslate nohighlight">\(U U^{\dagger} = {\bf 1}\)</span>, and the last line takes a little algebra using our definition of <span class="math notranslate nohighlight">\(H\)</span> above. We usually write this as the <em>Heisenberg equation of motion</em>,</p>
+<div class="math notranslate nohighlight" id="equation-heisenberg-eom">
+<span class="eqno">(205)<a class="headerlink" href="#equation-heisenberg-eom" title="Link to this equation">#</a></span>\[i \hbar \frac{d A_H}{dt} = [A_H, H] + \left(\frac{\del A_S}{\del t}\right)_H\]</div>
+<p>This should remind you of the classical Hamilton’s equations in Poisson bracket form, <span class="math notranslate nohighlight">\(\frac{d}{dt} A = \{A,H\} + \frac{\del A}{\del t}\)</span>. This form of the equations of motion are sometimes computationally useful.</p>
+<p>B. Note that <a class="reference internal" href="#equation-ham-def">(201)</a> means that we can equivalently specify <span class="math notranslate nohighlight">\(U\)</span> or <span class="math notranslate nohighlight">\(H\)</span>. Hiven <span class="math notranslate nohighlight">\(H\)</span> we can write a differential equation for <span class="math notranslate nohighlight">\(U\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d U}{dt} = \frac{1}{i\hbar} H(t) U(t,t_0)\]</div>
+<p>Since we know <span class="math notranslate nohighlight">\(U(t_0,t_0) = {\bf 1}\)</span> we have a first order differential equation with a known initial condition. In the case that <span class="math notranslate nohighlight">\(H(t) = H\)</span>, there is a clear solution:</p>
+<div class="math notranslate nohighlight">
+\[U(t,t_0) = e^{- \frac{i}{\hbar} H (t - t_0)}\]</div>
+<p>Similarly, if <span class="math notranslate nohighlight">\([H(t), H(t')] = 0\)</span> for all <span class="math notranslate nohighlight">\(t,t'\)</span>, a little works shows that</p>
+<div class="math notranslate nohighlight">
+\[U(t,t_0) = e^{- \frac{i}{\hbar} \int_{t_0}^t dt' H(t')}\]</div>
+<p>If <span class="math notranslate nohighlight">\([H(t), H(t')] \neq 0\)</span> at any time between <span class="math notranslate nohighlight">\(t_0\)</span> and <span class="math notranslate nohighlight">\(t\)</span> the situation is more complicated. We can show that the correct expression is</p>
+<div class="math notranslate nohighlight">
+\[U(t,t_0) = T \exp\left( - \frac{i}{\hbar} \int_{t_0}^t dt' H(t')\right)\]</div>
+<p>The “operator” P is the <em>time ordering operator</em>. What we do is expand the exponential out in a power series of its argument. We get a set of expressions of the form</p>
+<div class="math notranslate nohighlight">
+\[P H(t_1) H(t_2)\ldots H(t_n) \equiv H(t_{\sigma_1}) H(t_{\sigma_2}) \ldots H(t_{\sigma_n})\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma_k\)</span> is a reordering of <span class="math notranslate nohighlight">\(1,\ldots, n\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[t_{\sigma_1} \geq t_{\sigma_2} \geq \ldots t_{\sigma_{n-1}} \geq t_{\sigma_n}\]</div>
+<p>You should show for yourself that this is a correct solution; it will not benefit us to write it out here.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Quantum_rules.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Rules of Quantum Mechanics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendix.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Albion Lawrence
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

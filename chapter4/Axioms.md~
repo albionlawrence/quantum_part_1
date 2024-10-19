@@ -1,0 +1,16 @@
+# The Axioms of Quantum Mechanics.
+
+One can make a case taht the best way to introduce quantum mechanics is to just jump right in. The rules are comparatively simple, if somewhat abstract. We will take that approach and then proceed to applying the rules to various examples. In this way we can build some intuition for how the rules work. 
+
+A good reason for doing this is that the rules are very different from how we approach classical mechanics. Furthermore, they yield predictions that have withstood over a century of experimental tests. So perhaps we should just state what the rules are and get used to them. The infamous philosophivcal puzzles amount to: where do these rules come from? We will allude to these, and in coming lectures eliminate one class of possibilities.
+
+I will state the rules in a somewhat different order and grouping as compared to Commins. (Also one of his rules can be derived as a consequence). It comes to the same in the end, and you should read both.
+
+1. The space of physical states of a quantum system is a Hilbert space $\cH$. (COntrast with classical mechanics, for which the space of states is a *phase space* of positions and momenta). 
+
+Some examples:
+- For photons traveling with fixed direction and wavenumber, the space of photon polarizations is $\cH = \CC^2$.
+- The spin states of neutrons, protons, and electrons are also described by $\CH = \CC^2$. Such particles are called "spin-$\half$" particles and there are many others! (Muons, tau leptons, neutrinos, quarks.)
+- The states of a spinless, nonrelativistic particle in three dimensions is $\cH = L^2(\CR^3)$
+
+2. Observable quantities aree eigenvalues of (bounded) Hermitian operators. As a shorthand, we typically refer to the operators themselves as "observables".

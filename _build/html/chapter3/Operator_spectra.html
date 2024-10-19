@@ -57,7 +57,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter3/Operator_spectra';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -348,6 +348,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-on-the-space-of-functions">Operators on the space of functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projection-operators-and-spectral-representations">Projection operators and spectral representations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projection-operators">Projection operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-representation-of-hermitian-operators">Spectral representation of Hermitian operators</a></li>
 </ul>
 </li>
 </ul>
@@ -447,9 +448,36 @@ Hhere <span class="math notranslate nohighlight">\(a_i\)</span> are the eigenval
 \[\CP^2 \ket{a} = \CP a \ket{a} \Rightarrow \CP \ket{a} = a^2 \ket{a} \Rightarrow a^2 = a\]</div>
 <p>The only solutions are <span class="math notranslate nohighlight">\(a = 1\)</span> or <span class="math notranslate nohighlight">\(a = 0\)</span>.</p>
 <ul class="simple">
-<li><p>Eigenvectors with zero eigenvalue span <span class="math notranslate nohighlight">\(\text{Ker}(\CP)\)</span>.</p></li>
-<li><p>Eigenvectors with unit eigenvalue span <span class="math notranslate nohighlight">\((\text{Ker}(\CP))^{\perp}\)</span> which is also the range of <span class="math notranslate nohighlight">\(\CP\)</span>.</p></li>
+<li><p><strong>Theorem</strong>. Eigenvectors with zero eigenvalue span <span class="math notranslate nohighlight">\(\text{Ker}(\CP)\)</span>. (Stated without proof).</p></li>
+<li><p><span class="math notranslate nohighlight">\({\bf 1} - \CP\)</span> is also a projection operator.</p></li>
+<li><p><strong>Theorem</strong>. Eigenvectors with unit eigenvalue span <span class="math notranslate nohighlight">\((\text{Ker}(\CP))^{\perp}= \text{Ker}({\bf 1} - \CP)\)</span> which is also the range of <span class="math notranslate nohighlight">\(\CP\)</span></p></li>
+<li><p>In an orthonormal basis of eigenvectors of <span class="math notranslate nohighlight">\(\CP\)</span>, we can write a matrix representation of <span class="math notranslate nohighlight">\(\CP\)</span> as:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\CP = \begin{pmatrix} {\bf 1}_{d_P\times d_P} &amp; {\bf 0}_{d_P \times d_{P^{\perp}}} \\ {\bf 0}_{d_{P^{\perp}}\times d_{P^{\perp}}} &amp; {\bf 0}_{d_{P^{\perp}} \times d_{P^{\perp}}}
+\end{pmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\text{dim}(\text{range}(\CP)) = d_P\)</span> and <span class="math notranslate nohighlight">\(\text{dim}(\text{Ker}(\CP)) = d_{P^{\perp}}\)</span>. If the eigenvectors of <span class="math notranslate nohighlight">\(\CP\)</span> with unit eigenvalues are <span class="math notranslate nohighlight">\(\ket{i}\)</span>, <span class="math notranslate nohighlight">\(i \in \{1, \ldots , d_P\}\)</span>, then we can also write</p>
+<div class="math notranslate nohighlight" id="equation-abstract-proj-rep">
+<span class="eqno">(189)<a class="headerlink" href="#equation-abstract-proj-rep" title="Link to this equation">#</a></span>\[\CP = \sum_{i = 1}^{d_P} \ket{i}\bra{i}\]</div>
+<p>In the latter case, we can show this is Hermitian by first realizing that</p>
+<div class="math notranslate nohighlight" id="equation-adjoint-vectorrep">
+<span class="eqno">(190)<a class="headerlink" href="#equation-adjoint-vectorrep" title="Link to this equation">#</a></span>\[\left(\ket{\chi}\bra{\psi}\right)^{\dagger} = \ket{\psi}\bra{\chi}\]</div>
+<p>(can you shouw this?), and then showing that</p>
+<div class="math notranslate nohighlight" id="equation-projection-squared">
+<span class="eqno">(191)<a class="headerlink" href="#equation-projection-squared" title="Link to this equation">#</a></span>\[\CP^2 = \sum_i \ket{i}\bra{i} \sum_j \ket{j}\bra{j} = \sum_{i,j} \ket{i}\brket{i}{j}\bra{j} = \sum_{i,j} \ket{i}\delta_{ij} \bra{j} = \CP\]</div>
+</section>
+<section id="spectral-representation-of-hermitian-operators">
+<h3>Spectral representation of Hermitian operators<a class="headerlink" href="#spectral-representation-of-hermitian-operators" title="Link to this heading">#</a></h3>
+<p>Consider a vector space <span class="math notranslate nohighlight">\(V\)</span> and a Hermitian operator <span class="math notranslate nohighlight">\(A: V\to V\)</span> with a basis of eigenstates <span class="math notranslate nohighlight">\(\ket{a_i,\alpha_i}\)</span>, where <span class="math notranslate nohighlight">\(A\ket{a_i,\alpha_i} = a_i \ket{a_i,\alpha_i}\)</span>, <span class="math notranslate nohighlight">\(\alpha_i \in \{1,\ldots,d_i\}\)</span>, and <span class="math notranslate nohighlight">\(\brket{a_i,\alpha_i}{a_j,\alpha_j} = \delta_{ij}\delta_{\alpha_i,\alpha_j}\)</span>. Here if <span class="math notranslate nohighlight">\(d_i &gt; 1\)</span> then <span class="math notranslate nohighlight">\(a_i\)</span> is a degenerate eigenvalue and <span class="math notranslate nohighlight">\(d_i\)</span> is the degree of degeneracy. We can write a projection operator</p>
+<div class="math notranslate nohighlight">
+\[\CP_i = \sum_{\alpha_i = 1}^{d_i} \ket{a_i,\alpha_i}\bra{a_i,\alpha_i}\]</div>
+<p>which projects onto the subspace <span class="math notranslate nohighlight">\(V_i \subset V\)</span> of vectors with eigenvalue <span class="math notranslate nohighlight">\(a_i\)</span>. We can then write the operator <span class="math notranslate nohighlight">\(A\)</span> as</p>
+<div class="math notranslate nohighlight" id="equation-spectral-rep">
+<span class="eqno">(192)<a class="headerlink" href="#equation-spectral-rep" title="Link to this equation">#</a></span>\[A = \sum_i a_i \CP_i\]</div>
+<p>The right hand side has the same eigenvalues and eigenvector as <span class="math notranslate nohighlight">\(A\)</span>, by construction; thus it has the same matrix elements in a basis of eigenvectors of <span class="math notranslate nohighlight">\(A\)</span>, and so must be the same operator as <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>Note that the fact that <span class="math notranslate nohighlight">\(\ket{a_i,\alpha_i}\)</span> are a complete orthonormal basis for <span class="math notranslate nohighlight">\(V\)</span> means that</p>
+<div class="math notranslate nohighlight" id="equation-evector-resolution-identity">
+<span class="eqno">(193)<a class="headerlink" href="#equation-evector-resolution-identity" title="Link to this equation">#</a></span>\[{\bf 1} = \sum_{i,\alpha_i} \ket{a_i,\alpha_i}\bra{a_i,\alpha_i} = \sum_i \CP_i\]</div>
 </section>
 </section>
 </section>
@@ -523,6 +551,7 @@ Hhere <span class="math notranslate nohighlight">\(a_i\)</span> are the eigenval
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-on-the-space-of-functions">Operators on the space of functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projection-operators-and-spectral-representations">Projection operators and spectral representations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projection-operators">Projection operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-representation-of-hermitian-operators">Spectral representation of Hermitian operators</a></li>
 </ul>
 </li>
 </ul>
