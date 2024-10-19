@@ -57,7 +57,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter3/Operator_spectra';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -346,6 +346,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-and-eigenvectors-for-hermitian-operators">Eigenvalues and eigenvectors for Hermitian operators</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unitary-operators">Unitary operators</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-on-the-space-of-functions">Operators on the space of functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projection-operators-and-spectral-representations">Projection operators and spectral representations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projection-operators">Projection operators</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -417,7 +421,36 @@ Hhere <span class="math notranslate nohighlight">\(a_i\)</span> are the eigenval
 <section id="operators-on-the-space-of-functions">
 <h2>Operators on the space of functions<a class="headerlink" href="#operators-on-the-space-of-functions" title="Link to this heading">#</a></h2>
 <p>For functions with periodic boundary conditions, the functions <span class="math notranslate nohighlight">\(\psi_n(x) = \frac{1}{\sqrt{L}} e^{2\pi i n x/L}\)</span>, <span class="math notranslate nohighlight">\(n \in \CZ\)</span> are a basis (since Fourier modes are a basis of periodic functions. In this case, <span class="math notranslate nohighlight">\({\hat p} \psi_n = \frac{2\pi \hbar n}{L} \psi_n\)</span>; this basis is a basis of eigenfunctions of <span class="math notranslate nohighlight">\({\hat p}\)</span>. Note that <span class="math notranslate nohighlight">\({\hat x}:\psi(x) \to x\psi(x)\)</span> is not an operator in this space.</p>
-<p>For <span class="math notranslate nohighlight">\(L^2(\CR)\)</span>, <span class="math notranslate nohighlight">\({\hat x}\)</span> is almost such an operator, if we focus on <span class="math notranslate nohighlight">\(\psi(x)\)</span> falling off fast enough (faster than <span class="math notranslate nohighlight">\(\frac{1}{|x|^{3/2}}\)</span>).</p>
+<p>For <span class="math notranslate nohighlight">\(L^2(\CR)\)</span>, <span class="math notranslate nohighlight">\({\hat x}\)</span> is almost such an operator, if we focus on <span class="math notranslate nohighlight">\(\psi(x)\)</span> falling off fast enough (faster than <span class="math notranslate nohighlight">\(\frac{1}{|x|^{3/2}}\)</span>). The fact that it fails in some cases means that <span class="math notranslate nohighlight">\({\hat x}\)</span> is not a <em>bounded</em> operator. One can also show the same for the momentum operator <span class="math notranslate nohighlight">\({\hat p} = \frac{\hbar}{i} \frac{\p}{\p x}\)</span>. Nonetheless, these operators are useful and we will use them. I will table a discussion of them for a week or two, when we get to wave mechanics.</p>
+</section>
+<section id="projection-operators-and-spectral-representations">
+<h2>Projection operators and spectral representations<a class="headerlink" href="#projection-operators-and-spectral-representations" title="Link to this heading">#</a></h2>
+<section id="projection-operators">
+<h3>Projection operators<a class="headerlink" href="#projection-operators" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Definition</strong>. Let <span class="math notranslate nohighlight">\(V\)</span> be a vector space over <span class="math notranslate nohighlight">\(\CC\)</span> and <span class="math notranslate nohighlight">\(W_{1,2} \subset V\)</span> be vector subspaces of <span class="math notranslate nohighlight">\(V\)</span>. <span class="math notranslate nohighlight">\(W_1\)</span>, <span class="math notranslate nohighlight">\(W_2\)</span> are <em>orthogonal</em> (denoted <span class="math notranslate nohighlight">\(W_1 \perp W_2\)</span>) if <span class="math notranslate nohighlight">\(\forall \ket{w_1} \in W_1, \ket{w_2} \in W_2\)</span>, <span class="math notranslate nohighlight">\(\brket{w_1}{w_2} = 0\)</span>.</p></li>
+<li><p><strong>Theorem</strong>. <span class="math notranslate nohighlight">\(\forall W ]subset V\)</span> vector subspaces, there exists a subspace <span class="math notranslate nohighlight">\(W^{\perp} \subset V\)</span> such that <span class="math notranslate nohighlight">\(\forall \ket{v} \in V\)</span>, there exists a unique expression</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-ortho-decomp">
+<span class="eqno">(187)<a class="headerlink" href="#equation-ortho-decomp" title="Link to this equation">#</a></span>\[\ket{v} = \ket{w} + \ket{w^{\perp}}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\ket{w} \in W\)</span>, \ket{w^{\perp}} \in W^{\perp}<span class="math notranslate nohighlight">\(. This is known as an *orthogonal decomposition* of \)</span>\ket{v}$.  I will forgo a proof here.</p>
+<p>Note that we can form orthogonal/orthonormal bases <span class="math notranslate nohighlight">\(\ket{i}, \ket{I}\)</span> for <span class="math notranslate nohighlight">\(W,W^{\perp}\)</span> respectively; by teh above theorem, since any vector can be written as a sum of vectors in the wubspaces <span class="math notranslate nohighlight">\(W,W^{\perp}\)</span>, the collection of basis elemenbts <span class="math notranslate nohighlight">\(\ket{i},\ket{I}\)</span> are a basis for <span class="math notranslate nohighlight">\(V\)</span>. Thus if <span class="math notranslate nohighlight">\(d = \text{dim} V\)</span>, <span class="math notranslate nohighlight">\(d_W = \text{dim}(W)\)</span>, <span class="math notranslate nohighlight">\(d_{W^{\perp}} = \text{dim}(W^{\perp})\)</span>, we have</p>
+<div class="math notranslate nohighlight" id="equation-od-dims">
+<span class="eqno">(188)<a class="headerlink" href="#equation-od-dims" title="Link to this equation">#</a></span>\[d = d_W + d_{W^{\perp}}\]</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Definition</strong>. A <em>projection operator</em> <span class="math notranslate nohighlight">\(\CP\)</span> is a Hermitian operator such that <span class="math notranslate nohighlight">\(\CP^2 = \CP\)</span>. The reasons for calling this a projection operator will become clear as we explore its properties.</p></li>
+</ol>
+<ul class="simple">
+<li><p>The eigenvalues of <span class="math notranslate nohighlight">\(\CP\)</span> are either 1 or 0. Given an eigenvector <span class="math notranslate nohighlight">\(\ket{a}\)</span> with <span class="math notranslate nohighlight">\(\CP\ket{a} = a \ket{a}\)</span>, we can apply <span class="math notranslate nohighlight">\(\CP\)</span> to both sides to find</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\CP^2 \ket{a} = \CP a \ket{a} \Rightarrow \CP \ket{a} = a^2 \ket{a} \Rightarrow a^2 = a\]</div>
+<p>The only solutions are <span class="math notranslate nohighlight">\(a = 1\)</span> or <span class="math notranslate nohighlight">\(a = 0\)</span>.</p>
+<ul class="simple">
+<li><p>Eigenvectors with zero eigenvalue span <span class="math notranslate nohighlight">\(\text{Ker}(\CP)\)</span>.</p></li>
+<li><p>Eigenvectors with unit eigenvalue span <span class="math notranslate nohighlight">\((\text{Ker}(\CP))^{\perp}\)</span> which is also the range of <span class="math notranslate nohighlight">\(\CP\)</span>.</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -488,6 +521,10 @@ Hhere <span class="math notranslate nohighlight">\(a_i\)</span> are the eigenval
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-and-eigenvectors-for-hermitian-operators">Eigenvalues and eigenvectors for Hermitian operators</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unitary-operators">Unitary operators</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-on-the-space-of-functions">Operators on the space of functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projection-operators-and-spectral-representations">Projection operators and spectral representations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projection-operators">Projection operators</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

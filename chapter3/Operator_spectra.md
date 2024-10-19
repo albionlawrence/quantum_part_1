@@ -67,4 +67,35 @@ For the "if" part, let $A,B$ commute. We take the case that the eigenvalues of $
 
 For functions with periodic boundary conditions, the functions $\psi_n(x) = \frac{1}{\sqrt{L}} e^{2\pi i n x/L}$, $n \in \CZ$ are a basis (since Fourier modes are a basis of periodic functions. In this case, ${\hat p} \psi_n = \frac{2\pi \hbar n}{L} \psi_n$; this basis is a basis of eigenfunctions of ${\hat p}$. Note that ${\hat x}:\psi(x) \to x\psi(x)$ is not an operator in this space.
 
-For $L^2(\CR)$, ${\hat x}$ is almost such an operator, if we focus on $\psi(x)$ falling off fast enough (faster than $\frac{1}{|x|^{3/2}}$).
+For $L^2(\CR)$, ${\hat x}$ is almost such an operator, if we focus on $\psi(x)$ falling off fast enough (faster than $\frac{1}{|x|^{3/2}}$). The fact that it fails in some cases means that ${\hat x}$ is not a *bounded* operator. One can also show the same for the momentum operator ${\hat p} = \frac{\hbar}{i} \frac{\p}{\p x}$. Nonetheless, these operators are useful and we will use them. I will table a discussion of them for a week or two, when we get to wave mechanics.
+
+## Projection operators and spectral representations
+
+### Projection operators
+
+1. **Definition**. Let $V$ be a vector space over $\CC$ and $W_{1,2} \subset V$ be vector subspaces of $V$. $W_1$, $W_2$ are *orthogonal* (denoted $W_1 \perp W_2$) if $\forall \ket{w_1} \in W_1, \ket{w_2} \in W_2$, $\brket{w_1}{w_2} = 0$.
+
+2. **Theorem**. $\forall W ]subset V$ vector subspaces, there exists a subspace $W^{\perp} \subset V$ such that $\forall \ket{v} \in V$, there exists a unique expression
+```{math}
+:label: ortho_decomp
+\ket{v} = \ket{w} + \ket{w^{\perp}}
+```
+with $\ket{w} \in W$, \ket{w^{\perp}} \in W^{\perp}$. This is known as an *orthogonal decomposition* of $\ket{v}$.  I will forgo a proof here.
+
+Note that we can form orthogonal/orthonormal bases $\ket{i}, \ket{I}$ for $W,W^{\perp}$ respectively; by teh above theorem, since any vector can be written as a sum of vectors in the wubspaces $W,W^{\perp}$, the collection of basis elemenbts $\ket{i},\ket{I}$ are a basis for $V$. Thus if $d = \text{dim} V$, $d_W = \text{dim}(W)$, $d_{W^{\perp}} = \text{dim}(W^{\perp})$, we have
+```{math}
+:label: od_dims
+d = d_W + d_{W^{\perp}}
+```
+
+3. **Definition**. A *projection operator* $\CP$ is a Hermitian operator such that $\CP^2 = \CP$. The reasons for calling this a projection operator will become clear as we explore its properties.
+
+- The eigenvalues of $\CP$ are either 1 or 0. Given an eigenvector $\ket{a}$ with $\CP\ket{a} = a \ket{a}$, we can apply $\CP$ to both sides to find
+```{math}
+\CP^2 \ket{a} = \CP a \ket{a} \Rightarrow \CP \ket{a} = a^2 \ket{a} \Rightarrow a^2 = a
+```
+The only solutions are $a = 1$ or $a = 0$.
+
+- Eigenvectors with zero eigenvalue span $\text{Ker}(\CP)$.
+
+- Eigenvectors with unit eigenvalue span $(\text{Ker}(\CP))^{\perp}$ which is also the range of $\CP$. 
