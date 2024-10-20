@@ -351,7 +351,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-axioms-of-quantum-mechanics">
 <h1>The Axioms of Quantum Mechanics.<a class="headerlink" href="#the-axioms-of-quantum-mechanics" title="Link to this heading">#</a></h1>
-<p>One can make a case taht the best way to introduce quantum mechanics is to just jump right in. The rules are comparatively simple, if somewhat abstract. We will take that approach and then proceed to applying the rules to various examples. In this way we can build some intuition for how the rules work.</p>
+<p>One can make a case that the best way to introduce quantum mechanics is to just jump right in. The rules are comparatively simple, if somewhat abstract. We will take that approach and then proceed to applying the rules to various examples. In this way we can build some intuition for how the rules work.</p>
 <p>A good reason for doing this is that the rules are very different from how we approach classical mechanics. Furthermore, they yield predictions that have withstood over a century of experimental tests. So perhaps we should just state what the rules are and get used to them. The infamous philosophivcal puzzles amount to: where do these rules come from? We will allude to these, and in coming lectures eliminate one class of possibilities.</p>
 <p>I will state the rules in a somewhat different order and grouping as compared to Commins. (Also one of his rules can be derived as a consequence). It comes to the same in the end, and you should read both.</p>
 <ol class="arabic simple">
@@ -364,8 +364,8 @@ document.write(`
 <li><p>The states of a spinless, nonrelativistic particle in three dimensions is <span class="math notranslate nohighlight">\(\cH = L^2(\CR^3)\)</span></p></li>
 </ul>
 <ol class="arabic simple" start="2">
-<li><p>Observable quantities are eigenvalues of (bounded) Hermitian operators. As a shorthand, we typically refer to the operators themselves as “observables”, which I will do here. That is, for any quantity such as position, momentum, polzarization, or spin, there is an associated operator and the allowed results of a measurement are the eigenvalues of that operator.</p></li>
-<li><p>Given a state <span class="math notranslate nohighlight">\(\ket{\psi} \in \cH\)</span>, a measruement of an observable <span class="math notranslate nohighlight">\(A\)</span> yields an eigenvalue <span class="math notranslate nohighlight">\(a\)</span> with probability</p></li>
+<li><p>Observable quantities are eigenvalues of (bounded) Hermitian operators. As a shorthand, we typically refer to the operators themselves as “observables”, which I will do here. That is, for any quantity such as position, momentum, energy, polarization, or spin, there is an associated operator and the allowed results of a measurement are the eigenvalues of that operator.</p></li>
+<li><p>Given a state <span class="math notranslate nohighlight">\(\ket{\psi} \in \cH\)</span>, a measurement of an observable <span class="math notranslate nohighlight">\(A\)</span> yields an eigenvalue <span class="math notranslate nohighlight">\(a\)</span> with probability</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-born-rule">
 <span class="eqno">(194)<a class="headerlink" href="#equation-born-rule" title="Link to this equation">#</a></span>\[p(a) = \frac{\bra{\psi} \CP_a \ket{\psi}}{\brket{\psi}{\psi}}\]</div>
@@ -373,10 +373,10 @@ document.write(`
 <div class="math notranslate nohighlight" id="equation-sum-of-results">
 <span class="eqno">(195)<a class="headerlink" href="#equation-sum-of-results" title="Link to this equation">#</a></span>\[\sum_i p(a_i) = \sum_i \frac{\bra{\psi} \CP_{a_i} \ket{\psi}}{\brket{\psi}{\psi}} = \frac{\bra{\psi} \CP_{a_i}{\bf 1} \ket{\psi}}{\brket{\psi}{\psi}} = 1\]</div>
 <p>For this reason, we often impose the requirement <span class="math notranslate nohighlight">\(\brket{\psi}{\psi} = 1\)</span> on physical states. This amounts to scaling <span class="math notranslate nohighlight">\(\ket{\psi} \to \frac{1}{||\psi||}\ket{\psi}\)</span>.</p>
-<p>It is fair to ask what I mean by such a probability. As some might know, there are two major interpretations of probability: the “Bayesian approach” in which the probability quantifies ones estimation of the likelihood of an event (eg, how much would you bet on <span class="math notranslate nohighlight">\(X\)</span> happening?) and the “frequentist approach” in which the probability corresponds to the frequency that a given outcomes happens after repeated experiments. Practically it is this latter approach that one takes in testing a given prediction of probabilities. That is one repeats an experiment <span class="math notranslate nohighlight">\(N\)</span> times, and records the number of times <span class="math notranslate nohighlight">\(N(a)\)</span> that a measurement yields result <span class="math notranslate nohighlight">\(a\)</span>. Then</p>
+<p>What do I mean by such a probability, in a practical sense? As some might know, there are two major interpretations of probability: the “Bayesian approach” in which the probability quantifies ones estimation of the likelihood of an event (eg, how much would you bet on <span class="math notranslate nohighlight">\(X\)</span> happening?) and the “frequentist approach” in which the probability corresponds to the frequency that a given outcomes happens after repeated experiments. Practically it is this latter approach that one takes in testing a given prediction of probabilities. That is, one repeats an experiment <span class="math notranslate nohighlight">\(N\)</span> times, and records the number of times <span class="math notranslate nohighlight">\(N(a)\)</span> that a measurement yields result <span class="math notranslate nohighlight">\(a\)</span>. Then</p>
 <div class="math notranslate nohighlight">
 \[p(a) = \lim\limits_{N \to \infty} \frac{N(a)}{N}\]</div>
-<p>The Born rule naturally yields a result which Commins gives the status of an independent rule. Let us do a set of repeated experiments as above, in which we prepare a fixed state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>, measure some observable <span class="math notranslate nohighlight">\(A\)</span>, and ask what the <em>average</em> result is. For a finite number <span class="math notranslate nohighlight">\(N_{experiments}\)</span> of experiments, we will denote this average as <span class="math notranslate nohighlight">\({\overline A}\)</span>, which is:</p>
+<p>The Born rule naturally yields a further result which Commins gives the status of an independent rule. Let us do a set of repeated experiments as above, in which we prepare a fixed state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>, measure some observable <span class="math notranslate nohighlight">\(A\)</span>, and ask what the <em>average</em> result is. For a finite number <span class="math notranslate nohighlight">\(N_{experiments}\)</span> of experiments, we will denote this average as <span class="math notranslate nohighlight">\({\overline A}\)</span>, which is:</p>
 <div class="math notranslate nohighlight" id="equation-operator-av">
 <span class="eqno">(196)<a class="headerlink" href="#equation-operator-av" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 {\overline A} &amp; = \frac{1}{N_{experiments}} \sum_{experiments} a(experiment)\\
@@ -459,9 +459,9 @@ document.write(`
 <p>If <span class="math notranslate nohighlight">\([H(t), H(t')] \neq 0\)</span> at any time between <span class="math notranslate nohighlight">\(t_0\)</span> and <span class="math notranslate nohighlight">\(t\)</span> the situation is more complicated. We can show that the correct expression is</p>
 <div class="math notranslate nohighlight">
 \[U(t,t_0) = T \exp\left( - \frac{i}{\hbar} \int_{t_0}^t dt' H(t')\right)\]</div>
-<p>The “operator” P is the <em>time ordering operator</em>. What we do is expand the exponential out in a power series of its argument. We get a set of expressions of the form</p>
+<p>The “operator” T is the <em>time ordering operator</em>. What we do is expand the exponential out in a power series of its argument. We get a set of expressions of the form</p>
 <div class="math notranslate nohighlight">
-\[P H(t_1) H(t_2)\ldots H(t_n) \equiv H(t_{\sigma_1}) H(t_{\sigma_2}) \ldots H(t_{\sigma_n})\]</div>
+\[T [H(t_1) H(t_2)\ldots H(t_n)] \equiv H(t_{\sigma_1}) H(t_{\sigma_2}) \ldots H(t_{\sigma_n})\]</div>
 <p>where <span class="math notranslate nohighlight">\(\sigma_k\)</span> is a reordering of <span class="math notranslate nohighlight">\(1,\ldots, n\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[t_{\sigma_1} \geq t_{\sigma_2} \geq \ldots t_{\sigma_{n-1}} \geq t_{\sigma_n}\]</div>
