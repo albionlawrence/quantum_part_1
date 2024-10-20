@@ -1,6 +1,6 @@
 # The Axioms of Quantum Mechanics.
 
-One can make a case taht the best way to introduce quantum mechanics is to just jump right in. The rules are comparatively simple, if somewhat abstract. We will take that approach and then proceed to applying the rules to various examples. In this way we can build some intuition for how the rules work. 
+One can make a case that the best way to introduce quantum mechanics is to just jump right in. The rules are comparatively simple, if somewhat abstract. We will take that approach and then proceed to applying the rules to various examples. In this way we can build some intuition for how the rules work. 
 
 A good reason for doing this is that the rules are very different from how we approach classical mechanics. Furthermore, they yield predictions that have withstood over a century of experimental tests. So perhaps we should just state what the rules are and get used to them. The infamous philosophivcal puzzles amount to: where do these rules come from? We will allude to these, and in coming lectures eliminate one class of possibilities.
 
@@ -13,9 +13,9 @@ Some examples:
 - The spin states of neutrons, protons, and electrons are also described by $\cH = \CC^2$. Such particles are called "spin-$\half$" particles and there are many others! (Muons, tau leptons, neutrinos, quarks.)
 - The states of a spinless, nonrelativistic particle in three dimensions is $\cH = L^2(\CR^3)$
 
-2. Observable quantities are eigenvalues of (bounded) Hermitian operators. As a shorthand, we typically refer to the operators themselves as "observables", which I will do here. That is, for any quantity such as position, momentum, polzarization, or spin, there is an associated operator and the allowed results of a measurement are the eigenvalues of that operator. 
+2. Observable quantities are eigenvalues of (bounded) Hermitian operators. As a shorthand, we typically refer to the operators themselves as "observables", which I will do here. That is, for any quantity such as position, momentum, energy, polarization, or spin, there is an associated operator and the allowed results of a measurement are the eigenvalues of that operator. 
 
-3. Given a state $\ket{\psi} \in \cH$, a measruement of an observable $A$ yields an eigenvalue $a$ with probability
+3. Given a state $\ket{\psi} \in \cH$, a measurement of an observable $A$ yields an eigenvalue $a$ with probability
 ```{math}
 :label: born_rule
 p(a) = \frac{\bra{\psi} \CP_a \ket{\psi}}{\brket{\psi}{\psi}}
@@ -27,12 +27,12 @@ This rule is sometimes called the *Born rule*. The resolution of the identity sh
 ```
 For this reason, we often impose the requirement $\brket{\psi}{\psi} = 1$ on physical states. This amounts to scaling $\ket{\psi} \to \frac{1}{||\psi||}\ket{\psi}$. 
 
-It is fair to ask what I mean by such a probability. As some might know, there are two major interpretations of probability: the "Bayesian approach" in which the probability quantifies ones estimation of the likelihood of an event (eg, how much would you bet on $X$ happening?) and the "frequentist approach" in which the probability corresponds to the frequency that a given outcomes happens after repeated experiments. Practically it is this latter approach that one takes in testing a given prediction of probabilities. That is one repeats an experiment $N$ times, and records the number of times $N(a)$ that a measurement yields result $a$. Then
+What do I mean by such a probability, in a practical sense? As some might know, there are two major interpretations of probability: the "Bayesian approach" in which the probability quantifies ones estimation of the likelihood of an event (eg, how much would you bet on $X$ happening?) and the "frequentist approach" in which the probability corresponds to the frequency that a given outcomes happens after repeated experiments. Practically it is this latter approach that one takes in testing a given prediction of probabilities. That is, one repeats an experiment $N$ times, and records the number of times $N(a)$ that a measurement yields result $a$. Then
 ```{math}
 p(a) = \lim\limits_{N \to \infty} \frac{N(a)}{N}
 ```
 
-The Born rule naturally yields a result which Commins gives the status of an independent rule. Let us do a set of repeated experiments as above, in which we prepare a fixed state $\ket{\psi}$, measure some observable $A$, and ask what the *average* result is. For a finite number $N_{experiments}$ of experiments, we will denote this average as ${\overline A}$, which is:
+The Born rule naturally yields a further result which Commins gives the status of an independent rule. Let us do a set of repeated experiments as above, in which we prepare a fixed state $\ket{\psi}$, measure some observable $A$, and ask what the *average* result is. For a finite number $N_{experiments}$ of experiments, we will denote this average as ${\overline A}$, which is:
 ```{math}
 :label: operator_av
 \begin{align}
@@ -149,9 +149,9 @@ If $[H(t), H(t')] \neq 0$ at any time between $t_0$ and $t$ the situation is mor
 ```{math}
 U(t,t_0) = T \exp\left( - \frac{i}{\hbar} \int_{t_0}^t dt' H(t')\right)
 ```
-The "operator" P is the *time ordering operator*. What we do is expand the exponential out in a power series of its argument. We get a set of expressions of the form
+The "operator" T is the *time ordering operator*. What we do is expand the exponential out in a power series of its argument. We get a set of expressions of the form
 ```{math}
-P H(t_1) H(t_2)\ldots H(t_n) \equiv H(t_{\sigma_1}) H(t_{\sigma_2}) \ldots H(t_{\sigma_n})
+T [H(t_1) H(t_2)\ldots H(t_n)] \equiv H(t_{\sigma_1}) H(t_{\sigma_2}) \ldots H(t_{\sigma_n})
 ```
 where $\sigma_k$ is a reordering of $1,\ldots, n$ such that 
 ```{math}
