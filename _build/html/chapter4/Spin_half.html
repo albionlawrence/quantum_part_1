@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>The Rules of Quantum Mechanics &#8212; Physics 162a</title>
+    <title>Example: spin-1/2 particles &#8212; Physics 162a</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter4/Quantum_rules';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter4/Spin_half';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Axioms of Quantum Mechanics." href="Axioms.html" />
-    <link rel="prev" title="Spectra of Hermitian and Unitary Operators" href="../chapter3/Operator_spectra.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="The Axioms of Quantum Mechanics." href="Axioms.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -193,9 +193,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/Operator_spectra.html">Spectra of Hermitian and Unitary Operators</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">The Rules of Quantum Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Quantum_rules.html">The Rules of Quantum Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Axioms.html">The Axioms of Quantum Mechanics.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Spin_half.html">Example: spin-1/2 particles</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Example: spin-1/2 particles</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -254,7 +254,7 @@
       
       
       
-      <li><a href="../_sources/chapter4/Quantum_rules.md" target="_blank"
+      <li><a href="../_sources/chapter4/Spin_half.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -325,7 +325,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -336,11 +338,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The Rules of Quantum Mechanics</h1>
+    <h1>Example: spin-1/2 particles</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-picture-of-magnetic-moments">Classical picture of magnetic moments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-stern-gerlach-experiment">The Stern-Gerlach experiment</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -350,11 +361,33 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="the-rules-of-quantum-mechanics">
-<h1>The Rules of Quantum Mechanics<a class="headerlink" href="#the-rules-of-quantum-mechanics" title="Link to this heading">#</a></h1>
-<p>Now that we have set up the needed math, the basic ruls of quantum mechanics are fairly easy to state, though their implications are famously confusing. Our strategy here will be to illustrate and explore them with some mathematically simple systems (photons and massive spin-<span class="math notranslate nohighlight">\(\half\)</span> particles). We can then move on to particle mechanics (after setting up a bit of additional math).</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="example-spin-1-2-particles">
+<h1>Example: spin-1/2 particles<a class="headerlink" href="#example-spin-1-2-particles" title="Link to this heading">#</a></h1>
+<p>The goal of these notes is to consider the rules of quantum mechanics for the simplest possible case, <span class="math notranslate nohighlight">\(V = \CC^2\)</span>. This is a physics course so we should give a physical realization of this simplest case! One such realization is the angular momentum states of “spin-<span class="math notranslate nohighlight">\(\half\)</span> particles. We will give a broad-brush and not precisely motivated description of such systems. A fuller description will have to wait until we discuss the theory of angular momentum.</p>
+<section id="classical-picture-of-magnetic-moments">
+<h2>Classical picture of magnetic moments<a class="headerlink" href="#classical-picture-of-magnetic-moments" title="Link to this heading">#</a></h2>
+<p>Although I keep saying “we should just take quantum mechanics at face value” it is sometimes good to know how they relate to classical analogs; here in particular we will introduce some concepts that are best explained by relating the quantum and classical cases.</p>
+<p><img alt="Classical current loop" src="../_images/current_loop.png" /></p>
+<p>To warm up, let us consider a particle with charge <span class="math notranslate nohighlight">\(q\)</span> and mass <span class="math notranslate nohighlight">\(%m\)</span> moving in a circular orbit with radius <span class="math notranslate nohighlight">\(R\)</span> and constant tangential speed <span class="math notranslate nohighlight">\(v\)</span>. Classically, we can say:</p>
+<ul class="simple">
+<li><p>The period of the motion is <span class="math notranslate nohighlight">\(T = \frac{2\pi R}{v}\)</span>.</p></li>
+<li><p>If we consider times scales longer than this period, the current through the wire is <span class="math notranslate nohighlight">\(I = \frac{q}{T}\)</span>.</p></li>
+<li><p>We can define a <em>magnetic moment</em> as <span class="math notranslate nohighlight">\(\vec{\mu} = I {\vec A}\)</span>. We can rewrite this as:</p></li>
+</ul>
+<div class="math notranslate nohighlight" id="equation-classical-mm">
+<span class="eqno">(206)<a class="headerlink" href="#equation-classical-mm" title="Link to this equation">#</a></span>\[|{\vec A}| = \pi R^2 = \half (2\pi R)R = \half T v R = \frac{T}{2m} p R\]</div>
+<p>where <span class="math notranslate nohighlight">\(p = m v\)</span> is the linear momentum. Now, the magnitude of the angular momentum of the particle (with respect to the center of the loop) is <span class="math notranslate nohighlight">\(j = |{\vec J}| = p R = m v R\)</span>. The angular momentum is a vector <span class="math notranslate nohighlight">\({\vec J}\)</span>; it points in the same direction as <span class="math notranslate nohighlight">\({\vec A}\)</span>. We can thus write</p>
+<div class="math notranslate nohighlight" id="equation-classical-mm-two">
+<span class="eqno">(207)<a class="headerlink" href="#equation-classical-mm-two" title="Link to this equation">#</a></span>\[{\vec \mu} = \frac{q}{T} \frac{T}{2m} {\vec J} = \frac{q {\vec J}}{2m}\]</div>
+<ul class="simple">
+<li><p>If we place this system in a magnetic field <span class="math notranslate nohighlight">\({\vec B}\)</span>, there is a potential energy</p></li>
+</ul>
+<div class="math notranslate nohighlight" id="equation-pe-magmom">
+<span class="eqno">(208)<a class="headerlink" href="#equation-pe-magmom" title="Link to this equation">#</a></span>\[U = - {\vec \mu}\cdot{\vec B}\]</div>
+</section>
+<section id="the-stern-gerlach-experiment">
+<h2>The Stern-Gerlach experiment<a class="headerlink" href="#the-stern-gerlach-experiment" title="Link to this heading">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -388,20 +421,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../chapter3/Operator_spectra.html"
+       href="Axioms.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Spectra of Hermitian and Unitary Operators</p>
+        <p class="prev-next-title">The Axioms of Quantum Mechanics.</p>
       </div>
     </a>
     <a class="right-next"
-       href="Axioms.html"
+       href="../appendix.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">The Axioms of Quantum Mechanics.</p>
+        <p class="prev-next-title">Appendix</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -411,6 +444,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-picture-of-magnetic-moments">Classical picture of magnetic moments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-stern-gerlach-experiment">The Stern-Gerlach experiment</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

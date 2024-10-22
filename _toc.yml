@@ -22,6 +22,7 @@ chapters:
   - file: chapter4/Quantum_rules
     sections:
     - file: chapter4/Axioms
+    - file: chapter4/Spin_half
   - file: appendix
   - file: bibliography
 # - file: notebooks

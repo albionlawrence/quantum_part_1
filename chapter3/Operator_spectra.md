@@ -67,7 +67,7 @@ For the "if" part, let $A,B$ commute. We take the case that the eigenvalues of $
 
 For functions with periodic boundary conditions, the functions $\psi_n(x) = \frac{1}{\sqrt{L}} e^{2\pi i n x/L}$, $n \in \CZ$ are a basis (since Fourier modes are a basis of periodic functions. In this case, ${\hat p} \psi_n = \frac{2\pi \hbar n}{L} \psi_n$; this basis is a basis of eigenfunctions of ${\hat p}$. Note that ${\hat x}:\psi(x) \to x\psi(x)$ is not an operator in this space.
 
-For $L^2(\CR)$, ${\hat x}$ is almost such an operator, if we focus on $\psi(x)$ falling off fast enough (faster than $\frac{1}{|x|^{3/2}}$). The fact that it fails in some cases means that ${\hat x}$ is not a *bounded* operator. One can also show the same for the momentum operator ${\hat p} = \frac{\hbar}{i} \frac{\p}{\p x}$. Nonetheless, these operators are useful and we will use them. I will table a discussion of them for a week or two, when we get to wave mechanics.
+For $L^2(\CR)$, ${\hat x}$ is almost such an operator, if we focus on $\psi(x)$ falling off fast enough (faster than $\frac{1}{|x|^{3/2}}$). The fact that it fails in some cases means that ${\hat x}$ is not a *bounded* operator. One can also show the same for the momentum operator ${\hat p} = \frac{\hbar}{i} \frac{\del}{\del x}$. Nonetheless, these operators are useful and we will use them. I will table a discussion of them for a week or two, when we get to wave mechanics.
 
 ## Projection operators and spectral representations
 
@@ -80,7 +80,8 @@ For $L^2(\CR)$, ${\hat x}$ is almost such an operator, if we focus on $\psi(x)$ 
 :label: ortho_decomp
 \ket{v} = \ket{w} + \ket{w^{\perp}}
 ```
-with $\ket{w} \in W$, \ket{w^{\perp}} \in W^{\perp}$. This is known as an *orthogonal decomposition* of $\ket{v}$.  I will forgo a proof here.
+with $\ket{w} \in W$, $
+\ket{w^{\perp}} \in W^{\perp}$. This is known as an *orthogonal decomposition* of $\ket{v}$.  I will forgo a proof here.
 
 Note that we can form orthogonal/orthonormal bases $\ket{i}, \ket{I}$ for $W,W^{\perp}$ respectively; by teh above theorem, since any vector can be written as a sum of vectors in the wubspaces $W,W^{\perp}$, the collection of basis elemenbts $\ket{i},\ket{I}$ are a basis for $V$. Thus if $d = \text{dim} V$, $d_W = \text{dim}(W)$, $d_{W^{\perp}} = \text{dim}(W^{\perp})$, we have
 ```{math}

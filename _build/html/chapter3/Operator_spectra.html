@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter3/Operator_spectra';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="next" title="The Rules of Quantum Mechanics" href="../chapter4/Quantum_rules.html" />
     <link rel="prev" title="Adjoints and inner products" href="Adjoint.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -191,6 +191,11 @@
 <li class="toctree-l2"><a class="reference internal" href="Linear_operators.html">Linear operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Adjoint.html">Adjoints and inner products</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Spectra of Hermitian and Unitary Operators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter4/Quantum_rules.html">The Rules of Quantum Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/Axioms.html">The Axioms of Quantum Mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/Spin_half.html">Example: spin-1/2 particles</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -422,7 +427,7 @@ Hhere <span class="math notranslate nohighlight">\(a_i\)</span> are the eigenval
 <section id="operators-on-the-space-of-functions">
 <h2>Operators on the space of functions<a class="headerlink" href="#operators-on-the-space-of-functions" title="Link to this heading">#</a></h2>
 <p>For functions with periodic boundary conditions, the functions <span class="math notranslate nohighlight">\(\psi_n(x) = \frac{1}{\sqrt{L}} e^{2\pi i n x/L}\)</span>, <span class="math notranslate nohighlight">\(n \in \CZ\)</span> are a basis (since Fourier modes are a basis of periodic functions. In this case, <span class="math notranslate nohighlight">\({\hat p} \psi_n = \frac{2\pi \hbar n}{L} \psi_n\)</span>; this basis is a basis of eigenfunctions of <span class="math notranslate nohighlight">\({\hat p}\)</span>. Note that <span class="math notranslate nohighlight">\({\hat x}:\psi(x) \to x\psi(x)\)</span> is not an operator in this space.</p>
-<p>For <span class="math notranslate nohighlight">\(L^2(\CR)\)</span>, <span class="math notranslate nohighlight">\({\hat x}\)</span> is almost such an operator, if we focus on <span class="math notranslate nohighlight">\(\psi(x)\)</span> falling off fast enough (faster than <span class="math notranslate nohighlight">\(\frac{1}{|x|^{3/2}}\)</span>). The fact that it fails in some cases means that <span class="math notranslate nohighlight">\({\hat x}\)</span> is not a <em>bounded</em> operator. One can also show the same for the momentum operator <span class="math notranslate nohighlight">\({\hat p} = \frac{\hbar}{i} \frac{\p}{\p x}\)</span>. Nonetheless, these operators are useful and we will use them. I will table a discussion of them for a week or two, when we get to wave mechanics.</p>
+<p>For <span class="math notranslate nohighlight">\(L^2(\CR)\)</span>, <span class="math notranslate nohighlight">\({\hat x}\)</span> is almost such an operator, if we focus on <span class="math notranslate nohighlight">\(\psi(x)\)</span> falling off fast enough (faster than <span class="math notranslate nohighlight">\(\frac{1}{|x|^{3/2}}\)</span>). The fact that it fails in some cases means that <span class="math notranslate nohighlight">\({\hat x}\)</span> is not a <em>bounded</em> operator. One can also show the same for the momentum operator <span class="math notranslate nohighlight">\({\hat p} = \frac{\hbar}{i} \frac{\del}{\del x}\)</span>. Nonetheless, these operators are useful and we will use them. I will table a discussion of them for a week or two, when we get to wave mechanics.</p>
 </section>
 <section id="projection-operators-and-spectral-representations">
 <h2>Projection operators and spectral representations<a class="headerlink" href="#projection-operators-and-spectral-representations" title="Link to this heading">#</a></h2>
@@ -434,7 +439,8 @@ Hhere <span class="math notranslate nohighlight">\(a_i\)</span> are the eigenval
 </ol>
 <div class="math notranslate nohighlight" id="equation-ortho-decomp">
 <span class="eqno">(187)<a class="headerlink" href="#equation-ortho-decomp" title="Link to this equation">#</a></span>\[\ket{v} = \ket{w} + \ket{w^{\perp}}\]</div>
-<p>with <span class="math notranslate nohighlight">\(\ket{w} \in W\)</span>, \ket{w^{\perp}} \in W^{\perp}<span class="math notranslate nohighlight">\(. This is known as an *orthogonal decomposition* of \)</span>\ket{v}$.  I will forgo a proof here.</p>
+<p>with <span class="math notranslate nohighlight">\(\ket{w} \in W\)</span>, <span class="math notranslate nohighlight">\(
+\ket{w^{\perp}} \in W^{\perp}\)</span>. This is known as an <em>orthogonal decomposition</em> of <span class="math notranslate nohighlight">\(\ket{v}\)</span>.  I will forgo a proof here.</p>
 <p>Note that we can form orthogonal/orthonormal bases <span class="math notranslate nohighlight">\(\ket{i}, \ket{I}\)</span> for <span class="math notranslate nohighlight">\(W,W^{\perp}\)</span> respectively; by teh above theorem, since any vector can be written as a sum of vectors in the wubspaces <span class="math notranslate nohighlight">\(W,W^{\perp}\)</span>, the collection of basis elemenbts <span class="math notranslate nohighlight">\(\ket{i},\ket{I}\)</span> are a basis for <span class="math notranslate nohighlight">\(V\)</span>. Thus if <span class="math notranslate nohighlight">\(d = \text{dim} V\)</span>, <span class="math notranslate nohighlight">\(d_W = \text{dim}(W)\)</span>, <span class="math notranslate nohighlight">\(d_{W^{\perp}} = \text{dim}(W^{\perp})\)</span>, we have</p>
 <div class="math notranslate nohighlight" id="equation-od-dims">
 <span class="eqno">(188)<a class="headerlink" href="#equation-od-dims" title="Link to this equation">#</a></span>\[d = d_W + d_{W^{\perp}}\]</div>
@@ -522,11 +528,11 @@ Hhere <span class="math notranslate nohighlight">\(a_i\)</span> are the eigenval
       </div>
     </a>
     <a class="right-next"
-       href="../appendix.html"
+       href="../chapter4/Quantum_rules.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix</p>
+        <p class="prev-next-title">The Rules of Quantum Mechanics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
