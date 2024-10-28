@@ -1,0 +1,599 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Entangled states and density matrices &#8212; Physics 162a</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter4/entangled';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="Example: spin-1/2 particles" href="Spin_half.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dogs_quantum.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/dogs_quantum.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Physics 162a <br /> Prof. Albion Lawrence <br />  Brandeis University</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Newton.html">Newtonian mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Lagrange.html">Lagrangian Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Constraints.html">Constrained Lagrangian Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Symmetries.html">Symmetries and conservation laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Hamilton.html">Hamiltonian Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Intro_quantum.html">Introduction to quantum mechanics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/Intro_linear_algebra.html">Linear algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Vector_spaces.html">Vector spaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Linear_operators.html">Linear operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Adjoint.html">Adjoints and inner products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Operator_spectra.html">Spectra of Hermitian and Unitary Operators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Quantum_rules.html">The Rules of Quantum Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Axioms.html">The Axioms of Quantum Mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Spin_half.html">Example: spin-1/2 particles</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Entangled states and density matrices</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter4/entangled.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Entangled states and density matrices</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-sums-and-tensor-products">Direct sums and tensor products</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-sums">Direct sums</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-products">Tensor products</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entangled-states">Entangled states</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="entangled-states-and-density-matrices">
+<h1>Entangled states and density matrices<a class="headerlink" href="#entangled-states-and-density-matrices" title="Link to this heading">#</a></h1>
+<section id="direct-sums-and-tensor-products">
+<h2>Direct sums and tensor products<a class="headerlink" href="#direct-sums-and-tensor-products" title="Link to this heading">#</a></h2>
+<p>There are different ways to combine vector spaces to get new vectors spaces. We are particularly interested in the tensor product, but the direct sum is also important and the contrast is illuminating</p>
+<section id="direct-sums">
+<h3>Direct sums<a class="headerlink" href="#direct-sums" title="Link to this heading">#</a></h3>
+<p>The direct sum <span class="math notranslate nohighlight">\(V = V_1 \oplus V_2\)</span> is a method for adding new directions to the Hilbert space. For example, <span class="math notranslate nohighlight">\(\CR^3\)</span> can be thought of as a combination of <span class="math notranslate nohighlight">\(\CR^2\)</span> represented as the <span class="math notranslate nohighlight">\(x-y\)</span> plane, and <span class="math notranslate nohighlight">\(\CR\)</span> thought of as the <span class="math notranslate nohighlight">\(z\)</span> axis. Another example would be a particle hopping between two sites; in one site there are three states. If these sites were ions and the particle an electron, they could be possible excitation levels of the particle at that site. The particle could be at either one site or the other, in any state associated to that site, or a linear combination of the two sites.</p>
+<ul class="simple">
+<li><p><strong>Definition</strong>. Given vector spaces <span class="math notranslate nohighlight">\(V_1, V_2\)</span>, the <em>direct sum</em> <span class="math notranslate nohighlight">\(V = V_1 \oplus V_2\)</span> is the set of all <em>ordered pairs</em> <span class="math notranslate nohighlight">\(\left(\ket{v}_1,\ket{v_2}\right)\)</span> for <span class="math notranslate nohighlight">\(\ket{v}_i \in V_i\)</span>, such that</p></li>
+</ul>
+<div class="math notranslate nohighlight" id="equation-ds-add">
+<span class="eqno">(220)<a class="headerlink" href="#equation-ds-add" title="Link to this equation">#</a></span>\[c \left(\ket{v}_1, \ket{v}_2\right) + d \left(\ket{w}_1, \ket{w}_2\right) = \left(c\ket{v}_1 + d \ket{w}_1, c \ket{v}_2, d \ket{w}_2\right)\]</div>
+<p>for all <span class="math notranslate nohighlight">\(c,d \in \CC\)</span>. If we define the zero vector as <span class="math notranslate nohighlight">\(\left(0,0\right)\)</span>, this is a vector space.</p>
+<p>Typically, we drop the ordered paits and simply write</p>
+<div class="math notranslate nohighlight" id="equation-ds-notation">
+<span class="eqno">(221)<a class="headerlink" href="#equation-ds-notation" title="Link to this equation">#</a></span>\[\left(\ket{v}_1,\ket{v}_2\right) = \ket{v}_1 + \ket{v_2}\]</div>
+<p>which can be understood formally if we understand <span class="math notranslate nohighlight">\(\ket{v}_1 \equiv \left(\ket{v}_1, 0\right)\)</span> and <span class="math notranslate nohighlight">\(\ket{v}_2 = \left(0,\ket{v}_2\right)\)</span>.</p>
+<ul class="simple">
+<li><p><em>Basis and dimension</em>. Given a basis <span class="math notranslate nohighlight">\(\ket{i}, i = 1,\ldots,d_1\)</span> of <span class="math notranslate nohighlight">\(V_1\)</span> and a basis <span class="math notranslate nohighlight">\(\ket{I}, I = 1,\ldots, d_2\)</span> of <span class="math notranslate nohighlight">\(V_2\)</span>, you can (and should) convince yourself that <span class="math notranslate nohighlight">\(\left(\ket{i}, 0\right)\)</span> and <span class="math notranslate nohighlight">\(\left(0, \ket{I}_2\right)\)</span> form a basis for <span class="math notranslate nohighlight">\(V_1 \oplus V_2\)</span>. This means that <span class="math notranslate nohighlight">\(\text{dim}(V_1 \oplus V_2) = \text{dim}(V_1) + \text{dim}(V_2)\)</span>.</p></li>
+<li><p><em>Example</em>. Let <span class="math notranslate nohighlight">\(V_1 = \CC^2\)</span> and <span class="math notranslate nohighlight">\(V_2 = \CC^3\)</span>. Then <span class="math notranslate nohighlight">\(V_1 \oplus V_2 = \CC^5\)</span>.In particular, we can represent</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\ket{v}_1 = \begin{pmatrix} c_1 \\ c_2 \end{pmatrix}\ ; \ \ \ket{v}_2 = \begin{pmatrix} d_1 \\ d_2 \\ d_3 \end{pmatrix}\ ; \ \ \left(\ket{v}_1, \ket{v_2}\right) = \begin{pmatrix} c_1 \\ c_2 \\ d_1 \\ d_2 \\ d_3 \end{pmatrix}\end{split}\]</div>
+<ul class="simple">
+<li><p>It is clear that we can identify <span class="math notranslate nohighlight">\(V_1\)</span>, <span class="math notranslate nohighlight">\(V_2\)</span> as vector subspaces of <span class="math notranslate nohighlight">\(V_1 \oplus V_2\)</span>. If <span class="math notranslate nohighlight">\(\ket{i}, \ket{I}\)</span> are orthonormal and we demand <span class="math notranslate nohighlight">\(\brket{i}{I} = 0\)</span>, then <span class="math notranslate nohighlight">\(V_1 = (V_2)^{\perp}\)</span> as subspaces of <span class="math notranslate nohighlight">\(V_1 \oplus V_2\)</span>.</p></li>
+<li><p><em>Operators</em>. A linear operator <span class="math notranslate nohighlight">\(A_1\)</span> acting on vector space <span class="math notranslate nohighlight">\(V_1\)</span> can be lifted to a linear operator on <span class="math notranslate nohighlight">\(V_1 \oplus V_2\)</span> via
+<span class="math notranslate nohighlight">\(A_1 \left(\ket{v},\ket{w}\right) = \left(A_1 \ket{v},\ket{w}\right)\)</span>. Similarly for a linear operator <span class="math notranslate nohighlight">\(A_2\)</span> acting on <span class="math notranslate nohighlight">\(V_2\)</span>, <span class="math notranslate nohighlight">\(A_2 \left(\ket{v},\ket{w}\right) = \left(\ket{v},A_2 \ket{w}\right)\)</span>. However, the sums of linear operators do not fill out all of the possible linear operators. Take the above example of <span class="math notranslate nohighlight">\(\CC^5\)</span>. The space of linear operators acting on <span class="math notranslate nohighlight">\(V_1\)</span> is <span class="math notranslate nohighlight">\(M_2(\CC)\)</span>, the set of all <span class="math notranslate nohighlight">\(2\times 2\)</span> complex matrices. For <span class="math notranslate nohighlight">\(V_2\)</span> it is the set of all <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices. But for <span class="math notranslate nohighlight">\(V_1 \oplus V_2 = \CC^5\)</span> it is the set of all <span class="math notranslate nohighlight">\(5\times 5\)</span> matrices. This is a much bigger set of operators, and allows for operators that rotate <span class="math notranslate nohighlight">\(V_1\)</span> and <span class="math notranslate nohighlight">\(V_2\)</span> into each other. Specifically, if we write</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}M \in M_5(\CC) = \begin{pmatrix} A^{11}_{2\times 2} &amp; A^{12}_{2\times 3} \\ A^{21}_{3\times 2} &amp; A^{22}_{3\times 3} \end{pmatrix}\end{split}\]</div>
+<p>then <span class="math notranslate nohighlight">\(A^{11}, A^{22}\)</span> are the embeddings of linear operators acting on <span class="math notranslate nohighlight">\(V_1,V_2\)</span> respectively, while <span class="math notranslate nohighlight">\(A^{12}, A^{21}\neq 0\)</span> lead to new operators that only have meaning in the direct sum.</p>
+<p>As an example, if <span class="math notranslate nohighlight">\(V_1\)</span> corresponds to the states of an electron on one site, and <span class="math notranslate nohighlight">\(V_2\)</span> the states of an electron on another site, then of the Hamiltonian is a sum <span class="math notranslate nohighlight">\(H = H_1 + H_2\)</span> with <span class="math notranslate nohighlight">\(H_i\)</span> acting on <span class="math notranslate nohighlight">\(V_i\)</span>, the eigenstates correspond to particles living on one site or another, and if the particle starts on a site it will stay on that site. On the other hand, if <span class="math notranslate nohighlight">\(H\)</span> contains terms that mix the two sites, the eigenstates are lienar combinations of the particle being on one site or another; relatedly, the state vector of a partcile that starts on one site will acquire a component correspond to the particle siting on the other site.</p>
+</section>
+</section>
+<section id="tensor-products">
+<h2>Tensor products<a class="headerlink" href="#tensor-products" title="Link to this heading">#</a></h2>
+<p>The tensor product emerges when you want to add an attribute to a given system. That is, consider a particle for which you can specify the position and spin degree of freedom. In this case the particle has position <em>and</em> spin, you can’t either be in position <span class="math notranslate nohighlight">\({\vec x}\)</span> <em>or</em> have spin-up along the <span class="math notranslate nohighlight">\(z\)</span> direction. Similarly, you might want to describe the states of <em>two</em> distinguishable particles such as a proton and an electron. You always have to say what each particle is doing.</p>
+<p>The definition is a little more formal.</p>
+<ul class="simple">
+<li><p><strong>Definition</strong>. Given vector space <span class="math notranslate nohighlight">\(V_1\)</span> with basis <span class="math notranslate nohighlight">\(\ket{i}, i = 1,\ldots, d_1\)</span> and a second vector space <span class="math notranslate nohighlight">\(V_2\)</span> with basis <span class="math notranslate nohighlight">\(\ket{I}, I = 1,\ldots, d_2\)</span>, the <em>tensor product</em> <span class="math notranslate nohighlight">\(V = V_1 \otimes V_2\)</span> is the set of all formal symbols</p></li>
+</ul>
+<div class="math notranslate nohighlight" id="equation-tp-def">
+<span class="eqno">(222)<a class="headerlink" href="#equation-tp-def" title="Link to this equation">#</a></span>\[\ket{\alpha} = \sum_{i, I} \alpha_{iI} \ket{i}ket{I}\]</div>
+<p>If <span class="math notranslate nohighlight">\(\ket{\beta}\)</span> is similarly defined with coefficients <span class="math notranslate nohighlight">\(\beta_{iI}\)</span>, then  addition is defined as</p>
+<div class="math notranslate nohighlight" id="equation-tp-add">
+<span class="eqno">(223)<a class="headerlink" href="#equation-tp-add" title="Link to this equation">#</a></span>\[c \ket{\alpha} + d \ket{\beta} = \sum_{i,I} (c \alpha_{iI} + d \beta_{iI})\ket{i}\ket{I}\]</div>
+<p>for any <span class="math notranslate nohighlight">\(c,d \in \CC\)</span>. If we define the zero vector via <span class="math notranslate nohighlight">\(\alpha_{iI} = 0\)</span>, then <span class="math notranslate nohighlight">\(V_1\otimes V_2\)</span> is a vector space.</p>
+<ul class="simple">
+<li><p><em>Basis and dimension</em>. Clearly <span class="math notranslate nohighlight">\(\ket{i}\ket{I}\)</span> form a complete basis, and so <span class="math notranslate nohighlight">\(\text{dim}(V_1 \otimes V_2) = \text{dim}(V_1) \times \text{dim}(V_2)\)</span>.</p></li>
+<li><p><em>Example</em> Tensor product of general vectors. Given vectors <span class="math notranslate nohighlight">\(\ket{v}_1 = \sum_i v_i \ket{I}\)</span> and <span class="math notranslate nohighlight">\(\ket{w}_2 = \sum_I w_I \ket{I}\)</span> as elements of <span class="math notranslate nohighlight">\(V_1, V_2\)</span> respectively, we can define</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\ket{v}_1 \ket{w}_2 = \sum_{i,I} v_i W_I \ket{i}\ket{I}\]</div>
+<ul class="simple">
+<li><p><em>Basis independence</em>. It does not matter what basis we use to define the tensor product. You can easily show that a general vector written using the definition in one of the bases <span class="math notranslate nohighlight">\(\ket{i,I}\)</span> and <span class="math notranslate nohighlight">\(\ket{{\tilde i}, {\tilde I}}\)</span> has a unique expression in terms of the other basis.</p></li>
+<li><p><em>Notation</em>. We sometimes write <span class="math notranslate nohighlight">\(\ket{i}\ket{I} \equiv \ket{i,I}\)</span>.</p></li>
+<li><p><em>Example</em>. Consdier a spin-<span class="math notranslate nohighlight">\(\half\)</span> particle moving in 3 dimensions. The Hilbert space is <span class="math notranslate nohighlight">\(\CC^2 \otimes L^2(\CR^3)\)</span>. We can write a general state as</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\ket{\alpha} = \ket{+,z}\ket{\psi_+} + \ket{-,z} \ket{\psi_-}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\psi_{\pm}\)</span> denote square-integrable functions.
+This is sometimes realized as a <em>spinor</em>, a 2d vector of wavefunctions</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\ket{\alpha} \Rightarrow \begin{pmatrix} \psi_+({\vec x}) \\ \psi_-({\vec x}) \end{pmatrix}\end{split}\]</div>
+<ul class="simple">
+<li><p><em>Linear operators</em>. Given linear operators <span class="math notranslate nohighlight">\(A_1,A_2\)</span> acting on <span class="math notranslate nohighlight">\(V_1,V_2\)</span> respectively, we can define the action of <span class="math notranslate nohighlight">\(A_1 \otimes A_2\)</span> via</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[A_1 \otimes A_2 \ket{v}\ket{w} = (A_1\ket{v})(A_2 \ket{w})\]</div>
+<p>We can further add operators such as <span class="math notranslate nohighlight">\(A_1 \otimes A_2 + B_1 \otimes B_2\)</span> so that</p>
+<div class="math notranslate nohighlight">
+\[(A_1 \otimes A_2 + B_1 \otimes B_2) \ket{v}\ket{w} = (A_1\ket{v})(A_2 \ket{w}) + (B_1\ket{v})(B_2 \ket{w})\]</div>
+<ul class="simple">
+<li><p><em>Inner products</em>. If <span class="math notranslate nohighlight">\(V_{1,2}\)</span> are an inner product space, there is a natural inner product on the tensor product space indiucec by the following. Let <span class="math notranslate nohighlight">\(\ket{\alpha} = \ket{v_1}\ket{v_2}\)</span>, <span class="math notranslate nohighlight">\(\ket{\beta} = \ket{w_1}\ket{w_2}\)</span>; then we can write</p></li>
+</ul>
+<div class="math notranslate nohighlight" id="equation-tp-inner">
+<span class="eqno">(224)<a class="headerlink" href="#equation-tp-inner" title="Link to this equation">#</a></span>\[\brket{\beta}{\alpha} = \brket{w_1}{v_1} \brket{w_2}{v_2}\]</div>
+<ul class="simple">
+<li><p><em>Dynamics</em> The typical structure of a Hamkiltonian in this situation is</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[H = H_1 \otimes {\bf 1} + {\bf 1}\otimes H_2 + g \sum_k A_k \otimes B_k\]</div>
+<p>where <span class="math notranslate nohighlight">\(g\)</span> is a numnber included for convenience. When <span class="math notranslate nohighlight">\(g = 0\)</span>, the factors of teh tensor product are non-interacting. For the 2-particle case, what one particle is doing does not affect what the other paerticle is doing. However, if <span class="math notranslate nohighlight">\(g \neq 0\)</span>, the particles interact; the state of one affects the dynamics of the state of the other. Imagine two spin-<span class="math notranslate nohighlight">\(\half\)</span> particles. The Hamkiltonian</p>
+<div class="math notranslate nohighlight">
+\[H = - \mu_1 B S_{1,z} \otimes {\bf 1} - \mu_2 B {\bf 1}\otimes S_{2,z} + g \sum_{i}S_{1,i} \otimes S_{2,i}\]</div>
+<p>can be thought of as two magnetic momnents in a magnetic filed <span class="math notranslate nohighlight">\({\vec B} = B {\hat z}\)</span>. The last term can be thought of as saying that each particle feels a magnetic field proportional to the magnetic moment of the other particle.</p>
+</section>
+<section id="entangled-states">
+<h2>Entangled states<a class="headerlink" href="#entangled-states" title="Link to this heading">#</a></h2>
+<p>Given a tensor product Hilbert space <span class="math notranslate nohighlight">\(\cH = \cH_1 \otimes \cH_2\)</span>, we say that a state <span class="math notranslate nohighlight">\(\ket{\alpha} \in \cH\)</span> is <em>entangled</em> if it cannot be written in the form</p>
+<div class="math notranslate nohighlight" id="equation-def-entangled">
+<span class="eqno">(225)<a class="headerlink" href="#equation-def-entangled" title="Link to this equation">#</a></span>\[\ket{\alpha} = \ket{v}_1 \ket{w}_2\]</div>
+<p>An example works best to illustrate this. Consider two spin-<span class="math notranslate nohighlight">\(\half\)</span> particles. The following states form a basis of <span class="math notranslate nohighlight">\(\CC^2\otimes\CC^2\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-two-spin-basis">
+<span class="eqno">(226)<a class="headerlink" href="#equation-two-spin-basis" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\ket{\psi_1} &amp; = \ket{+,z}\ket{+,z}\\
+\ket{\psi_2} &amp; = \frac{1}{\sqrt{2}}\left(\ket{+,z}\ket{-,z} + \ket{-,z}\ket{+,z}\right)\\
+\ket{\psi_3} &amp; = \ket{-,z}\ket{-,z}\\
+\ket{\psi_4} &amp; = \frac{1}{\sqrt{2}} \left(\ket{+,z}\ket{-,z} - \ket{-,z}\ket{+,z}\right)
+\end{align}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\ket{\psi_{1,2}}\)</span> are clearly unentangled. <span class="math notranslate nohighlight">\(\ket{\psi_{2,4}}\)</span> are entangled and in fact there is no way to write them as unentangled states. We will show a tool that can test whether the state of two systems is entangled or not, when we introduce density matrices and the <em>von Neumann entropy</em>.</p>
+<p>As we can see from the above, quantum entanglement denotes a correlation between the state of two degrees of freedom in a tensor product. This yields some surprising results. For example, assume that we prepare the two spin states of a particle in <span class="math notranslate nohighlight">\(\ket{\psi_4}\)</span>. We can do this in such a way that the two particles are separated by a large distance. Even at this separation, the results of measuring <span class="math notranslate nohighlight">\(S_z\)</span> for the first particle are <em>always</em> correlated with the results of measuring <span class="math notranslate nohighlight">\(S_z\)</span> for the second particle: if one is measured as spin up, the other is measured as spin down. This is true even if the measurements are made simultaneously, so that no light signal could pass between the two particles. This is the famous <em>Einstein-Podolsky-Rosen</em> paradox. I am not sure how much of a paradox it is, since the particles would have to be prepared with the spins so entangled when they were in causal contact, and then separated – there is nothing acausal about how the states were constructed. And there is no way to use this to communicated, since an experimentalist measuring <span class="math notranslate nohighlight">\(S_z\)</span> for either particle will get each of <span class="math notranslate nohighlight">\(\pm \frac{\hbar}{2}\)</span> <span class="math notranslate nohighlight">\(50\%\)</span> of the time; they have no control over the result, and only know it is correlated with the spin of the other particle if they knew in advance the pair were so prepared.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Spin_half.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Example: spin-1/2 particles</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendix.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-sums-and-tensor-products">Direct sums and tensor products</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-sums">Direct sums</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-products">Tensor products</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entangled-states">Entangled states</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Albion Lawrence
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

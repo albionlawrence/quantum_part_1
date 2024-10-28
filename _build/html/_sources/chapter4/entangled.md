@@ -1,0 +1,127 @@
+# Entangled states and density matrices
+
+## Direct sums and tensor products
+
+There are different ways to combine vector spaces to get new vectors spaces. We are particularly interested in the tensor product, but the direct sum is also important and the contrast is illuminating
+
+### Direct sums
+
+The direct sum $V = V_1 \oplus V_2$ is a method for adding new directions to the Hilbert space. For example, $\CR^3$ can be thought of as a combination of $\CR^2$ represented as the $x-y$ plane, and $\CR$ thought of as the $z$ axis. Another example would be a particle hopping between two sites; in one site there are three states. If these sites were ions and the particle an electron, they could be possible excitation levels of the particle at that site. The particle could be at either one site or the other, in any state associated to that site, or a linear combination of the two sites.
+
+- **Definition**. Given vector spaces $V_1, V_2$, the *direct sum* $V = V_1 \oplus V_2$ is the set of all *ordered pairs* $\left(\ket{v}_1,\ket{v_2}\right)$ for $\ket{v}_i \in V_i$, such that 
+```{math}
+:label: ds_add
+c \left(\ket{v}_1, \ket{v}_2\right) + d \left(\ket{w}_1, \ket{w}_2\right) = \left(c\ket{v}_1 + d \ket{w}_1, c \ket{v}_2, d \ket{w}_2\right)
+```
+for all $c,d \in \CC$. If we define the zero vector as $\left(0,0\right)$, this is a vector space.
+
+Typically, we drop the ordered paits and simply write 
+```{math}
+:label: ds_notation
+\left(\ket{v}_1,\ket{v}_2\right) = \ket{v}_1 + \ket{v_2}
+```
+which can be understood formally if we understand $\ket{v}_1 \equiv \left(\ket{v}_1, 0\right)$ and $\ket{v}_2 = \left(0,\ket{v}_2\right)$.
+
+- *Basis and dimension*. Given a basis $\ket{i}, i = 1,\ldots,d_1$ of $V_1$ and a basis $\ket{I}, I = 1,\ldots, d_2$ of $V_2$, you can (and should) convince yourself that $\left(\ket{i}, 0\right)$ and $\left(0, \ket{I}_2\right)$ form a basis for $V_1 \oplus V_2$. This means that $\text{dim}(V_1 \oplus V_2) = \text{dim}(V_1) + \text{dim}(V_2)$.
+
+- *Example*. Let $V_1 = \CC^2$ and $V_2 = \CC^3$. Then $V_1 \oplus V_2 = \CC^5$.In particular, we can represent
+```{math}
+\ket{v}_1 = \begin{pmatrix} c_1 \\ c_2 \end{pmatrix}\ ; \ \ \ket{v}_2 = \begin{pmatrix} d_1 \\ d_2 \\ d_3 \end{pmatrix}\ ; \ \ \left(\ket{v}_1, \ket{v_2}\right) = \begin{pmatrix} c_1 \\ c_2 \\ d_1 \\ d_2 \\ d_3 \end{pmatrix}
+```
+
+- It is clear that we can identify $V_1$, $V_2$ as vector subspaces of $V_1 \oplus V_2$. If $\ket{i}, \ket{I}$ are orthonormal and we demand $\brket{i}{I} = 0$, then $V_1 = (V_2)^{\perp}$ as subspaces of $V_1 \oplus V_2$.
+
+- *Operators*. A linear operator $A_1$ acting on vector space $V_1$ can be lifted to a linear operator on $V_1 \oplus V_2$ via
+$A_1 \left(\ket{v},\ket{w}\right) = \left(A_1 \ket{v},\ket{w}\right)$. Similarly for a linear operator $A_2$ acting on $V_2$, $A_2 \left(\ket{v},\ket{w}\right) = \left(\ket{v},A_2 \ket{w}\right)$. However, the sums of linear operators do not fill out all of the possible linear operators. Take the above example of $\CC^5$. The space of linear operators acting on $V_1$ is $M_2(\CC)$, the set of all $2\times 2$ complex matrices. For $V_2$ it is the set of all $3\times 3$ matrices. But for $V_1 \oplus V_2 = \CC^5$ it is the set of all $5\times 5$ matrices. This is a much bigger set of operators, and allows for operators that rotate $V_1$ and $V_2$ into each other. Specifically, if we write
+```{math}
+M \in M_5(\CC) = \begin{pmatrix} A^{11}_{2\times 2} & A^{12}_{2\times 3} \\ A^{21}_{3\times 2} & A^{22}_{3\times 3} \end{pmatrix}
+```
+then $A^{11}, A^{22}$ are the embeddings of linear operators acting on $V_1,V_2$ respectively, while $A^{12}, A^{21}\neq 0$ lead to new operators that only have meaning in the direct sum.
+
+As an example, if $V_1$ corresponds to the states of an electron on one site, and $V_2$ the states of an electron on another site, then of the Hamiltonian is a sum $H = H_1 + H_2$ with $H_i$ acting on $V_i$, the eigenstates correspond to particles living on one site or another, and if the particle starts on a site it will stay on that site. On the other hand, if $H$ contains terms that mix the two sites, the eigenstates are lienar combinations of the particle being on one site or another; relatedly, the state vector of a partcile that starts on one site will acquire a component correspond to the particle siting on the other site.
+
+## Tensor products
+
+The tensor product emerges when you want to add an attribute to a given system. That is, consider a particle for which you can specify the position and spin degree of freedom. In this case the particle has position *and* spin, you can't either be in position ${\vec x}$ *or* have spin-up along the $z$ direction. Similarly, you might want to describe the states of *two* distinguishable particles such as a proton and an electron. You always have to say what each particle is doing.
+
+The definition is a little more formal. 
+
+- **Definition**. Given vector space $V_1$ with basis $\ket{i}, i = 1,\ldots, d_1$ and a second vector space $V_2$ with basis $\ket{I}, I = 1,\ldots, d_2$, the *tensor product* $V = V_1 \otimes V_2$ is the set of all formal symbols
+```{math}
+:label: tp_def
+\ket{\alpha} = \sum_{i, I} \alpha_{iI} \ket{i}ket{I}
+```
+If $\ket{\beta}$ is similarly defined with coefficients $\beta_{iI}$, then  addition is defined as
+```{math}
+:label: tp_add 
+c \ket{\alpha} + d \ket{\beta} = \sum_{i,I} (c \alpha_{iI} + d \beta_{iI})\ket{i}\ket{I}
+```
+for any $c,d \in \CC$. If we define the zero vector via $\alpha_{iI} = 0$, then $V_1\otimes V_2$ is a vector space.
+
+- *Basis and dimension*. Clearly $\ket{i}\ket{I}$ form a complete basis, and so $\text{dim}(V_1 \otimes V_2) = \text{dim}(V_1) \times \text{dim}(V_2)$.
+
+- *Example* Tensor product of general vectors. Given vectors $\ket{v}_1 = \sum_i v_i \ket{I}$ and $\ket{w}_2 = \sum_I w_I \ket{I}$ as elements of $V_1, V_2$ respectively, we can define
+```{math}
+\ket{v}_1 \ket{w}_2 = \sum_{i,I} v_i W_I \ket{i}\ket{I}
+```
+
+- *Basis independence*. It does not matter what basis we use to define the tensor product. You can easily show that a general vector written using the definition in one of the bases $\ket{i,I}$ and $\ket{{\tilde i}, {\tilde I}}$ has a unique expression in terms of the other basis.
+
+- *Notation*. We sometimes write $\ket{i}\ket{I} \equiv \ket{i,I}$.
+
+- *Example*. Consdier a spin-$\half$ particle moving in 3 dimensions. The Hilbert space is $\CC^2 \otimes L^2(\CR^3)$. We can write a general state as
+```{math}
+\ket{\alpha} = \ket{+,z}\ket{\psi_+} + \ket{-,z} \ket{\psi_-}
+```
+where $\psi_{\pm}$ denote square-integrable functions.
+This is sometimes realized as a *spinor*, a 2d vector of wavefunctions
+```{math}
+\ket{\alpha} \Rightarrow \begin{pmatrix} \psi_+({\vec x}) \\ \psi_-({\vec x}) \end{pmatrix}
+```
+
+- *Linear operators*. Given linear operators $A_1,A_2$ acting on $V_1,V_2$ respectively, we can define the action of $A_1 \otimes A_2$ via
+```{math}
+A_1 \otimes A_2 \ket{v}\ket{w} = (A_1\ket{v})(A_2 \ket{w})
+```
+We can further add operators such as $A_1 \otimes A_2 + B_1 \otimes B_2$ so that
+```{math}
+(A_1 \otimes A_2 + B_1 \otimes B_2) \ket{v}\ket{w} = (A_1\ket{v})(A_2 \ket{w}) + (B_1\ket{v})(B_2 \ket{w})
+```
+
+ - *Inner products*. If $V_{1,2}$ are an inner product space, there is a natural inner product on the tensor product space indiucec by the following. Let $\ket{\alpha} = \ket{v_1}\ket{v_2}$, $\ket{\beta} = \ket{w_1}\ket{w_2}$; then we can write
+ ```{math}
+ :label: tp_inner
+ \brket{\beta}{\alpha} = \brket{w_1}{v_1} \brket{w_2}{v_2}
+ ```
+
+ - *Dynamics* The typical structure of a Hamkiltonian in this situation is
+ ```{math}
+ H = H_1 \otimes {\bf 1} + {\bf 1}\otimes H_2 + g \sum_k A_k \otimes B_k
+ ```
+ where $g$ is a numnber included for convenience. When $g = 0$, the factors of teh tensor product are non-interacting. For the 2-particle case, what one particle is doing does not affect what the other paerticle is doing. However, if $g \neq 0$, the particles interact; the state of one affects the dynamics of the state of the other. Imagine two spin-$\half$ particles. The Hamkiltonian
+ ```{math}
+ H = - \mu_1 B S_{1,z} \otimes {\bf 1} - \mu_2 B {\bf 1}\otimes S_{2,z} + g \sum_{i}S_{1,i} \otimes S_{2,i}
+ ```
+can be thought of as two magnetic momnents in a magnetic filed ${\vec B} = B {\hat z}$. The last term can be thought of as saying that each particle feels a magnetic field proportional to the magnetic moment of the other particle.
+
+
+## Entangled states
+
+Given a tensor product Hilbert space $\cH = \cH_1 \otimes \cH_2$, we say that a state $\ket{\alpha} \in \cH$ is *entangled* if it cannot be written in the form
+```{math}
+:label: def_entangled
+\ket{\alpha} = \ket{v}_1 \ket{w}_2
+```
+An example works best to illustrate this. Consider two spin-$\half$ particles. The following states form a basis of $\CC^2\otimes\CC^2$:
+```{math}
+:label: two_spin_basis
+\begin{align}
+\ket{\psi_1} & = \ket{+,z}\ket{+,z}\\
+\ket{\psi_2} & = \frac{1}{\sqrt{2}}\left(\ket{+,z}\ket{-,z} + \ket{-,z}\ket{+,z}\right)\\
+\ket{\psi_3} & = \ket{-,z}\ket{-,z}\\
+\ket{\psi_4} & = \frac{1}{\sqrt{2}} \left(\ket{+,z}\ket{-,z} - \ket{-,z}\ket{+,z}\right)
+\end{align}
+```
+$\ket{\psi_{1,2}}$ are clearly unentangled. $\ket{\psi_{2,4}}$ are entangled and in fact there is no way to write them as unentangled states. We will show a tool that can test whether the state of two systems is entangled or not, when we introduce density matrices and the *von Neumann entropy*.
+
+As we can see from the above, quantum entanglement denotes a correlation between the state of two degrees of freedom in a tensor product. This yields some surprising results. For example, assume that we prepare the two spin states of a particle in $\ket{\psi_4}$. We can do this in such a way that the two particles are separated by a large distance. Even at this separation, the results of measuring $S_z$ for the first particle are *always* correlated with the results of measuring $S_z$ for the second particle: if one is measured as spin up, the other is measured as spin down. This is true even if the measurements are made simultaneously, so that no light signal could pass between the two particles. This is the famous *Einstein-Podolsky-Rosen* paradox. I am not sure how much of a paradox it is, since the particles would have to be prepared with the spins so entangled when they were in causal contact, and then separated -- there is nothing acausal about how the states were constructed. And there is no way to use this to communicated, since an experimentalist measuring $S_z$ for either particle will get each of $\pm \frac{\hbar}{2}$ $50\%$ of the time; they have no control over the result, and only know it is correlated with the spin of the other particle if they knew in advance the pair were so prepared. 

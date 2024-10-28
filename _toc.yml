@@ -23,6 +23,7 @@ chapters:
     sections:
     - file: chapter4/Axioms
     - file: chapter4/Spin_half
+    - file: chapter4/entangled
   - file: appendix
   - file: bibliography
 # - file: notebooks
