@@ -355,6 +355,13 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-products">Tensor products</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entangled-states">Entangled states</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#density-matrices">Density matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-quantum-systems">Open quantum systems.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phenomenological-definition">Phenomenological definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-properties-of-the-density-matrix">General properties of the density matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution-of-the-density-operator">Time evolution of the density operator</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -468,7 +475,111 @@ This is sometimes realized as a <em>spinor</em>, a 2d vector of wavefunctions</p
 \ket{\psi_4} &amp; = \frac{1}{\sqrt{2}} \left(\ket{+,z}\ket{-,z} - \ket{-,z}\ket{+,z}\right)
 \end{align}\end{split}\]</div>
 <p><span class="math notranslate nohighlight">\(\ket{\psi_{1,2}}\)</span> are clearly unentangled. <span class="math notranslate nohighlight">\(\ket{\psi_{2,4}}\)</span> are entangled and in fact there is no way to write them as unentangled states. We will show a tool that can test whether the state of two systems is entangled or not, when we introduce density matrices and the <em>von Neumann entropy</em>.</p>
-<p>As we can see from the above, quantum entanglement denotes a correlation between the state of two degrees of freedom in a tensor product. This yields some surprising results. For example, assume that we prepare the two spin states of a particle in <span class="math notranslate nohighlight">\(\ket{\psi_4}\)</span>. We can do this in such a way that the two particles are separated by a large distance. Even at this separation, the results of measuring <span class="math notranslate nohighlight">\(S_z\)</span> for the first particle are <em>always</em> correlated with the results of measuring <span class="math notranslate nohighlight">\(S_z\)</span> for the second particle: if one is measured as spin up, the other is measured as spin down. This is true even if the measurements are made simultaneously, so that no light signal could pass between the two particles. This is the famous <em>Einstein-Podolsky-Rosen</em> paradox. I am not sure how much of a paradox it is, since the particles would have to be prepared with the spins so entangled when they were in causal contact, and then separated – there is nothing acausal about how the states were constructed. And there is no way to use this to communicated, since an experimentalist measuring <span class="math notranslate nohighlight">\(S_z\)</span> for either particle will get each of <span class="math notranslate nohighlight">\(\pm \frac{\hbar}{2}\)</span> <span class="math notranslate nohighlight">\(50\%\)</span> of the time; they have no control over the result, and only know it is correlated with the spin of the other particle if they knew in advance the pair were so prepared.</p>
+<p>As we can see from the above, quantum entanglement denotes a correlation between the state of two degrees of freedom in a tensor product. This yields some surprising results. For example, assume that we prepare the two spin states of a particle in <span class="math notranslate nohighlight">\(\ket{\psi_4}\)</span>. We can do this in such a way that the two particles are separated by a large distance. Even at this separation, the results of measuring <span class="math notranslate nohighlight">\(S_z\)</span> for the first particle are <em>always</em> correlated with the results of measuring <span class="math notranslate nohighlight">\(S_z\)</span> for the second particle: if one is measured as spin up, the other is measured as spin down. This is true even if the measurements are made simultaneously, so that no light signal could pass between the two particles. This is the famous <em>Einstein-Podolsky-Rosen</em> paradox. Note that since the particles would have to be prepared with the spins so entangled when they were in causal contact, and then separated – there is nothing acausal about how the states were constructed.  The puzzle is over whether there is anything acausal about the measurement process. Note that there is no way to use EPR states to communicate, since an experimentalist measuring <span class="math notranslate nohighlight">\(S_z\)</span> for either particle will get each of <span class="math notranslate nohighlight">\(\pm \frac{\hbar}{2}\)</span> <span class="math notranslate nohighlight">\(50\%\)</span> of the time; they have no control over the result, and only know it is correlated with the spin of the other particle if they knew in advance the pair were so prepared. If causality in a special-relativistic context means simply ``information cannot be transmitted at speeds faster than light” then it is arguably safe here.</p>
+</section>
+<section id="density-matrices">
+<h2>Density matrices<a class="headerlink" href="#density-matrices" title="Link to this heading">#</a></h2>
+<p>Density matrices capture cases where we have imperfect kmowledge of the quantum system. They typically arise because the state of the system we are interested in studying was prepared through coupling to degrees of freedom whose state we do not observe, <em>and</em> the system’s state is entangled with the unobserved degrees of freedom.</p>
+<p>We will thuis start with a purely quantum description of such a stuation, in which both the observed “system” is coupled to some unobserved degrees of freedom, called the “environment”. This setup is a subject of intensive study which goes onder the name of {\it open quantum systems}. We will then provide a more phenomenological output in which the density matrix reflects some classical uncertainty regarding the preparation of the state.</p>
+<section id="open-quantum-systems">
+<h3>Open quantum systems.<a class="headerlink" href="#open-quantum-systems" title="Link to this heading">#</a></h3>
+<p>In open quantum systems we imagine that the Hilbert spacecan be written as a tensor product <span class="math notranslate nohighlight">\(\cH = \cH_{sys}\otimes \cH_{env}\)</span>. Some examples:</p>
+<ol class="arabic simple">
+<li><p>{\it Local region of an extended system}.</p></li>
+</ol>
+<p><img alt="Spin chain" src="../_images/spin_chain.jpeg" /></p>
+<p>Pictured above is a one-dimensional <em>spin chain</em>; a lattice of sites with each site oddupied by a spin-<span class="math notranslate nohighlight">\(\half\)</span> particle. If theer are <span class="math notranslate nohighlight">\(N\)</span> sites, the Hilbert space is <span class="math notranslate nohighlight">\(\CC^2 \otimes \CC ^2\otimes \ldots \CC^2 = (\CC^2)^{\otimes N} \cong \CC^{2N}\)</span>; that is, <span class="math notranslate nohighlight">\(N\)</span> copies of <span class="math notranslate nohighlight">\(\CC^2\)</span> combined in a tensor product structure. We can imagine that the observed spins correspond to <span class="math notranslate nohighlight">\(M &lt; N\)</span> contiguous sites (in the picture, <span class="math notranslate nohighlight">\(M = 6\)</span>).</p>
+<ol class="arabic simple" start="2">
+<li><p>{\it Particle in imperfect vacuum}. Here <span class="math notranslate nohighlight">\(\cH_{sys}\)</span> is the Hilbert space of some particle; <span class="math notranslate nohighlight">\(\cH_{env}\)</span> is the Hilbert space of soem unobserved gas particles which can interact/collide  with the observed particle.</p></li>
+</ol>
+<p>If <span class="math notranslate nohighlight">\(\ket{i}\)</span> is an othonormal basis for <span class="math notranslate nohighlight">\(\cH_{sys}\)</span> and <span class="math notranslate nohighlight">\(\ket{I}\)</span> an orthonormalbasis for <span class="math notranslate nohighlight">\(\cH_{env}\)</span>, then as we discussed above, a general state of <span class="math notranslate nohighlight">\(\cH\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\ket{\psi} = \sum_{iI} \alpha_{iI} \ket{i}\ket{I}\]</div>
+<p>We will assume that <span class="math notranslate nohighlight">\(\brket{\psi}{\psi} = 1\)</span>.</p>
+<p>Now let us say we can only measure the system. The corresponding operator ha sthe following structure in <span class="math notranslate nohighlight">\(\cH\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[A = A_{sys}\otimes {\bf 1}\]</div>
+<p>A natural question to ask is the expectation value of <span class="math notranslate nohighlight">\(A\)</span>, which is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\vev{A} &amp; = \sum_{iI} \bra{I}\bra{i} \alpha^*_{iI} \sum_{jJ} \alpha_{jJ} (A_{sys}\ket{j}\ket{J}\\
+&amp; = \sum_{iI,jJ} \alpha^*_{iI}\alpha_{jJ} \bra{i} A_{sys}\bra{j} \brket{I}{J}\\
+&amp; = \sum_{i,j,I} \alpha^*_{iI}\alpha_{jI} \bra{i} A_{sys}\bra{j}\\
+&amp; = \sum_{i,j,k,I}\delta_{jk}  \alpha^*_{iI}\alpha_{jI} \bra{i} A_{sys}\ket{j}\\
+&amp; = \sum_{i,j,k,I} \brket{k}{j} \alpha^*_{iI}\alpha_{jI} \bra{i} A_{sys}\ket{k}\\
+&amp; = \sum_k \sum_{i,j,I}\brket{k}{j} \alpha^*_{iI}\alpha_{jI} \bra{i}A_{sys}\ket{k}\\
+\end{align}\end{split}\]</div>
+<p>Now define</p>
+<div class="math notranslate nohighlight">
+\[\rho = \sum_{ijI} \ket{j} \alpha_{jI} \alpha^*_{iI} \bra{i}\]</div>
+<p>Since for any linear operator <span class="math notranslate nohighlight">\(O\)</span> acting on <span class="math notranslate nohighlight">\(\cH_{sys}\)</span>, <span class="math notranslate nohighlight">\(\text{tr} O = \sum_k \bra{k} O \ket{k}\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\vev{A} = \text{tr} \rho A\]</div>
+<p>Recall that from the rules of quantum mechanics, we can express the probability of geting a specific value <span class="math notranslate nohighlight">\(a\)</span> of <span class="math notranslate nohighlight">\(A_{sys}\)</span> as the expectation value of the projection operator <span class="math notranslate nohighlight">\(\CP_a\)</span>. Thus the above rule for expectation values yields:</p>
+<div class="math notranslate nohighlight">
+\[p(a) = \text{tr}(\rho \CP_a)\]</div>
+<p>Before continuing, I wil note that it is useful to think of the density matrix constructed above as a “partial trace” over the environmental degrees of freedom:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\text{tr}_{\cH_{env}}\ket{\psi}\bra{\psi}
+&amp; = \sum_{I} \brket{I}{\psi}\brket{\psi}{I}\\
+&amp; = \sum_{I,jJ,kK}\alpha_{jJ} \brket{I}{J} \ket{j} \alpha^*_{kK} \bra{k} \brket{K}{I}\\ 
+&amp; = \sum_{jkI} \ket{j} \alpha_{jI}\alpha^*_{kI}\ket{k}\\
+&amp; = \rho
+\end{align}\end{split}\]</div>
+<p>This language is used frequently in the quantum information literature.</p>
+</section>
+<section id="phenomenological-definition">
+<h3>Phenomenological definition<a class="headerlink" href="#phenomenological-definition" title="Link to this heading">#</a></h3>
+<p>The second starting point is to assume that the quantum system is in one of an ensemble of states governed by a classical probability distribution. You could imagine somebody preparing a spin state as <span class="math notranslate nohighlight">\(\ket{+,z}\)</span> or <span class="math notranslate nohighlight">\(\ket{-,x}\)</span> each with <span class="math notranslate nohighlight">\(50\%\)</span> probability, for example. Note that this probability is <em>distinct</em> from the probabilty of a measurement of a known observable in a known quantum state yielding a particular outcome.</p>
+<p>In the case at hand, if the state is prepared a large number of times, the average value of the measurement of some observable <span class="math notranslate nohighlight">\(A\)</span> will be</p>
+<div class="math notranslate nohighlight">
+\[\vev{A} = \sum_{\ket{\psi}} p_{\ket{\psi}}\bra{\psi} A \ket{\psi}\]</div>
+<p>By a similar calculation as above, we can define</p>
+<div class="math notranslate nohighlight">
+\[\rho = \sum_{\psi} p_{\psi} \ket{\psi}\bra{\psi} \]</div>
+<p>where the states <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> have unit norm, and <span class="math notranslate nohighlight">\(p_{\psi}\)</span> is the probability that the system was prepared in state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>. Note that we have made no demand that the collection of states <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> are orthogonal to each other. We simply demand that <span class="math notranslate nohighlight">\(\ket{\psi]\)</span> has unit norm, that <span class="math notranslate nohighlight">\(0 \leq p_{\ket{\psi}\leq 1\)</span>, and that <span class="math notranslate nohighlight">\(\sum_{\ket{\psi}} p_{\ket{\psi}} = 1\)</span>.</p>
+<p>We call the collection of states <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> together with the probabilities <span class="math notranslate nohighlight">\([_{\psi}\)</span> an <em>ensemble</em>. A particularly important one is the <em>canonical ensemble</em>. If the system is not dynamically coupled to the environment, <span class="math notranslate nohighlight">\(H\)</span> is the Hamiltonian of the system and <span class="math notranslate nohighlight">\(\ket{E,\alpha}\)</span> is an orthonormal basis of eigenstates such that <span class="math notranslate nohighlight">\(H]ket{E,\alpha} = E \ket{E,\alpha}\)</span>, we define</p>
+<div class="math notranslate nohighlight">
+\[p_{E,\alpha} = \frac{e^{-\beta E}}{Z(\beta)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta = 1/k_B T\)</span> is the inverse temperature, and <span class="math notranslate nohighlight">\(Z = \sum_{E,\alpha} e^{-\beta E}\)</span> is the partition function. This ensemble is the basis of quantum equilibrium statistical mechanics. The density matrix is then</p>
+<div class="math notranslate nohighlight">
+\[\rho_{\beta} = \frac{\sum_{E,\alpha} e^{-\beta E} \ket{E,\alpha} \bra{E,\alpha}}{Z(\beta)}\]</div>
+<p>The expectation value of an aobservable <span class="math notranslate nohighlight">\(A\)</span> in this case is</p>
+<div class="math notranslate nohighlight">
+\[\vev{A}_{\beta} = \frac{\sum_{E,\alpha} e^{-\beta E} \bra{E,\alpha} A \ket{E,\alpha}}{Z(\beta)}\]</div>
+</section>
+<section id="general-properties-of-the-density-matrix">
+<h3>General properties of the density matrix<a class="headerlink" href="#general-properties-of-the-density-matrix" title="Link to this heading">#</a></h3>
+<p>The following properties can be deduced from either of the above definitions.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> is Hermitian. Note that this means an orthonormal basis <span class="math notranslate nohighlight">\(\ket{\mu}\)</span> exists for which</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\rho = \sum_{\mu} p_{\mu} \ket{\mu}\bra{\mu}\]</div>
+<p>Inb the second of teh above construuctions of <span class="math notranslate nohighlight">\(\rho\)</span>, <span class="math notranslate nohighlight">\(\ket{\mu}\)</span> is not necessarily the collection <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>; for starters, <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> do not have to be orthogonal.</p>
+<ol class="arabic simple" start="2">
+<li><p><span class="math notranslate nohighlight">\(\text{tr}\rho = 1\)</span>. In the first case, this follows from the demandthat <span class="math notranslate nohighlight">\(\brket{\psi}{\psi} = 1\)</span> for thestate of the combined system. In the second case, it follows from the demand that <span class="math notranslate nohighlight">\(\brket{\psi}{\psi} = 1\)</span> for every state in the classical ensemble, and that <span class="math notranslate nohighlight">\(\sum_{\ket{\psi}} p_{\ket{\psi}} = 1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bra{\varphi} \rho \ket{\varphi} \geq 0 \forall\ \ket{\varphi} \in \cH_{sys}\)</span>. This implies that <span class="math notranslate nohighlight">\(p_{\mu} \geq 0\)</span>.</p></li>
+</ol>
+<p>With these definitions, <span class="math notranslate nohighlight">\(p_{\mu}\)</span> can also be interpreted in terms of probabilities. The formula for the expectation value of some operator becomes</p>
+<div class="math notranslate nohighlight">
+\[\vev{A} = \text{tr}(\rho A) = \sum_{\mu} p_{\mu} \bra{\mu} A \ket{\mu}\]</div>
+</section>
+<section id="time-evolution-of-the-density-operator">
+<h3>Time evolution of the density operator<a class="headerlink" href="#time-evolution-of-the-density-operator" title="Link to this heading">#</a></h3>
+<p>In general the system and the environment will be dynamically coupled. Energy can ass betwene the system and the environment. If <span class="math notranslate nohighlight">\(H\)</span> is the Hamiltonian actig on the full Hilbert space <span class="math notranslate nohighlight">\(\cH_{sys}\otimes\cH_{env}\)</span>, then using the time-dependent Schroedinger equation for the full system, we find with some algebra that</p>
+<div class="math notranslate nohighlight">
+\[i\hbar \frac{\del \rho}{\del t} = (H_{iI;jJ}c_{jJ}c^*_{kI} - H_{jJ;kI} c_{iI}c^*_{jJ}) \ket{i}\bra{k}\]</div>
+<p>This is generally a complicated “master equation” for <span class="math notranslate nohighlight">\(\rho\)</span>. In certain specific situations it can take a much more specific form.</p>
+<p>When the system and environment are decoupled after the full state has been prepared; or if the density matrix is contructed from a classical probability ensemble which is time-independent, you can show easily that</p>
+<div class="math notranslate nohighlight">
+\[i\hbar \frac{\del \rho}{\del t} = [H_{sys},\rho]\]</div>
+<p>This follows from the time-dependent Schroedinger equation <span class="math notranslate nohighlight">\(i\hbar \del_t \ket{\psi} = H_{sys}\ket{\psi}\)</span>, together with its conjugate</p>
+<div class="math notranslate nohighlight">
+\[-i\hbar \del_t \bra{\psi} = \bra{\psi} H\]</div>
+<p>This latter case is the one described in Commins, and in most introductory textbooks on the subject.</p>
+</section>
 </section>
 </section>
 
@@ -542,6 +653,13 @@ This is sometimes realized as a <em>spinor</em>, a 2d vector of wavefunctions</p
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-products">Tensor products</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entangled-states">Entangled states</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#density-matrices">Density matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-quantum-systems">Open quantum systems.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phenomenological-definition">Phenomenological definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-properties-of-the-density-matrix">General properties of the density matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution-of-the-density-operator">Time evolution of the density operator</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

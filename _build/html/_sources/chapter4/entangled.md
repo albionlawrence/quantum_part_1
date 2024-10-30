@@ -124,4 +124,134 @@ An example works best to illustrate this. Consider two spin-$\half$ particles. T
 ```
 $\ket{\psi_{1,2}}$ are clearly unentangled. $\ket{\psi_{2,4}}$ are entangled and in fact there is no way to write them as unentangled states. We will show a tool that can test whether the state of two systems is entangled or not, when we introduce density matrices and the *von Neumann entropy*.
 
-As we can see from the above, quantum entanglement denotes a correlation between the state of two degrees of freedom in a tensor product. This yields some surprising results. For example, assume that we prepare the two spin states of a particle in $\ket{\psi_4}$. We can do this in such a way that the two particles are separated by a large distance. Even at this separation, the results of measuring $S_z$ for the first particle are *always* correlated with the results of measuring $S_z$ for the second particle: if one is measured as spin up, the other is measured as spin down. This is true even if the measurements are made simultaneously, so that no light signal could pass between the two particles. This is the famous *Einstein-Podolsky-Rosen* paradox. I am not sure how much of a paradox it is, since the particles would have to be prepared with the spins so entangled when they were in causal contact, and then separated -- there is nothing acausal about how the states were constructed. And there is no way to use this to communicated, since an experimentalist measuring $S_z$ for either particle will get each of $\pm \frac{\hbar}{2}$ $50\%$ of the time; they have no control over the result, and only know it is correlated with the spin of the other particle if they knew in advance the pair were so prepared. 
+As we can see from the above, quantum entanglement denotes a correlation between the state of two degrees of freedom in a tensor product. This yields some surprising results. For example, assume that we prepare the two spin states of a particle in $\ket{\psi_4}$. We can do this in such a way that the two particles are separated by a large distance. Even at this separation, the results of measuring $S_z$ for the first particle are *always* correlated with the results of measuring $S_z$ for the second particle: if one is measured as spin up, the other is measured as spin down. This is true even if the measurements are made simultaneously, so that no light signal could pass between the two particles. This is the famous *Einstein-Podolsky-Rosen* paradox. Note that since the particles would have to be prepared with the spins so entangled when they were in causal contact, and then separated -- there is nothing acausal about how the states were constructed.  The puzzle is over whether there is anything acausal about the measurement process. Note that there is no way to use EPR states to communicate, since an experimentalist measuring $S_z$ for either particle will get each of $\pm \frac{\hbar}{2}$ $50\%$ of the time; they have no control over the result, and only know it is correlated with the spin of the other particle if they knew in advance the pair were so prepared. If causality in a special-relativistic context means simply ``information cannot be transmitted at speeds faster than light" then it is arguably safe here.
+
+## Density matrices
+
+Density matrices capture cases where we have imperfect kmowledge of the quantum system. They typically arise because the state of the system we are interested in studying was prepared through coupling to degrees of freedom whose state we do not observe, *and* the system's state is entangled with the unobserved degrees of freedom.
+
+We will thuis start with a purely quantum description of such a stuation, in which both the observed "system" is coupled to some unobserved degrees of freedom, called the "environment". This setup is a subject of intensive study which goes onder the name of {\it open quantum systems}. We will then provide a more phenomenological output in which the density matrix reflects some classical uncertainty regarding the preparation of the state.
+
+### Open quantum systems.
+
+In open quantum systems we imagine that the Hilbert spacecan be written as a tensor product $\cH = \cH_{sys}\otimes \cH_{env}$. Some examples:
+
+1. {\it Local region of an extended system}.
+
+![Spin chain](spin_chain.jpeg)
+
+Pictured above is a one-dimensional *spin chain*; a lattice of sites with each site oddupied by a spin-$\half$ particle. If theer are $N$ sites, the Hilbert space is $\CC^2 \otimes \CC ^2\otimes \ldots \CC^2 = (\CC^2)^{\otimes N} \cong \CC^{2N}$; that is, $N$ copies of $\CC^2$ combined in a tensor product structure. We can imagine that the observed spins correspond to $M < N$ contiguous sites (in the picture, $M = 6$).
+
+2. {\it Particle in imperfect vacuum}. Here $\cH_{sys}$ is the Hilbert space of some particle; $\cH_{env}$ is the Hilbert space of soem unobserved gas particles which can interact/collide  with the observed particle.
+
+If $\ket{i}$ is an othonormal basis for $\cH_{sys}$ and $\ket{I}$ an orthonormalbasis for $\cH_{env}$, then as we discussed above, a general state of $\cH$ is:
+```{math}
+\ket{\psi} = \sum_{iI} \alpha_{iI} \ket{i}\ket{I}
+```
+We will assume that $\brket{\psi}{\psi} = 1$. 
+
+Now let us say we can only measure the system. The corresponding operator ha sthe following structure in $\cH$:
+```{math}
+A = A_{sys}\otimes {\bf 1}
+```
+A natural question to ask is the expectation value of $A$, which is:
+```{math}
+\begin{align}
+\vev{A} & = \sum_{iI} \bra{I}\bra{i} \alpha^*_{iI} \sum_{jJ} \alpha_{jJ} (A_{sys}\ket{j}\ket{J}\\
+& = \sum_{iI,jJ} \alpha^*_{iI}\alpha_{jJ} \bra{i} A_{sys}\bra{j} \brket{I}{J}\\
+& = \sum_{i,j,I} \alpha^*_{iI}\alpha_{jI} \bra{i} A_{sys}\bra{j}\\
+& = \sum_{i,j,k,I}\delta_{jk}  \alpha^*_{iI}\alpha_{jI} \bra{i} A_{sys}\ket{j}\\
+& = \sum_{i,j,k,I} \brket{k}{j} \alpha^*_{iI}\alpha_{jI} \bra{i} A_{sys}\ket{k}\\
+& = \sum_k \sum_{i,j,I}\brket{k}{j} \alpha^*_{iI}\alpha_{jI} \bra{i}A_{sys}\ket{k}\\
+\end{align}
+```
+Now define
+```{math}
+\rho = \sum_{ijI} \ket{j} \alpha_{jI} \alpha^*_{iI} \bra{i}
+```
+Since for any linear operator $O$ acting on $\cH_{sys}$, $\text{tr} O = \sum_k \bra{k} O \ket{k}$, we have
+```{math}
+\vev{A} = \text{tr} \rho A
+```
+
+Recall that from the rules of quantum mechanics, we can express the probability of geting a specific value $a$ of $A_{sys}$ as the expectation value of the projection operator $\CP_a$. Thus the above rule for expectation values yields:
+```{math}
+p(a) = \text{tr}(\rho \CP_a)
+```
+
+
+Before continuing, I wil note that it is useful to think of the density matrix constructed above as a "partial trace" over the environmental degrees of freedom:
+```{math}
+\begin{align}
+\text{tr}_{\cH_{env}}\ket{\psi}\bra{\psi}
+& = \sum_{I} \brket{I}{\psi}\brket{\psi}{I}\\
+& = \sum_{I,jJ,kK}\alpha_{jJ} \brket{I}{J} \ket{j} \alpha^*_{kK} \bra{k} \brket{K}{I}\\ 
+& = \sum_{jkI} \ket{j} \alpha_{jI}\alpha^*_{kI}\ket{k}\\
+& = \rho
+\end{align}
+```
+This language is used frequently in the quantum information literature.
+
+### Phenomenological definition
+
+The second starting point is to assume that the quantum system is in one of an ensemble of states governed by a classical probability distribution. You could imagine somebody preparing a spin state as $\ket{+,z}$ or $\ket{-,x}$ each with $50\%$ probability, for example. Note that this probability is *distinct* from the probabilty of a measurement of a known observable in a known quantum state yielding a particular outcome.
+
+In the case at hand, if the state is prepared a large number of times, the average value of the measurement of some observable $A$ will be
+```{math}
+\vev{A} = \sum_{\ket{\psi}} p_{\ket{\psi}}\bra{\psi} A \ket{\psi}
+```
+By a similar calculation as above, we can define 
+```{math}
+\rho = \sum_{\psi} p_{\psi} \ket{\psi}\bra{\psi} 
+ ```
+ where the states $\ket{\psi}$ have unit norm, and $p_{\psi}$ is the probability that the system was prepared in state $\ket{\psi}$. Note that we have made no demand that the collection of states $\ket{\psi}$ are orthogonal to each other. We simply demand that $\ket{\psi]$ has unit norm, that $0 \leq p_{\ket{\psi}\leq 1$, and that $\sum_{\ket{\psi}} p_{\ket{\psi}} = 1$. 
+
+We call the collection of states $\ket{\psi}$ together with the probabilities $[_{\psi}$ an *ensemble*. A particularly important one is the *canonical ensemble*. If the system is not dynamically coupled to the environment, $H$ is the Hamiltonian of the system and $\ket{E,\alpha}$ is an orthonormal basis of eigenstates such that $H]ket{E,\alpha} = E \ket{E,\alpha}$, we define
+```{math}
+p_{E,\alpha} = \frac{e^{-\beta E}}{Z(\beta)}
+```
+where $\beta = 1/k_B T$ is the inverse temperature, and $Z = \sum_{E,\alpha} e^{-\beta E}$ is the partition function. This ensemble is the basis of quantum equilibrium statistical mechanics. The density matrix is then
+```{math}
+\rho_{\beta} = \frac{\sum_{E,\alpha} e^{-\beta E} \ket{E,\alpha} \bra{E,\alpha}}{Z(\beta)}
+```
+The expectation value of an aobservable $A$ in this case is
+```{math}
+\vev{A}_{\beta} = \frac{\sum_{E,\alpha} e^{-\beta E} \bra{E,\alpha} A \ket{E,\alpha}}{Z(\beta)}
+```
+
+### General properties of the density matrix
+
+The following properties can be deduced from either of the above definitions.
+ 
+1. $\rho$ is Hermitian. Note that this means an orthonormal basis $\ket{\mu}$ exists for which 
+```{math}
+\rho = \sum_{\mu} p_{\mu} \ket{\mu}\bra{\mu}
+```
+Inb the second of teh above construuctions of $\rho$, $\ket{\mu}$ is not necessarily the collection $\ket{\psi}$; for starters, $\ket{\psi}$ do not have to be orthogonal.
+
+2. $\text{tr}\rho = 1$. In the first case, this follows from the demandthat $\brket{\psi}{\psi} = 1$ for thestate of the combined system. In the second case, it follows from the demand that $\brket{\psi}{\psi} = 1$ for every state in the classical ensemble, and that $\sum_{\ket{\psi}} p_{\ket{\psi}} = 1$. 
+
+3. $\bra{\varphi} \rho \ket{\varphi} \geq 0 \forall\ \ket{\varphi} \in \cH_{sys}$. This implies that $p_{\mu} \geq 0$.
+
+With these definitions, $p_{\mu}$ can also be interpreted in terms of probabilities. The formula for the expectation value of some operator becomes
+```{math}
+\vev{A} = \text{tr}(\rho A) = \sum_{\mu} p_{\mu} \bra{\mu} A \ket{\mu}
+```
+
+### Time evolution of the density operator
+
+In general the system and the environment will be dynamically coupled. Energy can ass betwene the system and the environment. If $H$ is the Hamiltonian actig on the full Hilbert space $\cH_{sys}\otimes\cH_{env}$, then using the time-dependent Schroedinger equation for the full system, we find with some algebra that
+```{math}
+i\hbar \frac{\del \rho}{\del t} = (H_{iI;jJ}c_{jJ}c^*_{kI} - H_{jJ;kI} c_{iI}c^*_{jJ}) \ket{i}\bra{k}
+```
+This is generally a complicated "master equation" for $\rho$. In certain specific situations it can take a much more specific form.
+
+When the system and environment are decoupled after the full state has been prepared; or if the density matrix is contructed from a classical probability ensemble which is time-independent, you can show easily that
+```{math}
+i\hbar \frac{\del \rho}{\del t} = [H_{sys},\rho]
+```
+This follows from the time-dependent Schroedinger equation $i\hbar \del_t \ket{\psi} = H_{sys}\ket{\psi}$, together with its conjugate
+```{math}
+-i\hbar \del_t \bra{\psi} = \bra{\psi} H
+```
+This latter case is the one described in Commins, and in most introductory textbooks on the subject.
