@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter4/entangled';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="next" title="Local Realism vs. Quantum Mechanics" href="bell.html" />
     <link rel="prev" title="Example: spin-1/2 particles" href="Spin_half.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -197,6 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Axioms.html">The Axioms of Quantum Mechanics.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Spin_half.html">Example: spin-1/2 particles</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Entangled states and density matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bell.html">Local Realism vs. Quantum Mechanics</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -360,6 +361,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phenomenological-definition">Phenomenological definition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-properties-of-the-density-matrix">General properties of the density matrix</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution-of-the-density-operator">Time evolution of the density operator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-vs-mixed-states-and-the-von-neumann-entropy">Pure vs. Mixed States and the von Neumann entropy</a></li>
 </ul>
 </li>
 </ul>
@@ -580,6 +582,40 @@ This is sometimes realized as a <em>spinor</em>, a 2d vector of wavefunctions</p
 \[-i\hbar \del_t \bra{\psi} = \bra{\psi} H\]</div>
 <p>This latter case is the one described in Commins, and in most introductory textbooks on the subject.</p>
 </section>
+<section id="pure-vs-mixed-states-and-the-von-neumann-entropy">
+<h3>Pure vs. Mixed States and the von Neumann entropy<a class="headerlink" href="#pure-vs-mixed-states-and-the-von-neumann-entropy" title="Link to this heading">#</a></h3>
+<p>By convention, the <em>state</em> of the system is specified by the density operator. Our previous usage in terms of vectors in a Hilbert space is equivalent to the following:</p>
+<ul class="simple">
+<li><p><strong>Definition</strong>. A <em>pure state</em> is a density opereator that can be written in the form <span class="math notranslate nohighlight">\(\rho = \ket{\psi}\bra{\psi}\)</span> for some <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>.</p></li>
+</ul>
+<p>You can show that the rule <span class="math notranslate nohighlight">\(\vev{A} = \text{tr}(\rho A) = \bra{\psi}A\ket{\psi}\)</span> gives you everything you need to recover the results of measurements and so on.</p>
+<ul class="simple">
+<li><p><strong>Definition</strong>. A <em>mixed state</em> is a density operator which is not pure. In the phenomenological description, this means that the densoty opperator is characterized by one of several states according to some probability distribution. In the case of open quantum systems, it means that there is nontrivial entanglement.</p></li>
+<li><p><strong>Definition</strong> a <em>maximally mixed state</em> takes the form <span class="math notranslate nohighlight">\(\rho = \frac{1}{\text{dim}(\cH_{sys})} {\bf 1}\)</span>. In other words, it can be any vector in an orthonormal decomposition with equal probability <span class="math notranslate nohighlight">\(1/\text{dim}(\cH_{sys})\)</span>.</p></li>
+<li><p>The <em>von Neumann entropy</em> is:</p></li>
+</ul>
+<div class="math notranslate nohighlight" id="equation-vn-entropy">
+<span class="eqno">(227)<a class="headerlink" href="#equation-vn-entropy" title="Link to this equation">#</a></span>\[S_{vN} = - \text{tr} \rho \ln \rho\]</div>
+<p>Taking the log of an operator is not trivial in general. If we wrote <span class="math notranslate nohighlight">\(A = 1 + (1 - A)\)</span>, we can write it as a power series in <span class="math notranslate nohighlight">\((1-A)\)</span> using <span class="math notranslate nohighlight">\(\ln (1 + x) = 1 + x + \half x^2 + \ldots\)</span>. There are techniques for computing <span class="math notranslate nohighlight">\(S_{vN}\)</span> and it is a big industry in modern quantum theory. For now we will note that if we can write <span class="math notranslate nohighlight">\(\rho\)</span> in an orthonormal basis, <span class="math notranslate nohighlight">\(\rho = \sum_k p_k \ket{k}\bra{k}\)</span> with <span class="math notranslate nohighlight">\(\brket{k}{l} = \delta_{kl}\)</span>, then</p>
+<div class="math notranslate nohighlight" id="equation-shannon-limit">
+<span class="eqno">(228)<a class="headerlink" href="#equation-shannon-limit" title="Link to this equation">#</a></span>\[S_{vN} = - \sum_k p_k \ln p_k\]</div>
+<p>Recall that <span class="math notranslate nohighlight">\(0\leq p_k \leq 1\)</span>, and <span class="math notranslate nohighlight">\(\sum_k p_k = 1\)</span>. Those familiar with classical information theory will recognize this as the Shannon entropy for a probability ensemble <span class="math notranslate nohighlight">\(p_k\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is treated as a random variable.</p>
+<ul class="simple">
+<li><ol class="arabic simple">
+<li><p>For a pure state, <span class="math notranslate nohighlight">\(p_k = \delta_{k,k_0}\)</span> for some <span class="math notranslate nohighlight">\(k_0\)</span> so that <span class="math notranslate nohighlight">\(S_{vN} = 0\)</span>. Similarly if <span class="math notranslate nohighlight">\(S_{vN} = 0\)</span>, the state is pure.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>For a mazimally mixed state, <span class="math notranslate nohighlight">\(S_{nV} = \ln N\)</span>, which is the maximal value.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>Imagine that we have a spin chain of <span class="math notranslate nohighlight">\(M\)</span> spin-<span class="math notranslate nohighlight">\(\half\)</span> particles. The Hilbert space is <span class="math notranslate nohighlight">\((\CC^2)^{\otimes M} = \CC^{2^M}\)</span>. A maximally mixed state then has <span class="math notranslate nohighlight">\(S_{vN} = M \ln 2\)</span>. We can think of each spin-<span class="math notranslate nohighlight">\(\half\)</span> particle contributing <span class="math notranslate nohighlight">\(\ln 2\)</span> to the entropy. The same occurs if we have a classical ensemble consisting of <span class="math notranslate nohighlight">\(M\)</span> statistically independent bits which can be either <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(1\)</span> with equal probability. In quantum computing we try to build devices out of tensor products of simple systems. If the simple systems have Hilbert space <span class="math notranslate nohighlight">\(\CC^2\)</span>, also called ``two-state systems” (a bit of a misnomer since there are an infinite number of sttaes), these are called <em>qubits</em>. If their Hilbert space is <span class="math notranslate nohighlight">\(\CC^3\)</span> they are called <em>qutrits</em>. More generally if the dimension is not specified tehy are called <em>qudits</em>.</p></li>
+</ol>
+</li>
+</ul>
+<p>There is a big industry in computing the Shannon entropy, particular for subsystems of entangled states, as this is a measure of the degree of entanglement.</p>
+</section>
 </section>
 </section>
 
@@ -623,11 +659,11 @@ This is sometimes realized as a <em>spinor</em>, a 2d vector of wavefunctions</p
       </div>
     </a>
     <a class="right-next"
-       href="../appendix.html"
+       href="bell.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix</p>
+        <p class="prev-next-title">Local Realism vs. Quantum Mechanics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -658,6 +694,7 @@ This is sometimes realized as a <em>spinor</em>, a 2d vector of wavefunctions</p
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phenomenological-definition">Phenomenological definition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-properties-of-the-density-matrix">General properties of the density matrix</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution-of-the-density-operator">Time evolution of the density operator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-vs-mixed-states-and-the-von-neumann-entropy">Pure vs. Mixed States and the von Neumann entropy</a></li>
 </ul>
 </li>
 </ul>
