@@ -382,6 +382,20 @@ document.write(`
 <p><img alt="Possible axes for a measurement of spin" src="../_images/axes.jpeg" /></p>
 <p>We demand that for any case that the measurements of the two spins are both taken along the same axis, the results corralated as they are in the quantum case <a class="reference internal" href="#equation-spin-zero-two">(230)</a>. The probabilities for each of the 8 possible outcomes of a measurement of each particle along any of the axes <span class="math notranslate nohighlight">\(a,b,c\)</span> are captures in the following table:</p>
 <p><img alt="Bell probability table" src="../_images/bell_probs.jpeg" /></p>
+<p>Now we can put some bounds on these classical probabilities. Positivity or probabilities means that</p>
+<div class="math notranslate nohighlight" id="equation-be-one">
+<span class="eqno">(231)<a class="headerlink" href="#equation-be-one" title="Link to this equation">#</a></span>\[p_3 + p_4 \leq p_3 + p_4 + p_2 + p_7 = (p_2 + p_4) + (p_3 + p_7)\]</div>
+<p>Now we can relate these sums to various outcomes:</p>
+<div class="math notranslate nohighlight" id="equation-joint-prob">
+<span class="eqno">(232)<a class="headerlink" href="#equation-joint-prob" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+p_3 + p_4 &amp; = p({\hat a}_1\cdot{\vec S}_1 = \frac{\hbar}{2}; {\hat b}_2\cdot{\vec S}_2 = \frac{\hbar}{2})\\
+p_2 + p_4 &amp; =  p({\hat a}_1\cdot{\vec S}_1 = \frac{\hbar}{2}; {\hat c}_2\cdot{\vec S}_2 = \frac{\hbar}{2})\\
+p_3 + p_7 &amp; =  p({\hat c}_1\cdot{\vec S}_1 = \frac{\hbar}{2}; {\hat b}_2\cdot{\vec S}_2 = \frac{\hbar}{2})
+\end{align}\end{split}\]</div>
+<p>The probabilities on the RHS are <em>joint probabilities</em>, not <em>conditional probabilities</em>. With this in mind, in the first line, cases 3 and 4 are the only two cases with <span class="math notranslate nohighlight">\({\hat a}_1\cdot{\vec S}_1 = \frac{\hbar}{2},  {\hat b}_2\cdot{\vec S}_2\)</span>, and similarly for the next two cases. Now <a class="reference internal" href="#equation-be-one">(231)</a> combined with <a class="reference internal" href="#equation-joint-prob">(232)</a> leads to <em>Bell’s inequality</em></p>
+<div class="math notranslate nohighlight" id="equation-bell-ineq">
+<span class="eqno">(233)<a class="headerlink" href="#equation-bell-ineq" title="Link to this equation">#</a></span>\[p(a_1 = +,b_2 = +) \leq p(a_1 = +,c_2 = +) + p(c_1 = +, b_2 = +)\]</div>
+<p>where we have taken <span class="math notranslate nohighlight">\({\hat a}_1 \cdot {\vec S}_1 = \frac{\hbar}{2} \to a_1 = +\)</span> and so on.</p>
 </section>
 
     <script type="text/x-thebe-config">

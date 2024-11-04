@@ -43,4 +43,23 @@ We demand that for any case that the measurements of the two spins are both take
 
 ![Bell probability table](bell_probs.jpeg)
 
-
+Now we can put some bounds on these classical probabilities. Positivity or probabilities means that
+```{math}
+:label: be_one
+p_3 + p_4 \leq p_3 + p_4 + p_2 + p_7 = (p_2 + p_4) + (p_3 + p_7)
+```
+Now we can relate these sums to various outcomes:
+```{math}
+:label: joint_prob
+\begin{align}
+p_3 + p_4 & = p({\hat a}_1\cdot{\vec S}_1 = \frac{\hbar}{2}; {\hat b}_2\cdot{\vec S}_2 = \frac{\hbar}{2})\\
+p_2 + p_4 & =  p({\hat a}_1\cdot{\vec S}_1 = \frac{\hbar}{2}; {\hat c}_2\cdot{\vec S}_2 = \frac{\hbar}{2})\\
+p_3 + p_7 & =  p({\hat c}_1\cdot{\vec S}_1 = \frac{\hbar}{2}; {\hat b}_2\cdot{\vec S}_2 = \frac{\hbar}{2})
+\end{align}
+```
+The probabilities on the RHS are *joint probabilities*, not *conditional probabilities*. With this in mind, in the first line, cases 3 and 4 are the only two cases with ${\hat a}_1\cdot{\vec S}_1 = \frac{\hbar}{2},  {\hat b}_2\cdot{\vec S}_2$, and similarly for the next two cases. Now {eq}`be_one` combined with {eq}`joint_prob` leads to *Bell's inequality*
+```{math}
+:label: bell_ineq
+p(a_1 = +,b_2 = +) \leq p(a_1 = +,c_2 = +) + p(c_1 = +, b_2 = +)
+```
+where we have taken ${\hat a}_1 \cdot {\vec S}_1 = \frac{\hbar}{2} \to a_1 = +$ and so on.
