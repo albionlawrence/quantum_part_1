@@ -1,0 +1,14 @@
+# Local Realism vs. Quantum Mechanics
+
+We close this chapter by working out a rewalization of John Bell's that we can *test* quantum mechanics against a while class of models which capture the demand that there be some underlying theory which is completely local and deterministic such taht probbilities truly capture our ignorance of some microscopic degrees of freedom. These are known as ``local hidden variable theories".
+
+It is easiest to define these with respect to an EPR experiment. Let us assume that we have two spin-$\half$ particles (or alternatively two photons emitted back to back in some definite direction), such that their combined spin (equivalently polarization) states are:
+```{math}
+:label: spin_zero
+\ket{\psi} = \frac{1}{\sqrt{2}}\left(\ket{+,z}\ket{-,z} - \ket{-,z}\ket{+,z}\right)
+```
+Note by the way that for any unit vector $\hat{n}$, the state can be written as
+```{math}
+:label: spin_zero_two
+\ket{\psi} = \frac{1}{\sqrt{2}}\left(\ket{+,{\hat n}}\ket{-,{\hat n}} - \ket{-,\hat{n}}\ket{+,{\hat n}}\right)
+```

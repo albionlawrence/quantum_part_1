@@ -255,3 +255,33 @@ This follows from the time-dependent Schroedinger equation $i\hbar \del_t \ket{\
 -i\hbar \del_t \bra{\psi} = \bra{\psi} H
 ```
 This latter case is the one described in Commins, and in most introductory textbooks on the subject.
+
+### Pure vs. Mixed States and the von Neumann entropy
+
+By convention, the *state* of the system is specified by the density operator. Our previous usage in terms of vectors in a Hilbert space is equivalent to the following:
+
+- **Definition**. A *pure state* is a density opereator that can be written in the form $\rho = \ket{\psi}\bra{\psi}$ for some $\ket{\psi}$.
+
+You can show that the rule $\vev{A} = \text{tr}(\rho A) = \bra{\psi}A\ket{\psi}$ gives you everything you need to recover the results of measurements and so on.
+
+- **Definition**. A *mixed state* is a density operator which is not pure. In the phenomenological description, this means that the densoty opperator is characterized by one of several states according to some probability distribution. In the case of open quantum systems, it means that there is nontrivial entanglement.
+
+- **Definition** a *maximally mixed state* takes the form $\rho = \frac{1}{\text{dim}(\cH_{sys})} {\bf 1}$. In other words, it can be any vector in an orthonormal decomposition with equal probability $1/\text{dim}(\cH_{sys})$.
+
+- The *von Neumann entropy* is:
+```{math}
+:label: vN_entropy
+S_{vN} = - \text{tr} \rho \ln \rho
+```
+Taking the log of an operator is not trivial in general. If we wrote $A = 1 + (1 - A)$, we can write it as a power series in $(1-A)$ using $\ln (1 + x) = 1 + x + \half x^2 + \ldots$. There are techniques for computing $S_{vN}$ and it is a big industry in modern quantum theory. For now we will note that if we can write $\rho$ in an orthonormal basis, $\rho = \sum_k p_k \ket{k}\bra{k}$ with $\brket{k}{l} = \delta_{kl}$, then
+```{math}
+:label: shannon_limit
+S_{vN} = - \sum_k p_k \ln p_k
+```
+Recall that $0\leq p_k \leq 1$, and $\sum_k p_k = 1$. Those familiar with classical information theory will recognize this as the Shannon entropy for a probability ensemble $p_k$ where $k$ is treated as a random variable.
+
+- 1. For a pure state, $p_k = \delta_{k,k_0}$ for some $k_0$ so that $S_{vN} = 0$. Similarly if $S_{vN} = 0$, the state is pure.
+- 2. For a mazimally mixed state, $S_{nV} = \ln N$, which is the maximal value.
+- 3. Imagine that we have a spin chain of $M$ spin-$\half$ particles. The Hilbert space is $(\CC^2)^{\otimes M} = \CC^{2^M}$. A maximally mixed state then has $S_{vN} = M \ln 2$. We can think of each spin-$\half$ particle contributing $\ln 2$ to the entropy. The same occurs if we have a classical ensemble consisting of $M$ statistically independent bits which can be either $0$ or $1$ with equal probability. In quantum computing we try to build devices out of tensor products of simple systems. If the simple systems have Hilbert space $\CC^2$, also called ``two-state systems" (a bit of a misnomer since there are an infinite number of sttaes), these are called *qubits*. If their Hilbert space is $\CC^3$ they are called *qutrits*. More generally if the dimension is not specified tehy are called *qudits*. 
+	
+There is a big industry in computing the Shannon entropy, particular for subsystems of entangled states, as this is a measure of the degree of entanglement. 

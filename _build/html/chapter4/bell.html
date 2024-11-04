@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>The Rules of Quantum Mechanics &#8212; Physics 162a</title>
+    <title>Local Realism vs. Quantum Mechanics &#8212; Physics 162a</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter4/Quantum_rules';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter4/bell';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Axioms of Quantum Mechanics." href="Axioms.html" />
-    <link rel="prev" title="Spectra of Hermitian and Unitary Operators" href="../chapter3/Operator_spectra.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="Entangled states and density matrices" href="entangled.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -193,11 +193,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/Operator_spectra.html">Spectra of Hermitian and Unitary Operators</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">The Rules of Quantum Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Quantum_rules.html">The Rules of Quantum Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Axioms.html">The Axioms of Quantum Mechanics.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Spin_half.html">Example: spin-1/2 particles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="entangled.html">Entangled states and density matrices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bell.html">Local Realism vs. Quantum Mechanics</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Local Realism vs. Quantum Mechanics</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -256,7 +256,7 @@
       
       
       
-      <li><a href="../_sources/chapter4/Quantum_rules.md" target="_blank"
+      <li><a href="../_sources/chapter4/bell.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -338,7 +338,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The Rules of Quantum Mechanics</h1>
+    <h1>Local Realism vs. Quantum Mechanics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -352,11 +352,36 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="the-rules-of-quantum-mechanics">
-<h1>The Rules of Quantum Mechanics<a class="headerlink" href="#the-rules-of-quantum-mechanics" title="Link to this heading">#</a></h1>
-<p>Now that we have set up the needed math, the basic ruls of quantum mechanics are fairly easy to state, though their implications are famously confusing. Our strategy here will be to illustrate and explore them with some mathematically simple systems (photons and massive spin-<span class="math notranslate nohighlight">\(\half\)</span> particles). We can then move on to particle mechanics (after setting up a bit of additional math).</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="local-realism-vs-quantum-mechanics">
+<h1>Local Realism vs. Quantum Mechanics<a class="headerlink" href="#local-realism-vs-quantum-mechanics" title="Link to this heading">#</a></h1>
+<p>We close this chapter by working out a rewalization of John Bell’s that we can <em>test</em> quantum mechanics against a while class of models which capture the demand that there be some underlying theory which is completely local and deterministic such taht probbilities truly capture our ignorance of some microscopic degrees of freedom. These are known as ``local hidden variable theories”.</p>
+<p>It is easiest to define these with respect to an EPR experiment. Let us assume that we have two spin-<span class="math notranslate nohighlight">\(\half\)</span> particles (or alternatively two photons emitted back to back in some definite direction), such that their combined spin (equivalently polarization) states are:</p>
+<div class="math notranslate nohighlight" id="equation-spin-zero">
+<span class="eqno">(229)<a class="headerlink" href="#equation-spin-zero" title="Link to this equation">#</a></span>\[\ket{\psi} = \frac{1}{\sqrt{2}}\left(\ket{+,z}\ket{-,z} - \ket{-,z}\ket{+,z}\right)\]</div>
+<p>Note by the way that for any unit vector <span class="math notranslate nohighlight">\(\hat{n}\)</span>, the state can be written as</p>
+<div class="math notranslate nohighlight" id="equation-spin-zero-two">
+<span class="eqno">(230)<a class="headerlink" href="#equation-spin-zero-two" title="Link to this equation">#</a></span>\[\ket{\psi} = \frac{1}{\sqrt{2}}\left(\ket{+,{\hat n}}\ket{-,{\hat n}} - \ket{-,\hat{n}}\ket{+,{\hat n}}\right)\]</div>
+<p>The minus sign between the two components is crucial here. You can showthis by brute force; when we discuss addition of anglar momentum, the point will be that the system has vanishing total (spin) angular momentum, so it is invariant under rotations.</p>
+<p>As we discussed, if the two particles are separated such that the spin state remain described as above, measurments of one spin along a given axis are perfectly correlated wth measurements of the other spin along the same axis. Note however that if the two measurements are made along <em>orthogonal</em> axes there is no such correlation. Spin with definite sign along the <span class="math notranslate nohighlight">\(z\)</span> axis will take values <span class="math notranslate nohighlight">\(\pm \frac{\hbar}{2}\)</span> along the <span class="math notranslate nohighlight">\(x\)</span> axis with <span class="math notranslate nohighlight">\(50-50\)</span> probability.</p>
+<p>The particular set of theories that we will test against quantum mechanics are <em>Locally realistic hidden variable</em> theories. Let’s define each in term.</p>
+<ul class="simple">
+<li><p><em>Local realism</em>. We demand that properties of a given particle, such as the outcomes of any measurement of the spin measured along any axis are <em>intrinsic</em> to the particle. In our EPR example, if we decide to measure particle 1 along the <span class="math notranslate nohighlight">\(z\)</span> axis and particle 2 along the <span class="math notranslate nohighlight">\(x\)</span> axis, we can label each particle by <span class="math notranslate nohighlight">\(\ket{z,\alpha; x,\beta}\)</span>, where <span class="math notranslate nohighlight">\(\alpha,\beta = \pm\frac{\hbar}{2}\)</span>. Thus the set of different two-particle states are <span class="math notranslate nohighlight">\(\ket{z,\alpha_1;x,\beta_1}\ket{z,\alpha_2;x,\beta_2}\)</span>, Here we have suppressed lables corresponding to possible measurements along other axes, and ewe have accepted that the measurement along any axis will always yield <span class="math notranslate nohighlight">\(\pm ]frac{\hbar}{2}\)</span>.</p></li>
+<li><p>Now quantum mechanics tells us that the outcomes of measurements have a fundamentally probabilistic character. in distinction, <em>Hidden variable</em> theories, the probabilities are governed by unknown degrees of freedom to which we assign classical probabilities that reflect our ignorance of these degrees of freedom.</p></li>
+</ul>
+<p>Our question is, can we reproduce the results of quantum mechanical measurement with these rules? Bell’s insight was that you cannot.</p>
+<p>As an example, we can consider the case that each particle is in one of the four following states with equal (<span class="math notranslate nohighlight">\(25\%\)</span>) probability:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\ket{z,+;x,-}_1\ket{z,-;x,+}_2\\
+\ket{z,+;x,+}_1\ket{z,-;x,-}_2\\
+\ket{z,-;x,+}_1\ket{z,+;x,-}_2\\
+\ket{z,-;x,-}_1\ket{z,+;x,+}_2
+\end{align}\end{split}\]</div>
+<p>As it happens, we can completely reproduce the results of quantum mechanics if we only make measurements along the <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(z\)</span> axis for each particle. In particular if both particles are measured along the same axis, the results will be correlated. But there is nothing fundamentally correlated about these states.</p>
+<p>As it happens, this example is too simple. Consider instead a set of three axes along which we might make a measurement, as shown here:</p>
+<p><img alt="Possible axes for a measurement of spin" src="../_images/axes.jpeg" /></p>
+<p>We demand that for any case that the measurements of the two spins are both taken along the same axis, the results corralated as they are in the quantum case <a class="reference internal" href="#equation-spin-zero-two">(230)</a>. The probabilities for each of the 8 possible outcomes of a measurement of each particle along any of the axes <span class="math notranslate nohighlight">\(a,b,c\)</span> are captures in the following table:</p>
+<p><img alt="Bell probability table" src="../_images/bell_probs.jpeg" /></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -390,20 +415,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../chapter3/Operator_spectra.html"
+       href="entangled.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Spectra of Hermitian and Unitary Operators</p>
+        <p class="prev-next-title">Entangled states and density matrices</p>
       </div>
     </a>
     <a class="right-next"
-       href="Axioms.html"
+       href="../appendix.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">The Axioms of Quantum Mechanics.</p>
+        <p class="prev-next-title">Appendix</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
