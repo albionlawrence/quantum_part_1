@@ -63,3 +63,25 @@ The probabilities on the RHS are *joint probabilities*, not *conditional probabi
 p(a_1 = +,b_2 = +) \leq p(a_1 = +,c_2 = +) + p(c_1 = +, b_2 = +)
 ```
 where we have taken ${\hat a}_1 \cdot {\vec S}_1 = \frac{\hbar}{2} \to a_1 = +$ and so on.
+
+What does quantum mechanics predict? Let us consider the state {eq}`spin_zero_two`. Bu convention the person measuring the first spin is called "Alice" and the person measuring the second spin is called "Bob". Alice will measure the spin along axis ${\hat n}_A$ and Bob will measure the spin along axis ${\hat n}_B$. Let the angle between these axes be $\psi$ (eg {\hat n}_A \cdot{\hat n}_B = \cos\psi$). Then with some work, you can show that the *conditional probability* for Bob measuring spin-up *given* that Alice measures her spin as up is
+```{math}
+p({\hat n}_B\cdot{\vec\sigma} = +1|{\hat n}_A\cdot{\vec\sigma} = +1) = \sin^2 \frac{\psi}{2}
+```
+Since we can choose the axis in {eq}`spin_zero_two` and get the same state, we can choose it to be ${\hat n}_A$. Thus, Alice has a $50\%$ chance of measuring the spin as ${\hat n}_A \cdot{\vec\sigma} = +1$, so the *joint probability* of ALice and Bob both measuring the spins as up is:
+```{math}
+:label: qm_conditional
+p({\hat n}_A\cdot{\vec\sigma} = +1,{\hat n}_B\cdot{\vec\sigma} = +1) = \half \sin^2 \frac{\psi}{2}
+```
+
+Now let us consider the axes displayed in the picture. They are all coplanar, and the angle between ${\hat a}$ and ${\hat c}$ is $\theta$; between ${\hat b}$ and ${\hat c}$ is $\theta$; and between ${\hat a}$ and ${\hat b}$ is $2\theta$. We further demand that 0 < \theta < \frac{\pi}{2}$: note that this is a *strict* inequality.
+
+![Test of Bell inequalities](bell_test.jpeg)
+
+This setup violates the Bell inequalities. Let us assume the e=inequalities are true. Using {eq}`qm_conditional` and inserting them into {eq}`bell_ineq` given the experimental setup shown, the inequalities would mean
+```{math}
+\sin^2\theta \leq \sin^2\frac{\theta}{2} + \sin^2\frac{|theta}{2} = 1 - \cos\theta
+```
+where we have used a half angle identity. Using $\sin^2\theta = 1 - \cos^2\theta$, the above inequality would requitre that $\cos^2\theta > \cos\theta$. But given our bounds on $\theta$, $0 < \cos\theta < 1$, so this inequality cannot be satisfied.
+
+It is clear that each of these probabilities can be measured, in separate experiments in which the axes are fixed. One can then test the predictions of quantum mechanics. They have been borne out in variants of this experiment. However, the test is essentially a probabilistic one. If we were going to be sticklers we could say that the community of quantum physicists have gotten supremely unlucky and the apparent violations are a matter of bad luck or Trisolarians interfering with the hidden variables or something. We will turn now to a definitive test of quantum mechanics vs. locally realistic hidden variables.
