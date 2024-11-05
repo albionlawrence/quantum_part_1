@@ -1,6 +1,8 @@
 # Local Realism vs. Quantum Mechanics
 
-We close this chapter by working out a rewalization of John Bell's that we can *test* quantum mechanics against a while class of models which capture the demand that there be some underlying theory which is completely local and deterministic such taht probbilities truly capture our ignorance of some microscopic degrees of freedom. These are known as ``local hidden variable theories".
+We close this chapter by working out a rewalization of John Bell's that we can *test* quantum mechanics against a while class of models which capture the demand that there be some underlying theory which is completely local and deterministic such taht probabilities truly capture our ignorance of some microscopic degrees of freedom. These are known as ``local hidden variable theories".
+
+## Local realism and hidden variables for EPR states
 
 It is easiest to define these with respect to an EPR experiment. Let us assume that we have two spin-$\half$ particles (or alternatively two photons emitted back to back in some definite direction), such that their combined spin (equivalently polarization) states are:
 ```{math}
@@ -18,9 +20,11 @@ As we discussed, if the two particles are separated such that the spin state rem
 
 The particular set of theories that we will test against quantum mechanics are *Locally realistic hidden variable* theories. Let's define each in term.
 
-- *Local realism*. We demand that properties of a given particle, such as the outcomes of any measurement of the spin measured along any axis are *intrinsic* to the particle. In our EPR example, if we decide to measure particle 1 along the $z$ axis and particle 2 along the $x$ axis, we can label each particle by $\ket{z,\alpha; x,\beta}$, where $\alpha,\beta = \pm\frac{\hbar}{2}$. Thus the set of different two-particle states are $\ket{z,\alpha_1;x,\beta_1}\ket{z,\alpha_2;x,\beta_2}$, Here we have suppressed lables corresponding to possible measurements along other axes, and ewe have accepted that the measurement along any axis will always yield $\pm ]frac{\hbar}{2}$.
+- *Local realism*. We demand that properties of a given particle, such as the outcomes of any measurement of the spin measured along any axis are *intrinsic* to the particle. In our EPR example, if we decide to measure particle 1 along the $z$ axis and particle 2 along the $x$ axis, we can label each particle by $\ket{z,\alpha; x,\beta}$, where $\alpha,\beta = \pm\frac{\hbar}{2}$. Thus the set of different two-particle states are $\ket{z,\alpha_1;x,\beta_1}\ket{z,\alpha_2;x,\beta_2}$, Here we have suppressed lables corresponding to possible measurements along other axes, and ewe have accepted that the measurement along any axis will always yield $\pm \frac{\hbar}{2}$.
 
 - Now quantum mechanics tells us that the outcomes of measurements have a fundamentally probabilistic character. in distinction, *Hidden variable* theories, the probabilities are governed by unknown degrees of freedom to which we assign classical probabilities that reflect our ignorance of these degrees of freedom.
+
+## Bell's ineqaulities
 
 Our question is, can we reproduce the results of quantum mechanical measurement with these rules? Bell's insight was that you cannot.
 
@@ -85,3 +89,44 @@ This setup violates the Bell inequalities. Let us assume the e=inequalities are 
 where we have used a half angle identity. Using $\sin^2\theta = 1 - \cos^2\theta$, the above inequality would requitre that $\cos^2\theta > \cos\theta$. But given our bounds on $\theta$, $0 < \cos\theta < 1$, so this inequality cannot be satisfied.
 
 It is clear that each of these probabilities can be measured, in separate experiments in which the axes are fixed. One can then test the predictions of quantum mechanics. They have been borne out in variants of this experiment. However, the test is essentially a probabilistic one. If we were going to be sticklers we could say that the community of quantum physicists have gotten supremely unlucky and the apparent violations are a matter of bad luck or Trisolarians interfering with the hidden variables or something. We will turn now to a definitive test of quantum mechanics vs. locally realistic hidden variables.
+
+## The Greenberger-Horne-Zeilinger (GHZ) experiment
+
+The experiment we have involves three spin-$\half$ particles observed by three observers Alice, Bob and Charlotte. The full state of the system is the entangled state:
+```{math}
+:label: ghz_state
+ket{\psi} = \frac{1]{\sqrt{2}}\left(\ket{z,+}_A\ket{z,+}_B\ket{z,+}_C - 
+\ket{z,-}_A\ket{z,-}_B\ket{z,-}_C\right)
+```
+Now the following three observables commute (so that they can be simultaneously diagonalized, and therefore simultaneously measured):
+```{math}
+\begin{align}
+\Sigma_1 & = \sigma^A_x\sigma^B_y\sigma^C_y\\
+\Sigma_2 & = \sigma^A_y\sigma^B_x\sigma^C_y\\
+\Sigma_3 & = \sigma^A_y\sigma^B_y\sigma^C_x
+\end{align}
+```
+Note to measure each of these requires each of Alice, Bob, and Charlotte agreeing to measure along a specified axis. You can show that $\Sigma_i ket{\psi} = \ket{\psi}$, that is, $\ket{\psi}$ is an eigenstate for all of these operators. Finally, the following observable commutes with the first three:
+```{math}
+\sigma_4 = \sigma^A_x\sigma^B_x\sigma^C_x
+```
+but $\Sigma_4\ket{\psi} = - \ket{\psi}$. Note that if we successfully prepare the GHZ state 
+
+Can this be realized in a locally realistic hidden variable theory? This happens if for every particle $A,B,C$ we can specify the results of experiments $\epsilon_{\mu\in (A,B,C), i \in (x,y)} = \pm 1$, with the probabilities for each of the $2^6$ possibilities defining the probability ensemble.
+
+Without knowing anything about the ensemble, however, we can show that a lcoally realistic hidden variable cannot reproduce the GHZ experiment applied to {eq}`ghz_state`. If they did, then the states must satisfy
+```{math}
+\begin{align}
+\eps_{A,x}\eps_{B,y}\eps_{C,y} & = 1\\
+\eps_{A,y}\eps_{B,x}\eps_{C,y} & = 1\\
+\eps_{A,y}\eps_{B,y}\eps_{C,x} & = 1
+\end{align}
+```
+However this is incompatible with $\eps_{A,x}\eps_{B,x}\eps_{C,x} = -1$. Multiply the three equations above together. We can write
+```{math}
+\begin{align}
+\eps_{A,x}\eps_{B,x}\eps_{C,x} & = \eps_{A,x}\eps_{A,y}^2 \eps_{B,x}\eps_{B,y}^2\eps_{C,x}\eps_{C,y}^2 \\
+& = (\eps_{A,x}\eps_{B,y}\eps_{C,y}) (\eps_{A,y}\eps_{B,x}\eps_{C,y}) (\eps_{A,y}\eps_{B,y}\eps_{C,x}) = 1^3 \neq -1
+\end{align}
+```
+Thus a one-shot measurement of $\Sigma_{1,2,3,4}$ on the state $\ket{\psi}$ can rule out locally realistic hidden variable theories. 

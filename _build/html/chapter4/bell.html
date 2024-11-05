@@ -327,7 +327,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -343,6 +345,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-realism-and-hidden-variables-for-epr-states">Local realism and hidden variables for EPR states</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bell-s-ineqaulities">Bell’s ineqaulities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-greenberger-horne-zeilinger-ghz-experiment">The Greenberger-Horne-Zeilinger (GHZ) experiment</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -354,7 +366,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="local-realism-vs-quantum-mechanics">
 <h1>Local Realism vs. Quantum Mechanics<a class="headerlink" href="#local-realism-vs-quantum-mechanics" title="Link to this heading">#</a></h1>
-<p>We close this chapter by working out a rewalization of John Bell’s that we can <em>test</em> quantum mechanics against a while class of models which capture the demand that there be some underlying theory which is completely local and deterministic such taht probbilities truly capture our ignorance of some microscopic degrees of freedom. These are known as ``local hidden variable theories”.</p>
+<p>We close this chapter by working out a rewalization of John Bell’s that we can <em>test</em> quantum mechanics against a while class of models which capture the demand that there be some underlying theory which is completely local and deterministic such taht probabilities truly capture our ignorance of some microscopic degrees of freedom. These are known as ``local hidden variable theories”.</p>
+<section id="local-realism-and-hidden-variables-for-epr-states">
+<h2>Local realism and hidden variables for EPR states<a class="headerlink" href="#local-realism-and-hidden-variables-for-epr-states" title="Link to this heading">#</a></h2>
 <p>It is easiest to define these with respect to an EPR experiment. Let us assume that we have two spin-<span class="math notranslate nohighlight">\(\half\)</span> particles (or alternatively two photons emitted back to back in some definite direction), such that their combined spin (equivalently polarization) states are:</p>
 <div class="math notranslate nohighlight" id="equation-spin-zero">
 <span class="eqno">(229)<a class="headerlink" href="#equation-spin-zero" title="Link to this equation">#</a></span>\[\ket{\psi} = \frac{1}{\sqrt{2}}\left(\ket{+,z}\ket{-,z} - \ket{-,z}\ket{+,z}\right)\]</div>
@@ -365,9 +379,12 @@ document.write(`
 <p>As we discussed, if the two particles are separated such that the spin state remain described as above, measurments of one spin along a given axis are perfectly correlated wth measurements of the other spin along the same axis. Note however that if the two measurements are made along <em>orthogonal</em> axes there is no such correlation. Spin with definite sign along the <span class="math notranslate nohighlight">\(z\)</span> axis will take values <span class="math notranslate nohighlight">\(\pm \frac{\hbar}{2}\)</span> along the <span class="math notranslate nohighlight">\(x\)</span> axis with <span class="math notranslate nohighlight">\(50-50\)</span> probability.</p>
 <p>The particular set of theories that we will test against quantum mechanics are <em>Locally realistic hidden variable</em> theories. Let’s define each in term.</p>
 <ul class="simple">
-<li><p><em>Local realism</em>. We demand that properties of a given particle, such as the outcomes of any measurement of the spin measured along any axis are <em>intrinsic</em> to the particle. In our EPR example, if we decide to measure particle 1 along the <span class="math notranslate nohighlight">\(z\)</span> axis and particle 2 along the <span class="math notranslate nohighlight">\(x\)</span> axis, we can label each particle by <span class="math notranslate nohighlight">\(\ket{z,\alpha; x,\beta}\)</span>, where <span class="math notranslate nohighlight">\(\alpha,\beta = \pm\frac{\hbar}{2}\)</span>. Thus the set of different two-particle states are <span class="math notranslate nohighlight">\(\ket{z,\alpha_1;x,\beta_1}\ket{z,\alpha_2;x,\beta_2}\)</span>, Here we have suppressed lables corresponding to possible measurements along other axes, and ewe have accepted that the measurement along any axis will always yield <span class="math notranslate nohighlight">\(\pm ]frac{\hbar}{2}\)</span>.</p></li>
+<li><p><em>Local realism</em>. We demand that properties of a given particle, such as the outcomes of any measurement of the spin measured along any axis are <em>intrinsic</em> to the particle. In our EPR example, if we decide to measure particle 1 along the <span class="math notranslate nohighlight">\(z\)</span> axis and particle 2 along the <span class="math notranslate nohighlight">\(x\)</span> axis, we can label each particle by <span class="math notranslate nohighlight">\(\ket{z,\alpha; x,\beta}\)</span>, where <span class="math notranslate nohighlight">\(\alpha,\beta = \pm\frac{\hbar}{2}\)</span>. Thus the set of different two-particle states are <span class="math notranslate nohighlight">\(\ket{z,\alpha_1;x,\beta_1}\ket{z,\alpha_2;x,\beta_2}\)</span>, Here we have suppressed lables corresponding to possible measurements along other axes, and ewe have accepted that the measurement along any axis will always yield <span class="math notranslate nohighlight">\(\pm \frac{\hbar}{2}\)</span>.</p></li>
 <li><p>Now quantum mechanics tells us that the outcomes of measurements have a fundamentally probabilistic character. in distinction, <em>Hidden variable</em> theories, the probabilities are governed by unknown degrees of freedom to which we assign classical probabilities that reflect our ignorance of these degrees of freedom.</p></li>
 </ul>
+</section>
+<section id="bell-s-ineqaulities">
+<h2>Bell’s ineqaulities<a class="headerlink" href="#bell-s-ineqaulities" title="Link to this heading">#</a></h2>
 <p>Our question is, can we reproduce the results of quantum mechanical measurement with these rules? Bell’s insight was that you cannot.</p>
 <p>As an example, we can consider the case that each particle is in one of the four following states with equal (<span class="math notranslate nohighlight">\(25\%\)</span>) probability:</p>
 <div class="math notranslate nohighlight">
@@ -409,6 +426,40 @@ p_3 + p_7 &amp; =  p({\hat c}_1\cdot{\vec S}_1 = \frac{\hbar}{2}; {\hat b}_2\cdo
 \[\sin^2\theta \leq \sin^2\frac{\theta}{2} + \sin^2\frac{|theta}{2} = 1 - \cos\theta\]</div>
 <p>where we have used a half angle identity. Using <span class="math notranslate nohighlight">\(\sin^2\theta = 1 - \cos^2\theta\)</span>, the above inequality would requitre that <span class="math notranslate nohighlight">\(\cos^2\theta &gt; \cos\theta\)</span>. But given our bounds on <span class="math notranslate nohighlight">\(\theta\)</span>, <span class="math notranslate nohighlight">\(0 &lt; \cos\theta &lt; 1\)</span>, so this inequality cannot be satisfied.</p>
 <p>It is clear that each of these probabilities can be measured, in separate experiments in which the axes are fixed. One can then test the predictions of quantum mechanics. They have been borne out in variants of this experiment. However, the test is essentially a probabilistic one. If we were going to be sticklers we could say that the community of quantum physicists have gotten supremely unlucky and the apparent violations are a matter of bad luck or Trisolarians interfering with the hidden variables or something. We will turn now to a definitive test of quantum mechanics vs. locally realistic hidden variables.</p>
+</section>
+<section id="the-greenberger-horne-zeilinger-ghz-experiment">
+<h2>The Greenberger-Horne-Zeilinger (GHZ) experiment<a class="headerlink" href="#the-greenberger-horne-zeilinger-ghz-experiment" title="Link to this heading">#</a></h2>
+<p>The experiment we have involves three spin-<span class="math notranslate nohighlight">\(\half\)</span> particles observed by three observers Alice, Bob and Charlotte. The full state of the system is the entangled state:</p>
+<div class="math notranslate nohighlight" id="equation-ghz-state">
+<span class="eqno">(235)<a class="headerlink" href="#equation-ghz-state" title="Link to this equation">#</a></span>\[ket{\psi} = \frac{1]{\sqrt{2}}\left(\ket{z,+}_A\ket{z,+}_B\ket{z,+}_C - 
+\ket{z,-}_A\ket{z,-}_B\ket{z,-}_C\right)\]</div>
+<p>Now the following three observables commute (so that they can be simultaneously diagonalized, and therefore simultaneously measured):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\Sigma_1 &amp; = \sigma^A_x\sigma^B_y\sigma^C_y\\
+\Sigma_2 &amp; = \sigma^A_y\sigma^B_x\sigma^C_y\\
+\Sigma_3 &amp; = \sigma^A_y\sigma^B_y\sigma^C_x
+\end{align}\end{split}\]</div>
+<p>Note to measure each of these requires each of Alice, Bob, and Charlotte agreeing to measure along a specified axis. You can show that <span class="math notranslate nohighlight">\(\Sigma_i ket{\psi} = \ket{\psi}\)</span>, that is, <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> is an eigenstate for all of these operators. Finally, the following observable commutes with the first three:</p>
+<div class="math notranslate nohighlight">
+\[\sigma_4 = \sigma^A_x\sigma^B_x\sigma^C_x\]</div>
+<p>but <span class="math notranslate nohighlight">\(\Sigma_4\ket{\psi} = - \ket{\psi}\)</span>. Note that if we successfully prepare the GHZ state</p>
+<p>Can this be realized in a locally realistic hidden variable theory? This happens if for every particle <span class="math notranslate nohighlight">\(A,B,C\)</span> we can specify the results of experiments <span class="math notranslate nohighlight">\(\epsilon_{\mu\in (A,B,C), i \in (x,y)} = \pm 1\)</span>, with the probabilities for each of the <span class="math notranslate nohighlight">\(2^6\)</span> possibilities defining the probability ensemble.</p>
+<p>Without knowing anything about the ensemble, however, we can show that a lcoally realistic hidden variable cannot reproduce the GHZ experiment applied to <a class="reference internal" href="#equation-ghz-state">(235)</a>. If they did, then the states must satisfy</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\eps_{A,x}\eps_{B,y}\eps_{C,y} &amp; = 1\\
+\eps_{A,y}\eps_{B,x}\eps_{C,y} &amp; = 1\\
+\eps_{A,y}\eps_{B,y}\eps_{C,x} &amp; = 1
+\end{align}\end{split}\]</div>
+<p>However this is incompatible with <span class="math notranslate nohighlight">\(\eps_{A,x}\eps_{B,x}\eps_{C,x} = -1\)</span>. Multiply the three equations above together. We can write</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\eps_{A,x}\eps_{B,x}\eps_{C,x} &amp; = \eps_{A,x}\eps_{A,y}^2 \eps_{B,x}\eps_{B,y}^2\eps_{C,x}\eps_{C,y}^2 \\
+&amp; = (\eps_{A,x}\eps_{B,y}\eps_{C,y}) (\eps_{A,y}\eps_{B,x}\eps_{C,y}) (\eps_{A,y}\eps_{B,y}\eps_{C,x}) = 1^3 \neq -1
+\end{align}\end{split}\]</div>
+<p>Thus a one-shot measurement of <span class="math notranslate nohighlight">\(\Sigma_{1,2,3,4}\)</span> on the state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> can rule out locally realistic hidden variable theories.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -465,6 +516,23 @@ p_3 + p_7 &amp; =  p({\hat c}_1\cdot{\vec S}_1 = \frac{\hbar}{2}; {\hat b}_2\cdo
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-realism-and-hidden-variables-for-epr-states">Local realism and hidden variables for EPR states</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bell-s-ineqaulities">Bell’s ineqaulities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-greenberger-horne-zeilinger-ghz-experiment">The Greenberger-Horne-Zeilinger (GHZ) experiment</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
