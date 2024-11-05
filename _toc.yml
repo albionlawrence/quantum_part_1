@@ -25,6 +25,7 @@ chapters:
     - file: chapter4/Spin_half
     - file: chapter4/entangled
     - file: chapter4/bell.md
+  - file: chapter5/Wave_mechanics
   - file: appendix
   - file: bibliography
 # - file: notebooks

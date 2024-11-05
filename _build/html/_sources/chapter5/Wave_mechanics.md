@@ -1,0 +1,5 @@
+# Wave mechanics
+
+So far most of our warmup exercises have involved simple spin-$\half$ systems, and collections of such systems. In modern wuantum mechanics these are of central important. However, a number of important systems involve particles moving through space (or the quantum version of that statement), and for most of us this is the context in which we first learned quantum mechanics. So we will introduce this class of problems now.
+
+There are some subtleties in such systems, owing in part to the fact that the natural Hilbert space is infinte-dimensional. In particular, natural observables (you would think) are the position and momentum of a particle. In practice, we have to be very careful as to how we assign such observables. So we will start with that issue. We will then explore compatible and incompatible measurements and introduce the notion of uncertainty principles. This was developed in particle mechanics, but is much more general; still, this is a good place to discuss the concept. Finally, we will work though some simple examples.
