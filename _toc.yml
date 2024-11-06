@@ -26,6 +26,8 @@ chapters:
     - file: chapter4/entangled
     - file: chapter4/bell.md
   - file: chapter5/Wave_mechanics
+    sections:
+    - file: chapter5/infinite_d
   - file: appendix
   - file: bibliography
 # - file: notebooks

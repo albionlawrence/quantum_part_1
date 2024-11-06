@@ -1,0 +1,41 @@
+# Particles on a line
+
+Here I am going to build up particles on a continuous line by starting wth partciles hopping between sites on a lattice. This latter picture is important for understanding electrons in a metal (especially in the "tight binding" approximation, in which they are strongly bound to the atomic sites and couple to adjacent sites only very weaky). Also, dealing with subtleties in a continuous theory by discretizing it is a time-honored method in theoretical physics.
+
+## Particles on a lattice
+
+### Position basis
+
+We will start by considering particles on a circle with radius $R$ (meaning that $x equiv x + 2\pi R$). We will model this with $N$ discrete points that the particle can live on. Let the particles be spaced by an distance $\epsilon$, so that $N\epsilon = 2\pi R$. We can build a Hilbert space for a particle on this 1d lattice by stating that the state $\ket{k}$ corresponds to a particle at site $k\in \{0,\ldots, N-1\}$. We can define these are orthonormal states so that $\brket{k}{l} = \delta_{kl}$. Finallly, we can extend these dinces so that $k + N$ is the same as site $k$ (this is reminding us that the particle lines on a circle).
+
+With this, the Hilbert space is $\CC^N$. A general state can be written as
+```{math}
+:label: lattice_state
+\ket{\psi} = \sum_k \psi_k \ket{k} \equiv \sum_k \psi(x_k) \ket{x_k}
+```
+wheew on the far right hand side we have relabeled so that
+$x_k \equiv \epsilon k$. The dual vector is
+```{math}
+:label: lattice_dual
+\bra{\psi} = \sum_k \bra{x_k} \psi^*(x_k)
+```
+and the inner product can be written as
+```{math}
+:label: lattice_ip
+\brket{\chi}{\psi} = \sum_{k,l} \bra{x_k} \chi^*(x_k) \psi(x_l) \ket{x_l} = \sum_k \chi^*(x_k) \psi(x_k)
+```
+where in the last equality we used $\brket{x_k}{x_l} = \delta_{kl}$.
+
+### Dual Fourier/momentum basis
+
+We can also write the following basis for $\CC^N$:
+```{math}
+:label: momentum_lattice
+\ket{\phi_m} = \frac{1}{\sqrt{N}} \sum{k = 0}^{N-1} e^{\frac{2\pi i m k}{N}} \ket{x_k}
+= \frac{1}{\sqrt{N}} \sum{k = 0}^{N-1} e^{\frac{i m x_k}{R}} \ket{x_k}
+```
+where $m \in \{0,2,\ldots N-1\}$. This is of the form {eq}`lattice_state` with $\psi(x)k) = \frac{1}{\sqrt{N}} e^{i m x_k/R}$. Using {eq}`lattice_ip`
+```{math}
+\brket{phi_m}{\phi_n} = \frac{1}{N} \sum_k e^{2\pi i (n-m)k/N} = \delta_{m,n}
+```
+The last equality can be argued for as follows. If $n = m$, it is clear that the answer is $1$. If $n\neq m$, we can us $
