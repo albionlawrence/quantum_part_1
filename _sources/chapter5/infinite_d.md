@@ -302,9 +302,10 @@ Since the functions we care about are no longer periodic, we can define both pos
 {\hat p}\ket{\psi} & = \ket{\frac{\hbar}{i}\frac{\del\psi}{\del x}}
 \end{align}
 ```
-While the periodicity issues no longer pertain, both of these operators can take a state out of the Hilbert space. If $\psi(x)$ dies off as $1/|x|$ for $x\to\infty$, for example, it will in general be square-integrable, but $x\psi(x)$ will not be. Similarly, if $\psi(x)$ is discontinuous, $\frac{\del \psi(x)}{\del x}$ will be infinite at the discontinuity, poroportional to a delta function, and will not be square integrable. However, if we care careful about the questions we ask, we can get sensible answers. In parrticular, no realistic measurement of either $x,p$ will be made with perfect resolution. We saw the solution for asking for the probability that $x$ lies in some interval. The same will apply to measurements of $p$. $|{\tilde\psi}(p)|^2$ will be a probability density in momentum space. The probability to find a particle in a range of momenta $[p_1,p_2]$ will be
+While the periodicity issues no longer pertain, both of these operators can take a state out of the Hilbert space. If $\psi(x)$ dies off as $1/|x|$ for $x\to\infty$, for example, it will in general be square-integrable, but $x\psi(x)$ will not be. Similarly, if $\psi(x)$ is discontinuous, $\frac{\del \psi(x)}{\del x}$ will be infinite at the discontinuity, proportional to a delta function, and will not be square integrable. More precisely, these are not *bounded operators*. 
+
+However, if we care careful about the questions we ask, we can get sensible answers. In particular, no realistic measurement of either $x,p$ will be made with perfect resolution. We saw the solution for asking for the probability that $x$ lies in some interval. The same will apply to measurements of $p$. $|{\tilde\psi}(p)|^2$ will be a probability density in momentum space. The probability to find a particle in a range of momenta $[p_1,p_2]$ will be
 ```{math}
 p = \int_{p_1}^{p_2} dp |{\tilde\psi}(p)|^2
 ```
-
-
+We have waved our hands a little in relating this, and the prior probability of finding the particle in a spatial region, to the original Born rule. In that case, pperators $A$ whose eigenstates form a discrete set could be represented as a sum over projection operators $\CP_a$ projecting onto subspaces of eigenstates of the operator with eigenvalue $a$. There is a more general *spectral theorem* that encompasses unbounded operators with continuous eigenvalues. The upshot gives us the probabilities we have discussed above for finding the particle in a finite range in position or momentum space.
