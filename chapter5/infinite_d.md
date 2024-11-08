@@ -233,7 +233,13 @@ This operator will jhave as eigenstates any wavefunction whose support is contai
 ```{math}
 \bra{\psi}\CP_{x_0,\delta}\ket{\psi} = \int_{x_0 - \frac{\delta}{2}}^{x_0 + \frac{\delta}{2}} dx |\psi(x)|^2
 ```
-This is consistent with the discussion above in which we found $|\psi(x)|^2 should be identified as a probability density.
+This is consistent with the discussion above in which we found $|\psi(x)|^2$ should be identified as a probability density.
+
+We can tie this back to the statement that every observable has a spectral representation in terms of its eignevalues, by approximating $x$ via:
+```{math}
+{\hat x} \sim \sum_{n = - \infty}^{\infty} (n\eps} \PP_{n\eps,\eps} \xrightarrow[\eps \to 0]{} \int d\CP_{\lambda} \lambda
+```
+For now I offer the last limit as a sort of shorthand. This can be precisely defined, and the fact that we can wrepresent even unbounded operators ${\hat x},{\hat p}$ as such an integral is known as the *Spectral Theorem*.
 
 On the flip side, the momentum operator defined by 
 ```{math} 

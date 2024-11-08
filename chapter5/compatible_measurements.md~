@@ -1,0 +1,9 @@
+# Compatible and incompatible measurements
+
+## Compatible measurements
+
+We say that two measurments, corresponding to two operators $A, B$, are *compatible* if we can specify the values of both in an experiment. That is, it makes sense to say that a state has an eigenvalue $a$ of $A$ and an eigenvalue $b$ of $B$. Thus we must be able to diagonalize both in the same basis. As we showed, iin Chapter 3, this is possible if and only of $[A,B] = 0$.
+
+In many cases the operators we study have degenerate spectra. In this case, the measurement of a given operator does not lead to a unique stateafter the wavefunction collapses. In this case we try to search for a *complete set of commuting observables* (CSCO); that is, operators $A_1,\ldots,A_k$ such that $[A_i,A_j] = 0$, and such that if we specify eigenvalues $A_1,\ldots,a_k$ of each of these, we uniquely specify the state.
+
+In some cases this could be a single operator (eg, an operator without degeneracy). An example in which we need several is the nonrelativistic hydrogen atom. The energy levels are highly degenerate; we split them by considering eigenvlaues of the angular momentum operators ${|vec L}^2$, $L_z$.

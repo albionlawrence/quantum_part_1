@@ -28,6 +28,7 @@ chapters:
   - file: chapter5/Wave_mechanics
     sections:
     - file: chapter5/infinite_d
+    - file: chapter5/compatible_measurements
   - file: appendix
   - file: bibliography
 # - file: notebooks
