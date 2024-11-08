@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter5/infinite_d';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="next" title="Compatible and incompatible measurements" href="compatible_measurements.html" />
     <link rel="prev" title="Wave mechanics" href="Wave_mechanics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -202,6 +202,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Wave_mechanics.html">Wave mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Particles on a line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compatible_measurements.html">Compatible and incompatible measurements</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -541,7 +542,11 @@ Since <span class="math notranslate nohighlight">\(x^N = 1\)</span>, and the den
 <p>This operator will jhave as eigenstates any wavefunction whose support is contained inetirely in the interval <span class="math notranslate nohighlight">\([x_0 - \frac{\delta}{2}, x_0 + \frac{\delta_2}]\)</span>, for which it will have eigenvalue <span class="math notranslate nohighlight">\(1\)</span>. We can thus state that the probability ta particle in a state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> is in this interval is</p>
 <div class="math notranslate nohighlight">
 \[\bra{\psi}\CP_{x_0,\delta}\ket{\psi} = \int_{x_0 - \frac{\delta}{2}}^{x_0 + \frac{\delta}{2}} dx |\psi(x)|^2\]</div>
-<p>This is consistent with the discussion above in which we found $|\psi(x)|^2 should be identified as a probability density.</p>
+<p>This is consistent with the discussion above in which we found <span class="math notranslate nohighlight">\(|\psi(x)|^2\)</span> should be identified as a probability density.</p>
+<p>We can tie this back to the statement that every observable has a spectral representation in terms of its eignevalues, by approximating <span class="math notranslate nohighlight">\(x\)</span> via:</p>
+<div class="math notranslate nohighlight">
+\[{\hat x} \sim \sum_{n = - \infty}^{\infty} (n\eps} \PP_{n\eps,\eps} \xrightarrow[\eps \to 0]{} \int d\CP_{\lambda} \lambda\]</div>
+<p>For now I offer the last limit as a sort of shorthand. This can be precisely defined, and the fact that we can wrepresent even unbounded operators <span class="math notranslate nohighlight">\({\hat x},{\hat p}\)</span> as such an integral is known as the <em>Spectral Theorem</em>.</p>
 <p>On the flip side, the momentum operator defined by</p>
 <div class="math notranslate nohighlight">
 \[{\hat p}\ket{\phi_m} = \frac{\hbar m}{R} \ket{\phi_m}\]</div>
@@ -642,11 +647,11 @@ They are no longer normalizable. Nonetheless, we can define our states in terms 
       </div>
     </a>
     <a class="right-next"
-       href="../appendix.html"
+       href="compatible_measurements.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix</p>
+        <p class="prev-next-title">Compatible and incompatible measurements</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
