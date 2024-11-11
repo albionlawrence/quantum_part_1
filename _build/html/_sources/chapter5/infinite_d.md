@@ -38,10 +38,10 @@ where in the last equality we used $\brket{x_k}{x_l} = \delta_{kl}$. This means 
 We can also write the following basis for $\CC^N$:
 ```{math}
 :label: momentum_lattice
-\ket{\phi_m} = \frac{1}{\sqrt{N}} \sum{k = 0}^{N-1} e^{\frac{2\pi i m k}{N}} \ket{x_k}
-= \frac{1}{\sqrt{N}} \sum{k = 0}^{N-1} e^{\frac{i m x_k}{R}} \ket{x_k}
+\ket{\phi_m} = \frac{1}{\sqrt{N}} \sum_{k = 0}^{N-1} e^{\frac{2\pi i m k}{N}} \ket{x_k}
+= \frac{1}{\sqrt{N}} \sum_{k = 0}^{N-1} e^{\frac{i m x_k}{R}} \ket{x_k}
 ```
-where $m \in \{0,2,\ldots N-1\}$. This is of the form {eq}`lattice_state` with $\psi(x_k) = \frac{1}{\sqrt{N}} e^{i m x_k/R} \equiv \phi_m(x_k)$. In other words, the wavefunction is a pure oscillating exponential.
+where $m \in \{0,1,2,\ldots N-1\}$. This is of the form {eq}`lattice_state` with $\psi(x_k) = \frac{1}{\sqrt{N}} e^{i m x_k/R} \equiv \phi_m(x_k)$. In other words, the wavefunction is a pure oscillating exponential.
 
 The states $\ket{\phi_m}$ are orthonormal. Using {eq}`lattice_ip`
 ```{math}
@@ -235,12 +235,6 @@ This operator will jhave as eigenstates any wavefunction whose support is contai
 ```
 This is consistent with the discussion above in which we found $|\psi(x)|^2$ should be identified as a probability density.
 
-We can tie this back to the statement that every observable has a spectral representation in terms of its eignevalues, by approximating $x$ via:
-```{math}
-{\hat x} \sim \sum_{n = - \infty}^{\infty} (n\eps} \PP_{n\eps,\eps} \xrightarrow[\eps \to 0]{} \int d\CP_{\lambda} \lambda
-```
-For now I offer the last limit as a sort of shorthand. This can be precisely defined, and the fact that we can wrepresent even unbounded operators ${\hat x},{\hat p}$ as such an integral is known as the *Spectral Theorem*.
-
 On the flip side, the momentum operator defined by 
 ```{math} 
 {\hat p}\ket{\phi_m} = \frac{\hbar m}{R} \ket{\phi_m}
@@ -315,3 +309,9 @@ However, if we care careful about the questions we ask, we can get sensible answ
 p = \int_{p_1}^{p_2} dp |{\tilde\psi}(p)|^2
 ```
 We have waved our hands a little in relating this, and the prior probability of finding the particle in a spatial region, to the original Born rule. In that case, pperators $A$ whose eigenstates form a discrete set could be represented as a sum over projection operators $\CP_a$ projecting onto subspaces of eigenstates of the operator with eigenvalue $a$. There is a more general *spectral theorem* that encompasses unbounded operators with continuous eigenvalues. The upshot gives us the probabilities we have discussed above for finding the particle in a finite range in position or momentum space.
+
+We close by noting that on the line, we can approximate $x$ via:
+```{math}
+{\hat x} \sim \sum_{n = - \infty}^{\infty} (n\eps) \CP_{n\eps,\eps} \xrightarrow[\eps \to 0]{} \int d\CP_{\lambda} \lambda
+```
+For now I offer the last limit as a sort of shorthand. This can be precisely defined, and the fact that we can represent even unbounded operators ${\hat x},{\hat p}$ via such an integral is known as the *Spectral Theorem*.

@@ -29,6 +29,7 @@ chapters:
     sections:
     - file: chapter5/infinite_d
     - file: chapter5/compatible_measurements
+    - file: chapter5/Hamiltonians
   - file: appendix
   - file: bibliography
 # - file: notebooks

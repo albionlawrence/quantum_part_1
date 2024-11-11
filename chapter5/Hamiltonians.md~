@@ -1,0 +1,18 @@
+# Designing Hamiltonians
+
+## Free particle on a lattice
+
+Let us start with a particle on an $N$-site lattice with periodic boundary conditions. We assume that there is a binding energy $E = - |E|$ at each site, and a hopping rate $A/\hbar$ between *adjacent* sites. Since $A$ has units of energy, a natural Hamiltonian is
+```{math}
+:lable: hopping_ham
+H_{ij} = E \delta_{ij} - A \delta_{i,i+1} - A\delta_{i,i-1}
+```
+where $i \equiv i \pm N$. In matrix form this is
+```{nath}
+H = \begin{pmatrix} E & -1 & - & \ldots & 0 \\
+-A & E & -A & \ldots & 0 \\
+0 & -A & E & \ldots & 0 \\
+\hdots & \hdots & \hdots & \hdots & \hdots \\
+\hdots & \hdots & \hdots & \hdots & -A \\
+0 & 0 & \ldots & -A & E \end{pmatrix}
+```

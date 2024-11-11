@@ -203,6 +203,7 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Wave_mechanics.html">Wave mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Particles on a line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatible_measurements.html">Compatible and incompatible measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hamiltonians.html">Designing Hamiltonians</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -404,9 +405,9 @@ document.write(`
 <h3>Dual Fourier/momentum basis<a class="headerlink" href="#dual-fourier-momentum-basis" title="Link to this heading">#</a></h3>
 <p>We can also write the following basis for <span class="math notranslate nohighlight">\(\CC^N\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-momentum-lattice">
-<span class="eqno">(240)<a class="headerlink" href="#equation-momentum-lattice" title="Link to this equation">#</a></span>\[\ket{\phi_m} = \frac{1}{\sqrt{N}} \sum{k = 0}^{N-1} e^{\frac{2\pi i m k}{N}} \ket{x_k}
-= \frac{1}{\sqrt{N}} \sum{k = 0}^{N-1} e^{\frac{i m x_k}{R}} \ket{x_k}\]</div>
-<p>where <span class="math notranslate nohighlight">\(m \in \{0,2,\ldots N-1\}\)</span>. This is of the form <a class="reference internal" href="#equation-lattice-state">(236)</a> with <span class="math notranslate nohighlight">\(\psi(x_k) = \frac{1}{\sqrt{N}} e^{i m x_k/R} \equiv \phi_m(x_k)\)</span>. In other words, the wavefunction is a pure oscillating exponential.</p>
+<span class="eqno">(240)<a class="headerlink" href="#equation-momentum-lattice" title="Link to this equation">#</a></span>\[\ket{\phi_m} = \frac{1}{\sqrt{N}} \sum_{k = 0}^{N-1} e^{\frac{2\pi i m k}{N}} \ket{x_k}
+= \frac{1}{\sqrt{N}} \sum_{k = 0}^{N-1} e^{\frac{i m x_k}{R}} \ket{x_k}\]</div>
+<p>where <span class="math notranslate nohighlight">\(m \in \{0,1,2,\ldots N-1\}\)</span>. This is of the form <a class="reference internal" href="#equation-lattice-state">(236)</a> with <span class="math notranslate nohighlight">\(\psi(x_k) = \frac{1}{\sqrt{N}} e^{i m x_k/R} \equiv \phi_m(x_k)\)</span>. In other words, the wavefunction is a pure oscillating exponential.</p>
 <p>The states <span class="math notranslate nohighlight">\(\ket{\phi_m}\)</span> are orthonormal. Using <a class="reference internal" href="#equation-lattice-ip">(238)</a></p>
 <div class="math notranslate nohighlight" id="equation-mom-ortho">
 <span class="eqno">(241)<a class="headerlink" href="#equation-mom-ortho" title="Link to this equation">#</a></span>\[\brket{phi_m}{\phi_n} = \frac{1}{N} \sum_k e^{2\pi i (n-m)k/N} = \delta_{m,n}\]</div>
@@ -543,10 +544,6 @@ Since <span class="math notranslate nohighlight">\(x^N = 1\)</span>, and the den
 <div class="math notranslate nohighlight">
 \[\bra{\psi}\CP_{x_0,\delta}\ket{\psi} = \int_{x_0 - \frac{\delta}{2}}^{x_0 + \frac{\delta}{2}} dx |\psi(x)|^2\]</div>
 <p>This is consistent with the discussion above in which we found <span class="math notranslate nohighlight">\(|\psi(x)|^2\)</span> should be identified as a probability density.</p>
-<p>We can tie this back to the statement that every observable has a spectral representation in terms of its eignevalues, by approximating <span class="math notranslate nohighlight">\(x\)</span> via:</p>
-<div class="math notranslate nohighlight">
-\[{\hat x} \sim \sum_{n = - \infty}^{\infty} (n\eps} \PP_{n\eps,\eps} \xrightarrow[\eps \to 0]{} \int d\CP_{\lambda} \lambda\]</div>
-<p>For now I offer the last limit as a sort of shorthand. This can be precisely defined, and the fact that we can wrepresent even unbounded operators <span class="math notranslate nohighlight">\({\hat x},{\hat p}\)</span> as such an integral is known as the <em>Spectral Theorem</em>.</p>
 <p>On the flip side, the momentum operator defined by</p>
 <div class="math notranslate nohighlight">
 \[{\hat p}\ket{\phi_m} = \frac{\hbar m}{R} \ket{\phi_m}\]</div>
@@ -603,6 +600,10 @@ They are no longer normalizable. Nonetheless, we can define our states in terms 
 <div class="math notranslate nohighlight">
 \[p = \int_{p_1}^{p_2} dp |{\tilde\psi}(p)|^2\]</div>
 <p>We have waved our hands a little in relating this, and the prior probability of finding the particle in a spatial region, to the original Born rule. In that case, pperators <span class="math notranslate nohighlight">\(A\)</span> whose eigenstates form a discrete set could be represented as a sum over projection operators <span class="math notranslate nohighlight">\(\CP_a\)</span> projecting onto subspaces of eigenstates of the operator with eigenvalue <span class="math notranslate nohighlight">\(a\)</span>. There is a more general <em>spectral theorem</em> that encompasses unbounded operators with continuous eigenvalues. The upshot gives us the probabilities we have discussed above for finding the particle in a finite range in position or momentum space.</p>
+<p>We close by noting that on the line, we can approximate <span class="math notranslate nohighlight">\(x\)</span> via:</p>
+<div class="math notranslate nohighlight">
+\[{\hat x} \sim \sum_{n = - \infty}^{\infty} (n\eps) \CP_{n\eps,\eps} \xrightarrow[\eps \to 0]{} \int d\CP_{\lambda} \lambda\]</div>
+<p>For now I offer the last limit as a sort of shorthand. This can be precisely defined, and the fact that we can represent even unbounded operators <span class="math notranslate nohighlight">\({\hat x},{\hat p}\)</span> via such an integral is known as the <em>Spectral Theorem</em>.</p>
 </section>
 </section>
 </section>

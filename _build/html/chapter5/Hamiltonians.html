@@ -1,0 +1,625 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Designing Hamiltonians &#8212; Physics 162a</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter5/Hamiltonians';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="Compatible and incompatible measurements" href="compatible_measurements.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dogs_quantum.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/dogs_quantum.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Physics 162a <br /> Prof. Albion Lawrence <br />  Brandeis University</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Newton.html">Newtonian mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Lagrange.html">Lagrangian Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Constraints.html">Constrained Lagrangian Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Symmetries.html">Symmetries and conservation laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Hamilton.html">Hamiltonian Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Intro_quantum.html">Introduction to quantum mechanics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/Intro_linear_algebra.html">Linear algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Vector_spaces.html">Vector spaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Linear_operators.html">Linear operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Adjoint.html">Adjoints and inner products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Operator_spectra.html">Spectra of Hermitian and Unitary Operators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter4/Quantum_rules.html">The Rules of Quantum Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/Axioms.html">The Axioms of Quantum Mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/Spin_half.html">Example: spin-1/2 particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/entangled.html">Entangled states and density matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/bell.html">Local Realism vs. Quantum Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Wave_mechanics.html">Wave mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="infinite_d.html">Particles on a line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compatible_measurements.html">Compatible and incompatible measurements</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Designing Hamiltonians</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter5/Hamiltonians.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Designing Hamiltonians</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-particle-on-a-lattice">Free particle on a lattice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ehrenfest-s-theorem">Ehrenfest’s theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-method-for-choosing-a-hamiltonian">Standard method for choosing a Hamiltonian</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schroedinger-wave-equation">The Schroedinger wave equation</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="designing-hamiltonians">
+<h1>Designing Hamiltonians<a class="headerlink" href="#designing-hamiltonians" title="Link to this heading">#</a></h1>
+<section id="free-particle-on-a-lattice">
+<h2>Free particle on a lattice<a class="headerlink" href="#free-particle-on-a-lattice" title="Link to this heading">#</a></h2>
+<p>Let us start with a particle on an <span class="math notranslate nohighlight">\(N\)</span>-site lattice with periodic boundary conditions. We assume that there is a binding energy <span class="math notranslate nohighlight">\(E = - |E|\)</span> at each site, and a hopping rate <span class="math notranslate nohighlight">\(A/\hbar\)</span> between <em>adjacent</em> sites. Since <span class="math notranslate nohighlight">\(A\)</span> has units of energy, a natural Hamiltonian is</p>
+<div class="math notranslate nohighlight">
+\[H_{ij} = E \delta_{ij} - A \delta_{i,i+1} - A\delta_{i,i-1}\]</div>
+<p>where <span class="math notranslate nohighlight">\(i \equiv i \pm N\)</span>. In matrix form this is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H = \begin{pmatrix} E &amp; -A &amp; 0 &amp; \ldots &amp; 0 \\
+-A &amp; E &amp; -A &amp; \ldots &amp; 0 \\
+0 &amp; -A &amp; E &amp; \ldots &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+\vdots &amp; \vdots &amp; \vdots &amp; E &amp; -A \\
+0 &amp; 0 &amp; \ldots &amp; -A &amp; E \end{pmatrix}\end{split}\]</div>
+<p>How does this act on wavefunctions? In the basis of position eigenstates,
+<span class="math notranslate nohighlight">\(\ket{\psi} = \sum_{k=0}^{N-1}\psi(x_k)\ket{x_k}\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[H\ket{\psi} = \sum_{k=0}^{N-1} \left(E\psi(x_k) - A (\psi(x_{k+1}) + \psi(x_{k-1}))\right)\ket{x_k}\]</div>
+<p>Writing</p>
+<div class="math notranslate nohighlight">
+\[	\psi(x_k) = \frac{1}{\sqrt{N}} \sum_{m=0}^{N-1} e^{2\pi i m k/N} {\tilde\psi}(m)\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\ket{x_k} = \frac{1}{\sqrt{N}} \sum_m e^{-2\pi i m k/N}\ket{\phi_m}\]</div>
+<p>we can show after some work that</p>
+<div class="math notranslate nohighlight">
+\[H\ket{\psi} = \sum_m \left(E - 2 A \cos \frac{2\pi m}{N}\right) {\tilde \psi}(m)\ket{\phi_m}\]</div>
+<p>Now let us assume we are looking near the continuum limit. We expect that the wavefunction should involve wavelengths that are much larger than the lattice spacing, so that the lattice becomes irrelevant. In this case we expect that only terms in the sum with <span class="math notranslate nohighlight">\(m \ll N\)</span> really contribute, as we can approximate it by</p>
+<div class="math notranslate nohighlight">
+\[H\ket{\psi} = \sum_m \left(E - 2A + A\frac{(2\pi m)^2}{N^2}\right) {\tilde \phi}(m) \ket{\phi_m}\]</div>
+<p>Defining <span class="math notranslate nohighlight">\(m = R p/\hbar\)</span>, we can rewrite</p>
+<div class="math notranslate nohighlight">
+\[H \sim (E - 2A) + A\left(\frac{\eps}{\hbar}\right)^2 {\hat p}^2 + \ldots\]</div>
+<p>The constant term leads to a constant phase <span class="math notranslate nohighlight">\(e^{-i (E = 2A) t/\hbar}\)</span> in front of all states; this contributes nothing to any measureable quantity, and we can ignore it. For the second term we can define <span class="math notranslate nohighlight">\(m = \half \frac{\hbar^2}{A \eps^2}\)</span>, so that</p>
+<div class="math notranslate nohighlight">
+\[H \sim \frac{{\hat p}^2}{2m}\]</div>
+<p>This looks very much like the Hamiltonian of a free particle, if this were classical mechanics!</p>
+<p>We could also assume a varying binding energy <span class="math notranslate nohighlight">\(E + V_k\)</span> at site <span class="math notranslate nohighlight">\(k\)</span>; thus if we define <span class="math notranslate nohighlight">\(V_k \equiv V(x_k)\)</span> we would add to <span class="math notranslate nohighlight">\(H\ket{\psi}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\sum_{k=0}^{N-1} V(x_k) \psi(x_k) \ket{\psi} = V({\hat x}) \ket{\psi}\]</div>
+<p>On the circle <span class="math notranslate nohighlight">\({\hat x}\)</span> does not make sense; however, if <span class="math notranslate nohighlight">\(V\)</span> is a periodic function, <span class="math notranslate nohighlight">\(V({\hat x})\)</span> can make sense. The resulting Hamiltonian is</p>
+<div class="math notranslate nohighlight" id="equation-1d-ham">
+<span class="eqno">(262)<a class="headerlink" href="#equation-1d-ham" title="Link to this equation">#</a></span>\[H = \frac{{\hat p}^2}{2m} V V({\hat x})\]</div>
+<p>Note that here w have still assumed that the hopping rate <em>between</em> sites does not change. We are not choosing the most general Hamiltonian.</p>
+<p>Finally, we can assume that <span class="math notranslate nohighlight">\(H\)</span> takes this form even on the continuum line, at which point there is no periodicity restriction on <span class="math notranslate nohighlight">\(V\)</span>.</p>
+</section>
+<section id="ehrenfest-s-theorem">
+<h2>Ehrenfest’s theorem<a class="headerlink" href="#ehrenfest-s-theorem" title="Link to this heading">#</a></h2>
+<p>The Hamiltonian <a class="reference internal" href="#equation-1d-ham">(262)</a> looks suspiciously like the Hamiltonian for a relativistic particle in a potential, with <span class="math notranslate nohighlight">\({\hat p}\)</span> taking the place of momentum. This is one reason we identify <span class="math notranslate nohighlight">\({\hat p}\)</span> with the momentum. To go further we wil consider how expectation values of <span class="math notranslate nohighlight">\({\hat x}\)</span>, <span class="math notranslate nohighlight">\({\hat p}\)</span> change with time. Now recall that when we take expectation values,</p>
+<div class="math notranslate nohighlight">
+\[\vev{A} = \bra{\psi(x_0)} A_H(t) \ket{\psi(x_0)} = \bra{\psi(t)} A_S \ket{\psi(t)}\]</div>
+<p>where the subscripts <span class="math notranslate nohighlight">\(H,S\)</span> refer to the Schr”odinger and Heisenberg picture, respectively. Let us work in the former. Now</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\left(\frac{{\hat p}^2}{2m}\right)_H &amp; = U^{\dagger} \frac{{\hat p}^2}{2m} U\\
+&amp; = \frac{1}{2m} U^{\dagger} {\hat p} U U^{\dagger} {\hat p} U \\
+&amp; = \frac{{\hat p}_H^2}{2m} 
+\end{align}\end{split}\]</div>
+<p>Similarly we can show that <span class="math notranslate nohighlight">\((V({\hat x})_H = V({\hat x}_H)\)</span> (assuming <span class="math notranslate nohighlight">\(V\)</span> can be expressed in a power series in <span class="math notranslate nohighlight">\({\hat x}\)</span>. Using <a class="reference internal" href="../chapter4/Axioms.html#equation-heisenberg-eom">(205)</a> we have</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{d t} x_H = \frac{1}{i\hbar} [x_H, H]\]</div>
+<p>Note the similarity to Hamilton’s equations in Poisson bracket form, if we take <span class="math notranslate nohighlight">\([A,B]/i\hbar \to \{A,B\}\)</span>. To compute this we note that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}[{\hat x}_H,{\hat p}_H] &amp; = U^{\dagger} {\hat x} U U^{\dagger} {\hat p} U - ({\hat x} \leftrightarrow {\hat p})\\
+&amp; = U^{\dagger}[{\hat x},{\hat p}] U = U^{\dagger} (i\hbar) U = i\hbar\end{split}\]</div>
+<p>Thus we can show that</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt} {\hat x}_H(t) = \frac{1}{i\hbar} [{\hat x}_H, \frac{{\hat p}^2}{2m}] = \frac{{\hat p}_H}{m}\]</div>
+<p>Similarly,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt} p_H = \frac{1}{i\hbar} [p_H,V] = - V'({\hat x})\]</div>
+<p>The Heisenberg equations of motion have the identical formal structure as the classical equations of motion! Note that if the potential <span class="math notranslate nohighlight">\(V = 0\)</span>, we have translation invariance, and <span class="math notranslate nohighlight">\(\frac{d}{dt} {\hat p}_H = 0\)</span>, that is, momentum seems to be consserved (we will see down the line that the relation between symetries and conserved quantities holds in quantum mechanics as well as classical mechanics).</p>
+<p>We can insert these into expectation values, for which it does not matter whether we write them in the Schroedinger or Heisenberg picture.</p>
+<p>These are almost the classical equations of motion, and comprise <em>Ehrenfest’s theorem</em>. Note however that in general, <span class="math notranslate nohighlight">\(\vev{V(x)} \neq V({\vev x})\)</span>, unless <span class="math notranslate nohighlight">\(V\)</span> is quadratic and thus <span class="math notranslate nohighlight">\(V'\)</span> linear. This fact is an important difference between classical and quantum mechanics. They are only formally the same if <span class="math notranslate nohighlight">\(V\)</span> is quadratic. To see this, consider the case that <span class="math notranslate nohighlight">\(V(x)\)</span> can be expanded in a power series about some mean <span class="math notranslate nohighlight">\(x_0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[V(x) = V(x_0) + ({\hat x} - x_0) V'(v_0) + \half({\hat x} - x_0)^2 V''(x_0) + \frac{1}{3!} ({\hat x} - x_0)^3 + \ldots\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt} \vev{{\hat p}} = - V'(x_0) - (\vev{{\hat x}} - x_0) V''(x_0) - \half(\vev{{\hat x}^2}  - 2 \vev{{\hat x}}x_0 + x_0^2)V'''(x_0) + \ldots\]</div>
+<p>But in general <span class="math notranslate nohighlight">\(\vev{{\hat x}^2} \neq \vev{{\hat x}}^2\)</span>. A good example would be the Gaussian wavefunction we have described above:</p>
+<div class="math notranslate nohighlight">
+\[\psi(x) = \frac{1}{(2\pi \sigma^2)^{1/4}} e^{-x^2/4\sigma^2}\]</div>
+<p>here <span class="math notranslate nohighlight">\(\vev{{\hat x}} = 0\)</span>, and <span class="math notranslate nohighlight">\(\vev{{\hat x}^2} = \sigma^2\)</span>. We could think of these additional terms as a kind of “quantum force” coming from the fact that the Gaussian feels the curvature of the potential near <span class="math notranslate nohighlight">\(\vev{{\hat x}}\)</span>.</p>
+</section>
+<section id="standard-method-for-choosing-a-hamiltonian">
+<h2>Standard method for choosing a Hamiltonian<a class="headerlink" href="#standard-method-for-choosing-a-hamiltonian" title="Link to this heading">#</a></h2>
+<p>The textbook procedure for constructing a Hamiltonian for particles in a potential is to start with a classical Hamiltonian <span class="math notranslate nohighlight">\(H(p_i,x^i)\)</span>, and promote the position and momentum variables to operators (note here I have passed to the higher-diensional case). The basic reason for doing this is that although quantum mechanics is a microscopic theory and we might think the macroscopic world givesno guide, Bohr’s <em>correspondence principle</em> sensibly demands that the quantum theory should approximate that of the classical theory in some limit which is often denoted by “small <span class="math notranslate nohighlight">\(\hbar\)</span>”. Now we have to be careful of what we mean by this since <span class="math notranslate nohighlight">\(\hbar\)</span> is a dimensionful quantity - that is, we have to compare <span class="math notranslate nohighlight">\(\hbar\)</span> to some other scales in the problem with the dimension of “action” (<span class="math notranslate nohighlight">\((energy)\times(time)\)</span>). How it appears will depend on the problem at hand. For now we will just say that in the appropriately taken limit, we can often treat <span class="math notranslate nohighlight">\(\vev{{\hat n}^n} \sim \vev{{\hat x}}^n\)</span>.</p>
+<p>Once we do this, Ehrenfests theorem basically reproduces Hamilton’s equations. This follows the fact that the structure of teh Heisenberg relations <a class="reference internal" href="../chapter4/Axioms.html#equation-heisenberg-eom">(205)</a> is almost idential to Hamilton’s equations in Poisson bracket form; the factor of <span class="math notranslate nohighlight">\(\hbar\)</span> is compensated by the same factor in the canonical comutation relations <span class="math notranslate nohighlight">\([{\hat x}^i, {\hat p}_j] = i\hbar\delta_{ij}\)</span>.</p>
+<p>One place you have to start to be careful is when the classical Hamiltonian has tems which are products of <span class="math notranslate nohighlight">\(x, p\)</span>, since these do not commute. The classic example is that of particles in a magnetic field <span class="math notranslate nohighlight">\({\vec B} = {\vec\nabla}\times{\vec A}({\vec x})\)</span>. The classical Hamiltonian is</p>
+<div class="math notranslate nohighlight" id="equation-mag-field-ham">
+<span class="eqno">(263)<a class="headerlink" href="#equation-mag-field-ham" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+H &amp; = \frac{1}{2m} \sum_i \left(p_i - \frac{e}{c} A_i({\vec x})\right)^2\\
+&amp; = \frac{1}{2m} \left({\vec p}^2 - \frac{e}{c} ({\vec p} \cdot{\vec A} + {\vec A}\cdot{\vec p}) + \frac{e^2}{c^2} {\vec A}^2\right)
+\end{align}\end{split}\]</div>
+<p>Classically the middle two terms could be combined to <span class="math notranslate nohighlight">\(- \frac{e}{m c} {\vec A}\cdot{\vec p}\)</span>. However, when we promote this to a quantum mechanical theory we need to remember that <span class="math notranslate nohighlight">\({\hat x}^i,{\hat{p}_j\)</span> do not in general commute. Then the ordering matters. The ordering presented in <a class="reference internal" href="#equation-mag-field-ham">(263)</a> gives us a Hermitian operator, as demanded by the rules of quantum mechanics. In general, these kinds of ordering issues represent an ambiguity in passing from classical to quantum mechanics. This shouldn’t be too surprising; classical mechanics emerges as a limit of quantum mechanics and so there is missing physics.</p>
+<section id="the-schroedinger-wave-equation">
+<h3>The Schroedinger wave equation<a class="headerlink" href="#the-schroedinger-wave-equation" title="Link to this heading">#</a></h3>
+<p>We have to date discussed quantum mechanics in terms of abstract vector spaces, including the space of functions. In the case of particles moving in space, we have argued that this vector space is the vector space of square-integrable functions. In the case of particles in <span class="math notranslate nohighlight">\(d\)</span> dimensions this is <span class="math notranslate nohighlight">\(L^2(\CR^d)\)</span>, that is, complex functions on <span class="math notranslate nohighlight">\(\CR^d\)</span> which satisfy</p>
+<div class="math notranslate nohighlight">
+\[\int d^d x |\psi({\vec x})|^2 &lt; \infty\]</div>
+<p>In general we expect that we can write the dynamics of the states in terms of the function <span class="math notranslate nohighlight">\(\psi\)</span>. First, since any state at any time can be represented by a complex function <span class="math notranslate nohighlight">\(\psi\)</span>, we can write it as <span class="math notranslate nohighlight">\(\ket{\psi(x,t)}\)</span> .For the Hamiltonians such as</p>
+<div class="math notranslate nohighlight" id="equation-3d-ham">
+<span class="eqno">(264)<a class="headerlink" href="#equation-3d-ham" title="Link to this equation">#</a></span>\[H = \frac{{\hat{\vec p}}^2}{2m} + V({\vec x})\]</div>
+<p>or <a class="reference internal" href="#equation-mag-field-ham">(263)</a>, the quantum dynamics can be easily written as local partial differential equations for <span class="math notranslate nohighlight">\(\psi(x,t)\)</span>. Using the actions</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+{\hat p}_i \ket{\psi({\vec x},t)} &amp; = \ket{\frac{\hbar}{i} \frac{\del}{\del x^i} \psi(x,t)}\\
+{\hat x}^i \ket{\psi} &amp; = \ket{x^i \psi({\vec x},t)}\\
+\frac{\del}{\del t} \ket{\psi} &amp; = \ket{\frac{\del}{\del t} \ket{\psi}}
+\end{align}\end{split}\]</div>
+<p>This last can be shown via representing the derivative as the limit of a difference between <span class="math notranslate nohighlight">\(\psi(x,t+\eps) - \psi(t)\)</span>, and using the linearity of quantum mechanics which means that</p>
+<div class="math notranslate nohighlight">
+\[\ket{\psi(t+\eps)} - \ket{\psi(t)} = \ket{\psi(t+\eps) - \psi(t)}\]</div>
+<p>The upshot of this is that the time-dependent Schrodinger equation can be written as</p>
+<div class="math notranslate nohighlight" id="equation-3d-wave-eqn">
+<span class="eqno">(265)<a class="headerlink" href="#equation-3d-wave-eqn" title="Link to this equation">#</a></span>\[- \frac{\hbar^2}{2m} {\vec\nabla}^2 \psi({\vec x}, t) + V({\vec x}) \psi({\vec x},t) = i\hbar \frac{\del}{\del t} \psi({\vec x}, t)\]</div>
+<p>Relatedly, the time-<em>independent</em> Schrodinger equation for energy eigenstates becomes</p>
+<div class="math notranslate nohighlight">
+\[- \frac{\hbar^2}{2m} {\vec\nabla}^2 \psi({\vec x}, t) + V({\vec x}) \psi({\vec x},t) = E \psi({\vec x}, t)\]</div>
+<p>Practically speaking, this is the form we work with for particles moving in space – for the simple harmonic oscillator, or particles in a magnetic field (eg in the quantum hall systems), the hydrogen atom (ignoring spin), and so on. In the end, though, we should remember we are working with a vector space, and that the Schrodinger equation remains a linear equation.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="compatible_measurements.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Compatible and incompatible measurements</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendix.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-particle-on-a-lattice">Free particle on a lattice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ehrenfest-s-theorem">Ehrenfest’s theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-method-for-choosing-a-hamiltonian">Standard method for choosing a Hamiltonian</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schroedinger-wave-equation">The Schroedinger wave equation</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Albion Lawrence
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
