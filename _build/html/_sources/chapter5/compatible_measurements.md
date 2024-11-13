@@ -79,7 +79,8 @@ As a simple example, consider measuring $S_x, S_y$ in a spin-$\half$ system. Her
 
 ### Example: particle on a line
 
-The classic example is the psotion-momentum uncertainty principle. As we have shown, $[{\hat x},{\hat p}] = i\hbar$. The *Heisenberg Uncertainty Principle* is:
+The classic example is the psotion-momentum uncertainty principle. As we have sh
+own, $[{\hat x},{\hat p}] = i\hbar$. The *Heisenberg Uncertainty Principle* is:
 ```{math}
 (\Delta x)(\Delta p) \geq \frac{\hbar}{2}
 ```

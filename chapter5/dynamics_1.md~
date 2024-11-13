@@ -1,0 +1,21 @@
+# Dynamics I
+
+Before continuing to specific systems, we want to make a couple general comments on dynamics.
+
+## Energy-time uncertainty
+
+The position-momentum uncertainty principle is often complemented with an energy-time uncertainty principle:
+```{math}
+:label: energy-time-unc
+\DeltaE \delta t \geq \frac{\hbar}{2}
+```
+This could be argued for, for example, by noting that the energy is a component of a four-vector for which the spatial momenta are also components, $p^{\mu} = (E/c, {\vec p})$, and similarly for time and space: $x^{\mu} = (ct, {\vec x})$. But that isn't the strongest argument, and at any rate we are dealing with non-relativistic theories. For starters, in this case $t$ is a parameter not an operator. 
+
+Another handwaving argument is that if we measure a system over a finite time $\Delta t$, the measurement process itself violates time translation invariance. In quantum mechanics as well as in classical mechanics, the conservation of energy follows from this invariance; thus in a measurement $E$ is no longer conserved.
+
+But we can make a more precise statement that gives some definition of $\Delta t$. Let $H$ be the Hamiltonian and $A$ some Hermitian operator. We have already shown that
+```{math}
+:label: et-precise
+\begin{align}
+(\Delta H)^2 (\Delta A)^2 & \geq \frac{1}{4} \Big|\bra{\psi} [H,A]\ket{\psi}\Big|^2\\
+& = \frac{1}{4} \Big| \bra{\psi}\frac{\del A}{\del t}\ket{\psi}\Big|^2 

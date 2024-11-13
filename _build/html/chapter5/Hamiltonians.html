@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter5/Hamiltonians';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="next" title="Dynamics I" href="dynamics_1.html" />
     <link rel="prev" title="Compatible and incompatible measurements" href="compatible_measurements.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -204,6 +204,7 @@
 <li class="toctree-l2"><a class="reference internal" href="infinite_d.html">Particles on a line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatible_measurements.html">Compatible and incompatible measurements</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Designing Hamiltonians</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamics_1.html">Dynamics I</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -358,10 +359,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-particle-on-a-lattice">Free particle on a lattice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ehrenfest-s-theorem">Ehrenfest’s theorem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-method-for-choosing-a-hamiltonian">Standard method for choosing a Hamiltonian</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schroedinger-wave-equation">The Schroedinger wave equation</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-method-for-choosing-a-hamiltonian">Standard method for choosing a Hamiltonian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schroedinger-wave-equation">The Schroedinger wave equation</a></li>
 </ul>
             </nav>
         </div>
@@ -416,7 +415,7 @@ document.write(`
 \[\sum_{k=0}^{N-1} V(x_k) \psi(x_k) \ket{\psi} = V({\hat x}) \ket{\psi}\]</div>
 <p>On the circle <span class="math notranslate nohighlight">\({\hat x}\)</span> does not make sense; however, if <span class="math notranslate nohighlight">\(V\)</span> is a periodic function, <span class="math notranslate nohighlight">\(V({\hat x})\)</span> can make sense. The resulting Hamiltonian is</p>
 <div class="math notranslate nohighlight" id="equation-1d-ham">
-<span class="eqno">(262)<a class="headerlink" href="#equation-1d-ham" title="Link to this equation">#</a></span>\[H = \frac{{\hat p}^2}{2m} V V({\hat x})\]</div>
+<span class="eqno">(262)<a class="headerlink" href="#equation-1d-ham" title="Link to this equation">#</a></span>\[H = \frac{{\hat p}^2}{2m} + V({\hat x})\]</div>
 <p>Note that here w have still assumed that the hopping rate <em>between</em> sites does not change. We are not choosing the most general Hamiltonian.</p>
 <p>Finally, we can assume that <span class="math notranslate nohighlight">\(H\)</span> takes this form even on the continuum line, at which point there is no periodicity restriction on <span class="math notranslate nohighlight">\(V\)</span>.</p>
 </section>
@@ -460,7 +459,7 @@ document.write(`
 </section>
 <section id="standard-method-for-choosing-a-hamiltonian">
 <h2>Standard method for choosing a Hamiltonian<a class="headerlink" href="#standard-method-for-choosing-a-hamiltonian" title="Link to this heading">#</a></h2>
-<p>The textbook procedure for constructing a Hamiltonian for particles in a potential is to start with a classical Hamiltonian <span class="math notranslate nohighlight">\(H(p_i,x^i)\)</span>, and promote the position and momentum variables to operators (note here I have passed to the higher-diensional case). The basic reason for doing this is that although quantum mechanics is a microscopic theory and we might think the macroscopic world givesno guide, Bohr’s <em>correspondence principle</em> sensibly demands that the quantum theory should approximate that of the classical theory in some limit which is often denoted by “small <span class="math notranslate nohighlight">\(\hbar\)</span>”. Now we have to be careful of what we mean by this since <span class="math notranslate nohighlight">\(\hbar\)</span> is a dimensionful quantity - that is, we have to compare <span class="math notranslate nohighlight">\(\hbar\)</span> to some other scales in the problem with the dimension of “action” (<span class="math notranslate nohighlight">\((energy)\times(time)\)</span>). How it appears will depend on the problem at hand. For now we will just say that in the appropriately taken limit, we can often treat <span class="math notranslate nohighlight">\(\vev{{\hat n}^n} \sim \vev{{\hat x}}^n\)</span>.</p>
+<p>The textbook procedure for constructing a Hamiltonian for particles in a potential is to start with a classical Hamiltonian <span class="math notranslate nohighlight">\(H(p_i,x^i)\)</span>, and promote the position and momentum variables to operators (note here I have passed to the higher-diensional case). The basic reason for doing this is that although quantum mechanics is a microscopic theory and we might think the macroscopic world givesno guide, Bohr’s <em>correspondence principle</em> sensibly demands that the quantum theory should approximate that of the classical theory in some limit which is often denoted by “small <span class="math notranslate nohighlight">\(\hbar\)</span>”. Now we have to be careful of what we mean by this since <span class="math notranslate nohighlight">\(\hbar\)</span> is a dimensionful quantity - that is, we have to compare <span class="math notranslate nohighlight">\(\hbar\)</span> to some other scales in the problem with the dimension of “action” (<span class="math notranslate nohighlight">\((energy)\times(time)\)</span>). How it appears will depend on the problem at hand. For now we will just say that in the appropriately taken limit, we can often treat <span class="math notranslate nohighlight">\(\vev{{\hat x}^n} \sim \vev{{\hat x}}^n\)</span>.</p>
 <p>Once we do this, Ehrenfests theorem basically reproduces Hamilton’s equations. This follows the fact that the structure of teh Heisenberg relations <a class="reference internal" href="../chapter4/Axioms.html#equation-heisenberg-eom">(205)</a> is almost idential to Hamilton’s equations in Poisson bracket form; the factor of <span class="math notranslate nohighlight">\(\hbar\)</span> is compensated by the same factor in the canonical comutation relations <span class="math notranslate nohighlight">\([{\hat x}^i, {\hat p}_j] = i\hbar\delta_{ij}\)</span>.</p>
 <p>One place you have to start to be careful is when the classical Hamiltonian has tems which are products of <span class="math notranslate nohighlight">\(x, p\)</span>, since these do not commute. The classic example is that of particles in a magnetic field <span class="math notranslate nohighlight">\({\vec B} = {\vec\nabla}\times{\vec A}({\vec x})\)</span>. The classical Hamiltonian is</p>
 <div class="math notranslate nohighlight" id="equation-mag-field-ham">
@@ -469,8 +468,9 @@ H &amp; = \frac{1}{2m} \sum_i \left(p_i - \frac{e}{c} A_i({\vec x})\right)^2\\
 &amp; = \frac{1}{2m} \left({\vec p}^2 - \frac{e}{c} ({\vec p} \cdot{\vec A} + {\vec A}\cdot{\vec p}) + \frac{e^2}{c^2} {\vec A}^2\right)
 \end{align}\end{split}\]</div>
 <p>Classically the middle two terms could be combined to <span class="math notranslate nohighlight">\(- \frac{e}{m c} {\vec A}\cdot{\vec p}\)</span>. However, when we promote this to a quantum mechanical theory we need to remember that <span class="math notranslate nohighlight">\({\hat x}^i,{\hat{p}_j\)</span> do not in general commute. Then the ordering matters. The ordering presented in <a class="reference internal" href="#equation-mag-field-ham">(263)</a> gives us a Hermitian operator, as demanded by the rules of quantum mechanics. In general, these kinds of ordering issues represent an ambiguity in passing from classical to quantum mechanics. This shouldn’t be too surprising; classical mechanics emerges as a limit of quantum mechanics and so there is missing physics.</p>
+</section>
 <section id="the-schroedinger-wave-equation">
-<h3>The Schroedinger wave equation<a class="headerlink" href="#the-schroedinger-wave-equation" title="Link to this heading">#</a></h3>
+<h2>The Schroedinger wave equation<a class="headerlink" href="#the-schroedinger-wave-equation" title="Link to this heading">#</a></h2>
 <p>We have to date discussed quantum mechanics in terms of abstract vector spaces, including the space of functions. In the case of particles moving in space, we have argued that this vector space is the vector space of square-integrable functions. In the case of particles in <span class="math notranslate nohighlight">\(d\)</span> dimensions this is <span class="math notranslate nohighlight">\(L^2(\CR^d)\)</span>, that is, complex functions on <span class="math notranslate nohighlight">\(\CR^d\)</span> which satisfy</p>
 <div class="math notranslate nohighlight">
 \[\int d^d x |\psi({\vec x})|^2 &lt; \infty\]</div>
@@ -482,7 +482,7 @@ H &amp; = \frac{1}{2m} \sum_i \left(p_i - \frac{e}{c} A_i({\vec x})\right)^2\\
 \[\begin{split}\begin{align}
 {\hat p}_i \ket{\psi({\vec x},t)} &amp; = \ket{\frac{\hbar}{i} \frac{\del}{\del x^i} \psi(x,t)}\\
 {\hat x}^i \ket{\psi} &amp; = \ket{x^i \psi({\vec x},t)}\\
-\frac{\del}{\del t} \ket{\psi} &amp; = \ket{\frac{\del}{\del t} \ket{\psi}}
+\frac{\del}{\del t} \ket{\psi} &amp; = \ket{\frac{\del}{\del t}\psi}
 \end{align}\end{split}\]</div>
 <p>This last can be shown via representing the derivative as the limit of a difference between <span class="math notranslate nohighlight">\(\psi(x,t+\eps) - \psi(t)\)</span>, and using the linearity of quantum mechanics which means that</p>
 <div class="math notranslate nohighlight">
@@ -494,7 +494,6 @@ H &amp; = \frac{1}{2m} \sum_i \left(p_i - \frac{e}{c} A_i({\vec x})\right)^2\\
 <div class="math notranslate nohighlight">
 \[- \frac{\hbar^2}{2m} {\vec\nabla}^2 \psi({\vec x}, t) + V({\vec x}) \psi({\vec x},t) = E \psi({\vec x}, t)\]</div>
 <p>Practically speaking, this is the form we work with for particles moving in space – for the simple harmonic oscillator, or particles in a magnetic field (eg in the quantum hall systems), the hydrogen atom (ignoring spin), and so on. In the end, though, we should remember we are working with a vector space, and that the Schrodinger equation remains a linear equation.</p>
-</section>
 </section>
 </section>
 
@@ -538,11 +537,11 @@ H &amp; = \frac{1}{2m} \sum_i \left(p_i - \frac{e}{c} A_i({\vec x})\right)^2\\
       </div>
     </a>
     <a class="right-next"
-       href="../appendix.html"
+       href="dynamics_1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix</p>
+        <p class="prev-next-title">Dynamics I</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -564,10 +563,8 @@ H &amp; = \frac{1}{2m} \sum_i \left(p_i - \frac{e}{c} A_i({\vec x})\right)^2\\
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-particle-on-a-lattice">Free particle on a lattice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ehrenfest-s-theorem">Ehrenfest’s theorem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-method-for-choosing-a-hamiltonian">Standard method for choosing a Hamiltonian</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schroedinger-wave-equation">The Schroedinger wave equation</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-method-for-choosing-a-hamiltonian">Standard method for choosing a Hamiltonian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schroedinger-wave-equation">The Schroedinger wave equation</a></li>
 </ul>
   </nav></div>
 

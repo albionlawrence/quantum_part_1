@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Compatible and incompatible measurements &#8212; Physics 162a</title>
+    <title>Dynamics I &#8212; Physics 162a</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter5/compatible_measurements';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter5/dynamics_1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Designing Hamiltonians" href="Hamiltonians.html" />
-    <link rel="prev" title="Particles on a line" href="infinite_d.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="Designing Hamiltonians" href="Hamiltonians.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -202,8 +202,9 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Wave_mechanics.html">Wave mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="infinite_d.html">Particles on a line</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Compatible and incompatible measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compatible_measurements.html">Compatible and incompatible measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Hamiltonians.html">Designing Hamiltonians</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Dynamics I</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -262,7 +263,7 @@
       
       
       
-      <li><a href="../_sources/chapter5/compatible_measurements.md" target="_blank"
+      <li><a href="../_sources/chapter5/dynamics_1.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -346,7 +347,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Compatible and incompatible measurements</h1>
+    <h1>Dynamics I</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -356,12 +357,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compatible-measurements">Compatible measurements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incompatible-measurements-and-the-uncertainty-principle">Incompatible measurements and the uncertainty principle</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-spin-half">Example: spin-half</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-particle-on-a-line">Example: particle on a line</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-time-uncertainty">Energy-time uncertainty</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-probability">Conservation of probability</a></li>
 </ul>
             </nav>
         </div>
@@ -373,84 +370,48 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="compatible-and-incompatible-measurements">
-<h1>Compatible and incompatible measurements<a class="headerlink" href="#compatible-and-incompatible-measurements" title="Link to this heading">#</a></h1>
-<section id="compatible-measurements">
-<h2>Compatible measurements<a class="headerlink" href="#compatible-measurements" title="Link to this heading">#</a></h2>
-<p>We say that two measurments, corresponding to two operators <span class="math notranslate nohighlight">\(A, B\)</span>, are <em>compatible</em> if we can specify the values of both in an experiment. That is, it makes sense to say that a state has an eigenvalue <span class="math notranslate nohighlight">\(a\)</span> of <span class="math notranslate nohighlight">\(A\)</span> and an eigenvalue <span class="math notranslate nohighlight">\(b\)</span> of <span class="math notranslate nohighlight">\(B\)</span>. Thus we must be able to diagonalize both in the same basis. As we showed, iin Chapter 3, this is possible if and only of <span class="math notranslate nohighlight">\([A,B] = 0\)</span>.</p>
-<p>In many cases the operators we study have degenerate spectra. In this case, the measurement of a given operator does not lead to a unique stateafter the wavefunction collapses. In this case we try to search for a <em>complete set of commuting observables</em> (CSCO); that is, operators <span class="math notranslate nohighlight">\(A_1,\ldots,A_k\)</span> such that <span class="math notranslate nohighlight">\([A_i,A_j] = 0\)</span>, and such that if we specify eigenvalues <span class="math notranslate nohighlight">\(A_1,\ldots,a_k\)</span> of each of these, we uniquely specify the state.</p>
-<p>In some cases this could be a single operator (eg, an operator without degeneracy). An example in which we need several is the nonrelativistic hydrogen atom. The energy levels are highly degenerate; we split them by considering eigenvlaues of the angular momentum operators <span class="math notranslate nohighlight">\({\vec L}^2\)</span>, <span class="math notranslate nohighlight">\(L_z\)</span>, <span class="math notranslate nohighlight">\({\vec S}^2\)</span>, <span class="math notranslate nohighlight">\(S_z\)</span>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="dynamics-i">
+<h1>Dynamics I<a class="headerlink" href="#dynamics-i" title="Link to this heading">#</a></h1>
+<p>Before continuing to specific systems, we want to make a couple general comments on dynamics.</p>
+<section id="energy-time-uncertainty">
+<h2>Energy-time uncertainty<a class="headerlink" href="#energy-time-uncertainty" title="Link to this heading">#</a></h2>
+<p>The position-momentum uncertainty principle is often complemented with an energy-time uncertainty principle:</p>
+<div class="math notranslate nohighlight" id="equation-energy-time-unc">
+<span class="eqno">(266)<a class="headerlink" href="#equation-energy-time-unc" title="Link to this equation">#</a></span>\[\Delta E \delta t \geq \frac{\hbar}{2}\]</div>
+<p>This could be argued for, for example, by noting that the energy is a component of a four-vector for which the spatial momenta are also components, <span class="math notranslate nohighlight">\(p^{\mu} = (E/c, {\vec p})\)</span>, and similarly for time and space: <span class="math notranslate nohighlight">\(x^{\mu} = (ct, {\vec x})\)</span>. But that isn’t the strongest argument, and at any rate we are dealing with non-relativistic theories. For starters, in this case <span class="math notranslate nohighlight">\(t\)</span> is a parameter not an operator.</p>
+<p>Another handwaving argument is that if we measure a system over a finite time <span class="math notranslate nohighlight">\(\Delta t\)</span>, the measurement process itself violates time translation invariance. In quantum mechanics as well as in classical mechanics, the conservation of energy follows from this invariance; thus in a measurement <span class="math notranslate nohighlight">\(E\)</span> is no longer conserved.</p>
+<p>But we can make a more precise statement that gives some definition of <span class="math notranslate nohighlight">\(\Delta t\)</span>. Let <span class="math notranslate nohighlight">\(H\)</span> be the Hamiltonian and <span class="math notranslate nohighlight">\(A\)</span> some Hermitian operator. We have already shown that</p>
+<div class="math notranslate nohighlight" id="equation-et-precise">
+<span class="eqno">(267)<a class="headerlink" href="#equation-et-precise" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+(\Delta H)^2 (\Delta A)^2 &amp; \geq \frac{1}{4} \Big|\bra{\psi} [H,A]\ket{\psi}\Big|^2\\
+&amp; = \frac{1}{4} \Big| i\hbar \bra{\psi}\frac{\del A}{\del t}\ket{\psi}\Big|^2\\
+&amp; \Rightarrow \Delta E \left(\frac{\Delta A}{\vev{\frac{\del A}{\del t}}}\right) \geq \frac{\hbar}{2}
+\end{align}\end{split}\]</div>
+<p>If we define <span class="math notranslate nohighlight">\(\Delta H \equiv \Delta E\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[\Delta t = \frac{\Delta A}{\vev{\frac{\del A}{\del t}}}\]</div>
+<p>then we get our uncertainty principle. We can ghink of <span class="math notranslate nohighlight">\(\Delta t\)</span> as the time it takes for <span class="math notranslate nohighlight">\(\vev{A}\)</span> to change by an amount <span class="math notranslate nohighlight">\(\Delta A\)</span> – that is, the time scale for a change in the state to be noticeable.</p>
 </section>
-<section id="incompatible-measurements-and-the-uncertainty-principle">
-<h2>Incompatible measurements and the uncertainty principle<a class="headerlink" href="#incompatible-measurements-and-the-uncertainty-principle" title="Link to this heading">#</a></h2>
-<p>Recall that we defined the variance of an observable in a given state by:</p>
-<div class="math notranslate nohighlight" id="equation-variance">
-<span class="eqno">(258)<a class="headerlink" href="#equation-variance" title="Link to this equation">#</a></span>\[(\Delta A)^2 = \bra{\psi} (A - \vev{A})^2\ket{\psi}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\vev{A} = \bra{\psi}A\ket{\psi}\)</span> is the expectation value of the observable in taht state. <span class="math notranslate nohighlight">\(\vev{A}\)</span> represents the average of the outcomes of measuring <span class="math notranslate nohighlight">\(A\)</span> in a given state (where we prepare this idential state and measure <span class="math notranslate nohighlight">\(A\)</span> in it many times).  <span class="math notranslate nohighlight">\((\Delta A)^2\)</span> is an estimate of the spread or <em>variancce</em> in measurements of <span class="math notranslate nohighlight">\(A\)</span>; a cartoon of this is shown here:</p>
-<p><img alt="Illustration of variance" src="../_images/Variance.pdf" /></p>
-<p>When is the variance zero? For a Hermitian operator t requires that</p>
-<div class="math notranslate nohighlight" id="equation-variance-as-norm">
-<span class="eqno">(259)<a class="headerlink" href="#equation-variance-as-norm" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-\bra{\psi} (A - \vev{A})^2\ket{\psi} &amp; = \bra{\psi} (A - \vev{A})^{\dagger}(A - \vev{A})\ket{\psi} \\
-&amp; = ||(A - \vev{A})\ket{\psi}||^2
+<section id="conservation-of-probability">
+<h2>Conservation of probability<a class="headerlink" href="#conservation-of-probability" title="Link to this heading">#</a></h2>
+<p>We have noted before that <span class="math notranslate nohighlight">\(\psi^*({\vec x}\psi({\vec x})\)</span> is a probability <em>density</em>; one integrates it over a region to find the probability that a particle lives in that region.</p>
+<p>Now the total probability in a system must be <span class="math notranslate nohighlight">\(1\)</span>. But over time, the probability that a particle is found in a given region <em>can</em> change; however it must change in such a way that the integrated probability does not.</p>
+<p>To see how this works, we can use the Schroedinger equation and compute:</p>
+<div class="math notranslate nohighlight" id="equation-cont-eqn">
+<span class="eqno">(268)<a class="headerlink" href="#equation-cont-eqn" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\frac{\del}{\del t} \psi^*\psi &amp; = \frac{\hbar}{2im} (\nabla^2\psi^*\psi - \psi^* \nabla^2 \psi)\\
+&amp; = \vec{\nabla}\cdot\left(\frac{\hbar}{2im}\right)\left({\vec\nabla}\psi^* \psi - \psi^* {\vec{\nabla}}\psi\right)
 \end{align}\end{split}\]</div>
-<p>But the norm of a vector is zero if and only if the vector is zero, which means that <span class="math notranslate nohighlight">\(A\ket{\psi} = \vev{A}\ket{\psi}\)</span>, that is, <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> is an eigenvactor and <span class="math notranslate nohighlight">\(\vev{A}\)</span> the associated eigenvalue.</p>
-<p>Now if we have two observables <span class="math notranslate nohighlight">\(A,B\)</span>, and they commute, then we can specify them both perfectly and it is possible for both of their variances to be zero. If they do not commute it is a different story.</p>
-<p>Let us consider the general case <span class="math notranslate nohighlight">\([A,B] = i C\)</span> for <span class="math notranslate nohighlight">\(A,B,C\)</span> Hermitian operators.
-The <em>Uncertainty Principle</em> in this general case is state in the following theorem:</p>
-<div class="math notranslate nohighlight" id="equation-gen-uncertainty">
-<span class="eqno">(260)<a class="headerlink" href="#equation-gen-uncertainty" title="Link to this equation">#</a></span>\[\Delta A \Delta B \geq \half \vev{C}\]</div>
-<p><em>Proof</em>. If the system is in state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>, we can define</p>
-<div class="math notranslate nohighlight" id="equation-shifted-states">
-<span class="eqno">(261)<a class="headerlink" href="#equation-shifted-states" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-\ket{f_A} &amp; = (A - \vev{A})\ket{\psi}\\
-\ket{f_B} &amp; = (B - \vev{B})\ket{\psi}
-\end{align}\end{split}\]</div>
-<p>Now, by the Schwarz inequality,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-&amp; |\brket{f_B}{f_A}|  \leq ||\ket{f_A}||\ ||\ket{f_B}||\\
-&amp; \Rightarrow  |\brket{f_B}{f_A}|^2 \leq \brket{f_A}{f_A}\brket{f_B}{f_B}\\
-&amp; \Rightarrow |\brket{f_B}{f_A}|^2 \leq (\Delta A)^2 (\Delta B)^2
-\end{align}\end{split}\]</div>
-<p>Now we need to show that the left hand side of this last inequality is an upper bound on <span class="math notranslate nohighlight">\(\frac{1}{4}\vev{C}^2\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-|\brket{f_A}{f_B}|^2 &amp; = (\text{Im} \brket{f_A}{f_B})^2 +  (\text{Re} \brket{f_A}{f_B})^2 \\
-&amp; = (\text{Im}(\bra{\psi}(A - \vev{A})(B - \vev{B})\ket{\psi}))^2 +  (\text{Re}(\bra{\psi}(A - \vev{A})(B - \vev{B})\ket{\psi}))^2\\
-&amp; = (\frac{1}{2i}(\bra{\psi}(A - \vev{A})(B - \vev{B})\ket{\psi} - \bra{\psi}(B - \vev{B})(A - \vev{A})\ket{\psi}))^2\\
-&amp; \ \ + (\half((\bra{\psi}(A - \vev{A})(B - \vev{B})\ket{\psi} + \bra{\psi}(B - \vev{B})(A - \vev{A})\ket{\psi})))^2\\
-&amp; = \left(\frac{1}{2i}\bra{\psi}[A,B]\ket{\psi}\right)^2 + \left(\half\bra{\psi}\{A,B\}\ket{\psi} - \vev{A}\vev{B}\right)^2\\
-&amp; \geq \frac{1}{4} \vev{C}^2
-\end{align}\end{split}\]</div>
-<p>When is this inequality saturated? Looking closely at the proof above, his would require</p>
-<div class="math notranslate nohighlight">
-\[|\brket{f_B}{f_A}|^2 = \brket{f_A}{f_A}\brket{f_B}{f_B} = \frac{1}{4} \vev{C}^2 + (\text{Re}\brket{f_B}{f_A})^2 = \frac{1}{4}\vev{C}^2\]</div>
-<p>By the Schwarz inequality, this means that <span class="math notranslate nohighlight">\(\ket{f_A} = \beta \ket{f_B}\)</span>. If we then demand that <span class="math notranslate nohighlight">\((\text{Re}\brket{f_B}{f_A})^2 = 0\)</span> as required above, this means that <span class="math notranslate nohighlight">\(\beta\)</span> is pure imaginary, <span class="math notranslate nohighlight">\(\beta = i \lambda\)</span> for <span class="math notranslate nohighlight">\(\lambda\)</span> real.</p>
-<section id="example-spin-half">
-<h3>Example: spin-half<a class="headerlink" href="#example-spin-half" title="Link to this heading">#</a></h3>
-<p>As a simple example, consider measuring <span class="math notranslate nohighlight">\(S_x, S_y\)</span> in a spin-<span class="math notranslate nohighlight">\(\half\)</span> system. Here <span class="math notranslate nohighlight">\([S_x,S_y] = i \hbar S_z\)</span>. Now if the state is <span class="math notranslate nohighlight">\(\ket{+,x}\)</span> you can show that <span class="math notranslate nohighlight">\((\Delta S_x)^2 = 0\)</span>, <span class="math notranslate nohighlight">\((\Delta S_y)^2 = \frac{\hbar^2}{4}\)</span>, <span class="math notranslate nohighlight">\(\vev{S_z} = 0\)</span>. On the other hand, if we choose <span class="math notranslate nohighlight">\(\ket{\psi} = \ket{+,z}\)</span>, <span class="math notranslate nohighlight">\((\Delta S_x)^2 = (\Delta S_y)^2 = \frac{\hbar^2}{4}\)</span>, and <span class="math notranslate nohighlight">\(\vev{Sz} = \frac{\hbar}{2}\)</span>. Here the inequality is in fact saturated, which it does not in general have to be.</p>
-</section>
-<section id="example-particle-on-a-line">
-<h3>Example: particle on a line<a class="headerlink" href="#example-particle-on-a-line" title="Link to this heading">#</a></h3>
-<p>The classic example is the psotion-momentum uncertainty principle. As we have sh
-own, <span class="math notranslate nohighlight">\([{\hat x},{\hat p}] = i\hbar\)</span>. The <em>Heisenberg Uncertainty Principle</em> is:</p>
-<div class="math notranslate nohighlight">
-\[(\Delta x)(\Delta p) \geq \frac{\hbar}{2}\]</div>
-<p>in other words, tehre is <em>no</em> circumstance in which we can sepcify both <span class="math notranslate nohighlight">\(x, p\)</span> with infinte precision. Of we specify <span class="math notranslate nohighlight">\(x\)</span> with complete precision, then <span class="math notranslate nohighlight">\(\Delta p\)</span> must be infinite. (And thus the kinetci energy would have to be infinite, which is why one could never actually prepare such a state!). Similarly, if we psecify <span class="math notranslate nohighlight">\(p\)</span> with infinite precision, <span class="math notranslate nohighlight">\(x\)</span> has infinite variance, as is make clear from the associated wavefunction</p>
-<div class="math notranslate nohighlight">
-\[\brket{x}{p} = \frac{1}{\sqrt{2\pi \hbar}} e^{i p x/\hbar}\]</div>
-<p>An interesting question is, what state <em>saturates</em> the uncertainty? We need</p>
-<div class="math notranslate nohighlight">
-\[({\hat p} - \vev{p})\ket{\psi} = i\lambda({\hat x} - \vev{x})\ket{\psi}\]</div>
-<p>wheer <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> is specified by the wavefunction <span class="math notranslate nohighlight">\(\psi(x)\)</span>. Given what we know about the action of <span class="math notranslate nohighlight">\({\hat p}, {\hat x}\)</span> on this wavefunction, we can write this as a differential equation</p>
-<div class="math notranslate nohighlight">
-\[\frac{\hbar}{i} \frac{\del}{\del x} \psi - \vev{p}\psi =  i \lambda(x - \vev{x})\psi\]</div>
-<p>This is a differential equation we can solve; the solution is</p>
-<div class="math notranslate nohighlight">
-\[\psi(x) = A e^{i\vev{p}x/\hbar} e^{-\frac{\lambda}{2\hbar}(x - \vev{x})^2}\]</div>
-<p>Thsi is a Gaussian wavepacket modulated by a sinusoid. The width of the wavpacket is proportional to <span class="math notranslate nohighlight">\(\sqrt{\frac{\hbar}{\lambda}}\)</span>.</p>
-</section>
+<p>Note how the potential has dropped out of this equation. If we define the probability current as:</p>
+<div class="math notranslate nohighlight" id="equation-prob-current">
+<span class="eqno">(269)<a class="headerlink" href="#equation-prob-current" title="Link to this equation">#</a></span>\[{\vec J}_{prob} = \frac{\hbar}{2im} \left(\psi^* {\vec\nabla}\psi - ({\vec\nabla}\psi^*) \psi\right)\]</div>
+<p>and the probability density as:</p>
+<div class="math notranslate nohighlight" id="equation-prob-dens">
+<span class="eqno">(270)<a class="headerlink" href="#equation-prob-dens" title="Link to this equation">#</a></span>\[\rho = \psi^*\psi\]</div>
+<p>then we get the continuity equation</p>
+<div class="math notranslate nohighlight" id="equation-continuity-eqn">
+<span class="eqno">(271)<a class="headerlink" href="#equation-continuity-eqn" title="Link to this equation">#</a></span>\[\frac{\del \rho}{\del t} + {\vec\nabla}\cdot{\vec J} = 0\]</div>
+<p>That is, the change of probability in a region is due to the flux of <span class="math notranslate nohighlight">\({\vec J}\)</span> into and out of that region. This guarantees the conservation of probability in the entire space so long as <span class="math notranslate nohighlight">\({\vec J}\)</span> vanishes quickly enough at infinity.</p>
 </section>
 </section>
 
@@ -485,20 +446,20 @@ own, <span class="math notranslate nohighlight">\([{\hat x},{\hat p}] = i\hbar\)
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="infinite_d.html"
+       href="Hamiltonians.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Particles on a line</p>
+        <p class="prev-next-title">Designing Hamiltonians</p>
       </div>
     </a>
     <a class="right-next"
-       href="Hamiltonians.html"
+       href="../appendix.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Designing Hamiltonians</p>
+        <p class="prev-next-title">Appendix</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -518,12 +479,8 @@ own, <span class="math notranslate nohighlight">\([{\hat x},{\hat p}] = i\hbar\)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compatible-measurements">Compatible measurements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incompatible-measurements-and-the-uncertainty-principle">Incompatible measurements and the uncertainty principle</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-spin-half">Example: spin-half</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-particle-on-a-line">Example: particle on a line</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-time-uncertainty">Energy-time uncertainty</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-probability">Conservation of probability</a></li>
 </ul>
   </nav></div>
 

@@ -55,7 +55,7 @@ We could also assume a varying binding energy $E + V_k$ at site $k$; thus if we 
 On the circle ${\hat x}$ does not make sense; however, if $V$ is a periodic function, $V({\hat x})$ can make sense. The resulting Hamiltonian is
 ```{math}
 :label: 1d_ham
-H = \frac{{\hat p}^2}{2m} V V({\hat x})
+H = \frac{{\hat p}^2}{2m} + V({\hat x})
 ```
 Note that here w have still assumed that the hopping rate *between* sites does not change. We are not choosing the most general Hamiltonian. 
 
@@ -116,7 +116,7 @@ here $\vev{{\hat x}} = 0$, and $\vev{{\hat x}^2} = \sigma^2$. We could think of 
 
 ## Standard method for choosing a Hamiltonian
 
-The textbook procedure for constructing a Hamiltonian for particles in a potential is to start with a classical Hamiltonian $H(p_i,x^i)$, and promote the position and momentum variables to operators (note here I have passed to the higher-diensional case). The basic reason for doing this is that although quantum mechanics is a microscopic theory and we might think the macroscopic world givesno guide, Bohr's *correspondence principle* sensibly demands that the quantum theory should approximate that of the classical theory in some limit which is often denoted by "small $\hbar$". Now we have to be careful of what we mean by this since $\hbar$ is a dimensionful quantity - that is, we have to compare $\hbar$ to some other scales in the problem with the dimension of "action" ($(energy)\times(time)$). How it appears will depend on the problem at hand. For now we will just say that in the appropriately taken limit, we can often treat $\vev{{\hat n}^n} \sim \vev{{\hat x}}^n$.
+The textbook procedure for constructing a Hamiltonian for particles in a potential is to start with a classical Hamiltonian $H(p_i,x^i)$, and promote the position and momentum variables to operators (note here I have passed to the higher-diensional case). The basic reason for doing this is that although quantum mechanics is a microscopic theory and we might think the macroscopic world givesno guide, Bohr's *correspondence principle* sensibly demands that the quantum theory should approximate that of the classical theory in some limit which is often denoted by "small $\hbar$". Now we have to be careful of what we mean by this since $\hbar$ is a dimensionful quantity - that is, we have to compare $\hbar$ to some other scales in the problem with the dimension of "action" ($(energy)\times(time)$). How it appears will depend on the problem at hand. For now we will just say that in the appropriately taken limit, we can often treat $\vev{{\hat x}^n} \sim \vev{{\hat x}}^n$.
 
 Once we do this, Ehrenfests theorem basically reproduces Hamilton's equations. This follows the fact that the structure of teh Heisenberg relations {eq}`heisenberg_eom` is almost idential to Hamilton's equations in Poisson bracket form; the factor of $\hbar$ is compensated by the same factor in the canonical comutation relations $[{\hat x}^i, {\hat p}_j] = i\hbar\delta_{ij}$. 
 
@@ -130,7 +130,7 @@ H & = \frac{1}{2m} \sum_i \left(p_i - \frac{e}{c} A_i({\vec x})\right)^2\\
 ```
 Classically the middle two terms could be combined to $- \frac{e}{m c} {\vec A}\cdot{\vec p}$. However, when we promote this to a quantum mechanical theory we need to remember that ${\hat x}^i,{\hat{p}_j$ do not in general commute. Then the ordering matters. The ordering presented in {eq}`mag_field_ham` gives us a Hermitian operator, as demanded by the rules of quantum mechanics. In general, these kinds of ordering issues represent an ambiguity in passing from classical to quantum mechanics. This shouldn't be too surprising; classical mechanics emerges as a limit of quantum mechanics and so there is missing physics.
 
-### The Schroedinger wave equation
+## The Schroedinger wave equation
 
 We have to date discussed quantum mechanics in terms of abstract vector spaces, including the space of functions. In the case of particles moving in space, we have argued that this vector space is the vector space of square-integrable functions. In the case of particles in $d$ dimensions this is $L^2(\CR^d)$, that is, complex functions on $\CR^d$ which satisfy 
 ```{math}
@@ -147,7 +147,7 @@ or {eq}`mag_field_ham`, the quantum dynamics can be easily written as local part
 \begin{align}
 {\hat p}_i \ket{\psi({\vec x},t)} & = \ket{\frac{\hbar}{i} \frac{\del}{\del x^i} \psi(x,t)}\\
 {\hat x}^i \ket{\psi} & = \ket{x^i \psi({\vec x},t)}\\
-\frac{\del}{\del t} \ket{\psi} & = \ket{\frac{\del}{\del t} \ket{\psi}}
+\frac{\del}{\del t} \ket{\psi} & = \ket{\frac{\del}{\del t}\psi}
 \end{align}
 ```
 This last can be shown via representing the derivative as the limit of a difference between $\psi(x,t+\eps) - \psi(t)$, and using the linearity of quantum mechanics which means that 
