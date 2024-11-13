@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Compatible and incompatible measurements &#8212; Physics 162a</title>
+    <title>Interlude: two interesting systems &#8212; Physics 162a</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter5/compatible_measurements';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter6/Interlude_1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Designing Hamiltonians" href="Hamiltonians.html" />
-    <link rel="prev" title="Particles on a line" href="infinite_d.html" />
+    <link rel="next" title="The Aharonov-Bohm effect" href="aharonov-bohm.html" />
+    <link rel="prev" title="Dynamics I" href="../chapter5/dynamics_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -200,10 +200,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter4/bell.html">Local Realism vs. Quantum Mechanics</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Wave_mechanics.html">Wave mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="infinite_d.html">Particles on a line</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Compatible and incompatible measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Hamiltonians.html">Designing Hamiltonians</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/Wave_mechanics.html">Wave mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/infinite_d.html">Particles on a line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/compatible_measurements.html">Compatible and incompatible measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/Hamiltonians.html">Designing Hamiltonians</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/dynamics_1.html">Dynamics I</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Interlude: two interesting systems</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="aharonov-bohm.html">The Aharonov-Bohm effect</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -262,7 +267,7 @@
       
       
       
-      <li><a href="../_sources/chapter5/compatible_measurements.md" target="_blank"
+      <li><a href="../_sources/chapter6/Interlude_1.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -333,9 +338,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -346,24 +349,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Compatible and incompatible measurements</h1>
+    <h1>Interlude: two interesting systems</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compatible-measurements">Compatible measurements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incompatible-measurements-and-the-uncertainty-principle">Incompatible measurements and the uncertainty principle</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-spin-half">Example: spin-half</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-particle-on-a-line">Example: particle on a line</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -373,85 +363,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="compatible-and-incompatible-measurements">
-<h1>Compatible and incompatible measurements<a class="headerlink" href="#compatible-and-incompatible-measurements" title="Link to this heading">#</a></h1>
-<section id="compatible-measurements">
-<h2>Compatible measurements<a class="headerlink" href="#compatible-measurements" title="Link to this heading">#</a></h2>
-<p>We say that two measurments, corresponding to two operators <span class="math notranslate nohighlight">\(A, B\)</span>, are <em>compatible</em> if we can specify the values of both in an experiment. That is, it makes sense to say that a state has an eigenvalue <span class="math notranslate nohighlight">\(a\)</span> of <span class="math notranslate nohighlight">\(A\)</span> and an eigenvalue <span class="math notranslate nohighlight">\(b\)</span> of <span class="math notranslate nohighlight">\(B\)</span>. Thus we must be able to diagonalize both in the same basis. As we showed, iin Chapter 3, this is possible if and only of <span class="math notranslate nohighlight">\([A,B] = 0\)</span>.</p>
-<p>In many cases the operators we study have degenerate spectra. In this case, the measurement of a given operator does not lead to a unique stateafter the wavefunction collapses. In this case we try to search for a <em>complete set of commuting observables</em> (CSCO); that is, operators <span class="math notranslate nohighlight">\(A_1,\ldots,A_k\)</span> such that <span class="math notranslate nohighlight">\([A_i,A_j] = 0\)</span>, and such that if we specify eigenvalues <span class="math notranslate nohighlight">\(A_1,\ldots,a_k\)</span> of each of these, we uniquely specify the state.</p>
-<p>In some cases this could be a single operator (eg, an operator without degeneracy). An example in which we need several is the nonrelativistic hydrogen atom. The energy levels are highly degenerate; we split them by considering eigenvlaues of the angular momentum operators <span class="math notranslate nohighlight">\({\vec L}^2\)</span>, <span class="math notranslate nohighlight">\(L_z\)</span>, <span class="math notranslate nohighlight">\({\vec S}^2\)</span>, <span class="math notranslate nohighlight">\(S_z\)</span>.</p>
-</section>
-<section id="incompatible-measurements-and-the-uncertainty-principle">
-<h2>Incompatible measurements and the uncertainty principle<a class="headerlink" href="#incompatible-measurements-and-the-uncertainty-principle" title="Link to this heading">#</a></h2>
-<p>Recall that we defined the variance of an observable in a given state by:</p>
-<div class="math notranslate nohighlight" id="equation-variance">
-<span class="eqno">(258)<a class="headerlink" href="#equation-variance" title="Link to this equation">#</a></span>\[(\Delta A)^2 = \bra{\psi} (A - \vev{A})^2\ket{\psi}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\vev{A} = \bra{\psi}A\ket{\psi}\)</span> is the expectation value of the observable in taht state. <span class="math notranslate nohighlight">\(\vev{A}\)</span> represents the average of the outcomes of measuring <span class="math notranslate nohighlight">\(A\)</span> in a given state (where we prepare this idential state and measure <span class="math notranslate nohighlight">\(A\)</span> in it many times).  <span class="math notranslate nohighlight">\((\Delta A)^2\)</span> is an estimate of the spread or <em>variancce</em> in measurements of <span class="math notranslate nohighlight">\(A\)</span>; a cartoon of this is shown here:</p>
-<p><img alt="Illustration of variance" src="../_images/Variance.pdf" /></p>
-<p>When is the variance zero? For a Hermitian operator t requires that</p>
-<div class="math notranslate nohighlight" id="equation-variance-as-norm">
-<span class="eqno">(259)<a class="headerlink" href="#equation-variance-as-norm" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-\bra{\psi} (A - \vev{A})^2\ket{\psi} &amp; = \bra{\psi} (A - \vev{A})^{\dagger}(A - \vev{A})\ket{\psi} \\
-&amp; = ||(A - \vev{A})\ket{\psi}||^2
-\end{align}\end{split}\]</div>
-<p>But the norm of a vector is zero if and only if the vector is zero, which means that <span class="math notranslate nohighlight">\(A\ket{\psi} = \vev{A}\ket{\psi}\)</span>, that is, <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> is an eigenvactor and <span class="math notranslate nohighlight">\(\vev{A}\)</span> the associated eigenvalue.</p>
-<p>Now if we have two observables <span class="math notranslate nohighlight">\(A,B\)</span>, and they commute, then we can specify them both perfectly and it is possible for both of their variances to be zero. If they do not commute it is a different story.</p>
-<p>Let us consider the general case <span class="math notranslate nohighlight">\([A,B] = i C\)</span> for <span class="math notranslate nohighlight">\(A,B,C\)</span> Hermitian operators.
-The <em>Uncertainty Principle</em> in this general case is state in the following theorem:</p>
-<div class="math notranslate nohighlight" id="equation-gen-uncertainty">
-<span class="eqno">(260)<a class="headerlink" href="#equation-gen-uncertainty" title="Link to this equation">#</a></span>\[\Delta A \Delta B \geq \half \vev{C}\]</div>
-<p><em>Proof</em>. If the system is in state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>, we can define</p>
-<div class="math notranslate nohighlight" id="equation-shifted-states">
-<span class="eqno">(261)<a class="headerlink" href="#equation-shifted-states" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-\ket{f_A} &amp; = (A - \vev{A})\ket{\psi}\\
-\ket{f_B} &amp; = (B - \vev{B})\ket{\psi}
-\end{align}\end{split}\]</div>
-<p>Now, by the Schwarz inequality,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-&amp; |\brket{f_B}{f_A}|  \leq ||\ket{f_A}||\ ||\ket{f_B}||\\
-&amp; \Rightarrow  |\brket{f_B}{f_A}|^2 \leq \brket{f_A}{f_A}\brket{f_B}{f_B}\\
-&amp; \Rightarrow |\brket{f_B}{f_A}|^2 \leq (\Delta A)^2 (\Delta B)^2
-\end{align}\end{split}\]</div>
-<p>Now we need to show that the left hand side of this last inequality is an upper bound on <span class="math notranslate nohighlight">\(\frac{1}{4}\vev{C}^2\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-|\brket{f_A}{f_B}|^2 &amp; = (\text{Im} \brket{f_A}{f_B})^2 +  (\text{Re} \brket{f_A}{f_B})^2 \\
-&amp; = (\text{Im}(\bra{\psi}(A - \vev{A})(B - \vev{B})\ket{\psi}))^2 +  (\text{Re}(\bra{\psi}(A - \vev{A})(B - \vev{B})\ket{\psi}))^2\\
-&amp; = (\frac{1}{2i}(\bra{\psi}(A - \vev{A})(B - \vev{B})\ket{\psi} - \bra{\psi}(B - \vev{B})(A - \vev{A})\ket{\psi}))^2\\
-&amp; \ \ + (\half((\bra{\psi}(A - \vev{A})(B - \vev{B})\ket{\psi} + \bra{\psi}(B - \vev{B})(A - \vev{A})\ket{\psi})))^2\\
-&amp; = \left(\frac{1}{2i}\bra{\psi}[A,B]\ket{\psi}\right)^2 + \left(\half\bra{\psi}\{A,B\}\ket{\psi} - \vev{A}\vev{B}\right)^2\\
-&amp; \geq \frac{1}{4} \vev{C}^2
-\end{align}\end{split}\]</div>
-<p>When is this inequality saturated? Looking closely at the proof above, his would require</p>
-<div class="math notranslate nohighlight">
-\[|\brket{f_B}{f_A}|^2 = \brket{f_A}{f_A}\brket{f_B}{f_B} = \frac{1}{4} \vev{C}^2 + (\text{Re}\brket{f_B}{f_A})^2 = \frac{1}{4}\vev{C}^2\]</div>
-<p>By the Schwarz inequality, this means that <span class="math notranslate nohighlight">\(\ket{f_A} = \beta \ket{f_B}\)</span>. If we then demand that <span class="math notranslate nohighlight">\((\text{Re}\brket{f_B}{f_A})^2 = 0\)</span> as required above, this means that <span class="math notranslate nohighlight">\(\beta\)</span> is pure imaginary, <span class="math notranslate nohighlight">\(\beta = i \lambda\)</span> for <span class="math notranslate nohighlight">\(\lambda\)</span> real.</p>
-<section id="example-spin-half">
-<h3>Example: spin-half<a class="headerlink" href="#example-spin-half" title="Link to this heading">#</a></h3>
-<p>As a simple example, consider measuring <span class="math notranslate nohighlight">\(S_x, S_y\)</span> in a spin-<span class="math notranslate nohighlight">\(\half\)</span> system. Here <span class="math notranslate nohighlight">\([S_x,S_y] = i \hbar S_z\)</span>. Now if the state is <span class="math notranslate nohighlight">\(\ket{+,x}\)</span> you can show that <span class="math notranslate nohighlight">\((\Delta S_x)^2 = 0\)</span>, <span class="math notranslate nohighlight">\((\Delta S_y)^2 = \frac{\hbar^2}{4}\)</span>, <span class="math notranslate nohighlight">\(\vev{S_z} = 0\)</span>. On the other hand, if we choose <span class="math notranslate nohighlight">\(\ket{\psi} = \ket{+,z}\)</span>, <span class="math notranslate nohighlight">\((\Delta S_x)^2 = (\Delta S_y)^2 = \frac{\hbar^2}{4}\)</span>, and <span class="math notranslate nohighlight">\(\vev{Sz} = \frac{\hbar}{2}\)</span>. Here the inequality is in fact saturated, which it does not in general have to be.</p>
-</section>
-<section id="example-particle-on-a-line">
-<h3>Example: particle on a line<a class="headerlink" href="#example-particle-on-a-line" title="Link to this heading">#</a></h3>
-<p>The classic example is the psotion-momentum uncertainty principle. As we have sh
-own, <span class="math notranslate nohighlight">\([{\hat x},{\hat p}] = i\hbar\)</span>. The <em>Heisenberg Uncertainty Principle</em> is:</p>
-<div class="math notranslate nohighlight">
-\[(\Delta x)(\Delta p) \geq \frac{\hbar}{2}\]</div>
-<p>in other words, tehre is <em>no</em> circumstance in which we can sepcify both <span class="math notranslate nohighlight">\(x, p\)</span> with infinte precision. Of we specify <span class="math notranslate nohighlight">\(x\)</span> with complete precision, then <span class="math notranslate nohighlight">\(\Delta p\)</span> must be infinite. (And thus the kinetci energy would have to be infinite, which is why one could never actually prepare such a state!). Similarly, if we psecify <span class="math notranslate nohighlight">\(p\)</span> with infinite precision, <span class="math notranslate nohighlight">\(x\)</span> has infinite variance, as is make clear from the associated wavefunction</p>
-<div class="math notranslate nohighlight">
-\[\brket{x}{p} = \frac{1}{\sqrt{2\pi \hbar}} e^{i p x/\hbar}\]</div>
-<p>An interesting question is, what state <em>saturates</em> the uncertainty? We need</p>
-<div class="math notranslate nohighlight">
-\[({\hat p} - \vev{p})\ket{\psi} = i\lambda({\hat x} - \vev{x})\ket{\psi}\]</div>
-<p>wheer <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> is specified by the wavefunction <span class="math notranslate nohighlight">\(\psi(x)\)</span>. Given what we know about the action of <span class="math notranslate nohighlight">\({\hat p}, {\hat x}\)</span> on this wavefunction, we can write this as a differential equation</p>
-<div class="math notranslate nohighlight">
-\[\frac{\hbar}{i} \frac{\del}{\del x} \psi - \vev{p}\psi =  i \lambda(x - \vev{x})\psi\]</div>
-<p>This is a differential equation we can solve; the solution is</p>
-<div class="math notranslate nohighlight">
-\[\psi(x) = A e^{i\vev{p}x/\hbar} e^{-\frac{\lambda}{2\hbar}(x - \vev{x})^2}\]</div>
-<p>Thsi is a Gaussian wavepacket modulated by a sinusoid. The width of the wavpacket is proportional to <span class="math notranslate nohighlight">\(\sqrt{\frac{\hbar}{\lambda}}\)</span>.</p>
-</section>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="interlude-two-interesting-systems">
+<h1>Interlude: two interesting systems<a class="headerlink" href="#interlude-two-interesting-systems" title="Link to this heading">#</a></h1>
+<p>The goal of this next section (following chapter 6 of the book) is to explore a couple of actually observable and important effects that get at the basic structure of quantum mechanics. The first, the Aharaonov-Bohm effect, follows naturally fro mthe previous section. The second, neutrino oscillations, could perhaps have been discussed earlier, but there is no time like the present.</p>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -467,7 +383,7 @@ own, <span class="math notranslate nohighlight">\([{\hat x},{\hat p}] = i\hbar\)
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapter5"
+            path: "./chapter6"
         },
         predefinedOutput: true
     }
@@ -485,20 +401,20 @@ own, <span class="math notranslate nohighlight">\([{\hat x},{\hat p}] = i\hbar\)
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="infinite_d.html"
+       href="../chapter5/dynamics_1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Particles on a line</p>
+        <p class="prev-next-title">Dynamics I</p>
       </div>
     </a>
     <a class="right-next"
-       href="Hamiltonians.html"
+       href="aharonov-bohm.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Designing Hamiltonians</p>
+        <p class="prev-next-title">The Aharonov-Bohm effect</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -508,26 +424,6 @@ own, <span class="math notranslate nohighlight">\([{\hat x},{\hat p}] = i\hbar\)
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compatible-measurements">Compatible measurements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incompatible-measurements-and-the-uncertainty-principle">Incompatible measurements and the uncertainty principle</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-spin-half">Example: spin-half</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-particle-on-a-line">Example: particle on a line</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
