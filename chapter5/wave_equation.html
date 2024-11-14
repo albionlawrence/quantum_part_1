@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Dynamics I &#8212; Physics 162a</title>
+    <title>The Schroedinger wave function and its dynamics &#8212; Physics 162a</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter5/dynamics_1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter5/wave_equation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Interlude: two interesting systems" href="../chapter6/Interlude_1.html" />
-    <link rel="prev" title="The Schroedinger wave function and its dynamics" href="wave_equation.html" />
+    <link rel="next" title="Dynamics I" href="dynamics_1.html" />
+    <link rel="prev" title="Designing Hamiltonians" href="Hamiltonians.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -204,8 +204,8 @@
 <li class="toctree-l2"><a class="reference internal" href="infinite_d.html">Particles on a line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatible_measurements.html">Compatible and incompatible measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Hamiltonians.html">Designing Hamiltonians</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wave_equation.html">The Schroedinger wave function and its dynamics</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Dynamics I</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">The Schroedinger wave function and its dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamics_1.html">Dynamics I</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/Interlude_1.html">Interlude: two interesting systems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -268,7 +268,7 @@
       
       
       
-      <li><a href="../_sources/chapter5/dynamics_1.md" target="_blank"
+      <li><a href="../_sources/chapter5/wave_equation.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -352,7 +352,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Dynamics I</h1>
+    <h1>The Schroedinger wave function and its dynamics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -362,8 +362,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-time-uncertainty">Energy-time uncertainty</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-probability">Conservation of probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-and-expectation-values">Operators and expectation values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-equation">Wave equation</a></li>
 </ul>
             </nav>
         </div>
@@ -375,48 +375,70 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="dynamics-i">
-<h1>Dynamics I<a class="headerlink" href="#dynamics-i" title="Link to this heading">#</a></h1>
-<p>Before continuing to specific systems, we want to make a couple general comments on dynamics.</p>
-<section id="energy-time-uncertainty">
-<h2>Energy-time uncertainty<a class="headerlink" href="#energy-time-uncertainty" title="Link to this heading">#</a></h2>
-<p>The position-momentum uncertainty principle is often complemented with an energy-time uncertainty principle:</p>
-<div class="math notranslate nohighlight" id="equation-energy-time-unc">
-<span class="eqno">(269)<a class="headerlink" href="#equation-energy-time-unc" title="Link to this equation">#</a></span>\[\Delta E \delta t \geq \frac{\hbar}{2}\]</div>
-<p>This could be argued for, for example, by noting that the energy is a component of a four-vector for which the spatial momenta are also components, <span class="math notranslate nohighlight">\(p^{\mu} = (E/c, {\vec p})\)</span>, and similarly for time and space: <span class="math notranslate nohighlight">\(x^{\mu} = (ct, {\vec x})\)</span>. But that isn’t the strongest argument, and at any rate we are dealing with non-relativistic theories. For starters, in this case <span class="math notranslate nohighlight">\(t\)</span> is a parameter not an operator.</p>
-<p>Another handwaving argument is that if we measure a system over a finite time <span class="math notranslate nohighlight">\(\Delta t\)</span>, the measurement process itself violates time translation invariance. In quantum mechanics as well as in classical mechanics, the conservation of energy follows from this invariance; thus in a measurement <span class="math notranslate nohighlight">\(E\)</span> is no longer conserved.</p>
-<p>But we can make a more precise statement that gives some definition of <span class="math notranslate nohighlight">\(\Delta t\)</span>. Let <span class="math notranslate nohighlight">\(H\)</span> be the Hamiltonian and <span class="math notranslate nohighlight">\(A\)</span> some Hermitian operator. We have already shown that</p>
-<div class="math notranslate nohighlight" id="equation-et-precise">
-<span class="eqno">(270)<a class="headerlink" href="#equation-et-precise" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-(\Delta H)^2 (\Delta A)^2 &amp; \geq \frac{1}{4} \Big|\bra{\psi} [H,A]\ket{\psi}\Big|^2\\
-&amp; = \frac{1}{4} \Big| i\hbar \bra{\psi}\frac{\del A}{\del t}\ket{\psi}\Big|^2\\
-&amp; \Rightarrow \Delta E \left(\frac{\Delta A}{\vev{\frac{\del A}{\del t}}}\right) \geq \frac{\hbar}{2}
-\end{align}\end{split}\]</div>
-<p>If we define <span class="math notranslate nohighlight">\(\Delta H \equiv \Delta E\)</span> and</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-schroedinger-wave-function-and-its-dynamics">
+<h1>The Schroedinger wave function and its dynamics<a class="headerlink" href="#the-schroedinger-wave-function-and-its-dynamics" title="Link to this heading">#</a></h1>
+<section id="operators-and-expectation-values">
+<h2>Operators and expectation values<a class="headerlink" href="#operators-and-expectation-values" title="Link to this heading">#</a></h2>
+<p>Consistent with the rules <span class="math notranslate nohighlight">\({\hat x}^i \ket{\psi} = \ket{x^i \psi}\)</span>, and <span class="math notranslate nohighlight">\({\hat p}_i \ket{\psi} = \ket{\frac{\hbar}{i}\frac{\del}{\del x^i}\psi}\)</span>, we simply write</p>
 <div class="math notranslate nohighlight">
-\[\Delta t = \frac{\Delta A}{\vev{\frac{\del A}{\del t}}}\]</div>
-<p>then we get our uncertainty principle. We can ghink of <span class="math notranslate nohighlight">\(\Delta t\)</span> as the time it takes for <span class="math notranslate nohighlight">\(\vev{A}\)</span> to change by an amount <span class="math notranslate nohighlight">\(\Delta A\)</span> – that is, the time scale for a change in the state to be noticeable.</p>
-</section>
-<section id="conservation-of-probability">
-<h2>Conservation of probability<a class="headerlink" href="#conservation-of-probability" title="Link to this heading">#</a></h2>
-<p>We have noted before that <span class="math notranslate nohighlight">\(\psi^*({\vec x}\psi({\vec x})\)</span> is a probability <em>density</em>; one integrates it over a region to find the probability that a particle lives in that region.</p>
-<p>Now the total probability in a system must be <span class="math notranslate nohighlight">\(1\)</span>. But over time, the probability that a particle is found in a given region <em>can</em> change; however it must change in such a way that the integrated probability does not.</p>
-<p>To see how this works, we can use the Schroedinger equation and compute:</p>
-<div class="math notranslate nohighlight" id="equation-cont-eqn">
-<span class="eqno">(271)<a class="headerlink" href="#equation-cont-eqn" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-\frac{\del}{\del t} \psi^*\psi &amp; = \frac{\hbar}{2im} (\nabla^2\psi^*\psi - \psi^* \nabla^2 \psi)\\
-&amp; = \vec{\nabla}\cdot\left(\frac{\hbar}{2im}\right)\left({\vec\nabla}\psi^* \psi - \psi^* {\vec{\nabla}}\psi\right)
+\[\begin{split}\begin{align}
+&amp; x^i: \psi \to x^i\psi\\
+&amp; p_i: \psi \to \frac{\hbar}{i} \frac{\del}{\del x^i} \psi
 \end{align}\end{split}\]</div>
-<p>Note how the potential has dropped out of this equation. If we define the probability current as:</p>
-<div class="math notranslate nohighlight" id="equation-prob-current">
-<span class="eqno">(272)<a class="headerlink" href="#equation-prob-current" title="Link to this equation">#</a></span>\[{\vec J}_{prob} = \frac{\hbar}{2im} \left(\psi^* {\vec\nabla}\psi - ({\vec\nabla}\psi^*) \psi\right)\]</div>
-<p>and the probability density as:</p>
-<div class="math notranslate nohighlight" id="equation-prob-dens">
-<span class="eqno">(273)<a class="headerlink" href="#equation-prob-dens" title="Link to this equation">#</a></span>\[\rho = \psi^*\psi\]</div>
-<p>then we get the continuity equation</p>
-<div class="math notranslate nohighlight" id="equation-continuity-eqn">
-<span class="eqno">(274)<a class="headerlink" href="#equation-continuity-eqn" title="Link to this equation">#</a></span>\[\frac{\del \rho}{\del t} + {\vec\nabla}\cdot{\vec J} = 0\]</div>
-<p>That is, the change of probability in a region is due to the flux of <span class="math notranslate nohighlight">\({\vec J}\)</span> into and out of that region. This guarantees the conservation of probability in the entire space so long as <span class="math notranslate nohighlight">\({\vec J}\)</span> vanishes quickly enough at infinity.</p>
+<p>To find inner products, recall that <span class="math notranslate nohighlight">\(\brket{\chi}{\psi} = \int d^d x \chi^*(x) \psi(x)\)</span>. Thus</p>
+<div class="math notranslate nohighlight" id="equation-op-ev">
+<span class="eqno">(266)<a class="headerlink" href="#equation-op-ev" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+&amp; \bra{\chi}{\hat x}^i \ket{\psi} = \brket{\chi}{x^i\psi} = \int d^d x \chi^*(x) x^i \psi(x)\\
+&amp; \bra{\chi}{|hat p}^i \ket{\psi} = \int d^d x \chi^*(x) \frac{\hbar}{i} \frac{\del}{\del x^i} \psi(x)
+\end{align}\end{split}\]</div>
+<p>It is easy to show from this representation that <span class="math notranslate nohighlight">\({\hat x}, {\hat p}\)</span> are Hermitian. To see this, recall that the adjoint map takes <span class="math notranslate nohighlight">\(O\ket{\chi} \to \bra{\chi}O^{\dagger}\)</span>. We want to show that <span class="math notranslate nohighlight">\(\bra{\chi}O\ket{\psi} = \bra{\chi}O^{\dagger}\ket{\psi}\)</span> for all <span class="math notranslate nohighlight">\(\ket{\chi},\ket{\psi}\)</span>. for the position operator, <span class="math notranslate nohighlight">\(x^i\ket{\chi} = \ket{x^i\chi}\)</span> and <span class="math notranslate nohighlight">\(\bra{x^i \chi} = \bra{\chi}(x^i)^{\dagger}\)</span>. But</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\brket{x^i \chi}{\psi} &amp; = \bra{\chi}(x^i)^{\dagger}\ket{\psi}\\
+&amp; = \int d^d x (x^i \chi)^* \psi \\
+&amp; = \int d^d x \chi^* x^i \psi \\
+&amp; = \int d^d x \chi^*(x^i\psi) = \bra{\chi} x^i \ket{\psi}
+\end{align}\end{split}\]</div>
+<p>so that <span class="math notranslate nohighlight">\(x^i = (x^i)^{\dagger}\)</span>.</p>
+<p>For <span class="math notranslate nohighlight">\({\hat p}_i\)</span> it is slighly more complicated. Now since</p>
+<div class="math notranslate nohighlight">
+\[{\hat p}_i \ket{\chi} = \ket{\frac{\hbar}{i}\frac{\del}{\del x^i}\chi}\]</div>
+<p>this mwans that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\brket{\frac{\hbar}{i}\frac{\del}{\del x^i}\chi}{\psi} &amp; = \bra{\chi}{\hat p}_i^{\dagger}\ket{\psi}\\
+&amp; = \int d^d x (\frac{\hbar}{i}\frac{\del\chi}{\del x^i})^*\psi\\
+&amp; = - \int d^d x \frac{\hbar}{i} \frac{\del \chi^*}{\del x^i} \psi\\
+&amp; = \int d^d x \chi^* \frac{\hbar}{i} \frac{\del}{\del x^i} \psi\\
+&amp; = \bra{\chi} {\hat p}_i \ket{\psi}
+\end{align}\end{split}\]</div>
+<p>where in the second to last line we integrated by parts. Since teh functions must be square integrable, they vanish at infinity, and the bounary term you get from integrating by parts should vanish also.</p>
+</section>
+<section id="wave-equation">
+<h2>Wave equation<a class="headerlink" href="#wave-equation" title="Link to this heading">#</a></h2>
+<p>We have to date discussed quantum mechanics in terms of abstract vector spaces, including the space of functions. In the case of particles moving in space, we have argued that this vector space is the vector space of square-integrable functions. In the case of particles in <span class="math notranslate nohighlight">\(d\)</span> dimensions this is <span class="math notranslate nohighlight">\(L^2(\CR^d)\)</span>, that is, complex functions on <span class="math notranslate nohighlight">\(\CR^d\)</span> which satisfy</p>
+<div class="math notranslate nohighlight">
+\[\int d^d x |\psi({\vec x})|^2 &lt; \infty\]</div>
+<p>In general we expect that we can write the dynamics of the states in terms of the function <span class="math notranslate nohighlight">\(\psi\)</span>. First, since any state at any time can be represented by a complex function <span class="math notranslate nohighlight">\(\psi\)</span>, we can write it as <span class="math notranslate nohighlight">\(\ket{\psi(x,t)}\)</span> .For the Hamiltonians such as</p>
+<div class="math notranslate nohighlight" id="equation-3d-ham">
+<span class="eqno">(267)<a class="headerlink" href="#equation-3d-ham" title="Link to this equation">#</a></span>\[H = \frac{{\hat{\vec p}}^2}{2m} + V({\vec x})\]</div>
+<p>or <a class="reference internal" href="Hamiltonians.html#equation-mag-field-ham">(263)</a>, the quantum dynamics can be easily written as local partial differential equations for <span class="math notranslate nohighlight">\(\psi(x,t)\)</span>. Using the actions</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+{\hat p}_i \ket{\psi({\vec x},t)} &amp; = \ket{\frac{\hbar}{i} \frac{\del}{\del x^i} \psi(x,t)}\\
+{\hat x}^i \ket{\psi} &amp; = \ket{x^i \psi({\vec x},t)}\\
+\frac{\del}{\del t} \ket{\psi} &amp; = \ket{\frac{\del}{\del t}\psi}
+\end{align}\end{split}\]</div>
+<p>This last can be shown via representing the derivative as the limit of a difference between <span class="math notranslate nohighlight">\(\psi(x,t+\eps) - \psi(t)\)</span>, and using the linearity of quantum mechanics which means that</p>
+<div class="math notranslate nohighlight">
+\[\ket{\psi(t+\eps)} - \ket{\psi(t)} = \ket{\psi(t+\eps) - \psi(t)}\]</div>
+<p>The upshot of this is that the time-dependent Schrodinger equation can be written as</p>
+<div class="math notranslate nohighlight" id="equation-3d-wave-eqn">
+<span class="eqno">(268)<a class="headerlink" href="#equation-3d-wave-eqn" title="Link to this equation">#</a></span>\[- \frac{\hbar^2}{2m} {\vec\nabla}^2 \psi({\vec x}, t) + V({\vec x}) \psi({\vec x},t) = i\hbar \frac{\del}{\del t} \psi({\vec x}, t)\]</div>
+<p>Relatedly, the time-<em>independent</em> Schrodinger equation for energy eigenstates becomes</p>
+<div class="math notranslate nohighlight">
+\[- \frac{\hbar^2}{2m} {\vec\nabla}^2 \psi({\vec x}, t) + V({\vec x}) \psi({\vec x},t) = E \psi({\vec x}, t)\]</div>
+<p>Practically speaking, this is the form we work with for particles moving in space – for the simple harmonic oscillator, or particles in a magnetic field (eg in the quantum hall systems), the hydrogen atom (ignoring spin), and so on. In the end, though, we should remember we are working with a vector space, and that the Schrodinger equation remains a linear equation.</p>
 </section>
 </section>
 
@@ -451,20 +473,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="wave_equation.html"
+       href="Hamiltonians.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The Schroedinger wave function and its dynamics</p>
+        <p class="prev-next-title">Designing Hamiltonians</p>
       </div>
     </a>
     <a class="right-next"
-       href="../chapter6/Interlude_1.html"
+       href="dynamics_1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Interlude: two interesting systems</p>
+        <p class="prev-next-title">Dynamics I</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -484,8 +506,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-time-uncertainty">Energy-time uncertainty</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-probability">Conservation of probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-and-expectation-values">Operators and expectation values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-equation">Wave equation</a></li>
 </ul>
   </nav></div>
 
