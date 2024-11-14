@@ -30,6 +30,7 @@ chapters:
     - file: chapter5/infinite_d
     - file: chapter5/compatible_measurements
     - file: chapter5/Hamiltonians
+    - file: chapter5/wave_equation
     - file: chapter5/dynamics_1
   - file: chapter6/Interlude_1
     sections:

@@ -204,6 +204,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter5/infinite_d.html">Particles on a line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter5/compatible_measurements.html">Compatible and incompatible measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter5/Hamiltonians.html">Designing Hamiltonians</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/wave_equation.html">The Schroedinger wave function and its dynamics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter5/dynamics_1.html">Dynamics I</a></li>
 </ul>
 </details></li>
@@ -361,7 +362,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#charged-particle-in-an-electromagnetic-field">Charged particle in an electromagnetic field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#charged-particle-in-an-electromagnetic-field">Charged particle in an electromagnetic field&gt;</a></li>
 </ul>
             </nav>
         </div>
@@ -377,32 +378,58 @@ document.write(`
 <h1>The Aharonov-Bohm effect<a class="headerlink" href="#the-aharonov-bohm-effect" title="Link to this heading">#</a></h1>
 <p>The first system we will explore is a particle moving in a region containing a magnetic field. This allows us to explore the structure of quantum mechanics in a background electromagnetic field, and leads to a surprising consequence – even when the field vanishes where the particle can move, it has a measurable effect on the particle’s wavefunction.</p>
 <section id="charged-particle-in-an-electromagnetic-field">
-<h2>Charged particle in an electromagnetic field<a class="headerlink" href="#charged-particle-in-an-electromagnetic-field" title="Link to this heading">#</a></h2>
+<h2>Charged particle in an electromagnetic field&gt;<a class="headerlink" href="#charged-particle-in-an-electromagnetic-field" title="Link to this heading">#</a></h2>
 <p>So far we have considered the case of a constant magnetic field. Here we will consider the more general case of an electromagnetic field.</p>
 <p>Two of Maxwell’s equations,</p>
 <div class="math notranslate nohighlight" id="equation-bianchi-ident">
-<span class="eqno">(272)<a class="headerlink" href="#equation-bianchi-ident" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(275)<a class="headerlink" href="#equation-bianchi-ident" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \frac{\del {\vec E}}{\del t} &amp; = c {\vec\nabla}\times{\vec B}\\ 
 {\vec\nabla}\cdot{\vec B} &amp; = 0
 \end{align}\end{split}\]</div>
 <p>imply that in a simply connected region, <span class="math notranslate nohighlight">\({\vec E}\)</span>, {\vec B}$ can be written in the form</p>
 <div class="math notranslate nohighlight" id="equation-gauge-potentials">
-<span class="eqno">(273)<a class="headerlink" href="#equation-gauge-potentials" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(276)<a class="headerlink" href="#equation-gauge-potentials" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 {\vec E} &amp; = - \frac{1}{c} \frac{\del {\vec A}}{\del t} - {\vec \nabla} \Phi\\
 {\vec B} &amp; = {\vec\nabla}\times{\vec A}
 \end{align}\end{split}\]</div>
 <p>The fact that a single solution <span class="math notranslate nohighlight">\({\vec A}, \Phi\)</span> can generally only be found in a simply connected region will become important to us below.</p>
 <p>The Lagrangian for a charged particle in this background is</p>
 <div class="math notranslate nohighlight" id="equation-em-lag">
-<span class="eqno">(274)<a class="headerlink" href="#equation-em-lag" title="Link to this equation">#</a></span>\[L - \half m {\dot{\vec x}}^2 + \frac{e}{c} {\dot{\vec x}}\cdot{\vec A} - q \Phi\]</div>
-<p>where <span class="math notranslate nohighlight">\(q\)</span> is the charge of the particle. Applyin the Euler-Lagrange equation to this, combined with <code class="xref eq docutils literal notranslate"><span class="pre">gauge_poentials</span></code>, leads to the Lorentz force law</p>
+<span class="eqno">(277)<a class="headerlink" href="#equation-em-lag" title="Link to this equation">#</a></span>\[L - \half m {\dot{\vec x}}^2 + \frac{e}{c} {\dot{\vec x}}\cdot{\vec A} - q \Phi\]</div>
+<p>where <span class="math notranslate nohighlight">\(q\)</span> is the charge of the particle. Applying the Euler-Lagrange equation to this, combined with <a class="reference internal" href="#equation-gauge-potentials">(276)</a>, leads to the Lorentz force law</p>
 <div class="math notranslate nohighlight" id="equation-chapter6-aharonov-bohm-0">
-<span class="eqno">(275)<a class="headerlink" href="#equation-chapter6-aharonov-bohm-0" title="Link to this equation">#</a></span>\[m {\ddot{\vec x}} = \frac{q}{c}{\vec{\dot x}}\times{\vec B} + q {\vec E}\]</div>
+<span class="eqno">(278)<a class="headerlink" href="#equation-chapter6-aharonov-bohm-0" title="Link to this equation">#</a></span>\[m {\ddot{\vec x}} = \frac{q}{c}{\vec{\dot x}}\times{\vec B} + q {\vec E}\]</div>
 <p>As it happens we cannot simply write <span class="math notranslate nohighlight">\(L\)</span> in terms of the physical field variables <span class="math notranslate nohighlight">\({\vec E}, {\vec B}\)</span>. To get a sensible variational principle the Lagrangian needs to be written a s afunction of the vector and scalar potentials <span class="math notranslate nohighlight">\(\Phi, {\vec A}\)</span>.</p>
-<p>It is important to note that <span class="math notranslate nohighlight">\(\Phi, {\vec A}\)</span> are ambiguously defined via <a class="reference internal" href="#equation-gauge-potentials">(273)</a>. If we shift <span class="math notranslate nohighlight">\({\vec A} \to {\vec A} - {\vec\nabla}\Lambda\)</span>, <span class="math notranslate nohighlight">\(\Phi \to \Phi + \frac{1}{c} \frac{\del \Lambda}{\del t}\)</span>, then the electric and magnetic fields do not change. This shoft in fact makes no real physical change: it is called a <em>gauge transformation</em> or <em>gauge symmetry</em>. You can show that the action <span class="math notranslate nohighlight">\(S = \int dt L\)</span> changes only by boundary terms (that is, by the integral of a divergence), so that the gauge symetry is a symmetry of the dynamics.</p>
+<p>It is important to note that <span class="math notranslate nohighlight">\(\Phi, {\vec A}\)</span> are ambiguously defined via <a class="reference internal" href="#equation-gauge-potentials">(276)</a>. If we shift</p>
+<div class="math notranslate nohighlight" id="equation-gt-potentials">
+<span class="eqno">(279)<a class="headerlink" href="#equation-gt-potentials" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+{\vec A} &amp; \to {\vec A} - {\vec\nabla}\Lambda \\
+\Phi &amp; \to \Phi + \frac{1}{c} \frac{\del \Lambda}{\del t}
+\end{align}\end{split}\]</div>
+<p>then the electric and magnetic fields do not change. This shift in fact makes no real physical change: it is called a <em>gauge transformation</em> or <em>gauge symmetry</em>. You can show that the action <span class="math notranslate nohighlight">\(S = \int dt L\)</span> changes only by boundary terms (that is, by the integral of a divergence), so that the gauge symetry is a symmetry of the dynamics.</p>
 <p>The Hamiltonian becomes</p>
 <div class="math notranslate nohighlight" id="equation-charged-particle-ham">
-<span class="eqno">(276)<a class="headerlink" href="#equation-charged-particle-ham" title="Link to this equation">#</a></span>\[H = \frac{1}{2m} \left({\vec p} - \frac{q}{c} {\vec A}({\vec x}, t)\right)^2 + q \Phi({\vec x},t)\]</div>
+<span class="eqno">(280)<a class="headerlink" href="#equation-charged-particle-ham" title="Link to this equation">#</a></span>\[H = \frac{1}{2m} \left({\vec p} - \frac{q}{c} {\vec A}({\vec x}, t)\right)^2 + q \Phi({\vec x},t)\]</div>
+<p>where the canonical momentum is</p>
+<div class="math notranslate nohighlight" id="equation-charged-particle-cm">
+<span class="eqno">(281)<a class="headerlink" href="#equation-charged-particle-cm" title="Link to this equation">#</a></span>\[p_i = m {\dot x}^i + \frac{e}{c} A^i\]</div>
+<p>Since <span class="math notranslate nohighlight">\({\dot x}^i\)</span> does not transform under gauge transformations, this means that <span class="math notranslate nohighlight">\(p_i\)</span> does:</p>
+<div class="math notranslate nohighlight" id="equation-gauge-shift-p">
+<span class="eqno">(282)<a class="headerlink" href="#equation-gauge-shift-p" title="Link to this equation">#</a></span>\[p_i \to p_i - \frac{e}{c} \frac{\del \Lambda}{\del x^i}\]</div>
+<p>Thus the first term in <a class="reference internal" href="#equation-charged-particle-ham">(280)</a> is gauge invariant. The last term shifs by</p>
+<div class="math notranslate nohighlight">
+\[H \to H + \frac{e}{c} \frac{\del}{\del t} \Lambda\]</div>
+<p>This shift affects Hamiltons equations:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt} p \to \frac{d]{dt} - \frac{e}{c} \frac{\del}{\del t} \frac{\del}{\del x^i} \Lambda\]</div>
+<p>consistent with the gauge transformation of <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>In the quantum case, if we let <span class="math notranslate nohighlight">\(\psi(x,t) = e^{- i \frac{e}{\hbar c} \Lambda} \psi'\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[{\hat p}_i  e^{- i \frac{e}{\hbar c} \Lambda} \psi' = e^{- i \frac{e}{\hbar c} \Lambda} ({\hat p_i} - \frac{e}{c}\frac{\del \Lambda}{\del x^i})\psi'\]</div>
+<p>Similarly,</p>
+<div class="math notranslate nohighlight">
+\[i\hbar \frac{\del}{\del t} e^{- i \frac{e}{\hbar c} \Lambda} \psi' =  e^{- i \frac{e}{\hbar c} \Lambda} (i\hbar \frac{\del}{\del t} + \frac{e}{c} \frac{\del \Lambda}{\del t})\psi'\]</div>
+<p>Thus, if we apply <a class="reference internal" href="#equation-gt-potentials">(279)</a> to <span class="math notranslate nohighlight">\(A,\Phi\)</span> in the quantum Hamiltonian, and also shift <span class="math notranslate nohighlight">\(\psi \to e^{-i e\Lambda/(\hbar c)}\psi\)</span>, the Schroedinger equation remains unchanged.</p>
 </section>
 </section>
 
@@ -470,7 +497,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#charged-particle-in-an-electromagnetic-field">Charged particle in an electromagnetic field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#charged-particle-in-an-electromagnetic-field">Charged particle in an electromagnetic field&gt;</a></li>
 </ul>
   </nav></div>
 
