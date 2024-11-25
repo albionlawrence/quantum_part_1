@@ -1,0 +1,16 @@
+# The free nonrelativistic particle
+
+We begin by considering the "free" nonrelativistic particle -- that is, a particle with no force acting on it. The Hamiltonian is 
+```{math}
+:label: h_free
+H = \frac{{\vec p}^2}{2m}
+```
+where $m$ is the particle mass. The time-dependent Schroedinger equation is
+```{math}
+:label: tdse_free
+- \frac{\hbar^2}{2m} \psi({\vec x}, t) = i \hbar \frac{\del}{\del t} \psi({\vec x}, t)
+```
+The solutions to the time-*independent* Schrodinger equation are clearly
+```{math}
+:label: 
+\psi_E({\vec x}) = \frac{1}{(2\pi\hbar)^{1/2}}e^{i {\vec p}\cdot{\vec x}/\hbar}

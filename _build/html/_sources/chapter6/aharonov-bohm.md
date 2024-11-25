@@ -91,14 +91,18 @@ Thus, if we apply {eq}`gt_potentials` to $A,\Phi$ in the quantum Hamiltonian, an
 
 Now we consider the setup show below, which is a modification of the classic double slit experiment (we will review this below since we haven't covered it yet). A source of some particle at $x = x_{source}$, which we take to produce particles in the same state each time, is behind a screen at $x = 0$ with two slits. The effect of the screen is to split the state into two wavepackets, $\psi_1({\vec x}, t)$ and $\psi_2({\vec x}, t)$. We also assume that if we block slit 1(2) the system is in state $A_1 \psi_1$($A_2 \psi_2$), where $A_i$ enforces $\int d^2 x |A_i|^2 |\psi_i|^2 = 1$. With both slits open the particle is in state $\psi({\vec x},t) = \psi_1 + \psi_2$ such that $\int d^2 x |\psi_1 + \psi_2|^2 = 1$. Note that we are ignoring the $z$ direction here, we can assume that the particles move more or less at $z = 0$, or that the wavefunction is more or less constant in the $z$ direction.
 
-Now let us place a detector with resolution $\delta$ that detects the $y$ position of the particle, ad $x = x_{meas}$. The probability that the particle is detected at $y$ within resolution $\delta$ is
+![Illustration of double-slit experiment](double_slit.jpeg)
+
+Now let us place a detector with resolution $\delta$ that detects the $y$ position of the particle, at $x = x_{meas}$. If we block slit 2, the probability for the particle to hit the screen at $y$ with resiolution $\delta$ is $p_1(y,\delta) = \delta |\phi_1(x_{meas},y)|^2$, as illustrated in the image above. 
+
+The probability that the particle is detected at $y$ within resolution $\delta$ is
 ```{math}
 :label: detection_prob
-p(y,\delta) = |\psi_1 + \psi_2|^2 \delta = \delta\left(|\psi_1|^2 + |\psi_2|^2 + \psi_1^* \psi_2 + \psi_2^* \psi_1\right)
+p_{12}(y,\delta) = |\psi_1 + \psi_2|^2 \delta = \delta\left(|\psi_1|^2 + |\psi_2|^2 + \psi_1^* \psi_2 + \psi_2^* \psi_1\right)
 ```
 The typical story is that $\psi_i(x_{screen},y,t) = \sim f_i(y,t) e^{i k y}$ where $f$ is some envelope function. If we block either screen, we see that envelope function, but if we do not, then we see interference patterns. The point is that the probabilities do not add, the wavefunctions do.
 
-Now let is place a solenoid S just behind the screen. We assume we can arrange it so that $\psi_i$ has negligible support near the solenoid. The solenoid produces a magnetic field ${\vec B} = B{\hat z}$ in the $z$ direction inside, with total magnetic flux $\int_{interior} d^2 x B = \Phi$.
+Now let is place a solenoid  just behind the screen. We assume we can arrange it so that $\psi_i$ has negligible support near the solenoid. The solenoid produces a magnetic field ${\vec B} = B{\hat z}$ in the $z$ direction inside, with total magnetic flux $\int_{interior} d^2 x B = \Phi$.
 
 Outside the solenoid, ${\vec B} = 0$. We thus might be tempted to assume that we can set ${\vec A} = 0$. However, we can only do this everywhere in a simply connected region and the region outside of the solenoid fails to be simply connected. This is why I was careful to state that we can solve ${\vec B} = {\vec\nabla} \times{\vec A}$ for ${\vec A}$ in a simply connected region. Consider two overlapping regions $R_1, R_2$ as shown, and take a path $C = C_1 + C_2$ around the solenoid that passes through both of them at $z = 0$, such that $C_i$ lies in region $R_i$. By Stoke's theorem,
 ```{math}
@@ -106,6 +110,8 @@ Outside the solenoid, ${\vec B} = 0$. We thus might be tempted to assume that we
 \oint d{\vec l}\cdot({\vec\nabla}\times{\vec A}) = \int_R d^2 x B_z = \Phi = \oint_{C_1}d({\vec l}\cdot({\vec\nabla}\times{\vec A}) + \oint_{C_2}d{\vec l}\cdot{\vec\nabla}\times{\vec A})
 ```
 Now in region $R_1$ or $R_2$ we could set ${\vec A} = 0$ but by the above, we cannot do so in both. If ${\vec A}_i$ is the vector potential in region $R_i$, then in the overlap regions, we must have ${\vec A}_1 = {\vec A}_2 + {\vec\nabla} \Lambda$; they are related by a gauge transformation. 
+
+![Aharono-Bohm experiment](AB_slits.jpeg)
 
 Now, what do our wavefunctions look like? Outside of the solenoid, they satisfy the time-dependent Schroedinger equation
 ```{math}
@@ -127,4 +133,13 @@ so that
 ```
 and $\phi_i$ are the wavefunctions for the double slit experiment absent the screen. 
 
-We assume that the wavefunction $\phi_i$ has support only in $R_i$, so that we can unambigoulsy write $\psi_i$ via the above shift. Now let us measure the position of the particle at $x_{meas}$. 
+We assume that the wavefunction $\phi_i$ has support only in $R_i$, so that we can unambigoulsy write $\psi_i$ via the above shift. Now let us measure the position of the particle at $x_{meas}$. The result is
+```{math}
+:label: AB_result
+\begin{align}
+p(y,\delta) & = \delta  e^{i \frac{e}{c} \int_{x_0,R_1}^{x_{meas}} d{\vec l}\cdot{\vec A}}\
+\phi_1+ e^{i \frac{e}{c} \int_{x_0,R_2}^{x_{meas}} d{\vec l}\cdot{\vec A}}\phi_2 \\
+& = |\phi_1|^2 + |\phi_2|^2 + \phi_2^* \phi_1 e^{i\frac{e}{c}\Phi} + c.c.
+\end{align}
+```
+In other words, as we change $\Phi$, the interference fringes will undergo a phase shift proportional to the magnetic flux through the solenoid.

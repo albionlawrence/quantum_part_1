@@ -35,6 +35,10 @@ chapters:
   - file: chapter6/Interlude_1
     sections:
     - file: chapter6/aharonov-bohm
+    - file: chapter6/neutrino_oscillations
+  - file: chapter7/Wave_examples
+    sections:
+    - file: chapter7/free_particle
   - file: appendix
   - file: bibliography
 # - file: notebooks

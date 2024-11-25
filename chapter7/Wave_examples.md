@@ -1,0 +1,4 @@
+# Examples of nonrelativistic quantum particle dynamics
+
+After spending some time with abstract discussions of dofferent Hilbert spaces, and simple two-state systems, we will now dig into an important class of quantum problems, that of a nonrelativistic particle moving in various potentials. This includes both scattering-type problems and bound state problems. However, we will warm up by considering the free particle.
+
