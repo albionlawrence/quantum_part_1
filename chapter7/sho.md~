@@ -1,0 +1,18 @@
+# The simple harmonic oscillator
+
+The next potential we wish to consider is the *simple harmonic oscillator,
+```{math}
+:label: sho_ham
+H = \frac{p^2}{2m} + \half m \omega^2 x^2
+```
+Tihs is exactly solvable in both classical and quantum mechanics. Why do we consider such a potential, besides this nice fact of classical solvablility? Because at low energies, it is often a good first approximation to a given potential.
+
+Consider a more general 1d potential problem,
+```{math}
+H = \frac{p^2}{2m} + V(x)
+```
+We will consider energies so that the classically allowed region is near the absolute monimum of the potential. 
+
+Now if we set $x = x_0$ as the location of this classical minimum, we can approximate $V(x)$ as:
+```{math}
+:label: approx_potential

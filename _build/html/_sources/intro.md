@@ -7,7 +7,7 @@ The required book for this course is *Quantum Mechanics: An Experimentalist's Ap
 The first semester will focus more on basic concepts, illustrated by simple examples, mostly from one-dimensional 
 non-relativistic particle mechanics, although we will begin to discuss three dimensions at the end. The second semester will explore a wider variety of examples, especially from atomic and condensed-matter physics, and various methods for understanding complicated systems (especially symmetry methods and approximation schemes).
 
-A note for any outside readers: if you find this useful, that's awesome. Note that these lectures are the result of a dynamic interaction with the particular students I teach, and will skip over in-class activities aimed at cementing their knowledge. 
+A note for any outside readers: if you find this useful, that's awesome. Note that these lectures are the result of a dynamic interaction with the particular students I teach, and will skip over in-class activities aimed at cementing their knowledge. Finally these are not going to be completely clean, especially for now; they are the typed equivalent of written lecture notes, done so that I can more easily update in future classes. 
 
 ```{tableofcontents}
 ```

@@ -1,0 +1,12 @@
+# The square well
+
+The square well allows us to illustrate some basic aspects of the physics and mathematics of bound states, especially the important role of boundary conditions. We will close with some observations on symmetry and degeneracy.
+
+## The infinite square well
+
+This is the classic "particle in a box" problem. We consider the potential 
+```{math}
+:label: infinite_well 
+V(x) = \begin{cases} 0 & - \frac{L}{2} \leq x \leq \frac{L}{2} \\
+\infty & |x| > \frac{L}{2} \end{cases}
+```
