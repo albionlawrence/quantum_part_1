@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter7/square_well';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="next" title="The simple harmonic oscillator" href="sho.html" />
     <link rel="prev" title="The free nonrelativistic particle" href="free_particle.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -216,6 +216,7 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Wave_examples.html">Examples of nonrelativistic quantum particle dynamics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="free_particle.html">The free nonrelativistic particle</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">The 1d square well</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sho.html">The simple harmonic oscillator</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -489,13 +490,17 @@ A_{III} e^{-\kappa x} &amp; x &gt; \frac{L}{2}\end{cases}\end{split}\]</div>
 \[\cos \frac{k L}{2} = - \frac{\kappa}{k} \Rightarrow \cot \frac{\sqrt{2m |E| L^2}}{2\hbar} = - \sqrt{\frac{V_0}{|E|} - 1}\]</div>
 <p><img alt="Odd solutions" src="../_images/Odd_solutions.png" /></p>
 <p>Here we can see that for small enough <span class="math notranslate nohighlight">\(V_0\)</span> there will be no solutions; solutions will start to appear as we increase <span class="math notranslate nohighlight">\(V_0\)</span>.</p>
-<p>We can also show, by overlaying these pictures, that solutions will again a,=lternate between even and odd.</p>
-<p>For <span class="math notranslate nohighlight">\(E &lt; - V_0\)</span>, there are simply no normalizable solutions. The soolutions in each regions are real exponentials, and tere is no way to join them so that they fall off at large <span class="math notranslate nohighlight">\(|x|\)</span>.</p>
-<p>For <span class="math notranslate nohighlight">\(E &gt; 0\)</span>, the solutions in all regions are oscillating exponentials. Eigenfunctions of the Hamiltonian come from piecing together plane wave solutions, and are not normalizable – in general they are delta function normalizable. We can specify that the solution goes as either <span class="math notranslate nohighlight">\(e^{i k x}\)</span> or <span class="math notranslate nohighlight">\(e^{- i k x}\)</span> at infinity, where <span class="math notranslate nohighlight">\(E = \frac{\hbar^2 k^2}{2m}\)</span>. There are still 5 remaining coefficients governing the wave equation in different regions, subject to 4 homogenous matching conditions. The matching conditions will have a solution for any <span class="math notranslate nohighlight">\(E&gt; 0, V_0\)</span>, and thus we have a <em>continuum</em> of solutions, just as in the free particle case.</p>
+<p>We can also show, by overlaying these pictures, that solutions will again alternate between even and odd. The story is actuall more interesting; the <span class="math notranslate nohighlight">\(N\)</span>th bound state energy level (where <span class="math notranslate nohighlight">\(N = 0\)</span> is the ground state) will have <span class="math notranslate nohighlight">\(N\)</span> nodes in one dimension. This is a result that pertains to bound states which vcanish at infinity, and for which the energy spectrum is discrete.  A nice simple argument for this, with references, can be found in . The essential point is that one can focus on a region in the interior of the potential and bound it by infinite walls. Even if <span class="math notranslate nohighlight">\(V(x)\)</span> ius curved, if we make teh allowed region small enough, teh curvature is irrelevtn and we basically have the infinite square well problem se already solved above. We already know how to solve this problem, and the wavfunctions have the characteristics we are after. Now start to separate the walls slowly towards infinity. The only way for the number of zeros to change is if a single zero appears or disappears, requiring that the wavefunction and its derivative vanish; or two zeros coalesce, in which case the wavefunction and its derivative vanish. But the Schrodinger equation is second order in space, and the conditions given completely determine the solution. Since a vanishing wavefunction is a solution whose value and first derivative vanish at a point, this is the unique solution satisfying these conditions. But if we assume that the wavefunctions are all nontrivial for any separation then this is impossible, and the number of nodes cannot change. In the meantime, as discussed in Commins, there can be no degeneracy in the one-dimensional problem, the energy levels cannot cross.</p>
+<p>We close with a few comments.</p>
+<ol class="arabic simple">
+<li><p>Note that the quantum wavefunction has support in the classically forbidden region. This is typical. However, if we mwasure the location of the particle with sufficient resolution, and the particle is found in this region, the average energy of the particle will be above the barrier.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(E &lt; - V_0\)</span>, there are simply no normalizable solutions. The solutions in each regions are real exponentials, and there is no way to join them so that they fall off at large <span class="math notranslate nohighlight">\(|x|\)</span>.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(E &gt; 0\)</span>, the solutions in all regions are oscillating exponentials. Eigenfunctions of the Hamiltonian come from piecing together plane wave solutions, and are not normalizable – in general they are delta function normalizable. We can specify that the solution goes as either <span class="math notranslate nohighlight">\(e^{i k x}\)</span> or <span class="math notranslate nohighlight">\(e^{- i k x}\)</span> at infinity, where <span class="math notranslate nohighlight">\(E = \frac{\hbar^2 k^2}{2m}\)</span>. There are still 5 remaining coefficients governing the wave equation in different regions, subject to 4 homogenous matching conditions. The matching conditions will have a solution for any <span class="math notranslate nohighlight">\(E&gt; 0, V_0\)</span>, and thus we have a <em>continuum</em> of solutions, just as in the free particle case.</p></li>
+</ol>
 </section>
 <section id="lack-of-degeneracies">
 <h2>Lack of degeneracies<a class="headerlink" href="#lack-of-degeneracies" title="Link to this heading">#</a></h2>
-<p>One other aspect of both problems aove is the absence of any degeneracy. This is a general feature of 1d bound state problems when the potential wells are finite. The argument is straightforward and given by Commons.</p>
+<p>One other aspect of both problems aove is the absence of any degeneracy. This is a general feature of 1d bound state problems when the potential wells are finite. The argument is straightforward and given by Commins.</p>
 </section>
 </section>
 
@@ -539,11 +544,11 @@ A_{III} e^{-\kappa x} &amp; x &gt; \frac{L}{2}\end{cases}\end{split}\]</div>
       </div>
     </a>
     <a class="right-next"
-       href="../appendix.html"
+       href="sho.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix</p>
+        <p class="prev-next-title">The simple harmonic oscillator</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
