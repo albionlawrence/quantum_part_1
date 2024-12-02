@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter6/aharonov-bohm';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="next" title="Neutrino oscillations" href="neutrino_oscillations.html" />
     <link rel="prev" title="Interlude: two interesting systems" href="Interlude_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -210,6 +210,13 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Interlude_1.html">Interlude: two interesting systems</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">The Aharonov-Bohm effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neutrino_oscillations.html">Neutrino oscillations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter7/Wave_examples.html">Examples of nonrelativistic quantum particle dynamics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/free_particle.html">The free nonrelativistic particle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/square_well.html">The 1d square well</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/sho.html">The simple harmonic oscillator</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -449,7 +456,7 @@ document.write(`
 <section id="id1">
 <h2>The Aharonov-Bohm effect<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Now we consider the setup show below, which is a modification of the classic double slit experiment (we will review this below since we haven’t covered it yet). A source of some particle at <span class="math notranslate nohighlight">\(x = x_{source}\)</span>, which we take to produce particles in the same state each time, is behind a screen at <span class="math notranslate nohighlight">\(x = 0\)</span> with two slits. The effect of the screen is to split the state into two wavepackets, <span class="math notranslate nohighlight">\(\psi_1({\vec x}, t)\)</span> and <span class="math notranslate nohighlight">\(\psi_2({\vec x}, t)\)</span>. We also assume that if we block slit 1(2) the system is in state <span class="math notranslate nohighlight">\(A_1 \psi_1\)</span>(<span class="math notranslate nohighlight">\(A_2 \psi_2\)</span>), where <span class="math notranslate nohighlight">\(A_i\)</span> enforces <span class="math notranslate nohighlight">\(\int d^2 x |A_i|^2 |\psi_i|^2 = 1\)</span>. With both slits open the particle is in state <span class="math notranslate nohighlight">\(\psi({\vec x},t) = \psi_1 + \psi_2\)</span> such that <span class="math notranslate nohighlight">\(\int d^2 x |\psi_1 + \psi_2|^2 = 1\)</span>. Note that we are ignoring the <span class="math notranslate nohighlight">\(z\)</span> direction here, we can assume that the particles move more or less at <span class="math notranslate nohighlight">\(z = 0\)</span>, or that the wavefunction is more or less constant in the <span class="math notranslate nohighlight">\(z\)</span> direction.</p>
-<p><img alt="Illustration of double-slit experiment" src="chapter6/double_slit.jpeg" /></p>
+<p><img alt="Illustration of double-slit experiment" src="chapter6/double_slit.png" /></p>
 <p>Now let us place a detector with resolution <span class="math notranslate nohighlight">\(\delta\)</span> that detects the <span class="math notranslate nohighlight">\(y\)</span> position of the particle, at <span class="math notranslate nohighlight">\(x = x_{meas}\)</span>. If we block slit 2, the probability for the particle to hit the screen at <span class="math notranslate nohighlight">\(y\)</span> with resiolution <span class="math notranslate nohighlight">\(\delta\)</span> is <span class="math notranslate nohighlight">\(p_1(y,\delta) = \delta |\phi_1(x_{meas},y)|^2\)</span>, as illustrated in the image above.</p>
 <p>The probability that the particle is detected at <span class="math notranslate nohighlight">\(y\)</span> within resolution <span class="math notranslate nohighlight">\(\delta\)</span> is</p>
 <div class="math notranslate nohighlight" id="equation-detection-prob">
@@ -460,7 +467,7 @@ document.write(`
 <div class="math notranslate nohighlight" id="equation-stokes-theorem">
 <span class="eqno">(284)<a class="headerlink" href="#equation-stokes-theorem" title="Link to this equation">#</a></span>\[\oint d{\vec l}\cdot({\vec\nabla}\times{\vec A}) = \int_R d^2 x B_z = \Phi = \oint_{C_1}d({\vec l}\cdot({\vec\nabla}\times{\vec A}) + \oint_{C_2}d{\vec l}\cdot{\vec\nabla}\times{\vec A})\]</div>
 <p>Now in region <span class="math notranslate nohighlight">\(R_1\)</span> or <span class="math notranslate nohighlight">\(R_2\)</span> we could set <span class="math notranslate nohighlight">\({\vec A} = 0\)</span> but by the above, we cannot do so in both. If <span class="math notranslate nohighlight">\({\vec A}_i\)</span> is the vector potential in region <span class="math notranslate nohighlight">\(R_i\)</span>, then in the overlap regions, we must have <span class="math notranslate nohighlight">\({\vec A}_1 = {\vec A}_2 + {\vec\nabla} \Lambda\)</span>; they are related by a gauge transformation.</p>
-<p><img alt="Aharono-Bohm experiment" src="chapter6/AB_slits.jpeg" /></p>
+<p><img alt="Aharono-Bohm experiment" src="../_images/AB_slits.jpeg" /></p>
 <p>Now, what do our wavefunctions look like? Outside of the solenoid, they satisfy the time-dependent Schroedinger equation</p>
 <div class="math notranslate nohighlight" id="equation-ab-tdse">
 <span class="eqno">(285)<a class="headerlink" href="#equation-ab-tdse" title="Link to this equation">#</a></span>\[- \frac{\hbar^2}{2m} \left(-i {\vec\nabla} = \frac{e}{c} {\vec A}\right) \psi = i\hbar \del_t \psi\]</div>
@@ -525,11 +532,11 @@ p(y,\delta) &amp; = \delta  e^{i \frac{e}{c} \int_{x_0,R_1}^{x_{meas}} d{\vec l}
       </div>
     </a>
     <a class="right-next"
-       href="../appendix.html"
+       href="neutrino_oscillations.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix</p>
+        <p class="prev-next-title">Neutrino oscillations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

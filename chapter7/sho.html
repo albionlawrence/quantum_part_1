@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Examples of nonrelativistic quantum particle dynamics &#8212; Physics 162a</title>
+    <title>The simple harmonic oscillator &#8212; Physics 162a</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter7/Wave_examples';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter7/sho';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The free nonrelativistic particle" href="free_particle.html" />
-    <link rel="prev" title="Neutrino oscillations" href="../chapter6/neutrino_oscillations.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="The 1d square well" href="square_well.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -213,10 +213,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/neutrino_oscillations.html">Neutrino oscillations</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Examples of nonrelativistic quantum particle dynamics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Wave_examples.html">Examples of nonrelativistic quantum particle dynamics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="free_particle.html">The free nonrelativistic particle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="square_well.html">The 1d square well</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sho.html">The simple harmonic oscillator</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">The simple harmonic oscillator</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -275,7 +275,7 @@
       
       
       
-      <li><a href="../_sources/chapter7/Wave_examples.md" target="_blank"
+      <li><a href="../_sources/chapter7/sho.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -346,7 +346,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -357,11 +359,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Examples of nonrelativistic quantum particle dynamics</h1>
+    <h1>The simple harmonic oscillator</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-solution">Classical solution</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -371,12 +381,44 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="examples-of-nonrelativistic-quantum-particle-dynamics">
-<h1>Examples of nonrelativistic quantum particle dynamics<a class="headerlink" href="#examples-of-nonrelativistic-quantum-particle-dynamics" title="Link to this heading">#</a></h1>
-<p>After spending some time with abstract discussions of dofferent Hilbert spaces, and simple two-state systems, we will now dig into an important class of quantum problems, that of a nonrelativistic particle moving in various potentials.</p>
-<p>After introducing the free particle we will first discuss bound state problems. The square well (which should be review) will provide an introduction to solving discrete eigenvalue problems, and the importance of boundary conditions for this. The simple harmonic oscillator will serve as an introduction to a number of important concepts; dimensional analysis and scaling; effective/low-energy approximations; and operator methods. Finally (given time) we will embark on some simple discussion of scattering-type problems.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-simple-harmonic-oscillator">
+<h1>The simple harmonic oscillator<a class="headerlink" href="#the-simple-harmonic-oscillator" title="Link to this heading">#</a></h1>
+<p>The next potential we wish to consider is the *simple harmonic oscillator,</p>
+<div class="math notranslate nohighlight" id="equation-sho-ham">
+<span class="eqno">(300)<a class="headerlink" href="#equation-sho-ham" title="Link to this equation">#</a></span>\[H = \frac{p^2}{2m} + \half m \omega^2 x^2\]</div>
+<p>Tihs is exactly solvable in both classical and quantum mechanics. Why do we consider such a potential, besides this nice fact of classical solvablility? Because at low energies, it is often a good first approximation to a given potential.</p>
+<p>Consider a more general 1d potential problem,</p>
+<div class="math notranslate nohighlight">
+\[H = \frac{p^2}{2m} + V(x)\]</div>
+<p>We will consider energies so that the classically allowed region is near the absolute monimum of the potential.</p>
+<p>Now if we set <span class="math notranslate nohighlight">\(x = x_0\)</span> as the location of this classical minimum, we can approximate <span class="math notranslate nohighlight">\(V(x)\)</span> as:</p>
+<div class="math notranslate nohighlight" id="equation-approx-potential">
+<span class="eqno">(301)<a class="headerlink" href="#equation-approx-potential" title="Link to this equation">#</a></span>\[V(x) = V(x_0) + (x - x_0) V'(x_0) + \half (x - x_0)^2 V''(x_0) + \frac{1}{3!} (x = x_0)^3 V'''(x_0) + \ldots\]</div>
+<p>Since we are looking near a minimum, <span class="math notranslate nohighlight">\(V'(x_0) = 0\)</span>. We can also shift the total energy (since it is irrelevant in classical and qauntum mechanics in the absence of gravity). This expansion is a good one if the higher order terms in <span class="math notranslate nohighlight">\((x - x_0)\)</span> are smaller than the lower-order ones. In particular, we can approximate the potential by the quadratic term if</p>
+<div class="math notranslate nohighlight" id="equation-quadratic-condition">
+<span class="eqno">(302)<a class="headerlink" href="#equation-quadratic-condition" title="Link to this equation">#</a></span>\[\half \big| V''(x_0) (x - x_0)^2\big| \gg \frac{1}{3!} \big|V'''(x_0)(x - x_0)^3\big| \Rightarrow |x - x_0| \ll \frac{3 V''(x_0)}{V'''(x_0)}\]</div>
+<p>You might have been tempted to say “the third derivtive of <span class="math notranslate nohighlight">\(V\)</span> at <span class="math notranslate nohighlight">\(x_0\)</span> is smaller than the second derivative” but that makes no sense – these quantities have different dimensions. In fact the viability of the approximation also depends on <span class="math notranslate nohighlight">\(|x - x_0|\)</span> being small enough. This depends on the energy. We can see thius best classically: for larger energies, the particle has a larger range, and eventually the criterion <a class="reference internal" href="#equation-quadratic-condition">(302)</a> will break down.</p>
+<p>This story is actually pretty general; for many problems, teh Lagrangian can be approximated at low energies by a Lagrangian which is quadratic in the phase space variables; if the system is stable, it can be reduced further to a collection of harmonic oscillators. This includes the electromagnetic field. Higher order or anharmonic terms (which in quantum field theory arises from particle interactions) can be treated in an approximation scheme known as <em>perturbation theory</em>.</p>
+<p>Finally to get <a class="reference internal" href="#equation-sho-ham">(300)</a>, we set <span class="math notranslate nohighlight">\(V'(x_0) = m \omega^2\)</span>. We can define <span class="math notranslate nohighlight">\(\omega\)</span> this way (given <span class="math notranslate nohighlight">\(m, V(x)\)</span>). The reason for doing so becomes clear when we examine the solutions to the classical and quantum problems.</p>
+<section id="classical-solution">
+<h2>Classical solution<a class="headerlink" href="#classical-solution" title="Link to this heading">#</a></h2>
+<p>As a reminder, Hamilton’s equations give us:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+{\dot x} &amp; = \frac{\del H}{\del p} = \frac{p}{m}\\
+{\dot p} &amp; = - \frac{\del H}{\del x} = - m \omega^2 x
+\end{align}\end{split}\]</div>
+<p>Taking the deirvative of the first equation and using the second equation, we get the classical SHO equation</p>
+<div class="math notranslate nohighlight">
+\[{\ddot x} + \omega^2 x = -\]</div>
+<p>which has as a general solution</p>
+<div class="math notranslate nohighlight">
+\[x(t) = X_{max} \cos(\omega t + \delta) \Rightarrow p = - X_{max} m\omega \sin(\omega t + \delta)\]</div>
+<p>and <span class="math notranslate nohighlight">\(A,\delta\)</span> are set by the initial conditions on <span class="math notranslate nohighlight">\(x(t_0), {\dot x}(t_0)\)</span>. The total energy of this solution is</p>
+<div class="math notranslate nohighlight">
+\[E = \frac{p^2}{2m} + \half m \omega^2 x^2 = \half m \omega^2 X_{max}^2\]</div>
+<p>Thus, more energetic states travel a wider range. The frequency of oscillation, and the period <span class="math notranslate nohighlight">\(T = 2\pi/\omega\)</span>, are fixed.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -410,20 +452,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../chapter6/neutrino_oscillations.html"
+       href="square_well.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Neutrino oscillations</p>
+        <p class="prev-next-title">The 1d square well</p>
       </div>
     </a>
     <a class="right-next"
-       href="free_particle.html"
+       href="../appendix.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">The free nonrelativistic particle</p>
+        <p class="prev-next-title">Appendix</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -433,6 +475,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-solution">Classical solution</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

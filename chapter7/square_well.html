@@ -1,0 +1,624 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The 1d square well &#8212; Physics 162a</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter7/square_well';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="The free nonrelativistic particle" href="free_particle.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dogs_quantum.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/dogs_quantum.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Physics 162a <br /> Prof. Albion Lawrence <br />  Brandeis University</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Newton.html">Newtonian mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Lagrange.html">Lagrangian Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Constraints.html">Constrained Lagrangian Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Symmetries.html">Symmetries and conservation laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Hamilton.html">Hamiltonian Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Intro_quantum.html">Introduction to quantum mechanics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/Intro_linear_algebra.html">Linear algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Vector_spaces.html">Vector spaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Linear_operators.html">Linear operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Adjoint.html">Adjoints and inner products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Operator_spectra.html">Spectra of Hermitian and Unitary Operators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter4/Quantum_rules.html">The Rules of Quantum Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/Axioms.html">The Axioms of Quantum Mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/Spin_half.html">Example: spin-1/2 particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/entangled.html">Entangled states and density matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/bell.html">Local Realism vs. Quantum Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/Wave_mechanics.html">Wave mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/infinite_d.html">Particles on a line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/compatible_measurements.html">Compatible and incompatible measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/Hamiltonians.html">Designing Hamiltonians</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/wave_equation.html">The Schroedinger wave function and its dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/dynamics_1.html">Dynamics I</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/Interlude_1.html">Interlude: two interesting systems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/aharonov-bohm.html">The Aharonov-Bohm effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/neutrino_oscillations.html">Neutrino oscillations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Wave_examples.html">Examples of nonrelativistic quantum particle dynamics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="free_particle.html">The free nonrelativistic particle</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">The 1d square well</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter7/square_well.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The 1d square well</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-infinite-square-well">The infinite square well</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parity-symmetric-potentials">Parity-symmetric potentials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-finite-square-well">The finite square well</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lack-of-degeneracies">Lack of degeneracies</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-1d-square-well">
+<h1>The 1d square well<a class="headerlink" href="#the-1d-square-well" title="Link to this heading">#</a></h1>
+<p>The square well allows us to illustrate some basic aspects of the physics and mathematics of bound states, especially the important role of boundary conditions. We will close with some observations on symmetry and degeneracy.</p>
+<p>We will focus on one-dimensional bound states here (and for the rest of this section).</p>
+<section id="the-infinite-square-well">
+<h2>The infinite square well<a class="headerlink" href="#the-infinite-square-well" title="Link to this heading">#</a></h2>
+<p>This is the classic “particle in a box” problem. We consider the potential</p>
+<div class="math notranslate nohighlight" id="equation-infinite-well">
+<span class="eqno">(294)<a class="headerlink" href="#equation-infinite-well" title="Link to this equation">#</a></span>\[\begin{split}V(x) = \begin{cases} 0 &amp; - \frac{L}{2} \leq x \leq \frac{L}{2} \\
+\infty &amp; |x| &gt; \frac{L}{2} \end{cases}\end{split}\]</div>
+<p>We wish to solve the time-independent Schroedinger equation in this background.
+For finite energy, it is clear that to solve it for finite <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(\psi(x)\)</span> must vanish for <span class="math notranslate nohighlight">\(|x| &gt; L/2\)</span>. We also demand continuity so that the left hand side of <span class="math notranslate nohighlight">\(H\psi = E\psi\)</span> contains no delta function singularities. <span class="math notranslate nohighlight">\(\psi(\pm L/2) = 0\)</span>.  We thus consider wavefunctions which satisfy Dirichlet boundary conditions.</p>
+<p>For <span class="math notranslate nohighlight">\(|x| \leq L/2\)</span>, we write <span class="math notranslate nohighlight">\(y = x/L\)</span> and <span class="math notranslate nohighlight">\({\cal E} = \frac{2 m E}{\hbar^2 L^2}\)</span> to get the equation</p>
+<div class="math notranslate nohighlight">
+\[- \del_y^2 \psi(y) = \CE \psi(y)\]</div>
+<p>with boundary condition <span class="math notranslate nohighlight">\(\psi(y = \pm \half) = 0\)</span>. The general solution to the above equation is, before imposing boundary conditions,</p>
+<div class="math notranslate nohighlight" id="equation-gen-solution-sw">
+<span class="eqno">(295)<a class="headerlink" href="#equation-gen-solution-sw" title="Link to this equation">#</a></span>\[\psi(y) = A \cos (\sqrt{\CE} y) + B \sin (\sqrt{CE} y)\]</div>
+<p>Note that the cosine function is even/symmetric on the line, and the sine function is odd/antisymmetric. These do not satisfy the boundary conditions for every <span class="math notranslate nohighlight">\(\CE\)</span>; the eigenvalues are fixed by the boundary conditions. The allowed values are</p>
+<div class="math notranslate nohighlight" id="equation-isw-quant">
+<span class="eqno">(296)<a class="headerlink" href="#equation-isw-quant" title="Link to this equation">#</a></span>\[\begin{split}\sqrt{\CE} = \begin{cases} (2n + 1)\pi &amp; {\rm even} (B = 0)\\
+2n \pi &amp; {\rm odd} (A = 0)
+\end{cases}\end{split}\]</div>
+<p>Note that the lowest-energy state is the even wavefunction with <span class="math notranslate nohighlight">\(n = 0\)</span>; the eigenfunctions are alternating even and odd. Rescaling we can write the two possibilities as</p>
+<div class="math notranslate nohighlight" id="equation-even-eigenfunctions">
+<span class="eqno">(297)<a class="headerlink" href="#equation-even-eigenfunctions" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+&amp; \psi_{even,n}(x)  = \sqrt{\frac{2}{L}} \cos \left(\frac{(2n+1) \pi x}{L}\right) =  \sqrt{\frac{2}{L}} \cos (k_{even,n} x)\\
+&amp; E_{n,even} = \frac{\hbar^2 k_{even,n}^2}{2m} = \frac{((2n+1)\pi\hbar)^2}{2mL^2}\ ; n \in \{0,1,2,\ldots\}
+\end{align}\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-odd-eigenfunctions">
+<span class="eqno">(298)<a class="headerlink" href="#equation-odd-eigenfunctions" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+&amp; \psi_{odd,n}(x)  = \sqrt{\frac{2}{L}} \sin \left(\frac{2 n \pi x}{L}\right) =  \sqrt{\frac{2}{L}} \sin (k_{odd,n} x)\\ 
+&amp; E_{n,odd} = \frac{\hbar^2 k_{odd,n}^2}{2m} = \frac{(2n\pi\hbar)^2}{2 m L^2}\ ; n \in \{1,2,3,\ldots\}
+\end{align}\end{split}\]</div>
+</section>
+<section id="parity-symmetric-potentials">
+<h2>Parity-symmetric potentials<a class="headerlink" href="#parity-symmetric-potentials" title="Link to this heading">#</a></h2>
+<p>The case above is one of a general class of parity-symmetric potentials for which <span class="math notranslate nohighlight">\(V(x) = V(-x)\)</span>. Let us explore the consequences of this.</p>
+<p>We can define the parity operator as:</p>
+<div class="math notranslate nohighlight">
+\[\Pi \ket{\psi(x)} = \ket{\psi(-x)}\]</div>
+<p>This is compatible with <span class="math notranslate nohighlight">\(\Pi {\hat x} \Pi = - {\hat x}\)</span> and <span class="math notranslate nohighlight">\(\Pi {\hat p} \Pi = - {\hat p}\)</span>. The latter follows from <span class="math notranslate nohighlight">\(\frac{\del}{\del (-x)} = - \frac{\del}{\del x}\)</span>. This <span class="math notranslate nohighlight">\(\Pi H \Pi = H \Rightarrow [H,\Pi] = 0\)</span>.</p>
+<p>You can show that <span class="math notranslate nohighlight">\(\Pi\)</span> is a Hermitian operator (it is also unitary). Thus, we can diagnonalize <span class="math notranslate nohighlight">\(H\)</span> and <span class="math notranslate nohighlight">\(\Pi\)</span> simultaneously. Since <span class="math notranslate nohighlight">\(\Pi^2 = 1\)</span>, its eigenvalues <span class="math notranslate nohighlight">\(\sigma\)</span> must satisfy <span class="math notranslate nohighlight">\(\sigma^2 = 1\)</span>. Since <span class="math notranslate nohighlight">\(\Pi\)</span> is Hermitian, <span class="math notranslate nohighlight">\(\sigma\)</span> is real, so <span class="math notranslate nohighlight">\(\sigma = \pm 1\)</span>. If <span class="math notranslate nohighlight">\(\sigma = 1\)</span>, the wavefunction is even; if <span class="math notranslate nohighlight">\(\sigma = -1\)</span>, the wavefunction is odd.</p>
+<p>This is a baby example of the consequences of symmetries; they allow us to organize the solutions to the TISE.</p>
+</section>
+<section id="the-finite-square-well">
+<h2>The finite square well<a class="headerlink" href="#the-finite-square-well" title="Link to this heading">#</a></h2>
+<p>Next we consider the potential</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}V(x) = \begin{cases} 0 &amp; |x| &gt; \frac{L}{2} \\ 
+- V_0 &amp; |x| \leq \frac{L}{2}\end{cases}\end{split}\]</div>
+<p>If we were to shift the total energy by <span class="math notranslate nohighlight">\(V_0\)</span> and then send <span class="math notranslate nohighlight">\(V_0 \to \infty\)</span> we would recover the previous case.</p>
+<p>We will consider solutions with <span class="math notranslate nohighlight">\(E &lt; 0\)</span>, which as we will see correspond to bound states. At the end we will briefly discuss the case <span class="math notranslate nohighlight">\(E &gt; 0\)</span>, but defer a full mathematical explanation to a discussion of scattering.</p>
+<p>For <span class="math notranslate nohighlight">\(|x| &gt; \frac{L}{2}\)</span>, we have the equation</p>
+<div class="math notranslate nohighlight">
+\[	- \frac{\hbar^2}{2m} \del_x^2 \psi_E(x) = - |E| \psi_{E,x}\]</div>
+<p>The general solution to this equation is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp; \psi_E(x) = A e^{\kappa x} + B e^{-\kappa x}\\
+&amp; \kappa = \frac{\sqrt{2 m |E|}}{\hbar}
+\end{align}\end{split}\]</div>
+<p>Note that if <span class="math notranslate nohighlight">\(V_0 = 0\)</span> there would be no solution; one or the other exponential would lead to a divergence in the norm of <span class="math notranslate nohighlight">\(\psi_E\)</span>; these are not square-integrable functions. The exponential behavior is typical of wavefunctions in a classically forbidden region (<span class="math notranslate nohighlight">\(E &lt; V(x)\)</span>) of the potential</p>
+<p>If <span class="math notranslate nohighlight">\(V_0 \neq 0\)</span> it is a different story. Let us focus on <span class="math notranslate nohighlight">\(- V_0 &lt; E &lt; 0\)</span>. We will revisit <span class="math notranslate nohighlight">\(E &lt; - V_0\)</span> (there will be no solution for basically the same reason). If <span class="math notranslate nohighlight">\(|x| \leq \frac{L}{2}\)</span>, the general solution to the TISE is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp; \psi_E(x) = C e^{i k x} + D e^{-i k x}\\
+&amp; k = \frac{\sqrt{2m(E + V_0)}}{\hbar}
+\end{align}\end{split}\]</div>
+<p>This solution needs to be matched to the solutions for <span class="math notranslate nohighlight">\(|x| &gt; L/2\)</span>.</p>
+<p>To do so we take normalizability into account to demand that the wavefunction decays exponentially at infinity and write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\psi(x) = \begin{cases} A_1 e^{\kappa x} &amp; x &lt; - \frac{L}{2}\\
+A_{II} e^{i k x} + B_{II} e^{-i k x} &amp; - \frac{L}{2} \leq x \leq \frac{L}{2} \\
+A_{III} e^{-\kappa x} &amp; x &gt; \frac{L}{2}\end{cases}\end{split}\]</div>
+<p>At each of <span class="math notranslate nohighlight">\(x = \pm \frac{L}{2}\)</span> we make two demands:</p>
+<ol class="arabic simple">
+<li><p>Continuity:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\psi(\pm \frac{L}{2} - \eps) \xrightarrow[\eps \to 0]{} \psi (\pm \frac{L}{2} + \eps)\]</div>
+<p>This ensures that derivatives of <span class="math notranslate nohighlight">\(\psi\)</span> have no delta function signularities, and thus that <span class="math notranslate nohighlight">\(\del_x^2 \psi\)</span> has no singularities of the form <span class="math notranslate nohighlight">\(\delta'(x)\)</span>. The latter would make the TISE impossible to solve since <span class="math notranslate nohighlight">\(E\psi\)</span>, <span class="math notranslate nohighlight">\(V\psi\)</span> are finite.</p>
+<ol class="arabic simple" start="2">
+<li><p>Continuity of first derivatives:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\del_x \psi(\pm \frac{L}{2} - \eps) \xrightarrow[\eps \to 0]{} \del_x \psi (\pm \frac{L}{2} + \eps)\]</div>
+<p>This ensures that <span class="math notranslate nohighlight">\(\del^2\psi\)</span> has no delta function singularities.</p>
+<p>The result here is four complex equations in four complex unknown <span class="math notranslate nohighlight">\(A_{I,II,II}, B_{II}\)</span>. Note that these are <em>homogenous</em> equations; for any solution, <span class="math notranslate nohighlight">\(\lambda A_{I,I,III}, \lambda B_{II}\)</span> are also solutions. Imposing normalizability gives us a fifth real equation, and we can fix an overall phase to promotte this to 10 real equations in eiught real unknowns. Alternatively, we can just fix <span class="math notranslate nohighlight">\(A_I = I\)</span> (for example) and then we get 4 complex equations in three complex unknowns.</p>
+<p>The equations are thus underdetermined. The basic reason for this is that we have imposed boundary conditions at <span class="math notranslate nohighlight">\(x \to \pm \infty\)</span>, so that the wavefunction is normalizable. If we did not do this, we would have two additional complex constants to adjust, corresponding to the coefficients of the growing exponentials, and solutions would exist for any <span class="math notranslate nohighlight">\(E\)</span>.</p>
+<p>I will not go into detail in solving the matching conditions. These are well coveredin the text, or in a decent undergraduate textbook (I grew up with Gasiorowicz but there are many.) As we discussed above, we can break the solution into two types.</p>
+<ol class="arabic simple">
+<li><p><em>Even solutions</em>. Here <span class="math notranslate nohighlight">\(A_{II} = B_{II}\)</span> and <span class="math notranslate nohighlight">\(A_I = A_{III}\)</span> Equivalently we can write the solution for <span class="math notranslate nohighlight">\(|x|&lt; L/2\)</span> as <span class="math notranslate nohighlight">\(\psi = C_{II} \cos k x\)</span>. We then only have to impose the continuity conditions at <span class="math notranslate nohighlight">\(x = L/2\)</span> (or equivalently <span class="math notranslate nohighlight">\(x = - L/2\)</span>), giving two complex homogenous equations in two unknowns, which is overdetermined as above. Dividing the equation for continuity of the wavefunction by the equation for continuity of the first derivatives, the constants <span class="math notranslate nohighlight">\(A,B\)</span> drop out and we are left with a transcendental equation</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-even-eigen-sw">
+<span class="eqno">(299)<a class="headerlink" href="#equation-even-eigen-sw" title="Link to this equation">#</a></span>\[\tan \frac{k L}{2} = \frac{\kappa}{k} \Rightarrow \tan \frac{\sqrt{2m |E| L^2}}{2\hbar} = \sqrt{\frac{V_0}{|E|} - 1}\]</div>
+<p><img alt="Even solutions" src="../_images/Even_solutions.png" /></p>
+<p>Looking at the structure of the equations and comtemplating the figure above we can work out that, first, there is always at least one solution for any <span class="math notranslate nohighlight">\(V_0\)</span>, in this case an even solution. It will always be the lowest-energy solution (we have to compare this to the odd solutions to verify this fact). This is a general feature of attractive potentials in one dimension. As we increase the depth <span class="math notranslate nohighlight">\(V_0\)</span> of the potential well, additional bound states will appear. But in general there will only be a finite number.</p>
+<ol class="arabic simple" start="2">
+<li><p><em>Odd solutions</em>. In this case we can replace the wavefunction in the central region <span class="math notranslate nohighlight">\(|x| &lt; L/2\)</span> with <span class="math notranslate nohighlight">\(C_{II} \sin kx\)</span> and set <span class="math notranslate nohighlight">\(A_{II} = - B_{II}\)</span>. Again, we are left with two complex homogenous equations at <span class="math notranslate nohighlight">\(x =  L/2\)</span> (or <span class="math notranslate nohighlight">\(x = - L/2\)</span>) in two unknowns. Again, we are left with a transcendental equation</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\cos \frac{k L}{2} = - \frac{\kappa}{k} \Rightarrow \cot \frac{\sqrt{2m |E| L^2}}{2\hbar} = - \sqrt{\frac{V_0}{|E|} - 1}\]</div>
+<p><img alt="Odd solutions" src="../_images/Odd_solutions.png" /></p>
+<p>Here we can see that for small enough <span class="math notranslate nohighlight">\(V_0\)</span> there will be no solutions; solutions will start to appear as we increase <span class="math notranslate nohighlight">\(V_0\)</span>.</p>
+<p>We can also show, by overlaying these pictures, that solutions will again a,=lternate between even and odd.</p>
+<p>For <span class="math notranslate nohighlight">\(E &lt; - V_0\)</span>, there are simply no normalizable solutions. The soolutions in each regions are real exponentials, and tere is no way to join them so that they fall off at large <span class="math notranslate nohighlight">\(|x|\)</span>.</p>
+<p>For <span class="math notranslate nohighlight">\(E &gt; 0\)</span>, the solutions in all regions are oscillating exponentials. Eigenfunctions of the Hamiltonian come from piecing together plane wave solutions, and are not normalizable – in general they are delta function normalizable. We can specify that the solution goes as either <span class="math notranslate nohighlight">\(e^{i k x}\)</span> or <span class="math notranslate nohighlight">\(e^{- i k x}\)</span> at infinity, where <span class="math notranslate nohighlight">\(E = \frac{\hbar^2 k^2}{2m}\)</span>. There are still 5 remaining coefficients governing the wave equation in different regions, subject to 4 homogenous matching conditions. The matching conditions will have a solution for any <span class="math notranslate nohighlight">\(E&gt; 0, V_0\)</span>, and thus we have a <em>continuum</em> of solutions, just as in the free particle case.</p>
+</section>
+<section id="lack-of-degeneracies">
+<h2>Lack of degeneracies<a class="headerlink" href="#lack-of-degeneracies" title="Link to this heading">#</a></h2>
+<p>One other aspect of both problems aove is the absence of any degeneracy. This is a general feature of 1d bound state problems when the potential wells are finite. The argument is straightforward and given by Commons.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="free_particle.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The free nonrelativistic particle</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendix.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-infinite-square-well">The infinite square well</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parity-symmetric-potentials">Parity-symmetric potentials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-finite-square-well">The finite square well</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lack-of-degeneracies">Lack of degeneracies</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Albion Lawrence
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -91,7 +91,7 @@ Thus, if we apply {eq}`gt_potentials` to $A,\Phi$ in the quantum Hamiltonian, an
 
 Now we consider the setup show below, which is a modification of the classic double slit experiment (we will review this below since we haven't covered it yet). A source of some particle at $x = x_{source}$, which we take to produce particles in the same state each time, is behind a screen at $x = 0$ with two slits. The effect of the screen is to split the state into two wavepackets, $\psi_1({\vec x}, t)$ and $\psi_2({\vec x}, t)$. We also assume that if we block slit 1(2) the system is in state $A_1 \psi_1$($A_2 \psi_2$), where $A_i$ enforces $\int d^2 x |A_i|^2 |\psi_i|^2 = 1$. With both slits open the particle is in state $\psi({\vec x},t) = \psi_1 + \psi_2$ such that $\int d^2 x |\psi_1 + \psi_2|^2 = 1$. Note that we are ignoring the $z$ direction here, we can assume that the particles move more or less at $z = 0$, or that the wavefunction is more or less constant in the $z$ direction.
 
-![Illustration of double-slit experiment](double_slit.jpeg)
+![Illustration of double-slit experiment](double_slit.png)
 
 Now let us place a detector with resolution $\delta$ that detects the $y$ position of the particle, at $x = x_{meas}$. If we block slit 2, the probability for the particle to hit the screen at $y$ with resiolution $\delta$ is $p_1(y,\delta) = \delta |\phi_1(x_{meas},y)|^2$, as illustrated in the image above. 
 
