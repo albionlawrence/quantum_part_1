@@ -87,8 +87,8 @@ Note that we can write
 ```{math}
 :label: aadagger_defs
 \begin{align}
-a & = \left(\frac{m\omega}{\hbar}\right)^{\half} {\hat x} + i \left(\frac{1}{2\hbar\omega m}\right)^{\half} {\hat p}\\
-a^{\dagger} & = \left(\frac{m\omega}{\hbar}\right)^{\half} {\hat x} - i \left(\frac{1}{2\hbar\omega m}\right)^{\half} {\hat p}
+a & = \left(\frac{m\omega}{2 \hbar}\right)^{\half} {\hat x} + i \left(\frac{1}{2\hbar\omega m}\right)^{\half} {\hat p}\\
+a^{\dagger} & = \left(\frac{m\omega}{2 \hbar}\right)^{\half} {\hat x} - i \left(\frac{1}{2\hbar\omega m}\right)^{\half} {\hat p}
 \end{align}
 ```
 
@@ -151,7 +151,7 @@ Thus,
 ```
 When we apply $n$ powers of $a^{\dagger} = \frac{1}{\sqrt{2}}(-\del_y + y)$ to a Gaussian, we can see that the result is an $n$th order polynomial times the same Gaussian. These polynomials have a name -- they are the *Hermite polynomials*. The resulting wavefunctions are
 ```{math}
-\psi_n(x) = \brket{x}{n} = \frac{1}{\sqrt{2^n n!}} \left(\frac{1}{\pi^{1/4} L^{1/2}}\right)^{1/4} e^{- \frac{x^2}{2 L^2}} H_n\left(\frac{x}{L}\right)
+\psi_n(x) = \brket{x}{n} = \frac{1}{\sqrt{2^n n!}} \left(\frac{1}{\pi^{1/4} L^{1/2}}\right) e^{- \frac{x^2}{2 L^2}} H_n\left(\frac{x}{L}\right)
 ```
 where $L = \sqrt{\frac{\hbar}{m\omega}$, and $H_n$ can be looked up in textbooks. One point of these functions is that they form a complete orthonormal basis of square-integrable functions, because they are eigenfunctions of a Hermitian operator.
 

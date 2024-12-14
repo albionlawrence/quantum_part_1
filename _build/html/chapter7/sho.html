@@ -445,8 +445,8 @@ document.write(`
 <p>Note that we can write</p>
 <div class="math notranslate nohighlight" id="equation-aadagger-defs">
 <span class="eqno">(303)<a class="headerlink" href="#equation-aadagger-defs" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-a &amp; = \left(\frac{m\omega}{\hbar}\right)^{\half} {\hat x} + i \left(\frac{1}{2\hbar\omega m}\right)^{\half} {\hat p}\\
-a^{\dagger} &amp; = \left(\frac{m\omega}{\hbar}\right)^{\half} {\hat x} - i \left(\frac{1}{2\hbar\omega m}\right)^{\half} {\hat p}
+a &amp; = \left(\frac{m\omega}{2 \hbar}\right)^{\half} {\hat x} + i \left(\frac{1}{2\hbar\omega m}\right)^{\half} {\hat p}\\
+a^{\dagger} &amp; = \left(\frac{m\omega}{2 \hbar}\right)^{\half} {\hat x} - i \left(\frac{1}{2\hbar\omega m}\right)^{\half} {\hat p}
 \end{align}\end{split}\]</div>
 <p>It is an important fact that</p>
 <div class="math notranslate nohighlight" id="equation-aad-ccr">
@@ -491,7 +491,7 @@ Using the commutation relations, we can find <span class="math notranslate nohig
 \[\ket{n} = \frac{1}{\sqrt{n!}} (a^{\dagger})^n \ket{0}\]</div>
 <p>When we apply <span class="math notranslate nohighlight">\(n\)</span> powers of <span class="math notranslate nohighlight">\(a^{\dagger} = \frac{1}{\sqrt{2}}(-\del_y + y)\)</span> to a Gaussian, we can see that the result is an <span class="math notranslate nohighlight">\(n\)</span>th order polynomial times the same Gaussian. These polynomials have a name – they are the <em>Hermite polynomials</em>. The resulting wavefunctions are</p>
 <div class="math notranslate nohighlight">
-\[\psi_n(x) = \brket{x}{n} = \frac{1}{\sqrt{2^n n!}} \left(\frac{1}{\pi^{1/4} L^{1/2}}\right)^{1/4} e^{- \frac{x^2}{2 L^2}} H_n\left(\frac{x}{L}\right)\]</div>
+\[\psi_n(x) = \brket{x}{n} = \frac{1}{\sqrt{2^n n!}} \left(\frac{1}{\pi^{1/4} L^{1/2}}\right) e^{- \frac{x^2}{2 L^2}} H_n\left(\frac{x}{L}\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(L = \sqrt{\frac{\hbar}{m\omega}\)</span>, and <span class="math notranslate nohighlight">\(H_n\)</span> can be looked up in textbooks. One point of these functions is that they form a complete orthonormal basis of square-integrable functions, because they are eigenfunctions of a Hermitian operator.</p>
 </section>
 </section>
