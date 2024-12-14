@@ -124,7 +124,16 @@ I will not go into detail in solving the matching conditions. These are well cov
 1. *Even solutions*. Here $A_{II} = B_{II}$ and $A_I = A_{III}$ Equivalently we can write the solution for $|x|< L/2$ as $\psi = C_{II} \cos k x$. We then only have to impose the continuity conditions at $x = L/2$ (or equivalently $x = - L/2$), giving two complex homogenous equations in two unknowns, which is overdetermined as above. Dividing the equation for continuity of the wavefunction by the equation for continuity of the first derivatives, the constants $A,B$ drop out and we are left with a transcendental equation
 ```{math}
 :label: even_eigen_sw
-\tan \frac{k L}{2} = \frac{\kappa}{k} \Rightarrow \tan \frac{\sqrt{2m |E| L^2}}{2\hbar} = \sqrt{\frac{V_0}{|E|} - 1}
+\tan \frac{k L}{2} = \frac{\kappa}{k} \Rightarrow \tan \frac{\sqrt{2m(V_0 - |E|) L^2}}{2\hbar} = \sqrt{\frac{|E|}{V_0 - |E|}}
+```
+To simplify this we define
+```{math}
+\eps = \frac{\sqrt{2m(V_0 - |E|) L^2}}{2\hbar} \Rightarrow
+|E| = V_0 - \frac{2 \hbar^2}{m L^2}\eps^2 
+```
+so that the transcendental equation becomes
+```{math}
+\tan \eps = \sqrt{\frac{m L^2 V_0}{2\hbar^2 \eps^2} - 1}
 ```
 
 ![Even solutions](Even_solutions.png)
@@ -133,7 +142,7 @@ Looking at the structure of the equations and comtemplating the figure above we 
 
 2. *Odd solutions*. In this case we can replace the wavefunction in the central region $|x| < L/2$ with $C_{II} \sin kx$ and set $A_{II} = - B_{II}$. Again, we are left with two complex homogenous equations at $x =  L/2$ (or $x = - L/2$) in two unknowns. Again, we are left with a transcendental equation
 ```{math}
-\cos \frac{k L}{2} = - \frac{\kappa}{k} \Rightarrow \cot \frac{\sqrt{2m |E| L^2}}{2\hbar} = - \sqrt{\frac{V_0}{|E|} - 1}
+\cos \frac{k L}{2} = - \frac{\kappa}{k} \Rightarrow \cot \eps = - \sqrt{\frac{m L^2 V_0}{2\hbar^2 \eps^2} - 1}
 ```
 
 ![Odd solutions](Odd_solutions.png)
