@@ -41,6 +41,7 @@ chapters:
     - file: chapter7/free_particle
     - file: chapter7/square_well
     - file: chapter7/sho
+    - file: chapter7/twostate_models
   - file: appendix
   - file: bibliography
 # - file: notebooks

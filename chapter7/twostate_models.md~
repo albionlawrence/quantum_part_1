@@ -1,0 +1,10 @@
+# Two-state systems as phonomenological models
+
+Here we are going to consider the low-energy dynamics of generally complicated systems. While we have not gone into length in talking about time-dependent probes yet, you can intuit that interacting with a given system will generally involve adding or subtracting energy. For example, usually an experiment is a time-dependent process, so right there you know that energy will not be conserved. But by the energy-time uncertainty principle, if you interact sufficiently slowly, the energy input will not be large. Thus, if the systems starts in the ground state or first excited state, and the energy input is small compared to the energy difference between the first and second excited state, you can assume that before and after the experiment is done, it will remain in some superposition of teh ground state and first excited state. The Hilbert space is thus quite simple, and the Hamiltonian will be parameterized by just a few numbers (the entries of a $2\times 2$ Hermitian matrix) which one can fit to experiments, in the case that first--principles calculations are too hard.
+
+## Double-well potential
+
+The first system we will examine is one that we could in principle solve exactly. Consider the following double-well potential for a 1d particle with mass $m$:
+```{math}
+V(x) = \begin{cases} \infty & x \leq - L - \frac{a}{2} \\ 0 & - L - \frac{a}{2} < x < - \frac{a}{2} \\ V_0 > 0 & - \frac{a}{2} \leq x \leq \frac{a}{2} \\ 0 & \frac{a}{2} < x < \frac{a}{2} + L \\ \infty & x > L + \frac{a}{2} \end{cases}
+```
