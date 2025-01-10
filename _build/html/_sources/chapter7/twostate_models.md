@@ -89,3 +89,50 @@ The interpretation is that a low-energy particle initially confined to one well 
 ```
 This is exponentially small in $a\sqrt{2m V_0}/\hbar$, as discussed above. The exponential suppression $\sim e^{-S/\hbar}$ for some $S$ is characteristic of quantum tunneling processes.
 
+The Hamiltonian in the energy/parity eigenstate basis in which $\ket{+}$ is represented by $\begin{pmatrix} 1 \\ 0 \end{pmatrix}$ and $\ket{-}$ is represented by $\begin{pmatrix} 0 \\ 1 \end{pmatrix}$ is:
+```{math}
+H = \begin{pmatrix} E_{\av} - \half \Delta E & 0 \\ 0 &  E_{av} + \half \Delta E \end{pmatrix}_{energy}
+```
+
+Working in the position basis in which $\ket{L}$ is represented by $\begin{pmatrix} 1 \\ 0 \end{pmatrix}$ and $\ket{R}$ is represented by $\begin{pmatrix} 0 \\ 1 \end{pmatrix}$, we have:
+```{math}
+H_{pos} = \begin{pmatrix} E_{\av} & - \Delta E \\ - \Delta E & E_{av} \end{pmatrix}
+```
+We can think of this off-diagonal term as a ``hopping" term that drives transitions between $\ket{L}$ and $\ket{R}$; the transition rate, after all, scales with $\Delta E$. 
+
+In fact you can very quickly show this is the most general Hermitian operator that commutes with the matrix
+```{math}
+\Pi = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
+```
+which exchanges $\ket{L}$ and $\ket{R}$.
+
+### Asymmetric double well potential
+
+Next we will consider an asymmetric double well, with a potential as sketched below
+
+![Asymmetric double well](Asymmetric.png)
+
+We are not going to worry too much about the details of the potential but argue for a simple model for the lowest-energy states.
+
+Near each local minimum, which we label by $x_L, x_R$, we can define $m \omega_{L,R}^2 = V''(x_{L,r})$. To first approximation, when the barrier between them is sufficiently high and wide, we expect sufficiently low-energy states to be harmonic oscillator states localized near $x_L$ with energies $V(x_L) + \hbar \omega_L(n_L + \half)$, and low-energy states localized near $x_R$ with energies $V(x_R) + \hbar \omega_R(n_R + \half)$. These get distorted by tunneling through the barrier. We assume that $V(x_L) - V(x_R) + \half \hbar(\omega_L - \omega_R)$ is small compared to $\hbar\omega_{L,R}$, and that the tunneling rate $\Gamma$ is much smaller than $\omega_{L,R}$. Then it is reasonable to expect that the two lowest-energy states are linear combinations of the approximate SHO ground state wavefunctions localized near $x_{L,R}$. If $V(x)$ is almost symmetric, we might expect the ground state and first excited states to the the wavefunctions $\psi_{gs}, \psi_{es}$ shown in the figure above. 
+
+Since we no longer have any symmetry, the Hamiltonian in the basis of states localized near either $x_L$ or $x_R$ is the most general Hermitian matrix:
+```{math}
+:label: asdw
+H = \begin{array} E_L \\ - \Delta E e^{i\gamma} & - \Delta E e^{i\gamma} \\ E_R \end{array}
+```
+With some work you can show that with a suitable phase change in the basis vector for the left-localized state
+```{math}
+\begin{pmatrix} 1 \\ 0 \end{pmatrix} \Rightarrow e^{i \gamma} \begin{pmatrix} 1 \\ 0 \end{pmatrix} 
+```
+yields the above Hamiltonian with $\gamma = 0$. The matrix elements $E_{1,2}, \Delta E$ can be fit to experiment (up to an overall shift in the diagonal matrix elements). 
+
+## Molecular models
+
+[Volume 3 of the Feynman lectures](https://www.feynmanlectures.caltech.edu/III_toc.html) contain a nice discussion of low-energy models for electrons in a molecule. We will briefly discuss the simplest example, to give the discussion above a slightly more real-world flavor. The figure below shows a simple schamtic diagram of an ethylene molecule, consisting of four Hydrogen atoms attached to a pair of Carbon atoms. The lines are the atomic bonds. This system has two "$\pi$-electrons" which can hop between the two carbon atoms. We assume the electrons do not interact and that their spin degrees of freedom render them effectively distinguishable (we will discuss distinguishable vs. indistinguishable particles at some point in 162b). For each of them, then, the Hilbert space is two-dimensional. Note that flipping the molecule right to left does not change the appearance of the molecule. So  we have the parity symmetry that we also made use of in the case of the symmetric rectangular double well. Following the discussions above, e can write the Hamiltonian in the basis of positions (which carbon atom the electron is bound to as):
+```{math}
+H_{Eth} = \begin{pmatrix} E_0 & -A \\ -A & E_0 \end{pmatrix}
+```
+where $E_0, A$ are real parameters. It is easy to see the energy eigenstates are symmetric and antisymmetric combinations of the localized states; these have energies $E_{\pm} E_0 \mp \Delta E$, and $\hbar/\Delta E$ is the time scale over which electrons hop between the Carbon atoms. The essential point is that given symmetry argumenst and some broad-brush understanding of the dynamics we can deduce the form of teh Hamiltonian; the parameters can then be fit to experiment.
+
+![Ethylene molecule](Ethylene.png)

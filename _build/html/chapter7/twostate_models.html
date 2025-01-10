@@ -373,8 +373,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-well-potential">Double-well potential</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warmup-infinite-barrier">Warmup: Infinite barrier</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#large-but-finite-barrier">Large but finite barrier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asymmetric-double-well-potential">Asymmetric double well potential</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-models">Molecular models</a></li>
 </ul>
             </nav>
         </div>
@@ -451,7 +453,40 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\tau_{tunnel} = \frac{\pi \hbar}{2 \Delta E}\]</div>
 <p>This is exponentially small in <span class="math notranslate nohighlight">\(a\sqrt{2m V_0}/\hbar\)</span>, as discussed above. The exponential suppression <span class="math notranslate nohighlight">\(\sim e^{-S/\hbar}\)</span> for some <span class="math notranslate nohighlight">\(S\)</span> is characteristic of quantum tunneling processes.</p>
+<p>The Hamiltonian in the energy/parity eigenstate basis in which <span class="math notranslate nohighlight">\(\ket{+}\)</span> is represented by <span class="math notranslate nohighlight">\(\begin{pmatrix} 1 \\ 0 \end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(\ket{-}\)</span> is represented by <span class="math notranslate nohighlight">\(\begin{pmatrix} 0 \\ 1 \end{pmatrix}\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H = \begin{pmatrix} E_{\av} - \half \Delta E &amp; 0 \\ 0 &amp;  E_{av} + \half \Delta E \end{pmatrix}_{energy}\end{split}\]</div>
+<p>Working in the position basis in which <span class="math notranslate nohighlight">\(\ket{L}\)</span> is represented by <span class="math notranslate nohighlight">\(\begin{pmatrix} 1 \\ 0 \end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(\ket{R}\)</span> is represented by <span class="math notranslate nohighlight">\(\begin{pmatrix} 0 \\ 1 \end{pmatrix}\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H_{pos} = \begin{pmatrix} E_{\av} &amp; - \Delta E \\ - \Delta E &amp; E_{av} \end{pmatrix}\end{split}\]</div>
+<p>We can think of this off-diagonal term as a ``hopping” term that drives transitions between <span class="math notranslate nohighlight">\(\ket{L}\)</span> and <span class="math notranslate nohighlight">\(\ket{R}\)</span>; the transition rate, after all, scales with <span class="math notranslate nohighlight">\(\Delta E\)</span>.</p>
+<p>In fact you can very quickly show this is the most general Hermitian operator that commutes with the matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Pi = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\end{split}\]</div>
+<p>which exchanges <span class="math notranslate nohighlight">\(\ket{L}\)</span> and <span class="math notranslate nohighlight">\(\ket{R}\)</span>.</p>
 </section>
+<section id="asymmetric-double-well-potential">
+<h3>Asymmetric double well potential<a class="headerlink" href="#asymmetric-double-well-potential" title="Link to this heading">#</a></h3>
+<p>Next we will consider an asymmetric double well, with a potential as sketched below</p>
+<p><img alt="Asymmetric double well" src="../_images/Asymmetric.png" /></p>
+<p>We are not going to worry too much about the details of the potential but argue for a simple model for the lowest-energy states.</p>
+<p>Near each local minimum, which we label by <span class="math notranslate nohighlight">\(x_L, x_R\)</span>, we can define <span class="math notranslate nohighlight">\(m \omega_{L,R}^2 = V''(x_{L,r})\)</span>. To first approximation, when the barrier between them is sufficiently high and wide, we expect sufficiently low-energy states to be harmonic oscillator states localized near <span class="math notranslate nohighlight">\(x_L\)</span> with energies <span class="math notranslate nohighlight">\(V(x_L) + \hbar \omega_L(n_L + \half)\)</span>, and low-energy states localized near <span class="math notranslate nohighlight">\(x_R\)</span> with energies <span class="math notranslate nohighlight">\(V(x_R) + \hbar \omega_R(n_R + \half)\)</span>. These get distorted by tunneling through the barrier. We assume that <span class="math notranslate nohighlight">\(V(x_L) - V(x_R) + \half \hbar(\omega_L - \omega_R)\)</span> is small compared to <span class="math notranslate nohighlight">\(\hbar\omega_{L,R}\)</span>, and that the tunneling rate <span class="math notranslate nohighlight">\(\Gamma\)</span> is much smaller than <span class="math notranslate nohighlight">\(\omega_{L,R}\)</span>. Then it is reasonable to expect that the two lowest-energy states are linear combinations of the approximate SHO ground state wavefunctions localized near <span class="math notranslate nohighlight">\(x_{L,R}\)</span>. If <span class="math notranslate nohighlight">\(V(x)\)</span> is almost symmetric, we might expect the ground state and first excited states to the the wavefunctions <span class="math notranslate nohighlight">\(\psi_{gs}, \psi_{es}\)</span> shown in the figure above.</p>
+<p>Since we no longer have any symmetry, the Hamiltonian in the basis of states localized near either <span class="math notranslate nohighlight">\(x_L\)</span> or <span class="math notranslate nohighlight">\(x_R\)</span> is the most general Hermitian matrix:</p>
+<div class="math notranslate nohighlight" id="equation-asdw">
+<span class="eqno">(306)<a class="headerlink" href="#equation-asdw" title="Link to this equation">#</a></span>\[\begin{split}H = \begin{array} E_L \\ - \Delta E e^{i\gamma} &amp; - \Delta E e^{i\gamma} \\ E_R \end{array}\end{split}\]</div>
+<p>With some work you can show that with a suitable phase change in the basis vector for the left-localized state</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} 1 \\ 0 \end{pmatrix} \Rightarrow e^{i \gamma} \begin{pmatrix} 1 \\ 0 \end{pmatrix} \end{split}\]</div>
+<p>yields the above Hamiltonian with <span class="math notranslate nohighlight">\(\gamma = 0\)</span>. The matrix elements <span class="math notranslate nohighlight">\(E_{1,2}, \Delta E\)</span> can be fit to experiment (up to an overall shift in the diagonal matrix elements).</p>
+</section>
+</section>
+<section id="molecular-models">
+<h2>Molecular models<a class="headerlink" href="#molecular-models" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.feynmanlectures.caltech.edu/III_toc.html">Volume 3 of the Feynman lectures</a> contain a nice discussion of low-energy models for electrons in a molecule. We will briefly discuss the simplest example, to give the discussion above a slightly more real-world flavor. The figure below shows a simple schamtic diagram of an ethylene molecule, consisting of four Hydrogen atoms attached to a pair of Carbon atoms. The lines are the atomic bonds. This system has two “<span class="math notranslate nohighlight">\(\pi\)</span>-electrons” which can hop between the two carbon atoms. We assume the electrons do not interact and that their spin degrees of freedom render them effectively distinguishable (we will discuss distinguishable vs. indistinguishable particles at some point in 162b). For each of them, then, the Hilbert space is two-dimensional. Note that flipping the molecule right to left does not change the appearance of the molecule. So  we have the parity symmetry that we also made use of in the case of the symmetric rectangular double well. Following the discussions above, e can write the Hamiltonian in the basis of positions (which carbon atom the electron is bound to as):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H_{Eth} = \begin{pmatrix} E_0 &amp; -A \\ -A &amp; E_0 \end{pmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(E_0, A\)</span> are real parameters. It is easy to see the energy eigenstates are symmetric and antisymmetric combinations of the localized states; these have energies <span class="math notranslate nohighlight">\(E_{\pm} E_0 \mp \Delta E\)</span>, and <span class="math notranslate nohighlight">\(\hbar/\Delta E\)</span> is the time scale over which electrons hop between the Carbon atoms. The essential point is that given symmetry argumenst and some broad-brush understanding of the dynamics we can deduce the form of teh Hamiltonian; the parameters can then be fit to experiment.</p>
+<p><img alt="Ethylene molecule" src="../_images/Ethylene.png" /></p>
 </section>
 </section>
 
@@ -522,8 +557,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-well-potential">Double-well potential</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warmup-infinite-barrier">Warmup: Infinite barrier</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#large-but-finite-barrier">Large but finite barrier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asymmetric-double-well-potential">Asymmetric double well potential</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-models">Molecular models</a></li>
 </ul>
   </nav></div>
 
