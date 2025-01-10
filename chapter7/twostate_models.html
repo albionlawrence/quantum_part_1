@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>The simple harmonic oscillator &#8212; Physics 162a</title>
+    <title>Two-state systems as phenomenological models &#8212; Physics 162a</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter7/sho';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter7/twostate_models';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Two-state systems as phonomenological models" href="twostate_models.html" />
-    <link rel="prev" title="The 1d square well" href="square_well.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="The simple harmonic oscillator" href="sho.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -216,8 +216,8 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Wave_examples.html">Examples of nonrelativistic quantum particle dynamics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="free_particle.html">The free nonrelativistic particle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="square_well.html">The 1d square well</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">The simple harmonic oscillator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="twostate_models.html">Two-state systems as phonomenological models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sho.html">The simple harmonic oscillator</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Two-state systems as phenomenological models</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -276,7 +276,7 @@
       
       
       
-      <li><a href="../_sources/chapter7/sho.md" target="_blank"
+      <li><a href="../_sources/chapter7/twostate_models.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -360,7 +360,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The simple harmonic oscillator</h1>
+    <h1>Two-state systems as phenomenological models</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -370,8 +370,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-solution">Classical solution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantum-oscillator">The quantum oscillator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-well-potential">Double-well potential</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warmup-infinite-barrier">Warmup: Infinite barrier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#large-but-finite-barrier">Large but finite barrier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asymmetric-double-well-potential">Asymmetric double well potential</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-models">Molecular models</a></li>
 </ul>
             </nav>
         </div>
@@ -383,117 +388,105 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="the-simple-harmonic-oscillator">
-<h1>The simple harmonic oscillator<a class="headerlink" href="#the-simple-harmonic-oscillator" title="Link to this heading">#</a></h1>
-<p>The next potential we wish to consider is the *simple harmonic oscillator,</p>
-<div class="math notranslate nohighlight" id="equation-sho-ham">
-<span class="eqno">(300)<a class="headerlink" href="#equation-sho-ham" title="Link to this equation">#</a></span>\[H = \frac{p^2}{2m} + \half m \omega^2 x^2\]</div>
-<p>Tihs is exactly solvable in both classical and quantum mechanics. Why do we consider such a potential, besides this nice fact of classical solvablility? Because at low energies, it is often a good first approximation to a given potential.</p>
-<p>Consider a more general 1d potential problem,</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="two-state-systems-as-phenomenological-models">
+<h1>Two-state systems as phenomenological models<a class="headerlink" href="#two-state-systems-as-phenomenological-models" title="Link to this heading">#</a></h1>
+<p>Here we are going to consider the low-energy dynamics of generally complicated systems. While we have not gone into length in talking about time-dependent probes yet, you can intuit that interacting with a given system will generally involve adding or subtracting energy. For example, usually an experiment is a time-dependent process, so right there you know that energy will not be conserved. But by the energy-time uncertainty principle, if you interact sufficiently slowly, the energy input will not be large. Thus, if the systems starts in the ground state or first excited state, and the energy input is small compared to the energy difference between the first and second excited state, you can assume that before and after the experiment is done, it will remain in some superposition of teh ground state and first excited state. The Hilbert space is thus quite simple, and the Hamiltonian will be parameterized by just a few numbers (the entries of a <span class="math notranslate nohighlight">\(2\times 2\)</span> Hermitian matrix) which one can fit to experiments, in the case that first–principles calculations are too hard.</p>
+<section id="double-well-potential">
+<h2>Double-well potential<a class="headerlink" href="#double-well-potential" title="Link to this heading">#</a></h2>
+<p>The first system we will examine is one that we could in principle solve exactly. Consider the following double-well potential for a 1d particle with mass <span class="math notranslate nohighlight">\(m\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[H = \frac{p^2}{2m} + V(x)\]</div>
-<p>We will consider energies so that the classically allowed region is near the absolute minimum of the potential.</p>
-<p><img alt="general 1d potential" src="../_images/general_potential.png" /></p>
-<p>Now if we set <span class="math notranslate nohighlight">\(x = x_0\)</span> as the location of this classical minimum, we can approximate <span class="math notranslate nohighlight">\(V(x)\)</span> as:</p>
-<div class="math notranslate nohighlight" id="equation-approx-potential">
-<span class="eqno">(301)<a class="headerlink" href="#equation-approx-potential" title="Link to this equation">#</a></span>\[V(x) = V(x_0) + (x - x_0) V'(x_0) + \half (x - x_0)^2 V''(x_0) + \frac{1}{3!} (x = x_0)^3 V'''(x_0) + \ldots\]</div>
-<p>Since we are looking near a minimum, <span class="math notranslate nohighlight">\(V'(x_0) = 0\)</span>. We can also shift the total energy (since it is irrelevant in classical and qauntum mechanics in the absence of gravity). This expansion is a good one if the higher order terms in <span class="math notranslate nohighlight">\((x - x_0)\)</span> are smaller than the lower-order ones. In particular, we can approximate the potential by the quadratic term if</p>
-<div class="math notranslate nohighlight" id="equation-quadratic-condition">
-<span class="eqno">(302)<a class="headerlink" href="#equation-quadratic-condition" title="Link to this equation">#</a></span>\[\half \big| V''(x_0) (x - x_0)^2\big| \gg \frac{1}{3!} \big|V'''(x_0)(x - x_0)^3\big| \Rightarrow |x - x_0| \ll \frac{3 V''(x_0)}{V'''(x_0)}\]</div>
-<p>You might have been tempted to say “the third derivtive of <span class="math notranslate nohighlight">\(V\)</span> at <span class="math notranslate nohighlight">\(x_0\)</span> is smaller than the second derivative” but that makes no sense – these quantities have different dimensions. In fact the viability of the approximation also depends on <span class="math notranslate nohighlight">\(|x - x_0|\)</span> being small enough. This depends on the energy. We can see thius best classically: for larger energies, the particle has a larger range, and eventually the criterion <a class="reference internal" href="#equation-quadratic-condition">(302)</a> will break down.</p>
-<p>This story is actually pretty general; for many problems, teh Lagrangian can be approximated at low energies by a Lagrangian which is quadratic in the phase space variables; if the system is stable, it can be reduced further to a collection of harmonic oscillators. This includes the electromagnetic field. Higher order or anharmonic terms (which in quantum field theory arises from particle interactions) can be treated in an approximation scheme known as <em>perturbation theory</em>.</p>
-<p>Finally to get <a class="reference internal" href="#equation-sho-ham">(300)</a>, we set <span class="math notranslate nohighlight">\(V'(x_0) = m \omega^2\)</span>. We can define <span class="math notranslate nohighlight">\(\omega\)</span> this way (given <span class="math notranslate nohighlight">\(m, V(x)\)</span>). The reason for doing so becomes clear when we examine the solutions to the classical and quantum problems.</p>
-<section id="classical-solution">
-<h2>Classical solution<a class="headerlink" href="#classical-solution" title="Link to this heading">#</a></h2>
-<p>As a reminder, Hamilton’s equations give us:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-{\dot x} &amp; = \frac{\del H}{\del p} = \frac{p}{m}\\
-{\dot p} &amp; = - \frac{\del H}{\del x} = - m \omega^2 x
+\[\begin{split}V(x) = \begin{cases} \infty &amp; x \leq - L - \frac{a}{2} \\ 0 &amp; - L - \frac{a}{2} &lt; x &lt; - \frac{a}{2} \\ V_0 &gt; 0 &amp; - \frac{a}{2} \leq x \leq \frac{a}{2} \\ 0 &amp; \frac{a}{2} &lt; x &lt; \frac{a}{2} + L \\ \infty &amp; x &gt; L + \frac{a}{2} \end{cases}\end{split}\]</div>
+<p>Thus <span class="math notranslate nohighlight">\(L\)</span> is the width of each well, and <span class="math notranslate nohighlight">\(a\)</span> the width of the barrier.</p>
+<section id="warmup-infinite-barrier">
+<h3>Warmup: Infinite barrier<a class="headerlink" href="#warmup-infinite-barrier" title="Link to this heading">#</a></h3>
+<p>To get some intuition for this we will start with the <span class="math notranslate nohighlight">\(V_0 \to \infty\)</span> case. In this case, we take <span class="math notranslate nohighlight">\(\cH_{L,R}\)</span> to be the Hilbert space for the particle in the left or right wells, and <span class="math notranslate nohighlight">\(\cH_{\infty} = \cH_{L} \oplus \cH_{R}\)</span>. The particle can sit in either the left well or the right well, and the Hamiltonian is diagonal. The wavefunctions and eigenenergies are:</p>
+<div class="math notranslate nohighlight" id="equation-isw-eigen">
+<span class="eqno">(305)<a class="headerlink" href="#equation-isw-eigen" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\psi^L_n &amp; = \begin{cases} \sqrt{\frac{2}{L}} \sin \left(\frac{\pi n (x + L + \frac{a}{2})}{L}\right) &amp; - L - \frac{a}{2} &lt; x &lt; - \frac{a}{2} \\ 0 &amp; {\rm otherwise} \end{cases} \\
+&amp; E^L_n = \frac{\hbar^2\pi^2 n^2}{2m L^2} \\
+\psi^R_n &amp; = \begin{cases} \sqrt{\frac{2}{L}} \sin \left(\frac{\pi n (x - \frac{a}{2})}{L}\right) &amp; L + \frac{a}{2} &gt; x &gt; \frac{a}{2} \\ 0 &amp; {\rm otherwise} \end{cases} \\
+&amp; E^R_n = \frac{\hbar^2\pi^2 n^2}{2m L^2} \\
 \end{align}\end{split}\]</div>
-<p>Taking the derivative of the first equation and using the second equation, we get the classical SHO equation</p>
+<p>So each energy level is doubly degenerate, as the energy levels for the particle localized in the left or the right well are the same (since the wells have the same width and boundary conditions).  Note that we can write these wavefunctions as</p>
 <div class="math notranslate nohighlight">
-\[{\ddot x} + \omega^2 x = -\]</div>
-<p>which has as a general solution</p>
+\[\psi^{A = L,R}_n(x) = \brket{x}{n;\ A}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> is an index labeling the wells.</p>
+<p>In this case, parity is a clear symmetry of the theory. As we have already discussed, we can re-arrange the energy spectrum in terms of parity eigenstates:</p>
 <div class="math notranslate nohighlight">
-\[x(t) = X_{max} \cos(\omega t + \delta) \Rightarrow p = - X_{max} m\omega \sin(\omega t + \delta)\]</div>
-<p>and <span class="math notranslate nohighlight">\(A,\delta\)</span> are set by the initial conditions on <span class="math notranslate nohighlight">\(x(t_0), {\dot x}(t_0)\)</span>. The total energy of this solution is</p>
-<div class="math notranslate nohighlight">
-\[E = \frac{p^2}{2m} + \half m \omega^2 x^2 = \half m \omega^2 X_{max}^2\]</div>
-<p>Thus, more energetic states travel a wider range. The frequency of oscillation in <span class="math notranslate nohighlight">\(\omega\)</span>, and the period <span class="math notranslate nohighlight">\(T = 2\pi/\omega\)</span>, are fixed.</p>
+\[\ket{n,\pm} = \frac{1}{\sqrt{2}} \left(\ket{n; L} \pm \ket{mn,R}\right)\]</div>
 </section>
-<section id="the-quantum-oscillator">
-<h2>The quantum oscillator<a class="headerlink" href="#the-quantum-oscillator" title="Link to this heading">#</a></h2>
-<p>To solve this problem we are going to do a bit of scaling analysis. The time-independent Schroeinger equation is:</p>
+<section id="large-but-finite-barrier">
+<h3>Large but finite barrier<a class="headerlink" href="#large-but-finite-barrier" title="Link to this heading">#</a></h3>
+<p>If we let <span class="math notranslate nohighlight">\(V_0\)</span> be finite, the degeneracy is split as is generically the case in 1d problems. We can expect that the splitting goes to zero as <span class="math notranslate nohighlight">\(V_0 \to \infty\)</span> and remains very small for <span class="math notranslate nohighlight">\(E \ll V_0\)</span>, since the barrier will look close to infinite. What we <em>do</em> know is that the energy eigenstates will be parity eigenstates.</p>
+<p>A hand-waving argument is that the splitting scales like</p>
 <div class="math notranslate nohighlight">
-\[- \frac{\hbar^2}{2m} \frac{\del^2}{\del x^2} \psi(x) + \half m \omega^2 x^2 \psi(x) = E \psi(x)\]</div>
-<p>Now we will let <span class="math notranslate nohighlight">\(x = L y\)</span> and multiply the equation by <span class="math notranslate nohighlight">\(m L^2/\hbar^2\)</span>:</p>
+\[\Delta E = \frac{\hbar}{\tau} \propto \frac{\hbar v}{L} e^{- \frac{a}{\hbar}\sqrt{2 m V_0}} = \frac{\pi \hbar^2}{m L^2} e^{- \frac{a}{\hbar}\sqrt{2mV_0}}\]</div>
+<p>The prefactor is based on a classical velocity <span class="math notranslate nohighlight">\(v\)</span> such that <span class="math notranslate nohighlight">\(\half m v^2 = E\)</span> and we have used the ground state energy for <span class="math notranslate nohighlight">\(E\)</span>; <span class="math notranslate nohighlight">\(L/v\)</span> is proportional to the rate the particle his the barrier as is bounces back and forth in the well. That is the hand-waving part. The exponential prefactor can be calculated exactly or via the WKB approximation which we will discuss later. But we can start to see where it comes from: for <span class="math notranslate nohighlight">\(E &lt; V_0\)</span>, the wavefunction in the barrier region <span class="math notranslate nohighlight">\(|x| \leq \frac{a}{2}\)</span> is:</p>
 <div class="math notranslate nohighlight">
-\[- \half \del_y^2 \psi(y) + \half \frac{m^2 \omega^2 L^4$}{\hbar^2} y^2 \psi(y) = \frac{mL^2}{\hbar^2} E \psi\]</div>
-<p>setting <span class="math notranslate nohighlight">\(L  = \sqrt{\frac{\hbar}{m\omega}}\)</span> and <span class="math notranslate nohighlight">\(\CE = \frac{E}{\hbar\omega}\)</span>, we have</p>
+\[\psi_{below}(x) = A e^{\kappa x} + B e^{-\kappa x}\]</div>
+<p>where</p>
 <div class="math notranslate nohighlight">
-\[- \half \del_y^2 \psi(y) + \half y^2 \psi(y) = \CE\psi(y)\]</div>
-<p>what we have learned is that the typical trange of variation of the wavefunction is set by <span class="math notranslate nohighlight">\(\sqrt{\hbar}{m\omega}\)</span> and the energy scales are set by <span class="math notranslate nohighlight">\(\hbar\omega\)</span>.</p>
-<p>We will solve this with a clever trick. We can write <span class="math notranslate nohighlight">\(a = \frac{1}{\sqrt{2}}(del_y + y)\)</span> and <span class="math notranslate nohighlight">\(a^{\dagger} = \frac{1}{\sqrt{2}}(- \del_y + y)\)</span>. The fact that this is the correct expression for teh Hermitian conjugate can be deduced using the standard norm on wavefunctions, or we can note that</p>
-<div class="math notranslate nohighlight">
-\[\del_y = L \del_x = \frac{i L}{\hbar} p \]</div>
-<p>so that if <span class="math notranslate nohighlight">\(p^{{\dagger} = p\)</span>, <span class="math notranslate nohighlight">\(()\del_y^{\dagger} = - \del_y\)</span>. Now we can write</p>
-<div class="math notranslate nohighlight">
-\[	a^{\dagger} a = \half(-\del_y + y)(\del_y + y) = \half(-\del_y^2 + y^2 - 1)\]</div>
-<p>Thus,</p>
-<div class="math notranslate nohighlight">
-\[H = \hbar\omega(a^{\dagger} a + \half)\]</div>
-<p>Note that we can write</p>
-<div class="math notranslate nohighlight" id="equation-aadagger-defs">
-<span class="eqno">(303)<a class="headerlink" href="#equation-aadagger-defs" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-a &amp; = \left(\frac{m\omega}{2 \hbar}\right)^{\half} {\hat x} + i \left(\frac{1}{2\hbar\omega m}\right)^{\half} {\hat p}\\
-a^{\dagger} &amp; = \left(\frac{m\omega}{2 \hbar}\right)^{\half} {\hat x} - i \left(\frac{1}{2\hbar\omega m}\right)^{\half} {\hat p}
-\end{align}\end{split}\]</div>
-<p>It is an important fact that</p>
-<div class="math notranslate nohighlight" id="equation-aad-ccr">
-<span class="eqno">(304)<a class="headerlink" href="#equation-aad-ccr" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-&amp; [a,a^{\dagger}] = 1\\
-&amp; \Rightarrow [H,a] = - \hbar\omega a\ ; [H,a^{\dagger}] =\hbar\omega a^{\dagger}
-\end{align}\end{split}\]</div>
-<p>We can use these facts to define the spectrum and generate solutions to the TISE. First, let us assume we have a normalized energy eigenstate <span class="math notranslate nohighlight">\(\ket{E}\)</span> with energy <span class="math notranslate nohighlight">\(E\)</span>. Then using <code class="xref eq docutils literal notranslate"><span class="pre">aad_cr</span></code> we find</p>
+\[\kappa = \frac{1}{\hbar} \sqrt{2m(V_0 - E)} \sim \frac{\sqrt{2m V_0}}{\hbar}\]</div>
+<p>The precise value of <span class="math notranslate nohighlight">\(A, B\)</span> come from matching to the wavefunctions in the classically allowed (<span class="math notranslate nohighlight">\(V = 0\)</span>) regions.</p>
+<p>Sketches of the two lowest-energy states, which are deformations of the ground states for finite <span class="math notranslate nohighlight">\(V_0\)</span>, are shown below.</p>
+<p><img alt="Split ground states" src="../_images/Splitting.png" /></p>
+<p>For any <span class="math notranslate nohighlight">\(\ket{n,\pm}\)</span> with <span class="math notranslate nohighlight">\(E_n \ll V_0\)</span>, the story is similar. At infinite <span class="math notranslate nohighlight">\(V_0\)</span>, the states are symmatric and antisymmetric combinations of the energy states in each of the two wells. For finite_V_0$ the states are close to this, with the wavefunction small but finite under the barrier. We can deduce that this will introduce no nodes for the symmetric case but introduce an additional node for the antisymmetric case. Since the energy eigenstates increase with the number of nodes, the antisymmetric wavefunction will have slightly higher energy than the symmetric wavefunction. The spectrum will deform as shown below.</p>
+<p><img alt="Level splitting of double well" src="../_images/level_splitting.png" /></p>
+<p>Let us stick to the lowest-energy states, which we will call <span class="math notranslate nohighlight">\(\ket{\pm}\)</span>. These will have energies <span class="math notranslate nohighlight">\(E_{av} \pm \half \Delta E\)</span> where <span class="math notranslate nohighlight">\(E_{av}, \Delta E\)</span> are functions of <span class="math notranslate nohighlight">\(V_0, a, L\)</span>. As illustrated in the figure below, we can form lineaer combinations</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
-H a^{\dagger} \ket{E} &amp; = (E + \hbar\omega) a^{\dagger}\ket{E}\\
-H a \ket{E} &amp; = (E - \hbar\omega) a \ket{E}
+\ket{L} &amp; = \frac{1}{\sqrt{2}} \left(\ket{+} + \ket{-}\right)\\
+]ket{R} &amp; = \frac{1}{\sqrt{2}} \left(\ket{+} - \ket{-}\right)
 \end{align}\end{split}\]</div>
-<p>so that</p>
+<p><img alt="Quasi-localized lowest energy states" src="../_images/Localized.png" /></p>
+<p>Note that we do not get preciselocalization in one well or the other – that would require all <span class="math notranslate nohighlight">\(\ket{n,\pm}\)</span> (this is not meant to be an obvious statement, but it is worth thinking about).</p>
+<p>Now let us start with the particle localized in the left well, by which we mean</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-a\ket{E} &amp; = c_-(E) \ket{E - \hbar\omega}\\
-a^{\dagger} \ket{E} &amp; = c_+(E)\ket{E + \hbar\omega}
-\end{align}\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(c_{\pm}(E)\)</span> are adjusted so that the states have unit norm.</p>
-<p>Now let us deduce the spectrum. Using <span class="math notranslate nohighlight">\(H = \hbar\omega(a^{\dagger} a + \half)\)</span>, for any state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> with norm 1,</p>
+\[\ket{\psi(t = 0)} = \ket{L}\]</div>
+<p>Evolving this in time, we find</p>
 <div class="math notranslate nohighlight">
-\[\bra{\psi} H \ket{\psi} = \hbar\omega\left(\bra{\psi} a^{\dagger} a\ket{\psi} + \half \brket{\psi}{\psi}\right) = \hbar\omega \left(||a\ket{\psi}||^2 + 1\right) &gt; 0\]</div>
-<p>If <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> is an energy eigenstate with energy <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(\bra{\psi} H \ket{\psi} = E\)</span>, so this means <span class="math notranslate nohighlight">\(E\)</span> must always be positive.</p>
-<p>First, we will find the minimum energy solution <span class="math notranslate nohighlight">\(\ket{E_0}\)</span>. Since there are no states with lower energy, we must have <span class="math notranslate nohighlight">\(a\ket{E_0} = 0\)</span>. Since <span class="math notranslate nohighlight">\(H = \hbar\omega(a^{\dagger} a + \half)\)</span> this means that <span class="math notranslate nohighlight">\(H\ket{E_0} = \half\hbar\omega \ket{E_0}\)</span>, or <span class="math notranslate nohighlight">\(E_0 = \half\hbar\omega\)</span>. Excited states with energy <span class="math notranslate nohighlight">\(E = \hbar\omega(n + \half)\)</span> are proportional to <span class="math notranslate nohighlight">\((a^{\dagger})^n \ket{E_0}\)</span>. These are all of the states. The ground state and the states above are nondegenerate. If there were any states with energies different from <span class="math notranslate nohighlight">\(\hbar\omega(n + \half)\)</span>, say with energy <span class="math notranslate nohighlight">\(\hbar\omega(n + \half) + \eps\)</span>, with <span class="math notranslate nohighlight">\(0 &lt; \eps &lt; \hbar\omega\)</span>, we could act on them repeatedly with powers of <span class="math notranslate nohighlight">\(a\)</span> and lower the energy in units of <span class="math notranslate nohighlight">\(\hbar\omega\)</span>. Sincse the starting point has the form <span class="math notranslate nohighlight">\(\hbar\omega(n + \half) + \eps\)</span>, these other states will have energy <span class="math notranslate nohighlight">\(\hbar\omega(n - k + \half) + \eps\)</span>. None of these will be equal to <span class="math notranslate nohighlight">\(\half\hbar\omega\)</span>, so none can be annihilated by <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(k\)</span> can be arbitrarily large, and the energy arbitrarily negative. But we have proven the energy must be positive, so such states do not exist.</p>
-<p>From here on out, we call the eigenstates <span class="math notranslate nohighlight">\(\ket{n}\)</span>, <span class="math notranslate nohighlight">\(n \in \{0,1,2,\ldots\}\)</span>, with energies <span class="math notranslate nohighlight">\(E_n = \hbar\omega(n + \half)\)</span>. They are also eigenstates of <span class="math notranslate nohighlight">\(a^{\dagger} a\)</span> with eigenvalue <span class="math notranslate nohighlight">\(n\)</span>. We thus sometimes call <span class="math notranslate nohighlight">\(a^{\dagger} a\)</span> the <em>number operator</em>. One motivation is that when we quantize the electromagnetic field, it behaves as a collection of harmonic oscillators – one for each polarization and wavenumber – and <span class="math notranslate nohighlight">\(n\)</span> becomes the number of photons. We thus call <span class="math notranslate nohighlight">\(a^{\dagger}\)</span> a <em>creation operator</em> and <span class="math notranslate nohighlight">\(a\)</span> an <em>annihilation operator</em>.</p>
-<p>Next we wish to construct the wavefunctions. We can write <span class="math notranslate nohighlight">\(a\ket{0} = 0\)</span> using the differential form of the operator as</p>
+\[\ket{\psi(t)}  = \frac{1}{\sqrt{2}}\left(e^{- i (E_{av} - \half \Delta E)t/\hbar} \ket{+} + e^{- i (E_{av} + \half \Delta E)t/\hbar} \ket{-}\right)\]</div>
+<p>If we call the probability of the particle being found in the right well <span class="math notranslate nohighlight">\(p_R = |\brket{R}{\psi(t)}\)</span>, a little algebra gives us</p>
 <div class="math notranslate nohighlight">
-\[(\del_y + y)\psi_0(y) = 0\]</div>
-<p>This has the unique solution (after imposing <span class="math notranslate nohighlight">\(\brket{0}{0} = 1\)</span>):</p>
+\[p_R(t) = \sin^2 \frac{\Delta E t}{\hbar}\]</div>
+<p>The interpretation is that a low-energy particle initially confined to one well will <em>tunnel</em> to the other well. This is a classically forbidden process. When the energy is well below the barrier, we define the tunneling time as the time for the particle state to evolve to <span class="math notranslate nohighlight">\(\ket{R}\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\psi_0(y) = A e^{- y^2/2} \rightarrow \psi_0(x) = \left( \frac{m \omega}{\pi \hbar}\right)^{1/4} e^{- \half \frac{m \omega x}{\hbar}}\]</div>
-<p>Next we wish to find the excited states by applying the operator <span class="math notranslate nohighlight">\(a^{\dagger}\)</span>.
-Using the commutation relations, we can find <span class="math notranslate nohighlight">\(c_{\pm}\)</span>. Now</p>
+\[\tau_{tunnel} = \frac{\pi \hbar}{2 \Delta E}\]</div>
+<p>This is exponentially small in <span class="math notranslate nohighlight">\(a\sqrt{2m V_0}/\hbar\)</span>, as discussed above. The exponential suppression <span class="math notranslate nohighlight">\(\sim e^{-S/\hbar}\)</span> for some <span class="math notranslate nohighlight">\(S\)</span> is characteristic of quantum tunneling processes.</p>
+<p>The Hamiltonian in the energy/parity eigenstate basis in which <span class="math notranslate nohighlight">\(\ket{+}\)</span> is represented by <span class="math notranslate nohighlight">\(\begin{pmatrix} 1 \\ 0 \end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(\ket{-}\)</span> is represented by <span class="math notranslate nohighlight">\(\begin{pmatrix} 0 \\ 1 \end{pmatrix}\)</span> is:</p>
 <div class="math notranslate nohighlight">
-\[\bra{n} a^{\dagger} a \ket{n} = n = |c_-(n)|^2 \Rightarrow c_-(n) = \sqrt{n}\]</div>
-<p>for <span class="math notranslate nohighlight">\(c_+\)</span>, we use the fact that <span class="math notranslate nohighlight">\(a a^{\dagger} = a^{\dagger} a + 1\)</span>, so that</p>
+\[\begin{split}H = \begin{pmatrix} E_{\av} - \half \Delta E &amp; 0 \\ 0 &amp;  E_{av} + \half \Delta E \end{pmatrix}_{energy}\end{split}\]</div>
+<p>Working in the position basis in which <span class="math notranslate nohighlight">\(\ket{L}\)</span> is represented by <span class="math notranslate nohighlight">\(\begin{pmatrix} 1 \\ 0 \end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(\ket{R}\)</span> is represented by <span class="math notranslate nohighlight">\(\begin{pmatrix} 0 \\ 1 \end{pmatrix}\)</span>, we have:</p>
 <div class="math notranslate nohighlight">
-\[\bra{n} a a^{\dagger} \ket{n} = |c_+(n)|^2 = \bra{n}(a^{\dagger} a + 1)\ket{n} = n + 1 \Rightarrow c_+(n) = \sqrt{n+1}\]</div>
-<p>Thus,</p>
+\[\begin{split}H_{pos} = \begin{pmatrix} E_{\av} &amp; - \Delta E \\ - \Delta E &amp; E_{av} \end{pmatrix}\end{split}\]</div>
+<p>We can think of this off-diagonal term as a ``hopping” term that drives transitions between <span class="math notranslate nohighlight">\(\ket{L}\)</span> and <span class="math notranslate nohighlight">\(\ket{R}\)</span>; the transition rate, after all, scales with <span class="math notranslate nohighlight">\(\Delta E\)</span>.</p>
+<p>In fact you can very quickly show this is the most general Hermitian operator that commutes with the matrix</p>
 <div class="math notranslate nohighlight">
-\[\ket{n} = \frac{1}{\sqrt{n!}} (a^{\dagger})^n \ket{0}\]</div>
-<p>When we apply <span class="math notranslate nohighlight">\(n\)</span> powers of <span class="math notranslate nohighlight">\(a^{\dagger} = \frac{1}{\sqrt{2}}(-\del_y + y)\)</span> to a Gaussian, we can see that the result is an <span class="math notranslate nohighlight">\(n\)</span>th order polynomial times the same Gaussian. These polynomials have a name – they are the <em>Hermite polynomials</em>. The resulting wavefunctions are</p>
+\[\begin{split}\Pi = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\end{split}\]</div>
+<p>which exchanges <span class="math notranslate nohighlight">\(\ket{L}\)</span> and <span class="math notranslate nohighlight">\(\ket{R}\)</span>.</p>
+</section>
+<section id="asymmetric-double-well-potential">
+<h3>Asymmetric double well potential<a class="headerlink" href="#asymmetric-double-well-potential" title="Link to this heading">#</a></h3>
+<p>Next we will consider an asymmetric double well, with a potential as sketched below</p>
+<p><img alt="Asymmetric double well" src="../_images/Asymmetric.png" /></p>
+<p>We are not going to worry too much about the details of the potential but argue for a simple model for the lowest-energy states.</p>
+<p>Near each local minimum, which we label by <span class="math notranslate nohighlight">\(x_L, x_R\)</span>, we can define <span class="math notranslate nohighlight">\(m \omega_{L,R}^2 = V''(x_{L,r})\)</span>. To first approximation, when the barrier between them is sufficiently high and wide, we expect sufficiently low-energy states to be harmonic oscillator states localized near <span class="math notranslate nohighlight">\(x_L\)</span> with energies <span class="math notranslate nohighlight">\(V(x_L) + \hbar \omega_L(n_L + \half)\)</span>, and low-energy states localized near <span class="math notranslate nohighlight">\(x_R\)</span> with energies <span class="math notranslate nohighlight">\(V(x_R) + \hbar \omega_R(n_R + \half)\)</span>. These get distorted by tunneling through the barrier. We assume that <span class="math notranslate nohighlight">\(V(x_L) - V(x_R) + \half \hbar(\omega_L - \omega_R)\)</span> is small compared to <span class="math notranslate nohighlight">\(\hbar\omega_{L,R}\)</span>, and that the tunneling rate <span class="math notranslate nohighlight">\(\Gamma\)</span> is much smaller than <span class="math notranslate nohighlight">\(\omega_{L,R}\)</span>. Then it is reasonable to expect that the two lowest-energy states are linear combinations of the approximate SHO ground state wavefunctions localized near <span class="math notranslate nohighlight">\(x_{L,R}\)</span>. If <span class="math notranslate nohighlight">\(V(x)\)</span> is almost symmetric, we might expect the ground state and first excited states to the the wavefunctions <span class="math notranslate nohighlight">\(\psi_{gs}, \psi_{es}\)</span> shown in the figure above.</p>
+<p>Since we no longer have any symmetry, the Hamiltonian in the basis of states localized near either <span class="math notranslate nohighlight">\(x_L\)</span> or <span class="math notranslate nohighlight">\(x_R\)</span> is the most general Hermitian matrix:</p>
+<div class="math notranslate nohighlight" id="equation-asdw">
+<span class="eqno">(306)<a class="headerlink" href="#equation-asdw" title="Link to this equation">#</a></span>\[\begin{split}H = \begin{array} E_L \\ - \Delta E e^{i\gamma} &amp; - \Delta E e^{i\gamma} \\ E_R \end{array}\end{split}\]</div>
+<p>With some work you can show that with a suitable phase change in the basis vector for the left-localized state</p>
 <div class="math notranslate nohighlight">
-\[\psi_n(x) = \brket{x}{n} = \frac{1}{\sqrt{2^n n!}} \left(\frac{1}{\pi^{1/4} L^{1/2}}\right) e^{- \frac{x^2}{2 L^2}} H_n\left(\frac{x}{L}\right)\]</div>
-<p>where <span class="math notranslate nohighlight">\(L = \sqrt{\frac{\hbar}{m\omega}\)</span>, and <span class="math notranslate nohighlight">\(H_n\)</span> can be looked up in textbooks. One point of these functions is that they form a complete orthonormal basis of square-integrable functions, because they are eigenfunctions of a Hermitian operator.</p>
+\[\begin{split}\begin{pmatrix} 1 \\ 0 \end{pmatrix} \Rightarrow e^{i \gamma} \begin{pmatrix} 1 \\ 0 \end{pmatrix} \end{split}\]</div>
+<p>yields the above Hamiltonian with <span class="math notranslate nohighlight">\(\gamma = 0\)</span>. The matrix elements <span class="math notranslate nohighlight">\(E_{1,2}, \Delta E\)</span> can be fit to experiment (up to an overall shift in the diagonal matrix elements).</p>
+</section>
+</section>
+<section id="molecular-models">
+<h2>Molecular models<a class="headerlink" href="#molecular-models" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.feynmanlectures.caltech.edu/III_toc.html">Volume 3 of the Feynman lectures</a> contain a nice discussion of low-energy models for electrons in a molecule. We will briefly discuss the simplest example, to give the discussion above a slightly more real-world flavor. The figure below shows a simple schamtic diagram of an ethylene molecule, consisting of four Hydrogen atoms attached to a pair of Carbon atoms. The lines are the atomic bonds. This system has two “<span class="math notranslate nohighlight">\(\pi\)</span>-electrons” which can hop between the two carbon atoms. We assume the electrons do not interact and that their spin degrees of freedom render them effectively distinguishable (we will discuss distinguishable vs. indistinguishable particles at some point in 162b). For each of them, then, the Hilbert space is two-dimensional. Note that flipping the molecule right to left does not change the appearance of the molecule. So  we have the parity symmetry that we also made use of in the case of the symmetric rectangular double well. Following the discussions above, e can write the Hamiltonian in the basis of positions (which carbon atom the electron is bound to as):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H_{Eth} = \begin{pmatrix} E_0 &amp; -A \\ -A &amp; E_0 \end{pmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(E_0, A\)</span> are real parameters. It is easy to see the energy eigenstates are symmetric and antisymmetric combinations of the localized states; these have energies <span class="math notranslate nohighlight">\(E_{\pm} E_0 \mp \Delta E\)</span>, and <span class="math notranslate nohighlight">\(\hbar/\Delta E\)</span> is the time scale over which electrons hop between the Carbon atoms. The essential point is that given symmetry argumenst and some broad-brush understanding of the dynamics we can deduce the form of teh Hamiltonian; the parameters can then be fit to experiment.</p>
+<p><img alt="Ethylene molecule" src="../_images/Ethylene.png" /></p>
 </section>
 </section>
 
@@ -528,20 +521,20 @@ Using the commutation relations, we can find <span class="math notranslate nohig
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="square_well.html"
+       href="sho.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The 1d square well</p>
+        <p class="prev-next-title">The simple harmonic oscillator</p>
       </div>
     </a>
     <a class="right-next"
-       href="twostate_models.html"
+       href="../appendix.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Two-state systems as phonomenological models</p>
+        <p class="prev-next-title">Appendix</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -561,8 +554,13 @@ Using the commutation relations, we can find <span class="math notranslate nohig
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-solution">Classical solution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantum-oscillator">The quantum oscillator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-well-potential">Double-well potential</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warmup-infinite-barrier">Warmup: Infinite barrier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#large-but-finite-barrier">Large but finite barrier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asymmetric-double-well-potential">Asymmetric double well potential</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-models">Molecular models</a></li>
 </ul>
   </nav></div>
 
