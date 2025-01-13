@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>The free nonrelativistic particle &#8212; Physics 162</title>
+    <title>One-dimensional scattering &#8212; Physics 162</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter7/free_particle';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter7/1d_scattering';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The 1d square well" href="square_well.html" />
-    <link rel="prev" title="Examples of nonrelativistic quantum particle dynamics" href="Wave_examples.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="Two-state systems as phenomenological models" href="twostate_models.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -214,10 +214,11 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Wave_examples.html">Examples of nonrelativistic quantum particle dynamics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">The free nonrelativistic particle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="free_particle.html">The free nonrelativistic particle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="square_well.html">The 1d square well</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sho.html">The simple harmonic oscillator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="twostate_models.html">Two-state systems as phenomenological models</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">One-dimensional scattering</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -276,7 +277,7 @@
       
       
       
-      <li><a href="../_sources/chapter7/free_particle.md" target="_blank"
+      <li><a href="../_sources/chapter7/1d_scattering.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -347,7 +348,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -358,11 +361,23 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The free nonrelativistic particle</h1>
+    <h1>One-dimensional scattering</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-scattering">Classical scattering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-scattering">Quantum scattering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#below-barrier-scattering">Below barrier scattering</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -372,66 +387,44 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="the-free-nonrelativistic-particle">
-<h1>The free nonrelativistic particle<a class="headerlink" href="#the-free-nonrelativistic-particle" title="Link to this heading">#</a></h1>
-<p>We begin by considering the “free” nonrelativistic particle in <span class="math notranslate nohighlight">\(d\)</span> dimensions – that is, a particle with no force acting on it. The Hamiltonian is</p>
-<div class="math notranslate nohighlight" id="equation-h-free">
-<span class="eqno">(288)<a class="headerlink" href="#equation-h-free" title="Link to this equation">#</a></span>\[H = \frac{{\vec p}^2}{2m}\]</div>
-<p>where <span class="math notranslate nohighlight">\(m\)</span> is the particle mass. The time-dependent Schroedinger equation is</p>
-<div class="math notranslate nohighlight" id="equation-tdse-free">
-<span class="eqno">(289)<a class="headerlink" href="#equation-tdse-free" title="Link to this equation">#</a></span>\[- \frac{\hbar^2}{2m} \psi({\vec x}, t) = i \hbar \frac{\del}{\del t} \psi({\vec x}, t)\]</div>
-<p>The solutions to the time-<em>independent</em> Schrodinger equation are clearly</p>
-<div class="math notranslate nohighlight" id="equation-chapter7-free-particle-0">
-<span class="eqno">(290)<a class="headerlink" href="#equation-chapter7-free-particle-0" title="Link to this equation">#</a></span>\[\psi_E({\vec x}) = \frac{1}{(2\pi\hbar)^{d/2}} e^{i {\vec p}\cdot{\vec x}/\hbar}\]</div>
-<p>which has energy <span class="math notranslate nohighlight">\(E = \frac{{\vec p}^2}{2m}\)</span>. In this case the energy eigenstates are not quite in the Hilbert space. But we will ignore this complication.</p>
-<p>We can treat the time-dependent equation as an initial value problem. At time <span class="math notranslate nohighlight">\(t = t_0\)</span>, we rpescribe a wavefunction <span class="math notranslate nohighlight">\(\psi({\vec x}, t_0)\)</span>. This can be expressed in a Fourier integral:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="one-dimensional-scattering">
+<h1>One-dimensional scattering<a class="headerlink" href="#one-dimensional-scattering" title="Link to this heading">#</a></h1>
+<p>So far, beyond the free particle, we have focused on bound state problems. However, an important class of experiments we need to address are scattering experiments, in which we probe the structure of some system – a metal, an atomic nucleus, and so forth – by throwing another particle at it and seeing what comes out.</p>
+<p>Here we will consider an extremely simplistic setup in which the background probed is nondynamical (so scattering is elastic) and represented by a fixed potential of finite range. More specifically we will focus on a finite, rectangular potential barrier:</p>
 <div class="math notranslate nohighlight">
-\[\psi(x,t_0) = \int \frac{d^d p}{(2\pi \hbar)^{d/2}} e^{ i {\vec p}\cdot{\vec x}/\hbar} 
-{\tilde \psi}({\vec p})\]</div>
-<p>Since an energy eigenstate evolves simply as</p>
+\[\begin{split}V(x) = \begin{cases} 0 &amp; x &lt; - \frac{a}{2} \\ V_0 &gt; 0 &amp; - \frac{a}{2} \leq x \leq \frac{1}{2} \\ 0 &amp; x &gt; \frac{a}{2} \end{cases}\end{split}\]</div>
+<p>The question we want to ask is the following. Consider a particle with fixed energy <span class="math notranslate nohighlight">\(E\)</span> which is approaching the barrier from large negative <span class="math notranslate nohighlight">\(x\)</span>. Its initial energy is kinetic, <span class="math notranslate nohighlight">\(E = \half m v^2\)</span>. What happens after it hits the barrier?</p>
+<section id="classical-scattering">
+<h2>Classical scattering<a class="headerlink" href="#classical-scattering" title="Link to this heading">#</a></h2>
+<p>Classically, this is a well defined question. For <span class="math notranslate nohighlight">\(0 &lt; E &lt; V_0\)</span>, the particle will reflect off of the barrier and travel towards <span class="math notranslate nohighlight">\(x = - \infty\)</span>.</p>
+<p>For <span class="math notranslate nohighlight">\(E &gt; V_0\)</span>, the particle will pass over the barrier, although it will slow down as it passes over the top of the barrier. This latter phenomenon will lead to a time delay for the particle to reach a point past the barrier, relative to the time it would take absent any such potential. We can work out this time delay in the latter case. If the initial velocity is <span class="math notranslate nohighlight">\(v_0 = \sqrt{2E/m}\)</span> it would take time <span class="math notranslate nohighlight">\(t_0 = a/v = a \sqrt{\frac{m}{2E}}\)</span> to cross the barrier. For a barrier of height <span class="math notranslate nohighlight">\(V_0 - E\)</span>, the velocity above the barrier is <span class="math notranslate nohighlight">\(v_1 = \sqrt{\frac{2(E - V_0)}{m}}\)</span>, so the time to cross the top is <span class="math notranslate nohighlight">\(t_1 = a \sqrt{\frac{m}{2(E - V_0)}}\)</span>. The time difference is thus</p>
 <div class="math notranslate nohighlight">
-\[\psi_E({\vec x},t) = e^{-i E(t = t_0)/\hbar} \psi_E({\vec x}, t_0)\]</div>
-<p>then the full state <span class="math notranslate nohighlight">\(\psi\)</span> evolves as</p>
+\[\delta t = t_1 - t_0 = \frac{a}{v_1} - \frac{a}{v_0} = \sqrt{\frac{m a^2}{2}} \left[\frac{1}{\sqrt{E - V_0}} - \frac{1}{\sqrt{E}}\right]\]</div>
+<p>Note that if <span class="math notranslate nohighlight">\(V_0 &lt; 0\)</span> the same basic story applies and the above formulae apply, but the particle always passes through the region of nonzero potential, time delay will be negative.</p>
+<p>For <span class="math notranslate nohighlight">\(E = V_0\)</span> exactly, the velocity will become zero as soon as the particle reaches the barrier, and it will stick to the left edge at <span class="math notranslate nohighlight">\(x = - a/2\)</span>.</p>
+</section>
+<section id="quantum-scattering">
+<h2>Quantum scattering<a class="headerlink" href="#quantum-scattering" title="Link to this heading">#</a></h2>
+<p>Quantum-mechanically the story is different in interesting ways!</p>
+<p>The first thing we should note is that this problem (as all scattering problems) has a different character than the bound state problems we have been describing. Since the potential is short range, far from the potential barrier the particle is just the free particle. There is a state for every energy <span class="math notranslate nohighlight">\(E &gt; 0\)</span> (once we properly specify the boundary conditions). The nontrivial part of the problem is specifying the boundary conditions, and finding the wavfunction as a function of the energy and those boundary conditions.</p>
+<p>Ideally one would prepare a localized wave packet and study its evolution. In general this will both propagate and spread and the interaction with the potential barrier will be somewhat complicated. Instead we will consider the following idealization. To the left or the right of the barrier, the solutions are of the form <span class="math notranslate nohighlight">\(e^{\pm i k x}\)</span> where <span class="math notranslate nohighlight">\(E = \frac{\hbar^2 k^2}{2m}\)</span>. Recall that the probability <span class="math notranslate nohighlight">\(\rho dx = |\psi(x)|^2 dx\)</span> that a single particle is found in an interval of length <span class="math notranslate nohighlight">\(dx\)</span> about position <span class="math notranslate nohighlight">\(x\)</span>, where <span class="math notranslate nohighlight">\(\rho\)</span> is the probability density. Recall from <a class="reference internal" href="../chapter5/dynamics_1.html#subsec-probability-conservation"><span class="std std-ref">Conservation of probability</span></a> that this density satisfies a conservation law <span class="math notranslate nohighlight">\(\partial_t \rho + \partial_x J\)</span> where</p>
+<div class="math notranslate nohighlight" id="equation-scattering-flux">
+<span class="eqno">(307)<a class="headerlink" href="#equation-scattering-flux" title="Link to this equation">#</a></span>\[J = \frac{\hbar}{2im} \left(\psi^*\del_x\psi - \del_x \psi^* \psi\right)\]</div>
+<p>If the wavefunction is <span class="math notranslate nohighlight">\(A e^{\pm i k x}\)</span>, then <span class="math notranslate nohighlight">\(J = |A|^2 \frac{\hbar k}{m}\)</span>. Here <span class="math notranslate nohighlight">\(\hbar k\)</span> is the momentum of the particle, <span class="math notranslate nohighlight">\(\hbar k/m\)</span> behaves as a velocity. Nowfor <span class="math notranslate nohighlight">\(|\psi|^2\)</span> to be a good probability density, <span class="math notranslate nohighlight">\(A\)</span> has units of <span class="math notranslate nohighlight">\((length)^{-1/2}\)</span>, so <span class="math notranslate nohighlight">\(|A|^2 v\)</span> has units of inverse time. We can think of it as the probability per unit time that the particle crosses <span class="math notranslate nohighlight">\(x\)</span> from left to right (if <span class="math notranslate nohighlight">\(k\)</span> and thus <span class="math notranslate nohighlight">\(v\)</span> is positive).</p>
+<p>More generally, we can imagine sending a flux of particles, all prepared in the same state. Then in the limit that the flux is large, <span class="math notranslate nohighlight">\(\rho\)</span> becomes to good approximation the particle density, and <span class="math notranslate nohighlight">\(J\)</span> the number of particles per second crossing <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>We assume that any flux of particles coming from <span class="math notranslate nohighlight">\(x = pm \infty\)</span> must be prescribed. We we will consider an experiment for which the particles are injected from <span class="math notranslate nohighlight">\(x = -\infty\)</span>. They can then pass over or be scattered from the potential barrier and travel to <span class="math notranslate nohighlight">\(x = \pm \infty\)</span>. I claim that a good model for this is to consider wavefunctions for <span class="math notranslate nohighlight">\(|x| &gt; \frac{a}{2}\)</span> which take the form</p>
+<div class="math notranslate nohighlight" id="equation-scattering-psi">
+<span class="eqno">(308)<a class="headerlink" href="#equation-scattering-psi" title="Link to this equation">#</a></span>\[\begin{split}\psi(x) = \begin{cases} A_{inc} e^{i k x} + A_{refl} e^{-i k x} &amp; x &lt; - \frac{a}{2} \\ A_{trans} e^{i k x} &amp; x &gt; \frac{a}{2} \end{cases}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k = \frac{1}{\hbar} \sqrt{2m E}\)</span>. We will choose a normalization for the wavefunctions such that <span class="math notranslate nohighlight">\(J_{inc} = |A_{inc}|^2 \frac{\hbar k}{m}\)</span> is the incoming flux of particles. <span class="math notranslate nohighlight">\(J_{refl} = - |A_{refl}|^2 \frac{\hbar k}{m}\)</span> is then the flux of particles that are reflected from the barrier, and <span class="math notranslate nohighlight">\(J_{trans} = |A_{trans}|^2 \frac{\hbar k}{m}\)</span> is the flux of particles which are transmitted over or through the barrier. We impose as a boundary condition that the wavfunction has no combinent with momentum <span class="math notranslate nohighlight">\(-\hbar k\)</span> for <span class="math notranslate nohighlight">\(x &gt; a/2\)</span>, meaning we are not injecting particles from <span class="math notranslate nohighlight">\(x \to \infty\)</span>. The other boundary condition is the prescription of <span class="math notranslate nohighlight">\(A_{inc}\)</span>. These completely specify the solution to the time-independent Schroedinger equation. <span class="math notranslate nohighlight">\(A_{refl}\)</span> and <span class="math notranslate nohighlight">\(A_{trans}\)</span> (and the associated fluxes) are completely determined from <span class="math notranslate nohighlight">\(A_{inc}\)</span> (and its associated flux).</p>
+<p>The detailed formulae arise from matching the above to the wavefunction in the barrier region. This is well described in many textbooks and we won’t dig into the details, but instead state the results.</p>
+<section id="below-barrier-scattering">
+<h3>Below barrier scattering<a class="headerlink" href="#below-barrier-scattering" title="Link to this heading">#</a></h3>
+<p>Let us first consider the case <span class="math notranslate nohighlight">\(0 &lt; E &lt; V_0\)</span>. This is where the most radical difference form classical mechanics lies. As we know from the finite square well, the wavefunction remains nonzero in the forbidden region <span class="math notranslate nohighlight">\(x\in \left[ -\frac{a}{2}, \frac{a}{2} \right]\)</span>. More specifically, it will take the form</p>
 <div class="math notranslate nohighlight">
-\[\psi(x,t) = \int \frac{d^d p}{(2\pi \hbar)^{d/2}} e^{- {\vec p}\cdot{\vec x}/\hbar} e^{- i \frac{{\vec p}^2}{2m} t} {\tilde \psi}({\vec p})\]</div>
-<p>An equivalent strategy is to start with the formula</p>
-<div class="math notranslate nohighlight" id="equation-prop-solution">
-<span class="eqno">(292)<a class="headerlink" href="#equation-prop-solution" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-\psi({\vec x},t) &amp; = \bra{x}U(t,t_0)\ket{\psi(t_0)} \\
-&amp; = \int d^d y \bra{x}U(t,t_0)\ket{y}\bra{y}\ket{\psi(t_0)}\\
-&amp; \equiv \int d^d y G_0(x,t; y,t_0) \psi(y,t_0)
-\end{align}\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(G_0(x,t;ymt_0) = \bra{x} U(t,t_0) \ket{y}\)</span> and <span class="math notranslate nohighlight">\(U(t,t_0) = e^{-i H (t-t_0)/\hbar}\)</span>. <span class="math notranslate nohighlight">\(G_0\)</span> is called the <em>propagator</em> or Green function. With some work you can show that</p>
-<div class="math notranslate nohighlight">
-\[- \frac{\hbar^2}{2m} {\vec\nabla}^2 G_0 = i \hbar \frac{\del}{\del t} G_0\ ,\]</div>
-<p>that is, it solves the Schroedinger equation, and that</p>
-<div class="math notranslate nohighlight">
-\[G_0(x,t;y,t_0) \xrightarrow[t \to t_0]{} \delta^d({\vec x} - {\vec y})\]</div>
-<p>Given <span class="math notranslate nohighlight">\(G_0\)</span> you can find a solution for any initial value, by doing the integral in <a class="reference internal" href="#equation-prop-solution">(292)</a>.</p>
-<p>od find <span class="math notranslate nohighlight">\(G_0\)</span> we insert resolutions of the identity <span class="math notranslate nohighlight">\({\bf 1} = \int d^d p \ket{p}\bra{p}\)</span> and use <span class="math notranslate nohighlight">\(\brket{x}{p} = \frac{1}{(2\pi \hbar)^{d/2}} e^{i{\vec p}\cdot{\vec x}/\hbar}\)</span>:</p>
-<div class="math notranslate nohighlight" id="equation-prop-solution">
-<span class="eqno">(292)<a class="headerlink" href="#equation-prop-solution" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-G_0(x,t;y,t_0) &amp; = \int d^d p \int d^d p' \brket{x}{p} \bra{p} U(t,t_0) \ket{p'}\brket{p'}{y}\\
-&amp; = \int\frac{d^3 p d^3 p'}{(2\pi \hbar)^d} e^{i{\vec p}\cdot{\vec x}/\hbar - i {\vec p}'\cdot{\vec y}/\hbar} e^{-i\frac{{\vec p}^2}{2m\hbar} (t - t_0)} \brket{p}{p'}\\
-&amp; = \int \frac{d^d p}{(2\pi \hbar)^d} e^{i {\vec p}\cdot({\vec x} - {\vec y})/\hbar - i \frac{{\vec p}^2}{2m\hbar} t}
-\end{align}\end{split}\]</div>
-<p>Now this is a Gaussian integral. The argument is pure imaginart, but if we let <span class="math notranslate nohighlight">\(t \to t - i\eps\)</span>, then the integrand will die off exponentially as <span class="math notranslate nohighlight">\(\sim e^{-\eps p^2 t/(2m\hbar)}\)</span> for large <span class="math notranslate nohighlight">\(p^2\)</span>. We can then use the standard formulae for Gaussian integrals</p>
-<div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} d q e^{-a q^2} = \sqrt{\frac{\pi}{a}}\]</div>
-<p>To do the integral above we need to complete the square. Writing the argument of the exponential as (setting <span class="math notranslate nohighlight">\(t_0 = 0\)</span>; this is just a choice of coordinates)</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-&amp; \frac{- i t}{2m\hbar}\left(p^2 - \frac{2m}{t}{\vec p}\cdot({\vec x - \vec y})\right)\\
-&amp; \ \ = - \frac{i t}{2m\hbar}\left(p^2 - \frac{2m}{t}{\vec p}\cdot({\vec x - \vec y}) + \frac{m^2}{t^2}(x - y)^2\right) + \frac{i m}{\hbar t}(x - y)^2\\
-&amp; \ \ = - \frac{i t}{2m\hbar}(p - \frac{m}{t}(x - y))^2 + \frac{i m}{\hbar t}(x - y)^2
-\end{align}\end{split}\]</div>
-<p>We can shift the origin of integration by setting <span class="math notranslate nohighlight">\({\vec p} \to {\vec p} + \frac{m}{t}({\vec x} - {\vec y})\)</span> and performing the Gaussian integrals. The result, when the dust settles, is</p>
-<div class="math notranslate nohighlight" id="equation-fp-prop">
-<span class="eqno">(293)<a class="headerlink" href="#equation-fp-prop" title="Link to this equation">#</a></span>\[G_0(x,t; y,t_0) = \left(\frac{m}{2\pi i \hbar (t - t_0)}\right)^{d/2} e^{\frac{m({\vec x} - {\vec y})^2}{2i \hbar t}}\]</div>
-<p>This is an exponential which oscillates more slowly at <span class="math notranslate nohighlight">\({\vec x} = {\vec y}\)</span> and more quickly as we go off to infinity. The width of the slowly oscillating region increases as a square root of <span class="math notranslate nohighlight">\(t = t_0\)</span>; this is the origin of the spreading of the wavefunction. To get some intuition, note that if we set <span class="math notranslate nohighlight">\(t = - i \tau\)</span>, the Schroedinger equation becomes</p>
-<div class="math notranslate nohighlight">
-\[\hbar \frac{\del}{\del \tau} \psi = \frac{\hbar^2}{2m} \nabla^2 \psi \Rightarrow \del_{\tau}\psi = D \nabla^2 \psi\]</div>
-<p>where <span class="math notranslate nohighlight">\(D = \frac{\hbar}{2m}\)</span>. This latter equation is the diffusion equation (a special case of the Fokker-Planck equation). The interpretation is different: <span class="math notranslate nohighlight">\(\psi\)</span> is a density or a probability distribution (rather than a complex amplitude you square to get thr probability). But it turns out you can get some mileage from the realization that there is a formal relation (in many cases) between diffusion problems (and their underlying stochastic dynamics) and quantum problems.</p>
+\[\psi(x) = C e^{\kappa x} + D e^{-\kappa x}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hbar \kappa = \sqrt{2m(V_0 - E)}\)</span>. <span class="math notranslate nohighlight">\(C\)</span>,<span class="math notranslate nohighlight">\(D\)</span> are then determined from <span class="xref std std-ref">scattering_psi</span> by demanding continuity of <span class="math notranslate nohighlight">\(\psi, \del_x \psi\)</span> at <span class="math notranslate nohighlight">\(x = \pm \frac{a}{2}\)</span>.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -465,20 +458,20 @@ G_0(x,t;y,t_0) &amp; = \int d^d p \int d^d p' \brket{x}{p} \bra{p} U(t,t_0) \ket
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Wave_examples.html"
+       href="twostate_models.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Examples of nonrelativistic quantum particle dynamics</p>
+        <p class="prev-next-title">Two-state systems as phenomenological models</p>
       </div>
     </a>
     <a class="right-next"
-       href="square_well.html"
+       href="../appendix.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">The 1d square well</p>
+        <p class="prev-next-title">Appendix</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -488,6 +481,25 @@ G_0(x,t;y,t_0) &amp; = \int d^d p \int d^d p' \brket{x}{p} \bra{p} U(t,t_0) \ket
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-scattering">Classical scattering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-scattering">Quantum scattering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#below-barrier-scattering">Below barrier scattering</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

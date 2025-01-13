@@ -1,0 +1,10 @@
+# One-dimensional scattering
+
+So far, beyond the free particle, we have focused on bound state problems. However, an important class of experiments we need to address are scattering experiments, in which we probe the structure of some system -- a metal, an atomic nucleus, and so forth -- by throwing another particle at it. 
+
+Here we will consider an extremely simplistic setup in which the background probed is nondynamical (so scattering is elastic) and represented by a fixed potential of finite range. More specifically we will focus on a finite, rectangular potential barrier:
+```{math}
+V(x) = \begin{cases} 0 & x < - \frac{a}{2} \\ V_0 > 0 & - \frac{a}{2} \leq x \leq \frac{1}{2} \\ 0 & x > \frac{a}{2} \end{cases}
+```
+ 
+ The question we want to ask is the following. Consider a particle with fixed energy $E$ which is approaching the barrier from large negative $x$. Its initial energy is kinetic, $E = \half m v^2$. What happens after it hits the barrier? Classically, this is a well defined question with an obvious answer. For $0 < E < V_0$, the particle will refelct off of the barrier and travel towards $x = - \infty$. For $E > V_0$, the particle will pass over the barrier, although it will slow down as it passes over the top of the barrier.  

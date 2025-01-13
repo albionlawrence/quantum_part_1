@@ -28,6 +28,7 @@ If we define $\Delta H \equiv \Delta E$ and
 ```
 then we get our uncertainty principle. We can ghink of $\Delta t$ as the time it takes for $\vev{A}$ to change by an amount $\Delta A$ -- that is, the time scale for a change in the state to be noticeable.
 
+(subsec:probability_conservation)=
 ## Conservation of probability
 
 We have noted before that $\psi^*({\vec x}\psi({\vec x})$ is a probability *density*; one integrates it over a region to find the probability that a particle lives in that region.

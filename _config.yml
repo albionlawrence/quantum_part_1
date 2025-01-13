@@ -5,10 +5,10 @@
 
 #######################################################################################
 # Book settings
-title                       : "Physics 162a" 
+title                       : "Physics 162" 
 author                      : Albion Lawrence  # The author of the book
-copyright                   : "2024"  # Copyright year to be placed in the footer
-logo                        : "dogs_quantum.png"  # A path to the book logo
+copyright                   : "2025"  # Copyright year to be placed in the footer
+logo                        : "Carl_Eckart.jpg"  # A path to the book logo
 # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
 exclude_patterns            : [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
 # Auto-exclude files not in the toc
