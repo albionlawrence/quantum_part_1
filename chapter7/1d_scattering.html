@@ -372,10 +372,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-scattering">Classical scattering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-scattering">Quantum scattering</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#below-barrier-scattering">Below barrier scattering</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-scattering">Quantum scattering</a></li>
 </ul>
             </nav>
         </div>
@@ -392,7 +389,7 @@ document.write(`
 <p>So far, beyond the free particle, we have focused on bound state problems. However, an important class of experiments we need to address are scattering experiments, in which we probe the structure of some system – a metal, an atomic nucleus, and so forth – by throwing another particle at it and seeing what comes out.</p>
 <p>Here we will consider an extremely simplistic setup in which the background probed is nondynamical (so scattering is elastic) and represented by a fixed potential of finite range. More specifically we will focus on a finite, rectangular potential barrier:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}V(x) = \begin{cases} 0 &amp; x &lt; - \frac{a}{2} \\ V_0 &gt; 0 &amp; - \frac{a}{2} \leq x \leq \frac{1}{2} \\ 0 &amp; x &gt; \frac{a}{2} \end{cases}\end{split}\]</div>
+\[\begin{split}V(x) = \begin{cases} 0 &amp; x &lt; 0 \\ V_0 &gt; 0 &amp; 0 \leq x \leq a \\ 0 &amp; x &gt; \end{cases}\end{split}\]</div>
 <p>The question we want to ask is the following. Consider a particle with fixed energy <span class="math notranslate nohighlight">\(E\)</span> which is approaching the barrier from large negative <span class="math notranslate nohighlight">\(x\)</span>. Its initial energy is kinetic, <span class="math notranslate nohighlight">\(E = \half m v^2\)</span>. What happens after it hits the barrier?</p>
 <section id="classical-scattering">
 <h2>Classical scattering<a class="headerlink" href="#classical-scattering" title="Link to this heading">#</a></h2>
@@ -401,7 +398,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\delta t = t_1 - t_0 = \frac{a}{v_1} - \frac{a}{v_0} = \sqrt{\frac{m a^2}{2}} \left[\frac{1}{\sqrt{E - V_0}} - \frac{1}{\sqrt{E}}\right]\]</div>
 <p>Note that if <span class="math notranslate nohighlight">\(V_0 &lt; 0\)</span> the same basic story applies and the above formulae apply, but the particle always passes through the region of nonzero potential, time delay will be negative.</p>
-<p>For <span class="math notranslate nohighlight">\(E = V_0\)</span> exactly, the velocity will become zero as soon as the particle reaches the barrier, and it will stick to the left edge at <span class="math notranslate nohighlight">\(x = - a/2\)</span>.</p>
+<p>For <span class="math notranslate nohighlight">\(E = V_0\)</span> exactly, the velocity will become zero as soon as the particle reaches the barrier, and it will stick to the left edge at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
 </section>
 <section id="quantum-scattering">
 <h2>Quantum scattering<a class="headerlink" href="#quantum-scattering" title="Link to this heading">#</a></h2>
@@ -412,18 +409,36 @@ document.write(`
 <span class="eqno">(307)<a class="headerlink" href="#equation-scattering-flux" title="Link to this equation">#</a></span>\[J = \frac{\hbar}{2im} \left(\psi^*\del_x\psi - \del_x \psi^* \psi\right)\]</div>
 <p>If the wavefunction is <span class="math notranslate nohighlight">\(A e^{\pm i k x}\)</span>, then <span class="math notranslate nohighlight">\(J = |A|^2 \frac{\hbar k}{m}\)</span>. Here <span class="math notranslate nohighlight">\(\hbar k\)</span> is the momentum of the particle, <span class="math notranslate nohighlight">\(\hbar k/m\)</span> behaves as a velocity. Nowfor <span class="math notranslate nohighlight">\(|\psi|^2\)</span> to be a good probability density, <span class="math notranslate nohighlight">\(A\)</span> has units of <span class="math notranslate nohighlight">\((length)^{-1/2}\)</span>, so <span class="math notranslate nohighlight">\(|A|^2 v\)</span> has units of inverse time. We can think of it as the probability per unit time that the particle crosses <span class="math notranslate nohighlight">\(x\)</span> from left to right (if <span class="math notranslate nohighlight">\(k\)</span> and thus <span class="math notranslate nohighlight">\(v\)</span> is positive).</p>
 <p>More generally, we can imagine sending a flux of particles, all prepared in the same state. Then in the limit that the flux is large, <span class="math notranslate nohighlight">\(\rho\)</span> becomes to good approximation the particle density, and <span class="math notranslate nohighlight">\(J\)</span> the number of particles per second crossing <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<p>We assume that any flux of particles coming from <span class="math notranslate nohighlight">\(x = pm \infty\)</span> must be prescribed. We we will consider an experiment for which the particles are injected from <span class="math notranslate nohighlight">\(x = -\infty\)</span>. They can then pass over or be scattered from the potential barrier and travel to <span class="math notranslate nohighlight">\(x = \pm \infty\)</span>. I claim that a good model for this is to consider wavefunctions for <span class="math notranslate nohighlight">\(|x| &gt; \frac{a}{2}\)</span> which take the form</p>
+<p>We assume that any flux of particles coming from <span class="math notranslate nohighlight">\(x = pm \infty\)</span> must be prescribed. We we will consider an experiment for which the particles are injected from <span class="math notranslate nohighlight">\(x = -\infty\)</span>. They can then pass over or be scattered from the potential barrier and travel to <span class="math notranslate nohighlight">\(x = \pm \infty\)</span>. I claim that a good model for this is to consider wavefunctions for <span class="math notranslate nohighlight">\(x &lt; 0, x &gt; a\)</span> which take the form</p>
 <div class="math notranslate nohighlight" id="equation-scattering-psi">
-<span class="eqno">(308)<a class="headerlink" href="#equation-scattering-psi" title="Link to this equation">#</a></span>\[\begin{split}\psi(x) = \begin{cases} A_{inc} e^{i k x} + A_{refl} e^{-i k x} &amp; x &lt; - \frac{a}{2} \\ A_{trans} e^{i k x} &amp; x &gt; \frac{a}{2} \end{cases}\end{split}\]</div>
+<span class="eqno">(308)<a class="headerlink" href="#equation-scattering-psi" title="Link to this equation">#</a></span>\[\begin{split}\psi(x) = \begin{cases} A_{inc} e^{i k x} + A_{refl} e^{-i k x} &amp; x &lt; - 0 \\ A_{trans} e^{i k x} &amp; x &gt; a \end{cases}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(k = \frac{1}{\hbar} \sqrt{2m E}\)</span>. We will choose a normalization for the wavefunctions such that <span class="math notranslate nohighlight">\(J_{inc} = |A_{inc}|^2 \frac{\hbar k}{m}\)</span> is the incoming flux of particles. <span class="math notranslate nohighlight">\(J_{refl} = - |A_{refl}|^2 \frac{\hbar k}{m}\)</span> is then the flux of particles that are reflected from the barrier, and <span class="math notranslate nohighlight">\(J_{trans} = |A_{trans}|^2 \frac{\hbar k}{m}\)</span> is the flux of particles which are transmitted over or through the barrier. We impose as a boundary condition that the wavfunction has no combinent with momentum <span class="math notranslate nohighlight">\(-\hbar k\)</span> for <span class="math notranslate nohighlight">\(x &gt; a/2\)</span>, meaning we are not injecting particles from <span class="math notranslate nohighlight">\(x \to \infty\)</span>. The other boundary condition is the prescription of <span class="math notranslate nohighlight">\(A_{inc}\)</span>. These completely specify the solution to the time-independent Schroedinger equation. <span class="math notranslate nohighlight">\(A_{refl}\)</span> and <span class="math notranslate nohighlight">\(A_{trans}\)</span> (and the associated fluxes) are completely determined from <span class="math notranslate nohighlight">\(A_{inc}\)</span> (and its associated flux).</p>
-<p>The detailed formulae arise from matching the above to the wavefunction in the barrier region. This is well described in many textbooks and we won’t dig into the details, but instead state the results.</p>
-<section id="below-barrier-scattering">
-<h3>Below barrier scattering<a class="headerlink" href="#below-barrier-scattering" title="Link to this heading">#</a></h3>
-<p>Let us first consider the case <span class="math notranslate nohighlight">\(0 &lt; E &lt; V_0\)</span>. This is where the most radical difference form classical mechanics lies. As we know from the finite square well, the wavefunction remains nonzero in the forbidden region <span class="math notranslate nohighlight">\(x\in \left[ -\frac{a}{2}, \frac{a}{2} \right]\)</span>. More specifically, it will take the form</p>
+<p>Because we are looking at stationary states – Eq. <span class="xref std std-ref">scattering_psi</span> is an energy eigenstate – <span class="math notranslate nohighlight">\(\rho\)</span> is time-independent. We can integrate <span class="math notranslate nohighlight">\(\del_x J\)</span> over the barrier; it is a total derivative so that the flow on one side of the barrier is equal to the flux on the other side of the barrier: that is,</p>
 <div class="math notranslate nohighlight">
-\[\psi(x) = C e^{\kappa x} + D e^{-\kappa x}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\hbar \kappa = \sqrt{2m(V_0 - E)}\)</span>. <span class="math notranslate nohighlight">\(C\)</span>,<span class="math notranslate nohighlight">\(D\)</span> are then determined from <span class="xref std std-ref">scattering_psi</span> by demanding continuity of <span class="math notranslate nohighlight">\(\psi, \del_x \psi\)</span> at <span class="math notranslate nohighlight">\(x = \pm \frac{a}{2}\)</span>.</p>
-</section>
+\[|A_{inc}|^2 - |A_{refl}|^2 = |A_{trans}|^2\]</div>
+<p>The detailed formulae arise from matching the above to the wavefunction in the barrier region. This is well described in many textbooks and we won’t dig into the details. We take our notation (and the next figure) from <span id="id1">[<a class="reference internal" href="../markdown.html#id10" title="L.I. Schiff. Quantum Mechanics. International series in pure and applied physics. McGraw-Hill, 1955. ISBN 9780070856431. URL: https://books.google.com/books?id=7ApRAAAAMAAJ.">Schiff, 1955</a>]</span>. The result for general <span class="math notranslate nohighlight">\(E\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\frac{A_{refl}}{A_{inc}} = \frac{(k^2 - \alpha^2)(1 - e^{2 i a \alpha})}{(k + \alpha)^2 - (k - \alpha)^2 e^{2 i a \alpha}} \\
+\frac{A_{trans}}{A_{inc}} = \frac{4 k \alpha e^{i (\alpha - k) a}}{(k + \alpha)^2 - (k - \alpha)^2 e^{2 i a \alpha}}
+\end{align}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha = \sqrt{\frac{2m(E - V_0)}{\hbar^2}}\)</span>. Note that this formula holds for <span class="math notranslate nohighlight">\(E &lt; V_0\)</span>; we can then write <span class="math notranslate nohighlight">\(\alpha = i \kappa\)</span>.</p>
+<p>To get a sense of what is happening, let us plot the <em>transmission coefficient</em>, that is, the ratio of transmitted to incident flux. This is</p>
+<div class="math notranslate nohighlight" id="equation-trans-coeff">
+<span class="eqno">(309)<a class="headerlink" href="#equation-trans-coeff" title="Link to this equation">#</a></span>\[T = \frac{|A_{trans}|^2}{|A_{inc}|^2} = \frac{1}{1 + \frac{V_0^2 \sin^2 \alpha a}{4 E(E - V_0)}}\]</div>
+<p>See the plot below, for <span class="math notranslate nohighlight">\(\frac{m V_0^2 a^2}{\hbar^2} = 8\)</span>.</p>
+<p><img alt="Transmission coefficient" src="../_images/transmission.png" /></p>
+<p>For <span class="math notranslate nohighlight">\(E &gt; V_0\)</span>, note that the transmission becomes perfect whenever <span class="math notranslate nohighlight">\(\alpha\alpha a = 0\)</span>, or <span class="math notranslate nohighlight">\(\alpha a = n \pi\)</span>; this occurs when the barrier is an integer number of half-wavelengths. Note that at <span class="math notranslate nohighlight">\(V = E_0\)</span>, <span class="math notranslate nohighlight">\(\alpha \sin \sqrt{E - V_0}\)</span>, so that <span class="math notranslate nohighlight">\(\sin^2\alpha a/(E - V_0)\)</span> goes to a constant. The full coefficient is:</p>
+<div class="math notranslate nohighlight">
+\[T(E = V_0) = \frac{1}{1 + \frac{m V_0 a^2}{2\hbar^2}}\]</div>
+<p>which is nonzero, unlike the classical case.</p>
+<p>Note further that the transmission coefficient is nonzero even when <span class="math notranslate nohighlight">\(E &lt; V_0\)</span>. Here <span class="math notranslate nohighlight">\(\sin\alpha a = - i \sinh\kappa a\)</span>; the <span class="math notranslate nohighlight">\((-i)^2\)</span> term in <span class="xref std std-ref">trans_coeff</span> cancels the change of sign in <span class="math notranslate nohighlight">\(E - V_0\)</span>. The result is:</p>
+<div class="math notranslate nohighlight">
+\[T(E &lt; V_0) = \frac{1}{1 + \frac{V_0^2 \sinh^2 \kappa a}{4 E (V_0 - E)}}\]</div>
+<p>To build some intuition, take <span class="math notranslate nohighlight">\(\kappa a \gg 1\)</span>, which can happen when <span class="math notranslate nohighlight">\(a\)</span> or <span class="math notranslate nohighlight">\(V_0\)</span> gets large at fixed <span class="math notranslate nohighlight">\(E\)</span>. In this case <span class="math notranslate nohighlight">\(\sinh \kappa a \sim \half e^{\kappa a}\)</span> becomes exponentially large and dominates the denominator in <span class="math notranslate nohighlight">\(T\)</span>. The resulting expression is</p>
+<div class="math notranslate nohighlight">
+\[T \sim \frac{16 E (V_0 - E)}{V_0^2} e^{-2\kappa a}\]</div>
+<p>this exponential suppression with the width (and square root of the height) of the barrier is characteristic of tunneling/below-barrier transmission. Note that <span class="math notranslate nohighlight">\(\kappa = \frac{\sqrt{2m(V_0 - E)}}{\hbar}\)</span> so the exponential has a non-analytic dependence on <span class="math notranslate nohighlight">\(\hbar\)</span> if we scale <span class="math notranslate nohighlight">\(\hbar \to 0\)</span>.</p>
 </section>
 </section>
 
@@ -492,10 +507,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-scattering">Classical scattering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-scattering">Quantum scattering</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#below-barrier-scattering">Below barrier scattering</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-scattering">Quantum scattering</a></li>
 </ul>
   </nav></div>
 
