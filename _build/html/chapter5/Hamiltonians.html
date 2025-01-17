@@ -57,7 +57,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"], "cO": ["\\mathcal{O}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter5/Hamiltonians';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -218,6 +218,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter7/square_well.html">The 1d square well</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter7/sho.html">The simple harmonic oscillator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter7/twostate_models.html">Two-state systems as phenomenological models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/1d_scattering.html">One-dimensional scattering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/periodic_potentials.html">Periodic potentials</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -388,7 +390,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="designing-hamiltonians">
 <h1>Designing Hamiltonians<a class="headerlink" href="#designing-hamiltonians" title="Link to this heading">#</a></h1>
 <section id="free-particle-on-a-lattice">
-<h2>Free particle on a lattice<a class="headerlink" href="#free-particle-on-a-lattice" title="Link to this heading">#</a></h2>
+<span id="section-lattice"></span><h2>Free particle on a lattice<a class="headerlink" href="#free-particle-on-a-lattice" title="Link to this heading">#</a></h2>
 <p>Let us start with a particle on an <span class="math notranslate nohighlight">\(N\)</span>-site lattice with periodic boundary conditions. We assume that there is a binding energy <span class="math notranslate nohighlight">\(E = - |E|\)</span> at each site, and a hopping rate <span class="math notranslate nohighlight">\(A/\hbar\)</span> between <em>adjacent</em> sites. Since <span class="math notranslate nohighlight">\(A\)</span> has units of energy, a natural Hamiltonian is</p>
 <div class="math notranslate nohighlight">
 \[H_{ij} = E \delta_{ij} - A \delta_{i,i+1} - A\delta_{i,i-1}\]</div>

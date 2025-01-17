@@ -1,5 +1,6 @@
 # Designing Hamiltonians
 
+(section:lattice)=
 ## Free particle on a lattice
 
 Let us start with a particle on an $N$-site lattice with periodic boundary conditions. We assume that there is a binding energy $E = - |E|$ at each site, and a hopping rate $A/\hbar$ between *adjacent* sites. Since $A$ has units of energy, a natural Hamiltonian is

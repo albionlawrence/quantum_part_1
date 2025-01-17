@@ -1,0 +1,54 @@
+# Periodic potentials
+
+Here we will consider a non-relativistic particle with Hamiltonian
+```{math}
+H = \frac{{\hat p}^2}{2m} + V(x)
+```
+where $V(x) = V(x + a)$. That is, the potential is *periodic* with period $a$. This is the model for an electron moving through a crystal lattice, where the atoms are in a regular array with spacing $a$. Of course an actual 2-d or 3-d lattice will have a more complicated and interesting structure, but the 1d example we'll discuss here will already introduce some basic concepts of energy bands and Brilloun zones which appear in more realistic situations. 
+
+We will discuss a simple example, and then make some general statements about such potentials.
+
+## The tight binding approximation
+
+A model for a potential is shown below; the potential becomes large and negative at each lattice site. In principle it could go to $-\infty$, as happens for the Coulomb attraction of an electron by a proton in three dimensions. As with the double-well potential, we expect the energy eigenstates to be extended over the metal.
+
+We will approximate the Hamiltonian as follows. We consider a periodic lattice with $N$ sites. At each lattice site, if we did not allow the electrons to hop, the electron can take one of a set of eigenstates $E_{i = 1,\ldots, n}$. These approximate bound states to the individual atoms. The Hilbert space for $N$ lattice sites is then $\cH = \CC^n \oplus \CC^n \oplus \cdots \oplus \CC^n$ where there are $N$ such factors of $\CC^n$ so that the total dimension of the Hilbert space is $nN$. We can also wrote this as $\CC^N \oplus \CC^N \oplus \cdots \oplus \CC^N$ where there are $n$ factors of $\CC^N$. Each of these factors corresponds to one of the $n$ energy levels of the electron on each site. This is the presentation we will use. Either way, we assume that we can take as an orthonormal basis $\ket{i, I}$ with $i = 1,\ldots, n$ labeling the energy eigenstates of a single atom and $I = 1,\ldots, N$ labeling the atoms. This orthonormality is part of the approximation. In actual fact atomic wavefunctions have infinite extent, and so we would expect an electron more or less localized about one atom to have a wavefunction that extends to the other atom.
+
+We assume, first, that the Hamiltonian is diagonal in the basis of the atomic eigenstates, that is,
+```{math}
+\bra{i, I} H \ket{j, J} = \delta_{ij}C(i,I,J)
+```
+We next assume that the nonvanishing matrix elements of the Hamiltonian are either diagonal in $I,J$ or connect $J = I \pm 1$, where we let $I = 0$ be the same as $I = N$ and $I = N+1$ be the same as $I = 1$. Thus,
+```{math}
+\begin{align} 
+\bra{i, I} H \ket{i, I} & = E_i\ \forall I\\
+\bra{i, I} H \ket{i, I \pm 1} & = - \Delta_i \forall I
+\end{align}
+```
+
+We have already discussed this Hamiltonian in {ref}`section:lattice` for fixed $i$; it is a discrete model of the free particle. We argued based on the Fourier transform that this was well approximated by $H \propto {\hat p}^2 + \eps_i$ for some number $\eps_i$. I will argue this another way. We see that
+```{math}
+H\ket{i, I} = E_i\ket{i, I} - \Delta_i\left(\ket{i, I-1} + \ket{i, i + 1}
+```
+Similarly, 
+```{math}
+\bra{i, I] H \ket{\psi} = E_i \brket{i, I}{\psi} - \Delta\left(\brket{i, I-1}{\psi} + \ket{i, I+1}{\psi}\right)
+```
+Lets assume the lattice has spacing $a$, and $a I = x$. Then (dropping the $i$ index) we have
+```{math}
+\bra{I} H \ket{\psi} = E\psi(x) - \Delta\left(\psi(x + a) + \psi(x - a)\right)
+```
+But 
+```{nath}
+2 \psi(x) - \psi(x - a) - \psi(x + a) \sim - a^2 \psi''(x) + \cO(a^4)
+```
+so our Hamiltonian is a good discrete representation of the Laplacian.
+
+As we showed in {ref}`section:lattice`, egenstates of this Hamiltonian take the form
+```{math}
+\ket{q} = \frac{1}{\sqrt{N}}\sum_{n = 1}^N e^{2\pi i(na) q/Na}
+```
+where $q \in \left\{0,\ldots, N-1\right\}$. 
+
+
+

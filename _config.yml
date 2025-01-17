@@ -116,3 +116,4 @@ sphinx:
               "CZ": ["\\mathbb{Z}"]
               "CP": ["\\mathbb{P}"]
               "cH": ["\\mathcal{H}"]
+              "cO": ["\\mathcal{O}"]

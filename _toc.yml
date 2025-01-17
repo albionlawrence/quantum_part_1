@@ -43,6 +43,7 @@ chapters:
     - file: chapter7/sho
     - file: chapter7/twostate_models
     - file: chapter7/1d_scattering
+    - file: chapter7/periodic_potentials
   - file: appendix
   - file: bibliography
 # - file: notebooks
