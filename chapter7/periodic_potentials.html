@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>One-dimensional scattering &#8212; Physics 162</title>
+    <title>Periodic potentials &#8212; Physics 162</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"], "cO": ["\\mathcal{O}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter7/1d_scattering';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter7/periodic_potentials';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Periodic potentials" href="periodic_potentials.html" />
-    <link rel="prev" title="Two-state systems as phenomenological models" href="twostate_models.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="One-dimensional scattering" href="1d_scattering.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -218,8 +218,8 @@
 <li class="toctree-l2"><a class="reference internal" href="square_well.html">The 1d square well</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sho.html">The simple harmonic oscillator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="twostate_models.html">Two-state systems as phenomenological models</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">One-dimensional scattering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="periodic_potentials.html">Periodic potentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1d_scattering.html">One-dimensional scattering</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Periodic potentials</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -278,7 +278,7 @@
       
       
       
-      <li><a href="../_sources/chapter7/1d_scattering.md" target="_blank"
+      <li><a href="../_sources/chapter7/periodic_potentials.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +362,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>One-dimensional scattering</h1>
+    <h1>Periodic potentials</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -372,8 +372,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-scattering">Classical scattering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-scattering">Quantum scattering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-tight-binding-approximation">The tight binding approximation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bloch-s-theorem">Bloch’s theorem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-translation-operator">Discrete translation operator.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences-of-discrete-translational-symmetry">Consequences of discrete translational symmetry</a></li>
 </ul>
             </nav>
         </div>
@@ -385,61 +389,96 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="one-dimensional-scattering">
-<h1>One-dimensional scattering<a class="headerlink" href="#one-dimensional-scattering" title="Link to this heading">#</a></h1>
-<p>So far, beyond the free particle, we have focused on bound state problems. However, an important class of experiments we need to address are scattering experiments, in which we probe the structure of some system – a metal, an atomic nucleus, and so forth – by throwing another particle at it and seeing what comes out.</p>
-<p>Here we will consider an extremely simplistic setup in which the background probed is nondynamical (so scattering is elastic) and represented by a fixed potential of finite range. More specifically we will focus on a finite, rectangular potential barrier:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="periodic-potentials">
+<h1>Periodic potentials<a class="headerlink" href="#periodic-potentials" title="Link to this heading">#</a></h1>
+<p>Here we will consider a non-relativistic particle with Hamiltonian</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}V(x) = \begin{cases} 0 &amp; x &lt; 0 \\ V_0 &gt; 0 &amp; 0 \leq x \leq a \\ 0 &amp; x &gt; \end{cases}\end{split}\]</div>
-<p>The question we want to ask is the following. Consider a particle with fixed energy <span class="math notranslate nohighlight">\(E\)</span> which is approaching the barrier from large negative <span class="math notranslate nohighlight">\(x\)</span>. Its initial energy is kinetic, <span class="math notranslate nohighlight">\(E = \half m v^2\)</span>. What happens after it hits the barrier?</p>
-<section id="classical-scattering">
-<h2>Classical scattering<a class="headerlink" href="#classical-scattering" title="Link to this heading">#</a></h2>
-<p>Classically, this is a well defined question. For <span class="math notranslate nohighlight">\(0 &lt; E &lt; V_0\)</span>, the particle will reflect off of the barrier and travel towards <span class="math notranslate nohighlight">\(x = - \infty\)</span>.</p>
-<p>For <span class="math notranslate nohighlight">\(E &gt; V_0\)</span>, the particle will pass over the barrier, although it will slow down as it passes over the top of the barrier. This latter phenomenon will lead to a time delay for the particle to reach a point past the barrier, relative to the time it would take absent any such potential. We can work out this time delay in the latter case. If the initial velocity is <span class="math notranslate nohighlight">\(v_0 = \sqrt{2E/m}\)</span> it would take time <span class="math notranslate nohighlight">\(t_0 = a/v = a \sqrt{\frac{m}{2E}}\)</span> to cross the barrier. For a barrier of height <span class="math notranslate nohighlight">\(V_0 - E\)</span>, the velocity above the barrier is <span class="math notranslate nohighlight">\(v_1 = \sqrt{\frac{2(E - V_0)}{m}}\)</span>, so the time to cross the top is <span class="math notranslate nohighlight">\(t_1 = a \sqrt{\frac{m}{2(E - V_0)}}\)</span>. The time difference is thus</p>
+\[H = \frac{{\hat p}^2}{2m} + V(x)\]</div>
+<p>where <span class="math notranslate nohighlight">\(V(x) = V(x + a)\)</span>. That is, the potential is <em>periodic</em> with period <span class="math notranslate nohighlight">\(a\)</span>. This is the model for an electron moving through a crystal lattice, where the atoms are in a regular array with spacing <span class="math notranslate nohighlight">\(a\)</span>. Of course an actual 2-d or 3-d lattice will have a more complicated and interesting structure, but the 1d example we’ll discuss here will already introduce some basic concepts of energy bands and Brilloun zones which appear in more realistic situations.</p>
+<p>We will discuss a simple example, and then make some general statements about such potentials.</p>
+<section id="the-tight-binding-approximation">
+<h2>The tight binding approximation<a class="headerlink" href="#the-tight-binding-approximation" title="Link to this heading">#</a></h2>
+<p>A model for a potential is shown below; the potential becomes large and negative at each lattice site. In principle it could go to <span class="math notranslate nohighlight">\(-\infty\)</span>, as happens for the Coulomb attraction of an electron by a proton in three dimensions. As with the double-well potential, we expect the energy eigenstates to be extended over the metal.</p>
+<p><img alt="A periodic potential" src="../_images/periodic.png" /></p>
+<p>We will approximate the Hamiltonian as follows. We consider a periodic lattice with <span class="math notranslate nohighlight">\(N\)</span> sites. At each lattice site, if we did not allow the electrons to hop, the electron can take one of a set of eigenstates <span class="math notranslate nohighlight">\(E_{i = 1,\ldots, n}\)</span>. These approximate bound states to the individual atoms. The Hilbert space for <span class="math notranslate nohighlight">\(N\)</span> lattice sites is then <span class="math notranslate nohighlight">\(\cH = \CC^n \oplus \CC^n \oplus \cdots \oplus \CC^n\)</span> where there are <span class="math notranslate nohighlight">\(N\)</span> such factors of <span class="math notranslate nohighlight">\(\CC^n\)</span> so that the total dimension of the Hilbert space is <span class="math notranslate nohighlight">\(nN\)</span>. We can also wrote this as <span class="math notranslate nohighlight">\(\CC^N \oplus \CC^N \oplus \cdots \oplus \CC^N\)</span> where there are <span class="math notranslate nohighlight">\(n\)</span> factors of <span class="math notranslate nohighlight">\(\CC^N\)</span>. Each of these factors corresponds to one of the <span class="math notranslate nohighlight">\(n\)</span> energy levels of the electron on each site. This is the presentation we will use. Either way, we assume that we can take as an orthonormal basis <span class="math notranslate nohighlight">\(\ket{i, I}\)</span> with <span class="math notranslate nohighlight">\(i = 1,\ldots, n\)</span> labeling the energy eigenstates of a single atom and <span class="math notranslate nohighlight">\(I = 1,\ldots, N\)</span> labeling the atoms. This orthonormality is part of the approximation. In actual fact atomic wavefunctions have infinite extent, and so we would expect an electron more or less localized about one atom to have a wavefunction that extends to the other atom.</p>
+<p>We assume, first, that the Hamiltonian is diagonal in the basis of the atomic eigenstates, that is,</p>
 <div class="math notranslate nohighlight">
-\[\delta t = t_1 - t_0 = \frac{a}{v_1} - \frac{a}{v_0} = \sqrt{\frac{m a^2}{2}} \left[\frac{1}{\sqrt{E - V_0}} - \frac{1}{\sqrt{E}}\right]\]</div>
-<p>Note that if <span class="math notranslate nohighlight">\(V_0 &lt; 0\)</span> the same basic story applies and the above formulae apply, but the particle always passes through the region of nonzero potential, time delay will be negative.</p>
-<p>For <span class="math notranslate nohighlight">\(E = V_0\)</span> exactly, the velocity will become zero as soon as the particle reaches the barrier, and it will stick to the left edge at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+\[\bra{i, I} H \ket{j, J} = \delta_{ij}C(i,I,J)\]</div>
+<p>We next assume that the nonvanishing matrix elements of the Hamiltonian are either diagonal in <span class="math notranslate nohighlight">\(I,J\)</span> or connect <span class="math notranslate nohighlight">\(J = I \pm 1\)</span>, where we let <span class="math notranslate nohighlight">\(I = 0\)</span> be the same as <span class="math notranslate nohighlight">\(I = N\)</span> and <span class="math notranslate nohighlight">\(I = N+1\)</span> be the same as <span class="math notranslate nohighlight">\(I = 1\)</span>. Thus,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align} 
+\bra{i, I} H \ket{i, I} &amp; = E_i\ \forall I\\
+\bra{i, I} H \ket{i, I \pm 1} &amp; = - \Delta_i \forall I
+\end{align}\end{split}\]</div>
+<p>We have already discussed this Hamiltonian in <a class="reference internal" href="../chapter5/Hamiltonians.html#section-lattice"><span class="std std-ref">Free particle on a lattice</span></a> for fixed <span class="math notranslate nohighlight">\(i\)</span>; it is a discrete model of the free particle. We argued based on the Fourier transform that this was well approximated by <span class="math notranslate nohighlight">\(H \propto {\hat p}^2 + \eps_i\)</span> for some number <span class="math notranslate nohighlight">\(\eps_i\)</span>. I will argue this another way. We see that</p>
+<div class="math notranslate nohighlight">
+\[H\ket{i, I} = E_i\ket{i, I} - \Delta_i\left(\ket{i, I-1} + \ket{i, i + 1}\right)\]</div>
+<p>Similarly,</p>
+<div class="math notranslate nohighlight">
+\[\bra{i, I} H \ket{\psi} = E_i \brket{i, I}{\psi} - \Delta\left(\brket{i, I-1}{\psi} + \ket{i, I+1}{\psi}\right)\]</div>
+<p>Lets assume the lattice has spacing <span class="math notranslate nohighlight">\(a\)</span>, and <span class="math notranslate nohighlight">\(a I = x\)</span>. Then (dropping the <span class="math notranslate nohighlight">\(i\)</span> index) we have</p>
+<div class="math notranslate nohighlight">
+\[\bra{I} H \ket{\psi} = E\psi(x) - \Delta\left(\psi(x + a) + \psi(x - a)\right)\]</div>
+<p>But</p>
+<p>so our Hamiltonian is a good discrete representation of the Laplacian.</p>
+<p>As we showed in <a class="reference internal" href="../chapter5/Hamiltonians.html#section-lattice"><span class="std std-ref">Free particle on a lattice</span></a>, eigenstates of this Hamiltonian take the form</p>
+<div class="math notranslate nohighlight">
+\[\ket{q} = \frac{1}{\sqrt{N}}\sum_{n = 1}^N e^{2\pi i(na) q/Na}\ket{n}\]</div>
+<p>where <span class="math notranslate nohighlight">\(q \in \left\{0,\ldots, N-1\right\}\)</span>. We can write <span class="math notranslate nohighlight">\(x = na\)</span>, <span class="math notranslate nohighlight">\(k = 2\pi q/(Na)\)</span> (where <span class="math notranslate nohighlight">\(Na\)</span> is the total length of the lattice) to find</p>
+<div class="math notranslate nohighlight">
+\[\ket{k} = \frac{1}{\sqrt{N}} \sum_x e^{i k x} \ket{x}\]</div>
+<p>We computed the eigenvalue of the Hamiltonian to be:</p>
+<div class="math notranslate nohighlight">
+\[E(k) = E_i - 2\Delta\cos(ka)\]</div>
+<p>where <span class="math notranslate nohighlight">\(k \in \left\{ \frac{2\pi}{Na}, \frac{4\pi}{Na},\ldots,\frac{2\pi(N-1)}{Na} \right\}\)</span>. Note that (for <span class="math notranslate nohighlight">\(N\)</span> even) we can just as well write this as
+<span class="math notranslate nohighlight">\(k \in \left\{ - \frac{\pi}{a},\ldots,\frac{\pi}{a} - \frac{2\pi}{Na}\right\}\)</span> which is more symmetric.</p>
+<p>Now if <span class="math notranslate nohighlight">\(\Delta \ll |E_i - E_{i \pm 1}|\)</span>, the energy eigenstates form a set of bands, each one centered about <span class="math notranslate nohighlight">\(E_i\)</span>. The structure of the bands is shown in the figure below.</p>
+<p><img alt="Band structure in tight binding" src="../_images/bands.png" /></p>
+<p>The splitting of the spectrum into discrete, non-overlapping energy bands is characteristic of the structure of energy eigenstates in a crystal lattice. The range of (pseudo)momenta is called the <em>Brilloun zone</em>.</p>
+<p>In real materials, in the ground state, we can often treat the electrons as nearly nononteracting (this is not trivial). By the Pauli Exclusion Principle, which we will review, nly one electron per spin state can occupy an enery eigenstate so we start “filling the band” from the bottom. Whether the highest-energy electron sits in the middle or the top of the band determines the conduction properties of the material; if one can add a small amount of energy to excite an electron, one has a conductor; if one must add a large amount to excite an electron, one has an insulator, and so on.  Computing the structure of these bands is a major activity in solid state physics.</p>
 </section>
-<section id="quantum-scattering">
-<h2>Quantum scattering<a class="headerlink" href="#quantum-scattering" title="Link to this heading">#</a></h2>
-<p>Quantum-mechanically the story is different in interesting ways!</p>
-<p>The first thing we should note is that this problem (as all scattering problems) has a different character than the bound state problems we have been describing. Since the potential is short range, far from the potential barrier the particle is just the free particle. There is a state for every energy <span class="math notranslate nohighlight">\(E &gt; 0\)</span> (once we properly specify the boundary conditions). The nontrivial part of the problem is specifying the boundary conditions, and finding the wavfunction as a function of the energy and those boundary conditions.</p>
-<p>Ideally one would prepare a localized wave packet and study its evolution. In general this will both propagate and spread and the interaction with the potential barrier will be somewhat complicated. Instead we will consider the following idealization. To the left or the right of the barrier, the solutions are of the form <span class="math notranslate nohighlight">\(e^{\pm i k x}\)</span> where <span class="math notranslate nohighlight">\(E = \frac{\hbar^2 k^2}{2m}\)</span>. Recall that the probability <span class="math notranslate nohighlight">\(\rho dx = |\psi(x)|^2 dx\)</span> that a single particle is found in an interval of length <span class="math notranslate nohighlight">\(dx\)</span> about position <span class="math notranslate nohighlight">\(x\)</span>, where <span class="math notranslate nohighlight">\(\rho\)</span> is the probability density. Recall from <a class="reference internal" href="../chapter5/dynamics_1.html#subsec-probability-conservation"><span class="std std-ref">Conservation of probability</span></a> that this density satisfies a conservation law <span class="math notranslate nohighlight">\(\partial_t \rho + \partial_x J\)</span> where</p>
-<div class="math notranslate nohighlight" id="equation-scattering-flux">
-<span class="eqno">(307)<a class="headerlink" href="#equation-scattering-flux" title="Link to this equation">#</a></span>\[J = \frac{\hbar}{2im} \left(\psi^*\del_x\psi - \del_x \psi^* \psi\right)\]</div>
-<p>If the wavefunction is <span class="math notranslate nohighlight">\(A e^{\pm i k x}\)</span>, then <span class="math notranslate nohighlight">\(J = |A|^2 \frac{\hbar k}{m}\)</span>. Here <span class="math notranslate nohighlight">\(\hbar k\)</span> is the momentum of the particle, <span class="math notranslate nohighlight">\(\hbar k/m\)</span> behaves as a velocity. Nowfor <span class="math notranslate nohighlight">\(|\psi|^2\)</span> to be a good probability density, <span class="math notranslate nohighlight">\(A\)</span> has units of <span class="math notranslate nohighlight">\((length)^{-1/2}\)</span>, so <span class="math notranslate nohighlight">\(|A|^2 v\)</span> has units of inverse time. We can think of it as the probability per unit time that the particle crosses <span class="math notranslate nohighlight">\(x\)</span> from left to right (if <span class="math notranslate nohighlight">\(k\)</span> and thus <span class="math notranslate nohighlight">\(v\)</span> is positive).</p>
-<p>More generally, we can imagine sending a flux of particles, all prepared in the same state. Then in the limit that the flux is large, <span class="math notranslate nohighlight">\(\rho\)</span> becomes to good approximation the particle density, and <span class="math notranslate nohighlight">\(J\)</span> the number of particles per second crossing <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<p>We assume that any flux of particles coming from <span class="math notranslate nohighlight">\(x = pm \infty\)</span> must be prescribed. We we will consider an experiment for which the particles are injected from <span class="math notranslate nohighlight">\(x = -\infty\)</span>. They can then pass over or be scattered from the potential barrier and travel to <span class="math notranslate nohighlight">\(x = \pm \infty\)</span>. I claim that a good model for this is to consider wavefunctions for <span class="math notranslate nohighlight">\(x &lt; 0, x &gt; a\)</span> which take the form</p>
-<div class="math notranslate nohighlight" id="equation-scattering-psi">
-<span class="eqno">(308)<a class="headerlink" href="#equation-scattering-psi" title="Link to this equation">#</a></span>\[\begin{split}\psi(x) = \begin{cases} A_{inc} e^{i k x} + A_{refl} e^{-i k x} &amp; x &lt; - 0 \\ A_{trans} e^{i k x} &amp; x &gt; a \end{cases}\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(k = \frac{1}{\hbar} \sqrt{2m E}\)</span>. We will choose a normalization for the wavefunctions such that <span class="math notranslate nohighlight">\(J_{inc} = |A_{inc}|^2 \frac{\hbar k}{m}\)</span> is the incoming flux of particles. <span class="math notranslate nohighlight">\(J_{refl} = - |A_{refl}|^2 \frac{\hbar k}{m}\)</span> is then the flux of particles that are reflected from the barrier, and <span class="math notranslate nohighlight">\(J_{trans} = |A_{trans}|^2 \frac{\hbar k}{m}\)</span> is the flux of particles which are transmitted over or through the barrier. We impose as a boundary condition that the wavfunction has no combinent with momentum <span class="math notranslate nohighlight">\(-\hbar k\)</span> for <span class="math notranslate nohighlight">\(x &gt; a/2\)</span>, meaning we are not injecting particles from <span class="math notranslate nohighlight">\(x \to \infty\)</span>. The other boundary condition is the prescription of <span class="math notranslate nohighlight">\(A_{inc}\)</span>. These completely specify the solution to the time-independent Schroedinger equation. <span class="math notranslate nohighlight">\(A_{refl}\)</span> and <span class="math notranslate nohighlight">\(A_{trans}\)</span> (and the associated fluxes) are completely determined from <span class="math notranslate nohighlight">\(A_{inc}\)</span> (and its associated flux).</p>
-<p>Because we are looking at stationary states – Eq. <span class="xref std std-ref">scattering_psi</span> is an energy eigenstate – <span class="math notranslate nohighlight">\(\rho\)</span> is time-independent. We can integrate <span class="math notranslate nohighlight">\(\del_x J\)</span> over the barrier; it is a total derivative so that the flow on one side of the barrier is equal to the flux on the other side of the barrier: that is,</p>
+<section id="bloch-s-theorem">
+<h2>Bloch’s theorem<a class="headerlink" href="#bloch-s-theorem" title="Link to this heading">#</a></h2>
+<p>Now that we have worked through an example, we will embark on a more general discussion of the structure of the energy eigenstates for a periodic potential. To do so, we will first introduce an operator that induces translations. This operator will help us organize the energy spectrum.</p>
+<section id="discrete-translation-operator">
+<h3>Discrete translation operator.<a class="headerlink" href="#discrete-translation-operator" title="Link to this heading">#</a></h3>
+<p>We will discuss quantum mechanical symmetries more generally very soon; I will simply construct the operator implementing discrete translations.</p>
+<p>Recall that for any operatoer <span class="math notranslate nohighlight">\(f({\hat p})\)</span>, <span class="math notranslate nohighlight">\([{\hat x},f({\hat p})] = i\hbar \frac{\partial}{\partial p} f({\hat p})\)</span>. We can see this by assuming that <span class="math notranslate nohighlight">\(f\)</span> can be expressed in a Taylor series in <span class="math notranslate nohighlight">\({\hat p}\)</span>, and showing that <span class="math notranslate nohighlight">\([{\hat x},{\hat p}^n] = i\hbar n {\hat p}^{n-1} = i\hbar \frac{\del}{\del p}{\hat p}^n\)</span>.</p>
+<p>Now consider the operator <span class="math notranslate nohighlight">\(T_a = e^{-i {\hat p} a/\hbar}\)</span>. You can show easily that this is a unitary operator. Furthermore, clearly <span class="math notranslate nohighlight">\(T_a^{\dagger} = T_{-a}\)</span>. Now, by the above,</p>
 <div class="math notranslate nohighlight">
-\[|A_{inc}|^2 - |A_{refl}|^2 = |A_{trans}|^2\]</div>
-<p>The detailed formulae arise from matching the above to the wavefunction in the barrier region. This is well described in many textbooks and we won’t dig into the details. We take our notation (and the next figure) from <span id="id1">[<a class="reference internal" href="../markdown.html#id10" title="L.I. Schiff. Quantum Mechanics. International series in pure and applied physics. McGraw-Hill, 1955. ISBN 9780070856431. URL: https://books.google.com/books?id=7ApRAAAAMAAJ.">Schiff, 1955</a>]</span>. The result for general <span class="math notranslate nohighlight">\(E\)</span> is</p>
+\[[{\hat x}, T_a] = a T_a\]</div>
+<p>Thus</p>
+<div class="math notranslate nohighlight">
+\[{\hat x} T_a \ket{x_0} = (x_0 + a) T_a \ket{x_0}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(T_a\)</span> is unitary and thus norm preserving, we have <span class="math notranslate nohighlight">\(T_a\ket{x_0} = \ket{x_0 + a}\)</span>.</p>
+<p>Now, if we take the adjoint, we find <span class="math notranslate nohighlight">\(\bra{x_0}T_a = \bra{x_0 - a}\)</span>, and thus</p>
+<div class="math notranslate nohighlight">
+\[\ket{x_0} T_a \ket{\psi} = \psi(x_0 - a)\]</div>
+<p>Using the above, we can quickly show that <span class="math notranslate nohighlight">\(T_a^{\dagger} {\hat x} T_a = {\hat x} + a\)</span>. Next consider <span class="math notranslate nohighlight">\(T_a^{\dagger} {\hat x}^n T_a\)</span>. We can insert <span class="math notranslate nohighlight">\(T_a^{\dagger} T_a = {\bf 1}\)</span> in between each pair of <span class="math notranslate nohighlight">\({\hat x}\)</span>s in <span class="math notranslate nohighlight">\({\hat x}^n\)</span> to show that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
-\frac{A_{refl}}{A_{inc}} = \frac{(k^2 - \alpha^2)(1 - e^{2 i a \alpha})}{(k + \alpha)^2 - (k - \alpha)^2 e^{2 i a \alpha}} \\
-\frac{A_{trans}}{A_{inc}} = \frac{4 k \alpha e^{i (\alpha - k) a}}{(k + \alpha)^2 - (k - \alpha)^2 e^{2 i a \alpha}}
+T_a^{\dagger}{\hat x}^n T_a &amp; = T_a^{\dagger}{\hat x} T_a T_a^{\dagger} {\hat x} T_a T_a^{\dagger} \ldots T_a^{\dagger} {\hat x} T_a\\
+&amp; = ({\hat x} + a)^n
 \end{align}\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\alpha = \sqrt{\frac{2m(E - V_0)}{\hbar^2}}\)</span>. Note that this formula holds for <span class="math notranslate nohighlight">\(E &lt; V_0\)</span>; we can then write <span class="math notranslate nohighlight">\(\alpha = i \kappa\)</span>.</p>
-<p>To get a sense of what is happening, let us plot the <em>transmission coefficient</em>, that is, the ratio of transmitted to incident flux. This is</p>
-<div class="math notranslate nohighlight" id="equation-trans-coeff">
-<span class="eqno">(309)<a class="headerlink" href="#equation-trans-coeff" title="Link to this equation">#</a></span>\[T = \frac{|A_{trans}|^2}{|A_{inc}|^2} = \frac{1}{1 + \frac{V_0^2 \sin^2 \alpha a}{4 E(E - V_0)}}\]</div>
-<p>See the plot below, for <span class="math notranslate nohighlight">\(\frac{m V_0^2 a^2}{\hbar^2} = 8\)</span>.</p>
-<p><img alt="Transmission coefficient" src="../_images/transmission.png" /></p>
-<p>For <span class="math notranslate nohighlight">\(E &gt; V_0\)</span>, note that the transmission becomes perfect whenever <span class="math notranslate nohighlight">\(\alpha\alpha a = 0\)</span>, or <span class="math notranslate nohighlight">\(\alpha a = n \pi\)</span>; this occurs when the barrier is an integer number of half-wavelengths. Note that at <span class="math notranslate nohighlight">\(V = E_0\)</span>, <span class="math notranslate nohighlight">\(\alpha \sin \sqrt{E - V_0}\)</span>, so that <span class="math notranslate nohighlight">\(\sin^2\alpha a/(E - V_0)\)</span> goes to a constant. The full coefficient is:</p>
+<p>If <span class="math notranslate nohighlight">\(V({\hat x})\)</span> can be expressed as a power series, then <span class="math notranslate nohighlight">\(T_a^{\dagger}V({\hat x}) T_a = V({\hat x} + a)\)</span>. We assume this is true in general.</p>
+<p>If <span class="math notranslate nohighlight">\(V({\hat x} + a) = V({\hat x})\)</span>, then</p>
 <div class="math notranslate nohighlight">
-\[T(E = V_0) = \frac{1}{1 + \frac{m V_0 a^2}{2\hbar^2}}\]</div>
-<p>which is nonzero, unlike the classical case.</p>
-<p>Note further that the transmission coefficient is nonzero even when <span class="math notranslate nohighlight">\(E &lt; V_0\)</span>. Here <span class="math notranslate nohighlight">\(\sin\alpha a = - i \sinh\kappa a\)</span>; the <span class="math notranslate nohighlight">\((-i)^2\)</span> term in <span class="xref std std-ref">trans_coeff</span> cancels the change of sign in <span class="math notranslate nohighlight">\(E - V_0\)</span>. The result is:</p>
+\[T_a^{\dagger} V({\hat x}) T_a = V({\hat x}) \Rightarrow [T_a, V({\hat x})] = 0\]</div>
+</section>
+</section>
+<section id="consequences-of-discrete-translational-symmetry">
+<h2>Consequences of discrete translational symmetry<a class="headerlink" href="#consequences-of-discrete-translational-symmetry" title="Link to this heading">#</a></h2>
+<p>If <span class="math notranslate nohighlight">\(H = \frac{p^2}{2m} + V(x)\)</span>, this means that <span class="math notranslate nohighlight">\([T_a, H] = 0\)</span>. Now the statement that commuting Hermitian operators can be simultaneously diagonalized is also true if one or both operators are unitary. So let is consider eigenvalues of <span class="math notranslate nohighlight">\(T_a\)</span>. This is a unitary operator, so the eigenvalues must be of the form <span class="math notranslate nohighlight">\(e^{i k a}\)</span> for some <span class="math notranslate nohighlight">\(k \in \left[- \frac{\pi}{a}, \frac{\pi}{a}\right]\)</span>. Let us then consider eigenstates of <span class="math notranslate nohighlight">\(T_a\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[T(E &lt; V_0) = \frac{1}{1 + \frac{V_0^2 \sinh^2 \kappa a}{4 E (V_0 - E)}}\]</div>
-<p>To build some intuition, take <span class="math notranslate nohighlight">\(\kappa a \gg 1\)</span>, which can happen when <span class="math notranslate nohighlight">\(a\)</span> or <span class="math notranslate nohighlight">\(V_0\)</span> gets large at fixed <span class="math notranslate nohighlight">\(E\)</span>. In this case <span class="math notranslate nohighlight">\(\sinh \kappa a \sim \half e^{\kappa a}\)</span> becomes exponentially large and dominates the denominator in <span class="math notranslate nohighlight">\(T\)</span>. The resulting expression is</p>
+\[T_a \ket{\psi_k} = e^{i k a}\ket{\psi_x}\]</div>
+<p>Taking the innner product of both sides with <span class="math notranslate nohighlight">\(\ket{x}\)</span>, and setting <span class="math notranslate nohighlight">\(\psi_k(x) = \brket{x}{\psi_k}\)</span>, we find</p>
 <div class="math notranslate nohighlight">
-\[T \sim \frac{16 E (V_0 - E)}{V_0^2} e^{-2\kappa a}\]</div>
-<p>this exponential suppression with the width (and square root of the height) of the barrier is characteristic of tunneling/below-barrier transmission. Note that <span class="math notranslate nohighlight">\(\kappa = \frac{\sqrt{2m(V_0 - E)}}{\hbar}\)</span> so the exponential has a non-analytic dependence on <span class="math notranslate nohighlight">\(\hbar\)</span> if we scale <span class="math notranslate nohighlight">\(\hbar \to 0\)</span>.</p>
+\[\psi_x(x - a) = e^{i k a}\psi_k(x)\]</div>
+<p>If we define <span class="math notranslate nohighlight">\(u_k(x) = e^{i k x} \psi(x)\)</span> then <span class="math notranslate nohighlight">\(u_k(x - a) = u_k(x)\)</span>, so <span class="math notranslate nohighlight">\(h_k\)</span> is invariant under <span class="math notranslate nohighlight">\(x \to x + a\)</span>. We have thus shown that</p>
+<div class="math notranslate nohighlight">
+\[\psi_k(x) = e^{-i k x} u_k(x)\]</div>
+<p>for any eigenstate of <span class="math notranslate nohighlight">\(H\)</span>, where <span class="math notranslate nohighlight">\(u_k(x)\)</span> is invariant under shifts by <span class="math notranslate nohighlight">\(x \to x + a\)</span>. This is called <em>Bloch’s Theorem</em>; <span class="math notranslate nohighlight">\(\hbar k\)</span> is called the <em>pseudomomentum</em>. It is not quite the momentum in the usual case because <span class="math notranslate nohighlight">\(u_k\)</span> itself will be made of up Fourier components which are periodic under <span class="math notranslate nohighlight">\(x \to x + a\)</span>, that is, of the form %<span class="math notranslate nohighlight">\(e^{2\pi i n x/a}\)</span>, so the actual momentum of this component will be <span class="math notranslate nohighlight">\(\hbar(k + \frac{2\pi n}{a})\)</span>. Furthermore, while the pseudomomentum is conserved, the the full momentum is not as translation invariance does not necessarilty hole. This momentum may jump by <span class="math notranslate nohighlight">\(\frac{2\pi n}{a}\)</span> due to scattering off of the background lattice.</p>
+<p>Note that the tight binding approximation has this structure trivially.</p>
 </section>
 </section>
 
@@ -474,20 +513,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="twostate_models.html"
+       href="1d_scattering.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Two-state systems as phenomenological models</p>
+        <p class="prev-next-title">One-dimensional scattering</p>
       </div>
     </a>
     <a class="right-next"
-       href="periodic_potentials.html"
+       href="../appendix.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Periodic potentials</p>
+        <p class="prev-next-title">Appendix</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -507,8 +546,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-scattering">Classical scattering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-scattering">Quantum scattering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-tight-binding-approximation">The tight binding approximation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bloch-s-theorem">Bloch’s theorem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-translation-operator">Discrete translation operator.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences-of-discrete-translational-symmetry">Consequences of discrete translational symmetry</a></li>
 </ul>
   </nav></div>
 
