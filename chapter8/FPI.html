@@ -1,0 +1,657 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Feynman Path Integral &#8212; Physics 162</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"], "cO": ["\\mathcal{O}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter8/FPI';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="Periodic potentials" href="../chapter7/periodic_potentials.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/Carl_Eckart.jpg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/Carl_Eckart.jpg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Physics 162a <br /> Prof. Albion Lawrence <br />  Brandeis University</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Newton.html">Newtonian mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Lagrange.html">Lagrangian Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Constraints.html">Constrained Lagrangian Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Symmetries.html">Symmetries and conservation laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Hamilton.html">Hamiltonian Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Intro_quantum.html">Introduction to quantum mechanics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/Intro_linear_algebra.html">Linear algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Vector_spaces.html">Vector spaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Linear_operators.html">Linear operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Adjoint.html">Adjoints and inner products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Operator_spectra.html">Spectra of Hermitian and Unitary Operators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter4/Quantum_rules.html">The Rules of Quantum Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/Axioms.html">The Axioms of Quantum Mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/Spin_half.html">Example: spin-1/2 particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/entangled.html">Entangled states and density matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/bell.html">Local Realism vs. Quantum Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/Wave_mechanics.html">Wave mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/infinite_d.html">Particles on a line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/compatible_measurements.html">Compatible and incompatible measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/Hamiltonians.html">Designing Hamiltonians</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/wave_equation.html">The Schroedinger wave function and its dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/dynamics_1.html">Dynamics I</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/Interlude_1.html">Interlude: two interesting systems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/aharonov-bohm.html">The Aharonov-Bohm effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/neutrino_oscillations.html">Neutrino oscillations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter7/Wave_examples.html">Examples of nonrelativistic quantum particle dynamics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/free_particle.html">The free nonrelativistic particle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/square_well.html">The 1d square well</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/sho.html">The simple harmonic oscillator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/twostate_models.html">Two-state systems as phenomenological models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/1d_scattering.html">One-dimensional scattering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/periodic_potentials.html">Periodic potentials</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Feynman Path Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter8/FPI.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Feynman Path Integral</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-propagator">Building the propagator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-short-time-kernel">The short-time kernel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-full-propagator">The full propagator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connections-to-statistical-mechanics">Connections to statistical mechanics.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-to-equilibrium-quantum-statistical-mechanics">Connection to equilibrium quantum statistical mechanics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-to-classical-equilibrium-statistical-mechanics">Connection to classical equilibrium statistical mechanics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonequilibrium-statistical-mechanics-tochastic-processes">Nonequilibrium statistical mechanics: tochastic processes</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-feynman-path-integral">
+<h1>The Feynman Path Integral<a class="headerlink" href="#the-feynman-path-integral" title="Link to this heading">#</a></h1>
+<p>Up to now we have developed a version of quantum mechanics based on the Hamiltonian. Classically, Hamilton’s equations are first order equations in <span class="math notranslate nohighlight">\(2N\)</span> phase space variables, and have unique solution when initial conditions for these variables are specified. Quantum mechanically, the time-dependent Schroedinger equation</p>
+<div class="math notranslate nohighlight">
+\[i \del_t {\psi} = H \ket{\psi}\]</div>
+<p>is a first-order equation whose solution is specified by an initial condition on the quantum state, and the Hamiltonian is the essential object that generated changes in time.</p>
+<p>One might ask whether there is a quantum analog of the Lagrangian formulation. Indeed there is. We will focus on particle mechanics – path integral formulations can be constructed for, eg, quantum spins, but this is a more complicated (though extremely interesting) story.</p>
+<p>Recall that classicalt, the Lagrangian story begins by specifying the classical action</p>
+<div class="math notranslate nohighlight">
+\[S[x^I(t)] = \int_{t_0}^{t_1} dt L(x^I(t), {\dot x}^I(t), t)\]</div>
+<p>we assume <span class="math notranslate nohighlight">\(I \in \{1,\ldots,N\}\)</span>. Classically one considers all paths with <span class="math notranslate nohighlight">\(N\)</span> initial conditions <span class="math notranslate nohighlight">\(x^I(t_0)\)</span> and <span class="math notranslate nohighlight">\(N\)</span> final conditions <span class="math notranslate nohighlight">\(x^I(t_1)\)</span>; the path that is an extremum of <span class="math notranslate nohighlight">\(S\)</span> satisfies the Euler-Lagrange equations.</p>
+<p>We will find that there is a formulation of the quantum problem that involves an integral over all such paths, each given a complex weight <span class="math notranslate nohighlight">\(e^{i S[x(t)]/\hbar}\)</span>.</p>
+<section id="building-the-propagator">
+<h2>Building the propagator<a class="headerlink" href="#building-the-propagator" title="Link to this heading">#</a></h2>
+<p>Recall that we defined the <em>propagator</em></p>
+<div class="math notranslate nohighlight">
+\[K(x_1^I, t_1; x_0^I, t_0) = \bra{x_1} U(t_1,t_0) \ket{x_0}\]</div>
+<p>where <span class="math notranslate nohighlight">\(U\)</span> is the unitary operator implementing time evolution:</p>
+<div class="math notranslate nohighlight">
+\[ \ket{\psi(t_1)} = U(t_1,t_0) \ket{\psi(t_0)}\]</div>
+<p>The propagator completely determines the time evolution of a state, as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\psi(x^I_1, t_1) &amp; = \brket{x^I_1}{\psi(t_1)} \\
+&amp; = \bra{x^I_1} U(t_1,t_0) \ket{\psi(t_0)} \\
+&amp; = \int d^Nx_0 \bra{x^I_1} U(t_1,t_0)\ket{x_0}\brket{x_0}{\psi(t_0)}\\
+&amp; = \int d^Nx_0 K(x^I_1,t_1; x^I_0,t_0)\psi(x_0,t_0)
+\end{align}\end{split}\]</div>
+<p>It is a function of the initial and final positions, so one might imagine that it has a natural relationship to the Lagrangian formulation.</p>
+<p>Now the axion of unitary time evolution applies to any initial and final time. This means that given <span class="math notranslate nohighlight">\(t_2 &gt; t_1 &gt; t_0\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\ket{\psi(t_2)} &amp; = U(t_2,t_1)\ket{\psi(t_1)} \\
+&amp; = U(t_2,t_1)U(t_1,t_0)\ket{\psi(t_0)}\\
+&amp; = U(t_2,t_0) \ket{\psi(t_0)}
+\end{align}\end{split}\]</div>
+<p>That is, these unitary operators satsify a composition law: <span class="math notranslate nohighlight">\(U(t_2,t_0) = U(t_2,t_1)U(t_1,t_0)\)</span>. Written in terms of propagators,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+K(x_2,t_2;x_0,t_0) &amp; = \bra{x_2} U(t_2,t_0) \ket{x_i}\\
+&amp; =  \bra{x_2} U(t_2,t_1)U(t_1,t_0) \ket{x_0}\\
+&amp; = \int d^Dx_1 \bra{x_2} U(t_2,t_1)\ket{x_1}\bra{x_1} U(t_1,t_0) \ket{x_0}\\
+&amp; = \int d^Dx_1 K(x_2,t_2;x_1,t_1)K(x_1,t_1;x_0,t_0)
+\end{align}\end{split}\]</div>
+<p>Following this logic, we let <span class="math notranslate nohighlight">\(t_f = t_i + M \delta t\)</span>, and write</p>
+<div class="math notranslate nohighlight">
+\[K(x_f,t_f;x_i,t_i) = \int dx_{M-1} dx_{M-2}\ldots dx_1 dx_0 K(x_f,t_f; x_{M-1},t_{M-1})K(x_{M-1},t_{M-1};x_{M-2},t_{M-2})\ldots K(x_1,t_1;x_i,t_i)\]</div>
+<p>The goal is to find <span class="math notranslate nohighlight">\(K(x_k,t_{K-1}+\delta t; x_{k-1},t_{k-1})\)</span> as <span class="math notranslate nohighlight">\(\delta t \to 0\)</span>, <span class="math notranslate nohighlight">\(\delta M \to \infty\)</span>, <span class="math notranslate nohighlight">\(M\delta t\)</span> fixed. It is clear that the above integral can be considered as one over all trajectories from <span class="math notranslate nohighlight">\(x_i\)</span> at time <span class="math notranslate nohighlight">\(t_0\)</span> to <span class="math notranslate nohighlight">\(x_f\)</span> at time <span class="math notranslate nohighlight">\(t_f\)</span>.</p>
+</section>
+<section id="the-short-time-kernel">
+<h2>The short-time kernel<a class="headerlink" href="#the-short-time-kernel" title="Link to this heading">#</a></h2>
+<p>Our next step is to compute <span class="math notranslate nohighlight">\(K(x_k, t_k;x_{k-1},t_{k-1})\)</span> for <span class="math notranslate nohighlight">\(\delta t\)</span> “small”. In principal we should be careful about what is meant by “small” – as always for dimensionful numbers, “small compared to what?” is the important question.</p>
+<p>To start with, we will now focus on the case that <span class="math notranslate nohighlight">\(H = \frac{{\vec p}^2}{2m} + V({\vec x})\)</span>. Since this is time-independent, we can write</p>
+<div class="math notranslate nohighlight">
+\[U(t_f,t_i) = e^{- i H (t_f-t_i)/\hbar}\]</div>
+<p>In the case that <span class="math notranslate nohighlight">\(t_k - t_{k-1} = \delta t\)</span>, we imagine that we can expand <span class="math notranslate nohighlight">\(U\)</span> to first order in <span class="math notranslate nohighlight">\(\delta t\)</span>. This only makes sense inside expectation values. We will continue nonetheless and approximate</p>
+<div class="math notranslate nohighlight">
+\[\bra{x_k} U(\delta t, 0) \ket{x_{k-1}} \sim \bra{x_k} \left(1 - 
+\frac{i \delta t}{\hbar} \left(\frac{{\vec p}^2}{2m} + V\right)\right)\ket{x_{k-1}} + {\cal O}(\delta t^2)\]</div>
+<p>New we insert <span class="math notranslate nohighlight">\({\bf 1} = \int d^d p_{k-1} \ket{p_{k-1}}\bra{p_{k-1}}\)</span>, and using <span class="math notranslate nohighlight">\(\brket{x_k}{p_{k-1}} = \frac{1}{(2\pi\hbar)^{d/2}}e^{i {\vec p}_{k-1}\cdot{\vec x}_k/\hbar}\)</span>, we find:</p>
+<div class="math notranslate nohighlight">
+\[\bra{x_k} U(\delta t, 0) \ket{x_{k-1}} \sim \int \frac{d^d p_{k-1}}{(2\pi\hbar)^d} e^{i {\vec p}_{k-1}\cdot({\vec x}_k - {\vec x}_{k-1})/\hbar} \left(1 - \frac{i \delta t}{\hbar}\left(\frac{{\vec p}_{k-1}^2}{2m} + V({\vec x}_{k-1})\right)\right) + {\cal O}(\delta t^2)\]</div>
+<p>Now we make two approximations. First, if we write <span class="math notranslate nohighlight">\(x_k \equiv x(t_k)\)</span>, then as <span class="math notranslate nohighlight">\(\delta t \to 0\)</span>, we should be able to write <span class="math notranslate nohighlight">\((x_k - x_{k-1}) \sim \delta t {\dot x}(t_{k-1})\)</span>, We also write <span class="math notranslate nohighlight">\(p_{k-1} = p(t_{k-1})\)</span>. Secondly, to <span class="math notranslate nohighlight">\({\cal O}(\delta t^2)\)</span>, we can write <span class="math notranslate nohighlight">\(1 - i a \delta t \sim e^{-i a \delta t}\)</span>; applying this we find</p>
+<div class="math notranslate nohighlight" id="equation-st-kernel">
+<span class="eqno">(310)<a class="headerlink" href="#equation-st-kernel" title="Link to this equation">#</a></span>\[\bra{x_k} U(\delta t, 0) \ket{x_{k-1}} \sim \int \frac{d^d p(t_{k-1})}{(2\pi\hbar)^d} e^{i \delta t \left(p(t_{k-1}) \dot{x}(t_{k-1})/\hbar - \frac{p(t_{k-1})^2}{2m} - V(x(t_{k-1}))\right)}\]</div>
+</section>
+<section id="the-full-propagator">
+<h2>The full propagator<a class="headerlink" href="#the-full-propagator" title="Link to this heading">#</a></h2>
+<p>Thus, we can write</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp; K(x_f,t_f;x_i,t_i) \\
+&amp; = \int \frac{d^d x_1\ldots d^d x_{N-1} d^d p_0\ldots d^d p_{N-1}}{(2\pi)^{N d}}\exp\left(i \frac{\delta t}{\hbar} \sum_{k=0}^{N-1} \left(p(t_k){\dot x}(t_k) - \frac{p(t_k)^2}{2m} - V(x(t_k))\right)\right)\\
+&amp; \sim  \int \frac{d^d x_1\ldots d^d x_{N-1} d^d p_0\ldots d^d p_{N-1}}{(2\pi)^{N d}} \exp\left(\frac{i}{\hbar} \int_{t_i}^{t_f} dt \left(p(t) {\dot x(t)} - \frac{p(t)^2}{2m} - V(x(t))\right)\right)
+\end{align}\end{split}\]</div>
+<p>We can recognize the integral as that over a path <span class="math notranslate nohighlight">\((x(t), p(t))\)</span> in phase space. The integrand is the exponential of the Lagrangian written in phase space variables, as the Legendre transform of the Hamiltonian.</p>
+<p>On the other hand, we can go back to Eq. (<span class="xref std std-ref">st_kernel</span>) and do the integral over <span class="math notranslate nohighlight">\(p_{k-1}\)</span>, This is a Gaussian integral; if we let <span class="math notranslate nohighlight">\(\delta t \to \delta t - i \eps\)</span> with <span class="math notranslate nohighlight">\(\eps\)</span> real, then the integrand is well defined at large <span class="math notranslate nohighlight">\(p, x\)</span> so long as <span class="math notranslate nohighlight">\(V(x) &gt; 0\)</span> as <span class="math notranslate nohighlight">\(|{\vec x}| \to \infty\)</span>. The result is that</p>
+<div class="math notranslate nohighlight">
+\[\bra{x_k} U(\delta t, 0) \ket{x_{k-1}} \sim \left(\frac{-i m\hbar }{2\pi i\delta t}\right)^{1/2} e^{\frac{i \delta t}{\hbar} \left(\frac{m {\dot x}^2}{2} - V(x(t))\right)}\]</div>
+<p>We can thus follow the same prescription as above to find that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+K(x_f,t_f) &amp; = {\cal N} \int_{x(t_i) = x_i, x(t_f) = x_f}  Dx \exp\left(\frac{i}{\hbar}\int_{t_i}^{t_f} dt L(x, {\dot x})\right) \\
+&amp; = {\cal N} \int_{x(t_i) = x_i, x(t_f) = x_f} Dx \exp\left(\frac{i}{\hbar} S[x(t)]\right)
+\end{align}\end{split}\]</div>
+<p>Here <span class="math notranslate nohighlight">\({\cal N}\)</span> is some normalization factor, and <span class="math notranslate nohighlight">\(Dx(t)\)</span> is the integral over all paths <span class="math notranslate nohighlight">\(x(t)\)</span>, <span class="math notranslate nohighlight">\(t\in [t_i, t_f]\)</span>, with the specified boundary conditions.</p>
+<p>Note that in addition to being dependent on the Lagrangian or the classical action, the boundary conditions specified are on the initial and final positions, in analogy to the boundary conditions specified in classical Lagrangian mechanics.</p>
+<p>We have not interrogated too closely the validity of our “short time” expansion. I will put this aside for now and assert that I have gotten the right answer, But you would be right to demand an explanation.</p>
+</section>
+<section id="connections-to-statistical-mechanics">
+<h2>Connections to statistical mechanics.<a class="headerlink" href="#connections-to-statistical-mechanics" title="Link to this heading">#</a></h2>
+<p>Below I will outline in a <em>very</em> sketchy fashion connections statistical mechanics. In practice this is most interesting if we start from quantum field theory, but the basic arguments already apply to quantum mechanics.</p>
+<p>The point of drawing these connections is to tantalize you with the idea that many subjects in physics are mathematically unified. These connections have lead to powerful insights into quantum field theory and statistical mechanics, most especially Ken Wilson’s (Nobel Prize-winning) formulation of <em>renormalization</em> – a theory for how the effective description of system changes under successive coarse-grainings.</p>
+<section id="connection-to-equilibrium-quantum-statistical-mechanics">
+<h3>Connection to equilibrium quantum statistical mechanics<a class="headerlink" href="#connection-to-equilibrium-quantum-statistical-mechanics" title="Link to this heading">#</a></h3>
+<p>First, we consider the case of quantum statistical mechanics. In this case we wish to compute</p>
+<div class="math notranslate nohighlight">
+\[Z(\beta) = {\rm Tr} e^{-\beta H} = \int d^d x \bra{x} e^{-\beta H} \ket{x}\]</div>
+<p>This describes the propagation from <span class="math notranslate nohighlight">\(x\)</span> back to <span class="math notranslate nohighlight">\(x\)</span> over an <em>imaginary</em> time <span class="math notranslate nohighlight">\(- i \hbar \beta\)</span>. We could write <span class="math notranslate nohighlight">\(e^{\-\beta H} = (e^{- \frac{\beta}{N} H})^N\)</span> and carry out the same procedure as above by inserting resolutions of the identity. We get a similar answer but <span class="math notranslate nohighlight">\(t\)</span> is replaced by an imaginary time <span class="math notranslate nohighlight">\(t = - i \tau\)</span>. The upshot is that</p>
+<div class="math notranslate nohighlight">
+\[Z = \int_{x(0) = x(\hbar \beta)} Dx(\tau)\exp\left(-\int_0^{\hbar \beta} d\tau \left(\frac{m}{2} (\del_{\tau} x)^2 + V(x(\tau))\right)\right)\]</div>
+<p>In other words, the path itegral over trajectories in periodic imaginary time yields the quantum statistical mechanical partition function.</p>
+</section>
+<section id="connection-to-classical-equilibrium-statistical-mechanics">
+<h3>Connection to classical equilibrium statistical mechanics<a class="headerlink" href="#connection-to-classical-equilibrium-statistical-mechanics" title="Link to this heading">#</a></h3>
+<p>If we start with the quantum path integral and simply set <span class="math notranslate nohighlight">\(t = - i\tau\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[K(x_f, t_f; x_i,t_i) \to {\cal N} \int Dx \exp\left( \frac{-1}{\hbar} \int_{\tau_i}^{\tau_f}d\tau \left(\frac{m x_{\tau}^2}{2} + V(x(\tau))\right)\right)\]</div>
+<p>If we set <span class="math notranslate nohighlight">\(\beta y = \frac{\tau}{\hbar}\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[K(x_f, t_f; x_i,t_i) \to {\cal N} \int Dx \exp\left( -\beta \int_{y_i}^{y_f}dy \left(\frac{m x_{y}^2}{2\hbar^2\beta^2} + V(x(\tau))\right)\right)\]</div>
+<p>If we take <span class="math notranslate nohighlight">\(y\)</span> to be a position coordinate, the first term is the elastic energy for a string stretched along <span class="math notranslate nohighlight">\(y\)</span> and defiormed in the perpednicular directions <span class="math notranslate nohighlight">\({\vec x}\)</span>; <span class="math notranslate nohighlight">\(V(x)\)</span> is the potential energy for each point on the string. So this is the classical partition function for an elastic string. This relationship, in which the time direction is transformed into a spatial direction, and the propagator into a classical partition fuinction for a system extended along the “imaginary time” direction, is a key relationship in modern theoretical physics.</p>
+</section>
+<section id="nonequilibrium-statistical-mechanics-tochastic-processes">
+<h3>Nonequilibrium statistical mechanics: tochastic processes<a class="headerlink" href="#nonequilibrium-statistical-mechanics-tochastic-processes" title="Link to this heading">#</a></h3>
+<p>Let us consider a particle moving under both friction the influence of a random force <span class="math notranslate nohighlight">\(\delta(t)\)</span>, in a limit that the friction force <span class="math notranslate nohighlight">\(F = - \lambda {\dot x}\)</span> exceeds <span class="math notranslate nohighlight">\(m{\ddot x}/2\)</span>. Then the equation of motion is</p>
+<div class="math notranslate nohighlight">
+\[\lambda {\dot x} + V'(x) - \zeta = 0\]</div>
+<p>where we have included an additional conservative force. We assume that the random noise has a Gaussian distribution at each time, and that the force is uncorrelated between different times. It should be clear that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+P(x_f,t_f; x_i t_i) &amp; = \int_{x(t_{i,f}) = x_{i,f}} Dx D\zeta \delta({\dot x} + V'(x) - \zeta)e^{- \frac{1}{2D} \int_{t_i}^{t_f} dt\zeta(z)^2}\\
+&amp; = \int_{x(t_{i,f}) = x_{i,f}} Dx e^{- \frac{1}{2D} \int_{t_i}^{t_f} \left({\dot x} + V'(x)\right)^2}
+\end{align}\end{split}\]</div>
+<p>where we have set <span class="math notranslate nohighlight">\(\lambda = 1\)</span>. Here I have been careless about the delta function; in fact there should be a normalization or “Jacobian” factor that guarantees that <span class="math notranslate nohighlight">\(\int Dx \delta(\ldots) = 1\)</span>. There are related cases where that matters!</p>
+<p>This has the structure of a path integral; however, instead of solving the Schroedinger equation it solves the Fokker-Planck equation for the probability density of the particle</p>
+<div class="math notranslate nohighlight">
+\[\frac{\del}{\del t_f} P(x_f,t_f; x_i,t_i) = \frac{\del}{\del x_f}(V'(x_f) P(x_f,t_f; x_i,t_i)) + D \frac{\del^2}{\del x_f^2} P(x_f,t_f;x_i,t_i)\]</div>
+<p>which looks rather like the Schroedinger equation if we make time imaginary. This is not the only path integral formulation of stochastic processes, another is known as the “Martin-Siggia-Rose-de Dominicis-Janssen” path integral which can be derived as above but with the delta function first replaced by an integral representation that involves introducing another variable.</p>
+<p>Note that I have been careless here about the continuum limit for the paths, just as for the quantum case. All of this requires more care than I have given it.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../chapter7/periodic_potentials.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Periodic potentials</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendix.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-propagator">Building the propagator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-short-time-kernel">The short-time kernel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-full-propagator">The full propagator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connections-to-statistical-mechanics">Connections to statistical mechanics.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-to-equilibrium-quantum-statistical-mechanics">Connection to equilibrium quantum statistical mechanics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-to-classical-equilibrium-statistical-mechanics">Connection to classical equilibrium statistical mechanics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonequilibrium-statistical-mechanics-tochastic-processes">Nonequilibrium statistical mechanics: tochastic processes</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Albion Lawrence
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
