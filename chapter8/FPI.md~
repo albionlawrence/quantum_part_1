@@ -1,0 +1,15 @@
+# The Feynman Path Integral
+
+Up to now we have developed a version of quantum mechanics based on the Hamiltonian. Classically, Hamilton's equations are first order equations in $2N$ phase space variables, and have unique solution when initial conditions for these variables are specified. Quantum mechanically, the time-dependent Schroedinger equation 
+```{math}
+i \del_t {\psi} = H \ket{\psi}
+```
+is a first-order equation whose solution is specified by an initial condition on the quantum state, and the Hamiltonian is the essential object that generated changes in time.
+
+One might ask whether there is a quantum analog of the Lagrangian formulation. Indeed there is. We will focus on particle mechanics -- path integral formulations can be constructed for, eg, quantum spins, but this is a more complicated (though extremely interesting) story.
+
+Recall that classicalt, the Lagrangian story begins by specifying the classical action 
+```{math}
+S[x^I(t)] = \int_{t_0}^{t_1} dt L(x^I(t), {\dot x}^I(t), t)
+```
+we assume $I \in \{1,\ldots,N\}$. Classically one considers all paths with 
