@@ -45,6 +45,10 @@ chapters:
     - file: chapter7/1d_scattering
     - file: chapter7/periodic_potentials
   - file: chapter8/FPI
+  - file: chapter9/rotation_group
+    sections:
+    - file: chapter9/transformations
+    - file: chapter9/rotations
   - file: appendix
   - file: bibliography
 # - file: notebooks

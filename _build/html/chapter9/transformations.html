@@ -1,0 +1,726 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Transformations and symmetries &#8212; Physics 162</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"], "cO": ["\\mathcal{O}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter9/transformations';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="The Rotation Group in Quantum Mechanics" href="rotation_group.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/Carl_Eckart.jpg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/Carl_Eckart.jpg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Physics 162a <br /> Prof. Albion Lawrence <br />  Brandeis University</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Newton.html">Newtonian mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Lagrange.html">Lagrangian Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Constraints.html">Constrained Lagrangian Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Symmetries.html">Symmetries and conservation laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Hamilton.html">Hamiltonian Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Intro_quantum.html">Introduction to quantum mechanics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/Intro_linear_algebra.html">Linear algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Vector_spaces.html">Vector spaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Linear_operators.html">Linear operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Adjoint.html">Adjoints and inner products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Operator_spectra.html">Spectra of Hermitian and Unitary Operators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter4/Quantum_rules.html">The Rules of Quantum Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/Axioms.html">The Axioms of Quantum Mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/Spin_half.html">Example: spin-1/2 particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/entangled.html">Entangled states and density matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/bell.html">Local Realism vs. Quantum Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/Wave_mechanics.html">Wave mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/infinite_d.html">Particles on a line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/compatible_measurements.html">Compatible and incompatible measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/Hamiltonians.html">Designing Hamiltonians</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/wave_equation.html">The Schroedinger wave function and its dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/dynamics_1.html">Dynamics I</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/Interlude_1.html">Interlude: two interesting systems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/aharonov-bohm.html">The Aharonov-Bohm effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/neutrino_oscillations.html">Neutrino oscillations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter7/Wave_examples.html">Examples of nonrelativistic quantum particle dynamics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/free_particle.html">The free nonrelativistic particle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/square_well.html">The 1d square well</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/sho.html">The simple harmonic oscillator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/twostate_models.html">Two-state systems as phenomenological models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/1d_scattering.html">One-dimensional scattering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/periodic_potentials.html">Periodic potentials</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter8/FPI.html">The Feynman Path Integral</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="rotation_group.html">The Rotation Group in Quantum Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Transformations and symmetries</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter9/transformations.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Transformations and symmetries</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformations">Transformations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-groups">Transformation groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unitary-representations">Unitary representations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetries">Symmetries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continous-vs-discrete-transformations">Continous vs. Discrete Transformations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-transformations">Infinitesimal transformations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-symmetries">Infinitesimal symmetries</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="transformations-and-symmetries">
+<h1>Transformations and symmetries<a class="headerlink" href="#transformations-and-symmetries" title="Link to this heading">#</a></h1>
+<p><img alt="Transformations of a quantum system" src="../_images/transformations.png" /></p>
+<p>Above we see how tranlations and rotations act on a measurement process. Note that we apply them to the system itself (the red formless blob), the experimental apparatus (the box with the dial), the observer, and the environment (such as the gravitational field). We can think of these as <em>active</em> transformations, physically rotating everythingl or as <em>passive</em> transformations, corresponding to changes of coordinates.</p>
+<p>Either way, the principle is that with such transformations, the results of experiments should be the same.</p>
+<section id="transformations">
+<h2>Transformations<a class="headerlink" href="#transformations" title="Link to this heading">#</a></h2>
+<section id="definition">
+<h3>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h3>
+<p>To begin with, we give a precise definition of transformations acting on quantum systems. These are linear maps</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp; {\cal T}: \ket{\psi} \to \ket{\psi'}\\
+&amp; {\cal T}: {\cal O} \to {\cal O}'
+\end{align}\end{split}\]</div>
+<p>for all states <span class="math notranslate nohighlight">\(\ket{\psi'}\)</span> and operators <span class="math notranslate nohighlight">\({\cal O}'\)</span>, such that observed quantities do not change. These are matrix elements:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+|\brket{\psi'}{\chi'}|^2 &amp; = |\brket{\psi}{\chi}|^2\\
+\bra{\psi'}{\cal O}'\ket{\psi'} &amp; = \bra{\psi}{\cal O}\ket{\psi}
+\end{align}\end{split}\]</div>
+<p>(you might think you want to know all matrix elements of <span class="math notranslate nohighlight">\({\cal O}\)</span>, but in practice measurements can be phrased as expectation values of projecttion operators as we have discussed – also, it happens that if you know the expectation value of <span class="math notranslate nohighlight">\({\cal O}\)</span> for all states, you know all matrix elements. We’ll prove that at the end of this section so as not to interrupt the flow).</p>
+<p>One can easily prove the following (see <span id="id1">[<a class="reference internal" href="../markdown.html#id8" title="M.L. Bellac. Quantum Physics. Cambridge University Press, 2006. ISBN 9780511568305. URL: https://books.google.com/books?id=uSQ-jwEACAAJ.">Bellac, 2006</a>]</span> or
+<span class="xref std std-ref">messiah1999quantum</span>):</p>
+<p><em>Theorem</em>: give a transformation <span class="math notranslate nohighlight">\({\cal T}\)</span>, we can modify the transformed states <span class="math notranslate nohighlight">\(\ket{\psi'} \to e^{i\alpha(\ket{\psi'})}\ket{\psi'}\)</span> such that the transformation is implemented by a linear operator <span class="math notranslate nohighlight">\(U_{{\cal T}}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\ket{\psi'} &amp; = U_{{\cal T}} \ket{\psi}\ \forall \ket{\psi}\\
+{\cal O}' &amp; = U_{{\cal T}} {\cal O} U_{{\cal T}}^{\dagger}
+\end{align}\end{split}\]</div>
+<p>such that <span class="math notranslate nohighlight">\(U^{\dagger}_{{\cal T}} = U^{-1}_{{\cal T}}\)</span> and <span class="math notranslate nohighlight">\(U_{{\cal T}}\)</span> is either:</p>
+<ol class="arabic simple">
+<li><p>A <strong>linear</strong> operator (and thus unitary), or</p></li>
+<li><p>An <strong>antilinear</strong> operator, that is one satsifying</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[U_{{\cal T}}\left(a \ket{\psi} + b \ket{\chi}\right) = a^* U_{{\cal T}} \ket{\psi} + b^* U_{{\cal T}} \ket{\chi}\]</div>
+<p>Antilinear operators of this kind are important in particle physics and quantum condensed matter physics – in particular the transformation of <em>time reversal</em> is implemented by such an operator.</p>
+<p>Before continuing, we’ll fulfill our promise by showing that knowledge of <span class="math notranslate nohighlight">\(\bra{\psi}\cO\ket{\psi}\)</span> for all states <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> yields all matrix elements of <span class="math notranslate nohighlight">\(\cO\)</span>. Let us say that we want to find <span class="math notranslate nohighlight">\(\bra{\alpha} \cO \ket{\beta}\)</span>. We define two linear combinations</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\ket{\chi_1} &amp; = \ket{\alpha} + \ket{\beta}\\
+\ket{\chi_2} &amp; = \ket{\alpha} + i \ket{\beta}
+\end{align}\end{split}\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[\bra{\chi_1} \cO \ket{\chi_1} - i \bra{\chi_2}\cO \ket{\chi_2} = (1 - i) \left(\bra{\alpha}\cO\ket{\alpha} + \bra{\beta}\cO\ket{\beta}\right) + 2 \bra{\alpha}\cO\ket{\beta}\]</div>
+<p>That is, <span class="math notranslate nohighlight">\(\bra{\alpha}\cO\ket{\beta}\)</span> can be written in terms of expectation values of <span class="math notranslate nohighlight">\(\cO\)</span> in various states.</p>
+</section>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
+<p>It is worth mentioning a few examples:</p>
+<ol class="arabic simple">
+<li><p><em>Translations</em>. These are induced by the spatial transformation <span class="math notranslate nohighlight">\({\vec x} \to {\vec x} + {\vec a}\)</span>. The action on wavefunctions would be <span class="math notranslate nohighlight">\(\psi({\vec x}) \to \psi({\vec x} - {\vec a})\)</span>. As we’ve shown before, <span class="math notranslate nohighlight">\(U_{{\vec a}} = e^{- i {\hat{\vec p}}\cdot a/\hbar}\)</span>;</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[	\bra{{\vec x}}U_{{\vec a}}\ket{\psi} = \psi({\vec x} - {\vec a}\ ,\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[	U_{{\vec a}} {\hat{\vec x}} U_{{\hat a}}^{\dagger} = {\hat{\vec x}} + {\vec a}\]</div>
+<ol class="arabic simple" start="2">
+<li><p><em>Rotations</em>. These will be explained in great detail below.</p></li>
+<li><p><em>Parity</em>. This is related to the spacetime transformation <span class="math notranslate nohighlight">\({\vec x} \to - {\vec x}\)</span>. In quantum mechanics it is implemented by a unitary operator <span class="math notranslate nohighlight">\(\Pi = \Pi^{\dagger} = \Pi^{-1}\)</span>. For states in <span class="math notranslate nohighlight">\(L^2(\CR^3)\)</span> we have</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\bra{{\vec x}} \Pi \ket{\psi} &amp; = \psi(-x) \\
+\Pi {\hat{\vec x}} \Pi &amp; = - {\hat{\vec x}}\\
+\Pi {\hat{\vec p}} \Pi &amp; = - {\hat{\vec p}}
+\end{align}\end{split}\]</div>
+<ol class="arabic simple" start="4">
+<li><p><em>Isospin</em>. Nucleons have a spin degree of freedom and also an “isospin” degree of freedom; these contribute a factor <span class="math notranslate nohighlight">\(\cH = \CC^2 \otimes \CC^2\)</span> to the hilbert space. Just as a good basis for the Hilbert space of a spin-<span class="math notranslate nohighlight">\(\half\)</span> particle is the spin-up and spin-down states along some axis, a good basis for the isospin degree of freedom is the proton state and the neutron state. That these are degrees of freedom and not just labels of a particle is made clear by beta decay, in which a neutron can decay into a proton (by emitting a positron and an electron neutrino). This is a classic example of an <em>internal symmetry</em>, a symmetry that is not related to some transformation of spacetime.</p></li>
+<li><p><em>Time translations</em> which take <span class="math notranslate nohighlight">\(\ket{\psi(t)} \to \ket{\psi(t + T)}\)</span>.</p></li>
+</ol>
+</section>
+<section id="transformation-groups">
+<h3>Transformation groups<a class="headerlink" href="#transformation-groups" title="Link to this heading">#</a></h3>
+<p>Clearly a a sequence of transformations is itself a transformation. When implemented via linear operators, this arises because for <span class="math notranslate nohighlight">\(U_1, U_2\)</span> unitary operators, <span class="math notranslate nohighlight">\(U_1 U_2\)</span> is also unitary as you can easily check. In fact, transformations form a <em>group</em>. It is worth stepping back and describing this mathematical object. Groups are a classic case of simple systems yielding rich structures; group theory yields powerful results and insights into quantum mechanics.</p>
+<p>A <em>group</em> <span class="math notranslate nohighlight">\(G\)</span> is a collection of objects <span class="math notranslate nohighlight">\(g, h, ...\)</span> which could be countable (disceret) or uncountable, endoweed with a multiplication law such that <span class="math notranslate nohighlight">\(g\cdot h \in G\)</span> \forall gm h \in G$. This multiplication law satisfies the following properties:</p>
+<ol class="arabic simple">
+<li><p><em>Existence of an identity</em>. There is an element <span class="math notranslate nohighlight">\(e \in G\)</span> such that <span class="math notranslate nohighlight">\(e g = g e = g \forall g \in G\)</span>.</p></li>
+<li><p><em>Existence of an inverse</em>. For every <span class="math notranslate nohighlight">\(g \in G\)</span>, there exists a group element <span class="math notranslate nohighlight">\(g^{-1} \in G\)</span> such that <span class="math notranslate nohighlight">\(g g^{-1} = g^{-1} g = e\)</span>.</p></li>
+<li><p><em>Associativity</em>. For any <span class="math notranslate nohighlight">\(f, g, g \in G\)</span>,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[f \cdot (g \cdot h) = (f \cdot g) \cdot h\]</div>
+<p>where one does the multiplication in parentheses first.</p>
+<p>Note that in general it is not true that <span class="math notranslate nohighlight">\(g\cdot h h \cdot g\)</span>. Groups that satisfy this property are called <em>Abelian</em>; otherwise they are called <em>non-Abelian</em>.</p>
+<p>There are many examples of groups. A few are</p>
+<ol class="arabic simple">
+<li><p>Discrete translations in space <span class="math notranslate nohighlight">\({\vec x} \to {\vec x} + \sum_i n_i {\vec a}^i\)</span>, for <span class="math notranslate nohighlight">\({\vec a}\)</span> a collection of linearly independent vectors and <span class="math notranslate nohighlight">\(n_i \in \CZ\)</span>. This is clearly an Abelian group; “multiplication” in this case is simply vector addition.</p></li>
+<li><p>Permutations. These are one-to-one and onto transformations of <span class="math notranslate nohighlight">\(n\)</span> elements into themselves:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\sigma : (1,2,\ldots n) = (\sigma(1), \sigma(2), \ldots, \sigma(n))\]</div>
+<p>This group is often called <span class="math notranslate nohighlight">\(S_n\)</span>, and it is non-Abelian if <span class="math notranslate nohighlight">\(n &gt; 2\)</span>; I recommend convincing yourself of this by playing with <span class="math notranslate nohighlight">\(S_3\)</span>.</p>
+<ol class="arabic simple" start="3">
+<li><p><span class="math notranslate nohighlight">\(n \times n\)</span> invertible matrices (<span class="math notranslate nohighlight">\(GL(n, \CR)\)</span> for real matrices or <span class="math notranslate nohighlight">\(GL(n,\CC)\)</span> for complex matrices). These form a non-Abelian group under matrix multiplication.</p></li>
+</ol>
+</section>
+<section id="unitary-representations">
+<h3>Unitary representations<a class="headerlink" href="#unitary-representations" title="Link to this heading">#</a></h3>
+<p>For a group <span class="math notranslate nohighlight">\(G\)</span>, a <em>unitary representation</em> is a Hilbert space <span class="math notranslate nohighlight">\(\cH\)</span> together with a map <span class="math notranslate nohighlight">\(g \to U_g\)</span> of group elements to unitary operators that respects the group transformation law</p>
+<div class="math notranslate nohighlight">
+\[U_{g_1} U_{g_2} = U_{g_1\cdot g_2}\]</div>
+<p>That is to say the map from G to unitary operators is a group homomorphism. Note that this reuires that <span class="math notranslate nohighlight">\(U_e = {\bf 1}\)</span>, <span class="math notranslate nohighlight">\(U_{g^{-1}} = U_g^{\dagger}\)</span>.</p>
+<p>As a side note: there are also <em>projective representations</em>, which correspond to the above map but a modified multiplication law:</p>
+<div class="math notranslate nohighlight">
+\[U_{g_1} U_{g_2} = e^{i\alpha(g_1,g_2)} U_{g_1\cdot g_2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is a real number.</p>
+</section>
+</section>
+<section id="symmetries">
+<h2>Symmetries<a class="headerlink" href="#symmetries" title="Link to this heading">#</a></h2>
+<p>A particularly important class of transformations are <em>symmetries</em>: transformations that preserve the system’s dynamics. More precisely, they preserve the Hamiltonian:</p>
+<div class="math notranslate nohighlight">
+\[H' = U_{{\cal T}} H U_{{\cal T}}^{\dagger} = H \Rightarrow [H,U_{{\cal T}}] = 0\]</div>
+<p>The essential point is that eigenstates of <span class="math notranslate nohighlight">\(U\)</span> will also be eigenstates of <span class="math notranslate nohighlight">\(H\)</span> (this will become more obvious, perhaps, when we consider <em>infinitesimal</em> transformations, for which <span class="math notranslate nohighlight">\(U\)</span> can be approximated by a Hermitian operator). Thus, for example, <span class="math notranslate nohighlight">\(H = \frac{p^2}{2m}\)</span> is a</p>
+<p>In practice we are often interested in <em>approximate symmetries</em>. This means that we can write</p>
+<div class="math notranslate nohighlight">
+\[H = H_0 + \Delta\]</div>
+<p>such that <span class="math notranslate nohighlight">\(U_{{\cal T}} H_0 U_{{\cal T}}^{\dagger} = H_0\)</span> but <span class="math notranslate nohighlight">\(U_{{\cal T}} \Delta U_{{\cal T}}^{\dagger} \neq \Delta\)</span>. This is an “approximate symmetry” if <span class="math notranslate nohighlight">\(\bra{\psi}H_0\ket{\psi} \gg \bra{\psi}\Delta\ket{\psi}\)</span> for states <span class="math notranslate nohighlight">\(\psi\)</span> of interest (that is, for states which appear in measured processes). An important example is nuclear isospin, which transforms protons into neutrons. If this was an exact symmetry, this transformation would preserve the eigenstate of the Hamiltonian, which would include the rest mass of said particles. But of course in practice, the rest masses are not the same, though they are close: <span class="math notranslate nohighlight">\(m_pc^2 = 938.272 MeV\)</span> and <span class="math notranslate nohighlight">\(m_n c^2 = 939.565 MeV\)</span>. Roughly we can write</p>
+<div class="math notranslate nohighlight">
+\[H = H_{strong} + H_{em} + H_{weak}\]</div>
+<p>for the interaction between nucleaons and other fundamental particles. At internucleon distances, the strong nuclear force dominates, and preserves nuclear isospin, The electromagnetic and weak interactions break it (for example via coulomb repulsion of protons as opposed to neutrons), but it is weak at these scales.</p>
+</section>
+<section id="continous-vs-discrete-transformations">
+<h2>Continous vs. Discrete Transformations<a class="headerlink" href="#continous-vs-discrete-transformations" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><em>Discrete transformations</em> correspond to groups which have a countable set of elements. Examples are:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Translations by integer multiples of a fixed vector <span class="math notranslate nohighlight">\({\vec a}\)</span>, as might be important in a crystal lattice. The associate group is the group of integers, with group multiplication realized by addition of integers (thus the “identity element” is the integer zero, and the inverse of an integer is its negative). Note that this is an Abelian group. For particle mechanics with <span class="math notranslate nohighlight">\(H = L^2(\CR^d)\)</span>, the translations are represented by unitary operators <span class="math notranslate nohighlight">\(U_n = e^{- in {\hat{\vec p}}\cdot{\vec a}/\hbar}\)</span>.</p></li>
+<li><p>Rotations by <span class="math notranslate nohighlight">\(2\pi k/N\)</span> in two dimensions for <span class="math notranslate nohighlight">\(N, 0 \leq k &lt; N\)</span> integers. Here the group is <span class="math notranslate nohighlight">\(\CZ_N\)</span>, integers mod N. This is an Abelian group.</p></li>
+<li><p>Permutations of <span class="math notranslate nohighlight">\(n\)</span> elements. This is a non-Abelian group.</p></li>
+<li><p>Crystallographic transformations; for example, rotations by multiples of <span class="math notranslate nohighlight">\(\pi/2\)</span> (90 degrees) about the <span class="math notranslate nohighlight">\(x,y,z\)</span> axes. These are symmetries for cubic lattices.
+These are generally non-Abelian groups.</p></li>
+<li><p>Parity</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><em>Continuous transformations</em>. These are transformations labelled by families of continuous real parameters <span class="math notranslate nohighlight">\(t_1,\ldots,t_N\)</span>. <span class="math notranslate nohighlight">\(N\)</span> here would be the <em>dimension</em> of the group – the number of independent coordinates needed to describe its elements. (We could also consider complex parameters of course; still these can be written in terms of their real and imaginary parts so we will stick to real parameters)</p></li>
+</ol>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>Continuous transformations. As with discrete transformations, but by any vector <span class="math notranslate nohighlight">\({\vec a}\)</span>. Note that these are symmetries if <span class="math notranslate nohighlight">\(H = \frac{{\hat{\vec p}}^2}{2m}\)</span>. This is an Abelian group.</p></li>
+<li><p>Continous rotations in any dimension. In 2 dimensions this is Abelian; in 3 or higher, it is non-Abelian. We will describe this group in more detail below.</p></li>
+<li><p>Nuclear isospin. The relevant group is that of all <span class="math notranslate nohighlight">\(2\times 2\)</span> unitary matrices with unit determinant, also called <span class="math notranslate nohighlight">\(SU(2)\)</span>.</p></li>
+</ul>
+</section>
+<section id="infinitesimal-transformations">
+<h2>Infinitesimal transformations<a class="headerlink" href="#infinitesimal-transformations" title="Link to this heading">#</a></h2>
+<p>Now let us consider a continuous family of transformations that includes the identity. We choose coordinates such that the identity is the origin of the coordinate system.</p>
+<p>By <em>infinitesimal tranformations</em> we mean ones for which <span class="math notranslate nohighlight">\(U\)</span> (or more precisely, its matrix elements) can be well approximated by an <span class="math notranslate nohighlight">\(\cO(t_k)\)</span> approximation, that is</p>
+<div class="math notranslate nohighlight">
+\[U \sim {\bf 1} - i t_k A_k + \cO(t^2)\]</div>
+<p>where <span class="math notranslate nohighlight">\(A_k\)</span> is some operator. The demand that <span class="math notranslate nohighlight">\(U\)</span> be unitary at <span class="math notranslate nohighlight">\(\cO(t)\)</span> means:</p>
+<div class="math notranslate nohighlight">
+\[{\bf 1} = U U^{\dagger} \sim ({\bf 1} + i t_k A_k) ({\bf 1} - i t_k A^{\dagger}_k) + \cO(t^2) = 1 + i t_k(A_k - A_k^{\dagger}) + \cO(t^2)\]</div>
+<p>In other words, we must have <span class="math notranslate nohighlight">\(A_k = A_k^{\dagger}\)</span>: infinitesimal transformations are described by <em>Hermitian operators</em>.</p>
+<p>Let us write $t_k A_k From an infinitesimal transformation. We can build up a finite transformations via</p>
+<div class="math notranslate nohighlight">
+\[U(t) = e^{i t A}\]</div>
+<p>It is easy to show that the set of operators <span class="math notranslate nohighlight">\(U(t)\)</span> form an Abelian group (a subgroup of the transformation group) with <span class="math notranslate nohighlight">\(U(t_1) U(t_2) = U(t_1 + t_2)\)</span>, for which <span class="math notranslate nohighlight">\(U(-t) = U^{\dagger}\)</span>. Depending on the eigenvalues of <span class="math notranslate nohighlight">\(A\)</span>, this group is equivalent to either <span class="math notranslate nohighlight">\(\CR\)</span> or <span class="math notranslate nohighlight">\(S^1\)</span>; the latter will appear if the eigenvalues of <span class="math notranslate nohighlight">\(A\)</span> are integer multiples of some basic interval <span class="math notranslate nohighlight">\(\delta t\)</span>, so that <span class="math notranslate nohighlight">\(t \equiv t _ \delta t\)</span>. We say that the Hermitian operators <em>generate</em> the symmetry.</p>
+<p>If we have two unitary operators of the form <span class="math notranslate nohighlight">\(U_A = e^{i t A}\)</span> and <span class="math notranslate nohighlight">\(U_B = e^{i s B}\)</span>, the lack of commutativity of the unitary operators can be related to the lack of commutativity of <span class="math notranslate nohighlight">\(A,B\)</span>. To see this, compute</p>
+<div class="math notranslate nohighlight">
+\[\begin{align} 
+U_B^{-1} U_A^{-1} U_B U_A &amp; = (1 - i s B - \half s^2 B^2)( (1 - i t A - \half t^2 A^2) (1 + i s B - \half s^2 B^2) (1 + i t A - \half t^2 A^2) + \ldots
+&amp; = 1 + st (AB - BA) + \ldots
+\end{align}\]</div>
+<p>So the unitary operators commue if their infinitesimal generators commute.</p>
+<section id="infinitesimal-symmetries">
+<h3>Infinitesimal symmetries<a class="headerlink" href="#infinitesimal-symmetries" title="Link to this heading">#</a></h3>
+<p>Demanding <span class="math notranslate nohighlight">\(U(t) H U(t)^{\dagger} = H\)</span> for an infinitesimal symmetry means</p>
+<div class="math notranslate nohighlight">
+\[(1 + i t A + \ldots) H (1 - i t A \ldots) = H _ i t [A,H] + \ldots = H\]</div>
+<p>which implies <span class="math notranslate nohighlight">\([A,H] = 0\)</span>. This is called an <em>infinitesimal symmetry</em>. The generator is a Hermitian operator which commutes with the Hamiltonian. This, it is associated to a conserved quantity. For example, you can show that</p>
+<div class="math notranslate nohighlight">
+\[\vev{A} = \bra{\psi(t)} A \ket{\psi(t)}\]</div>
+<p>is independent of time, since</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt} \vev{A} = \frac{1}{i\hbar}\vev{[A,H]} = 0\]</div>
+<p>Similarly, if <span class="math notranslate nohighlight">\(A\ket{\psi(t)} = a \ket{\psi(t)}\)</span> at some time <span class="math notranslate nohighlight">\(t\)</span>, with <span class="math notranslate nohighlight">\(a\)</span> an eigenvalue of <span class="math notranslate nohighlight">\(A\)</span>, this equation will be true for all <span class="math notranslate nohighlight">\(t\)</span>. This is the quantum analog of Noether’s theorem.</p>
+<p>Two important examples:</p>
+<ol class="arabic simple">
+<li><p><em>Time translations</em>. If <span class="math notranslate nohighlight">\(H\)</span> is time-independent, then since <span class="math notranslate nohighlight">\([H, H] = 0\)</span> and <span class="math notranslate nohighlight">\(U(t) = e^{- i t H/\hbar}\)</span> is the unitary operator generating time translations, time translations is a symetry of the theory and is tied to energy conservation.</p></li>
+<li><p><em>Spatial translations</em>. Infinitesimal transformations are generated by the momentum operator. If <span class="math notranslate nohighlight">\(H = H({\vec p})\)</span>, then <span class="math notranslate nohighlight">\([p, H] = 0\)</span> and momentu is conserved.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="rotation_group.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Rotation Group in Quantum Mechanics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendix.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformations">Transformations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-groups">Transformation groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unitary-representations">Unitary representations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetries">Symmetries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continous-vs-discrete-transformations">Continous vs. Discrete Transformations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-transformations">Infinitesimal transformations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-symmetries">Infinitesimal symmetries</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Albion Lawrence
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
