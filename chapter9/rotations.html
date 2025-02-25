@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>The Rotation Group in Quantum Mechanics &#8212; Physics 162</title>
+    <title>The Rotation Group &#8212; Physics 162</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"], "cO": ["\\mathcal{O}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter9/rotation_group';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter9/rotations';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Transformations and symmetries" href="transformations.html" />
-    <link rel="prev" title="The Feynman Path Integral" href="../chapter8/FPI.html" />
+    <link rel="next" title="Representations of the rotation group" href="representations_rotations.html" />
+    <link rel="prev" title="Transformations and symmetries" href="transformations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -223,11 +223,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter8/FPI.html">The Feynman Path Integral</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">The Rotation Group in Quantum Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="rotation_group.html">The Rotation Group in Quantum Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="transformations.html">Transformations and symmetries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rotations.html">The Rotation Group</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">The Rotation Group</a></li>
 <li class="toctree-l2"><a class="reference internal" href="representations_rotations.html">Representations of the rotation group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orbital_am.html">Orbital Angular Momentum</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -286,7 +285,7 @@
       
       
       
-      <li><a href="../_sources/chapter9/rotation_group.md" target="_blank"
+      <li><a href="../_sources/chapter9/rotations.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -357,7 +356,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -368,11 +369,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The Rotation Group in Quantum Mechanics</h1>
+    <h1>The Rotation Group</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotations-in-three-dimensions">Rotations in three dimensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-rotations">Finite rotations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-transformations">Infinitesimal transformations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-group-su-2">The Group <span class="math notranslate nohighlight">\(SU(2)\)</span></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -382,11 +396,119 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="the-rotation-group-in-quantum-mechanics">
-<h1>The Rotation Group in Quantum Mechanics<a class="headerlink" href="#the-rotation-group-in-quantum-mechanics" title="Link to this heading">#</a></h1>
-<p>Following convention, we will spend some time on the behavior of quantum systems under rotations. There are two reasons for this. First, rotational symmetry plays an important role in many practical applications, such as atoms and spin systems. Secondly, the structure of the rotation group, and of Hilbert spaces on which rotations act nontrivially, are models for other important transformations in quantum systems.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-rotation-group">
+<h1>The Rotation Group<a class="headerlink" href="#the-rotation-group" title="Link to this heading">#</a></h1>
+<p>The rotation group ends up being a particularly powerful tool for studying three-dimensional systems, most famously atomic systems for which the Coulomb potential is rotationally invariant (independent of the direction of the separation between charged objects.)</p>
+<p>In general rotations acting on vectors in <span class="math notranslate nohighlight">\(\CR^d\)</span> are defined as real linear ransformations that preserve the norm. Thus</p>
+<div class="math notranslate nohighlight">
+\[V^{I = 1,\ldots D} \to (V')^I = R^I_J V^J\]</div>
+<p>where <span class="math notranslate nohighlight">\(R\)</span> is a <span class="math notranslate nohighlight">\(d \times d\)</span> matrix. Preservation of the norm means that</p>
+<div class="math notranslate nohighlight">
+\[(V')^I (V')_I = V^J R^I_J (R^T)^K_I V_K = V^K V_K\]</div>
+<p>This last equality works if and only if <span class="math notranslate nohighlight">\(R^T R = {\bf 1}\)</span>, that is, if <span class="math notranslate nohighlight">\(R^T - R^{-1}\)</span>. Such matrices are called <em>orthogonal</em>.</p>
+<p>Successive rotations are implemented by multiplying the corresponding matrices. You can convince yourself quickly that the product of two orthogonal matrices is itself orthogonal:</p>
+<div class="math notranslate nohighlight">
+\[(R_1 R_2)^T = R_2^T R_1^T = R_2^{-1} R_1^{-1} = (R_1 R_2)^{-1}\]</div>
+<p>The corresponding group of rotation is thus the group of orthogonal matrices under matrix multiplication, which is known as <span class="math notranslate nohighlight">\(O(d)\)</span> or the “orthogonal group”.</p>
+<p>Note that since</p>
+<div class="math notranslate nohighlight">
+\[	{\rm det} R^T R = ({\rm det} R)^2 = {\rm det} {\bf 1} = 1\]</div>
+<p><span class="math notranslate nohighlight">\({\rm det} R = \pm 1\)</span>. The matrices with opposite determinants are not continuously deformable into each other, and only matrices with positive determinant are continuously deformable to the identity matrix. The group of <span class="math notranslate nohighlight">\(d\times d\)</span> orthogonal matrices with unit determinant are called <span class="math notranslate nohighlight">\(SO(d)\)</span> or the “special orthogonal group”. It is this group which is usually taken to be the rotation group.</p>
+<section id="rotations-in-three-dimensions">
+<h2>Rotations in three dimensions<a class="headerlink" href="#rotations-in-three-dimensions" title="Link to this heading">#</a></h2>
+<p>In this case,</p>
+<div class="math notranslate nohighlight">
+\[\Pi = - {\bf 1}\]</div>
+<p>is the parity matrix, and any member of <span class="math notranslate nohighlight">\(O(3)\)</span> can be written as a member of <span class="math notranslate nohighlight">\(SO(3)\)</span> times <span class="math notranslate nohighlight">\(\Pi\)</span>. Thus we will focus on <span class="math notranslate nohighlight">\(SO(3)\)</span>.</p>
+<section id="finite-rotations">
+<h3>Finite rotations<a class="headerlink" href="#finite-rotations" title="Link to this heading">#</a></h3>
+<p>We can describe the general matrix more explicitly as follows. I calim any rotation can be described as the rotation of a vector about some axis by some angle <span class="math notranslate nohighlight">\(\theta\)</span>. We will specify the axis by the unit vector <span class="math notranslate nohighlight">\({\hat n}\)</span>.</p>
+<p><img alt="Rotation of vector about axis" src="../_images/rotation.png" /></p>
+<p>As shown in the figure above, we can break up the vector <span class="math notranslate nohighlight">\({\vec V} = {\vec V}_{\|} + {\vec V}_{\perp}\)</span>, where parallel and perpendicular are with respect to <span class="math notranslate nohighlight">\({\hat n}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+{\vec V}_{\|} &amp; = ({\vec V}\cdot{\hat n}) {\hat n}\\
+{\vec V}_{\perp} &amp; = {\vec V} - {\vec V}_{\|} 
+\end{align}\end{split}\]</div>
+<p>We will express <span class="math notranslate nohighlight">\({\vec V}'\)</span> in terms of its projection onto three orthonormal vectors: <span class="math notranslate nohighlight">\({\hat n}\)</span>, <span class="math notranslate nohighlight">\({\hat V}_{\perp} = \frac{{\vec V}_{\perp}}{||{\vec V}_{\perp}||}\)</span>, and a third vector orthogonal to both of them. Since <span class="math notranslate nohighlight">\({\hat n}\times{\hat V}_{\|} = 0\)</span>,
+<span class="math notranslate nohighlight">\({\hat n}\times{\hat V} = {\hat n}\times {\vec V}_{\perp}\)</span> is orthogonal to both <span class="math notranslate nohighlight">\({\hat n}, {\hat V}_{\perp}\)</span>. Thus, we can write</p>
+<div class="math notranslate nohighlight">
+\[{\vec V}' = ({\vec V}'\cdot{\hat n}) {\hat n} + {\vec V}'\cdot\frac{{\vec V}_{\perp}}{||{\vec V}_{\perp}||} + \left( {\vec V}' \cdot \frac{ {\hat n} \times {\vec V} }{ ||{\hat n}\times {\vec V}|| }\right) 
+{\hat n}\times{\vec V}\]</div>
+<p>Now</p>
+<div class="math notranslate nohighlight">
+\[||{\vec V}'|| = ||{\vec V}|| = ||{\hat n}\times{\vec V}||\]</div>
+<p>Furthermore, we can see from the figure that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+{\vec V}' \cdot{\vec V}_{\perp} &amp; = ||{\vec V}||\cdot ||{\vec V}_{\perp}|| \cos\theta\\
+{\vec V}'\cdot({\hat n}\times{\vec V}) &amp; = ||{\vec V}|| \cdot ||{\hat n} \times{\vec V}|| \sin \theta
+\end{align}\end{split}\]</div>
+<p>Putting all of this together, we have</p>
+<div class="math notranslate nohighlight">
+\[{\vec V}' = \cos\theta {\vec V} + (1 - \cos\theta){\hat n}\cdot{\vec V} {\hat n} + \sin
+theta {\hat n}\times{\vec V}\]</div>
+<p>Writing this as <span class="math notranslate nohighlight">\((V')^I = R^I_J V^J\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-rot-matrix">
+<span class="eqno">(311)<a class="headerlink" href="#equation-rot-matrix" title="Link to this equation">#</a></span>\[R^I_J = \cos\theta \delta^I_J + (1 - \cos\theta) n^I n_J + \sin\theta \epsilon^I{}_{JK} n^K\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\epsilon_{IJK}\)</span> is the totally antisymmetric tensor defined in the appendices. Note that I have raised and lowered various indices. In the present case, this operation does not change the numerical value of any of the vectors or tensors. I leave it as an exercise to show that this is an orthogonal matrix.</p>
+<p>You can see that there is a 3-parameter family of such matrices, labeled by <span class="math notranslate nohighlight">\(\theta\)</span> and by the unit vector <span class="math notranslate nohighlight">\({\hat n}\)</span>. As it happens, the demand of orthogonality leaves only 3 independent parameters specifying a <span class="math notranslate nohighlight">\(3\times 3\)</span> orthogonal matrix, and in fact all members of <span class="math notranslate nohighlight">\(SO(3)\)</span> can be written in this way.</p>
+</section>
+<section id="infinitesimal-transformations">
+<h3>Infinitesimal transformations<a class="headerlink" href="#infinitesimal-transformations" title="Link to this heading">#</a></h3>
+<p>For infinitesimal rotations, <span class="math notranslate nohighlight">\(\cos \theta \sim 1 - \half \theta^2 + \cO(\theta^4)\)</span>, <span class="math notranslate nohighlight">\(\sin \theta \sim \theta + \cO(\theta^3)\)</span>. Putting this into Equation <a class="reference internal" href="#equation-rot-matrix">(311)</a> and keeping twerms only up to <span class="math notranslate nohighlight">\(\cO(\theta)\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[R^I_J \sim \delta^I_J + \theta \epsilon^I{}_{JK} n^K \]</div>
+<p>Since this is linear in <span class="math notranslate nohighlight">\({\hat n}\)</span> and we can write a general vector <span class="math notranslate nohighlight">\({\hat n}\)</span> as a linear combination of <span class="math notranslate nohighlight">\({\hat x}, {\hat y}, {\hat z}\)</span>, we can generate general infinitesimal transformations from rotations about each of these axes. Now wroting <span class="math notranslate nohighlight">\(R(n) = 1 - i \theta J_I n^I/\hbar\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+J_x &amp; = i\hbar \begin{pmatrix} 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; 0 \end{pmatrix}\\
+J_y &amp; = i\hbar \begin{pmatrix} 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 \\ -1 &amp; 0 &amp; 0 \end{pmatrix}\\
+J_z &amp; = i\hbar \begin{pmatrix} 0 &amp; -1 &amp; 0 \\ 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>We will see later why we use this normaization by <span class="math notranslate nohighlight">\(\hbar\)</span>. Finally, recall that the group structure can be built from the commutation relations of the individual matrices. For these, you can show via brute force that</p>
+<div class="math notranslate nohighlight">
+\[[J_I, J_J] = i\hbar \epsilon_{IJK} J_K\]</div>
+<p>Given all of this, we can build up any finite rotation from these matrices by a succession of infinitesimal rotations. That is, consider a rotation about <span class="math notranslate nohighlight">\({\hat n}\)</span> by an angle <span class="math notranslate nohighlight">\(\theta\)</span>. We can achieve this with <span class="math notranslate nohighlight">\(N\)</span> successive rotations about the same axis, each with angle <span class="math notranslate nohighlight">\(\theta/N\)</span>. As <span class="math notranslate nohighlight">\(N \to \infty\)</span>, each rotation is well approximated by</p>
+<div class="math notranslate nohighlight">
+\[	R(\theta/N, {\hat n}) = {\bf 1} - i \frac{\theta}{N} \hbar \frac{{\vec J}\cdot{\hat n}}{\hbar}\]</div>
+<p>Now</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\lim_{N\to\infty} \left(1 + \frac{x}{N}\right)^N &amp; = 
+\lim_{N \to infty} e^{N \ln (1 + x/N)}\\
+&amp; = \lim_{N \to infty} e^{N \left( \frac{x}{N} + \frac{x^2}{2 N^2} + \ldots\right)} \\
+&amp; =  \lim_{N \to infty} e^{x + \cO(1/N)} = e^x
+\end{align}\end{split}\]</div>
+<p>Thus, we can write</p>
+<div class="math notranslate nohighlight">
+\[R(\theta, \hat n) = \lim_{N\to\infty} R(\theta/N,{\hat n})^N = e^{- i \theta {\vec J}\cdot{\hat n}/\hbar}\]</div>
+</section>
+</section>
+<section id="the-group-su-2">
+<h2>The Group <span class="math notranslate nohighlight">\(SU(2)\)</span><a class="headerlink" href="#the-group-su-2" title="Link to this heading">#</a></h2>
+<p>The group of <span class="math notranslate nohighlight">\(n\times n\)</span> unitary matrices is called <span class="math notranslate nohighlight">\(U(n)\)</span>. In generak the determinants of such matrices are pure phase. The <em>special unitary group</em> <span class="math notranslate nohighlight">\(SU(n)\)</span> consists of all such matrices with determinant <span class="math notranslate nohighlight">\(1\)</span>. Since the determinant of the product oof matrices is the product of their determinants, this is a genuine subgroup of <span class="math notranslate nohighlight">\(U(n)\)</span>.</p>
+<p>We wish to describe the simplest special unitary group, <span class="math notranslate nohighlight">\(SU(n)\)</span>. All such matrices take the form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}M = \begin{pmatrix} a &amp; b \\ - b^* a^* \end{pmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a, b \in \CC\)</span>, <span class="math notranslate nohighlight">\(|a|^2 + |b|^2 = 1\)</span>. We can rewrite these in terms of the Pauli matrices:</p>
+<div class="math notranslate nohighlight">
+\[M = a_r {\bf 1} + i b_i \sigma_x + i b_r \sigma_y + i a_i \sigma_z\]</div>
+<p>where <span class="math notranslate nohighlight">\(a = a_r + a_i\)</span>, <span class="math notranslate nohighlight">\(b = b_r + i b_i\)</span>, and <span class="math notranslate nohighlight">\(a_{i,r},b_{i,r} \in \CR\)</span>.</p>
+<p>Now if we set <span class="math notranslate nohighlight">\(a_i, b_r, b_i \in \cO(\eps)\)</span> for <span class="math notranslate nohighlight">\(\eps \ll 1\)</span>, the constraint <span class="math notranslate nohighlight">\(|a|^2 + |b|^2 = 1\)</span> demands that <span class="math notranslate nohighlight">\(a_r \sim 1 + \cO(\eps^2)\)</span>. Thus, for infinitesimal transformations,</p>
+<div class="math notranslate nohighlight">
+\[M \sim {\bf 1} + i \alpha {\hat n} \cdot {\vec \sigma}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha = \sqrt{|a_i|^2 + |b_r|^2 + b_i|^2}\)</span>, and</p>
+<div class="math notranslate nohighlight">
+\[{\hat n} = \frac{1}{\alpha}(b_i, b_r, a_i)\]</div>
+<p>If we define <span class="math notranslate nohighlight">\({\vec J} = \frac{\hbar}{2} {\vec \sigma}\)</span>, we have the commutation relations</p>
+<div class="math notranslate nohighlight">
+\[[J_I, J_J] = i \hbar \epsilon_{IJK} J_K\]</div>
+<p>If we set <span class="math notranslate nohighlight">\(\theta = 2\alpha\)</span>, then we have</p>
+<div class="math notranslate nohighlight">
+\[M \sim {\bf 1} + i \theta \frac{{\vec J}\cdot{\hat n}}{\hbar}\]</div>
+<p>which takes the same form as the infinitesimal rotation matrices in <span class="math notranslate nohighlight">\(SO(3)\)</span>, for which <span class="math notranslate nohighlight">\(J_I\)</span> have the same commutation relations. It is tempting to state that <span class="math notranslate nohighlight">\(SO(3)\)</span> and <span class="math notranslate nohighlight">\(SU(2)\)</span> are the same group. As it happens, this is not quite true; rather (as we will see), <span class="math notranslate nohighlight">\(SU(2)\)</span> is the <em>double cover</em> of <span class="math notranslate nohighlight">\(SO(3)\)</span>; that is if we map <span class="math notranslate nohighlight">\(SU(2)\)</span> to <span class="math notranslate nohighlight">\(SO(3)\)</span> the map is generally 2-to-1.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -420,20 +542,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../chapter8/FPI.html"
+       href="transformations.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The Feynman Path Integral</p>
+        <p class="prev-next-title">Transformations and symmetries</p>
       </div>
     </a>
     <a class="right-next"
-       href="transformations.html"
+       href="representations_rotations.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Transformations and symmetries</p>
+        <p class="prev-next-title">Representations of the rotation group</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -443,6 +565,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotations-in-three-dimensions">Rotations in three dimensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-rotations">Finite rotations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-transformations">Infinitesimal transformations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-group-su-2">The Group <span class="math notranslate nohighlight">\(SU(2)\)</span></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

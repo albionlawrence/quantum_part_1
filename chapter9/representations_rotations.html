@@ -1,0 +1,663 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Representations of the rotation group &#8212; Physics 162</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"], "cO": ["\\mathcal{O}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter9/representations_rotations';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="The Rotation Group" href="rotations.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/Carl_Eckart.jpg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/Carl_Eckart.jpg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Physics 162a <br /> Prof. Albion Lawrence <br />  Brandeis University</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Newton.html">Newtonian mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Lagrange.html">Lagrangian Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Constraints.html">Constrained Lagrangian Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Symmetries.html">Symmetries and conservation laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Hamilton.html">Hamiltonian Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Intro_quantum.html">Introduction to quantum mechanics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/Intro_linear_algebra.html">Linear algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Vector_spaces.html">Vector spaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Linear_operators.html">Linear operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Adjoint.html">Adjoints and inner products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Operator_spectra.html">Spectra of Hermitian and Unitary Operators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter4/Quantum_rules.html">The Rules of Quantum Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/Axioms.html">The Axioms of Quantum Mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/Spin_half.html">Example: spin-1/2 particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/entangled.html">Entangled states and density matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/bell.html">Local Realism vs. Quantum Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/Wave_mechanics.html">Wave mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/infinite_d.html">Particles on a line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/compatible_measurements.html">Compatible and incompatible measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/Hamiltonians.html">Designing Hamiltonians</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/wave_equation.html">The Schroedinger wave function and its dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/dynamics_1.html">Dynamics I</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/Interlude_1.html">Interlude: two interesting systems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/aharonov-bohm.html">The Aharonov-Bohm effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/neutrino_oscillations.html">Neutrino oscillations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter7/Wave_examples.html">Examples of nonrelativistic quantum particle dynamics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/free_particle.html">The free nonrelativistic particle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/square_well.html">The 1d square well</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/sho.html">The simple harmonic oscillator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/twostate_models.html">Two-state systems as phenomenological models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/1d_scattering.html">One-dimensional scattering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/periodic_potentials.html">Periodic potentials</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter8/FPI.html">The Feynman Path Integral</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="rotation_group.html">The Rotation Group in Quantum Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="transformations.html">Transformations and symmetries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rotations.html">The Rotation Group</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Representations of the rotation group</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter9/representations_rotations.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Representations of the rotation group</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-structure">General structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-irreps">Examples of irreps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-0">Spin-<span class="math notranslate nohighlight">\(0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-half">Spin-<span class="math notranslate nohighlight">\(\half\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-1">Spin-<span class="math notranslate nohighlight">\(1\)</span></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="representations-of-the-rotation-group">
+<h1>Representations of the rotation group<a class="headerlink" href="#representations-of-the-rotation-group" title="Link to this heading">#</a></h1>
+<section id="general-structure">
+<h2>General structure<a class="headerlink" href="#general-structure" title="Link to this heading">#</a></h2>
+<p>We will find that the commutation relations of <em>infinitesimal</em> operators put strong constraints o n the irreducible representations of the rotation group. The basic strategy is somewhat analogous to that we used to solve for the simple harmonic oscillator.</p>
+<p>Recall that for infinitesimal rotations by angle <span class="math notranslate nohighlight">\(\theta\)</span> about an axis described by unit vector <span class="math notranslate nohighlight">\({\hat n}\)</span>, <span class="math notranslate nohighlight">\(R \sim \delta - i \theta \frac{{\vec J}\cdot{\hat n}}{\hbar}\)</span>; the commutation relations of <span class="math notranslate nohighlight">\(J\)</span> are: <span class="math notranslate nohighlight">\([J_I, J_J] = i\hbar \epsilon_{IJK} J^K\)</span>.</p>
+<p>In a unitary representation, <span class="math notranslate nohighlight">\(U(R) \sim {\bf 1} - i \theta \frac{{\hat J}^I {\hat n}_I}{\hbar}\)</span> where <span class="math notranslate nohighlight">\({\hat J}\)</span> is a Hermitian operator. As we have shown, the commutation relations of infinitesimal operators determine the structure of non-Abelian multiplication for any group elements (which can be built from successive infinitesimal rotations). Therefore <span class="math notranslate nohighlight">\({\hat J}^I\)</span> must satisfy the same algebra as the matrices we constructed above: <span class="math notranslate nohighlight">\([{\hat J}_I, {\hat J}_J] = i \hbar \epsilon_{IJK} {\hat J}^K\)</span>. Following the discussion in the previous section, the action of a finite rotation by angle <span class="math notranslate nohighlight">\(\theta\)</span> about an axis <span class="math notranslate nohighlight">\({\hat n}\)</span> is then:</p>
+<div class="math notranslate nohighlight">
+\[U(R(\theta,{\hat n})) = e^{- i \theta {\hat n}\cdot{\hat{\vec J}}/\hbar}\]</div>
+<p>We start by finding a set of commuting Hermitian operators built from <span class="math notranslate nohighlight">\({\hat{\vec J}}\)</span>. These can be mutually diagonalizable. First, you can show that <span class="math notranslate nohighlight">\({\vec J}^2\)</span> commutes with all of <span class="math notranslate nohighlight">\({\hat J}_I\)</span>. You can show this by brute force. You can also note that <span class="math notranslate nohighlight">\({\vec J}\)</span> generates infinitesimal rotations; but <span class="math notranslate nohighlight">\({\vec J}^2\)</span> is the square of a vector and isn’t exopected to change under rotations. In saying this I am sweeping a lot under the rug – what is a vector operator and how does it transform?.</p>
+<p>Since <span class="math notranslate nohighlight">\({\vec J}^2\)</span> commutes with <span class="math notranslate nohighlight">\(J_I\)</span> for all <span class="math notranslate nohighlight">\(I\)</span>, the eigenvalue for <span class="math notranslate nohighlight">\({\vec J}^2\)</span> is invariant under rotations. Since the definition of an irreducible representation is that the only subspace which is invariant under rotations is the whole vector space, an irrep must have a fixed value of <span class="math notranslate nohighlight">\({\vec J}^2\)</span>.</p>
+<p>By tradition we also pick the operator <span class="math notranslate nohighlight">\({\hat J}_z\)</span> and mutually diagonalize <span class="math notranslate nohighlight">\({\vec J}^2\)</span>, <span class="math notranslate nohighlight">\(J_z\)</span>. That is the irrep should have an orthornormal basis <span class="math notranslate nohighlight">\(\ket{\alpha,\beta}\)</span> such that <span class="math notranslate nohighlight">\({\vec J}^2\ket{\alpha,\beta} = \alpha \ket{\alpha,\beta}\)</span> and <span class="math notranslate nohighlight">\({\hat J}_z\ket{\alpha,\beta} = \beta\ket{\alpha,\beta}\)</span>.</p>
+<p>Next, we construct the operators</p>
+<div class="math notranslate nohighlight">
+\[J_{\pm} = J_x \pm i J_y = J_{\mp}^{\dagger}\]</div>
+<p>These satisfy the commutation relations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+[J_z, J_{\pm}] &amp; = \pm \hbar J_{\pm} \\
+[J_+,J_-] &amp; = 2\hbar J_z\\
+[J_{\pm}, {\vec J}^2] &amp; = 0
+\end{align}\end{split}\]</div>
+<p>First, we can show that <span class="math notranslate nohighlight">\(\alpha \geq \beta^2\)</span>. This is based on the relations:</p>
+<div class="math notranslate nohighlight">
+\[{\vec J}^2 - J_z^2 = J_x^2 J_y^2 = J_+ J_- + J_- J_+\]</div>
+<p>Thus</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\alpha - \beta^2 &amp; = \bra{\alpha,\beta} ({\vec J}^2 - J_z^2) \ket{\alpha,\beta}\\
+&amp; = \bra{\alpha,\beta} (J_+ J_- + J_- J_+)  \ket{\alpha,\beta}\\
+&amp; = ||J_- \ket{\alpha,\beta}||^2 + || J_+ \ket{\alpha,\beta}||^2 \geq 0
+\end{align}\end{split}\]</div>
+<p>Next, from the commutation relations for <span class="math notranslate nohighlight">\(J_{\pm}, J_z\)</span>, we find</p>
+<div class="math notranslate nohighlight">
+\[	J_{\pm}\ket{\alpha,\beta} = C_{\pm} \ket{\alpha,\beta \pm \hbar}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_{\pm} \in \CC\)</span> is a constant. Given this, <span class="math notranslate nohighlight">\(\beta\)</span> will have a maximum <span class="math notranslate nohighlight">\(\beta_{max}^2 \leq \alpha\)</span> and a minimum <span class="math notranslate nohighlight">\(\beta_{min}^2 \leq \alpha\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+J_+ \ket{\alpha,\beta_{max}} &amp; = 0\\
+J_-\ket{\alpha,\beta_{min}} &amp; = 0
+\end{align}\end{split}\]</div>
+<p>Now, we can use the commutation relations to find:</p>
+<div class="math notranslate nohighlight">
+\[J_{\pm} J_{\mp} = J_x^2 + J_y^2 \mp [J_x,J_y] = {\vec J}^2 - J_z^2 \pm \hbar J_z\]</div>
+<p>Therefore:</p>
+<div class="math notranslate nohighlight" id="equation-highest-weights">
+<span class="eqno">(312)<a class="headerlink" href="#equation-highest-weights" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+J_+ J_- \ket{\alpha,\beta_{min}} &amp; = 0 = \alpha - \beta_{min}^2 + \hbar \beta_{min}\\
+J_- J_+ \ket{\alpha,\beta_{max}} &amp; = 0 = \alpha - \beta_{max}^2 - \hbar \beta_{max}
+\end{align}\end{split}\]</div>
+<p>Solving the resulting quadratic equation for <span class="math notranslate nohighlight">\(\beta_{max}\)</span> we find</p>
+<div class="math notranslate nohighlight">
+\[\beta_{max} = \frac{- \hbar \pm \sqrt{\hbar^2 + \alpha}}{2}\]</div>
+<p>The constraint <span class="math notranslate nohighlight">\(\alpha \geq \beta_{max}^2\)</span> menas that we must choose the positive branch. Similarly, we can show that</p>
+<div class="math notranslate nohighlight">
+\[\beta_{min} = \frac{\hbar - \sqrt{\hbar^2 + 4\alpha}}{2} = - \beta_{max}\]</div>
+<p>Now if we start with <span class="math notranslate nohighlight">\(\ket{\alpha,\beta_{min}}\)</span> and act on it with <span class="math notranslate nohighlight">\(J_+^n\)</span> there is some minimum <span class="math notranslate nohighlight">\(n\)</span> for which <span class="math notranslate nohighlight">\(J_+^{n + 1} \ket{\alpha,\beta_{min}} = 0\)</span>. This means that</p>
+<div class="math notranslate nohighlight">
+\[J_+^n \ket{\alpha,\beta_{min}} \propto \ket{\alpha, \beta_{max}}\]</div>
+<p>For this to hold, we must have</p>
+<div class="math notranslate nohighlight">
+\[	\beta_{\max} = n \hbar + \beta_{min} = n\hbar - \beta_{max} \Rightarrow \beta_{max} = \frac{n \hbar}{2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\in \CZ, n \geq 0\)</span>. If we define <span class="math notranslate nohighlight">\(j = \frac{n}{2} \geq 0\)</span>, <span class="math notranslate nohighlight">\(\beta_{max} = \hbar j\)</span>, the second equation in <a class="reference internal" href="#equation-highest-weights">(312)</a> becomes <span class="math notranslate nohighlight">\(\alpha = \hbar^2 j(j+1)\)</span>. We then have <span class="math notranslate nohighlight">\(\beta = m \hbar\)</span>, with <span class="math notranslate nohighlight">\(m \in (-j, -j + 1, \ldots, j - 1, j)\)</span>. From here on out we denote the states <span class="math notranslate nohighlight">\(\ket{\alpha,\beta}\)</span> as <span class="math notranslate nohighlight">\(\ket{j,m}\)</span>, with <span class="math notranslate nohighlight">\(\alpha = \hbar^2 j(j+1)\)</span>, and <span class="math notranslate nohighlight">\(\beta = \hbar m\)</span>.</p>
+<p>Now, any rotation can be written in terms of infinitesimal rotations using <span class="math notranslate nohighlight">\(J_{x,y,z}\)</span>. Since <span class="math notranslate nohighlight">\(J_{x,y}\)</span> can be written as linear combinations of <span class="math notranslate nohighlight">\(J_{\pm}\)</span>, we can describe rotations via actions of <span class="math notranslate nohighlight">\(J_z\)</span>, <span class="math notranslate nohighlight">\(J_{\pm}\)</span>. These change the values of <span class="math notranslate nohighlight">\(m\)</span> by integers, and do not change <span class="math notranslate nohighlight">\(j\)</span>. Thus, we can write <span class="math notranslate nohighlight">\((2 j + 1)\)</span> states <span class="math notranslate nohighlight">\(\ket{j,m}\)</span> as a complete, orthonogonal basis for an irreducible representation of <span class="math notranslate nohighlight">\(SO(3)\)</span>/<span class="math notranslate nohighlight">\(SU(2)\)</span>. We can normalize them so that they are an orthonormal basis.</p>
+<p>Thus, for any <span class="math notranslate nohighlight">\(j \in \half \CZ\)</span>, there is a <span class="math notranslate nohighlight">\((2 j + 1)\)</span>-dimensional irreducible representation labeled by <span class="math notranslate nohighlight">\(j\)</span>. These are spanned by the orthonormal basis <span class="math notranslate nohighlight">\(\ket{j,m}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\brket{j,m}{j,m'} = \delta_{m,m'}\]</div>
+<p>They are eigenstates of <span class="math notranslate nohighlight">\(J_z\)</span> with eigenvalues <span class="math notranslate nohighlight">\(m\hbar\)</span>. We call <span class="math notranslate nohighlight">\(j\)</span> the <em>total angular momentum</em>, while we call <span class="math notranslate nohighlight">\(m\)</span> the angular momentum along the <span class="math notranslate nohighlight">\({\hat z}\)</span> axis. This is sometimes also called the <em>magnetic quantum number</em>, because in the presence of a magnetic field in the <span class="math notranslate nohighlight">\(z\)</span> direction, the Hamiltonian for many particles includes a term like <span class="math notranslate nohighlight">\(-\mu J_z B\)</span>. We will further justify identifying <span class="math notranslate nohighlight">\(J_z\)</span> with angular momentum below.</p>
+<p>We can furthermore find the matrix elements of <span class="math notranslate nohighlight">\(J_{\pm}\)</span>. Using <span class="math notranslate nohighlight">\(J_+ = J_-^{\dagger}\)</span>, we compute</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\bra{j,m}J_- J_+ \ket{j,m} &amp; = \bra{j,m}({\vec J}^2 - J_z^2 - \hbar J_z)\ket{j,m}\\
+&amp; = \hbar^2(j-m)(j+m+1)
+\end{align}\end{split}\]</div>
+<p>Thus, after changing the normalization of <span class="math notranslate nohighlight">\(\ket{j,m}\)</span> by a phase, we can write</p>
+<div class="math notranslate nohighlight" id="equation-raising-op">
+<span class="eqno">(313)<a class="headerlink" href="#equation-raising-op" title="Link to this equation">#</a></span>\[J_+ \ket{j,m} = \hbar\sqrt{(j-m)(j+m+1)}\ket{j,m+1}\]</div>
+<p>A similar argument yields:</p>
+<div class="math notranslate nohighlight" id="equation-lowering-op">
+<span class="eqno">(314)<a class="headerlink" href="#equation-lowering-op" title="Link to this equation">#</a></span>\[J_-\ket{j,m} = \hbar\sqrt{(j+m)(j-m+1)} \ket{j,m-1}\]</div>
+<p>We denote these <span class="math notranslate nohighlight">\((2j + 1)\)</span>-dimensional representations as <span class="math notranslate nohighlight">\(D_j\)</span>. These are sometimes called “spin-j representations”.</p>
+<p>Now not all of these representations are in fact representations of <span class="math notranslate nohighlight">\(SO(3)\)</span>, To see this, consider the fact that rotations by <span class="math notranslate nohighlight">\(2\pi\)</span> abuot any axis should be the identity in <span class="math notranslate nohighlight">\(SO(3)\)</span>. COnsider rotations about <span class="math notranslate nohighlight">\({\hat z}\)</span>. The correesponding operator is <span class="math notranslate nohighlight">\(U(2\pi) = e^{2\pi i J_z/\hbar}\)</span>.</p>
+<p>Now, acting on <span class="math notranslate nohighlight">\(\ket{j,m}\)</span>, we have <span class="math notranslate nohighlight">\(U(2\pi) \ket{j,m} = e^{-2\pi i m}\)</span>. If <span class="math notranslate nohighlight">\(m\)</span> is an integer this is unity; if <span class="math notranslate nohighlight">\(m\)</span> is half-integer, this is <span class="math notranslate nohighlight">\(-\ket{j,m}\)</span>. Since the ideneity element of the group should map to the identity operator in the representation of the rotation group, irreps with <span class="math notranslate nohighlight">\(j = \CZ + \half\)</span> cannot be irreps of <span class="math notranslate nohighlight">\(SO(3)\)</span>. Thus the full set of irreps of <span class="math notranslate nohighlight">\(SO(3)\)</span> are <span class="math notranslate nohighlight">\(D_{j \in \CZ}\)</span>.</p>
+<p>Hoever, <span class="math notranslate nohighlight">\(D_j\)</span> are irreps of <span class="math notranslate nohighlight">\(SU(2)\)</span> for <em>all</em> <span class="math notranslate nohighlight">\(j\)</span>.</p>
+<p>We call all <span class="math notranslate nohighlight">\(D_j\)</span> irreducible representations of the rotation group, even for an odd half-integer. As we have seen there are particles which carry intrinsic angular momentum <span class="math notranslate nohighlight">\(j = \half\)</span>, and there are particles with spin equal to other half integers. Rotations act on the spin degrees of freedom, and while total angular momentum is conserved, angular momentum can be exchanged between spin angular momentum via effects such as spin-orbit coupling.</p>
+<p>Another more advanced point is that the rotations are part of the full set fo Lorentz transformations; starting from the full group of Lorentz transformations, rotations emerge as actions of <span class="math notranslate nohighlight">\(SU(2)\)</span>.</p>
+</section>
+<section id="examples-of-irreps">
+<h2>Examples of irreps<a class="headerlink" href="#examples-of-irreps" title="Link to this heading">#</a></h2>
+<section id="spin-0">
+<h3>Spin-<span class="math notranslate nohighlight">\(0\)</span><a class="headerlink" href="#spin-0" title="Link to this heading">#</a></h3>
+<p>This is the simplest/most trivial example; the corresponding irrep is one-dimensional. More generally there could be other degrees of freedom having nothing to do with angular momentum; we could imagine a situation where the angular momenbtum operator acts trivially on the whole Hilbert space so that every vector is a 1d irrep. More generally (in cases such as the hydrogen atom) we will find that there is a class of states which have <span class="math notranslate nohighlight">\(j = 0\)</span>; inthe hydrogen atom (ignoring electron spin) these are the S-wave states.</p>
+</section>
+<section id="spin-half">
+<h3>Spin-<span class="math notranslate nohighlight">\(\half\)</span><a class="headerlink" href="#spin-half" title="Link to this heading">#</a></h3>
+<p>The first nontrivial example, and one we have studied many times. In the basis <span class="math notranslate nohighlight">\(\ket{j,m} = \ket{\half,\pm \half}\)</span>, where <span class="math notranslate nohighlight">\(\ket{\half,\half}\)</span> is represented as <span class="math notranslate nohighlight">\(\begin{pmatrix} 1 \\ 0 \end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(\ket{\half,-\half}\)</span> is represented as <span class="math notranslate nohighlight">\(\begin{pmatrix} 0 \\ 1 \end{pmatrix}\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}J_z = \frac{\hbar}{2} \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} = \frac{\hbar}{2} \sigma_z\end{split}\]</div>
+<p>Now using Equations <a class="reference internal" href="#equation-raising-op">(313)</a>, {eq<code class="docutils literal notranslate"><span class="pre">lowering_op</span></code>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+J_+ &amp; = \hbar \begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} \\
+J_- &amp; = \hbar \begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(J_{\pm} = J_x \pm i J_y\)</span> we can solve for <span class="math notranslate nohighlight">\(J_{x,y}\)</span> to find</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align} 
+J_x &amp; = \frac{J_+ + J_-}{2} = \frac{\hbar}{2} \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0\end{pmatrix} = \frac{\hbar}{2} \sigma_x \\
+J_y &amp; = \frac{J_+ - J_-}{2i} =  \frac{\hbar}{2} \begin{pmatrix} 0 &amp; -i \\ i &amp; 0\end{pmatrix} = \frac{\hbar}{2} \sigma_y
+\end{align}\end{split}\]</div>
+<p>Note that these matrices are the same as appeared in the definition of <span class="math notranslate nohighlight">\(SU(2)\)</span>. Finally <span class="math notranslate nohighlight">\({\vec J}^2\)</span> has eigenvalue <span class="math notranslate nohighlight">\(\hbar^2 j(j+1) = \frac{3\hbar^2}{4}\)</span>.</p>
+<p>A general rotation is repreented by the operator</p>
+<div class="math notranslate nohighlight">
+\[U(\theta,{\hat n}) = e^{- i \frac{\theta}{2} {\hat n}\cdot{\vec \sigma}}\]</div>
+</section>
+<section id="spin-1">
+<h3>Spin-<span class="math notranslate nohighlight">\(1\)</span><a class="headerlink" href="#spin-1" title="Link to this heading">#</a></h3>
+<p>The states <span class="math notranslate nohighlight">\(\ket{1,m}\)</span> with <span class="math notranslate nohighlight">\(m \in \{-1,0,1\}\)</span> form an orthonormal basis. Representing</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\ket{1,1} &amp; \to \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}\\
+\ket{1,0} &amp; \to \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}\\
+\ket{1,-1} &amp; \to \begin{pmatrix} 0 \\ 0 \\ -1 \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>we can compute <span class="math notranslate nohighlight">\(J_x\)</span>, <span class="math notranslate nohighlight">\(J_{\pm}\)</span>, <span class="math notranslate nohighlight">\(J_{x,y}\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+J_z &amp; = \hbar \begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 \end{pmatrix}\\
+J_+ &amp; = \sqrt{2} \hbar \begin{pmatrix} 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 \end{pmatrix}\\
+J_- &amp; = \sqrt{2} \hbar \begin{pmatrix} 0 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{pmatrix}\\
+J_x &amp; = \frac{\hbar}{\sqrt{2}} &amp; = \begin{pmatrix} 0 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 \end{pmatrix}\\
+J_y &amp; = \frac{\hbar}{\sqrt{2}} \begin{pmatrix} 0 &amp; -i &amp; 0 \\ i &amp; 0 &amp; -i \\ 0 &amp; i &amp; o \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>Unlike the case of spin-<span class="math notranslate nohighlight">\(\half\)</span>, these are not the matrices that define infinitesimal rotations acting on real vectors in <span class="math notranslate nohighlight">\(\CR^3\)</span>; we defined those in the previous section. In particular the component of <span class="math notranslate nohighlight">\({\vec V}\)</span> that is invariant under rotations about the <span class="math notranslate nohighlight">\(z\)</span> acis is <span class="math notranslate nohighlight">\(V_z\)</span>. There are no real vectors which are eigenvectors of <span class="math notranslate nohighlight">\(J_z\)</span> with eigenvalue <span class="math notranslate nohighlight">\(\pm 1\)</span>; the vectors which do have such behavior are complex, <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ \pm i \\ 0 \end{pmatrix}\)</span>.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="rotations.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Rotation Group</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendix.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-structure">General structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-irreps">Examples of irreps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-0">Spin-<span class="math notranslate nohighlight">\(0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-half">Spin-<span class="math notranslate nohighlight">\(\half\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-1">Spin-<span class="math notranslate nohighlight">\(1\)</span></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Albion Lawrence
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
