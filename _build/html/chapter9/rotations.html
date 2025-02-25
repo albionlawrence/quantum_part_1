@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter9/rotations';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="next" title="Representations of the rotation group" href="representations_rotations.html" />
     <link rel="prev" title="Transformations and symmetries" href="transformations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -226,6 +226,7 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="rotation_group.html">The Rotation Group in Quantum Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="transformations.html">Transformations and symmetries</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">The Rotation Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="representations_rotations.html">Representations of the rotation group</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -383,6 +384,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-transformations">Infinitesimal transformations</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-group-su-2">The Group <span class="math notranslate nohighlight">\(SU(2)\)</span></a></li>
 </ul>
             </nav>
         </div>
@@ -464,10 +466,48 @@ J_x &amp; = i\hbar \begin{pmatrix} 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 \\ 0 
 J_y &amp; = i\hbar \begin{pmatrix} 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 \\ -1 &amp; 0 &amp; 0 \end{pmatrix}\\
 J_z &amp; = i\hbar \begin{pmatrix} 0 &amp; -1 &amp; 0 \\ 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{pmatrix}
 \end{align}\end{split}\]</div>
-<p>We will see later why we use this normaization by <span class="math notranslate nohighlight">\(\hbar\)</span>. Finally, recall that the group structure can be built from teh commutation relations of the individual matrices. For these, you can show via brute force that</p>
+<p>We will see later why we use this normaization by <span class="math notranslate nohighlight">\(\hbar\)</span>. Finally, recall that the group structure can be built from the commutation relations of the individual matrices. For these, you can show via brute force that</p>
 <div class="math notranslate nohighlight">
 \[[J_I, J_J] = i\hbar \epsilon_{IJK} J_K\]</div>
+<p>Given all of this, we can build up any finite rotation from these matrices by a succession of infinitesimal rotations. That is, consider a rotation about <span class="math notranslate nohighlight">\({\hat n}\)</span> by an angle <span class="math notranslate nohighlight">\(\theta\)</span>. We can achieve this with <span class="math notranslate nohighlight">\(N\)</span> successive rotations about the same axis, each with angle <span class="math notranslate nohighlight">\(\theta/N\)</span>. As <span class="math notranslate nohighlight">\(N \to \infty\)</span>, each rotation is well approximated by</p>
+<div class="math notranslate nohighlight">
+\[	R(\theta/N, {\hat n}) = {\bf 1} - i \frac{\theta}{N} \hbar \frac{{\vec J}\cdot{\hat n}}{\hbar}\]</div>
+<p>Now</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\lim_{N\to\infty} \left(1 + \frac{x}{N}\right)^N &amp; = 
+\lim_{N \to infty} e^{N \ln (1 + x/N)}\\
+&amp; = \lim_{N \to infty} e^{N \left( \frac{x}{N} + \frac{x^2}{2 N^2} + \ldots\right)} \\
+&amp; =  \lim_{N \to infty} e^{x + \cO(1/N)} = e^x
+\end{align}\end{split}\]</div>
+<p>Thus, we can write</p>
+<div class="math notranslate nohighlight">
+\[R(\theta, \hat n) = \lim_{N\to\infty} R(\theta/N,{\hat n})^N = e^{- i \theta {\vec J}\cdot{\hat n}/\hbar}\]</div>
 </section>
+</section>
+<section id="the-group-su-2">
+<h2>The Group <span class="math notranslate nohighlight">\(SU(2)\)</span><a class="headerlink" href="#the-group-su-2" title="Link to this heading">#</a></h2>
+<p>The group of <span class="math notranslate nohighlight">\(n\times n\)</span> unitary matrices is called <span class="math notranslate nohighlight">\(U(n)\)</span>. In generak the determinants of such matrices are pure phase. The <em>special unitary group</em> <span class="math notranslate nohighlight">\(SU(n)\)</span> consists of all such matrices with determinant <span class="math notranslate nohighlight">\(1\)</span>. Since the determinant of the product oof matrices is the product of their determinants, this is a genuine subgroup of <span class="math notranslate nohighlight">\(U(n)\)</span>.</p>
+<p>We wish to describe the simplest special unitary group, <span class="math notranslate nohighlight">\(SU(n)\)</span>. All such matrices take the form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}M = \begin{pmatrix} a &amp; b \\ - b^* a^* \end{pmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a, b \in \CC\)</span>, <span class="math notranslate nohighlight">\(|a|^2 + |b|^2 = 1\)</span>. We can rewrite these in terms of the Pauli matrices:</p>
+<div class="math notranslate nohighlight">
+\[M = a_r {\bf 1} + i b_i \sigma_x + i b_r \sigma_y + i a_i \sigma_z\]</div>
+<p>where <span class="math notranslate nohighlight">\(a = a_r + a_i\)</span>, <span class="math notranslate nohighlight">\(b = b_r + i b_i\)</span>, and <span class="math notranslate nohighlight">\(a_{i,r},b_{i,r} \in \CR\)</span>.</p>
+<p>Now if we set <span class="math notranslate nohighlight">\(a_i, b_r, b_i \in \cO(\eps)\)</span> for <span class="math notranslate nohighlight">\(\eps \ll 1\)</span>, the constraint <span class="math notranslate nohighlight">\(|a|^2 + |b|^2 = 1\)</span> demands that <span class="math notranslate nohighlight">\(a_r \sim 1 + \cO(\eps^2)\)</span>. Thus, for infinitesimal transformations,</p>
+<div class="math notranslate nohighlight">
+\[M \sim {\bf 1} + i \alpha {\hat n} \cdot {\vec \sigma}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha = \sqrt{|a_i|^2 + |b_r|^2 + b_i|^2}\)</span>, and</p>
+<div class="math notranslate nohighlight">
+\[{\hat n} = \frac{1}{\alpha}(b_i, b_r, a_i)\]</div>
+<p>If we define <span class="math notranslate nohighlight">\({\vec J} = \frac{\hbar}{2} {\vec \sigma}\)</span>, we have the commutation relations</p>
+<div class="math notranslate nohighlight">
+\[[J_I, J_J] = i \hbar \epsilon_{IJK} J_K\]</div>
+<p>If we set <span class="math notranslate nohighlight">\(\theta = 2\alpha\)</span>, then we have</p>
+<div class="math notranslate nohighlight">
+\[M \sim {\bf 1} + i \theta \frac{{\vec J}\cdot{\hat n}}{\hbar}\]</div>
+<p>which takes the same form as the infinitesimal rotation matrices in <span class="math notranslate nohighlight">\(SO(3)\)</span>, for which <span class="math notranslate nohighlight">\(J_I\)</span> have the same commutation relations. It is tempting to state that <span class="math notranslate nohighlight">\(SO(3)\)</span> and <span class="math notranslate nohighlight">\(SU(2)\)</span> are the same group. As it happens, this is not quite true; rather (as we will see), <span class="math notranslate nohighlight">\(SU(2)\)</span> is the <em>double cover</em> of <span class="math notranslate nohighlight">\(SO(3)\)</span>; that is if we map <span class="math notranslate nohighlight">\(SU(2)\)</span> to <span class="math notranslate nohighlight">\(SO(3)\)</span> the map is generally 2-to-1.</p>
 </section>
 </section>
 
@@ -511,11 +551,11 @@ J_z &amp; = i\hbar \begin{pmatrix} 0 &amp; -1 &amp; 0 \\ 1 &amp; 0 &amp; 0 \\ 0 
       </div>
     </a>
     <a class="right-next"
-       href="../appendix.html"
+       href="representations_rotations.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix</p>
+        <p class="prev-next-title">Representations of the rotation group</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -540,6 +580,7 @@ J_z &amp; = i\hbar \begin{pmatrix} 0 &amp; -1 &amp; 0 \\ 1 &amp; 0 &amp; 0 \\ 0 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-transformations">Infinitesimal transformations</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-group-su-2">The Group <span class="math notranslate nohighlight">\(SU(2)\)</span></a></li>
 </ul>
   </nav></div>
 

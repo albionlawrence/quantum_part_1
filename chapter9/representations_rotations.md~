@@ -1,0 +1,10 @@
+# Representations of the rotation group
+
+## General structure
+
+We will find that the commutation relations of *infinitesimal* operators put strong constraints o n the irreducible representations of the rotation group. The basic strategy is somewhat analogous to that we used to solve for the simple harmonic oscillator. 
+
+Recall that for infinitesimal rotations by angle $\theta$ about an axis described by unit vector ${\hat n}$, $R \sim \delta - i \theta \frac{{\vec J}\cdot{\hat n}}{\hbar}$; the commutation relations of $J$ are: $[J_I, J_J] = i\hbar \epsilon_{IJK} J^K$. 
+
+In a unitary representation, $U(R) \sim {\bf 1} - i \theta \frac{{\hat J}^I {\hat n}_I}{\hbar}$ where ${\hat J}$ is a Hermitian operator. As we have shown, the commutation relations of innfinitesimal operators determine the structure of non-Abelian multiplication for any group elements (which can be built from successive infinitesimal rotations). Therefore ${\hat J}^I$ must satisfy the same algebra as the matrices we constructed above: [{\hat J}_I, {\hat J}_J] = i \hbar \epsilon_{IJK} {\hat J}^K$. 
+

@@ -27,8 +27,6 @@ ${\rm det} R = \pm 1$. The matrices with opposite determinants are not continuou
 
 ## Rotations in three dimensions
 
-
-
 In this case, 
 ```{math}
 \Pi = - {\bf 1}
@@ -93,8 +91,58 @@ J_y & = i\hbar \begin{pmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ -1 & 0 & 0 \end{pmatrix
 J_z & = i\hbar \begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}
 \end{align}
 ```
-We will see later why we use this normaization by $\hbar$. Finally, recall that the group structure can be built from teh commutation relations of the individual matrices. For these, you can show via brute force that
+We will see later why we use this normaization by $\hbar$. Finally, recall that the group structure can be built from the commutation relations of the individual matrices. For these, you can show via brute force that
 ```{math}
 [J_I, J_J] = i\hbar \epsilon_{IJK} J_K
 ```
+
+Given all of this, we can build up any finite rotation from these matrices by a succession of infinitesimal rotations. That is, consider a rotation about ${\hat n}$ by an angle $\theta$. We can achieve this with $N$ successive rotations about the same axis, each with angle $\theta/N$. As $N \to \infty$, each rotation is well approximated by 
+```{math}
+	R(\theta/N, {\hat n}) = {\bf 1} - i \frac{\theta}{N} \hbar \frac{{\vec J}\cdot{\hat n}}{\hbar}
+```
+Now 
+```{math}
+\begin{align}
+\lim_{N\to\infty} \left(1 + \frac{x}{N}\right)^N & = 
+\lim_{N \to infty} e^{N \ln (1 + x/N)}\\
+& = \lim_{N \to infty} e^{N \left( \frac{x}{N} + \frac{x^2}{2 N^2} + \ldots\right)} \\
+& =  \lim_{N \to infty} e^{x + \cO(1/N)} = e^x
+\end{align}
+```
+Thus, we can write
+```{math}
+R(\theta, \hat n) = \lim_{N\to\infty} R(\theta/N,{\hat n})^N = e^{- i \theta {\vec J}\cdot{\hat n}/\hbar}
+```
+
+## The Group $SU(2)$
+
+The group of $n\times n$ unitary matrices is called $U(n)$. In generak the determinants of such matrices are pure phase. The *special unitary group* $SU(n)$ consists of all such matrices with determinant $1$. Since the determinant of the product oof matrices is the product of their determinants, this is a genuine subgroup of $U(n)$.
+
+We wish to describe the simplest special unitary group, $SU(n)$. All such matrices take the form
+```{math}
+M = \begin{pmatrix} a & b \\ - b^* a^* \end{pmatrix}
+```
+where $a, b \in \CC$, $|a|^2 + |b|^2 = 1$. We can rewrite these in terms of the Pauli matrices:
+```{math}
+M = a_r {\bf 1} + i b_i \sigma_x + i b_r \sigma_y + i a_i \sigma_z
+```
+where $a = a_r + a_i$, $b = b_r + i b_i$, and $a_{i,r},b_{i,r} \in \CR$. 
+
+Now if we set $a_i, b_r, b_i \in \cO(\eps)$ for $\eps \ll 1$, the constraint $|a|^2 + |b|^2 = 1$ demands that $a_r \sim 1 + \cO(\eps^2)$. Thus, for infinitesimal transformations, 
+```{math}
+M \sim {\bf 1} + i \alpha {\hat n} \cdot {\vec \sigma}
+```
+where $\alpha = \sqrt{|a_i|^2 + |b_r|^2 + b_i|^2}$, and 
+```{math}
+{\hat n} = \frac{1}{\alpha}(b_i, b_r, a_i)
+```
+If we define ${\vec J} = \frac{\hbar}{2} {\vec \sigma}$, we have the commutation relations
+```{math}
+[J_I, J_J] = i \hbar \epsilon_{IJK} J_K
+```
+If we set $\theta = 2\alpha$, then we have
+```{math}
+M \sim {\bf 1} + i \theta \frac{{\vec J}\cdot{\hat n}}{\hbar}
+```
+which takes the same form as the infinitesimal rotation matrices in $SO(3)$, for which $J_I$ have the same commutation relations. It is tempting to state that $SO(3)$ and $SU(2)$ are the same group. As it happens, this is not quite true; rather (as we will see), $SU(2)$ is the *double cover* of $SO(3)$; that is if we map $SU(2)$ to $SO(3)$ the map is generally 2-to-1. 
 

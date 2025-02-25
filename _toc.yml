@@ -49,6 +49,7 @@ chapters:
     sections:
     - file: chapter9/transformations
     - file: chapter9/rotations
+    - file: chapter9/representations_rotations
   - file: appendix
   - file: bibliography
 # - file: notebooks

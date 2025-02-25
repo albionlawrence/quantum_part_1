@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Interlude: two interesting systems &#8212; Physics 162</title>
+    <title>Representations of the rotation group &#8212; Physics 162</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"], "cO": ["\\mathcal{O}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter6/Interlude_1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter9/representations_rotations';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Aharonov-Bohm effect" href="aharonov-bohm.html" />
-    <link rel="prev" title="Dynamics I" href="../chapter5/dynamics_1.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="The Rotation Group" href="rotations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -208,9 +208,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter5/dynamics_1.html">Dynamics I</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Interlude: two interesting systems</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="aharonov-bohm.html">The Aharonov-Bohm effect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="neutrino_oscillations.html">Neutrino oscillations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/Interlude_1.html">Interlude: two interesting systems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/aharonov-bohm.html">The Aharonov-Bohm effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/neutrino_oscillations.html">Neutrino oscillations</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter7/Wave_examples.html">Examples of nonrelativistic quantum particle dynamics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -223,10 +223,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter8/FPI.html">The Feynman Path Integral</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/rotation_group.html">The Rotation Group in Quantum Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/transformations.html">Transformations and symmetries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/rotations.html">The Rotation Group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter9/representations_rotations.html">Representations of the rotation group</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="rotation_group.html">The Rotation Group in Quantum Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="transformations.html">Transformations and symmetries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rotations.html">The Rotation Group</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Representations of the rotation group</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -285,7 +285,7 @@
       
       
       
-      <li><a href="../_sources/chapter6/Interlude_1.md" target="_blank"
+      <li><a href="../_sources/chapter9/representations_rotations.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -356,7 +356,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -367,11 +369,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Interlude: two interesting systems</h1>
+    <h1>Representations of the rotation group</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-structure">General structure</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -381,11 +391,93 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="interlude-two-interesting-systems">
-<h1>Interlude: two interesting systems<a class="headerlink" href="#interlude-two-interesting-systems" title="Link to this heading">#</a></h1>
-<p>The goal of this next section (following chapter 6 of the book) is to explore a couple of actually observable and important effects that get at the basic structure of quantum mechanics. The first, the Aharaonov-Bohm effect, follows naturally fro mthe previous section. The second, neutrino oscillations, could perhaps have been discussed earlier, but there is no time like the present.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="representations-of-the-rotation-group">
+<h1>Representations of the rotation group<a class="headerlink" href="#representations-of-the-rotation-group" title="Link to this heading">#</a></h1>
+<section id="general-structure">
+<h2>General structure<a class="headerlink" href="#general-structure" title="Link to this heading">#</a></h2>
+<p>We will find that the commutation relations of <em>infinitesimal</em> operators put strong constraints o n the irreducible representations of the rotation group. The basic strategy is somewhat analogous to that we used to solve for the simple harmonic oscillator.</p>
+<p>Recall that for infinitesimal rotations by angle <span class="math notranslate nohighlight">\(\theta\)</span> about an axis described by unit vector <span class="math notranslate nohighlight">\({\hat n}\)</span>, <span class="math notranslate nohighlight">\(R \sim \delta - i \theta \frac{{\vec J}\cdot{\hat n}}{\hbar}\)</span>; the commutation relations of <span class="math notranslate nohighlight">\(J\)</span> are: <span class="math notranslate nohighlight">\([J_I, J_J] = i\hbar \epsilon_{IJK} J^K\)</span>.</p>
+<p>In a unitary representation, <span class="math notranslate nohighlight">\(U(R) \sim {\bf 1} - i \theta \frac{{\hat J}^I {\hat n}_I}{\hbar}\)</span> where <span class="math notranslate nohighlight">\({\hat J}\)</span> is a Hermitian operator. As we have shown, the commutation relations of infinitesimal operators determine the structure of non-Abelian multiplication for any group elements (which can be built from successive infinitesimal rotations). Therefore <span class="math notranslate nohighlight">\({\hat J}^I\)</span> must satisfy the same algebra as the matrices we constructed above: <span class="math notranslate nohighlight">\([{\hat J}_I, {\hat J}_J] = i \hbar \epsilon_{IJK} {\hat J}^K\)</span>. Following the discussion in the previous section, the action of a finite rotation by angle <span class="math notranslate nohighlight">\(\theta\)</span> about an axis <span class="math notranslate nohighlight">\({\hat n}\)</span> is then:</p>
+<div class="math notranslate nohighlight">
+\[U(R(\theta,{\hat n})) = e^{- i \theta {\hat n}\cdot{\hat{\vec J}}/\hbar}\]</div>
+<p>We start by finding a set of commuting Hermitian operators built from <span class="math notranslate nohighlight">\({\hat{\vec J}}\)</span>. These can be mutually diagonalizable. First, you can show that <span class="math notranslate nohighlight">\({\vec J}^2\)</span> commutes with all of <span class="math notranslate nohighlight">\({\hat J}_I\)</span>. You can show this by brute force. You can also note that <span class="math notranslate nohighlight">\({\vec J}\)</span> generates infinitesimal rotations; but <span class="math notranslate nohighlight">\({\vec J}^2\)</span> is the square of a vector and isn’t exopected to change under rotations. In saying this I am sweeping a lot under the rug – what is a vector operator and how does it transform?.</p>
+<p>Since <span class="math notranslate nohighlight">\({\vec J}^2\)</span> commutes with <span class="math notranslate nohighlight">\(J_I\)</span> for all <span class="math notranslate nohighlight">\(I\)</span>, the eigenvalue for <span class="math notranslate nohighlight">\({\vec J}^2\)</span> is invariant under rotations. Since the definition of an irreducible representation is that the only subspace which is invariant under rotations is the whole vector space, an irrep must have a fixed value of <span class="math notranslate nohighlight">\({\vec J}^2\)</span>.</p>
+<p>By tradition we also pick the operator <span class="math notranslate nohighlight">\({\hat J}_z\)</span> and mutually diagonalize <span class="math notranslate nohighlight">\({\vec J}^2\)</span>, <span class="math notranslate nohighlight">\(J_z\)</span>. That is the irrep should have an orthornormal basis <span class="math notranslate nohighlight">\(\ket{\alpha,\beta}\)</span> such that <span class="math notranslate nohighlight">\({\vec J}^2\ket{\alpha,\beta} = \alpha \ket{\alpha,\beta}\)</span> and <span class="math notranslate nohighlight">\({\hat J}_z\ket{\alpha,\beta} = \beta\ket{\alpha,\beta}\)</span>.</p>
+<p>Next, we construct the operators</p>
+<div class="math notranslate nohighlight">
+\[J_{\pm} = J_x \pm i J_y = J_{\mp}^{\dagger}\]</div>
+<p>These satisfy the commutation relations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+[J_z, J_{\pm}] &amp; = \pm \hbar J_{\pm} \\
+[J_+,J_-] &amp; = 2\hbar J_z\\
+[J_{\pm}, {\vec J}^2] &amp; = 0
+\end{align}\end{split}\]</div>
+<p>First, we can show that <span class="math notranslate nohighlight">\(\alpha \geq \beta^2\)</span>. This is based on the relations:</p>
+<div class="math notranslate nohighlight">
+\[{\vec J}^2 - J_z^2 = J_x^2 J_y^2 = J_+ J_- + J_- J_+\]</div>
+<p>Thus</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\alpha - \beta^2 &amp; = \bra{\alpha,\beta} ({\vec J}^2 - J_z^2) \ket{\alpha,\beta}\\
+&amp; = \bra{\alpha,\beta} (J_+ J_- + J_- J_+)  \ket{\alpha,\beta}\\
+&amp; = ||J_- \ket{\alpha,\beta}||^2 + || J_+ \ket{\alpha,\beta}||^2 \geq 0
+\end{align}\end{split}\]</div>
+<p>Next, from the commutation relations for <span class="math notranslate nohighlight">\(J_{\pm}, J_z\)</span>, we find</p>
+<div class="math notranslate nohighlight">
+\[	J_{\pm}\ket{\alpha,\beta} = C_{\pm} \ket{\alpha,\beta \pm \hbar}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_{\pm} \in \CC\)</span> is a constant. Given this, <span class="math notranslate nohighlight">\(\beta\)</span> will have a maximum <span class="math notranslate nohighlight">\(\beta_{max}^2 \leq \alpha\)</span> and a minimum <span class="math notranslate nohighlight">\(\beta_{min}^2 \leq \alpha\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+J_+ \ket{\alpha,\beta_{max}} &amp; = 0\\
+J_-\ket{\alpha,\beta_{min}} &amp; = 0
+\end{align}\end{split}\]</div>
+<p>Now, we can use the commutation relations to find:</p>
+<div class="math notranslate nohighlight">
+\[J_{\pm} J_{\mp} = J_x^2 + J_y^2 \mp [J_x,J_y] = {\vec J}^2 - J_z^2 \pm \hbar J_z\]</div>
+<p>Therefore:</p>
+<div class="math notranslate nohighlight" id="equation-highest-weights">
+<span class="eqno">(312)<a class="headerlink" href="#equation-highest-weights" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+J_+ J_- \ket{\alpha,\beta_{min}} &amp; = 0 = \alpha - \beta_{min}^2 + \hbar \beta_{min}\\
+J_- J_+ \ket{\alpha,\beta_{max}} &amp; = 0 = \alpha - \beta_{max}^2 - \hbar \beta_{max}
+\end{align}\end{split}\]</div>
+<p>Solving the resulting quadratic equation for <span class="math notranslate nohighlight">\(\beta_{max}\)</span> we find</p>
+<div class="math notranslate nohighlight">
+\[\beta_{max} = \frac{- \hbar \pm \sqrt{\hbar^2 + \alpha}}{2}\]</div>
+<p>The constraint <span class="math notranslate nohighlight">\(\alpha \geq \beta_{max}^2\)</span> menas that we must choose the positive branch. Similarly, we can show that</p>
+<div class="math notranslate nohighlight">
+\[\beta_{min} = \frac{\hbar - \sqrt{\hbar^2 + 4\alpha}}{2} = - \beta_{max}\]</div>
+<p>Now if we start with <span class="math notranslate nohighlight">\(\ket{\alpha,\beta_{min}}\)</span> and act on it with <span class="math notranslate nohighlight">\(J_+^n\)</span> there is some minimum <span class="math notranslate nohighlight">\(n\)</span> for which <span class="math notranslate nohighlight">\(J_+^{n + 1} \ket{\alpha,\beta_{min}} = 0\)</span>. This means that</p>
+<div class="math notranslate nohighlight">
+\[J_+^n \ket{\alpha,\beta_{min}} \propto \ket{\alpha, \beta_{max}}\]</div>
+<p>For this to hold, we must have</p>
+<div class="math notranslate nohighlight">
+\[	\beta_{\max} = n \hbar + \beta_{min} = n\hbar - \beta_{max} \Rightarrow \beta_{max} = \frac{n \hbar}{2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\in \CZ, n \geq 0\)</span>. If we define <span class="math notranslate nohighlight">\(j = \frac{n}{2} \geq 0\)</span>, <span class="math notranslate nohighlight">\(\beta_{max} = \hbar j\)</span>, the second equation in <a class="reference internal" href="#equation-highest-weights">(312)</a> becomes <span class="math notranslate nohighlight">\(\alpha = \hbar^2 j(j+1)\)</span>. We then have <span class="math notranslate nohighlight">\(\beta = m \hbar\)</span>, with <span class="math notranslate nohighlight">\(m \in (-j, -j + 1, \ldots, j - 1, j)\)</span>. From here on out we denote the states <span class="math notranslate nohighlight">\(\ket{\alpha,\beta}\)</span> as <span class="math notranslate nohighlight">\(\ket{j,m}\)</span>, with <span class="math notranslate nohighlight">\(\alpha = \hbar^2 j(j+1)\)</span>, and <span class="math notranslate nohighlight">\(\beta = \hbar m\)</span>.</p>
+<p>Now, any rotation can be written in terms of infinitesimal rotations using <span class="math notranslate nohighlight">\(J_{x,y,z}\)</span>. Since <span class="math notranslate nohighlight">\(J_{x,y}\)</span> can be written as linear combinations of <span class="math notranslate nohighlight">\(J_{\pm}\)</span>, we can describe rotations via actions of <span class="math notranslate nohighlight">\(J_z\)</span>, <span class="math notranslate nohighlight">\(J_{\pm}\)</span>. These change the values of <span class="math notranslate nohighlight">\(m\)</span> by integers, and do not change <span class="math notranslate nohighlight">\(j\)</span>. Thus, we can write <span class="math notranslate nohighlight">\((2 j + 1)\)</span> states <span class="math notranslate nohighlight">\(\ket{j,m}\)</span> as a complete, orthonogonal basis for an irreducible representation of <span class="math notranslate nohighlight">\(SO(3)\)</span>/<span class="math notranslate nohighlight">\(SU(2)\)</span>. We can normalize them so that they are an orthonormal basis.</p>
+<p>Thus, for any <span class="math notranslate nohighlight">\(j \in \half \CZ\)</span>, there is a <span class="math notranslate nohighlight">\((2 j + 1)\)</span>-dimensional irreducible representation labeled by <span class="math notranslate nohighlight">\(j\)</span>. These are spanned by the orthonormal basis <span class="math notranslate nohighlight">\(\ket{j,m}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\brket{j,m}{j,m'} = \delta_{m,m'}\]</div>
+<p>They are eigenstates of <span class="math notranslate nohighlight">\(J_z\)</span> with eigenvalues <span class="math notranslate nohighlight">\(m\hbar\)</span>.</p>
+<p>We can furthermore find the matrix elements of <span class="math notranslate nohighlight">\(J_{\pm}\)</span>. Using <span class="math notranslate nohighlight">\(J_+ = J_-^{\dagger}\)</span>, we compute</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\bra{j,m}J_- J_+ \ket{j,m} &amp; = \bra{j,m}({\vec J}^2 - J_z^2 - \hbar J_z)\ket{j,m}\\
+&amp; = \hbar^2(j-m)(j+m+1)
+\end{align}\end{split}\]</div>
+<p>Thus, after changing the normalization of <span class="math notranslate nohighlight">\(\ket{j,m}\)</span> by a phase, we can write</p>
+<div class="math notranslate nohighlight">
+\[J_+ \ket{j,m} = \hbar\sqrt{(j-m)(j+m+1)}\ket{j,m+1}\]</div>
+<p>A similar argument yields:</p>
+<div class="math notranslate nohighlight">
+\[J_-\ket{j,m} = \hbar\sqrt{(j+m)(j-m+1)} \ket{j,m-1}\]</div>
+<p>We denote these <span class="math notranslate nohighlight">\((2j + 1)\)</span>-dimensional representations as <span class="math notranslate nohighlight">\(D_j\)</span>. These are sometimes called “spin-j representations”.</p>
+<p>Now not all of these representations are in fact representations of <span class="math notranslate nohighlight">\(SO(3)\)</span>, To see this, consider the fact that rotations by <span class="math notranslate nohighlight">\(2\pi\)</span> abuot any axis should be the identity in <span class="math notranslate nohighlight">\(SO(3)\)</span>. COnsider rotations about <span class="math notranslate nohighlight">\({\hat z}\)</span>. The correesponding operator is <span class="math notranslate nohighlight">\(U(2\pi) = e^{2\pi i J_z/\hbar}\)</span>.</p>
+<p>Now, acting on <span class="math notranslate nohighlight">\(\ket{j,m}\)</span>, we have <span class="math notranslate nohighlight">\(U(2\pi) \ket{j,m} = e^{-2\pi i m}\)</span>. If <span class="math notranslate nohighlight">\(m\)</span> is an integer this is unity; if <span class="math notranslate nohighlight">\(m\)</span> is half-integer, this is <span class="math notranslate nohighlight">\(-\ket{j,m}\)</span>. Since the ideneity element of the group should map to the identity operator in the representation of the rotation group, irreps with <span class="math notranslate nohighlight">\(j = \CZ + \half\)</span> cannot be irreps of <span class="math notranslate nohighlight">\(SO(3)\)</span>. Thus the full set of irreps of <span class="math notranslate nohighlight">\(SO(3)\)</span> are <span class="math notranslate nohighlight">\(D_{j \in \CZ}\)</span>.</p>
+<p>Hoever, <span class="math notranslate nohighlight">\(D_j\)</span> are irreps of <span class="math notranslate nohighlight">\(SU(2)\)</span> for <em>all</em> <span class="math notranslate nohighlight">\(j\)</span>.</p>
+<p>We call all <span class="math notranslate nohighlight">\(D_j\)</span> irreducible representations of the rotation group, even for an odd half-integer. As we will see there are particles which carry intrinsic angular momentum <span class="math notranslate nohighlight">\(j = \half\)</span> or other half integers. Rotations act on the spin degrees of freedom.</p>
+<p>Another more advanced point is that the rotations are part of the full set fo Lorentz transformations; starting from the full group of Lorentz transformations, rotations emerge as actions of <span class="math notranslate nohighlight">\(SU(2)\)</span>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -401,7 +493,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapter6"
+            path: "./chapter9"
         },
         predefinedOutput: true
     }
@@ -419,20 +511,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../chapter5/dynamics_1.html"
+       href="rotations.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Dynamics I</p>
+        <p class="prev-next-title">The Rotation Group</p>
       </div>
     </a>
     <a class="right-next"
-       href="aharonov-bohm.html"
+       href="../appendix.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">The Aharonov-Bohm effect</p>
+        <p class="prev-next-title">Appendix</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -442,6 +534,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-structure">General structure</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
