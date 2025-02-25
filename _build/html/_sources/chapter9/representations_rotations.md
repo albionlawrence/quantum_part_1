@@ -93,7 +93,7 @@ Thus, for any $j \in \half \CZ$, there is a $(2 j + 1)$-dimensional irreducible 
 ```{math}
 \brket{j,m}{j,m'} = \delta_{m,m'}
 ```
-They are eigenstates of $J_z$ with eigenvalues $m\hbar$.
+They are eigenstates of $J_z$ with eigenvalues $m\hbar$. We call $j$ the *total angular momentum*, while we call $m$ the angular momentum along the ${\hat z}$ axis. This is sometimes also called the *magnetic quantum number*, because in the presence of a magnetic field in the $z$ direction, the Hamiltonian for many particles includes a term like $-\mu J_z B$. We will further justify identifying $J_z$ with angular momentum below.
 
 We can furthermore find the matrix elements of $J_{\pm}$. Using $J_+ = J_-^{\dagger}$, we compute
 ```{math}
@@ -104,10 +104,12 @@ We can furthermore find the matrix elements of $J_{\pm}$. Using $J_+ = J_-^{\dag
 ```
 Thus, after changing the normalization of $\ket{j,m}$ by a phase, we can write
 ```{math}
+:label: raising_op
 J_+ \ket{j,m} = \hbar\sqrt{(j-m)(j+m+1)}\ket{j,m+1}
 ```
 A similar argument yields:
 ```{math}
+:label: lowering_op
 J_-\ket{j,m} = \hbar\sqrt{(j+m)(j-m+1)} \ket{j,m-1}
 ```
 
@@ -119,7 +121,64 @@ Now, acting on $\ket{j,m}$, we have $U(2\pi) \ket{j,m} = e^{-2\pi i m}$. If $m$ 
 
 Hoever, $D_j$ are irreps of $SU(2)$ for *all* $j$.
 
-We call all $D_j$ irreducible representations of the rotation group, even for an odd half-integer. As we will see there are particles which carry intrinsic angular momentum $j = \half$ or other half integers. Rotations act on the spin degrees of freedom.
+We call all $D_j$ irreducible representations of the rotation group, even for an odd half-integer. As we have seen there are particles which carry intrinsic angular momentum $j = \half$, and there are particles with spin equal to other half integers. Rotations act on the spin degrees of freedom, and while total angular momentum is conserved, angular momentum can be exchanged between spin angular momentum via effects such as spin-orbit coupling.
 
 Another more advanced point is that the rotations are part of the full set fo Lorentz transformations; starting from the full group of Lorentz transformations, rotations emerge as actions of $SU(2)$.
+
+## Examples of irreps
+
+### Spin-$0$
+
+This is the simplest/most trivial example; the corresponding irrep is one-dimensional. More generally there could be other degrees of freedom having nothing to do with angular momentum; we could imagine a situation where the angular momenbtum operator acts trivially on the whole Hilbert space so that every vector is a 1d irrep. More generally (in cases such as the hydrogen atom) we will find that there is a class of states which have $j = 0$; inthe hydrogen atom (ignoring electron spin) these are the S-wave states.
+
+### Spin-$\half$
+
+The first nontrivial example, and one we have studied many times. In the basis $\ket{j,m} = \ket{\half,\pm \half}$, where $\ket{\half,\half}$ is represented as $\begin{pmatrix} 1 \\ 0 \end{pmatrix}$ and $\ket{\half,-\half}$ is represented as $\begin{pmatrix} 0 \\ 1 \end{pmatrix}$, we have
+```{math}
+J_z = \frac{\hbar}{2} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} = \frac{\hbar}{2} \sigma_z
+```
+Now using Equations {eq}`raising_op`, {eq`lowering_op`, we have
+```{math}
+\begin{align}
+J_+ & = \hbar \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \\
+J_- & = \hbar \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}
+\end{align}
+```
+Since $J_{\pm} = J_x \pm i J_y$ we can solve for $J_{x,y}$ to find
+```{math}
+\begin{align} 
+J_x & = \frac{J_+ + J_-}{2} = \frac{\hbar}{2} \begin{pmatrix} 0 & 1 \\ 1 & 0\end{pmatrix} = \frac{\hbar}{2} \sigma_x \\
+J_y & = \frac{J_+ - J_-}{2i} =  \frac{\hbar}{2} \begin{pmatrix} 0 & -i \\ i & 0\end{pmatrix} = \frac{\hbar}{2} \sigma_y
+\end{align}
+```
+Note that these matrices are the same as appeared in the definition of $SU(2)$. Finally ${\vec J}^2$ has eigenvalue $\hbar^2 j(j+1) = \frac{3\hbar^2}{4}$. 
+
+A general rotation is repreented by the operator
+```{math}
+U(\theta,{\hat n}) = e^{- i \frac{\theta}{2} {\hat n}\cdot{\vec \sigma}}
+```
+
+### Spin-$1$
+
+The states $\ket{1,m}$ with $m \in \{-1,0,1\}$ form an orthonormal basis. Representing
+```{math}
+\begin{align}
+\ket{1,1} & \to \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}\\
+\ket{1,0} & \to \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}\\
+\ket{1,-1} & \to \begin{pmatrix} 0 \\ 0 \\ -1 \end{pmatrix}
+\end{align}
+```
+we can compute $J_x$, $J_{\pm}$, $J_{x,y}$ as
+```{math}
+\begin{align}
+J_z & = \hbar \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & -1 \end{pmatrix}\\
+J_+ & = \sqrt{2} \hbar \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix}\\
+J_- & = \sqrt{2} \hbar \begin{pmatrix} 0 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \end{pmatrix}\\
+J_x & = \frac{\hbar}{\sqrt{2}} & = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}\\
+J_y & = \frac{\hbar}{\sqrt{2}} \begin{pmatrix} 0 & -i & 0 \\ i & 0 & -i \\ 0 & i & o \end{pmatrix}
+\end{align}
+```
+
+Unlike the case of spin-$\half$, these are not the matrices that define infinitesimal rotations acting on real vectors in $\CR^3$; we defined those in the previous section. In particular the component of ${\vec V}$ that is invariant under rotations about the $z$ acis is $V_z$. There are no real vectors which are eigenvectors of $J_z$ with eigenvalue $\pm 1$; the vectors which do have such behavior are complex, $\frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ \pm i \\ 0 \end{pmatrix}$. 
+
 

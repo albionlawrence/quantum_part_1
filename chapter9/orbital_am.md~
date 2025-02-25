@@ -1,0 +1,8 @@
+# Orbital Angular Momentum
+
+Let us consider particles with no intrinsic spin. (Except for the Higgs boson, these will typically be composite particles such as atoms whose total spin vanishes, where we treat the atoms as point particles. Anothe rexample is the $\alpha$-particle which is a helium-4 nucleus, a spin-$0$ bound state of 2 protons and 2 neutrons.) If the particles are moving in $\mathbb{R}^3$, their Hilbert space is $L^2(\CR^3)$, and rotations act nontrivially. We can define the action of rotations in the position basis:
+```{math}
+U(R)\ket{\vec x} = \ket{\vec{R x}}
+```
+where $R$ is the $3\times 3$ matrix acting on vectors in $\CR^3$. Note that this means that
+```

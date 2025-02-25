@@ -380,6 +380,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-structure">General structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-irreps">Examples of irreps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-0">Spin-<span class="math notranslate nohighlight">\(0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-half">Spin-<span class="math notranslate nohighlight">\(\half\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-1">Spin-<span class="math notranslate nohighlight">\(1\)</span></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -458,7 +464,7 @@ J_- J_+ \ket{\alpha,\beta_{max}} &amp; = 0 = \alpha - \beta_{max}^2 - \hbar \bet
 <p>Thus, for any <span class="math notranslate nohighlight">\(j \in \half \CZ\)</span>, there is a <span class="math notranslate nohighlight">\((2 j + 1)\)</span>-dimensional irreducible representation labeled by <span class="math notranslate nohighlight">\(j\)</span>. These are spanned by the orthonormal basis <span class="math notranslate nohighlight">\(\ket{j,m}\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[\brket{j,m}{j,m'} = \delta_{m,m'}\]</div>
-<p>They are eigenstates of <span class="math notranslate nohighlight">\(J_z\)</span> with eigenvalues <span class="math notranslate nohighlight">\(m\hbar\)</span>.</p>
+<p>They are eigenstates of <span class="math notranslate nohighlight">\(J_z\)</span> with eigenvalues <span class="math notranslate nohighlight">\(m\hbar\)</span>. We call <span class="math notranslate nohighlight">\(j\)</span> the <em>total angular momentum</em>, while we call <span class="math notranslate nohighlight">\(m\)</span> the angular momentum along the <span class="math notranslate nohighlight">\({\hat z}\)</span> axis. This is sometimes also called the <em>magnetic quantum number</em>, because in the presence of a magnetic field in the <span class="math notranslate nohighlight">\(z\)</span> direction, the Hamiltonian for many particles includes a term like <span class="math notranslate nohighlight">\(-\mu J_z B\)</span>. We will further justify identifying <span class="math notranslate nohighlight">\(J_z\)</span> with angular momentum below.</p>
 <p>We can furthermore find the matrix elements of <span class="math notranslate nohighlight">\(J_{\pm}\)</span>. Using <span class="math notranslate nohighlight">\(J_+ = J_-^{\dagger}\)</span>, we compute</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
@@ -466,17 +472,66 @@ J_- J_+ \ket{\alpha,\beta_{max}} &amp; = 0 = \alpha - \beta_{max}^2 - \hbar \bet
 &amp; = \hbar^2(j-m)(j+m+1)
 \end{align}\end{split}\]</div>
 <p>Thus, after changing the normalization of <span class="math notranslate nohighlight">\(\ket{j,m}\)</span> by a phase, we can write</p>
-<div class="math notranslate nohighlight">
-\[J_+ \ket{j,m} = \hbar\sqrt{(j-m)(j+m+1)}\ket{j,m+1}\]</div>
+<div class="math notranslate nohighlight" id="equation-raising-op">
+<span class="eqno">(313)<a class="headerlink" href="#equation-raising-op" title="Link to this equation">#</a></span>\[J_+ \ket{j,m} = \hbar\sqrt{(j-m)(j+m+1)}\ket{j,m+1}\]</div>
 <p>A similar argument yields:</p>
-<div class="math notranslate nohighlight">
-\[J_-\ket{j,m} = \hbar\sqrt{(j+m)(j-m+1)} \ket{j,m-1}\]</div>
+<div class="math notranslate nohighlight" id="equation-lowering-op">
+<span class="eqno">(314)<a class="headerlink" href="#equation-lowering-op" title="Link to this equation">#</a></span>\[J_-\ket{j,m} = \hbar\sqrt{(j+m)(j-m+1)} \ket{j,m-1}\]</div>
 <p>We denote these <span class="math notranslate nohighlight">\((2j + 1)\)</span>-dimensional representations as <span class="math notranslate nohighlight">\(D_j\)</span>. These are sometimes called “spin-j representations”.</p>
 <p>Now not all of these representations are in fact representations of <span class="math notranslate nohighlight">\(SO(3)\)</span>, To see this, consider the fact that rotations by <span class="math notranslate nohighlight">\(2\pi\)</span> abuot any axis should be the identity in <span class="math notranslate nohighlight">\(SO(3)\)</span>. COnsider rotations about <span class="math notranslate nohighlight">\({\hat z}\)</span>. The correesponding operator is <span class="math notranslate nohighlight">\(U(2\pi) = e^{2\pi i J_z/\hbar}\)</span>.</p>
 <p>Now, acting on <span class="math notranslate nohighlight">\(\ket{j,m}\)</span>, we have <span class="math notranslate nohighlight">\(U(2\pi) \ket{j,m} = e^{-2\pi i m}\)</span>. If <span class="math notranslate nohighlight">\(m\)</span> is an integer this is unity; if <span class="math notranslate nohighlight">\(m\)</span> is half-integer, this is <span class="math notranslate nohighlight">\(-\ket{j,m}\)</span>. Since the ideneity element of the group should map to the identity operator in the representation of the rotation group, irreps with <span class="math notranslate nohighlight">\(j = \CZ + \half\)</span> cannot be irreps of <span class="math notranslate nohighlight">\(SO(3)\)</span>. Thus the full set of irreps of <span class="math notranslate nohighlight">\(SO(3)\)</span> are <span class="math notranslate nohighlight">\(D_{j \in \CZ}\)</span>.</p>
 <p>Hoever, <span class="math notranslate nohighlight">\(D_j\)</span> are irreps of <span class="math notranslate nohighlight">\(SU(2)\)</span> for <em>all</em> <span class="math notranslate nohighlight">\(j\)</span>.</p>
-<p>We call all <span class="math notranslate nohighlight">\(D_j\)</span> irreducible representations of the rotation group, even for an odd half-integer. As we will see there are particles which carry intrinsic angular momentum <span class="math notranslate nohighlight">\(j = \half\)</span> or other half integers. Rotations act on the spin degrees of freedom.</p>
+<p>We call all <span class="math notranslate nohighlight">\(D_j\)</span> irreducible representations of the rotation group, even for an odd half-integer. As we have seen there are particles which carry intrinsic angular momentum <span class="math notranslate nohighlight">\(j = \half\)</span>, and there are particles with spin equal to other half integers. Rotations act on the spin degrees of freedom, and while total angular momentum is conserved, angular momentum can be exchanged between spin angular momentum via effects such as spin-orbit coupling.</p>
 <p>Another more advanced point is that the rotations are part of the full set fo Lorentz transformations; starting from the full group of Lorentz transformations, rotations emerge as actions of <span class="math notranslate nohighlight">\(SU(2)\)</span>.</p>
+</section>
+<section id="examples-of-irreps">
+<h2>Examples of irreps<a class="headerlink" href="#examples-of-irreps" title="Link to this heading">#</a></h2>
+<section id="spin-0">
+<h3>Spin-<span class="math notranslate nohighlight">\(0\)</span><a class="headerlink" href="#spin-0" title="Link to this heading">#</a></h3>
+<p>This is the simplest/most trivial example; the corresponding irrep is one-dimensional. More generally there could be other degrees of freedom having nothing to do with angular momentum; we could imagine a situation where the angular momenbtum operator acts trivially on the whole Hilbert space so that every vector is a 1d irrep. More generally (in cases such as the hydrogen atom) we will find that there is a class of states which have <span class="math notranslate nohighlight">\(j = 0\)</span>; inthe hydrogen atom (ignoring electron spin) these are the S-wave states.</p>
+</section>
+<section id="spin-half">
+<h3>Spin-<span class="math notranslate nohighlight">\(\half\)</span><a class="headerlink" href="#spin-half" title="Link to this heading">#</a></h3>
+<p>The first nontrivial example, and one we have studied many times. In the basis <span class="math notranslate nohighlight">\(\ket{j,m} = \ket{\half,\pm \half}\)</span>, where <span class="math notranslate nohighlight">\(\ket{\half,\half}\)</span> is represented as <span class="math notranslate nohighlight">\(\begin{pmatrix} 1 \\ 0 \end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(\ket{\half,-\half}\)</span> is represented as <span class="math notranslate nohighlight">\(\begin{pmatrix} 0 \\ 1 \end{pmatrix}\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}J_z = \frac{\hbar}{2} \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} = \frac{\hbar}{2} \sigma_z\end{split}\]</div>
+<p>Now using Equations <a class="reference internal" href="#equation-raising-op">(313)</a>, {eq<code class="docutils literal notranslate"><span class="pre">lowering_op</span></code>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+J_+ &amp; = \hbar \begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} \\
+J_- &amp; = \hbar \begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(J_{\pm} = J_x \pm i J_y\)</span> we can solve for <span class="math notranslate nohighlight">\(J_{x,y}\)</span> to find</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align} 
+J_x &amp; = \frac{J_+ + J_-}{2} = \frac{\hbar}{2} \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0\end{pmatrix} = \frac{\hbar}{2} \sigma_x \\
+J_y &amp; = \frac{J_+ - J_-}{2i} =  \frac{\hbar}{2} \begin{pmatrix} 0 &amp; -i \\ i &amp; 0\end{pmatrix} = \frac{\hbar}{2} \sigma_y
+\end{align}\end{split}\]</div>
+<p>Note that these matrices are the same as appeared in the definition of <span class="math notranslate nohighlight">\(SU(2)\)</span>. Finally <span class="math notranslate nohighlight">\({\vec J}^2\)</span> has eigenvalue <span class="math notranslate nohighlight">\(\hbar^2 j(j+1) = \frac{3\hbar^2}{4}\)</span>.</p>
+<p>A general rotation is repreented by the operator</p>
+<div class="math notranslate nohighlight">
+\[U(\theta,{\hat n}) = e^{- i \frac{\theta}{2} {\hat n}\cdot{\vec \sigma}}\]</div>
+</section>
+<section id="spin-1">
+<h3>Spin-<span class="math notranslate nohighlight">\(1\)</span><a class="headerlink" href="#spin-1" title="Link to this heading">#</a></h3>
+<p>The states <span class="math notranslate nohighlight">\(\ket{1,m}\)</span> with <span class="math notranslate nohighlight">\(m \in \{-1,0,1\}\)</span> form an orthonormal basis. Representing</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\ket{1,1} &amp; \to \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}\\
+\ket{1,0} &amp; \to \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}\\
+\ket{1,-1} &amp; \to \begin{pmatrix} 0 \\ 0 \\ -1 \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>we can compute <span class="math notranslate nohighlight">\(J_x\)</span>, <span class="math notranslate nohighlight">\(J_{\pm}\)</span>, <span class="math notranslate nohighlight">\(J_{x,y}\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+J_z &amp; = \hbar \begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 \end{pmatrix}\\
+J_+ &amp; = \sqrt{2} \hbar \begin{pmatrix} 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 \end{pmatrix}\\
+J_- &amp; = \sqrt{2} \hbar \begin{pmatrix} 0 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{pmatrix}\\
+J_x &amp; = \frac{\hbar}{\sqrt{2}} &amp; = \begin{pmatrix} 0 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 \end{pmatrix}\\
+J_y &amp; = \frac{\hbar}{\sqrt{2}} \begin{pmatrix} 0 &amp; -i &amp; 0 \\ i &amp; 0 &amp; -i \\ 0 &amp; i &amp; o \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>Unlike the case of spin-<span class="math notranslate nohighlight">\(\half\)</span>, these are not the matrices that define infinitesimal rotations acting on real vectors in <span class="math notranslate nohighlight">\(\CR^3\)</span>; we defined those in the previous section. In particular the component of <span class="math notranslate nohighlight">\({\vec V}\)</span> that is invariant under rotations about the <span class="math notranslate nohighlight">\(z\)</span> acis is <span class="math notranslate nohighlight">\(V_z\)</span>. There are no real vectors which are eigenvectors of <span class="math notranslate nohighlight">\(J_z\)</span> with eigenvalue <span class="math notranslate nohighlight">\(\pm 1\)</span>; the vectors which do have such behavior are complex, <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ \pm i \\ 0 \end{pmatrix}\)</span>.</p>
+</section>
 </section>
 </section>
 
@@ -545,6 +600,12 @@ J_- J_+ \ket{\alpha,\beta_{max}} &amp; = 0 = \alpha - \beta_{max}^2 - \hbar \bet
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-structure">General structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-irreps">Examples of irreps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-0">Spin-<span class="math notranslate nohighlight">\(0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-half">Spin-<span class="math notranslate nohighlight">\(\half\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-1">Spin-<span class="math notranslate nohighlight">\(1\)</span></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
