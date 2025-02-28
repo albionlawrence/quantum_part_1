@@ -1,5 +1,7 @@
 # Orbital Angular Momentum
 
+## Representations of angular momentum operators
+
 Let us consider particles with no intrinsic spin. (Except for the Higgs boson, these will typically be composite particles such as atoms whose total spin vanishes, where we treat the atoms as point particles. Anothe rexample is the $\alpha$-particle which is a helium-4 nucleus, a spin-$0$ bound state of 2 protons and 2 neutrons.) If the particles are moving in $\mathbb{R}^3$, their Hilbert space is $L^2(\CR^3)$, and rotations act nontrivially. We can define the action of rotations in the position basis:
 ```{math}
 U(R)\ket{\vec x} = \ket{\vec{R x}}
@@ -44,3 +46,25 @@ or
 ```
 
 If we replaced the operators by classical observables, there would just be the classical angular momenta. We can check that, acting on states, these have the correct commutation relations $[J_I, J_J] = i \hbar \epsilon_{IJK} J^K$.
+
+It is natural to express the angular momentum operators as derivative operators in *spherical* coordinates $(r,\theta,\phi)$, since rotations fix $r$. Recalling the transformations:
+```{math}
+\begin{align}
+x & = r\sin\theta\cos\phi\\
+y & = r\sin\theta\sin\phi\\
+z & = r\cos\theta
+\end{align}
+```
+with some labor we can work out the angular momentum operators. Note that by convention, the differential operators are called $L_i$ instead of $J_i$:
+```{math}
+\begin{align}
+L_z & = \frac{\hbar}{i} \frac{\del}{\del\phi}\\
+L_{\pm} & = i\hbar e^{\pm i \phi} \left(\cot\theta \frac{\del}{\del\phi} \mp i \frac{\del}{\del\theta}\right)\\
+{\vec L}^2 & = - \left[\frac{1}{\sin\theta}\frac{\del}{\del\theta}\left(\sin\theta \frac{\del}{\del\theta}\right) + \frac{1}{\sin^2 \theta}\frac{\del^2}{\del\phi^2}\right]
+\end{align}
+```
+It is worth noting that ${\vec L}^2$ appears in the Laplacian in spherical coordinates and in fact contains all of the angular derivatives:
+```{math}
+{\vec\nabla}^2 = \frac{1}{r} \frac{\del^2}{\del r^2} r - \frac{{\vec L}^2}{r^2}
+```
+

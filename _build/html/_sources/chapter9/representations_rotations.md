@@ -125,6 +125,54 @@ We call all $D_j$ irreducible representations of the rotation group, even for an
 
 Another more advanced point is that the rotations are part of the full set fo Lorentz transformations; starting from the full group of Lorentz transformations, rotations emerge as actions of $SU(2)$.
 
+## Finite transformations
+
+We have so far discussed, for the most part, infinitesimal transformations. One way to discuss finite transformations is, as we have stated, to pick the axis ${\hat n}$ and then the angle about which we rotate. However, it is sometimes convenient to describe a general rotation in terms of rotations about the 3 coordinate axes. These can be done in terms of *Euler angles*.
+
+![Description of Euler angles](euler_angles.png)
+
+A general rotation can be described in terms of a transformation that rotates the axes attached to some rigid body, with respect to some coordinate axes initially aligned with the axes attached to that body. This can be done in the sequence described in the picture above; we can implement any rotation this way. First we rotate the frames around the $z$ axis by an angle $\alpha$. The resulting axes are labeled by $(x',y',z')$ where the $z'$ acis and $z$ axis still coincide. Then, we rotate by an angle $\beta$ about the $y$ axis which rotates the $z'$ axis to the $z''$ axis and the $x'$ axis to the $x''$ axis, keepingf the $y'$ axis fixed (we can relabel it as $y''$). Note that at this point the $y'/y''$ axis has not yet left the original $x-y$ plane. Finally, we rotate the frame around the $z''$ axis to new axes $X,Y,Z$, with $Z$ the same as $Z''$. It should be clear that we can achieve any arbitrary rotation of the set of coordinate axes this way (maintaining their orthoginality and relative orientation). 
+
+We can describe this rotation as 
+```{math}
+R(\alpha,\beta,\gamma) = R({\hat Z},\gamma) R({\hat y'},\beta) R({\hat z},\alpha)
+```
+This expression holds for both the rotatoin matriceds and for the associate unibtary matrices in any representation, via the group homomorphism property.
+
+The problem with this is that we would need to work out the rotation matrices (or their unitary representations) for the axes $y',Z$. However, we can in fact rerite $R$ in terms of rotations about the *original* axes. However, it is deducible from the pictures that we can write
+```{math}
+:label: conjugate_rots
+\begin{align}
+R({\hat Z},\gamma) & = R({\hat y}',\beta) R({\hat z},\gamma) R({\hat y}',-\beta)\\
+R({\hat y}',\beta) & = R({\hat z},\alpha) R({\hat y},\beta) R({\hat z},-\alpha)
+\end{align}
+```
+Using this,
+```{math}
+\begin{align}
+R(\alpha,\beta,\gamma) & = R({\hat y}',\beta) R({\hat z}, \gamma) R({\hat y}',-\beta) R({\hat y'},\beta) R({\hat z},\alpha)\\
+& =  R({\hat y}',\beta) R({\hat z}, \gamma) R({\hat z},\alpha)\\
+& =  R({\hat z},\alpha) R({\hat y},\beta) R({\hat z},-\alpha) R({\hat z}, \gamma) R({\hat z},\alpha) \\
+& = R({\hat z},\alpha) R({\hat y},\beta) R({\hat z},\gamma) R({\hat z}, -\alpha) R({\hat z},\alpha)\\
+& =  R({\hat z},\alpha) R({\hat y},\beta) R({\hat z},\gamma)
+\end{align}
+```
+In the first line we used the first equation in {eq}`conjugate_rot`; in the second line we used the fact that $ R({\hat y}',-\beta) R({\hat y'},\beta) = {\bf 1}$; in the third line we used the second equation in {eq}`conjugate_rot`; in the fourth line we used the fact that successive rotations about ${\hat z}$ commute with each other; in the last equation we used $ R({\hat z}, -\alpha) R({\hat z},\alpha = {\bf 1}$.
+
+In general, a given rotation $R$ can be given a matrix representation in any irrep. We define
+```{math}
+\bra{j,m'} U(R) \ket{j, } = d^j_{m',m}(R)
+```
+In the Euler angle representation,
+```{math}
+U(R(\alpha,\beta,\gamma)) = e^{-i \alpha J_z/\hbar} e^{-i \beta J_y/\hbar} e^{-i \gamma J_z/\hbar}
+```
+Thus, we write
+```{math}
+:label: euler_matrix
+d^j_{m',m}(\alpha,\beta,\gamma) = e^{-i m' \alpha - i m\gamma} \bra{j,m} e^{-i \beta J_y/\hbar} \ket{j,m}
+```
+
 ## Examples of irreps
 
 ### Spin-$0$
@@ -153,9 +201,10 @@ J_y & = \frac{J_+ - J_-}{2i} =  \frac{\hbar}{2} \begin{pmatrix} 0 & -i \\ i & 0\
 ```
 Note that these matrices are the same as appeared in the definition of $SU(2)$. Finally ${\vec J}^2$ has eigenvalue $\hbar^2 j(j+1) = \frac{3\hbar^2}{4}$. 
 
-A general rotation is repreented by the operator
+A general rotation in the Euler angle representation can be calculated explicitly:
 ```{math}
-U(\theta,{\hat n}) = e^{- i \frac{\theta}{2} {\hat n}\cdot{\vec \sigma}}
+d^j_{m',m}(\alpha,\beta,\gamma) = \begin{pmatrix} e^{-i(\alpha + \gamma)/2} \cos\frac{\beta}{2} & - e^{-i(\alpha = \gamma)/2} \sin\frac{\beta}{2}\\
+e^{i(\alpha - \gamma)/2}\sin \frac{\beta}{2} & e^{i(\alpha + \beta)/2} \cos\frac{\beta}{2} \end{pmatrix}
 ```
 
 ### Spin-$1$

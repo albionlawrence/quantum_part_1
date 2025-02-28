@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter9/representations_rotations';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="next" title="Orbital Angular Momentum" href="orbital_am.html" />
     <link rel="prev" title="The Rotation Group" href="rotations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -227,6 +227,7 @@
 <li class="toctree-l2"><a class="reference internal" href="transformations.html">Transformations and symmetries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rotations.html">The Rotation Group</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Representations of the rotation group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orbital_am.html">Orbital Angular Momentum</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -380,6 +381,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-structure">General structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-transformations">Finite transformations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-irreps">Examples of irreps</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-0">Spin-<span class="math notranslate nohighlight">\(0\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-half">Spin-<span class="math notranslate nohighlight">\(\half\)</span></a></li>
@@ -484,6 +486,41 @@ J_- J_+ \ket{\alpha,\beta_{max}} &amp; = 0 = \alpha - \beta_{max}^2 - \hbar \bet
 <p>We call all <span class="math notranslate nohighlight">\(D_j\)</span> irreducible representations of the rotation group, even for an odd half-integer. As we have seen there are particles which carry intrinsic angular momentum <span class="math notranslate nohighlight">\(j = \half\)</span>, and there are particles with spin equal to other half integers. Rotations act on the spin degrees of freedom, and while total angular momentum is conserved, angular momentum can be exchanged between spin angular momentum via effects such as spin-orbit coupling.</p>
 <p>Another more advanced point is that the rotations are part of the full set fo Lorentz transformations; starting from the full group of Lorentz transformations, rotations emerge as actions of <span class="math notranslate nohighlight">\(SU(2)\)</span>.</p>
 </section>
+<section id="finite-transformations">
+<h2>Finite transformations<a class="headerlink" href="#finite-transformations" title="Link to this heading">#</a></h2>
+<p>We have so far discussed, for the most part, infinitesimal transformations. One way to discuss finite transformations is, as we have stated, to pick the axis <span class="math notranslate nohighlight">\({\hat n}\)</span> and then the angle about which we rotate. However, it is sometimes convenient to describe a general rotation in terms of rotations about the 3 coordinate axes. These can be done in terms of <em>Euler angles</em>.</p>
+<p><img alt="Description of Euler angles" src="../_images/euler_angles.png" /></p>
+<p>A general rotation can be described in terms of a transformation that rotates the axes attached to some rigid body, with respect to some coordinate axes initially aligned with the axes attached to that body. This can be done in the sequence described in the picture above; we can implement any rotation this way. First we rotate the frames around the <span class="math notranslate nohighlight">\(z\)</span> axis by an angle <span class="math notranslate nohighlight">\(\alpha\)</span>. The resulting axes are labeled by <span class="math notranslate nohighlight">\((x',y',z')\)</span> where the <span class="math notranslate nohighlight">\(z'\)</span> acis and <span class="math notranslate nohighlight">\(z\)</span> axis still coincide. Then, we rotate by an angle <span class="math notranslate nohighlight">\(\beta\)</span> about the <span class="math notranslate nohighlight">\(y\)</span> axis which rotates the <span class="math notranslate nohighlight">\(z'\)</span> axis to the <span class="math notranslate nohighlight">\(z''\)</span> axis and the <span class="math notranslate nohighlight">\(x'\)</span> axis to the <span class="math notranslate nohighlight">\(x''\)</span> axis, keepingf the <span class="math notranslate nohighlight">\(y'\)</span> axis fixed (we can relabel it as <span class="math notranslate nohighlight">\(y''\)</span>). Note that at this point the <span class="math notranslate nohighlight">\(y'/y''\)</span> axis has not yet left the original <span class="math notranslate nohighlight">\(x-y\)</span> plane. Finally, we rotate the frame around the <span class="math notranslate nohighlight">\(z''\)</span> axis to new axes <span class="math notranslate nohighlight">\(X,Y,Z\)</span>, with <span class="math notranslate nohighlight">\(Z\)</span> the same as <span class="math notranslate nohighlight">\(Z''\)</span>. It should be clear that we can achieve any arbitrary rotation of the set of coordinate axes this way (maintaining their orthoginality and relative orientation).</p>
+<p>We can describe this rotation as</p>
+<div class="math notranslate nohighlight">
+\[R(\alpha,\beta,\gamma) = R({\hat Z},\gamma) R({\hat y'},\beta) R({\hat z},\alpha)\]</div>
+<p>This expression holds for both the rotatoin matriceds and for the associate unibtary matrices in any representation, via the group homomorphism property.</p>
+<p>The problem with this is that we would need to work out the rotation matrices (or their unitary representations) for the axes <span class="math notranslate nohighlight">\(y',Z\)</span>. However, we can in fact rerite <span class="math notranslate nohighlight">\(R\)</span> in terms of rotations about the <em>original</em> axes. However, it is deducible from the pictures that we can write</p>
+<div class="math notranslate nohighlight" id="equation-conjugate-rots">
+<span class="eqno">(315)<a class="headerlink" href="#equation-conjugate-rots" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+R({\hat Z},\gamma) &amp; = R({\hat y}',\beta) R({\hat z},\gamma) R({\hat y}',-\beta)\\
+R({\hat y}',\beta) &amp; = R({\hat z},\alpha) R({\hat y},\beta) R({\hat z},-\alpha)
+\end{align}\end{split}\]</div>
+<p>Using this,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+R(\alpha,\beta,\gamma) &amp; = R({\hat y}',\beta) R({\hat z}, \gamma) R({\hat y}',-\beta) R({\hat y'},\beta) R({\hat z},\alpha)\\
+&amp; =  R({\hat y}',\beta) R({\hat z}, \gamma) R({\hat z},\alpha)\\
+&amp; =  R({\hat z},\alpha) R({\hat y},\beta) R({\hat z},-\alpha) R({\hat z}, \gamma) R({\hat z},\alpha) \\
+&amp; = R({\hat z},\alpha) R({\hat y},\beta) R({\hat z},\gamma) R({\hat z}, -\alpha) R({\hat z},\alpha)\\
+&amp; =  R({\hat z},\alpha) R({\hat y},\beta) R({\hat z},\gamma)
+\end{align}\end{split}\]</div>
+<p>In the first line we used the first equation in <code class="xref eq docutils literal notranslate"><span class="pre">conjugate_rot</span></code>; in the second line we used the fact that <span class="math notranslate nohighlight">\( R({\hat y}',-\beta) R({\hat y'},\beta) = {\bf 1}\)</span>; in the third line we used the second equation in <code class="xref eq docutils literal notranslate"><span class="pre">conjugate_rot</span></code>; in the fourth line we used the fact that successive rotations about <span class="math notranslate nohighlight">\({\hat z}\)</span> commute with each other; in the last equation we used <span class="math notranslate nohighlight">\( R({\hat z}, -\alpha) R({\hat z},\alpha = {\bf 1}\)</span>.</p>
+<p>In general, a given rotation <span class="math notranslate nohighlight">\(R\)</span> can be given a matrix representation in any irrep. We define</p>
+<div class="math notranslate nohighlight">
+\[\bra{j,m'} U(R) \ket{j, } = d^j_{m',m}(R)\]</div>
+<p>In the Euler angle representation,</p>
+<div class="math notranslate nohighlight">
+\[U(R(\alpha,\beta,\gamma)) = e^{-i \alpha J_z/\hbar} e^{-i \beta J_y/\hbar} e^{-i \gamma J_z/\hbar}\]</div>
+<p>Thus, we write</p>
+<div class="math notranslate nohighlight" id="equation-euler-matrix">
+<span class="eqno">(316)<a class="headerlink" href="#equation-euler-matrix" title="Link to this equation">#</a></span>\[d^j_{m',m}(\alpha,\beta,\gamma) = e^{-i m' \alpha - i m\gamma} \bra{j,m} e^{-i \beta J_y/\hbar} \ket{j,m}\]</div>
+</section>
 <section id="examples-of-irreps">
 <h2>Examples of irreps<a class="headerlink" href="#examples-of-irreps" title="Link to this heading">#</a></h2>
 <section id="spin-0">
@@ -508,9 +545,10 @@ J_x &amp; = \frac{J_+ + J_-}{2} = \frac{\hbar}{2} \begin{pmatrix} 0 &amp; 1 \\ 1
 J_y &amp; = \frac{J_+ - J_-}{2i} =  \frac{\hbar}{2} \begin{pmatrix} 0 &amp; -i \\ i &amp; 0\end{pmatrix} = \frac{\hbar}{2} \sigma_y
 \end{align}\end{split}\]</div>
 <p>Note that these matrices are the same as appeared in the definition of <span class="math notranslate nohighlight">\(SU(2)\)</span>. Finally <span class="math notranslate nohighlight">\({\vec J}^2\)</span> has eigenvalue <span class="math notranslate nohighlight">\(\hbar^2 j(j+1) = \frac{3\hbar^2}{4}\)</span>.</p>
-<p>A general rotation is repreented by the operator</p>
+<p>A general rotation in the Euler angle representation can be calculated explicitly:</p>
 <div class="math notranslate nohighlight">
-\[U(\theta,{\hat n}) = e^{- i \frac{\theta}{2} {\hat n}\cdot{\vec \sigma}}\]</div>
+\[\begin{split}d^j_{m',m}(\alpha,\beta,\gamma) = \begin{pmatrix} e^{-i(\alpha + \gamma)/2} \cos\frac{\beta}{2} &amp; - e^{-i(\alpha = \gamma)/2} \sin\frac{\beta}{2}\\
+e^{i(\alpha - \gamma)/2}\sin \frac{\beta}{2} &amp; e^{i(\alpha + \beta)/2} \cos\frac{\beta}{2} \end{pmatrix}\end{split}\]</div>
 </section>
 <section id="spin-1">
 <h3>Spin-<span class="math notranslate nohighlight">\(1\)</span><a class="headerlink" href="#spin-1" title="Link to this heading">#</a></h3>
@@ -575,11 +613,11 @@ J_y &amp; = \frac{\hbar}{\sqrt{2}} \begin{pmatrix} 0 &amp; -i &amp; 0 \\ i &amp;
       </div>
     </a>
     <a class="right-next"
-       href="../appendix.html"
+       href="orbital_am.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix</p>
+        <p class="prev-next-title">Orbital Angular Momentum</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -600,6 +638,7 @@ J_y &amp; = \frac{\hbar}{\sqrt{2}} \begin{pmatrix} 0 &amp; -i &amp; 0 \\ i &amp;
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-structure">General structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-transformations">Finite transformations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-irreps">Examples of irreps</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-0">Spin-<span class="math notranslate nohighlight">\(0\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-half">Spin-<span class="math notranslate nohighlight">\(\half\)</span></a></li>

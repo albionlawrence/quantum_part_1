@@ -51,6 +51,8 @@ chapters:
     - file: chapter9/rotations
     - file: chapter9/representations_rotations
     - file: chapter9/orbital_am
+    - file: chapter9/addition_am
+    - file: chapter9/tensor_operators
   - file: appendix
   - file: bibliography
 # - file: notebooks

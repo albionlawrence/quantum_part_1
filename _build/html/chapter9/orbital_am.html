@@ -357,7 +357,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -373,6 +375,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representations-of-angular-momentum-operators">Representations of angular momentum operators</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -384,6 +394,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="orbital-angular-momentum">
 <h1>Orbital Angular Momentum<a class="headerlink" href="#orbital-angular-momentum" title="Link to this heading">#</a></h1>
+<section id="representations-of-angular-momentum-operators">
+<h2>Representations of angular momentum operators<a class="headerlink" href="#representations-of-angular-momentum-operators" title="Link to this heading">#</a></h2>
 <p>Let us consider particles with no intrinsic spin. (Except for the Higgs boson, these will typically be composite particles such as atoms whose total spin vanishes, where we treat the atoms as point particles. Anothe rexample is the <span class="math notranslate nohighlight">\(\alpha\)</span>-particle which is a helium-4 nucleus, a spin-<span class="math notranslate nohighlight">\(0\)</span> bound state of 2 protons and 2 neutrons.) If the particles are moving in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, their Hilbert space is <span class="math notranslate nohighlight">\(L^2(\CR^3)\)</span>, and rotations act nontrivially. We can define the action of rotations in the position basis:</p>
 <div class="math notranslate nohighlight">
 \[U(R)\ket{\vec x} = \ket{\vec{R x}}\]</div>
@@ -413,6 +425,24 @@ J_y &amp; = {\hat z} {\hat p}_x - {\hat x}{\hat p}_z
 <div class="math notranslate nohighlight">
 \[{\vec J} = {\hat{\vec x}} \times {\hat{\vec p}}\]</div>
 <p>If we replaced the operators by classical observables, there would just be the classical angular momenta. We can check that, acting on states, these have the correct commutation relations <span class="math notranslate nohighlight">\([J_I, J_J] = i \hbar \epsilon_{IJK} J^K\)</span>.</p>
+<p>It is natural to express the angular momentum operators as derivative operators in <em>spherical</em> coordinates <span class="math notranslate nohighlight">\((r,\theta,\phi)\)</span>, since rotations fix <span class="math notranslate nohighlight">\(r\)</span>. Recalling the transformations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+x &amp; = r\sin\theta\cos\phi\\
+y &amp; = r\sin\theta\sin\phi\\
+z &amp; = r\cos\theta
+\end{align}\end{split}\]</div>
+<p>with some labor we can work out the angular momentum operators. Note that by convention, the differential operators are called <span class="math notranslate nohighlight">\(L_i\)</span> instead of <span class="math notranslate nohighlight">\(J_i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+L_z &amp; = \frac{\hbar}{i} \frac{\del}{\del\phi}\\
+L_{\pm} &amp; = i\hbar e^{\pm i \phi} \left(\cot\theta \frac{\del}{\del\phi} \mp i \frac{\del}{\del\theta}\right)\\
+{\vec L}^2 &amp; = - \left[\frac{1}{\sin\theta}\frac{\del}{\del\theta}\left(\sin\theta \frac{\del}{\del\theta}\right) + \frac{1}{\sin^2 \theta}\frac{\del^2}{\del\phi^2}\right]
+\end{align}\end{split}\]</div>
+<p>It is worth noting that <span class="math notranslate nohighlight">\({\vec L}^2\)</span> appears in the Laplacian in spherical coordinates and in fact contains all of the angular derivatives:</p>
+<div class="math notranslate nohighlight">
+\[{\vec\nabla}^2 = \frac{1}{r} \frac{\del^2}{\del r^2} r - \frac{{\vec L}^2}{r^2}\]</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -469,6 +499,21 @@ J_y &amp; = {\hat z} {\hat p}_x - {\hat x}{\hat p}_z
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representations-of-angular-momentum-operators">Representations of angular momentum operators</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

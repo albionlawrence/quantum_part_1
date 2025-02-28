@@ -68,3 +68,5 @@ It is worth noting that ${\vec L}^2$ appears in the Laplacian in spherical coord
 {\vec\nabla}^2 = \frac{1}{r} \frac{\del^2}{\del r^2} r - \frac{{\vec L}^2}{r^2}
 ```
 
+## Spherical harmonics
+

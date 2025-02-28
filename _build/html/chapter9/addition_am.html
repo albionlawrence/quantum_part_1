@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>The Rotation Group in Quantum Mechanics &#8212; Physics 162</title>
+    <title>Addition of Angular Momentum &#8212; Physics 162</title>
   
   
   
@@ -57,13 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"], "cO": ["\\mathcal{O}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter9/rotation_group';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter9/addition_am';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Transformations and symmetries" href="transformations.html" />
-    <link rel="prev" title="The Feynman Path Integral" href="../chapter8/FPI.html" />
+    <link rel="next" title="Tensor operators" href="tensor_operators.html" />
+    <link rel="prev" title="Orbital Angular Momentum" href="orbital_am.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -223,12 +221,12 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter8/FPI.html">The Feynman Path Integral</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">The Rotation Group in Quantum Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="rotation_group.html">The Rotation Group in Quantum Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="transformations.html">Transformations and symmetries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rotations.html">The Rotation Group</a></li>
 <li class="toctree-l2"><a class="reference internal" href="representations_rotations.html">Representations of the rotation group</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orbital_am.html">Orbital Angular Momentum</a></li>
-<li class="toctree-l2"><a class="reference internal" href="addition_am.html">Addition of Angular Momentum</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Addition of Angular Momentum</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tensor_operators.html">Tensor operators</a></li>
 </ul>
 </details></li>
@@ -288,7 +286,7 @@
       
       
       
-      <li><a href="../_sources/chapter9/rotation_group.md" target="_blank"
+      <li><a href="../_sources/chapter9/addition_am.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -370,7 +368,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The Rotation Group in Quantum Mechanics</h1>
+    <h1>Addition of Angular Momentum</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -384,11 +382,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="the-rotation-group-in-quantum-mechanics">
-<h1>The Rotation Group in Quantum Mechanics<a class="headerlink" href="#the-rotation-group-in-quantum-mechanics" title="Link to this heading">#</a></h1>
-<p>Following convention, we will spend some time on the behavior of quantum systems under rotations. There are two reasons for this. First, rotational symmetry plays an important role in many practical applications, such as atoms and spin systems. Secondly, the structure of the rotation group, and of Hilbert spaces on which rotations act nontrivially, are models for other important transformations in quantum systems.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="addition-of-angular-momentum">
+<h1>Addition of Angular Momentum<a class="headerlink" href="#addition-of-angular-momentum" title="Link to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -422,20 +417,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../chapter8/FPI.html"
+       href="orbital_am.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The Feynman Path Integral</p>
+        <p class="prev-next-title">Orbital Angular Momentum</p>
       </div>
     </a>
     <a class="right-next"
-       href="transformations.html"
+       href="tensor_operators.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Transformations and symmetries</p>
+        <p class="prev-next-title">Tensor operators</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
