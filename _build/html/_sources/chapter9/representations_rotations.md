@@ -161,7 +161,7 @@ In the first line we used the first equation in {eq}`conjugate_rot`; in the seco
 
 In general, a given rotation $R$ can be given a matrix representation in any irrep. We define
 ```{math}
-\bra{j,m'} U(R) \ket{j, } = d^j_{m',m}(R)
+\bra{j,m'} U(R) \ket{j,m} = d^j_{m,m'}(R)
 ```
 In the Euler angle representation,
 ```{math}

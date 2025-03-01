@@ -228,6 +228,8 @@
 <li class="toctree-l2"><a class="reference internal" href="rotations.html">The Rotation Group</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Representations of the rotation group</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orbital_am.html">Orbital Angular Momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="addition_am.html">Addition of Angular Momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensor_operators.html">Tensor operators</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -513,7 +515,7 @@ R(\alpha,\beta,\gamma) &amp; = R({\hat y}',\beta) R({\hat z}, \gamma) R({\hat y}
 <p>In the first line we used the first equation in <code class="xref eq docutils literal notranslate"><span class="pre">conjugate_rot</span></code>; in the second line we used the fact that <span class="math notranslate nohighlight">\( R({\hat y}',-\beta) R({\hat y'},\beta) = {\bf 1}\)</span>; in the third line we used the second equation in <code class="xref eq docutils literal notranslate"><span class="pre">conjugate_rot</span></code>; in the fourth line we used the fact that successive rotations about <span class="math notranslate nohighlight">\({\hat z}\)</span> commute with each other; in the last equation we used <span class="math notranslate nohighlight">\( R({\hat z}, -\alpha) R({\hat z},\alpha = {\bf 1}\)</span>.</p>
 <p>In general, a given rotation <span class="math notranslate nohighlight">\(R\)</span> can be given a matrix representation in any irrep. We define</p>
 <div class="math notranslate nohighlight">
-\[\bra{j,m'} U(R) \ket{j, } = d^j_{m',m}(R)\]</div>
+\[\bra{j,m'} U(R) \ket{j,m} = d^j_{m,m'}(R)\]</div>
 <p>In the Euler angle representation,</p>
 <div class="math notranslate nohighlight">
 \[U(R(\alpha,\beta,\gamma)) = e^{-i \alpha J_z/\hbar} e^{-i \beta J_y/\hbar} e^{-i \gamma J_z/\hbar}\]</div>

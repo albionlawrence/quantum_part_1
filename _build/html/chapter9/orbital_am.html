@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter9/orbital_am';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="next" title="Addition of Angular Momentum" href="addition_am.html" />
     <link rel="prev" title="Representations of the rotation group" href="representations_rotations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -228,6 +228,8 @@
 <li class="toctree-l2"><a class="reference internal" href="rotations.html">The Rotation Group</a></li>
 <li class="toctree-l2"><a class="reference internal" href="representations_rotations.html">Representations of the rotation group</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Orbital Angular Momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="addition_am.html">Addition of Angular Momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensor_operators.html">Tensor operators</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -381,6 +383,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representations-of-angular-momentum-operators">Representations of angular momentum operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-harmonics">Spherical harmonics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-rigid-rotor">Example: rigid rotor</a></li>
 </ul>
             </nav>
         </div>
@@ -443,6 +447,43 @@ L_{\pm} &amp; = i\hbar e^{\pm i \phi} \left(\cot\theta \frac{\del}{\del\phi} \mp
 <div class="math notranslate nohighlight">
 \[{\vec\nabla}^2 = \frac{1}{r} \frac{\del^2}{\del r^2} r - \frac{{\vec L}^2}{r^2}\]</div>
 </section>
+<section id="spherical-harmonics">
+<h2>Spherical harmonics<a class="headerlink" href="#spherical-harmonics" title="Link to this heading">#</a></h2>
+<p>In spherical coordinates, the orbital angular momentum operators act on the angular coordinates. We expect that when we write angular momentum eigenstates <span class="math notranslate nohighlight">\(\ket{\alpha,\ell, m}\)</span> (where <span class="math notranslate nohighlight">\(\alpha\)</span> denotes additional degrees of freedom, perhaps tied to the behavior of the wavefunction in the radial direction), the wavefunctions will take the form</p>
+<div class="math notranslate nohighlight">
+\[\brket{r\theta\phi}{\alpha\ell m} = f_{\alpha}(r) Y_{\ell,m}(\theta,\phi)\]</div>
+<p>Alternatively we might have particles constrained to live on a sphere, for which <span class="math notranslate nohighlight">\(Y_{\ell,m}\)</span> then become a complete basis of functions on <span class="math notranslate nohighlight">\(S^2\)</span>. The <span class="math notranslate nohighlight">\(Y_{\ell,m}\)</span> are known as <em>spherical harmonics</em>.</p>
+<p>We can quickly deduce the <span class="math notranslate nohighlight">\(\phi\)</span>-dependence:</p>
+<div class="math notranslate nohighlight">
+\[L_z Y_{\ell,m}(\theta,\phi) = \frac{\hbar}{i} \frac{\del}{\del \phi} Y_{\ell,m}(\theta,\phi) = \hbar m Y_{\ell,m}(\theta,\phi)\]</div>
+<p>which means</p>
+<div class="math notranslate nohighlight">
+\[Y_{\ell,m}(\theta,\phi) = e^{i m \phi} f_{\ell,m}(\theta)\]</div>
+<p>To go further, we can start by solving the first order differential equation</p>
+<div class="math notranslate nohighlight">
+\[L_- Y_{\ell,-\ell}(\theta,\phi) = - \hbar e^{-i\ell\phi}\left[ \frac{\del}{\del\theta} - \ell \cot\theta\right] f_{\ell,m}(\theta) = 0\]</div>
+<p>This is solved if <span class="math notranslate nohighlight">\(f_{\ell,m} = A \sin^{\ell}(\theta)\)</span>. After properly normalizing <span class="math notranslate nohighlight">\(Y_{\ell,-\ell} = A e^{-i\ell \phi} \sin^{\ell}\theta\)</span>, we can construct the other functions <span class="math notranslate nohighlight">\(Y_{\ell,m}\)</span> with applications of <span class="math notranslate nohighlight">\(L_+\)</span>.</p>
+<p>The general solution is</p>
+<div class="math notranslate nohighlight">
+\[Y_{\ell,m}(\theta,\phi) = (-1)^m \sqrt{\frac{2\ell + 1}{4\pi} \frac{(\ell - m)!}{(\ell + m)!}} e^{i m\phi} P_{\ell}^m(\cos\theta)\]</div>
+<p>where <span class="math notranslate nohighlight">\(P_{\ell}^m(x)\)</span> are the <em>associated Legendre functions</em>. These can be looked up in a good quantum mechanics textbook, or in a book of special functions such as <a class="reference external" href="https://dlmf.nist.gov/">this one</a> (now online). The spherical harmonics form an orthonomal basis of functions on the sphere; thus</p>
+<div class="math notranslate nohighlight">
+\[\int_0^{2\pi} d\phi \int_0^{\pi} \sin\theta d\theta Y^*_{\ell,m}(\theta,\phi)Y_{\ell',m'}(\theta,\phi) = \delta_{\ell,\ell'}\delta_{m,m'}\]</div>
+</section>
+<section id="example-rigid-rotor">
+<h2>Example: rigid rotor<a class="headerlink" href="#example-rigid-rotor" title="Link to this heading">#</a></h2>
+<p>We can consider the following model of the rotational states of an axisymmetric molecule in its center of mass frame, as pictured below.</p>
+<p><a class="reference download internal" download="" href="../_downloads/011840f237e551a8c6c56a95bab57a00/rotor.png"><span class="xref download myst">A molecule rotating about the center of mass</span></a></p>
+<p>Classically, the rotational kinetic energy is taken to be</p>
+<div class="math notranslate nohighlight">
+\[H = \frac{{\vec L}^2}{2I}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I\)</span> is the moment of inertia of the rotor. We can also simply demand that the Hamiltonian be invariant under rotations about the center of mass. This means that there is no potential energy as a function of <span class="math notranslate nohighlight">\(\theta,\phi\)</span>; the only operators available are functions of <span class="math notranslate nohighlight">\({\vec L}^2\)</span>. If we are looking at sufficiently small values of teh angular momenta, we can expand the Hamiltonian in powers of <span class="math notranslate nohighlight">\({\vec L}^2\)</span> and then the leading order term will be that above.</p>
+<p>The energy levels are therefore <span class="math notranslate nohighlight">\(E_{\ell} = \frac{\hbar^2 \ell(\ell + 1)}{2I}\)</span> with degeneracy <span class="math notranslate nohighlight">\((2\ell + 1)\)</span>. A basis of states is then <span class="math notranslate nohighlight">\(\ket{\ell,m}\)</span>, with <span class="math notranslate nohighlight">\(\brket{\theta,\phi}{\ell,m} = Y_{\ell,m}(\theta,\phi)\)</span>.</p>
+<p>This degeneracy could be split simply by an additional term <span class="math notranslate nohighlight">\(\delta H = \gamma L_z\)</span>, for example. This could arise if the molecule had an unenev distribution of charge so that its rotation induces a current and thus a magnetic moment. In the presence of a magnetic field <span class="math notranslate nohighlight">\(B_z\)</span>, we would then induce such a coupling of the form <span class="math notranslate nohighlight">\(\delta H = - \mu B)z L_z\)</span>. The wavefunctions <span class="math notranslate nohighlight">\(Y_{\ell,m}\)</span> are still eigenstates of the full Hamiltonian, but the energies are now</p>
+<div class="math notranslate nohighlight">
+\[E_{\ell,m} = \frac{\hbar^2 \ell(\ell + 1)}{2I} - \mu B_z \hbar m\]</div>
+<p>and the spectrum is completely nondegenerate in general (if B is large enough, there are special values of <span class="math notranslate nohighlight">\(B_z\)</span> where states with different values of <span class="math notranslate nohighlight">\(\ell\)</span> start to overlap because of the large splitting.)</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -485,11 +526,11 @@ L_{\pm} &amp; = i\hbar e^{\pm i \phi} \left(\cot\theta \frac{\del}{\del\phi} \mp
       </div>
     </a>
     <a class="right-next"
-       href="../appendix.html"
+       href="addition_am.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix</p>
+        <p class="prev-next-title">Addition of Angular Momentum</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -510,6 +551,8 @@ L_{\pm} &amp; = i\hbar e^{\pm i \phi} \left(\cot\theta \frac{\del}{\del\phi} \mp
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representations-of-angular-momentum-operators">Representations of angular momentum operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-harmonics">Spherical harmonics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-rigid-rotor">Example: rigid rotor</a></li>
 </ul>
   </nav></div>
 
