@@ -68,3 +68,53 @@ It is worth noting that ${\vec L}^2$ appears in the Laplacian in spherical coord
 {\vec\nabla}^2 = \frac{1}{r} \frac{\del^2}{\del r^2} r - \frac{{\vec L}^2}{r^2}
 ```
 
+## Spherical harmonics
+
+In spherical coordinates, the orbital angular momentum operators act on the angular coordinates. We expect that when we write angular momentum eigenstates $\ket{\alpha,\ell, m}$ (where $\alpha$ denotes additional degrees of freedom, perhaps tied to the behavior of the wavefunction in the radial direction), the wavefunctions will take the form
+```{math}
+\brket{r\theta\phi}{\alpha\ell m} = f_{\alpha}(r) Y_{\ell,m}(\theta,\phi)
+```
+Alternatively we might have particles constrained to live on a sphere, for which $Y_{\ell,m}$ then become a complete basis of functions on $S^2$. The $Y_{\ell,m}$ are known as *spherical harmonics*.
+
+We can quickly deduce the $\phi$-dependence:
+```{math}
+L_z Y_{\ell,m}(\theta,\phi) = \frac{\hbar}{i} \frac{\del}{\del \phi} Y_{\ell,m}(\theta,\phi) = \hbar m Y_{\ell,m}(\theta,\phi)
+```
+which means
+```{math}
+Y_{\ell,m}(\theta,\phi) = e^{i m \phi} f_{\ell,m}(\theta)
+```
+To go further, we can start by solving the first order differential equation 
+```{math}
+L_- Y_{\ell,-\ell}(\theta,\phi) = - \hbar e^{-i\ell\phi}\left[ \frac{\del}{\del\theta} - \ell \cot\theta\right] f_{\ell,m}(\theta) = 0
+```
+This is solved if $f_{\ell,m} = A \sin^{\ell}(\theta)$. After properly normalizing $Y_{\ell,-\ell} = A e^{-i\ell \phi} \sin^{\ell}\theta$, we can construct the other functions $Y_{\ell,m}$ with applications of $L_+$.
+
+The general solution is
+```{math}
+Y_{\ell,m}(\theta,\phi) = (-1)^m \sqrt{\frac{2\ell + 1}{4\pi} \frac{(\ell - m)!}{(\ell + m)!}} e^{i m\phi} P_{\ell}^m(\cos\theta)
+```
+where $P_{\ell}^m(x)$ are the *associated Legendre functions*. These can be looked up in a good quantum mechanics textbook, or in a book of special functions such as [this one](https://dlmf.nist.gov/) (now online). The spherical harmonics form an orthonomal basis of functions on the sphere; thus
+```{math}
+\int_0^{2\pi} d\phi \int_0^{\pi} \sin\theta d\theta Y^*_{\ell,m}(\theta,\phi)Y_{\ell',m'}(\theta,\phi) = \delta_{\ell,\ell'}\delta_{m,m'}
+```
+
+## Example: rigid rotor
+
+We can consider the following model of the rotational states of an axisymmetric molecule in its center of mass frame, as pictured below.
+
+[A molecule rotating about the center of mass](rotor.png)
+
+Classically, the rotational kinetic energy is taken to be
+```{math}
+H = \frac{{\vec L}^2}{2I}
+```
+where $I$ is the moment of inertia of the rotor. We can also simply demand that the Hamiltonian be invariant under rotations about the center of mass. This means that there is no potential energy as a function of $\theta,\phi$; the only operators available are functions of ${\vec L}^2$. If we are looking at sufficiently small values of teh angular momenta, we can expand the Hamiltonian in powers of ${\vec L}^2$ and then the leading order term will be that above.
+
+The energy levels are therefore $E_{\ell} = \frac{\hbar^2 \ell(\ell + 1)}{2I}$ with degeneracy $(2\ell + 1)$. A basis of states is then $\ket{\ell,m}$, with $\brket{\theta,\phi}{\ell,m} = Y_{\ell,m}(\theta,\phi)$.
+
+This degeneracy could be split simply by an additional term $\delta H = \gamma L_z$, for example. This could arise if the molecule had an unenev distribution of charge so that its rotation induces a current and thus a magnetic moment. In the presence of a magnetic field $B_z$, we would then induce such a coupling of the form $\delta H = - \mu B)z L_z$. The wavefunctions $Y_{\ell,m}$ are still eigenstates of the full Hamiltonian, but the energies are now
+```{math}
+E_{\ell,m} = \frac{\hbar^2 \ell(\ell + 1)}{2I} - \mu B_z \hbar m
+```
+and the spectrum is completely nondegenerate in general (if B is large enough, there are special values of $B_z$ where states with different values of $\ell$ start to overlap because of the large splitting.)
