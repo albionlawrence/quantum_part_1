@@ -53,6 +53,9 @@ chapters:
     - file: chapter9/orbital_am
     - file: chapter9/addition_am
     - file: chapter9/tensor_operators
+  - file: chapter10/hydrogen
+    sections:
+    - file: chapter10/two_particle_reduction
   - file: appendix
   - file: bibliography
 # - file: notebooks

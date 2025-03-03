@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>The Aharonov-Bohm effect &#8212; Physics 162</title>
+    <title>Reduction of the Two-Body Problem &#8212; Physics 162</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"], "cO": ["\\mathcal{O}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter6/aharonov-bohm';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter10/two_particle_reduction';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Neutrino oscillations" href="neutrino_oscillations.html" />
-    <link rel="prev" title="Interlude: two interesting systems" href="Interlude_1.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="The Hydrogen Atom" href="hydrogen.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -208,9 +208,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter5/dynamics_1.html">Dynamics I</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Interlude_1.html">Interlude: two interesting systems</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">The Aharonov-Bohm effect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="neutrino_oscillations.html">Neutrino oscillations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/Interlude_1.html">Interlude: two interesting systems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/aharonov-bohm.html">The Aharonov-Bohm effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/neutrino_oscillations.html">Neutrino oscillations</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter7/Wave_examples.html">Examples of nonrelativistic quantum particle dynamics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -232,8 +232,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter9/tensor_operators.html">Tensor operators</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/hydrogen.html">The Hydrogen Atom</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/two_particle_reduction.html">Reduction of the Two-Body Problem</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="hydrogen.html">The Hydrogen Atom</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Reduction of the Two-Body Problem</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -292,7 +292,7 @@
       
       
       
-      <li><a href="../_sources/chapter6/aharonov-bohm.md" target="_blank"
+      <li><a href="../_sources/chapter10/two_particle_reduction.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -376,7 +376,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The Aharonov-Bohm effect</h1>
+    <h1>Reduction of the Two-Body Problem</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -386,13 +386,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#charged-particle-in-an-electromagnetic-field">Charged particle in an electromagnetic field</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gauge-potentials">Gauge potentials</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-mechanics">Classical mechanics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-case">Quantum case</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The Aharonov-Bohm effect</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hilbert-space">The Hilbert space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hamiltonian">The Hamiltonian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separating-out-the-center-of-mass-coordinates">Separating out the center of mass coordinates</a></li>
 </ul>
             </nav>
         </div>
@@ -404,108 +400,54 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="the-aharonov-bohm-effect">
-<h1>The Aharonov-Bohm effect<a class="headerlink" href="#the-aharonov-bohm-effect" title="Link to this heading">#</a></h1>
-<p>The first system we will explore is a particle moving in a region containing a magnetic field. This allows us to explore the structure of quantum mechanics in a background electromagnetic field, and leads to a surprising consequence – even when the field vanishes where the particle can move, it has a measurable effect on the particle’s wavefunction.</p>
-<section id="charged-particle-in-an-electromagnetic-field">
-<h2>Charged particle in an electromagnetic field<a class="headerlink" href="#charged-particle-in-an-electromagnetic-field" title="Link to this heading">#</a></h2>
-<p>So far we have considered the case of a constant magnetic field. Here we will consider the more general case of an electromagnetic field.</p>
-<section id="gauge-potentials">
-<h3>Gauge potentials<a class="headerlink" href="#gauge-potentials" title="Link to this heading">#</a></h3>
-<p>Two of Maxwell’s equations,</p>
-<div class="math notranslate nohighlight" id="equation-bianchi-ident">
-<span class="eqno">(275)<a class="headerlink" href="#equation-bianchi-ident" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-\frac{\del {\vec E}}{\del t} &amp; = c {\vec\nabla}\times{\vec B}\\ 
-{\vec\nabla}\cdot{\vec B} &amp; = 0
-\end{align}\end{split}\]</div>
-<p>imply that in a simply connected region, <span class="math notranslate nohighlight">\({\vec E}\)</span>, {\vec B}$ can be written in the form</p>
-<div class="math notranslate nohighlight" id="equation-gauge-potentials">
-<span class="eqno">(276)<a class="headerlink" href="#equation-gauge-potentials" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-{\vec E} &amp; = - \frac{1}{c} \frac{\del {\vec A}}{\del t} - {\vec \nabla} \Phi\\
-{\vec B} &amp; = {\vec\nabla}\times{\vec A}
-\end{align}\end{split}\]</div>
-<p>The fact that a single solution <span class="math notranslate nohighlight">\({\vec A}, \Phi\)</span> can generally only be found in a simply connected region will become important to us below.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="reduction-of-the-two-body-problem">
+<h1>Reduction of the Two-Body Problem<a class="headerlink" href="#reduction-of-the-two-body-problem" title="Link to this heading">#</a></h1>
+<section id="the-hilbert-space">
+<h2>The Hilbert space<a class="headerlink" href="#the-hilbert-space" title="Link to this heading">#</a></h2>
+<p>At its core we are studying the Coulomb attraction between two spin-<span class="math notranslate nohighlight">\(\half\)</span> particles (the proton and the electron) moving in space. Each of them can be labeled by their position (in a position basis) and their spin. For this section of the notes we will mostly ignore the spin degrees of freedom (they will come back later). The resulting Hilbert space is</p>
+<div class="math notranslate nohighlight">
+\[\cH = L^2(\CR^3)_1\otimes \CC^2_1\otimes L^2(\CR^3)_2\otimes \CC^2_2$\]</div>
+<p>where the subscrips label the particles, <span class="math notranslate nohighlight">\(L^2(\CR^3)\)</span> denotes the Hilbert space related to particle position, and <span class="math notranslate nohighlight">\(\CC^2\)</span> is the Hilbert space for the spin degrees of freedom (when the particles carry spin-<span class="math notranslate nohighlight">\(\half\)</span>).</p>
+<p>Ignoring the spin degrees of freedom, the Hilbert space of the spatial degrees of freedom is the space of linear combinations of wavecfunctins <span class="math notranslate nohighlight">\(\psi_1({\vec x}_1)\psi_2({\vec x}_2)\)</span>, which are just general functions <span class="math notranslate nohighlight">\(\Psi({\vec x}_1,{\vec x}_2)\)</span>. As we will see, it is convenient to write these as functions of a different linear combination of variables, teh *relative position <span class="math notranslate nohighlight">\({\vec x} = {\vec x}_1 - {\vec x}_2\)</span> and the <em>center of mass position</em></p>
+<div class="math notranslate nohighlight">
+\[{\vec X} = \frac{m_1 {\vec x}_1 + m_2 {\vec x}_2}{m_1 + m_2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(m_i\)</span> are the passes of the <span class="math notranslate nohighlight">\(i\)</span>th particles, a parameter which appears in teh Hamiltonian. We can solve for <span class="math notranslate nohighlight">\({\vec x}_i\)</span> in terms of <span class="math notranslate nohighlight">\({\vec X}\)</span>, <span class="math notranslate nohighlight">\({\vec x}\)</span>, and so write <span class="math notranslate nohighlight">\(\Psi = \Psi({\vec X}, {\vec x})\)</span>. Thus, the Hilbert space is, equivalently,</p>
+<div class="math notranslate nohighlight">
+\[\cH = L^2(\CR^3)_{X}\otimes L^2(\CR^3)_{x}\]</div>
 </section>
-<section id="classical-mechanics">
-<h3>Classical mechanics<a class="headerlink" href="#classical-mechanics" title="Link to this heading">#</a></h3>
-<p>The Lagrangian for a charged particle in this background is</p>
-<div class="math notranslate nohighlight" id="equation-em-lag">
-<span class="eqno">(277)<a class="headerlink" href="#equation-em-lag" title="Link to this equation">#</a></span>\[L - \half m {\dot{\vec x}}^2 + \frac{e}{c} {\dot{\vec x}}\cdot{\vec A} - q \Phi\]</div>
-<p>where <span class="math notranslate nohighlight">\(q\)</span> is the charge of the particle. Applying the Euler-Lagrange equation to this, combined with <a class="reference internal" href="#equation-gauge-potentials">(276)</a>, leads to the Lorentz force law</p>
-<div class="math notranslate nohighlight" id="equation-chapter6-aharonov-bohm-0">
-<span class="eqno">(278)<a class="headerlink" href="#equation-chapter6-aharonov-bohm-0" title="Link to this equation">#</a></span>\[m {\ddot{\vec x}} = \frac{q}{c}{\vec{\dot x}}\times{\vec B} + q {\vec E}\]</div>
-<p>As it happens we cannot simply write <span class="math notranslate nohighlight">\(L\)</span> in terms of the physical field variables <span class="math notranslate nohighlight">\({\vec E}, {\vec B}\)</span>. To get a sensible variational principle the Lagrangian needs to be written a s afunction of the vector and scalar potentials <span class="math notranslate nohighlight">\(\Phi, {\vec A}\)</span>.</p>
-<p>It is important to note that <span class="math notranslate nohighlight">\(\Phi, {\vec A}\)</span> are ambiguously defined via <a class="reference internal" href="#equation-gauge-potentials">(276)</a>. If we shift</p>
-<div class="math notranslate nohighlight" id="equation-gt-potentials">
-<span class="eqno">(279)<a class="headerlink" href="#equation-gt-potentials" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-{\vec A} &amp; \to {\vec A} - {\vec\nabla}\Lambda \\
-\Phi &amp; \to \Phi + \frac{1}{c} \frac{\del \Lambda}{\del t}
+<section id="the-hamiltonian">
+<h2>The Hamiltonian<a class="headerlink" href="#the-hamiltonian" title="Link to this heading">#</a></h2>
+<p>Our strategy (which works quite well in practice) is to write the Hamiltonian for the non-relativistic Coulomb problem and promote it to a quantim operator in the usual way, replacing the classical positions and momenta with quantum operators. In cgs units, this is</p>
+<div class="math notranslate nohighlight">
+\[H = \frac{{\vec p}_p^2}{2 m_p} + \frac{{\vec p}_e^2}{2 m_p} - \frac{e^2}{|{\vec c}_p - {\vec x}_e|}\]</div>
+<p>where the subscripts <span class="math notranslate nohighlight">\(p,e\)</span> refer to proton and electron, and <span class="math notranslate nohighlight">\(e\)</span> as a dimensionful number is the electron charge. At this point we are ignoring spin. This is the Hamiltonian in the non-relativistic limit. In fact there are important and measurable additional terms that are higher order in <span class="math notranslate nohighlight">\({\vec p}^2\)</span> or which couple the spin and orbital anglar momenta, that arise from a fully relativistic treatment, but they are small, of order the fine structure constant <span class="math notranslate nohighlight">\(\alpha = \frac{e^2}{\hbar c} \sim \frac{1}{137}\)</span>. We will discuss some of these later, and learn how to treat them in a systematic fashion.</p>
+<p>Note that the interaction between these particles depends only on the relative position. Our experience with classical mechanics (for this problem or for the mathematically equivalent gravitational two-body problem) indicates that the Hamiltonian should be indepdendent of the center of mass, and thus that the center of mass momentum is conserved.</p>
+<p>We start with the change of coordinates</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+{\vec X} &amp; = \frac{m_p {\vec x}_p + m_e {\vec x}_e}{m_p + m_e}\\
+{\vec x} &amp; = {\vec x}_e - {\vec x}_p
 \end{align}\end{split}\]</div>
-<p>then the electric and magnetic fields do not change. This shift in fact makes no real physical change: it is called a <em>gauge transformation</em> or <em>gauge symmetry</em>. You can show that the action <span class="math notranslate nohighlight">\(S = \int dt L\)</span> changes only by boundary terms (that is, by the integral of a divergence), so that the gauge symetry is a symmetry of the dynamics.</p>
-<p>The Hamiltonian becomes</p>
-<div class="math notranslate nohighlight" id="equation-charged-particle-ham">
-<span class="eqno">(280)<a class="headerlink" href="#equation-charged-particle-ham" title="Link to this equation">#</a></span>\[H = \frac{1}{2m} \left({\vec p} - \frac{q}{c} {\vec A}({\vec x}, t)\right)^2 + q \Phi({\vec x},t)\]</div>
-<p>where the canonical momentum is</p>
-<div class="math notranslate nohighlight" id="equation-charged-particle-cm">
-<span class="eqno">(281)<a class="headerlink" href="#equation-charged-particle-cm" title="Link to this equation">#</a></span>\[p_i = m {\dot x}^i + \frac{e}{c} A^i\]</div>
-<p>Since <span class="math notranslate nohighlight">\({\dot x}^i\)</span> does not transform under gauge transformations, this means that <span class="math notranslate nohighlight">\(p_i\)</span> does:</p>
-<div class="math notranslate nohighlight" id="equation-gauge-shift-p">
-<span class="eqno">(282)<a class="headerlink" href="#equation-gauge-shift-p" title="Link to this equation">#</a></span>\[p_i \to p_i - \frac{e}{c} \frac{\del \Lambda}{\del x^i}\]</div>
-<p>Thus the first term in <a class="reference internal" href="#equation-charged-particle-ham">(280)</a> is gauge invariant. The last term shifs by</p>
+<p>We can then ask, what are the conjugate momenta in terms of <span class="math notranslate nohighlight">\({\vec p}_{p,e}\)</span>? There are several ways we could do this. In the classical case, we can perform the above transformation at the level of the Lagrangian, for which we find</p>
+<div class="math notranslate nohighlight" id="equation-com-lag">
+<span class="eqno">(318)<a class="headerlink" href="#equation-com-lag" title="Link to this equation">#</a></span>\[L = \half M {\dot{\vec X}}^2 + \half \mu {\dot {\vec x}}^2 + \frac{e^2}{|{\vec x}|}\]</div>
+<p>where <span class="math notranslate nohighlight">\(M = m_e + m_p\)</span> is the <em>total mass</em>, and</p>
 <div class="math notranslate nohighlight">
-\[H \to H + \frac{e}{c} \frac{\del}{\del t} \Lambda\]</div>
-<p>This shift affects Hamiltons equations:</p>
+\[\mu = \frac{m_e m_p}{m_e + m_p}\]</div>
+<p>is the *reduced mass. In terms of these,</p>
 <div class="math notranslate nohighlight">
-\[\frac{d}{dt} p \to \frac{d}{dt} - \frac{e}{c} \frac{\del}{\del t} \frac{\del}{\del x^i} \Lambda\]</div>
-<p>consistent with the gauge transformation of <span class="math notranslate nohighlight">\(p\)</span>.</p>
-</section>
-<section id="quantum-case">
-<h3>Quantum case<a class="headerlink" href="#quantum-case" title="Link to this heading">#</a></h3>
-<p>In the quantum case, if we let <span class="math notranslate nohighlight">\(\psi(x,t) = e^{- i \frac{e}{\hbar c} \Lambda} \psi'\)</span>, then</p>
-<div class="math notranslate nohighlight">
-\[{\hat p}_i  e^{- i \frac{e}{\hbar c} \Lambda} \psi' = e^{- i \frac{e}{\hbar c} \Lambda} ({\hat p_i} - \frac{e}{c}\frac{\del \Lambda}{\del x^i})\psi'\]</div>
-<p>Similarly,</p>
-<div class="math notranslate nohighlight">
-\[i\hbar \frac{\del}{\del t} e^{- i \frac{e}{\hbar c} \Lambda} \psi' =  e^{- i \frac{e}{\hbar c} \Lambda} (i\hbar \frac{\del}{\del t} + \frac{e}{c} \frac{\del \Lambda}{\del t})\psi'\]</div>
-<p>Thus, if we apply <a class="reference internal" href="#equation-gt-potentials">(279)</a> to <span class="math notranslate nohighlight">\(A,\Phi\)</span> in the quantum Hamiltonian, and also shift <span class="math notranslate nohighlight">\(\psi \to e^{-i e\Lambda/(\hbar c)}\psi\)</span>, the Schroedinger equation remains unchanged.</p>
-</section>
-</section>
-<section id="id1">
-<h2>The Aharonov-Bohm effect<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>Now we consider the setup show below, which is a modification of the classic double slit experiment (we will review this below since we haven’t covered it yet). A source of some particle at <span class="math notranslate nohighlight">\(x = x_{source}\)</span>, which we take to produce particles in the same state each time, is behind a screen at <span class="math notranslate nohighlight">\(x = 0\)</span> with two slits. The effect of the screen is to split the state into two wavepackets, <span class="math notranslate nohighlight">\(\psi_1({\vec x}, t)\)</span> and <span class="math notranslate nohighlight">\(\psi_2({\vec x}, t)\)</span>. We also assume that if we block slit 1(2) the system is in state <span class="math notranslate nohighlight">\(A_1 \psi_1\)</span>(<span class="math notranslate nohighlight">\(A_2 \psi_2\)</span>), where <span class="math notranslate nohighlight">\(A_i\)</span> enforces <span class="math notranslate nohighlight">\(\int d^2 x |A_i|^2 |\psi_i|^2 = 1\)</span>. With both slits open the particle is in state <span class="math notranslate nohighlight">\(\psi({\vec x},t) = \psi_1 + \psi_2\)</span> such that <span class="math notranslate nohighlight">\(\int d^2 x |\psi_1 + \psi_2|^2 = 1\)</span>. Note that we are ignoring the <span class="math notranslate nohighlight">\(z\)</span> direction here, we can assume that the particles move more or less at <span class="math notranslate nohighlight">\(z = 0\)</span>, or that the wavefunction is more or less constant in the <span class="math notranslate nohighlight">\(z\)</span> direction.</p>
-<p><img alt="Illustration of double-slit experiment" src="chapter6/double_slit.png" /></p>
-<p>Now let us place a detector with resolution <span class="math notranslate nohighlight">\(\delta\)</span> that detects the <span class="math notranslate nohighlight">\(y\)</span> position of the particle, at <span class="math notranslate nohighlight">\(x = x_{meas}\)</span>. If we block slit 2, the probability for the particle to hit the screen at <span class="math notranslate nohighlight">\(y\)</span> with resiolution <span class="math notranslate nohighlight">\(\delta\)</span> is <span class="math notranslate nohighlight">\(p_1(y,\delta) = \delta |\phi_1(x_{meas},y)|^2\)</span>, as illustrated in the image above.</p>
-<p>The probability that the particle is detected at <span class="math notranslate nohighlight">\(y\)</span> within resolution <span class="math notranslate nohighlight">\(\delta\)</span> is</p>
-<div class="math notranslate nohighlight" id="equation-detection-prob">
-<span class="eqno">(283)<a class="headerlink" href="#equation-detection-prob" title="Link to this equation">#</a></span>\[p_{12}(y,\delta) = |\psi_1 + \psi_2|^2 \delta = \delta\left(|\psi_1|^2 + |\psi_2|^2 + \psi_1^* \psi_2 + \psi_2^* \psi_1\right)\]</div>
-<p>The typical story is that <span class="math notranslate nohighlight">\(\psi_i(x_{screen},y,t) = \sim f_i(y,t) e^{i k y}\)</span> where <span class="math notranslate nohighlight">\(f\)</span> is some envelope function. If we block either screen, we see that envelope function, but if we do not, then we see interference patterns. The point is that the probabilities do not add, the wavefunctions do.</p>
-<p>Now let is place a solenoid  just behind the screen. We assume we can arrange it so that <span class="math notranslate nohighlight">\(\psi_i\)</span> has negligible support near the solenoid. The solenoid produces a magnetic field <span class="math notranslate nohighlight">\({\vec B} = B{\hat z}\)</span> in the <span class="math notranslate nohighlight">\(z\)</span> direction inside, with total magnetic flux <span class="math notranslate nohighlight">\(\int_{interior} d^2 x B = \Phi\)</span>.</p>
-<p>Outside the solenoid, <span class="math notranslate nohighlight">\({\vec B} = 0\)</span>. We thus might be tempted to assume that we can set <span class="math notranslate nohighlight">\({\vec A} = 0\)</span>. However, we can only do this everywhere in a simply connected region and the region outside of the solenoid fails to be simply connected. This is why I was careful to state that we can solve <span class="math notranslate nohighlight">\({\vec B} = {\vec\nabla} \times{\vec A}\)</span> for <span class="math notranslate nohighlight">\({\vec A}\)</span> in a simply connected region. Consider two overlapping regions <span class="math notranslate nohighlight">\(R_1, R_2\)</span> as shown, and take a path <span class="math notranslate nohighlight">\(C = C_1 + C_2\)</span> around the solenoid that passes through both of them at <span class="math notranslate nohighlight">\(z = 0\)</span>, such that <span class="math notranslate nohighlight">\(C_i\)</span> lies in region <span class="math notranslate nohighlight">\(R_i\)</span>. By Stoke’s theorem,</p>
-<div class="math notranslate nohighlight" id="equation-stokes-theorem">
-<span class="eqno">(284)<a class="headerlink" href="#equation-stokes-theorem" title="Link to this equation">#</a></span>\[\oint d{\vec l}\cdot({\vec\nabla}\times{\vec A}) = \int_R d^2 x B_z = \Phi = \oint_{C_1}d({\vec l}\cdot({\vec\nabla}\times{\vec A}) + \oint_{C_2}d{\vec l}\cdot{\vec\nabla}\times{\vec A})\]</div>
-<p>Now in region <span class="math notranslate nohighlight">\(R_1\)</span> or <span class="math notranslate nohighlight">\(R_2\)</span> we could set <span class="math notranslate nohighlight">\({\vec A} = 0\)</span> but by the above, we cannot do so in both. If <span class="math notranslate nohighlight">\({\vec A}_i\)</span> is the vector potential in region <span class="math notranslate nohighlight">\(R_i\)</span>, then in the overlap regions, we must have <span class="math notranslate nohighlight">\({\vec A}_1 = {\vec A}_2 + {\vec\nabla} \Lambda\)</span>; they are related by a gauge transformation.</p>
-<p><img alt="Aharono-Bohm experiment" src="../_images/AB_slits.jpeg" /></p>
-<p>Now, what do our wavefunctions look like? Outside of the solenoid, they satisfy the time-dependent Schroedinger equation</p>
-<div class="math notranslate nohighlight" id="equation-ab-tdse">
-<span class="eqno">(285)<a class="headerlink" href="#equation-ab-tdse" title="Link to this equation">#</a></span>\[- \frac{\hbar^2}{2m} \left(-i {\vec\nabla} = \frac{e}{c} {\vec A}\right) \psi = i\hbar \del_t \psi\]</div>
-<p>where I have started using the notation <span class="math notranslate nohighlight">\(\del_t = \frac{\del}{\del t}\)</span>. Now in a region <span class="math notranslate nohighlight">\(R_i\)</span>, we can write</p>
-<div class="math notranslate nohighlight" id="equation-shifted-wavefunction">
-<span class="eqno">(286)<a class="headerlink" href="#equation-shifted-wavefunction" title="Link to this equation">#</a></span>\[\psi_i({\vec x},t) = e^{\frac{i e}{c} \int_{x_0}^{\vec x}d{\vec l}\cdot A} \phi_i\]</div>
-<p>where the line integral stays in region <span class="math notranslate nohighlight">\(R_i\)</span>. Using this,</p>
-<div class="math notranslate nohighlight">
-\[(-i{\vec \nabla} - \frac{e}{c} {\vec A})\psi_i = e^{\frac{i e}{c} \int_{x_0}^{\vec x}d{\vec l}\cdot A} (-i{\vec\nabla})\phi_i\]</div>
-<p>so that</p>
-<div class="math notranslate nohighlight">
-\[- \frac{\hbar^2}{2m}\nabla^2 \phi_i = i\hbar \del_t \phi_i\]</div>
-<p>and <span class="math notranslate nohighlight">\(\phi_i\)</span> are the wavefunctions for the double slit experiment absent the screen.</p>
-<p>We assume that the wavefunction <span class="math notranslate nohighlight">\(\phi_i\)</span> has support only in <span class="math notranslate nohighlight">\(R_i\)</span>, so that we can unambigoulsy write <span class="math notranslate nohighlight">\(\psi_i\)</span> via the above shift. Now let us measure the position of the particle at <span class="math notranslate nohighlight">\(x_{meas}\)</span>. The result is</p>
-<div class="math notranslate nohighlight" id="equation-ab-result">
-<span class="eqno">(287)<a class="headerlink" href="#equation-ab-result" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-p(y,\delta) &amp; = \delta  e^{i \frac{e}{c} \int_{x_0,R_1}^{x_{meas}} d{\vec l}\cdot{\vec A}}\
-\phi_1+ e^{i \frac{e}{c} \int_{x_0,R_2}^{x_{meas}} d{\vec l}\cdot{\vec A}}\phi_2 \\
-&amp; = |\phi_1|^2 + |\phi_2|^2 + \phi_2^* \phi_1 e^{i\frac{e}{c}\Phi} + c.c.
+\[\begin{split}\begin{align}
+{\vec P}_{X} &amp; = {\vec p}_e + {\vec p}_p\\
+{\vec p}_{x} &amp; = \frac{m_p {\vec p}_e - m_e {\vec p}_p}{m_e + m_p}
 \end{align}\end{split}\]</div>
-<p>In other words, as we change <span class="math notranslate nohighlight">\(\Phi\)</span>, the interference fringes will undergo a phase shift proportional to the magnetic flux through the solenoid.</p>
+<p>You can show that <span class="math notranslate nohighlight">\(\{X^i, P_j\} = \delta^i_j\)</span>, <span class="math notranslate nohighlight">\(\{x^i,p_j\} = \delta^i_j\)</span>, <span class="math notranslate nohighlight">\(\{x^i,P_j\} = \{X^i,p_j\} = 0\)</span>, as a consequence of the canonical commutation relations for the positions and momenta of the proton and electron. Alternatively, in the quantum mechanical case, if we represent the momentum operators in terms of gradients, we can derive the same relationship.</p>
+<p>We can then rewrite the Hamiltonian by taking the Legendre transform of Eq. <a class="reference internal" href="#equation-com-lag">(318)</a>, to find:</p>
+<div class="math notranslate nohighlight">
+\[H = \frac{{\vec P}^2}{2M} + \frac{{\vec p}^2}{2\mu} - \frac{e^2}{|{\vec x}|}\]</div>
+<p>where we have dropped the subscripts on <span class="math notranslate nohighlight">\(P,p\)</span>.</p>
+</section>
+<section id="separating-out-the-center-of-mass-coordinates">
+<h2>Separating out the center of mass coordinates<a class="headerlink" href="#separating-out-the-center-of-mass-coordinates" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -522,7 +464,7 @@ p(y,\delta) &amp; = \delta  e^{i \frac{e}{c} \int_{x_0,R_1}^{x_{meas}} d{\vec l}
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapter6"
+            path: "./chapter10"
         },
         predefinedOutput: true
     }
@@ -540,20 +482,20 @@ p(y,\delta) &amp; = \delta  e^{i \frac{e}{c} \int_{x_0,R_1}^{x_{meas}} d{\vec l}
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Interlude_1.html"
+       href="hydrogen.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Interlude: two interesting systems</p>
+        <p class="prev-next-title">The Hydrogen Atom</p>
       </div>
     </a>
     <a class="right-next"
-       href="neutrino_oscillations.html"
+       href="../appendix.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Neutrino oscillations</p>
+        <p class="prev-next-title">Appendix</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -573,13 +515,9 @@ p(y,\delta) &amp; = \delta  e^{i \frac{e}{c} \int_{x_0,R_1}^{x_{meas}} d{\vec l}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#charged-particle-in-an-electromagnetic-field">Charged particle in an electromagnetic field</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gauge-potentials">Gauge potentials</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-mechanics">Classical mechanics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-case">Quantum case</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The Aharonov-Bohm effect</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hilbert-space">The Hilbert space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hamiltonian">The Hamiltonian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separating-out-the-center-of-mass-coordinates">Separating out the center of mass coordinates</a></li>
 </ul>
   </nav></div>
 
