@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Reduction of the Two-Body Problem &#8212; Physics 162</title>
+    <title>Bound state spectra for the Coulomb problem &#8212; Physics 162</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"], "cO": ["\\mathcal{O}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter10/two_particle_reduction';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter10/hydrogen_spectra';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Appendix" href="../appendix.html" />
-    <link rel="prev" title="The Hydrogen Atom" href="hydrogen.html" />
+    <link rel="prev" title="Reduction of the Two-Body Problem" href="two_particle_reduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -233,7 +233,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="hydrogen.html">The Hydrogen Atom</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Reduction of the Two-Body Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="two_particle_reduction.html">Reduction of the Two-Body Problem</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Bound state spectra for the Coulomb problem</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -292,7 +293,7 @@
       
       
       
-      <li><a href="../_sources/chapter10/two_particle_reduction.md" target="_blank"
+      <li><a href="../_sources/chapter10/hydrogen_spectra.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -376,7 +377,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Reduction of the Two-Body Problem</h1>
+    <h1>Bound state spectra for the Coulomb problem</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -386,9 +387,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hilbert-space">The Hilbert space</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hamiltonian">The Hamiltonian</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separating-out-the-center-of-mass-coordinates">Separating out the center of mass coordinates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction-to-the-radial-equation">Reduction to the radial equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions-for-u-r">Boundary conditions for <span class="math notranslate nohighlight">\(u(r)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-series-solution">Power series solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-spectrum">The spectrum</a></li>
 </ul>
             </nav>
         </div>
@@ -400,77 +402,111 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="reduction-of-the-two-body-problem">
-<h1>Reduction of the Two-Body Problem<a class="headerlink" href="#reduction-of-the-two-body-problem" title="Link to this heading">#</a></h1>
-<p>Our goal here is to set up the Hilbert space and the Hamiltonian, for the pruposes of solving the time-independent Schroedinger equation.</p>
-<section id="the-hilbert-space">
-<h2>The Hilbert space<a class="headerlink" href="#the-hilbert-space" title="Link to this heading">#</a></h2>
-<p>At its core we are studying the Coulomb attraction between two spin-<span class="math notranslate nohighlight">\(\half\)</span> particles (the proton and the electron) moving in space. Each of them can be labeled by their position (in a position basis) and their spin. For this section of the notes we will mostly ignore the spin degrees of freedom (they will come back later). The resulting Hilbert space is</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="bound-state-spectra-for-the-coulomb-problem">
+<h1>Bound state spectra for the Coulomb problem<a class="headerlink" href="#bound-state-spectra-for-the-coulomb-problem" title="Link to this heading">#</a></h1>
+<p>We now focus on solving the Coulomb problem:</p>
 <div class="math notranslate nohighlight">
-\[\cH = L^2(\CR^3)_1\otimes \CC^2_1\otimes L^2(\CR^3)_2\otimes \CC^2_2$\]</div>
-<p>where the subscrips label the particles, <span class="math notranslate nohighlight">\(L^2(\CR^3)\)</span> denotes the Hilbert space related to particle position, and <span class="math notranslate nohighlight">\(\CC^2\)</span> is the Hilbert space for the spin degrees of freedom (when the particles carry spin-<span class="math notranslate nohighlight">\(\half\)</span>).</p>
-<p>Ignoring the spin degrees of freedom, the Hilbert space of the spatial degrees of freedom is the space of linear combinations of wavecfunctins <span class="math notranslate nohighlight">\(\psi_1({\vec x}_1)\psi_2({\vec x}_2)\)</span>, which are just general functions <span class="math notranslate nohighlight">\(\Psi({\vec x}_1,{\vec x}_2)\)</span>. As we will see, it is convenient to write these as functions of a different linear combination of variables, teh *relative position <span class="math notranslate nohighlight">\({\vec x} = {\vec x}_1 - {\vec x}_2\)</span> and the <em>center of mass position</em></p>
+\[- \frac{\hbar^2}{2\mu} \psi({\vec x}) - \frac{e^2}{|{\vec x|} \psi = (E - E_{com}) \psi\]</div>
+<p>We will redefine <span class="math notranslate nohighlight">\(E - E_{com} \to E\)</span> just to make reading (and writing) easier.</p>
+<p>Note that the reduced mass <span class="math notranslate nohighlight">\(\mu\)</span> is</p>
 <div class="math notranslate nohighlight">
-\[{\vec X} = \frac{m_1 {\vec x}_1 + m_2 {\vec x}_2}{m_1 + m_2}\]</div>
-<p>where <span class="math notranslate nohighlight">\(m_i\)</span> are the passes of the <span class="math notranslate nohighlight">\(i\)</span>th particles, a parameter which appears in teh Hamiltonian. We can solve for <span class="math notranslate nohighlight">\({\vec x}_i\)</span> in terms of <span class="math notranslate nohighlight">\({\vec X}\)</span>, <span class="math notranslate nohighlight">\({\vec x}\)</span>, and so write <span class="math notranslate nohighlight">\(\Psi = \Psi({\vec X}, {\vec x})\)</span>. Thus, the Hilbert space is, equivalently,</p>
+\[\mu = \frac{m_e m_p}{m_e + m_p} = \frac{m_e}{1 + \frac{m_e}{m_p}} \sim m_e \left(1 - \frac{m_e}{m_p} + \cO(\frac{m_e^2}{m_p^2})\right)\]</div>
+<p>since <span class="math notranslate nohighlight">\(\frac{m_e}{m_p} \sim 5\times 10^{-4}\)</span>, the reduced mass in this case is very close to the electron mass.</p>
+<section id="reduction-to-the-radial-equation">
+<h2>Reduction to the radial equation<a class="headerlink" href="#reduction-to-the-radial-equation" title="Link to this heading">#</a></h2>
+<p>This Hamiltonian is invariant under rotations. It therefore makes sense to write the Schroedinger equation in spherical coordinates. This transformation is standard and it is worth it for you to work it out yourself. The end result is:</p>
 <div class="math notranslate nohighlight">
-\[\cH = L^2(\CR^3)_{X}\otimes L^2(\CR^3)_{x}\]</div>
+\[- \frac{\hbar^2}{2\mu} \frac{1}{r} \frac{\del^2}{\del r^2} (r\psi) - \frac{\hbar^2}{2\mu r^2} {\vec L}^2\psi - \frac{e^2}{r} \psi = E\psi\]</div>
+<p>Now all of the angular derivatives are contained in <span class="math notranslate nohighlight">\({\vec L}^2\)</span>. Thus, we can us separation of variables, and write <span class="math notranslate nohighlight">\(\psi = f(r) \chi(\theta,\phi)\)</span>. Inserting this equation, and dividing by <span class="math notranslate nohighlight">\(\psi\)</span>, we find</p>
+<div class="math notranslate nohighlight" id="equation-separated-hydrogen">
+<span class="eqno">(319)<a class="headerlink" href="#equation-separated-hydrogen" title="Link to this equation">#</a></span>\[- \frac{\hbar^2}{2\mu f} \frac{1}{r} \frac{\del^2}{\del r^2} (rf) - \frac{1}{2\mu r^2 \chi} {\vec L}^2\chi - \frac{e^2}{r} = E\]</div>
+<p>Further multiplying by <span class="math notranslate nohighlight">\(2\mu r^2\)</span>, there is only one term involving <span class="math notranslate nohighlight">\(\chi\)</span> or any other function of the angular coordinates, which is the term proportional to <span class="math notranslate nohighlight">\({\vec L}^2\chi\)</span>. Thus we can deduce that</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\chi}{\vec L}^2 \chi = C\]</div>
+<p>for some constant <span class="math notranslate nohighlight">\(C\)</span>. Multiplying this by <span class="math notranslate nohighlight">\(\chi\)</span>, we have an eigenvalue equation for the operator <span class="math notranslate nohighlight">\({\vec L}^2\)</span>. But we know the solution – <span class="math notranslate nohighlight">\(\chi\)</span> mist be a spherical harmonic <span class="math notranslate nohighlight">\(Y_{\ell,m}(\theta,\phi)\)</span>, and <span class="math notranslate nohighlight">\(C = \hbar^2\ell(\ell + 1)\)</span>. Insering this into <a class="reference internal" href="#equation-separated-hydrogen">(319)</a>, we find:</p>
+<div class="math notranslate nohighlight">
+\[- \frac{\hbar^2}{2\mu} \frac{1}{r} \frac{\del^2}{\del r^2}(r f(r)) = \frac{\hbar^2 \ell(\ell + 1)}{2\mu r^2} f - \frac{e^2}{r} f = E f\]</div>
+<p>Finally, if we multiply teh entire equation by <span class="math notranslate nohighlight">\(r\)</span> and define <span class="math notranslate nohighlight">\(u = r f(r)\)</span>, we have and “effective” Schroedinger equation:</p>
+<div class="math notranslate nohighlight">
+\[- \frac{\hbar^2}{2\mu} \del_r^2 u(r) + \left[\frac{\hbar^2 \ell(\ell + 1)}{2\mu r^2} - \frac{e^2}{r}\right] u = E u\]</div>
+<p>This is a one-dimensional Schroedinger equation with an “effective potential”</p>
+<div class="math notranslate nohighlight">
+\[V_{eff} = \frac{\hbar^2 \ell(\ell + 1)}{2\mu r^2} - \frac{e^2}{r}\]</div>
+<p>This is sketched below. There is a COulomb potential and for <span class="math notranslate nohighlight">\(\ell \neq 0\)</span>, a “centrifugal barrier” keeping the electron from the proton. This barrier is absent for <span class="math notranslate nohighlight">\(\ell = 0\)</span>, and one might worry that the problem is ill-defined because the potential is singular. Classically, this is only a problem if we have truly point particles and fire them right at each other. Quantum-mechanically, we will see that the problem is well-defined for the correct choice of boundary conditions. In the end, <span class="math notranslate nohighlight">\(r\)</span> is an operator, and <span class="math notranslate nohighlight">\(\vev{\frac{e^2}{r}}\)</span> in any well-defined quantum state is finite.</p>
+<p><img alt="Effective potential for the Coulomb problem" src="../_images/effective_pot_hydrogen.png" /></p>
+<p>It should be clear from this figure that we expect bound states for <span class="math notranslate nohighlight">\(E &lt; 0\)</span>, since the wavefunction will be in the classically forbidden region for <span class="math notranslate nohighlight">\(r \to \infty\)</span> and will die off exponentially. for <span class="math notranslate nohighlight">\(E &gt; 0\)</span> we expect a continuum of propagating states, desribing scattering of the electron and proton.</p>
 </section>
-<section id="the-hamiltonian">
-<h2>The Hamiltonian<a class="headerlink" href="#the-hamiltonian" title="Link to this heading">#</a></h2>
-<p>Our strategy (which works quite well in practice) is to write the Hamiltonian for the non-relativistic Coulomb problem and promote it to a quantim operator in the usual way, replacing the classical positions and momenta with quantum operators. In cgs units, this is</p>
+<section id="boundary-conditions-for-u-r">
+<h2>Boundary conditions for <span class="math notranslate nohighlight">\(u(r)\)</span><a class="headerlink" href="#boundary-conditions-for-u-r" title="Link to this heading">#</a></h2>
+<p>Before continuing, we need to examine the boundary conditions for <span class="math notranslate nohighlight">\(u(r)\)</span> at <span class="math notranslate nohighlight">\(r = 0\)</span>, <span class="math notranslate nohighlight">\(r = \infty\)</span>. In the latter case, since <span class="math notranslate nohighlight">\(V_{eff} \to 0\)</span>, the approximate solution is</p>
 <div class="math notranslate nohighlight">
-\[H = \frac{{\vec p}_p^2}{2 m_p} + \frac{{\vec p}_e^2}{2 m_p} - \frac{e^2}{|{\vec c}_p - {\vec x}_e|}\]</div>
-<p>where the subscripts <span class="math notranslate nohighlight">\(p,e\)</span> refer to proton and electron, and <span class="math notranslate nohighlight">\(e\)</span> as a dimensionful number is the electron charge. At this point we are ignoring spin. This is the Hamiltonian in the non-relativistic limit. In fact there are important and measurable additional terms that are higher order in <span class="math notranslate nohighlight">\({\vec p}^2\)</span> or which couple the spin and orbital anglar momenta, that arise from a fully relativistic treatment, but they are small, of order the fine structure constant <span class="math notranslate nohighlight">\(\alpha = \frac{e^2}{\hbar c} \sim \frac{1}{137}\)</span>. We will discuss some of these later, and learn how to treat them in a systematic fashion.</p>
-<p>Note that the interaction between these particles depends only on the relative position. Our experience with classical mechanics (for this problem or for the mathematically equivalent gravitational two-body problem) indicates that the Hamiltonian should be indepdendent of the center of mass, and thus that the center of mass momentum is conserved.</p>
-<p>We start with the change of coordinates</p>
+\[u(r) \sim e^{\pm \gamma r}\ ; \ \ \gamma = \sqrt{\frac{2\mu |E|}{\hbar^2}}\]</div>
+<p>Clearly we need to choose the eponentially decaying solution (or the wavefunction is not normalizable).</p>
+<p>For <span class="math notranslate nohighlight">\(r \to 0\)</span>, the story is a little more subtle. Let us first consider <span class="math notranslate nohighlight">\(\ell &gt; 0\)</span>. As <span class="math notranslate nohighlight">\(r \to 0\)</span>, the centrifugal barrier term in the Schroedinger equation dominates <span class="math notranslate nohighlight">\(E u\)</span> or <span class="math notranslate nohighlight">\(e^2 u/r\)</span>, because <span class="math notranslate nohighlight">\(1/r^2\)</span> blows up more quackly that <span class="math notranslate nohighlight">\(1/r\)</span>. Thus, as <span class="math notranslate nohighlight">\(r \to 0\)</span>, the Schrodinger equation becomes</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-{\vec X} &amp; = \frac{m_p {\vec x}_p + m_e {\vec x}_e}{m_p + m_e}\\
-{\vec x} &amp; = {\vec x}_e - {\vec x}_p
-\end{align}\end{split}\]</div>
-<p>We can then ask, what are the conjugate momenta in terms of <span class="math notranslate nohighlight">\({\vec p}_{p,e}\)</span>? There are several ways we could do this. In the classical case, we can perform the above transformation at the level of the Lagrangian, for which we find</p>
-<div class="math notranslate nohighlight" id="equation-com-lag">
-<span class="eqno">(318)<a class="headerlink" href="#equation-com-lag" title="Link to this equation">#</a></span>\[L = \half M {\dot{\vec X}}^2 + \half \mu {\dot {\vec x}}^2 + \frac{e^2}{|{\vec x}|}\]</div>
-<p>where <span class="math notranslate nohighlight">\(M = m_e + m_p\)</span> is the <em>total mass</em>, and</p>
+\[- \frac{\hbar^2}{2\mu} \del_r^2 u + \frac{\hbar^2 \ell}{2\mu r^2} u = 0\]</div>
+<p>multiplying through by <span class="math notranslate nohighlight">\(2\mu/\hbar^2\)</span> we can see that both terms scale the same as <span class="math notranslate nohighlight">\(r \to \lambda r\)</span>; that is, they both scale as <span class="math notranslate nohighlight">\(\lambda^{-2}\)</span>. In this case, a solution of the form <span class="math notranslate nohighlight">\(u \propto r^{\alpha}\)</span> makes sense. since both terms will reduce the power of <span class="math notranslate nohighlight">\(\alpha\)</span> and can be balanced against each other. The result is</p>
 <div class="math notranslate nohighlight">
-\[\mu = \frac{m_e m_p}{m_e + m_p}\]</div>
-<p>is the *reduced mass. In terms of these,</p>
+\[- \alpha(\alpha - 1) + \ell(\ell + 1) = 0\]</div>
+<p>which has solutions <span class="math notranslate nohighlight">\(\alpha = - \ell, \ell +1\)</span>. The former leads to a wavefunction of the form</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-{\vec P}_{X} &amp; = {\vec p}_e + {\vec p}_p\\
-{\vec p}_{x} &amp; = \frac{m_p {\vec p}_e - m_e {\vec p}_p}{m_e + m_p}
-\end{align}\end{split}\]</div>
-<p>You can show that <span class="math notranslate nohighlight">\(\{X^i, P_j\} = \delta^i_j\)</span>, <span class="math notranslate nohighlight">\(\{x^i,p_j\} = \delta^i_j\)</span>, <span class="math notranslate nohighlight">\(\{x^i,P_j\} = \{X^i,p_j\} = 0\)</span>, as a consequence of the canonical commutation relations for the positions and momenta of the proton and electron. Alternatively, in the quantum mechanical case, if we represent the momentum operators in terms of gradients, we can derive the same relationship.</p>
-<p>We can then rewrite the Hamiltonian by taking the Legendre transform of Eq. <a class="reference internal" href="#equation-com-lag">(318)</a>, to find:</p>
+\[\psi = \frac{u}{r} Y_{\ell,m} \sim r^{-\ell - 1}\]</div>
+<p>When we compute the norm,</p>
 <div class="math notranslate nohighlight">
-\[H = \frac{{\vec P}^2}{2M} + \frac{{\vec p}^2}{2\mu} - \frac{e^2}{|{\vec x}|}\]</div>
-<p>where we have dropped the subscripts on <span class="math notranslate nohighlight">\(P,p\)</span>.</p>
+\[\int dr r^2 d\phi \sin\theta d\theta |\psi|^2 \sim \int dr \frac{1}{r^{2\ell + 1}} + \ldots \]</div>
+<p>which clearly diverges; so we demand that <span class="math notranslate nohighlight">\(u\to r^{\ell + 1}\)</span> as <span class="math notranslate nohighlight">\(r \to 0\)</span>.</p>
+<p>When <span class="math notranslate nohighlight">\(\ell = 0\)</span>, the Coulomb term dominates, but scales differently in <span class="math notranslate nohighlight">\(r\)</span>. We assume that <span class="math notranslate nohighlight">\(u\)</span> can be expanded in a power series, <span class="math notranslate nohighlight">\(u \sim r^{\alpha} (1 + a_1 t + a_2 r^2 + \ldots)\)</span>. Inserting this into the equation</p>
+<div class="math notranslate nohighlight">
+\[- \frac{\hbar^2}{2\mu} \del_r^2 u + \frac{e}{r} u = E u\]</div>
+<p>the most singular term comes from the second derivative acting on <span class="math notranslate nohighlight">\(r^{\alpha}\)</span>, and is proportional to <span class="math notranslate nohighlight">\(\alpha(\alpha - 1)r^{\alpha - 2}\)</span>. This has the solutions <span class="math notranslate nohighlight">\(u \propto 1\)</span> and <span class="math notranslate nohighlight">\(u \propto r\)</span>. In fact both are annihilated by the second derivative, but when we expand the solution to the full equation in a power series, we will see that it comes out OK.</p>
+<p>Now <span class="math notranslate nohighlight">\(u \sim 1 \Rightarrow \psi \sim \frac{1}{r}\)</span>. While this is putatively ormalizable at the origin, it is in fact problematic; the wvafunction has a sharp kin at the origin. One can in fact show that <span class="math notranslate nohighlight">\({\vec \nabla}^2 \frac{1}{r} \propto \delta(r)\)</span>. This delta function singularity cannot balance against the other terms in the Schroedinger equation. Thus, we demand that <span class="math notranslate nohighlight">\(u \sim r\)</span>.</p>
 </section>
-<section id="separating-out-the-center-of-mass-coordinates">
-<h2>Separating out the center of mass coordinates<a class="headerlink" href="#separating-out-the-center-of-mass-coordinates" title="Link to this heading">#</a></h2>
-<p>Classically, the center of mass coordinate simply travels in a straight line; the Lagrangian <a class="reference internal" href="#equation-com-lag">(318)</a> as the equations of motion for <span class="math notranslate nohighlight">\({\vec X}\)</span>:</p>
+<section id="power-series-solution">
+<h2>Power series solution<a class="headerlink" href="#power-series-solution" title="Link to this heading">#</a></h2>
+<p>Before continuing, we will follow our treatment of the simple harmonic oscillator and try to make the Schrodinger equation one in terms of dimensionless variables. First, we note that for an energy <span class="math notranslate nohighlight">\(E\)</span>, as <span class="math notranslate nohighlight">\(r \to \infty\)</span> the equation becomes</p>
 <div class="math notranslate nohighlight">
-\[M\ddot{\vec X} = {\dot {\vec P}} = 0\]</div>
-<p>The center of mass momentum is conserved.</p>
-<p>In quantum mechanics, we wish to solve the equation</p>
+\[\del_r^2 u = \frac{2\mu |E|}{\hbar^2} u\]</div>
+<p>with the solution</p>
 <div class="math notranslate nohighlight">
-\[H\ket{\Psi} = E\ket{\Psi} \Rightarrow - \frac{\hbar^2}{2M} {\vec \nabla}^2_X \Psi(X,x) - \frac{\hbar^2}{2\mu} {\nabla}^2_x \Psi - \frac{e^2}{|{\vec x}|}\Psi = E \Psi\]</div>
-<p>We will use the technique of separation of variables to pull apart the dependence on <span class="math notranslate nohighlight">\(X, x\)</span>. If we take the ansatz <span class="math notranslate nohighlight">\(\Psi = \chi(X)\psi(x)\)</span>, insert this into the Schroedinger equation above, and divide by <span class="math notranslate nohighlight">\(\Psi\)</span>, we find</p>
+\[u \sim e^{- \sqrt{\frac{2\mu |E|}{\hbar^2}} r}\]</div>
+<p>This dies off with a characteristic length scale <span class="math notranslate nohighlight">\(L = \sqrt{\frac{\hbar^2}{2\mu |E|}\)</span>. Defining <span class="math notranslate nohighlight">\(r = L \rho\)</span>, the radial Schroedinger equation becomes:</p>
 <div class="math notranslate nohighlight">
-\[- \frac{1}{\chi}\frac{\hbar^2}{2M} {\vec \nabla}^2_X - \frac{1}{\psi} \frac{\hbar^2}{2\mu} {\vec \nabla}^2_x \psi - \frac{e^2}{|{\vec x}|} = E\]</div>
-<p>Since the second and third terms on the RHS as well as <span class="math notranslate nohighlight">\(E\)</span> are independent of <span class="math notranslate nohighlight">\(X\)</span>, the first term must also be independent of <span class="math notranslate nohighlight">\(X\)</span>, that is, a constant, which we will call <span class="math notranslate nohighlight">\(E_{com}\)</span>; thus</p>
+\[- \del_{\rho}^2 u + \frac{\ell(\ell + 1)} u - \sqrt{\frac{2\mu}{\hbar^2|E|}}\frac{e^2}{\rho} u = u\]</div>
+<p>We further define <span class="math notranslate nohighlight">\(\lambda = \sqrt{\frac{2\mu}{\hbar^2 |E|}}\)</span>. Next, we strip off the large-<span class="math notranslate nohighlight">\(\rho\)</span> behavior by writing <span class="math notranslate nohighlight">\(u = e^{-\rho} G(\rho)\)</span>. The resulting equation is</p>
+<div class="math notranslate nohighlight" id="equation-g-equation">
+<span class="eqno">(320)<a class="headerlink" href="#equation-g-equation" title="Link to this equation">#</a></span>\[\frac{d}{d\rho^2}G - 2 \frac{d}{d\rho} G + \left[\frac{e^2\lambda}{\rho} - \frac{\ell(\ell + 1)}{\rho^2}\right]G = 0\]</div>
+<p>These terms scale as either <span class="math notranslate nohighlight">\(\sigma^{-2}\)</span> or <span class="math notranslate nohighlight">\(\sigma^{-1}\)</span> as <span class="math notranslate nohighlight">\(\rho \to \sigma \rho\)</span>. If we expand <span class="math notranslate nohighlight">\(G\)</span> in a power series, these terms will relate successive terms, leaving the possibility that the coefficients are at least determined by a recursion relation. From the discussion above, we try</p>
 <div class="math notranslate nohighlight">
-\[- \frac{\hbar^2}{2M} {\vec \nabla}^2_X \chi = E_{com}\chi\]</div>
-<p>This is the equation for a free particle, whose solutions are plane waves. Following this, we are left with</p>
+\[G(\rho) = \rho \sum_{n = 0}^{\infty} c_n \rho^n\]</div>
+<p>Inserting this into Eq. , and collecting all terms of the same order in <span class="math notranslate nohighlight">\(\rho\)</span>, we find:</p>
 <div class="math notranslate nohighlight">
-\[- \frac{\hbar^2}{2\mu} {\vec \nabla}^2_x \psi - \frac{e^2}{|{\vec x}|} \psi = (E - E_{com})\psi\]</div>
-<p>This is the equation we will solve in the next section.</p>
-<p>Note that we could also do this for the time-dependent Schroedinger equation; if we assume the total wavfunction factorizes into <span class="math notranslate nohighlight">\(\chi(X,t)\psi(x,t)\)</span>, then we find</p>
+\[\sum_{m = 1}^{\infty} \left[c_m(m + \ell + 1)(m + \ell) - \ell(\ell + 1) c_m - (2(m + \ell) - e^2\lambda)  c_{m-1}\right]\rho^{m - 1}\]</div>
+<p>This is solved if</p>
 <div class="math notranslate nohighlight">
-\[\frac{1}{\chi}\left[i\hbar \frac{\del}{\del t} \chi + \frac{\hbar^2}{2M}\chi\right] + \frac{1}{\psi} \left[i\hbar \frac{\del}{\del t} \psi + \frac{\hbar^2}{2\mu} {\vec\nabla}^2_x \psi + \frac{e^2}{|{\vec x}|} \psi\right] = 0\]</div>
-<p>Now each of the two terms must be an equal and opposite constant; we can remove this constant by rotating <span class="math notranslate nohighlight">\(\chi,\psi\)</span> by a time-dependent phase. In this case we could set up a wavepacked for the center of mass motion.</p>
-<p>In both cases, entangled states with respect to the <span class="math notranslate nohighlight">\(X,x\)</span> degrees of freedom are possible; we leave these aside.</p>
+\[\frac{c_m}{c_{m-1}} = \frac{2(m + \ell) - e^2 \lambda}{(m + \ell + 1)(m +\ell) - \ell(\ell + 1)}\]</div>
+<p>Thus each <span class="math notranslate nohighlight">\(c_m\)</span> is determined by the previous <span class="math notranslate nohighlight">\(c_{m-1}\)</span>. This leaves <span class="math notranslate nohighlight">\(c_0\)</span> undetermined, but it will be fixed by normalization of the wavefunction.</p>
+<p>Unfortunately, this power series will in general descibe a diverging wavefunction. So see this note that for large <span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(c_m/c_{m-1} \sim 2/m\)</span>, so that <span class="math notranslate nohighlight">\(c_m \sim 2^m/m!\)</span>. Summing</p>
+<div class="math notranslate nohighlight">
+\[\rho \sum_m c_m \rho^m \sim \rho \sum_m \frac{(2 \rho)^m}{m!} \sim \rho e^{2\rho}\]</div>
+<p>This overwhelms the <span class="math notranslate nohighlight">\(e^{-\rho}\)</span> behavior and renders the wavefunction non-normalizable.</p>
+<p>The out is if the power series truncates at some order. Then the wavfunction scales as <span class="math notranslate nohighlight">\(\rho^m e^{-\rho}\)</span> which is normalizable as <span class="math notranslate nohighlight">\(\rho \to \infty\)</span>. This means that there is some <span class="math notranslate nohighlight">\(m = 1, 2, 3, 4...\)</span> such that <span class="math notranslate nohighlight">\(e^2 \lambda = 2(m + \ell)\)</span>. In other words,</p>
+<div class="math notranslate nohighlight" id="equation-hydrogen-energy">
+<span class="eqno">(321)<a class="headerlink" href="#equation-hydrogen-energy" title="Link to this equation">#</a></span>\[E = - \frac{\mu e^4}{2\hbar^2 n^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n = 1,2,3,\ldots = (m + \ell)\)</span>. This means that</p>
+<div class="math notranslate nohighlight">
+\[\rho - \frac{\mu e^4}{\hbar^2 n} r\]</div>
+<p>so that the charateristic scale of exponential falloff is <span class="math notranslate nohighlight">\(L_n \sim \frac{\hbar^2 n}{\mu e^4}\)</span>. We call <span class="math notranslate nohighlight">\(L_1 = \frac{\hbar^2}{\mu e^4} = a_0\)</span> the *Bohr radius$, defining the characteristic side of the ground state.</p>
+<p>At the end of the day, the wavefunction is a polynomial times an exponential. The polynomials turn out to be well-known functions. We can write the full solution as</p>
+<div class="math notranslate nohighlight">
+\[\psi(r,\theta,\phi) \propto Y_{\ell,m}(\theta,\phi) e^{-r/(n a_0)} \left(\frac{r}{n a_0}\right)^{\ell} L_{n-\ell-1}^{2\ell + 1}\left(\frac{2 r}{n a_0}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(L_n^m\)</span> are the <em>associated Laguerre polynomials</em> whose properties can be looked up in a good book on special functions. Note that the characteristic scale is <span class="math notranslate nohighlight">\(n a_0\)</span>.</p>
+<p>If we replace the proton with a nucleus with charge <span class="math notranslate nohighlight">\(Z\)</span>, the Coulomb potential gets replaced by <span class="math notranslate nohighlight">\(e^2/r \to Z e^2/r\)</span>. Then <span class="math notranslate nohighlight">\(a_0 \to a_0/Z^2\)</span>, and <span class="math notranslate nohighlight">\(E_n \to Z^2 E_n\)</span>.</p>
+</section>
+<section id="the-spectrum">
+<h2>The spectrum<a class="headerlink" href="#the-spectrum" title="Link to this heading">#</a></h2>
+<p>As we stated, the bound states have energy <a class="reference internal" href="#equation-hydrogen-energy">(321)</a>. Looking back, we see that <span class="math notranslate nohighlight">\(n = \ell + m\)</span> where <span class="math notranslate nohighlight">\(m \geq 1\)</span>. Thus, for any value of <span class="math notranslate nohighlight">\(m\)</span>, we have the possible values <span class="math notranslate nohighlight">\(\ell = n - 1, n -2, \ldots 0\)</span>. For <span class="math notranslate nohighlight">\(n &gt; 1\)</span> this is a highly degenerate spectrum because for each value of <span class="math notranslate nohighlight">\(\ell\)</span> there is a <span class="math notranslate nohighlight">\(2\ell + 1\)</span>-dimensional subspace. This degeneracy is the result of an additional symmetry, that we will discuss below.</p>
+<p>It is standard to refer to <span class="math notranslate nohighlight">\(\ell = 0\)</span> states by <span class="math notranslate nohighlight">\(S\)</span>; <span class="math notranslate nohighlight">\(\ell = 1\)</span> states by <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(\ell = 2\)</span> states by <span class="math notranslate nohighlight">\(D\)</span>, and so on.</p>
+<p>Finally, note that the low-lying states are separated by energies of order a fraction of the magnitude of the ground state energy. As <span class="math notranslate nohighlight">\(n \to \infty\)</span> the spacing becomes finer and finer, as the energy approaches zero and the wavefunction can spread out more and more.</p>
 </section>
 </section>
 
@@ -505,12 +541,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="hydrogen.html"
+       href="two_particle_reduction.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The Hydrogen Atom</p>
+        <p class="prev-next-title">Reduction of the Two-Body Problem</p>
       </div>
     </a>
     <a class="right-next"
@@ -538,9 +574,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hilbert-space">The Hilbert space</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hamiltonian">The Hamiltonian</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separating-out-the-center-of-mass-coordinates">Separating out the center of mass coordinates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction-to-the-radial-equation">Reduction to the radial equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions-for-u-r">Boundary conditions for <span class="math notranslate nohighlight">\(u(r)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-series-solution">Power series solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-spectrum">The spectrum</a></li>
 </ul>
   </nav></div>
 
