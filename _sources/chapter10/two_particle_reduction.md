@@ -1,5 +1,7 @@
 # Reduction of the Two-Body Problem
 
+Our goal here is to set up the Hilbert space and the Hamiltonian, for the pruposes of solving the time-independent Schroedinger equation.
+
 ## The Hilbert space
 
 At its core we are studying the Coulomb attraction between two spin-$\half$ particles (the proton and the electron) moving in space. Each of them can be labeled by their position (in a position basis) and their spin. For this section of the notes we will mostly ignore the spin degrees of freedom (they will come back later). The resulting Hilbert space is
@@ -59,6 +61,38 @@ H = \frac{{\vec P}^2}{2M} + \frac{{\vec p}^2}{2\mu} - \frac{e^2}{|{\vec x}|}
 where we have dropped the subscripts on $P,p$.
 
 ## Separating out the center of mass coordinates
+
+Classically, the center of mass coordinate simply travels in a straight line; the Lagrangian {eq}`com_lag` as the equations of motion for ${\vec X}$:
+```{math}
+M\ddot{\vec X} = {\dot {\vec P}} = 0
+```
+The center of mass momentum is conserved.
+
+In quantum mechanics, we wish to solve the equation
+```{math}
+H\ket{\Psi} = E\ket{\Psi} \Rightarrow - \frac{\hbar^2}{2M} {\vec \nabla}^2_X \Psi(X,x) - \frac{\hbar^2}{2\mu} {\nabla}^2_x \Psi - \frac{e^2}{|{\vec x}|}\Psi = E \Psi
+```
+We will use the technique of separation of variables to pull apart the dependence on $X, x$. If we take the ansatz $\Psi = \chi(X)\psi(x)$, insert this into the Schroedinger equation above, and divide by $\Psi$, we find
+```{math}
+- \frac{1}{\chi}\frac{\hbar^2}{2M} {\vec \nabla}^2_X - \frac{1}{\psi} \frac{\hbar^2}{2\mu} {\vec \nabla}^2_x \psi - \frac{e^2}{|{\vec x}|} = E
+```
+Since the second and third terms on the RHS as well as $E$ are independent of $X$, the first term must also be independent of $X$, that is, a constant, which we will call $E_{com}$; thus
+```{math}
+- \frac{\hbar^2}{2M} {\vec \nabla}^2_X \chi = E_{com}\chi
+```
+This is the equation for a free particle, whose solutions are plane waves. Following this, we are left with
+```{math}
+- \frac{\hbar^2}{2\mu} {\vec \nabla}^2_x \psi - \frac{e^2}{|{\vec x}|} \psi = (E - E_{com})\psi
+```
+This is the equation we will solve in the next section. 
+
+Note that we could also do this for the time-dependent Schroedinger equation; if we assume the total wavfunction factorizes into $\chi(X,t)\psi(x,t)$, then we find
+```{math}
+\frac{1}{\chi}\left[i\hbar \frac{\del}{\del t} \chi + \frac{\hbar^2}{2M}\chi\right] + \frac{1}{\psi} \left[i\hbar \frac{\del}{\del t} \psi + \frac{\hbar^2}{2\mu} {\vec\nabla}^2_x \psi + \frac{e^2}{|{\vec x}|} \psi\right] = 0
+```
+Now each of the two terms must be an equal and opposite constant; we can remove this constant by rotating $\chi,\psi$ by a time-dependent phase. In this case we could set up a wavepacked for the center of mass motion.
+
+In both cases, entangled states with respect to the $X,x$ degrees of freedom are possible; we leave these aside.
 
 
 
