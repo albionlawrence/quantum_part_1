@@ -57,6 +57,9 @@ chapters:
     sections:
     - file: chapter10/two_particle_reduction
     - file: chapter10/hydrogen_spectra
+  - file: chapter11/approximate_evals
+    sections:
+    - file: chapter11/tdpt
   - file: appendix
   - file: bibliography
 # - file: notebooks

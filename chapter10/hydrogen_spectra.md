@@ -2,7 +2,7 @@
 
 We now focus on solving the Coulomb problem:
 ```{math}
-- \frac{\hbar^2}{2\mu} \psi({\vec x}) - \frac{e^2}{|{\vec x|} \psi = (E - E_{com}) \psi
+- \frac{\hbar^2}{2\mu}{\vec\nabla}^2 \psi({\vec x}) - \frac{e^2}{|{\vec x}|} \psi = (E - E_{com}) \psi
 ```
 We will redefine $E - E_{com} \to E$ just to make reading (and writing) easier. 
 
@@ -144,6 +144,70 @@ As we stated, the bound states have energy {eq}`hydrogen_energy`. Looking back, 
 It is standard to refer to $\ell = 0$ states by $S$; $\ell = 1$ states by $P$, $\ell = 2$ states by $D$, and so on.
 
 Finally, note that the low-lying states are separated by energies of order a fraction of the magnitude of the ground state energy. As $n \to \infty$ the spacing becomes finer and finer, as the energy approaches zero and the wavefunction can spread out more and more. 
+
+## Explaining the degeneracy
+
+Whenever there is a large degeneracy, the lore is that there is some meaningful symmetry group for which the degenerate subspaces form irreps. "Meaningful" is what makes this statement interesting. Given a degeneracy one could always design a set of operators commuting with the Hamiltonian for which this is true. But usually it comes from some interesting feature of the dynamics.
+
+(More generally, what happens in the real world is that we have some *approximate* degeneracies, as seen below:
+
+![Nearly degenerate spectrum](near_degenerate.jpeg)
+
+In this case, when $\delta\eps \ll \Delta E$, we can often explain this by an "approximate symmetry", one in which the Hamiltonian is of the form $H_0 + H_1$ where $H_0$ is degenerate with level spacing $\Delta E$, and has a symmetry that forces this degeneracy; while $H_1$ breaks this symmetry but has $\cO(\delta\eps)$ matrix elements. We will see examples of this soon.) 
+
+As it happens, in classical mechanics, there is a a conserved vectorial quantity called the *Runge-Lenz vector*:
+```{math}
+{\vec R} = \frac{1}{\mu} {\vec p}\times{\vec L} - \frac{e^2 {\vec r}}{r}
+```
+The classical Coulomb problem, being mathematically identical to the Kepler problem, supports elliptical orbits. The Runge-Lenz vector points from the force center (for us, $r = 0$) to the point of closest approach. This is true anywhere along the orbit, thus it is conserved. Note that it is only conserved for inverse-square law forces; if we change to some $1/r^{\alpha}$ central force with $\alpha \neq 2$, we lose that conservation law.
+
+Deriving the degeeracy for this takes several steps. First, a highly nontrivial calculation yields:
+```{math}
+{\vec R}^2 = e^4 + \frac{2H({\vec L}^2 + \hbar^2)}{\mu}
+```
+Next, wf we promote ${\vec R}$ to an operator acting on the Hilbert space of the Hydrogen atom, we find that
+```{math}
+\begin{align}
+[R^i, H] & = 0\\
+[R^i, L_j] & = i\hbar \epsilon_{ijk} R^k\\
+[R^i, R^j] & = - \frac{2i\hbar H}{\mu} \epsilon^{ijk}L_k
+\end{align}
+```
+
+We consider only $E < 0$ states, and redefine
+```{math}
+{\vec K} = \sqrt{\frac{ - \mu}{2H}} {\vec R}
+```
+with this, we can calculate: 
+```{math}
+H = - \frac{\mu e^2}{2({\vec K}^2 + {\vec L}^2 + \hbar^2)}
+```
+Next, if we define
+```{math}
+\begin{align}
+{\vec M} & = {\vec L} + {\vec K} \\
+{\vec N} & = {\vec L} - {\vec K}
+\end{align}
+```
+Here $M^i$ commutes with any component of ${\vec N}$, while
+```{math}
+\begin{align}
+[M^i, M^j] & = i\hbar \eps^{ijk} M^k\\
+[N^i, N^j] & = i\hbar\eps6{ijk} N^k
+\end{align}
+```
+This is just two $SU(2)$ algebras. (Note that $SO(4)$, the space of rotations in 4d, is isomorphic to $SU(2)\times SU(2)$. However, their casimirs are not distinct. Since ${\vec L}$ is always perpendicular to the ellipse, ${\vec L}\cdot{\vec r} = 0$; and ${\vec L}\cdot({\vec p}\times{\vec L}) = 0$ automatically, we have ${\vec K}dot{\vec L} = 0$. This means that ${\vec M}^2 = {\vec N}^2$ = ${\vec K}^2 + {\vec L}^2$. Finally, we can show that
+```{math}
+H = - \frac{\mu e^4}{2(4{\vec M}^2 + \hbar^2)}
+```
+
+Now because it is part of an $SU(2)$ algebra, ${\vec M}^2$ has eigenvalues $\hbar^2 m(m+1)$, and the corresponding irreps with this eigenvalue have degeneracy $2m + 1$. In this case ${\vec N}^2 = \hbar^2(2m+1)$ also, so the total degeneracy is $(2m + 1)^2$. The energy eigenvalues are:
+```{math}
+H = - \frac{\mu e^4}{2\hbar^2(4m(m+1) + 1)} =  - \frac{\mu e^4}{2\hbar^2(2m + 1)^2}
+```
+Now if we let $m = 0,1/2,1,3/2,\ldots$, then $2m + 1 = 1, 2, 3, 4,\ldots$> In other words we can identify $n = (2m + 1)$. We have thus explained the $n^2$ degeneracy of the eigenstates of the Coulomb problem.
+
+
 
 
 
