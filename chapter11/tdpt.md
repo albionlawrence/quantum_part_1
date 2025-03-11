@@ -1,4 +1,4 @@
-# Time-dependent perturbation theory
+# Time-independent perturbation theory
 
 The basic setup is simple. We consider Hamiltonians of the form
 ```{math}
@@ -59,7 +59,7 @@ Given this, and that $\sum_n \ket{n^{(0)}}\bra{n^{(0)}} = 1$, we have
 
 The classic example is the anharmonic quantum oscillator:
 ```{math}
-H = \frac{p^2}{2m} + \half m \omega&2 x^2 + \frac{\lambda}{4!} x^4
+H = \frac{p^2}{2m} + \half m \omega^2 x^2 + \frac{\lambda}{4!} x^4
 ```
 We will do perturbation series with the parameter $\lambda$. You should be objecting that this isn't quite right. $\lambda$ has dimensions of $(energy)/(length)^4$. As a dimensionful paraneter one cannot technically call it "small". But we can combine this with the parameters of the unperturbed Hamiltonian to make a small parameter. For example, we know that we have a length scale 
 ```{math}
@@ -84,8 +84,8 @@ Now for $k \sim {\cal O}(1)$, the ratio of this to the energy gap $\hbar \omega$
 Similarly the first order correction to the state {eq}`fo_state` gives:
 ```{math}
 \begin{align}
-\ket{k^{(1)}} & = \sum_{\ell \neq k} \frac{\lambda L^4 \ket{\ell^{(0)}} (a + a^{\dagger})^4\ket{k^{(0)}}{\hbar\omega (\ell - k)}\\
-& = \eps  \sum_{\ell \neq k} \frac{\ket{\ell^{(0)}} (a + a^{\dagger})^4\ket{k^{(0)}}{\ell - k}
+\ket{k^{(1)}} & = \sum_{\ell \neq k} \frac{\lambda L^4 \ket{\ell^{(0)}} (a + a^{\dagger})^4\ket{k^{(0)}}}{\hbar\omega (\ell - k)}\\
+& = \eps  \sum_{\ell \neq k} \frac{\ket{\ell^{(0)}} (a + a^{\dagger})^4\ket{k^{(0)}}}{\ell - k}
 \end{align}
 ```
 We can see again how the dimensionless parameter $\eps$ appears. The numerator is straightforward but tedious to evaluate. $(a + a^{\dagger})^4$ clearly connects the level $k$ to the levels in the range $\ell \in \{k-4, k-2,k+2,k+4\}$ (you should think about why $k - 1, k-3$ do not appear). So the ratio will scale with $k^2$, and again if $\eps k^2 \sim \cO(1)$, perturbation theory will start to break down.
