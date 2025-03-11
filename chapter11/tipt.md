@@ -15,6 +15,7 @@ E & = E^{(0)}_n + \eps E^{(1)}_n + \eps^2 E^{(2)}_n + \ldots\\
 ```
 where $H_0 \ket{n^{(0)}} = E^{(0)}_n$, and the eigenvectors are taken to be orthonormal. We then write
 ```{math}
+:label: tise_expansion
 H\ket{n} & = (H_0 + \eps H_1) \left( \ket{n^{(0)}} + \eps \ket{n^{(1)}} + \eps^2 \ket{n^{(2)}} + \ldots\right)\\
 &= E\ket{n}\\
 & = \left( E^{(0)}_n + \eps E^{(1)}_n + \eps^2 E^{(2)}_n + \ldots\right)\left(\ket{n^{(0)}} + \eps \ket{n^{(1)}} + \eps^2 \ket{n^{(2)}} + \ldots\right)
@@ -52,8 +53,9 @@ Now $\ket{m^{(0)}}$ is a complete basis in the Hilbert space, as $H_0$ is a Herm
 Given this, and that $\sum_n \ket{n^{(0)}}\bra{n^{(0)}} = 1$, we have
 ```{math}
 :label: fo_state
-\ket{n^{(1)}} = \sum_{m\neq n} \frac{\ket{m^{(0)}} \bra{m^{(0)}} H_1 \ket{n^{(0)}}}{E_m^0 - E_n^0}
+\ket{n^{(1)}} = \sum_{m\neq n} \frac{\ket{m^{(0)}} \bra{m^{(0)}} H_1 \ket{n^{(0)}}}{E_n^0 - E_m^0}
 ```
+Note that at this order the norm of the state only differs from $1$ by a factor of $\cO(\eps^2)$; we will need to go to second order in corrections to $\ket{k}$ to compute the norm, and to see what is needed to properly normalize the state. 
 
 ### Example: anharmonic oscillator
 
@@ -84,9 +86,71 @@ Now for $k \sim {\cal O}(1)$, the ratio of this to the energy gap $\hbar \omega$
 Similarly the first order correction to the state {eq}`fo_state` gives:
 ```{math}
 \begin{align}
-\ket{k^{(1)}} & = \sum_{\ell \neq k} \frac{\lambda L^4 \ket{\ell^{(0)}} (a + a^{\dagger})^4\ket{k^{(0)}}}{\hbar\omega (\ell - k)}\\
-& = \eps  \sum_{\ell \neq k} \frac{\ket{\ell^{(0)}} (a + a^{\dagger})^4\ket{k^{(0)}}}{\ell - k}
+\ket{k^{(1)}} & = \sum_{\ell \neq k} \frac{\lambda L^4 \ket{\ell^{(0)}} (a + a^{\dagger})^4\ket{k^{(0)}}}{\hbar\omega (k-\ell)}\\
+& = \eps  \sum_{\ell \neq k} \frac{\ket{\ell^{(0)}} (a + a^{\dagger})^4\ket{k^{(0)}}}{k - \ell}
 \end{align}
 ```
 We can see again how the dimensionless parameter $\eps$ appears. The numerator is straightforward but tedious to evaluate. $(a + a^{\dagger})^4$ clearly connects the level $k$ to the levels in the range $\ell \in \{k-4, k-2,k+2,k+4\}$ (you should think about why $k - 1, k-3$ do not appear). So the ratio will scale with $k^2$, and again if $\eps k^2 \sim \cO(1)$, perturbation theory will start to break down.
 
+## Second order perturbation theory
+
+It is worth going out one more order so that you can see how things develop and how complicated they get. Also, it is often the case that corrections to the energy vanishes at first order. For example, let us say that we perturbed the harmonic oscillator by $-\alpha x$. (In fact this is exactly solvable; but we can still do perturbatiob theory and I'm trying to make a point. By the way, what might you worry about if the perturbation was by $g x^3$?). The first order energy shift $\bra{k^{(0)} x \ket{k^{(0)} = 0$ because the states have definite parity but $x$ has odd parity. Thus $x\ket{k}$, $ket{k$ have opposite parity, and so zero overlap.
+
+The $\cO(\eps^2)$ terms in {eq}`tise_expansion` are:
+```{math}
+H_0 \ket{n^{(2)}} + H_1 \ket{n^{(1)}} = E_n^{(0)} \ket{n^{(2)}} + E_n^{(1)}\ket{n^{(1)}} + E_n^{(2)} \ket{n^{(0)}}
+```
+Taking the inner product with $\bra{n^{(0)}}$, the first terms on each side cancel off of each other. The second term on the RHS canishes by our normalization convention. Thus, we find
+```{math}
+:label: second_order_energy
+\begin{align}
+E_n^{(2)} & = \bra{n^{(0)}} H_1 \ket{n^{(1)}}\\
+& = \sum_{\ell \neq k} \frac{\bra{n^{(0)}} H_1 \ket{\ell^{(0)}} \bra{\ell^{(0)}} H_1 \ket{n^{(0)}}}{E_n^0 - E_m^0}\\
+& = \sum_{\ell \neq k} \frac{| \bra{\ell^{(0)}} H_1 \ket{n^{(0)}}|^2}{E_n^0 - E_m^0}
+\end{align}
+```
+
+We can similarly work out the second order correction to the state, again assuming that it is orthoginal to the zeroth order correction:
+```{math}
+:label: so_state
+\begin{align}
+\ket{n^{(2)}} & = \sum_{\ell,m\neq n} \frac{\ket{m^{(0)}}\bra{m^{(0)}} H_1 \ket{\ell^{(0)}}\bra{\ell^{(0)}} H_1 \ket{n^{(0)}}}{(E_n^{(0)} - E_m^{(0)})(E_n^{(0)} - E_{\ell}^0)}\\
+& \qquad\qquad -\sum_{m\neq n} \frac{\bra{m^{(0)}}\ket{m^{(0)}}\bra{m^{(0)}} H_1 \ket{n^{(0)}} \bra{n^{(0)}} H_1 \ket{n^{(0)}}}{(E_n^0 - E_m^0)^2}
+\end{align}
+```
+
+Now let us work out the normalization of this state. We define
+```{math}
+\begin{align}
+\frac{1}{Z} & = \brket{n}{n} \\
+& = \brket{n^{(0)}}{n^{(0)}} + \eps^2 \brket{n^{(1)}}{n^{(1)}}\\
+& = 1 + \eps^2 \sum_{m \neq n} \frac{|\bra{m^{(0)}}H_1 \ket{n^{(0)}}|^2}{(E_n^0 - E_m^0)^2} + \cO(\eps^3)
+\end{align}
+```
+Note that the overlap of the zeroth and second order correction does not appear, by our normalization assumption. Note that at this order, we can write
+```{math}
+Z \sim 1 -  \eps^2 \sum_{m \neq n} \frac{|\bra{m^{(0)}}H_1 \ket{n^{(0)}}|^2}{(E_n^0 - E_m^0)^2}
+```
+so that the following state has unit norm
+```{math} 
+\sqrt{Z} \ket{n}
+```
+where both terms are understood to go to $\cO(\eps^2)$.
+
+There is a nice expression for $Z$ in this case. Note that to $\cO(\eps^2)$,
+```{math}
+\begin{align}
+\frac{\del E_n}{\del E_n^0} & = \frac{\del}{\del E_n^0}\left(E_n^0 + \eps \bra{n^{(1)}} H_1 \ket{n^{(1)}} + \eps^2 \sum_{m\neq n}\frac{|\bra{m^{(0)}}H_1 \ket{n^{(0)}}|^2}{(E_n^0 - E_m^0)}\right)\\
+& = 1 - \eps^2 \sum_{m\neq n}\frac{|\bra{m^{(0)}}H_1 \ket{n^{(0)}}|^2}{(E_n^0 - E_m^0)^2} \\ 
+& \sim Z
+\end{align}
+```
+In fact, the formula
+```{math}
+Z = \frac{\del E_n}{\del E_n^0}
+```
+holds to all orders in $\eps$.
+
+### Example: the quadratic Stark effect
+
+A more nontrivial example is the response of the hydrogen atom to al electric field, for which $H_0$ is the usual Coulomb Hamiltonian, and $H_1 = - e E z$, corresponding to a charged particle in a constant electric field ${\vec E} = E {\hat z}$. Can you give an estimate of the dimensionless parameter that controls the size of teh corrections?
