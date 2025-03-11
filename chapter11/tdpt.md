@@ -33,6 +33,7 @@ We first take the inner product of this equation with $\bra{n^{(0)}$, and find
 ```
 or
 ```{math}
+:label: first_order_E_correction
 E^1_n = \bra{n^{(0)}}H_1\ket{n^{(0)}}
 ```
 
@@ -50,5 +51,42 @@ Now $\ket{m^{(0)}}$ is a complete basis in the Hilbert space, as $H_0$ is a Herm
 
 Given this, and that $\sum_n \ket{n^{(0)}}\bra{n^{(0)}} = 1$, we have
 ```{math}
+:label: fo_state
 \ket{n^{(1)}} = \sum_{m\neq n} \frac{\ket{m^{(0)}} \bra{m^{(0)}} H_1 \ket{n^{(0)}}}{E_m^0 - E_n^0}
 ```
+
+### Example: anharmonic oscillator
+
+The classic example is the anharmonic quantum oscillator:
+```{math}
+H = \frac{p^2}{2m} + \half m \omega&2 x^2 + \frac{\lambda}{4!} x^4
+```
+We will do perturbation series with the parameter $\lambda$. You should be objecting that this isn't quite right. $\lambda$ has dimensions of $(energy)/(length)^4$. As a dimensionful paraneter one cannot technically call it "small". But we can combine this with the parameters of the unperturbed Hamiltonian to make a small parameter. For example, we know that we have a length scale 
+```{math}
+L = \sqrt{\frac{\hbar}{m\omega}} 
+```
+and an energy scale ${\cal E} = \hbar\omega$. So by dimensional analysis, the combination
+```{math}
+\eps = \frac{\lambda L^4}{{\cal E}} = \frac{\hbar \lambda}{m^2\omega^3}
+```
+is a likely perturbation parameter. We will see that this does in fact control the correction terms in perturbation theory.
+
+The correction to the energy $E^{(0)}_k = \hbar\omega(k + \half)$ in this case is taken from {eq}`first_order_E_correction`:
+```{math}
+\begin{align}
+E^{(1)}_k & = \bra{k^{(0)}} \lambda x^4 \ket{k^{(0)}}\\
+& = \lambda L^4  \bra{k^{(0)}}(a + a^{\dagger})^4 \ket{k^{(0)}}\\
+& = \lambda L^4 (6 k^2 + 6k + 3)
+\end{align}
+```
+Now for $k \sim {\cal O}(1)$, the ratio of this to the energy gap $\hbar \omega$ is $\sim k^2 \eps$, confirming our point above. furthermore, note that once $k^2 \sim 1/\eps$, this correction is no longer small. This is a general feature of perturbation theory; it only works for low energies.
+
+Similarly the first order correction to the state {eq}`fo_state` gives:
+```{math}
+\begin{align}
+\ket{k^{(1)}} & = \sum_{\ell \neq k} \frac{\lambda L^4 \ket{\ell^{(0)}} (a + a^{\dagger})^4\ket{k^{(0)}}{\hbar\omega (\ell - k)}\\
+& = \eps  \sum_{\ell \neq k} \frac{\ket{\ell^{(0)}} (a + a^{\dagger})^4\ket{k^{(0)}}{\ell - k}
+\end{align}
+```
+We can see again how the dimensionless parameter $\eps$ appears. The numerator is straightforward but tedious to evaluate. $(a + a^{\dagger})^4$ clearly connects the level $k$ to the levels in the range $\ell \in \{k-4, k-2,k+2,k+4\}$ (you should think about why $k - 1, k-3$ do not appear). So the ratio will scale with $k^2$, and again if $\eps k^2 \sim \cO(1)$, perturbation theory will start to break down.
+
