@@ -400,7 +400,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-quadratic-stark-effect">Example: the quadratic Stark effect</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almost-degenerate-perturbation-theory">(Almost) degenerate perturbation theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almost-degenerate-perturbation-theory">(Almost) degenerate perturbation theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degenerate-perturbation-theory">Degenerate perturbation theory</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -563,6 +566,22 @@ E_n^{(2)} &amp; = \bra{n^{(0)}} H_1 \ket{n^{(1)}}\\
 </section>
 <section id="almost-degenerate-perturbation-theory">
 <h2>(Almost) degenerate perturbation theory<a class="headerlink" href="#almost-degenerate-perturbation-theory" title="Link to this heading">#</a></h2>
+<p>We now want to turn to the case that there are groups of states for which the energy splitting is small compared to the matrix elements of <span class="math notranslate nohighlight">\(\eps H_1\)</span>. More precisely, consider the diagram of energy levels below with the condition</p>
+<div class="math notranslate nohighlight">
+\[\delta \eps \ll \bra{\chi} \eps H_1 \ket{\psi} \ll \Delta E\]</div>
+<p>The unperturbed Hamiltonian will have the block diagonal structure</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H_0 = \begin{pmatrix} H_{0,11} &amp; 0 &amp; 0 &amp; \ldots \\ 0 &amp; H_{0,22} &amp; 0 &amp; \ldots \\ 0 &amp; 0 &amp; H_{0,33} &amp; \ldots \\ \ldots &amp; \ldots &amp; \ldots &amp; \ldots
+\end{pmatrix}\end{split}\]</div>
+<p>while the perturbed Hamiltonian will have the structure</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H_1 = \begin{pmatrix} H_{1,11} &amp; H_{1,12} &amp; H_{1,13} &amp; \ldots \\ H_{1,21} &amp; H_{1,22} &amp; H_{1,23} &amp; \ldots \\ H_{1,31} &amp; H_{1,32} &amp; H_{1,33} &amp; \ldots \\ \ldots &amp; \ldots &amp; \ldots &amp; \ldots
+\end{pmatrix}\end{split}\]</div>
+<p>Here the <span class="math notranslate nohighlight">\(n,m\)</span> indices in <span class="math notranslate nohighlight">\(H_{k,mn}\)</span> refer to the subspaces <span class="math notranslate nohighlight">\(\cH_m, \cH_m\)</span> spanned by the nearly-degenerate unperturbed eigenstates as labelled in the figure. The problems arise when <span class="math notranslate nohighlight">\(\eps H_{1,nn}\)</span> have nonvanishing matrix elements between the unperturbed eigenstates, which are larger than <span class="math notranslate nohighlight">\(\delta \eps\)</span>.</p>
+<section id="degenerate-perturbation-theory">
+<h3>Degenerate perturbation theory<a class="headerlink" href="#degenerate-perturbation-theory" title="Link to this heading">#</a></h3>
+<p>Let us first consider the case that <span class="math notranslate nohighlight">\(\delta \eps = 0\)</span>, so that <span class="math notranslate nohighlight">\(\cH_{0,nn} = {E_N^{(0)} \bf 1}\)</span> in this subspace . Since <span class="math notranslate nohighlight">\(\cH_m\)</span> is often finite dimensional and <span class="math notranslate nohighlight">\(H_{1,nn}\)</span> comparatively simple, a solution is to first choose bases in <span class="math notranslate nohighlight">\(\cH_n\)</span> that diagonalize <span class="math notranslate nohighlight">\(H_{1,nn}\)</span>. <span class="math notranslate nohighlight">\(H_0\)</span> remains diagonal, since the identity remains the identity in any orthonormal basis. The eigenvalues of <span class="math notranslate nohighlight">\(\eps H_1\)</span> then give the first-order corrections to the energy, as expressed in this basis. If this resolves the degeneracy, one can then compute further corrections by using standard perturbation theory: for this, only off-diagonal matrix elements appear, and <span class="math notranslate nohighlight">\(H_1\)</span> will only have nonvanishing off-diagonal matrix elements between different subspaces <span class="math notranslate nohighlight">\(\cH_n\)</span>.</p>
+</section>
 </section>
 </section>
 
@@ -639,7 +658,10 @@ E_n^{(2)} &amp; = \bra{n^{(0)}} H_1 \ket{n^{(1)}}\\
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-quadratic-stark-effect">Example: the quadratic Stark effect</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almost-degenerate-perturbation-theory">(Almost) degenerate perturbation theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almost-degenerate-perturbation-theory">(Almost) degenerate perturbation theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degenerate-perturbation-theory">Degenerate perturbation theory</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

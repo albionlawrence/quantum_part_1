@@ -203,6 +203,27 @@ Here $\alpha = \frac{9}{2} a_0^3$.
 
 ## (Almost) degenerate perturbation theory
 
+We now want to turn to the case that there are groups of states for which the energy splitting is small compared to the matrix elements of $\eps H_1$. More precisely, consider the diagram of energy levels below with the condition
+```{math}
+\delta \eps \ll \bra{\chi} \eps H_1 \ket{\psi} \ll \Delta E
+```
+The unperturbed Hamiltonian will have the block diagonal structure
+```{math}
+H_0 = \begin{pmatrix} H_{0,11} & 0 & 0 & \ldots \\ 0 & H_{0,22} & 0 & \ldots \\ 0 & 0 & H_{0,33} & \ldots \\ \ldots & \ldots & \ldots & \ldots
+\end{pmatrix}
+```
+while the perturbed Hamiltonian will have the structure
+```{math}
+H_1 = \begin{pmatrix} H_{1,11} & H_{1,12} & H_{1,13} & \ldots \\ H_{1,21} & H_{1,22} & H_{1,23} & \ldots \\ H_{1,31} & H_{1,32} & H_{1,33} & \ldots \\ \ldots & \ldots & \ldots & \ldots
+\end{pmatrix}
+```
+Here the $n,m$ indices in $H_{k,mn}$ refer to the subspaces $\cH_m, \cH_m$ spanned by the nearly-degenerate unperturbed eigenstates as labelled in the figure. The problems arise when $\eps H_{1,nn}$ have nonvanishing matrix elements between the unperturbed eigenstates, which are larger than $\delta \eps$. 
+
+### Degenerate perturbation theory
+
+Let us first consider the case that $\delta \eps = 0$, so that $\cH_{0,nn} = {E_N^{(0)} \bf 1}$ in this subspace . Since $\cH_m$ is often finite dimensional and $H_{1,nn}$ comparatively simple, a solution is to first choose bases in $\cH_n$ that diagonalize $H_{1,nn}$. $H_0$ remains diagonal, since the identity remains the identity in any orthonormal basis. The eigenvalues of $\eps H_1$ then give the first-order corrections to the energy, as expressed in this basis. If this resolves the degeneracy, one can then compute further corrections by using standard perturbation theory: for this, only off-diagonal matrix elements appear, and $H_1$ will only have nonvanishing off-diagonal matrix elements between different subspaces $\cH_n$.
+
+
 
 
 
