@@ -92,7 +92,7 @@ Similarly the first order correction to the state {eq}`fo_state` gives:
 ```
 We can see again how the dimensionless parameter $\eps$ appears. The numerator is straightforward but tedious to evaluate. $(a + a^{\dagger})^4$ clearly connects the level $k$ to the levels in the range $\ell \in \{k-4, k-2,k+2,k+4\}$ (you should think about why $k - 1, k-3$ do not appear). So the ratio will scale with $k^2$, and again if $\eps k^2 \sim \cO(1)$, perturbation theory will start to break down.
 
-## Second order perturbation theory
+## Second order perturbation theory (non-degenerate)
 
 It is worth going out one more order so that you can see how things develop and how complicated they get. Also, it is often the case that corrections to the energy vanishes at first order. For example, let us say that we perturbed the harmonic oscillator by $-\alpha x$. (In fact this is exactly solvable; but we can still do perturbatiob theory and I'm trying to make a point. By the way, what might you worry about if the perturbation was by $g x^3$?). The first order energy shift $\bra{k^{(0)} x \ket{k^{(0)} = 0$ because the states have definite parity but $x$ has odd parity. Thus $x\ket{k}$, $ket{k$ have opposite parity, and so zero overlap.
 
@@ -151,6 +151,58 @@ Z = \frac{\del E_n}{\del E_n^0}
 ```
 holds to all orders in $\eps$.
 
+### Validity of perturbation theory
+
+Perturbation theory can break down in two ways. First, the corrections can fail to be smaller because the ratio of matrix elements (times the appropriate power of $\eps$) to energy differences in Equations {eq}`fo_state`, {eq}`second_order_energy`, {eq}`so_state` fail to be small. For example, we may have a group of states which are degenerate or nearly degenerate, so that the denominators are small compared to the matrix elements. We can often deal with this by using (almost) degenerate perturbation theory.
+
+At sufficiently high energies, however, perturbation theory can fail for a different reason. Consider the anharmonic oscillator. One has ratios like
+```{math}
+\frac{\bra{n\pm k} \frac{1}{4!} \lambda x^4 \ket{n}}{k\hbar \omega}
+```
+where $k \sim 1-4$. But the matrix element in the numerator can be shown to scale as $\sim n^2$. The point is that the unperturbed eigenstates at higher order are more spread out -- you should convince yourself that $\bra{n} x^2 \ket{n} \sim n L^2= \frac{n \hbar}{m\omega}$. At some $n$ they will extend well into the region where $\lambda x^4/4! \gg \half m \omega^2$, and the perturbation is no longer small.
+
+In fact, even for low-energy eigenstates this ends up being a problem. As we can start to see in {eq}`second_order_energy`, {eq}`so_state`, as we go to higher and higher orders, we start connecting states at higher and higher energies with respect to the ground state. One can show (see for example {cite:p}`PhysRevLett.27.461`) that if $E_0 = \sum_n A_n \lambda^n$, then for large $n$, $A_n \sim n!$. Since $A_n/A_{n-1} \sim n$, for $n\lambda \sim 1$ the higher orders in perturbation theory will cease to be smaller: the series is an *asymptotic series*. In fact low orders in perturbation theory ofen give you very accurate answers! But they can only be so accurate.
+
+An essential problem is that there are general terms in the exact answer which scale as $e^{-1/\hbar\lambda}$. This is not an analytic function near $\lambda = 0$, even though for positive real $\lambda$, it is very small. So the radius of converrgence of pertrubation theory is zero! A sign of this is that if we make $\lambda$ negative, even small and negative, the theory becomes unstable and ill-defined (it is not just that the potential is unbounded below, but that it falls off more rapidly than $-x^2$). The radius of convergence of a power series in $\lambda$ can be understood by studyying the behavior of the actual funcion in the *complex* plane. Singular behavior along the negative axis, up to the origin, means that a Taylor series in small $\lambda$ will not converge. 
+
+That being said, we will continue to study perturbation theory because while it may be accurate only up to a point, that point is still pretty accurate! Quantum Electrodynamics can be treated in perturbation theory with respect to the fine structure constant $\alpha = \frac{e^2}{\hbar c} \sim \frac{1}{137}$. This series is asymptotic, but nonetheless perturbation theory has given answers exquisitely confirmed by experiment.
+
 ### Example: the quadratic Stark effect
 
-A more nontrivial example is the response of the hydrogen atom to al electric field, for which $H_0$ is the usual Coulomb Hamiltonian, and $H_1 = - e E z$, corresponding to a charged particle in a constant electric field ${\vec E} = E {\hat z}$. Can you give an estimate of the dimensionless parameter that controls the size of teh corrections?
+A more nontrivial example is the response of the hydrogen atom to an electric field, for which $H_0$ is the usual Coulomb Hamiltonian, and $H_1 = - e E z$, corresponding to a charged particle in a constant electric field ${\vec E} = E {\hat z}$. 
+
+*Problem for the student*: Can you give an estimate of the dimensionless parameter that controls the size of the corrections?
+
+We will focus on corrections to the ground state energy -- the perturbing Hamiltonian doesn't act on spin, so we can ignore that degree of freedom, and otherwise the ground state is nondegenerate.
+
+The first thing to note is that $\bra{n = 1, \ell = 0, m = 0} H_1 \ket{100} = 0$. This is almost immediately apparent because $H_1$ is odd under $z \to - z$ whereas $\ket{100}$ is even. Thus $z\ket{100}$ most be odd; since parity is implemented by a Hermitian operator, with eigenvalues $\pm 1$ for even and odd states, the overlap of $z\ket{100}$ with $\bra{100}$ must vanish.
+
+Another way to see this is to recall that for tensor operators, ${\cal O}_{\ell,m}\ket{n \ell' m'}$ will transform in a representation in $D_{\ell}\otimes D_{\ell'}$. Now $z$ is a tensor operator with $\ell = 1, m = 0$. This $z \ket{100}$ must transform as $\ell = 1$, and so be orthogonal to the $\ell = 0$ state $\ket{100}$.
+
+The result is that the leading behavior of the energy for small $E$ is quadratic in $E$ (because we have to go to second order in perturbation theory). As it happens, for excited states, when we have to use degenerate perturbation theory, there can be linear shifts, an effect called the *linear Stark effect* which we will describe later. 
+
+Equation {eq}`second_order_energy` gives
+```{math}
+E_0^{(2)} = e^2 E^2 \sum_{n \neq 0,\ell,m} \frac{|\bra{n,\ell,m} z \ket{100}|^2}{E_0 - E_k} = \frac{9}{4} E^2 a_0^3
+```
+The last step is nontrivial, I am just asserting it. One simplification is that we know that only $m = 0, \ell = 1$ terms can enter in. Relatedly, this means for the corrections to the wavefunction {eq}`fo_state`, we get $\ell = 1,m=0$ component which means that the wavefunction elongates in the electric field, due to the response of the charges in the atom.
+
+Note that the force of an electric field on an electric dipole is:
+```{math}
+E_0 = - {\vec d}\cdot{\vec E}
+```
+This can describe the present situation if we set 
+```{math}
+{\vec d} = - \frac{9}{4} a_0^3 E {\hat z} =  - \frac{9}{4} a_0^3{\vec E}
+```
+The electric field, by elongating the electron wavefunction, induces an electric dipole moment in the atom. We can define the *polarizability* as the coefficient $\alpha$ in 
+```{math}
+E_0 - E_0^0 = - \half \alpha |{\vec E}|^2 
+```
+Here $\alpha = \frac{9}{2} a_0^3$. 
+
+## (Almost) degenerate perturbation theory
+
+
+
+
