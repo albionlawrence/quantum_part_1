@@ -395,10 +395,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-anharmonic-oscillator">Example: anharmonic oscillator</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-perturbation-theory">Second order perturbation theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-perturbation-theory-non-degenerate">Second order perturbation theory (non-degenerate)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validity-of-perturbation-theory">Validity of perturbation theory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-quadratic-stark-effect">Example: the quadratic Stark effect</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almost-degenerate-perturbation-theory">(Almost) degenerate perturbation theory</a></li>
 </ul>
             </nav>
         </div>
@@ -480,8 +482,8 @@ E^{(1)}_k &amp; = \bra{k^{(0)}} \lambda x^4 \ket{k^{(0)}}\\
 <p>We can see again how the dimensionless parameter <span class="math notranslate nohighlight">\(\eps\)</span> appears. The numerator is straightforward but tedious to evaluate. <span class="math notranslate nohighlight">\((a + a^{\dagger})^4\)</span> clearly connects the level <span class="math notranslate nohighlight">\(k\)</span> to the levels in the range <span class="math notranslate nohighlight">\(\ell \in \{k-4, k-2,k+2,k+4\}\)</span> (you should think about why <span class="math notranslate nohighlight">\(k - 1, k-3\)</span> do not appear). So the ratio will scale with <span class="math notranslate nohighlight">\(k^2\)</span>, and again if <span class="math notranslate nohighlight">\(\eps k^2 \sim \cO(1)\)</span>, perturbation theory will start to break down.</p>
 </section>
 </section>
-<section id="second-order-perturbation-theory">
-<h2>Second order perturbation theory<a class="headerlink" href="#second-order-perturbation-theory" title="Link to this heading">#</a></h2>
+<section id="second-order-perturbation-theory-non-degenerate">
+<h2>Second order perturbation theory (non-degenerate)<a class="headerlink" href="#second-order-perturbation-theory-non-degenerate" title="Link to this heading">#</a></h2>
 <p>It is worth going out one more order so that you can see how things develop and how complicated they get. Also, it is often the case that corrections to the energy vanishes at first order. For example, let us say that we perturbed the harmonic oscillator by <span class="math notranslate nohighlight">\(-\alpha x\)</span>. (In fact this is exactly solvable; but we can still do perturbatiob theory and I’m trying to make a point. By the way, what might you worry about if the perturbation was by <span class="math notranslate nohighlight">\(g x^3\)</span>?). The first order energy shift <span class="math notranslate nohighlight">\(\bra{k^{(0)} x \ket{k^{(0)} = 0\)</span> because the states have definite parity but <span class="math notranslate nohighlight">\(x\)</span> has odd parity. Thus <span class="math notranslate nohighlight">\(x\ket{k}\)</span>, <span class="math notranslate nohighlight">\(ket{k\)</span> have opposite parity, and so zero overlap.</p>
 <p>The <span class="math notranslate nohighlight">\(\cO(\eps^2)\)</span> terms in <a class="reference internal" href="#equation-tise-expansion">(322)</a> are:</p>
 <div class="math notranslate nohighlight">
@@ -524,10 +526,43 @@ E_n^{(2)} &amp; = \bra{n^{(0)}} H_1 \ket{n^{(1)}}\\
 <div class="math notranslate nohighlight">
 \[Z = \frac{\del E_n}{\del E_n^0}\]</div>
 <p>holds to all orders in <span class="math notranslate nohighlight">\(\eps\)</span>.</p>
+<section id="validity-of-perturbation-theory">
+<h3>Validity of perturbation theory<a class="headerlink" href="#validity-of-perturbation-theory" title="Link to this heading">#</a></h3>
+<p>Perturbation theory can break down in two ways. First, the corrections can fail to be smaller because the ratio of matrix elements (times the appropriate power of <span class="math notranslate nohighlight">\(\eps\)</span>) to energy differences in Equations <a class="reference internal" href="#equation-fo-state">(324)</a>, <a class="reference internal" href="#equation-second-order-energy">(325)</a>, <a class="reference internal" href="#equation-so-state">(326)</a> fail to be small. For example, we may have a group of states which are degenerate or nearly degenerate, so that the denominators are small compared to the matrix elements. We can often deal with this by using (almost) degenerate perturbation theory.</p>
+<p>At sufficiently high energies, however, perturbation theory can fail for a different reason. Consider the anharmonic oscillator. One has ratios like</p>
+<div class="math notranslate nohighlight">
+\[\frac{\bra{n\pm k} \frac{1}{4!} \lambda x^4 \ket{n}}{k\hbar \omega}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k \sim 1-4\)</span>. But the matrix element in the numerator can be shown to scale as <span class="math notranslate nohighlight">\(\sim n^2\)</span>. The point is that the unperturbed eigenstates at higher order are more spread out – you should convince yourself that <span class="math notranslate nohighlight">\(\bra{n} x^2 \ket{n} \sim n L^2= \frac{n \hbar}{m\omega}\)</span>. At some <span class="math notranslate nohighlight">\(n\)</span> they will extend well into the region where <span class="math notranslate nohighlight">\(\lambda x^4/4! \gg \half m \omega^2\)</span>, and the perturbation is no longer small.</p>
+<p>In fact, even for low-energy eigenstates this ends up being a problem. As we can start to see in <a class="reference internal" href="#equation-second-order-energy">(325)</a>, <a class="reference internal" href="#equation-so-state">(326)</a>, as we go to higher and higher orders, we start connecting states at higher and higher energies with respect to the ground state. One can show (see for example <span id="id1">[<a class="reference internal" href="../markdown.html#id12" title="Carl M. Bender and Tai Tsun Wu. Large-order behavior of perturbation theory. Phys. Rev. Lett., 27:461–465, Aug 1971. URL: https://link.aps.org/doi/10.1103/PhysRevLett.27.461, doi:10.1103/PhysRevLett.27.461.">Bender and Wu, 1971</a>]</span>) that if <span class="math notranslate nohighlight">\(E_0 = \sum_n A_n \lambda^n\)</span>, then for large <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(A_n \sim n!\)</span>. Since <span class="math notranslate nohighlight">\(A_n/A_{n-1} \sim n\)</span>, for <span class="math notranslate nohighlight">\(n\lambda \sim 1\)</span> the higher orders in perturbation theory will cease to be smaller: the series is an <em>asymptotic series</em>. In fact low orders in perturbation theory ofen give you very accurate answers! But they can only be so accurate.</p>
+<p>An essential problem is that there are general terms in the exact answer which scale as <span class="math notranslate nohighlight">\(e^{-1/\hbar\lambda}\)</span>. This is not an analytic function near <span class="math notranslate nohighlight">\(\lambda = 0\)</span>, even though for positive real <span class="math notranslate nohighlight">\(\lambda\)</span>, it is very small. So the radius of converrgence of pertrubation theory is zero! A sign of this is that if we make <span class="math notranslate nohighlight">\(\lambda\)</span> negative, even small and negative, the theory becomes unstable and ill-defined (it is not just that the potential is unbounded below, but that it falls off more rapidly than <span class="math notranslate nohighlight">\(-x^2\)</span>). The radius of convergence of a power series in <span class="math notranslate nohighlight">\(\lambda\)</span> can be understood by studyying the behavior of the actual funcion in the <em>complex</em> plane. Singular behavior along the negative axis, up to the origin, means that a Taylor series in small <span class="math notranslate nohighlight">\(\lambda\)</span> will not converge.</p>
+<p>That being said, we will continue to study perturbation theory because while it may be accurate only up to a point, that point is still pretty accurate! Quantum Electrodynamics can be treated in perturbation theory with respect to the fine structure constant <span class="math notranslate nohighlight">\(\alpha = \frac{e^2}{\hbar c} \sim \frac{1}{137}\)</span>. This series is asymptotic, but nonetheless perturbation theory has given answers exquisitely confirmed by experiment.</p>
+</section>
 <section id="example-the-quadratic-stark-effect">
 <h3>Example: the quadratic Stark effect<a class="headerlink" href="#example-the-quadratic-stark-effect" title="Link to this heading">#</a></h3>
-<p>A more nontrivial example is the response of the hydrogen atom to al electric field, for which <span class="math notranslate nohighlight">\(H_0\)</span> is the usual Coulomb Hamiltonian, and <span class="math notranslate nohighlight">\(H_1 = - e E z\)</span>, corresponding to a charged particle in a constant electric field <span class="math notranslate nohighlight">\({\vec E} = E {\hat z}\)</span>. Can you give an estimate of the dimensionless parameter that controls the size of teh corrections?</p>
+<p>A more nontrivial example is the response of the hydrogen atom to an electric field, for which <span class="math notranslate nohighlight">\(H_0\)</span> is the usual Coulomb Hamiltonian, and <span class="math notranslate nohighlight">\(H_1 = - e E z\)</span>, corresponding to a charged particle in a constant electric field <span class="math notranslate nohighlight">\({\vec E} = E {\hat z}\)</span>.</p>
+<p><em>Problem for the student</em>: Can you give an estimate of the dimensionless parameter that controls the size of the corrections?</p>
+<p>We will focus on corrections to the ground state energy – the perturbing Hamiltonian doesn’t act on spin, so we can ignore that degree of freedom, and otherwise the ground state is nondegenerate.</p>
+<p>The first thing to note is that <span class="math notranslate nohighlight">\(\bra{n = 1, \ell = 0, m = 0} H_1 \ket{100} = 0\)</span>. This is almost immediately apparent because <span class="math notranslate nohighlight">\(H_1\)</span> is odd under <span class="math notranslate nohighlight">\(z \to - z\)</span> whereas <span class="math notranslate nohighlight">\(\ket{100}\)</span> is even. Thus <span class="math notranslate nohighlight">\(z\ket{100}\)</span> most be odd; since parity is implemented by a Hermitian operator, with eigenvalues <span class="math notranslate nohighlight">\(\pm 1\)</span> for even and odd states, the overlap of <span class="math notranslate nohighlight">\(z\ket{100}\)</span> with <span class="math notranslate nohighlight">\(\bra{100}\)</span> must vanish.</p>
+<p>Another way to see this is to recall that for tensor operators, <span class="math notranslate nohighlight">\({\cal O}_{\ell,m}\ket{n \ell' m'}\)</span> will transform in a representation in <span class="math notranslate nohighlight">\(D_{\ell}\otimes D_{\ell'}\)</span>. Now <span class="math notranslate nohighlight">\(z\)</span> is a tensor operator with <span class="math notranslate nohighlight">\(\ell = 1, m = 0\)</span>. This <span class="math notranslate nohighlight">\(z \ket{100}\)</span> must transform as <span class="math notranslate nohighlight">\(\ell = 1\)</span>, and so be orthogonal to the <span class="math notranslate nohighlight">\(\ell = 0\)</span> state <span class="math notranslate nohighlight">\(\ket{100}\)</span>.</p>
+<p>The result is that the leading behavior of the energy for small <span class="math notranslate nohighlight">\(E\)</span> is quadratic in <span class="math notranslate nohighlight">\(E\)</span> (because we have to go to second order in perturbation theory). As it happens, for excited states, when we have to use degenerate perturbation theory, there can be linear shifts, an effect called the <em>linear Stark effect</em> which we will describe later.</p>
+<p>Equation <a class="reference internal" href="#equation-second-order-energy">(325)</a> gives</p>
+<div class="math notranslate nohighlight">
+\[E_0^{(2)} = e^2 E^2 \sum_{n \neq 0,\ell,m} \frac{|\bra{n,\ell,m} z \ket{100}|^2}{E_0 - E_k} = \frac{9}{4} E^2 a_0^3\]</div>
+<p>The last step is nontrivial, I am just asserting it. One simplification is that we know that only <span class="math notranslate nohighlight">\(m = 0, \ell = 1\)</span> terms can enter in. Relatedly, this means for the corrections to the wavefunction <a class="reference internal" href="#equation-fo-state">(324)</a>, we get <span class="math notranslate nohighlight">\(\ell = 1,m=0\)</span> component which means that the wavefunction elongates in the electric field, due to the response of the charges in the atom.</p>
+<p>Note that the force of an electric field on an electric dipole is:</p>
+<div class="math notranslate nohighlight">
+\[E_0 = - {\vec d}\cdot{\vec E}\]</div>
+<p>This can describe the present situation if we set</p>
+<div class="math notranslate nohighlight">
+\[{\vec d} = - \frac{9}{4} a_0^3 E {\hat z} =  - \frac{9}{4} a_0^3{\vec E}\]</div>
+<p>The electric field, by elongating the electron wavefunction, induces an electric dipole moment in the atom. We can define the <em>polarizability</em> as the coefficient <span class="math notranslate nohighlight">\(\alpha\)</span> in</p>
+<div class="math notranslate nohighlight">
+\[E_0 - E_0^0 = - \half \alpha |{\vec E}|^2 \]</div>
+<p>Here <span class="math notranslate nohighlight">\(\alpha = \frac{9}{2} a_0^3\)</span>.</p>
 </section>
+</section>
+<section id="almost-degenerate-perturbation-theory">
+<h2>(Almost) degenerate perturbation theory<a class="headerlink" href="#almost-degenerate-perturbation-theory" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -599,10 +634,12 @@ E_n^{(2)} &amp; = \bra{n^{(0)}} H_1 \ket{n^{(1)}}\\
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-anharmonic-oscillator">Example: anharmonic oscillator</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-perturbation-theory">Second order perturbation theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-perturbation-theory-non-degenerate">Second order perturbation theory (non-degenerate)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validity-of-perturbation-theory">Validity of perturbation theory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-quadratic-stark-effect">Example: the quadratic Stark effect</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almost-degenerate-perturbation-theory">(Almost) degenerate perturbation theory</a></li>
 </ul>
   </nav></div>
 
