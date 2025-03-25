@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>The Aharonov-Bohm effect &#8212; Physics 162</title>
+    <title>The WKBJ method &#8212; Physics 162</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"], "cO": ["\\mathcal{O}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter6/aharonov-bohm';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter11/wkbj';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Neutrino oscillations" href="neutrino_oscillations.html" />
-    <link rel="prev" title="Interlude: two interesting systems" href="Interlude_1.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="The Variational Method" href="variational.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -208,9 +208,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter5/dynamics_1.html">Dynamics I</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Interlude_1.html">Interlude: two interesting systems</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">The Aharonov-Bohm effect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="neutrino_oscillations.html">Neutrino oscillations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/Interlude_1.html">Interlude: two interesting systems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/aharonov-bohm.html">The Aharonov-Bohm effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/neutrino_oscillations.html">Neutrino oscillations</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter7/Wave_examples.html">Examples of nonrelativistic quantum particle dynamics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -237,10 +237,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter10/hydrogen_spectra.html">Bound state spectra for the Coulomb problem</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/approximate_evals.html">Approximation schemes for eigenvalues</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/tipt.html">Time-independent perturbation theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/variational.html">The Variational Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="approximate_evals.html">Approximation schemes for eigenvalues</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tipt.html">Time-independent perturbation theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variational.html">The Variational Method</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">The WKBJ method</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -299,7 +299,7 @@
       
       
       
-      <li><a href="../_sources/chapter6/aharonov-bohm.md" target="_blank"
+      <li><a href="../_sources/chapter11/wkbj.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +383,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The Aharonov-Bohm effect</h1>
+    <h1>The WKBJ method</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -393,13 +393,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#charged-particle-in-an-electromagnetic-field">Charged particle in an electromagnetic field</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gauge-potentials">Gauge potentials</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-mechanics">Classical mechanics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-case">Quantum case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-short-wavelength-limit">The short-wavelength limit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalities">Generalities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-semiclassical-expansion">The semiclassical expansion</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The Aharonov-Bohm effect</a></li>
 </ul>
             </nav>
         </div>
@@ -411,108 +409,69 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="the-aharonov-bohm-effect">
-<h1>The Aharonov-Bohm effect<a class="headerlink" href="#the-aharonov-bohm-effect" title="Link to this heading">#</a></h1>
-<p>The first system we will explore is a particle moving in a region containing a magnetic field. This allows us to explore the structure of quantum mechanics in a background electromagnetic field, and leads to a surprising consequence – even when the field vanishes where the particle can move, it has a measurable effect on the particle’s wavefunction.</p>
-<section id="charged-particle-in-an-electromagnetic-field">
-<h2>Charged particle in an electromagnetic field<a class="headerlink" href="#charged-particle-in-an-electromagnetic-field" title="Link to this heading">#</a></h2>
-<p>So far we have considered the case of a constant magnetic field. Here we will consider the more general case of an electromagnetic field.</p>
-<section id="gauge-potentials">
-<h3>Gauge potentials<a class="headerlink" href="#gauge-potentials" title="Link to this heading">#</a></h3>
-<p>Two of Maxwell’s equations,</p>
-<div class="math notranslate nohighlight" id="equation-bianchi-ident">
-<span class="eqno">(275)<a class="headerlink" href="#equation-bianchi-ident" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-\frac{\del {\vec E}}{\del t} &amp; = c {\vec\nabla}\times{\vec B}\\ 
-{\vec\nabla}\cdot{\vec B} &amp; = 0
+  <section class="tex2jax_ignore mathjax_ignore" id="the-wkbj-method">
+<h1>The WKBJ method<a class="headerlink" href="#the-wkbj-method" title="Link to this heading">#</a></h1>
+<p>The next “non-perturbative” method we will discuss is the Wentzel-Kramers-Brillouin-Jeffreys approximation (sometimes the “J” is not present). This is a technique for solving wave equations, focusing on the case that the relevant energies are “large” in a sense that we will discuss.</p>
+<p>This method is quite powerful and has uses well beyond quantum mechanics. It is the underlying scheme by which we justify ray-tracing methods for solving differential equations, such as geometric optics. For a good general discussion, I recommend <span id="id1">[<a class="reference internal" href="../markdown.html#id13" title="C.M. Bender and S.A. Orszag. Advanced Mathematical Methods for Scientists and Engineers I: Asymptotic Methods and Perturbation Theory. Advanced Mathematical Methods for Scientists and Engineers. Springer, 1999. ISBN 9780387989310. URL: https://books.google.com/books?id=-yQXwhE6iWMC.">Bender and Orszag, 1999</a>]</span>. (A wonderful book for many subjects).</p>
+<p>In the case of quantum mechanics, the other beautiful outcome of the WKB approximation is that we can begin to see the emergence of classical mechanics. We will discuss this fact once we have gone over the basics of teh approximation.</p>
+<p>While this is not a perturbative method, as it applies even when there is no “nearby” exactly solvable Hamiltonian, it is an <em>asymptotic</em> method. That is, there is a small parameter, and a systematic way of expanding the solution in that small parameter. The lowest-order solution is <em>singular</em>: in particular it is non-analytic in the small parameter. But there is an expression for it that can often be solved even when the underlying Schroedinger equation cannot be.</p>
+<section id="the-short-wavelength-limit">
+<h2>The short-wavelength limit<a class="headerlink" href="#the-short-wavelength-limit" title="Link to this heading">#</a></h2>
+<section id="generalities">
+<h3>Generalities<a class="headerlink" href="#generalities" title="Link to this heading">#</a></h3>
+<p>We are going to focus here on the one-dimensional time-independent Schroedinger equation:</p>
+<div class="math notranslate nohighlight">
+\[- \frac{\hbar^2}{2m} \frac{\del^2}{\del x^2} \psi(x) + V(x)\psi(x) = E\psi(x)\]</div>
+<p>Crudely speaking, we are interested in highly excited states, in a way we will try to make precise. Consider in particular a bound state problem as illustrated below.</p>
+<p>Inside the potential well, at high eneough energy there will be many nodes and the wavfunction will oscillate rapidly. In this region, the approximation works when the number of nodes is <span class="math notranslate nohighlight">\(\gg 1\)</span>. If the potential is not varying too rapidly, it will be approximately constant over the scale of separation of the nodes. Locally near these nodes, the solution will then look like a plane wave (solution in a constant potential) with wavenumber</p>
+<div class="math notranslate nohighlight">
+\[\hbar k(x) = p(x) = \sqrt{2 m (E - V(x))}\]</div>
+<p>Similarly, if the energy is far enough below the potential, then the exponential falloff will be rapid compared to the rate of change of the potential and cam be characterized locally by a decay rate</p>
+<div class="math notranslate nohighlight">
+\[\hbar\kappa(x) = \sqrt{2m(V(x) - E)}\]</div>
+<p>which we can think of as an imaginary wavenumber.</p>
+<p>If this approximation is close to true, we can approximate the wavefunction well inside the potential well with</p>
+<div class="math notranslate nohighlight" id="equation-semiclassical-wavefunctions">
+<span class="eqno">(327)<a class="headerlink" href="#equation-semiclassical-wavefunctions" title="Link to this equation">#</a></span>\[\psi(x) \sim A_+ \exp\left(\frac{i}{\hbar}\int_{x_0}^x dx' p(x')\right) + A_- \exp\left(- \frac{i}{\hbar}\int_{x_0}^x dx' p(x')\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(p(x) = \sqrt{2m(E - V(x))}\)</span> is the classical momentum at fixed energy. Here <span class="math notranslate nohighlight">\(x_0\)</span> is a choice, that can be absorbed into <span class="math notranslate nohighlight">\(A_{\pm}\)</span>. Well below the barrier, the solution is:</p>
+<div class="math notranslate nohighlight" id="equation-below-barrier">
+<span class="eqno">(328)<a class="headerlink" href="#equation-below-barrier" title="Link to this equation">#</a></span>\[\psi(x) \sim B_+ \exp\left(\frac{1}{\hbar}\int_{x_0}^x dx' \rho(x')\right) + B_- \exp\left(- \frac{1}{\hbar}\int_{x_0}^x dx' \rho(x')\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho(x) = - i \sqrt{2m(E - V(x))} = \sqrt{2m(V(x) - E)}\)</span> is a sort of imaginary momentum.</p>
+<p>The approximation can be expected to break down when the energy is roughly equal to the potential energy, so that the variation of the wavefunciton is not rapid. This is the region around the classical turning points. However, in this region, we can approximate the potential as a linear one, and the Schroedinger equation with a linear potential does have a solution in terms of Airy functions. If the WKB approximation starts to be good while the linear approximation is still valid, then we can use this fact to match the Airy functions to the WKB solutions and get a complete solution, including an approximation to the energy eigenvalues.</p>
+<p>To get an estimate of when this approximation words, we can ask that the change in the wavelength <span class="math notranslate nohighlight">\(\lambda(x) = \hbar/p(x)\)</span> over a distance of order the wavelength is small compared to the wavelength. This becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\Big| \frac{\Delta\lambda}{\lambda}\Big| &amp; \sim \Big| \frac{\lambda\del_x \lambda}{\lambda}\Big| \\
+&amp; = |\del_x \lambda| = \Big|\frac{m\hbar V'}{(2m(E - V))^{3/2}}\Big| \\
+&amp; = \Big| \frac{m \hbar V'}{p^3}\Big| \\
+&amp; = \half \Big| \frac{2 m}{p^2} \frac{\hbar V'}{p}\Big|\\
+&amp; = \half \Big| \frac{\lambda \del_x V}{E_{kin}}\Big| \ll 1
 \end{align}\end{split}\]</div>
-<p>imply that in a simply connected region, <span class="math notranslate nohighlight">\({\vec E}\)</span>, {\vec B}$ can be written in the form</p>
-<div class="math notranslate nohighlight" id="equation-gauge-potentials">
-<span class="eqno">(276)<a class="headerlink" href="#equation-gauge-potentials" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-{\vec E} &amp; = - \frac{1}{c} \frac{\del {\vec A}}{\del t} - {\vec \nabla} \Phi\\
-{\vec B} &amp; = {\vec\nabla}\times{\vec A}
-\end{align}\end{split}\]</div>
-<p>The fact that a single solution <span class="math notranslate nohighlight">\({\vec A}, \Phi\)</span> can generally only be found in a simply connected region will become important to us below.</p>
+<p>So the change in the potential over a wavelength is small compared to the kinetix energy. We will see how this conditions emerges from a more systematic treatment.</p>
 </section>
-<section id="classical-mechanics">
-<h3>Classical mechanics<a class="headerlink" href="#classical-mechanics" title="Link to this heading">#</a></h3>
-<p>The Lagrangian for a charged particle in this background is</p>
-<div class="math notranslate nohighlight" id="equation-em-lag">
-<span class="eqno">(277)<a class="headerlink" href="#equation-em-lag" title="Link to this equation">#</a></span>\[L - \half m {\dot{\vec x}}^2 + \frac{e}{c} {\dot{\vec x}}\cdot{\vec A} - q \Phi\]</div>
-<p>where <span class="math notranslate nohighlight">\(q\)</span> is the charge of the particle. Applying the Euler-Lagrange equation to this, combined with <a class="reference internal" href="#equation-gauge-potentials">(276)</a>, leads to the Lorentz force law</p>
-<div class="math notranslate nohighlight" id="equation-chapter6-aharonov-bohm-0">
-<span class="eqno">(278)<a class="headerlink" href="#equation-chapter6-aharonov-bohm-0" title="Link to this equation">#</a></span>\[m {\ddot{\vec x}} = \frac{q}{c}{\vec{\dot x}}\times{\vec B} + q {\vec E}\]</div>
-<p>As it happens we cannot simply write <span class="math notranslate nohighlight">\(L\)</span> in terms of the physical field variables <span class="math notranslate nohighlight">\({\vec E}, {\vec B}\)</span>. To get a sensible variational principle the Lagrangian needs to be written a s afunction of the vector and scalar potentials <span class="math notranslate nohighlight">\(\Phi, {\vec A}\)</span>.</p>
-<p>It is important to note that <span class="math notranslate nohighlight">\(\Phi, {\vec A}\)</span> are ambiguously defined via <a class="reference internal" href="#equation-gauge-potentials">(276)</a>. If we shift</p>
-<div class="math notranslate nohighlight" id="equation-gt-potentials">
-<span class="eqno">(279)<a class="headerlink" href="#equation-gt-potentials" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-{\vec A} &amp; \to {\vec A} - {\vec\nabla}\Lambda \\
-\Phi &amp; \to \Phi + \frac{1}{c} \frac{\del \Lambda}{\del t}
-\end{align}\end{split}\]</div>
-<p>then the electric and magnetic fields do not change. This shift in fact makes no real physical change: it is called a <em>gauge transformation</em> or <em>gauge symmetry</em>. You can show that the action <span class="math notranslate nohighlight">\(S = \int dt L\)</span> changes only by boundary terms (that is, by the integral of a divergence), so that the gauge symetry is a symmetry of the dynamics.</p>
-<p>The Hamiltonian becomes</p>
-<div class="math notranslate nohighlight" id="equation-charged-particle-ham">
-<span class="eqno">(280)<a class="headerlink" href="#equation-charged-particle-ham" title="Link to this equation">#</a></span>\[H = \frac{1}{2m} \left({\vec p} - \frac{q}{c} {\vec A}({\vec x}, t)\right)^2 + q \Phi({\vec x},t)\]</div>
-<p>where the canonical momentum is</p>
-<div class="math notranslate nohighlight" id="equation-charged-particle-cm">
-<span class="eqno">(281)<a class="headerlink" href="#equation-charged-particle-cm" title="Link to this equation">#</a></span>\[p_i = m {\dot x}^i + \frac{e}{c} A^i\]</div>
-<p>Since <span class="math notranslate nohighlight">\({\dot x}^i\)</span> does not transform under gauge transformations, this means that <span class="math notranslate nohighlight">\(p_i\)</span> does:</p>
-<div class="math notranslate nohighlight" id="equation-gauge-shift-p">
-<span class="eqno">(282)<a class="headerlink" href="#equation-gauge-shift-p" title="Link to this equation">#</a></span>\[p_i \to p_i - \frac{e}{c} \frac{\del \Lambda}{\del x^i}\]</div>
-<p>Thus the first term in <a class="reference internal" href="#equation-charged-particle-ham">(280)</a> is gauge invariant. The last term shifs by</p>
+<section id="the-semiclassical-expansion">
+<h3>The semiclassical expansion<a class="headerlink" href="#the-semiclassical-expansion" title="Link to this heading">#</a></h3>
+<p>Let us begin with the ansatz</p>
 <div class="math notranslate nohighlight">
-\[H \to H + \frac{e}{c} \frac{\del}{\del t} \Lambda\]</div>
-<p>This shift affects Hamiltons equations:</p>
+\[\psi = e^{i S/\hbar}\]</div>
+<p>So far this is just a rewriting, not an approximation. I am using the letter <span class="math notranslate nohighlight">\(S\)</span> to foreshadow the relationship of the WKB approximation to the emergence of classical mechanics.</p>
+<p>Putting this into the TISE, we get</p>
+<div class="math notranslate nohighlight" id="equation-se-wkb">
+<span class="eqno">(329)<a class="headerlink" href="#equation-se-wkb" title="Link to this equation">#</a></span>\[(\del_x S)^2 = 2m(E - V(x)) + i\hbar \del_x^2 S\]</div>
+<p>This is still an exact equation. But the approximation <a class="reference internal" href="#equation-semiclassical-wavefunctions">(327)</a> arises if we are allower to ignore the final term. Since this aproximation seems tied up in classical mechanics, and the last term is proportional to <span class="math notranslate nohighlight">\(\hbar\)</span>, one often says that we will perform a “small-<span class="math notranslate nohighlight">\(\hbar\)</span>” approximation. This is not quite correct. What we will be demanding is essentially that <span class="math notranslate nohighlight">\(S/\hbar \gg 1\)</span>.</p>
+<p>With this in mind, we can still write a formal expansion</p>
+<div class="math notranslate nohighlight" id="equation-hbar-expansion">
+<span class="eqno">(330)<a class="headerlink" href="#equation-hbar-expansion" title="Link to this equation">#</a></span>\[S = S_{cl} + \hbar S_1 + \hbar^2 S_2 + \ldots\]</div>
+<p>and solve the Schroedinger equation order by order in <span class="math notranslate nohighlight">\(\hbar\)</span>. We will still need to check that <span class="math notranslate nohighlight">\(\hbar S_k \ll S_{k-1}\)</span>.</p>
+<p>Plugging <a class="reference internal" href="#equation-hbar-expansion">(330)</a> into <a class="reference internal" href="#equation-se-wkb">(329)</a> and keeping only the <span class="math notranslate nohighlight">\(\hbar\)</span>-independent term, we get</p>
 <div class="math notranslate nohighlight">
-\[\frac{d}{dt} p \to \frac{d}{dt} - \frac{e}{c} \frac{\del}{\del t} \frac{\del}{\del x^i} \Lambda\]</div>
-<p>consistent with the gauge transformation of <span class="math notranslate nohighlight">\(p\)</span>.</p>
+\[(\del_x S)^2 = 2m(E - V(x)) \Rightarrow 
+\frac{(\del_x S)^2}{2m} + V(x) = E\]</div>
+<p>Those who have had a good classical mechanics course will recognize this as the <em>Hamilton-Jacobi equation</em>, where <span class="math notranslate nohighlight">\(S\)</span> is the classical action. We will return to this interpretation below, which is central to ray tracing/geometric optics/the method of characteristics. The solution is</p>
+<div class="math notranslate nohighlight">
+\[S(x) = \pm \int_{x_0}^x dx' \sqrt{2m(E - V(x'))} \equiv \pm \int_{x_0}^x dx' p(x')\]</div>
+<p>where again, <span class="math notranslate nohighlight">\(x_0\)</span> is an integration constant. We have two solutions to <span class="math notranslate nohighlight">\(S\)</span> and therefore for <span class="math notranslate nohighlight">\(\psi\)</span>. At this level of approximation we can consider linear combinations of these two solutions. Note that what we have done is true formally whether <span class="math notranslate nohighlight">\(E - V\)</span> is positive or negative. In the former case, we recover <a class="reference internal" href="#equation-semiclassical-wavefunctions">(327)</a>. In the latter case, <span class="math notranslate nohighlight">\(S\)</span> becomes imaginary, and we recover <a class="reference internal" href="#equation-below-barrier">(328)</a>.</p>
 </section>
-<section id="quantum-case">
-<h3>Quantum case<a class="headerlink" href="#quantum-case" title="Link to this heading">#</a></h3>
-<p>In the quantum case, if we let <span class="math notranslate nohighlight">\(\psi(x,t) = e^{- i \frac{e}{\hbar c} \Lambda} \psi'\)</span>, then</p>
-<div class="math notranslate nohighlight">
-\[{\hat p}_i  e^{- i \frac{e}{\hbar c} \Lambda} \psi' = e^{- i \frac{e}{\hbar c} \Lambda} ({\hat p_i} - \frac{e}{c}\frac{\del \Lambda}{\del x^i})\psi'\]</div>
-<p>Similarly,</p>
-<div class="math notranslate nohighlight">
-\[i\hbar \frac{\del}{\del t} e^{- i \frac{e}{\hbar c} \Lambda} \psi' =  e^{- i \frac{e}{\hbar c} \Lambda} (i\hbar \frac{\del}{\del t} + \frac{e}{c} \frac{\del \Lambda}{\del t})\psi'\]</div>
-<p>Thus, if we apply <a class="reference internal" href="#equation-gt-potentials">(279)</a> to <span class="math notranslate nohighlight">\(A,\Phi\)</span> in the quantum Hamiltonian, and also shift <span class="math notranslate nohighlight">\(\psi \to e^{-i e\Lambda/(\hbar c)}\psi\)</span>, the Schroedinger equation remains unchanged.</p>
-</section>
-</section>
-<section id="id1">
-<h2>The Aharonov-Bohm effect<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>Now we consider the setup show below, which is a modification of the classic double slit experiment (we will review this below since we haven’t covered it yet). A source of some particle at <span class="math notranslate nohighlight">\(x = x_{source}\)</span>, which we take to produce particles in the same state each time, is behind a screen at <span class="math notranslate nohighlight">\(x = 0\)</span> with two slits. The effect of the screen is to split the state into two wavepackets, <span class="math notranslate nohighlight">\(\psi_1({\vec x}, t)\)</span> and <span class="math notranslate nohighlight">\(\psi_2({\vec x}, t)\)</span>. We also assume that if we block slit 1(2) the system is in state <span class="math notranslate nohighlight">\(A_1 \psi_1\)</span>(<span class="math notranslate nohighlight">\(A_2 \psi_2\)</span>), where <span class="math notranslate nohighlight">\(A_i\)</span> enforces <span class="math notranslate nohighlight">\(\int d^2 x |A_i|^2 |\psi_i|^2 = 1\)</span>. With both slits open the particle is in state <span class="math notranslate nohighlight">\(\psi({\vec x},t) = \psi_1 + \psi_2\)</span> such that <span class="math notranslate nohighlight">\(\int d^2 x |\psi_1 + \psi_2|^2 = 1\)</span>. Note that we are ignoring the <span class="math notranslate nohighlight">\(z\)</span> direction here, we can assume that the particles move more or less at <span class="math notranslate nohighlight">\(z = 0\)</span>, or that the wavefunction is more or less constant in the <span class="math notranslate nohighlight">\(z\)</span> direction.</p>
-<p><img alt="Illustration of double-slit experiment" src="chapter6/double_slit.png" /></p>
-<p>Now let us place a detector with resolution <span class="math notranslate nohighlight">\(\delta\)</span> that detects the <span class="math notranslate nohighlight">\(y\)</span> position of the particle, at <span class="math notranslate nohighlight">\(x = x_{meas}\)</span>. If we block slit 2, the probability for the particle to hit the screen at <span class="math notranslate nohighlight">\(y\)</span> with resiolution <span class="math notranslate nohighlight">\(\delta\)</span> is <span class="math notranslate nohighlight">\(p_1(y,\delta) = \delta |\phi_1(x_{meas},y)|^2\)</span>, as illustrated in the image above.</p>
-<p>The probability that the particle is detected at <span class="math notranslate nohighlight">\(y\)</span> within resolution <span class="math notranslate nohighlight">\(\delta\)</span> is</p>
-<div class="math notranslate nohighlight" id="equation-detection-prob">
-<span class="eqno">(283)<a class="headerlink" href="#equation-detection-prob" title="Link to this equation">#</a></span>\[p_{12}(y,\delta) = |\psi_1 + \psi_2|^2 \delta = \delta\left(|\psi_1|^2 + |\psi_2|^2 + \psi_1^* \psi_2 + \psi_2^* \psi_1\right)\]</div>
-<p>The typical story is that <span class="math notranslate nohighlight">\(\psi_i(x_{screen},y,t) = \sim f_i(y,t) e^{i k y}\)</span> where <span class="math notranslate nohighlight">\(f\)</span> is some envelope function. If we block either screen, we see that envelope function, but if we do not, then we see interference patterns. The point is that the probabilities do not add, the wavefunctions do.</p>
-<p>Now let is place a solenoid  just behind the screen. We assume we can arrange it so that <span class="math notranslate nohighlight">\(\psi_i\)</span> has negligible support near the solenoid. The solenoid produces a magnetic field <span class="math notranslate nohighlight">\({\vec B} = B{\hat z}\)</span> in the <span class="math notranslate nohighlight">\(z\)</span> direction inside, with total magnetic flux <span class="math notranslate nohighlight">\(\int_{interior} d^2 x B = \Phi\)</span>.</p>
-<p>Outside the solenoid, <span class="math notranslate nohighlight">\({\vec B} = 0\)</span>. We thus might be tempted to assume that we can set <span class="math notranslate nohighlight">\({\vec A} = 0\)</span>. However, we can only do this everywhere in a simply connected region and the region outside of the solenoid fails to be simply connected. This is why I was careful to state that we can solve <span class="math notranslate nohighlight">\({\vec B} = {\vec\nabla} \times{\vec A}\)</span> for <span class="math notranslate nohighlight">\({\vec A}\)</span> in a simply connected region. Consider two overlapping regions <span class="math notranslate nohighlight">\(R_1, R_2\)</span> as shown, and take a path <span class="math notranslate nohighlight">\(C = C_1 + C_2\)</span> around the solenoid that passes through both of them at <span class="math notranslate nohighlight">\(z = 0\)</span>, such that <span class="math notranslate nohighlight">\(C_i\)</span> lies in region <span class="math notranslate nohighlight">\(R_i\)</span>. By Stoke’s theorem,</p>
-<div class="math notranslate nohighlight" id="equation-stokes-theorem">
-<span class="eqno">(284)<a class="headerlink" href="#equation-stokes-theorem" title="Link to this equation">#</a></span>\[\oint d{\vec l}\cdot({\vec\nabla}\times{\vec A}) = \int_R d^2 x B_z = \Phi = \oint_{C_1}d({\vec l}\cdot({\vec\nabla}\times{\vec A}) + \oint_{C_2}d{\vec l}\cdot{\vec\nabla}\times{\vec A})\]</div>
-<p>Now in region <span class="math notranslate nohighlight">\(R_1\)</span> or <span class="math notranslate nohighlight">\(R_2\)</span> we could set <span class="math notranslate nohighlight">\({\vec A} = 0\)</span> but by the above, we cannot do so in both. If <span class="math notranslate nohighlight">\({\vec A}_i\)</span> is the vector potential in region <span class="math notranslate nohighlight">\(R_i\)</span>, then in the overlap regions, we must have <span class="math notranslate nohighlight">\({\vec A}_1 = {\vec A}_2 + {\vec\nabla} \Lambda\)</span>; they are related by a gauge transformation.</p>
-<p><img alt="Aharono-Bohm experiment" src="../_images/AB_slits.jpeg" /></p>
-<p>Now, what do our wavefunctions look like? Outside of the solenoid, they satisfy the time-dependent Schroedinger equation</p>
-<div class="math notranslate nohighlight" id="equation-ab-tdse">
-<span class="eqno">(285)<a class="headerlink" href="#equation-ab-tdse" title="Link to this equation">#</a></span>\[- \frac{\hbar^2}{2m} \left(-i {\vec\nabla} = \frac{e}{c} {\vec A}\right) \psi = i\hbar \del_t \psi\]</div>
-<p>where I have started using the notation <span class="math notranslate nohighlight">\(\del_t = \frac{\del}{\del t}\)</span>. Now in a region <span class="math notranslate nohighlight">\(R_i\)</span>, we can write</p>
-<div class="math notranslate nohighlight" id="equation-shifted-wavefunction">
-<span class="eqno">(286)<a class="headerlink" href="#equation-shifted-wavefunction" title="Link to this equation">#</a></span>\[\psi_i({\vec x},t) = e^{\frac{i e}{c} \int_{x_0}^{\vec x}d{\vec l}\cdot A} \phi_i\]</div>
-<p>where the line integral stays in region <span class="math notranslate nohighlight">\(R_i\)</span>. Using this,</p>
-<div class="math notranslate nohighlight">
-\[(-i{\vec \nabla} - \frac{e}{c} {\vec A})\psi_i = e^{\frac{i e}{c} \int_{x_0}^{\vec x}d{\vec l}\cdot A} (-i{\vec\nabla})\phi_i\]</div>
-<p>so that</p>
-<div class="math notranslate nohighlight">
-\[- \frac{\hbar^2}{2m}\nabla^2 \phi_i = i\hbar \del_t \phi_i\]</div>
-<p>and <span class="math notranslate nohighlight">\(\phi_i\)</span> are the wavefunctions for the double slit experiment absent the screen.</p>
-<p>We assume that the wavefunction <span class="math notranslate nohighlight">\(\phi_i\)</span> has support only in <span class="math notranslate nohighlight">\(R_i\)</span>, so that we can unambigoulsy write <span class="math notranslate nohighlight">\(\psi_i\)</span> via the above shift. Now let us measure the position of the particle at <span class="math notranslate nohighlight">\(x_{meas}\)</span>. The result is</p>
-<div class="math notranslate nohighlight" id="equation-ab-result">
-<span class="eqno">(287)<a class="headerlink" href="#equation-ab-result" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-p(y,\delta) &amp; = \delta  e^{i \frac{e}{c} \int_{x_0,R_1}^{x_{meas}} d{\vec l}\cdot{\vec A}}\
-\phi_1+ e^{i \frac{e}{c} \int_{x_0,R_2}^{x_{meas}} d{\vec l}\cdot{\vec A}}\phi_2 \\
-&amp; = |\phi_1|^2 + |\phi_2|^2 + \phi_2^* \phi_1 e^{i\frac{e}{c}\Phi} + c.c.
-\end{align}\end{split}\]</div>
-<p>In other words, as we change <span class="math notranslate nohighlight">\(\Phi\)</span>, the interference fringes will undergo a phase shift proportional to the magnetic flux through the solenoid.</p>
 </section>
 </section>
 
@@ -529,7 +488,7 @@ p(y,\delta) &amp; = \delta  e^{i \frac{e}{c} \int_{x_0,R_1}^{x_{meas}} d{\vec l}
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapter6"
+            path: "./chapter11"
         },
         predefinedOutput: true
     }
@@ -547,20 +506,20 @@ p(y,\delta) &amp; = \delta  e^{i \frac{e}{c} \int_{x_0,R_1}^{x_{meas}} d{\vec l}
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Interlude_1.html"
+       href="variational.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Interlude: two interesting systems</p>
+        <p class="prev-next-title">The Variational Method</p>
       </div>
     </a>
     <a class="right-next"
-       href="neutrino_oscillations.html"
+       href="../appendix.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Neutrino oscillations</p>
+        <p class="prev-next-title">Appendix</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -580,13 +539,11 @@ p(y,\delta) &amp; = \delta  e^{i \frac{e}{c} \int_{x_0,R_1}^{x_{meas}} d{\vec l}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#charged-particle-in-an-electromagnetic-field">Charged particle in an electromagnetic field</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gauge-potentials">Gauge potentials</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-mechanics">Classical mechanics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-case">Quantum case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-short-wavelength-limit">The short-wavelength limit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalities">Generalities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-semiclassical-expansion">The semiclassical expansion</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The Aharonov-Bohm effect</a></li>
 </ul>
   </nav></div>
 

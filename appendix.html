@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Bibliography" href="bibliography.html" />
-    <link rel="prev" title="Time-independent perturbation theory" href="chapter11/tipt.html" />
+    <link rel="prev" title="The WKBJ method" href="chapter11/wkbj.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -239,6 +239,8 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="chapter11/approximate_evals.html">Approximation schemes for eigenvalues</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="chapter11/tipt.html">Time-independent perturbation theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11/variational.html">The Variational Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Appendix</a></li>
@@ -427,7 +429,7 @@ document.write(`
 <h3>Derivatives and partial derivatives<a class="headerlink" href="#derivatives-and-partial-derivatives" title="Link to this heading">#</a></h3>
 <p>I will often write</p>
 <div class="math notranslate nohighlight" id="equation-part-der">
-<span class="eqno">(327)<a class="headerlink" href="#equation-part-der" title="Link to this equation">#</a></span>\[\del_i \equiv \frac{\partial}{\partial x^i}\]</div>
+<span class="eqno">(331)<a class="headerlink" href="#equation-part-der" title="Link to this equation">#</a></span>\[\del_i \equiv \frac{\partial}{\partial x^i}\]</div>
 </section>
 <section id="some-useful-tensors">
 <h3>Some useful tensors<a class="headerlink" href="#some-useful-tensors" title="Link to this heading">#</a></h3>
@@ -435,7 +437,7 @@ document.write(`
 <li><p>The Kronecker delta function. If <span class="math notranslate nohighlight">\(I,J = i,\ldots,N\)</span> are some indices then</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-kronecker">
-<span class="eqno">(328)<a class="headerlink" href="#equation-kronecker" title="Link to this equation">#</a></span>\[\begin{split}\delta^I_J = \begin{cases} 1 &amp; I = J \\ 0 &amp; I \neq J \end{cases}\end{split}\]</div>
+<span class="eqno">(332)<a class="headerlink" href="#equation-kronecker" title="Link to this equation">#</a></span>\[\begin{split}\delta^I_J = \begin{cases} 1 &amp; I = J \\ 0 &amp; I \neq J \end{cases}\end{split}\]</div>
 <ol class="arabic simple" start="2">
 <li><p>The totally antisymmetric tensor</p></li>
 </ol>
@@ -445,7 +447,7 @@ document.write(`
 <h3>Einstein summation convention<a class="headerlink" href="#einstein-summation-convention" title="Link to this heading">#</a></h3>
 <p>The Einstein summation convention is that all repeated indices are summed over unless otherwise stated explicitly. Thus, for some <span class="math notranslate nohighlight">\(d\)</span>-dimensional vectors <span class="math notranslate nohighlight">\(V^i\)</span>, <span class="math notranslate nohighlight">\(W^i\)</span></p>
 <div class="math notranslate nohighlight" id="equation-einstein-def">
-<span class="eqno">(329)<a class="headerlink" href="#equation-einstein-def" title="Link to this equation">#</a></span>\[V^i W^i \equiv \sum_{j = 1}^d V^j W^j\]</div>
+<span class="eqno">(333)<a class="headerlink" href="#equation-einstein-def" title="Link to this equation">#</a></span>\[V^i W^i \equiv \sum_{j = 1}^d V^j W^j\]</div>
 <p>Technically speaking I am being a little careless. In curved spaces (for example, on the sphere), there are geometrically distinct objects <span class="math notranslate nohighlight">\(V^i\)</span>, <span class="math notranslate nohighlight">\(V_i\)</span>, and I should only be summing over pairs of indices in which one is raised and one is lowered. In Euclidean space, however, there is a standard map which states that numerically, <span class="math notranslate nohighlight">\(V^i = V_i\)</span>, so I will ignore this issue for the time being.</p>
 <p>(We can think of <span class="math notranslate nohighlight">\(V^i, W^i\)</span> as elements of a vector space, and <span class="math notranslate nohighlight">\(V_i, W_i\)</span> their dual vectors; we will discuss this language when we get to linear algebra).</p>
 <p>Derivatives of expressions involving the Einstein summation convention often confuse people. For a general vector field <span class="math notranslate nohighlight">\(V^I(x)\)</span>,</p>
@@ -471,16 +473,16 @@ E. There are similar identities in higher dimensions, which we will leave aside 
 </ol>
 <p>For general <span class="math notranslate nohighlight">\(d\)</span>, the cross product of two vectors <span class="math notranslate nohighlight">\(U^i V^i\)</span> is a <span class="math notranslate nohighlight">\(d-2\)</span>-rank tensor:</p>
 <div class="math notranslate nohighlight" id="equation-d-cross-product">
-<span class="eqno">(330)<a class="headerlink" href="#equation-d-cross-product" title="Link to this equation">#</a></span>\[({\vec U} \times {\vec V})_{i_1,\ldots,i_{d-2}} = \epsilon_{i_1,\ldots,i_{d-2}, i_{d--1}, i_d} U^{i_{d-1}} V^{i_d}\]</div>
+<span class="eqno">(334)<a class="headerlink" href="#equation-d-cross-product" title="Link to this equation">#</a></span>\[({\vec U} \times {\vec V})_{i_1,\ldots,i_{d-2}} = \epsilon_{i_1,\ldots,i_{d-2}, i_{d--1}, i_d} U^{i_{d-1}} V^{i_d}\]</div>
 <p>For <span class="math notranslate nohighlight">\(d = 2\)</span>, this is a scalar (actually a “pseudo-scalar”):</p>
 <div class="math notranslate nohighlight" id="equation-two-d-cross">
-<span class="eqno">(331)<a class="headerlink" href="#equation-two-d-cross" title="Link to this equation">#</a></span>\[({\vec U}\times {\vec V}) = \epsilon_{ij} U^i V^j = A^1 V^2 - U^2 V^1\]</div>
+<span class="eqno">(335)<a class="headerlink" href="#equation-two-d-cross" title="Link to this equation">#</a></span>\[({\vec U}\times {\vec V}) = \epsilon_{ij} U^i V^j = A^1 V^2 - U^2 V^1\]</div>
 <p>For <span class="math notranslate nohighlight">\(d = 3\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-three-d-cross">
-<span class="eqno">(332)<a class="headerlink" href="#equation-three-d-cross" title="Link to this equation">#</a></span>\[({\vec U}\times {\vec V})^i = \epsilon_{ijk} U^j V^k\]</div>
+<span class="eqno">(336)<a class="headerlink" href="#equation-three-d-cross" title="Link to this equation">#</a></span>\[({\vec U}\times {\vec V})^i = \epsilon_{ijk} U^j V^k\]</div>
 <p>Or alternatively,</p>
 <div class="math notranslate nohighlight" id="equation-three-d-cross-two">
-<span class="eqno">(333)<a class="headerlink" href="#equation-three-d-cross-two" title="Link to this equation">#</a></span>\[U^i V^j - U^j V^i = \epsilon_{ijk} ({\vec U}\times {\vec B})^k\]</div>
+<span class="eqno">(337)<a class="headerlink" href="#equation-three-d-cross-two" title="Link to this equation">#</a></span>\[U^i V^j - U^j V^i = \epsilon_{ijk} ({\vec U}\times {\vec B})^k\]</div>
 </section>
 </section>
 <section id="some-useful-functions">
@@ -489,7 +491,7 @@ E. There are similar identities in higher dimensions, which we will leave aside 
 <li><p>The Heaviside step function <span class="math notranslate nohighlight">\(\theta(x)\)</span>:</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-step-function">
-<span class="eqno">(334)<a class="headerlink" href="#equation-step-function" title="Link to this equation">#</a></span>\[\begin{split}\theta(x) = \begin{cases} 0, &amp; \text{if}\ x &lt; 0 \\ 1, &amp; \text{if} x &gt; 0 \end{cases}\end{split}\]</div>
+<span class="eqno">(338)<a class="headerlink" href="#equation-step-function" title="Link to this equation">#</a></span>\[\begin{split}\theta(x) = \begin{cases} 0, &amp; \text{if}\ x &lt; 0 \\ 1, &amp; \text{if} x &gt; 0 \end{cases}\end{split}\]</div>
 </section>
 </section>
 
@@ -524,12 +526,12 @@ E. There are similar identities in higher dimensions, which we will leave aside 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="chapter11/tipt.html"
+       href="chapter11/wkbj.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Time-independent perturbation theory</p>
+        <p class="prev-next-title">The WKBJ method</p>
       </div>
     </a>
     <a class="right-next"
