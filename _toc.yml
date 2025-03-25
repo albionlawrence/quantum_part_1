@@ -60,6 +60,8 @@ chapters:
   - file: chapter11/approximate_evals
     sections:
     - file: chapter11/tipt
+    - file: chapter11/variational
+    - file: chapter11/wkbj
   - file: appendix
   - file: bibliography
 # - file: notebooks
