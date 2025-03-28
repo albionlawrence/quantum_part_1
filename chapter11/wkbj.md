@@ -115,9 +115,19 @@ Finally, we need to check on our approximation. Thius should be done at every or
 This means
 ```{math}
 p(x)^2 \gg 2\hbar| p'(x) p(x)|  = \Big| \frac{- 2 m V'(x)}{p}\Big|
-\Rightarrow \Big| \frac{\lambda(x) V'}{E_{kin}} \ll 1
+\Rightarrow \alpha \equiv \Big| \frac{\lambda(x) V'}{E_{kin}} \ll 1
 ```
-which is essentially the condition we already derived from a more hand-waving argument.
+which is essentially the condition we already derived from a more hand-waving argument. Here we introduce $\alpha$ for notational ease in the example below.
+
+Just to get a sense of the nontriviality of these conditions, we can look at a 1d case with the potential $V = - c/x^n$ with $n > 0$. If we fix the total energy $E$, we find
+```{math}
+\alpha = \frac{2 m \hbar \frac{n c}{x^{n+1}}}{\left(E + \frac{c}{x^n}\right)^{3/2}}
+```
+For fixed $E$ this is always valid as $x \to \infty$ as the particle becomes the free particle for which WKB is exact. As $x to 0$, when the potential energy dominates is large compared to $|E|$, we have:
+```{math}
+	\alpha \sim \frac{2 m n \hbar}{\sqrt{c}} x^{\frac{n}{2} - 1}
+```
+Thus WKB works well when $n > 2$. For $n < 2$ WKB breaks down near the origin. (Note that for $n > 2$ the energy eigenstates are unbounded below, with $n = 2$ being an interesting marginal case, as we have seen in a prior problem set).
 
 ## Bound state problems
 
@@ -126,14 +136,105 @@ We now consider particles in some potential well, such that $\lim_{x\to\infty} V
 The WKB approximation is expected to break down at the classical turning points $A,B$> Here $p(x) \to 0$, $\lambda(x) \to \infty$, and we can see that the condition {eq}`wkb_cond` breaks down. Generally, however, the potential can be well-approximated by a linear potential; the resulting Schroedinger equation is exactly solvable. If we are fortunate, the regime in which the linear approximation holds will overlap with the regime in which the WKB approximation holds, as illustrated below. In this case we can match our WKB functions to the solutions near the turning points. 
 
 Let us first turn to the solutions in the WKB regions. In region I, the solution is
-```{nath}
+```{math}
 \psi_I = \frac{C_I}{\sqrt{2m(V(x) - E)}} e^{\frac{1}{\hbar} \int^x_{x_I} dx'\sqrt{2m(V(x') - E)}}
 ```
 Here $x_I$ is arbitrary. This solution will be exponentially decaying as $x \to - \infty$: we have set to zero an exponentially growing component.
 
-In region II the solution looks like
+In region II the WKB solution looks like
 ```{math}
 \psi_{II}(x) = \frac{1}{\sqrt{2m(E - V(x))}} \left(A_{II} e^{\frac{i}{\hbar}\int_{x_{II}}^x dx'\sqrt{2m(V(x') - E)}} + B_{II}  e^{- \frac{i}{\hbar}\int_{x_{II}}^x dx'\sqrt{2m(V(x') - E)}}\right)
 ```
 
+While in Region III the WKB solution looks like 
+```{math}
+\psi_I = \frac{C_{III}}{\sqrt{2m(V(x) - E)}} e^{- \frac{1}{\hbar} \int^x_{x_{III}} dx'\sqrt{2m(V(x') - E)}}
+```
+which is exponentially decaying. 
 
+As with the other bound state problems we have studied, we have 4 complex unknowns, with one complex constraint due to the combination of normalization and choice of overeall phase. We will find four constraints due to matching the WKB solutions to the equations near the turning points. 
+
+Let us study the turning point $B$. Expanding in a Taylor series,
+```{math}
+\begin{align}
+V(x) & = V(x_B) + (x - x_B) V'(x_B) + \half (x - x_B)^2 V''(x_B) + \ldots\\
+&  = V(x_B) + \gamma (x = x_N) + \ldots
+\end{align}
+```
+We assume that teh higher order terms are small in a region around $x_B$ that overlaps with the region of validity of the WKB approximation. In general, of course, this needs to be checked.
+
+Now we examine the Schrodinger equation. By definition, $V(x_B) = E$, so these terms drop out. Furthermore, we define $y \equiv L (x - x_B)$, with $L$ to be determined. Nondimensionalizing our equations are almost always a good idea -- we will discover important characteristic scales, and we will reduce the equations to ones that we can look up or plug most easily into a computer. Further multiplyng the equation by $\frac{2 m L^2}{\hbar^2}$, the resulting equation is:
+```{math}
+- \del_y^2 \psi + \frac{2 m \gamma L^3}{\hbar^2} y = 0
+```
+We set $L = \left(\frac{2m\gamma}{\hbar^2}\right)^{1/3}$, to find
+```{math}
+- \del_y^2 \psi + y \psi = 0
+```
+This differential equation has known solutions in terms of *Airy functions*, whose properties you can look up in many places such as the [Digital Library of Mathematical Functions](https://dlmf.nist.gov/) (see Chapter 9). There are two independent solutions $Ai(y), Bi(y)$, and a general solution has the form
+```{math}
+\psi = a Ai(y) + b Bi(y)
+```
+
+At large $|y|$, the WKB approximation works well for these functions (you can and should deduce this from the conditions we have discussed). Their asymptotic properties are known:
+```{math}
+\begin{align}
+Ai(y) \sim \begin{cases} \frac{1}{\sqrt{\pi} y^{1/4}} e^{-\frac{2}{3}y^{3/2}} & y \to \infty \\
+ \frac{1}{\sqrt{\pi} |y|^{1/4}} \cos\left(\frac{2}{3}|y|^{3/2} - \frac{\pi}{4}\right) & y \to - \infty \end{cases}
+Bi(y) \sim \begin{cases}  \frac{1}{\sqrt{\pi} y^{1/4}} e^{\frac{2}{3}y^{3/2}} & y \to \infty \\
+ \frac{1}{\sqrt{\pi} |y|^{1/4}} \sin\left(\frac{2}{3}|y|^{3/2} - \frac{\pi}{4}\right) & y \to - \infty \end{cases}
+\end{align}
+```
+You can check easily that these result from applying our WKB solutions to regions $II,III$ to the linear potential.
+
+Normalizability then demands that we choose solution $Ai(y)$ about the turning point $x_B$. About $x_A$ we can map the problem to the one we solved by letting $y \to - y$, so that the proper solution is $Ai(-y)$. 
+
+We then need to match the solutions in region II. Performing the expansion of $\int dx' p(x')$ near the turning point, 
+```{math}
+\frac{1}{\hbar} \int_{x_{II}}^x dx' \sqrt{2m(E - V(x'))} \sim - \frac{2}{3}(-y)^{3/2} + \frac{2}{3}(-y_{II})^{3/2}
+```
+where $y_{II} = L (x_{II} - x_B)$. The minus sign appears because we get $-y$ inside the square root; the upshot is an overall minus sign when we do the integral. We set $x_{II} = x_B$ to find that our solution in region II matches $Ai$ if we adjust $A_{II}, B_{II}$ such that
+```{math}
+\psi(x) \propto \frac{1}{\sqrt{2m(E - V(x))}} \cos\left(\frac{1}{\hbar} \int^{x_B}_x dx' \sqrt{2m(E - V(x'))} - \frac{\pi}{4}\right)
+```
+Note the integral is from $x$ to $x_B$; this takes care of the minus sign we introduced.
+
+On the other hand, the same matching condition applied to the turning point $A$ gives us 
+```{math}
+\psi(x) \propto \frac{1}{\sqrt{2m(E - V(x))}} \cos\left(\frac{1}{\hbar} \int_{x_A}^x dx' \sqrt{2m(E - V(x'))} - \frac{\pi}{4}\right)
+```
+These two need to be equal, which means the cosine terms need to be equal. Since the cosine terms are odd, we can write
+```{math}
+ \cos\left(- \frac{1}{\hbar} \int^{x_B}_x dx' \sqrt{2m(E - V(x'))} + \frac{\pi}{4}\right) =  \cos\left(\frac{1}{\hbar} \int_{x_A}^x dx' \sqrt{2m(E - V(x'))} - \frac{\pi}{4}\right)
+ ```
+ The arguments now need to be equal up to a factor of $\pi n$ (the overall sign difference if $n$ is odd can be absorbed into the overall relative sign of $A_I, A_{III}$), so that
+```{math}
+ (- \frac{1}{\hbar} \int^{x_B}_x dx' \sqrt{2m(E - V(x'))} + \frac{\pi}{4} = 
+\frac{1}{\hbar} \int_{x_A}^x dx' \sqrt{2m(E - V(x'))} - \frac{\pi}{4} - \pi n
+```
+which becomes
+```{math}
+\frac{1}{\hbar} \int_{x_A}^{x_B}dx' p(x') = \pi \hbar(n + \half) 
+```
+This is the *Bohr-Sommerfeld quantization condition*. It was generalized to higher-dimensional situations in various works by Einstein, Brillouin, and Keller (only applicable to energies for which classical trajectories live on tori in phase space; a story that will take us too far afield, however).
+
+
+### Example 1: the Simple Harmonic Oscillator
+
+In this case the turning points are at $x_B = - x_A = \sqrt{\frac{2E}{m\omega}}$. The quantization condition is
+```{math}
+\int_{-x_B}^{x_B} dx' \sqrt{2m(E - \half m \omega^2 (x')^2)} = \hbar \pi(n + \half)
+```
+Now we can substitute $x = y \sqrt{\frac{2E}{m\omega}}$ and set $y = \sin \theta$; we find
+```{math}
+\frac{\pi E}{\omega} = (n + \half) \pi \hbar
+```
+But this is the exact answer! This is a general feature of Hamiltonians quadratic in their arguments -- the WKB approximation gives exact expressions for the eigenvalues. It also, through the path integral, gives an exact expression for teh propagator, as we will discuss. It does not, however, give the right expressions for the energy eigenstates. This is a longer story; the chapters in Shankar on path integrals and their relation to WKB contains the required pieces of this puzzle.
+
+### Example 2: the Linear potential
+
+Consider instead $V = g |x|$. If we go through the same exercise, we find
+```{math}
+E = \half \left(\frac{3 g (n + \half) \pi \hbar}{2 m^{\half}}\right)^{2/3}
+```
+The wavefunctions, as it happens, are amenable to an exact solution using Airy functions, and the resulting eigenvalues can be computed. For the ground state $n = 0$, the WKB expression is too high by $10\%$. for the first excited state, the result is too high by $1\%$. For the second excited state, teh result is low by $.5\%$. (It is worth thinking about why the $n = 0,1$ WKB answers will always be larger than the exact answer, but at higher $n$ there is no such restriction).

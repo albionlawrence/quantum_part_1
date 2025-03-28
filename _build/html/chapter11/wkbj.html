@@ -398,7 +398,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-semiclassical-expansion">The semiclassical expansion</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bound-state-problems">Bound state problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bound-state-problems">Bound state problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-the-simple-harmonic-oscillator">Example 1: the Simple Harmonic Oscillator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-the-linear-potential">Example 2: the Linear potential</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -493,8 +497,15 @@ document.write(`
 <p>This means</p>
 <div class="math notranslate nohighlight">
 \[p(x)^2 \gg 2\hbar| p'(x) p(x)|  = \Big| \frac{- 2 m V'(x)}{p}\Big|
-\Rightarrow \Big| \frac{\lambda(x) V'}{E_{kin}} \ll 1\]</div>
-<p>which is essentially the condition we already derived from a more hand-waving argument.</p>
+\Rightarrow \alpha \equiv \Big| \frac{\lambda(x) V'}{E_{kin}} \ll 1\]</div>
+<p>which is essentially the condition we already derived from a more hand-waving argument. Here we introduce <span class="math notranslate nohighlight">\(\alpha\)</span> for notational ease in the example below.</p>
+<p>Just to get a sense of the nontriviality of these conditions, we can look at a 1d case with the potential <span class="math notranslate nohighlight">\(V = - c/x^n\)</span> with <span class="math notranslate nohighlight">\(n &gt; 0\)</span>. If we fix the total energy <span class="math notranslate nohighlight">\(E\)</span>, we find</p>
+<div class="math notranslate nohighlight">
+\[\alpha = \frac{2 m \hbar \frac{n c}{x^{n+1}}}{\left(E + \frac{c}{x^n}\right)^{3/2}}\]</div>
+<p>For fixed <span class="math notranslate nohighlight">\(E\)</span> this is always valid as <span class="math notranslate nohighlight">\(x \to \infty\)</span> as the particle becomes the free particle for which WKB is exact. As <span class="math notranslate nohighlight">\(x to 0\)</span>, when the potential energy dominates is large compared to <span class="math notranslate nohighlight">\(|E|\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[	\alpha \sim \frac{2 m n \hbar}{\sqrt{c}} x^{\frac{n}{2} - 1}\]</div>
+<p>Thus WKB works well when <span class="math notranslate nohighlight">\(n &gt; 2\)</span>. For <span class="math notranslate nohighlight">\(n &lt; 2\)</span> WKB breaks down near the origin. (Note that for <span class="math notranslate nohighlight">\(n &gt; 2\)</span> the energy eigenstates are unbounded below, with <span class="math notranslate nohighlight">\(n = 2\)</span> being an interesting marginal case, as we have seen in a prior problem set).</p>
 </section>
 </section>
 <section id="bound-state-problems">
@@ -502,10 +513,81 @@ document.write(`
 <p>We now consider particles in some potential well, such that <span class="math notranslate nohighlight">\(\lim_{x\to\infty} V(x) &gt; E\)</span>. In the figure below, we have broken up the <span class="math notranslate nohighlight">\(x\)</span> axis into three regions. In regions I, II, III the WKB approximation is expected to hold. For large <span class="math notranslate nohighlight">\(|x|\)</span> (in regions I and III), we assume the energy is far enough below the barrier that the length scale giverning the exponential falloff of the wavefunction is small compared to the length scale over which the potential varies. In region II we assume that the energy is large enough that the wavefunction rapidly oscillates, with a space between nodes so small that the potential does not vary appreciably in this range.</p>
 <p>The WKB approximation is expected to break down at the classical turning points <span class="math notranslate nohighlight">\(A,B\)</span>&gt; Here <span class="math notranslate nohighlight">\(p(x) \to 0\)</span>, <span class="math notranslate nohighlight">\(\lambda(x) \to \infty\)</span>, and we can see that the condition <a class="reference internal" href="#equation-wkb-cond">(329)</a> breaks down. Generally, however, the potential can be well-approximated by a linear potential; the resulting Schroedinger equation is exactly solvable. If we are fortunate, the regime in which the linear approximation holds will overlap with the regime in which the WKB approximation holds, as illustrated below. In this case we can match our WKB functions to the solutions near the turning points.</p>
 <p>Let us first turn to the solutions in the WKB regions. In region I, the solution is</p>
+<div class="math notranslate nohighlight">
+\[\psi_I = \frac{C_I}{\sqrt{2m(V(x) - E)}} e^{\frac{1}{\hbar} \int^x_{x_I} dx'\sqrt{2m(V(x') - E)}}\]</div>
 <p>Here <span class="math notranslate nohighlight">\(x_I\)</span> is arbitrary. This solution will be exponentially decaying as <span class="math notranslate nohighlight">\(x \to - \infty\)</span>: we have set to zero an exponentially growing component.</p>
-<p>In region II the solution looks like</p>
+<p>In region II the WKB solution looks like</p>
 <div class="math notranslate nohighlight">
 \[\psi_{II}(x) = \frac{1}{\sqrt{2m(E - V(x))}} \left(A_{II} e^{\frac{i}{\hbar}\int_{x_{II}}^x dx'\sqrt{2m(V(x') - E)}} + B_{II}  e^{- \frac{i}{\hbar}\int_{x_{II}}^x dx'\sqrt{2m(V(x') - E)}}\right)\]</div>
+<p>While in Region III the WKB solution looks like</p>
+<div class="math notranslate nohighlight">
+\[\psi_I = \frac{C_{III}}{\sqrt{2m(V(x) - E)}} e^{- \frac{1}{\hbar} \int^x_{x_{III}} dx'\sqrt{2m(V(x') - E)}}\]</div>
+<p>which is exponentially decaying.</p>
+<p>As with the other bound state problems we have studied, we have 4 complex unknowns, with one complex constraint due to the combination of normalization and choice of overeall phase. We will find four constraints due to matching the WKB solutions to the equations near the turning points.</p>
+<p>Let us study the turning point <span class="math notranslate nohighlight">\(B\)</span>. Expanding in a Taylor series,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+V(x) &amp; = V(x_B) + (x - x_B) V'(x_B) + \half (x - x_B)^2 V''(x_B) + \ldots\\
+&amp;  = V(x_B) + \gamma (x = x_N) + \ldots
+\end{align}\end{split}\]</div>
+<p>We assume that teh higher order terms are small in a region around <span class="math notranslate nohighlight">\(x_B\)</span> that overlaps with the region of validity of the WKB approximation. In general, of course, this needs to be checked.</p>
+<p>Now we examine the Schrodinger equation. By definition, <span class="math notranslate nohighlight">\(V(x_B) = E\)</span>, so these terms drop out. Furthermore, we define <span class="math notranslate nohighlight">\(y \equiv L (x - x_B)\)</span>, with <span class="math notranslate nohighlight">\(L\)</span> to be determined. Nondimensionalizing our equations are almost always a good idea – we will discover important characteristic scales, and we will reduce the equations to ones that we can look up or plug most easily into a computer. Further multiplyng the equation by <span class="math notranslate nohighlight">\(\frac{2 m L^2}{\hbar^2}\)</span>, the resulting equation is:</p>
+<div class="math notranslate nohighlight">
+\[- \del_y^2 \psi + \frac{2 m \gamma L^3}{\hbar^2} y = 0\]</div>
+<p>We set <span class="math notranslate nohighlight">\(L = \left(\frac{2m\gamma}{\hbar^2}\right)^{1/3}\)</span>, to find</p>
+<div class="math notranslate nohighlight">
+\[- \del_y^2 \psi + y \psi = 0\]</div>
+<p>This differential equation has known solutions in terms of <em>Airy functions</em>, whose properties you can look up in many places such as the <a class="reference external" href="https://dlmf.nist.gov/">Digital Library of Mathematical Functions</a> (see Chapter 9). There are two independent solutions <span class="math notranslate nohighlight">\(Ai(y), Bi(y)\)</span>, and a general solution has the form</p>
+<div class="math notranslate nohighlight">
+\[\psi = a Ai(y) + b Bi(y)\]</div>
+<p>At large <span class="math notranslate nohighlight">\(|y|\)</span>, the WKB approximation works well for these functions (you can and should deduce this from the conditions we have discussed). Their asymptotic properties are known:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+Ai(y) \sim \begin{cases} \frac{1}{\sqrt{\pi} y^{1/4}} e^{-\frac{2}{3}y^{3/2}} &amp; y \to \infty \\
+ \frac{1}{\sqrt{\pi} |y|^{1/4}} \cos\left(\frac{2}{3}|y|^{3/2} - \frac{\pi}{4}\right) &amp; y \to - \infty \end{cases}
+Bi(y) \sim \begin{cases}  \frac{1}{\sqrt{\pi} y^{1/4}} e^{\frac{2}{3}y^{3/2}} &amp; y \to \infty \\
+ \frac{1}{\sqrt{\pi} |y|^{1/4}} \sin\left(\frac{2}{3}|y|^{3/2} - \frac{\pi}{4}\right) &amp; y \to - \infty \end{cases}
+\end{align}\end{split}\]</div>
+<p>You can check easily that these result from applying our WKB solutions to regions <span class="math notranslate nohighlight">\(II,III\)</span> to the linear potential.</p>
+<p>Normalizability then demands that we choose solution <span class="math notranslate nohighlight">\(Ai(y)\)</span> about the turning point <span class="math notranslate nohighlight">\(x_B\)</span>. About <span class="math notranslate nohighlight">\(x_A\)</span> we can map the problem to the one we solved by letting <span class="math notranslate nohighlight">\(y \to - y\)</span>, so that the proper solution is <span class="math notranslate nohighlight">\(Ai(-y)\)</span>.</p>
+<p>We then need to match the solutions in region II. Performing the expansion of <span class="math notranslate nohighlight">\(\int dx' p(x')\)</span> near the turning point,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\hbar} \int_{x_{II}}^x dx' \sqrt{2m(E - V(x'))} \sim - \frac{2}{3}(-y)^{3/2} + \frac{2}{3}(-y_{II})^{3/2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(y_{II} = L (x_{II} - x_B)\)</span>. The minus sign appears because we get <span class="math notranslate nohighlight">\(-y\)</span> inside the square root; the upshot is an overall minus sign when we do the integral. We set <span class="math notranslate nohighlight">\(x_{II} = x_B\)</span> to find that our solution in region II matches <span class="math notranslate nohighlight">\(Ai\)</span> if we adjust <span class="math notranslate nohighlight">\(A_{II}, B_{II}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\psi(x) \propto \frac{1}{\sqrt{2m(E - V(x))}} \cos\left(\frac{1}{\hbar} \int^{x_B}_x dx' \sqrt{2m(E - V(x'))} - \frac{\pi}{4}\right)\]</div>
+<p>Note the integral is from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(x_B\)</span>; this takes care of the minus sign we introduced.</p>
+<p>On the other hand, the same matching condition applied to the turning point <span class="math notranslate nohighlight">\(A\)</span> gives us</p>
+<div class="math notranslate nohighlight">
+\[\psi(x) \propto \frac{1}{\sqrt{2m(E - V(x))}} \cos\left(\frac{1}{\hbar} \int_{x_A}^x dx' \sqrt{2m(E - V(x'))} - \frac{\pi}{4}\right)\]</div>
+<p>These two need to be equal, which means the cosine terms need to be equal. Since the cosine terms are odd, we can write</p>
+<div class="math notranslate nohighlight">
+\[ \cos\left(- \frac{1}{\hbar} \int^{x_B}_x dx' \sqrt{2m(E - V(x'))} + \frac{\pi}{4}\right) =  \cos\left(\frac{1}{\hbar} \int_{x_A}^x dx' \sqrt{2m(E - V(x'))} - \frac{\pi}{4}\right)\]</div>
+<p>The arguments now need to be equal up to a factor of <span class="math notranslate nohighlight">\(\pi n\)</span> (the overall sign difference if <span class="math notranslate nohighlight">\(n\)</span> is odd can be absorbed into the overall relative sign of <span class="math notranslate nohighlight">\(A_I, A_{III}\)</span>), so that</p>
+<div class="math notranslate nohighlight">
+\[ (- \frac{1}{\hbar} \int^{x_B}_x dx' \sqrt{2m(E - V(x'))} + \frac{\pi}{4} = 
+\frac{1}{\hbar} \int_{x_A}^x dx' \sqrt{2m(E - V(x'))} - \frac{\pi}{4} - \pi n\]</div>
+<p>which becomes</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\hbar} \int_{x_A}^{x_B}dx' p(x') = \pi \hbar(n + \half) \]</div>
+<p>This is the <em>Bohr-Sommerfeld quantization condition</em>. It was generalized to higher-dimensional situations in various works by Einstein, Brillouin, and Keller (only applicable to energies for which classical trajectories live on tori in phase space; a story that will take us too far afield, however).</p>
+<section id="example-1-the-simple-harmonic-oscillator">
+<h3>Example 1: the Simple Harmonic Oscillator<a class="headerlink" href="#example-1-the-simple-harmonic-oscillator" title="Link to this heading">#</a></h3>
+<p>In this case the turning points are at <span class="math notranslate nohighlight">\(x_B = - x_A = \sqrt{\frac{2E}{m\omega}}\)</span>. The quantization condition is</p>
+<div class="math notranslate nohighlight">
+\[\int_{-x_B}^{x_B} dx' \sqrt{2m(E - \half m \omega^2 (x')^2)} = \hbar \pi(n + \half)\]</div>
+<p>Now we can substitute <span class="math notranslate nohighlight">\(x = y \sqrt{\frac{2E}{m\omega}}\)</span> and set <span class="math notranslate nohighlight">\(y = \sin \theta\)</span>; we find</p>
+<div class="math notranslate nohighlight">
+\[\frac{\pi E}{\omega} = (n + \half) \pi \hbar\]</div>
+<p>But this is the exact answer! This is a general feature of Hamiltonians quadratic in their arguments – the WKB approximation gives exact expressions for the eigenvalues. It also, through the path integral, gives an exact expression for teh propagator, as we will discuss. It does not, however, give the right expressions for the energy eigenstates. This is a longer story; the chapters in Shankar on path integrals and their relation to WKB contains the required pieces of this puzzle.</p>
+</section>
+<section id="example-2-the-linear-potential">
+<h3>Example 2: the Linear potential<a class="headerlink" href="#example-2-the-linear-potential" title="Link to this heading">#</a></h3>
+<p>Consider instead <span class="math notranslate nohighlight">\(V = g |x|\)</span>. If we go through the same exercise, we find</p>
+<div class="math notranslate nohighlight">
+\[E = \half \left(\frac{3 g (n + \half) \pi \hbar}{2 m^{\half}}\right)^{2/3}\]</div>
+<p>The wavefunctions, as it happens, are amenable to an exact solution using Airy functions, and the resulting eigenvalues can be computed. For the ground state <span class="math notranslate nohighlight">\(n = 0\)</span>, the WKB expression is too high by <span class="math notranslate nohighlight">\(10\%\)</span>. for the first excited state, the result is too high by <span class="math notranslate nohighlight">\(1\%\)</span>. For the second excited state, teh result is low by <span class="math notranslate nohighlight">\(.5\%\)</span>. (It is worth thinking about why the <span class="math notranslate nohighlight">\(n = 0,1\)</span> WKB answers will always be larger than the exact answer, but at higher <span class="math notranslate nohighlight">\(n\)</span> there is no such restriction).</p>
+</section>
 </section>
 </section>
 
@@ -578,7 +660,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-semiclassical-expansion">The semiclassical expansion</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bound-state-problems">Bound state problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bound-state-problems">Bound state problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-the-simple-harmonic-oscillator">Example 1: the Simple Harmonic Oscillator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-the-linear-potential">Example 2: the Linear potential</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
