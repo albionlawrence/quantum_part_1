@@ -4,7 +4,7 @@ The next "non-perturbative" method we will discuss is the Wentzel-Kramers-Brillo
 
 This method is quite powerful and has uses well beyond quantum mechanics. It is the underlying scheme by which we justify ray-tracing methods for solving differential equations, such as geometric optics. For a good general discussion, I recommend {cite:p}`bender1999advanced`. (A wonderful book for many subjects). 
 
-In the case of quantum mechanics, the other beautiful outcome of the WKB approximation is that we can begin to see the emergence of classical mechanics. We will discuss this fact once we have gone over the basics of teh approximation.
+In the case of quantum mechanics, the other beautiful outcome of the WKB approximation is that we can begin to see the emergence of classical mechanics. We will discuss this fact once we have gone over the basics of the approximation.
 
 While this is not a perturbative method, as it applies even when there is no "nearby" exactly solvable Hamiltonian, it is an *asymptotic* method. That is, there is a small parameter, and a systematic way of expanding the solution in that small parameter. The lowest-order solution is *singular*: in particular it is non-analytic in the small parameter. But there is an expression for it that can often be solved even when the underlying Schroedinger equation cannot be. 
 
@@ -44,6 +44,7 @@ The approximation can be expected to break down when the energy is roughly equal
 
 To get an estimate of when this approximation words, we can ask that the change in the wavelength $\lambda(x) = \hbar/p(x)$ over a distance of order the wavelength is small compared to the wavelength. This becomes
 ```{math}
+:label: wkb_cond
 \begin{align}
 \Big| \frac{\Delta\lambda}{\lambda}\Big| & \sim \Big| \frac{\lambda\del_x \lambda}{\lambda}\Big| \\
 & = |\del_x \lambda| = \Big|\frac{m\hbar V'}{(2m(E - V))^{3/2}}\Big| \\
@@ -75,15 +76,64 @@ With this in mind, we can still write a formal expansion
 :label: hbar_expansion
 S = S_{cl} + \hbar S_1 + \hbar^2 S_2 + \ldots
 ```
-and solve the Schroedinger equation order by order in $\hbar$. We will still need to check that $\hbar S_k \ll S_{k-1}$.
+and solve the Schroedinger equation order by order in $\hbar$. We will still need to check that $\hbar S_k \ll S_{k-1}$. Note that in terms of the wavefunction $\psi$ this is a *singular* expansion; the lowest-order piece is nonanalytic in $\hbar$. 
 
 Plugging {eq}`hbar_expansion` into {eq}`se_wkb` and keeping only the $\hbar$-independent term, we get
 ```{math}
-(\del_x S)^2 = 2m(E - V(x)) \Rightarrow 
-\frac{(\del_x S)^2}{2m} + V(x) = E
+(\del_x S_{cl})^2 = 2m(E - V(x)) \Rightarrow 
+\frac{(\del_x S_{cl})^2}{2m} + V(x) = E
 ```
 Those who have had a good classical mechanics course will recognize this as the *Hamilton-Jacobi equation*, where $S$ is the classical action. We will return to this interpretation below, which is central to ray tracing/geometric optics/the method of characteristics. The solution is
 ```{math}
-S(x) = \pm \int_{x_0}^x dx' \sqrt{2m(E - V(x'))} \equiv \pm \int_{x_0}^x dx' p(x')
+S_{cl}(x) = \pm \int_{x_0}^x dx' \sqrt{2m(E - V(x'))} \equiv \pm \int_{x_0}^x dx' p(x')
 ```
 where again, $x_0$ is an integration constant. We have two solutions to $S$ and therefore for $\psi$. At this level of approximation we can consider linear combinations of these two solutions. Note that what we have done is true formally whether $E - V$ is positive or negative. In the former case, we recover {eq}`semiclassical_wavefunctions`. In the latter case, $S$ becomes imaginary, and we recover {eq}`below_barrier`. 
+
+Our next step is to find $S_1$. The $\cO(\hbar)$ terms in {eq}`se_wkb` are:
+```{math}
+2 \del_x S_{cl} \del_x S_1 = i \del_x^2 S_{cl} 
+\Rightarrow \del_x S_1 = \frac{i}{2} \frac{\del_x^2 S_0}{\del_x S_0} = \frac{i}{2} \del_x \ln \del_x S_0
+```
+Thus, keeping only terms that are nonvanishing as $\hbar \to 0$, we have
+```{math}
+\begin{align}
+\psi(x) & = e^{i S/\hbar} \\
+& = e^{\frac{i S_{cl}}{\hbar} + i S_1}\\
+& = \frac{1}{\sqrt{\del_x S}} e^{i \frac{S_{cl}}{\hbar}}\\
+& = \frac{1}{\sqrt{p(x)}}  e^{i \frac{S_{cl}}{\hbar}}
+\end{align}
+```
+where $p(x) = \sqrt{2m(E - V(x))}$. This prefactor has a nice semiclassical interpretation, especially for bound states. We know $\psi(x)|^2 \propto \frac{1}{p(x)}$ is the probability density for the particle at position $x$. If the particle is in a potential well it will oscillate with period $T$. The fraction of time the particle will spend in a region $dx$ is the time spent in that region, which is
+```{math}
+P(x)dx = \frac{dx}{v(x)} = \frac{m dx}{p(x)} \propto |\psi(x)|^2 dx
+```
+
+Finally, we need to check on our approximation. Thius should be done at every order but we will here simply ask that in {eq}`se_wkb` the last term is small compared to the rest: that is, that
+```{math}
+(\del_x S_{cl})^2 \gg \hbar (\del_x^2 S_{cl})
+```
+This means
+```{math}
+p(x)^2 \gg 2\hbar| p'(x) p(x)|  = \Big| \frac{- 2 m V'(x)}{p}\Big|
+\Rightarrow \Big| \frac{\lambda(x) V'}{E_{kin}} \ll 1
+```
+which is essentially the condition we already derived from a more hand-waving argument.
+
+## Bound state problems
+
+We now consider particles in some potential well, such that $\lim_{x\to\infty} V(x) > E$. In the figure below, we have broken up the $x$ axis into three regions. In regions I, II, III the WKB approximation is expected to hold. For large $|x|$ (in regions I and III), we assume the energy is far enough below the barrier that the length scale giverning the exponential falloff of the wavefunction is small compared to the length scale over which the potential varies. In region II we assume that the energy is large enough that the wavefunction rapidly oscillates, with a space between nodes so small that the potential does not vary appreciably in this range.
+
+The WKB approximation is expected to break down at the classical turning points $A,B$> Here $p(x) \to 0$, $\lambda(x) \to \infty$, and we can see that the condition {eq}`wkb_cond` breaks down. Generally, however, the potential can be well-approximated by a linear potential; the resulting Schroedinger equation is exactly solvable. If we are fortunate, the regime in which the linear approximation holds will overlap with the regime in which the WKB approximation holds, as illustrated below. In this case we can match our WKB functions to the solutions near the turning points. 
+
+Let us first turn to the solutions in the WKB regions. In region I, the solution is
+```{nath}
+\psi_I = \frac{C_I}{\sqrt{2m(V(x) - E)}} e^{\frac{1}{\hbar} \int^x_{x_I} dx'\sqrt{2m(V(x') - E)}}
+```
+Here $x_I$ is arbitrary. This solution will be exponentially decaying as $x \to - \infty$: we have set to zero an exponentially growing component.
+
+In region II the solution looks like
+```{math}
+\psi_{II}(x) = \frac{1}{\sqrt{2m(E - V(x))}} \left(A_{II} e^{\frac{i}{\hbar}\int_{x_{II}}^x dx'\sqrt{2m(V(x') - E)}} + B_{II}  e^{- \frac{i}{\hbar}\int_{x_{II}}^x dx'\sqrt{2m(V(x') - E)}}\right)
+```
+
+

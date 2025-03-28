@@ -398,6 +398,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-semiclassical-expansion">The semiclassical expansion</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bound-state-problems">Bound state problems</a></li>
 </ul>
             </nav>
         </div>
@@ -413,7 +414,7 @@ document.write(`
 <h1>The WKBJ method<a class="headerlink" href="#the-wkbj-method" title="Link to this heading">#</a></h1>
 <p>The next “non-perturbative” method we will discuss is the Wentzel-Kramers-Brillouin-Jeffreys approximation (sometimes the “J” is not present). This is a technique for solving wave equations, focusing on the case that the relevant energies are “large” in a sense that we will discuss.</p>
 <p>This method is quite powerful and has uses well beyond quantum mechanics. It is the underlying scheme by which we justify ray-tracing methods for solving differential equations, such as geometric optics. For a good general discussion, I recommend <span id="id1">[<a class="reference internal" href="../markdown.html#id13" title="C.M. Bender and S.A. Orszag. Advanced Mathematical Methods for Scientists and Engineers I: Asymptotic Methods and Perturbation Theory. Advanced Mathematical Methods for Scientists and Engineers. Springer, 1999. ISBN 9780387989310. URL: https://books.google.com/books?id=-yQXwhE6iWMC.">Bender and Orszag, 1999</a>]</span>. (A wonderful book for many subjects).</p>
-<p>In the case of quantum mechanics, the other beautiful outcome of the WKB approximation is that we can begin to see the emergence of classical mechanics. We will discuss this fact once we have gone over the basics of teh approximation.</p>
+<p>In the case of quantum mechanics, the other beautiful outcome of the WKB approximation is that we can begin to see the emergence of classical mechanics. We will discuss this fact once we have gone over the basics of the approximation.</p>
 <p>While this is not a perturbative method, as it applies even when there is no “nearby” exactly solvable Hamiltonian, it is an <em>asymptotic</em> method. That is, there is a small parameter, and a systematic way of expanding the solution in that small parameter. The lowest-order solution is <em>singular</em>: in particular it is non-analytic in the small parameter. But there is an expression for it that can often be solved even when the underlying Schroedinger equation cannot be.</p>
 <section id="the-short-wavelength-limit">
 <h2>The short-wavelength limit<a class="headerlink" href="#the-short-wavelength-limit" title="Link to this heading">#</a></h2>
@@ -439,8 +440,8 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\(\rho(x) = - i \sqrt{2m(E - V(x))} = \sqrt{2m(V(x) - E)}\)</span> is a sort of imaginary momentum.</p>
 <p>The approximation can be expected to break down when the energy is roughly equal to the potential energy, so that the variation of the wavefunciton is not rapid. This is the region around the classical turning points. However, in this region, we can approximate the potential as a linear one, and the Schroedinger equation with a linear potential does have a solution in terms of Airy functions. If the WKB approximation starts to be good while the linear approximation is still valid, then we can use this fact to match the Airy functions to the WKB solutions and get a complete solution, including an approximation to the energy eigenvalues.</p>
 <p>To get an estimate of when this approximation words, we can ask that the change in the wavelength <span class="math notranslate nohighlight">\(\lambda(x) = \hbar/p(x)\)</span> over a distance of order the wavelength is small compared to the wavelength. This becomes</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
+<div class="math notranslate nohighlight" id="equation-wkb-cond">
+<span class="eqno">(329)<a class="headerlink" href="#equation-wkb-cond" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \Big| \frac{\Delta\lambda}{\lambda}\Big| &amp; \sim \Big| \frac{\lambda\del_x \lambda}{\lambda}\Big| \\
 &amp; = |\del_x \lambda| = \Big|\frac{m\hbar V'}{(2m(E - V))^{3/2}}\Big| \\
 &amp; = \Big| \frac{m \hbar V'}{p^3}\Big| \\
@@ -457,21 +458,54 @@ document.write(`
 <p>So far this is just a rewriting, not an approximation. I am using the letter <span class="math notranslate nohighlight">\(S\)</span> to foreshadow the relationship of the WKB approximation to the emergence of classical mechanics.</p>
 <p>Putting this into the TISE, we get</p>
 <div class="math notranslate nohighlight" id="equation-se-wkb">
-<span class="eqno">(329)<a class="headerlink" href="#equation-se-wkb" title="Link to this equation">#</a></span>\[(\del_x S)^2 = 2m(E - V(x)) + i\hbar \del_x^2 S\]</div>
+<span class="eqno">(330)<a class="headerlink" href="#equation-se-wkb" title="Link to this equation">#</a></span>\[(\del_x S)^2 = 2m(E - V(x)) + i\hbar \del_x^2 S\]</div>
 <p>This is still an exact equation. But the approximation <a class="reference internal" href="#equation-semiclassical-wavefunctions">(327)</a> arises if we are allower to ignore the final term. Since this aproximation seems tied up in classical mechanics, and the last term is proportional to <span class="math notranslate nohighlight">\(\hbar\)</span>, one often says that we will perform a “small-<span class="math notranslate nohighlight">\(\hbar\)</span>” approximation. This is not quite correct. What we will be demanding is essentially that <span class="math notranslate nohighlight">\(S/\hbar \gg 1\)</span>.</p>
 <p>With this in mind, we can still write a formal expansion</p>
 <div class="math notranslate nohighlight" id="equation-hbar-expansion">
-<span class="eqno">(330)<a class="headerlink" href="#equation-hbar-expansion" title="Link to this equation">#</a></span>\[S = S_{cl} + \hbar S_1 + \hbar^2 S_2 + \ldots\]</div>
-<p>and solve the Schroedinger equation order by order in <span class="math notranslate nohighlight">\(\hbar\)</span>. We will still need to check that <span class="math notranslate nohighlight">\(\hbar S_k \ll S_{k-1}\)</span>.</p>
-<p>Plugging <a class="reference internal" href="#equation-hbar-expansion">(330)</a> into <a class="reference internal" href="#equation-se-wkb">(329)</a> and keeping only the <span class="math notranslate nohighlight">\(\hbar\)</span>-independent term, we get</p>
+<span class="eqno">(331)<a class="headerlink" href="#equation-hbar-expansion" title="Link to this equation">#</a></span>\[S = S_{cl} + \hbar S_1 + \hbar^2 S_2 + \ldots\]</div>
+<p>and solve the Schroedinger equation order by order in <span class="math notranslate nohighlight">\(\hbar\)</span>. We will still need to check that <span class="math notranslate nohighlight">\(\hbar S_k \ll S_{k-1}\)</span>. Note that in terms of the wavefunction <span class="math notranslate nohighlight">\(\psi\)</span> this is a <em>singular</em> expansion; the lowest-order piece is nonanalytic in <span class="math notranslate nohighlight">\(\hbar\)</span>.</p>
+<p>Plugging <a class="reference internal" href="#equation-hbar-expansion">(331)</a> into <a class="reference internal" href="#equation-se-wkb">(330)</a> and keeping only the <span class="math notranslate nohighlight">\(\hbar\)</span>-independent term, we get</p>
 <div class="math notranslate nohighlight">
-\[(\del_x S)^2 = 2m(E - V(x)) \Rightarrow 
-\frac{(\del_x S)^2}{2m} + V(x) = E\]</div>
+\[(\del_x S_{cl})^2 = 2m(E - V(x)) \Rightarrow 
+\frac{(\del_x S_{cl})^2}{2m} + V(x) = E\]</div>
 <p>Those who have had a good classical mechanics course will recognize this as the <em>Hamilton-Jacobi equation</em>, where <span class="math notranslate nohighlight">\(S\)</span> is the classical action. We will return to this interpretation below, which is central to ray tracing/geometric optics/the method of characteristics. The solution is</p>
 <div class="math notranslate nohighlight">
-\[S(x) = \pm \int_{x_0}^x dx' \sqrt{2m(E - V(x'))} \equiv \pm \int_{x_0}^x dx' p(x')\]</div>
+\[S_{cl}(x) = \pm \int_{x_0}^x dx' \sqrt{2m(E - V(x'))} \equiv \pm \int_{x_0}^x dx' p(x')\]</div>
 <p>where again, <span class="math notranslate nohighlight">\(x_0\)</span> is an integration constant. We have two solutions to <span class="math notranslate nohighlight">\(S\)</span> and therefore for <span class="math notranslate nohighlight">\(\psi\)</span>. At this level of approximation we can consider linear combinations of these two solutions. Note that what we have done is true formally whether <span class="math notranslate nohighlight">\(E - V\)</span> is positive or negative. In the former case, we recover <a class="reference internal" href="#equation-semiclassical-wavefunctions">(327)</a>. In the latter case, <span class="math notranslate nohighlight">\(S\)</span> becomes imaginary, and we recover <a class="reference internal" href="#equation-below-barrier">(328)</a>.</p>
+<p>Our next step is to find <span class="math notranslate nohighlight">\(S_1\)</span>. The <span class="math notranslate nohighlight">\(\cO(\hbar)\)</span> terms in <a class="reference internal" href="#equation-se-wkb">(330)</a> are:</p>
+<div class="math notranslate nohighlight">
+\[2 \del_x S_{cl} \del_x S_1 = i \del_x^2 S_{cl} 
+\Rightarrow \del_x S_1 = \frac{i}{2} \frac{\del_x^2 S_0}{\del_x S_0} = \frac{i}{2} \del_x \ln \del_x S_0\]</div>
+<p>Thus, keeping only terms that are nonvanishing as <span class="math notranslate nohighlight">\(\hbar \to 0\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\psi(x) &amp; = e^{i S/\hbar} \\
+&amp; = e^{\frac{i S_{cl}}{\hbar} + i S_1}\\
+&amp; = \frac{1}{\sqrt{\del_x S}} e^{i \frac{S_{cl}}{\hbar}}\\
+&amp; = \frac{1}{\sqrt{p(x)}}  e^{i \frac{S_{cl}}{\hbar}}
+\end{align}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(p(x) = \sqrt{2m(E - V(x))}\)</span>. This prefactor has a nice semiclassical interpretation, especially for bound states. We know <span class="math notranslate nohighlight">\(\psi(x)|^2 \propto \frac{1}{p(x)}\)</span> is the probability density for the particle at position <span class="math notranslate nohighlight">\(x\)</span>. If the particle is in a potential well it will oscillate with period <span class="math notranslate nohighlight">\(T\)</span>. The fraction of time the particle will spend in a region <span class="math notranslate nohighlight">\(dx\)</span> is the time spent in that region, which is</p>
+<div class="math notranslate nohighlight">
+\[P(x)dx = \frac{dx}{v(x)} = \frac{m dx}{p(x)} \propto |\psi(x)|^2 dx\]</div>
+<p>Finally, we need to check on our approximation. Thius should be done at every order but we will here simply ask that in <a class="reference internal" href="#equation-se-wkb">(330)</a> the last term is small compared to the rest: that is, that</p>
+<div class="math notranslate nohighlight">
+\[(\del_x S_{cl})^2 \gg \hbar (\del_x^2 S_{cl})\]</div>
+<p>This means</p>
+<div class="math notranslate nohighlight">
+\[p(x)^2 \gg 2\hbar| p'(x) p(x)|  = \Big| \frac{- 2 m V'(x)}{p}\Big|
+\Rightarrow \Big| \frac{\lambda(x) V'}{E_{kin}} \ll 1\]</div>
+<p>which is essentially the condition we already derived from a more hand-waving argument.</p>
 </section>
+</section>
+<section id="bound-state-problems">
+<h2>Bound state problems<a class="headerlink" href="#bound-state-problems" title="Link to this heading">#</a></h2>
+<p>We now consider particles in some potential well, such that <span class="math notranslate nohighlight">\(\lim_{x\to\infty} V(x) &gt; E\)</span>. In the figure below, we have broken up the <span class="math notranslate nohighlight">\(x\)</span> axis into three regions. In regions I, II, III the WKB approximation is expected to hold. For large <span class="math notranslate nohighlight">\(|x|\)</span> (in regions I and III), we assume the energy is far enough below the barrier that the length scale giverning the exponential falloff of the wavefunction is small compared to the length scale over which the potential varies. In region II we assume that the energy is large enough that the wavefunction rapidly oscillates, with a space between nodes so small that the potential does not vary appreciably in this range.</p>
+<p>The WKB approximation is expected to break down at the classical turning points <span class="math notranslate nohighlight">\(A,B\)</span>&gt; Here <span class="math notranslate nohighlight">\(p(x) \to 0\)</span>, <span class="math notranslate nohighlight">\(\lambda(x) \to \infty\)</span>, and we can see that the condition <a class="reference internal" href="#equation-wkb-cond">(329)</a> breaks down. Generally, however, the potential can be well-approximated by a linear potential; the resulting Schroedinger equation is exactly solvable. If we are fortunate, the regime in which the linear approximation holds will overlap with the regime in which the WKB approximation holds, as illustrated below. In this case we can match our WKB functions to the solutions near the turning points.</p>
+<p>Let us first turn to the solutions in the WKB regions. In region I, the solution is</p>
+<p>Here <span class="math notranslate nohighlight">\(x_I\)</span> is arbitrary. This solution will be exponentially decaying as <span class="math notranslate nohighlight">\(x \to - \infty\)</span>: we have set to zero an exponentially growing component.</p>
+<p>In region II the solution looks like</p>
+<div class="math notranslate nohighlight">
+\[\psi_{II}(x) = \frac{1}{\sqrt{2m(E - V(x))}} \left(A_{II} e^{\frac{i}{\hbar}\int_{x_{II}}^x dx'\sqrt{2m(V(x') - E)}} + B_{II}  e^{- \frac{i}{\hbar}\int_{x_{II}}^x dx'\sqrt{2m(V(x') - E)}}\right)\]</div>
 </section>
 </section>
 
@@ -544,6 +578,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-semiclassical-expansion">The semiclassical expansion</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bound-state-problems">Bound state problems</a></li>
 </ul>
   </nav></div>
 
