@@ -403,6 +403,16 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-the-linear-potential">Example 2: the Linear potential</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hamilton-jacobi-equation-and-geometric-optics">The Hamilton-Jacobi equation and geometric optics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hamilton-jacobi-from-least-action">Hamilton-Jacobi from least action</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-transformations-in-phase-space">Canonical transformations in phase space</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wkbj-as-a-semiclassical-limit">WKBJ as a semiclassical limit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comment-large-quantum-numbers">Comment: large quantum numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comment-the-path-integral-picture">Comment: the path integral picture</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -506,6 +516,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[	\alpha \sim \frac{2 m n \hbar}{\sqrt{c}} x^{\frac{n}{2} - 1}\]</div>
 <p>Thus WKB works well when <span class="math notranslate nohighlight">\(n &gt; 2\)</span>. For <span class="math notranslate nohighlight">\(n &lt; 2\)</span> WKB breaks down near the origin. (Note that for <span class="math notranslate nohighlight">\(n &gt; 2\)</span> the energy eigenstates are unbounded below, with <span class="math notranslate nohighlight">\(n = 2\)</span> being an interesting marginal case, as we have seen in a prior problem set).</p>
+<p>You might fairly ask why we chose the scaling we did. Why is the leading singular behavior <span class="math notranslate nohighlight">\(e^{i S/\hbar}\)</span> and not <span class="math notranslate nohighlight">\(e^{i S/\hbar^2}\)</span> or  <span class="math notranslate nohighlight">\(e^{i S/\hbar^{1/2}}\)</span> or some such? Why do we expand <span class="math notranslate nohighlight">\(S\)</span> in powers of <span class="math notranslate nohighlight">\(\hbar\)</span> rather than <span class="math notranslate nohighlight">\(\hbar^2\)</span>, <span class="math notranslate nohighlight">\(\hbar^{1/2}\)</span>? This is determined by the power of <span class="math notranslate nohighlight">\(\hbar^2\)</span> that sits in front of the kinetic term. If we demand that all of the terms in the Schroedinger equation appear at the same order, <em>including the energy</em>, you can convince yourself tha this is the right scaling. In general you have to deduce the correct scaling; and a given problem may support various scalings for different energies and momenta. The book <span id="id2">[<a class="reference internal" href="../markdown.html#id13" title="C.M. Bender and S.A. Orszag. Advanced Mathematical Methods for Scientists and Engineers I: Asymptotic Methods and Perturbation Theory. Advanced Mathematical Methods for Scientists and Engineers. Springer, 1999. ISBN 9780387989310. URL: https://books.google.com/books?id=-yQXwhE6iWMC.">Bender and Orszag, 1999</a>]</span> has a good discussion of these issues. <a class="reference external" href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/regimes-of-nearinertial-wave-dynamics/EF5D7BF32476D89A6582B8C3033252F9">This paper</a> of which I was a co-author encounters this issue in a situation where the resolution is nontrivial.</p>
 </section>
 </section>
 <section id="bound-state-problems">
@@ -586,7 +597,174 @@ Bi(y) \sim \begin{cases}  \frac{1}{\sqrt{\pi} y^{1/4}} e^{\frac{2}{3}y^{3/2}} &a
 <p>Consider instead <span class="math notranslate nohighlight">\(V = g |x|\)</span>. If we go through the same exercise, we find</p>
 <div class="math notranslate nohighlight">
 \[E = \half \left(\frac{3 g (n + \half) \pi \hbar}{2 m^{\half}}\right)^{2/3}\]</div>
-<p>The wavefunctions, as it happens, are amenable to an exact solution using Airy functions, and the resulting eigenvalues can be computed. For the ground state <span class="math notranslate nohighlight">\(n = 0\)</span>, the WKB expression is too high by <span class="math notranslate nohighlight">\(10\%\)</span>. for the first excited state, the result is too high by <span class="math notranslate nohighlight">\(1\%\)</span>. For the second excited state, teh result is low by <span class="math notranslate nohighlight">\(.5\%\)</span>. (It is worth thinking about why the <span class="math notranslate nohighlight">\(n = 0,1\)</span> WKB answers will always be larger than the exact answer, but at higher <span class="math notranslate nohighlight">\(n\)</span> there is no such restriction).</p>
+<p>The wavefunctions, as it happens, are amenable to an exact solution using Airy functions, and the resulting eigenvalues can be computed. For the ground state <span class="math notranslate nohighlight">\(n = 0\)</span>, the WKB expression is too high by <span class="math notranslate nohighlight">\(10\%\)</span>. for the first excited state, the result is too high by <span class="math notranslate nohighlight">\(1\%\)</span>. For the second excited state, the result is low by <span class="math notranslate nohighlight">\(.5\%\)</span>. (It is worth thinking about why the <span class="math notranslate nohighlight">\(n = 0,1\)</span> WKB answers will always be larger than the exact answer, but at higher <span class="math notranslate nohighlight">\(n\)</span> there is no such restriction).</p>
+</section>
+</section>
+<section id="the-hamilton-jacobi-equation-and-geometric-optics">
+<h2>The Hamilton-Jacobi equation and geometric optics<a class="headerlink" href="#the-hamilton-jacobi-equation-and-geometric-optics" title="Link to this heading">#</a></h2>
+<p>We found that at lowest order in the WKBJ approximation,</p>
+<div class="math notranslate nohighlight" id="equation-ti-hj">
+<span class="eqno">(332)<a class="headerlink" href="#equation-ti-hj" title="Link to this equation">#</a></span>\[\frac{1}{2m} ({\vec\nabla} S_{cl})^2 + V({\vec x}) = E\]</div>
+<p>Here we have written down the equation for an <span class="math notranslate nohighlight">\(n\)</span>-dimensional nonrelativistic potential problem; the derivation is essentially the same.</p>
+<p>As it happens this is a well-known equation in classical mechanics, the <em>Hamilton-Jacobi</em> equation. Since this course teaches classical as well as quantum mechanics, I will break here and discuss the meaning of this equation in classical mechanics.</p>
+<section id="hamilton-jacobi-from-least-action">
+<h3>Hamilton-Jacobi from least action<a class="headerlink" href="#hamilton-jacobi-from-least-action" title="Link to this heading">#</a></h3>
+<p>Let us return to the principle of least action and consider it in phase space form. Starting with <span class="math notranslate nohighlight">\(S = \int_{t_i}^{t_f} dt L(q,{\dot q})\)</span>, we recall that to first order in variations of <span class="math notranslate nohighlight">\(q\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\delta S = \left[ \frac{\del L}{\del {\dot q}^i} \delta q^i\right]\Big|^{t_f}_{t} + \int_{t_i}^{t} dt' \left(\frac{\del L}{\del q^i} - \frac{d}{dt} \frac{\del L}{\del {\dot q}^i}\right)\delta q^i\]</div>
+<p>In the usual Euler-Lagrange equations we fix the initial and final positions. Here we want to understand <span class="math notranslate nohighlight">\(S\)</span> evaluated on classical paths <em>as a function of</em> <span class="math notranslate nohighlight">\(q(t)\)</span>, given some fixed initial condition <span class="math notranslate nohighlight">\(q(t_i)\)</span>. Since we are evaluating <span class="math notranslate nohighlight">\(S\)</span> along classical paths, the integral vanishes, the integrand just being the classical erquations of motion, and we are left with <span class="math notranslate nohighlight">\(\delta S = \frac{\del L}{\del {\dot q}^i}(t) \delta q^i(t)\)</span>, or</p>
+<div class="math notranslate nohighlight" id="equation-ds-dq">
+<span class="eqno">(333)<a class="headerlink" href="#equation-ds-dq" title="Link to this equation">#</a></span>\[\frac{\del S}{\del q^i} = p_i\]</div>
+<p>where <span class="math notranslate nohighlight">\(p_i\)</span> is the conjugate momentum. Here since <span class="math notranslate nohighlight">\(q(t_i)\)</span> is fixed and <span class="math notranslate nohighlight">\(q(t)\)</span> given, <span class="math notranslate nohighlight">\(p_i\)</span> is completely determined.</p>
+<p>Now by definition, <span class="math notranslate nohighlight">\(\frac{d S}{d t} = L\)</span> by definition. On the other hand, using the chain rule,</p>
+<div class="math notranslate nohighlight">
+\[L = \frac{d S}{dt} = \frac{\del S}{\del t} + \frac{\del S}{\del q^i}{\dot q^i} =  \frac{\del S}{\del t} + p_i {\dot q^i}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(H =  p_i {\dot q^i} - L\)</span>, we have</p>
+<div class="math notranslate nohighlight" id="equation-ds-dt">
+<span class="eqno">(334)<a class="headerlink" href="#equation-ds-dt" title="Link to this equation">#</a></span>\[\frac{\del S}{\del t} = - H\]</div>
+<p>Thus if we consider <span class="math notranslate nohighlight">\(S\)</span> as a function of <span class="math notranslate nohighlight">\(q(t), t\)</span>, its variation <span class="math notranslate nohighlight">\(dS\)</span> under infinitesimal variations <span class="math notranslate nohighlight">\(dq^i, dt\)</span> of its arguments is</p>
+<div class="math notranslate nohighlight">
+\[dS = p_i dq^i - H dt\]</div>
+<p>We have also shown that</p>
+<div class="math notranslate nohighlight">
+\[\frac{\del S}{\del t} + H(q^i, p_i = \frac{\del S}{\del q^i}) = 0\]</div>
+<p>when evaluated along classical trajectories. This is the <em>Hamilton-Jacobi</em> equation; the function <span class="math notranslate nohighlight">\(S\)</span> is called <em>Hamilton’s principle function</em>.</p>
+<p>We have shown that by knowing the classical trajectories <span class="math notranslate nohighlight">\(q^i(t), p_i(t)\)</span> given fixed initial conditions, the equations <a class="reference internal" href="#equation-ds-dq">(333)</a> and <a class="reference internal" href="#equation-ds-dt">(334)</a> furnish a solution <span class="math notranslate nohighlight">\(S\)</span> to the Hamilton-Jacobi equations. Furthermore, this solution is the classical action as a function of the endpoint <span class="math notranslate nohighlight">\(q(t)\)</span> given <span class="math notranslate nohighlight">\(q(t_i)\)</span>. Returning to the quantum problem, if we consider the time-<em>dependent</em> Schroedinger equation</p>
+<div class="math notranslate nohighlight">
+\[i\hbar \del_t \psi = - \frac{\hbar^2}{2m} \nabla^2 \psi + V(q) \psi\]</div>
+<p>and write <span class="math notranslate nohighlight">\(\psi = e^{i\frac{S(q,t)}{\hbar}\)</span> with <span class="math notranslate nohighlight">\(S = S_{cl} + \hbar S_1 + \ldots\)</span>, then the leading order <span class="math notranslate nohighlight">\(\cO(\hbar^{0})\)</span> equation is the full Hamilton-Jacobi equation.</p>
+<p>The equation <a class="reference internal" href="#equation-ti-hj">(332)</a> is consistent with the full Hamilton-Jacobi equations if we set</p>
+<div class="math notranslate nohighlight">
+\[S = W(q^i(t)) - E t\]</div>
+<p>where <span class="math notranslate nohighlight">\(W\)</span> is called <em>Hamilton’s characteristic function</em>; here <span class="math notranslate nohighlight">\(p_i = \frac{\del W}{\del q^i}\)</span>, or <span class="math notranslate nohighlight">\(dW = p_i dq^i\)</span>. The solution is also consistent with the classical ewuations of motion for the family of trajectories with fixed energy. The functional form will be different from the solution with fixed initial conditions, as the corresponding trajectories will have varying energy (consider the 1d case of force-free motion where we fix <span class="math notranslate nohighlight">\(t\)</span> and vary <span class="math notranslate nohighlight">\(q\)</span> given an initial condition; this will be a family of trajectories with increasing velocity and thus energy).</p>
+<p>What we are seeing is that different solutions to the H-J equations with different specified constants yield different families of trajectories. To understand this we consider a different perspective on these equations.</p>
+</section>
+<section id="canonical-transformations-in-phase-space">
+<h3>Canonical transformations in phase space<a class="headerlink" href="#canonical-transformations-in-phase-space" title="Link to this heading">#</a></h3>
+<p>Last semester we briefly touched on canonical transformations as transformations in phase space which preserve the Poisson brackets and the Hamiltonian structure of the problem. That is, start with some system for which the phase space variables are <span class="math notranslate nohighlight">\(q^i, p_i\)</span>, <span class="math notranslate nohighlight">\(i \in \{1,\ldots,n\}\)</span>, such that <span class="math notranslate nohighlight">\(\{q^i, q^j\} = \{p_i, p_j\} = 0\)</span>, and <span class="math notranslate nohighlight">\(\{q^i,p_j\} = \delta^i_j\)</span>. Assume further there is a Hamiltonian <span class="math notranslate nohighlight">\(H(q,p)\)</span> such that the system satisfies Hamilton’s equations. A canonical transformation is  coordinate transformation <em>in phase space</em> to new coordinates <span class="math notranslate nohighlight">\(Q^I(q,p), P_I(q,p)\)</span>, <span class="math notranslate nohighlight">\(I - \{1,\ldots,N\}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\{Q^I, Q^J\} = \{P_I, P_J\} = 0\ ; \ \ \{Q^I, P_J\} = \delta^I_J\]</div>
+<p>and such that there is function <span class="math notranslate nohighlight">\(K(Q,P)\)</span> for which Hamilton’s equations for <span class="math notranslate nohighlight">\(q,p,H\)</span> become, under the coordinate transformation, Hamilton’s equations for <span class="math notranslate nohighlight">\(Q,P,K\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\frac{d Q^I}{d t} &amp; = \frac{\del K}{\del P_I}\\
+\frac{d P_I}{d t} &amp; = - \frac{\del K}{\del Q^I}
+\end{align}\end{split}\]</div>
+<p>Following the previous discussion, these are consistent with the trajectory being the minimum of the phase space action</p>
+<div class="math notranslate nohighlight">
+\[S' = \int_{t_i}^t dt' \left(P_I {\dot Q}^I - K\right)\]</div>
+<p>or in differential form, <span class="math notranslate nohighlight">\(dS' = P_I dQ^I - K dt\)</span>.</p>
+<p>The variation of <span class="math notranslate nohighlight">\(S,S'\)</span> yields the same equations of motion if <span class="math notranslate nohighlight">\(dS = dS' + dF\)</span> where <span class="math notranslate nohighlight">\(F\)</span> is a function of coordinates, momenta, and time; integrating this along a trajectory, it will only contribute to the endpoints and thus not appear in the equations of motion. (Note that in principle stationarity works if <span class="math notranslate nohighlight">\(dS' + dF = \lambda dS\)</span> for some constant <span class="math notranslate nohighlight">\(\lambda\)</span>. But we can scale <span class="math notranslate nohighlight">\(\lambda\)</span> away, by rescaling <span class="math notranslate nohighlight">\(P,Q,K\)</span> and rewriting the form of <span class="math notranslate nohighlight">\(K\)</span>, so we will ignore this. (See chapter 10 of <span id="id3">[<a class="reference internal" href="../markdown.html#id3" title="H. Goldstein, C.P. Poole, and J.L. Safko. Classical Mechanics. Addison Wesley, 2002. ISBN 9780201657029.">Goldstein <em>et al.</em>, 2002</a>]</span> for a discussion of this point).</p>
+<p>As it happens, however, <span class="math notranslate nohighlight">\(F\)</span> determines the coordinate transformation. That is, if we write</p>
+<div class="math notranslate nohighlight">
+\[dF = p_i dq^i - P_I dQ^I - Hdt + Kdt\]</div>
+<p>or equivalently</p>
+<div class="math notranslate nohighlight">
+\[\frac{dF}{dt} = p_i {\dot q}^i - P_I {\dot Q}^I + (K  - H)\]</div>
+<p>The differential version treats <span class="math notranslate nohighlight">\(q, Q\)</span> as the independent coordinates. Thus, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+p_i &amp; = \frac{\del F}{\del q^i}\\
+P_I &amp; = - \frac{\del F}{\del Q^I}\\
+K &amp; = H + \frac{\del F}{\del t}
+\end{align}\end{split}\]</div>
+<p>If we specify <span class="math notranslate nohighlight">\(F(q, Q, t)\)</span>, then, the equations above give <span class="math notranslate nohighlight">\(p(q,Q,t)\)</span>, <span class="math notranslate nohighlight">\(P(q, Q, t)\)</span>, <span class="math notranslate nohighlight">\(K\)</span>. We can then solve for <span class="math notranslate nohighlight">\(Q, P\)</span> in terms of <span class="math notranslate nohighlight">\(q, p\)</span>.</p>
+<p>On the other hand, writing <span class="math notranslate nohighlight">\(P dQ = d(PQ) - Q d P\)</span>, we can instead consider the equation</p>
+<div class="math notranslate nohighlight">
+\[d(F + P_I Q^I) = p_i dq^i + Q^I dP_I - Hdt + Kdt\]</div>
+<p>If we set <span class="math notranslate nohighlight">\(\Phi = F + P_I Q^I = \Phi(q_i, P^I)\)</span> we get a different set of coordinate transformations determined by <span class="math notranslate nohighlight">\(\Phi\)</span>, with</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+p_i &amp; = \frac{\del \Phi}{\del q^i}\\
+Q^I &amp; = - \frac{\del \Phi}{\del P_I}\\
+K &amp; = H + \frac{\del \Phi}{\del t}
+\end{align}\end{split}\]</div>
+<p>We can consider similar generating functions that are functions of <span class="math notranslate nohighlight">\(p, P\)</span> or of <span class="math notranslate nohighlight">\(p, Q\)</span>. These are typically classified into four types, dependening on which pair of old and new variables they are explicitly functions of.</p>
+<p>Let us therefore consider coordinates <span class="math notranslate nohighlight">\(Q^I, P_I\)</span> that are constant in time along trajectories. These could be the initial conditions or any other set of <span class="math notranslate nohighlight">\(2n\)</span> bits of data that label the trajectories. The corresponding Hamiltonian <span class="math notranslate nohighlight">\(K\)</span> is therefore constant by Hamilton’s equations and can be set to zero. Then we are left with</p>
+<div class="math notranslate nohighlight">
+\[K = 0 = H + \del_t F_2(q,P,t)\]</div>
+<p>where we have set <span class="math notranslate nohighlight">\(S = F_2\)</span> to tie this to the discussion in Section 9.1 of <span id="id4">[<a class="reference internal" href="../markdown.html#id3" title="H. Goldstein, C.P. Poole, and J.L. Safko. Classical Mechanics. Addison Wesley, 2002. ISBN 9780201657029.">Goldstein <em>et al.</em>, 2002</a>]</span>. The variables <span class="math notranslate nohighlight">\(P_I\)</span> appear as explicit constants of motion; we are guaranteed that <span class="math notranslate nohighlight">\(Q^I = - \frac{\del F_2}{\del P^I}\)</span> is also constant. The equation above becomes the Hamilton-Jacobi equation</p>
+<div class="math notranslate nohighlight">
+\[H(q_i, p_i = \frac{\del F_2}{\del q^i}, t) + \frac{\del F_2}{\del t}\]</div>
+<p>In the original derivation we specified <span class="math notranslate nohighlight">\(q^i(t_i)\)</span>. But as long as we have a <em>complete solution</em> with <span class="math notranslate nohighlight">\(n\)</span> independent integration constants, then we can invert the coordinate transformations to find <span class="math notranslate nohighlight">\(q^i(Q^I, P_I, t)\)</span>, that is, we generate a trajectory.</p>
+<p>In this context, if the Hamiltonian is time-independent, we can choose a solution of the form <span class="math notranslate nohighlight">\(F_2 = S = W(q,E) - Et\)</span>. <span class="math notranslate nohighlight">\(E\)</span> now becomes one of the constants of motion: the resulting equation</p>
+<div class="math notranslate nohighlight">
+\[H(q^i, p_i = \frac{\del W}{\del q^i}) = E\]</div>
+<p>A complete solution will require <span class="math notranslate nohighlight">\(n-1\)</span> additional constants of motion.</p>
+<p>The simplest interesting example is the 1d simple harmonic oscillator. Considering solutions of fixed energy, we have</p>
+<div class="math notranslate nohighlight">
+\[\frac{\del S}{\del x} = \sqrt{2m(E - \half m \omega^2 x^2)}\]</div>
+<p>We can do an integral to find</p>
+<div class="math notranslate nohighlight">
+\[S = \int^x dx\sqrt{2m(E - \half \omega^2 x^2)} - E t\]</div>
+<p>up to a constant of integration which we can absorb in to <span class="math notranslate nohighlight">\(S\)</span> without changing the fact that <span class="math notranslate nohighlight">\(S\)</span> solves the H-J equation.</p>
+<p>By the above discussion, <span class="math notranslate nohighlight">\(\del_E S\)</span> is a constant of motion, which we will call <span class="math notranslate nohighlight">\(\beta\)</span>, so that</p>
+<div class="math notranslate nohighlight">
+\[\beta = \int dx \sqrt{\frac{m}{2\sqrt{2m(E - \half \omega^2 x^2)}} - t\]</div>
+<p>is constant; again the constant of integraion unspecified by the indefinite integral can be absorbed into <span class="math notranslate nohighlight">\(\beta\)</span>. The result is</p>
+<div class="math notranslate nohighlight">
+\[t + \beta = \frac{1]{\omega}\sin^{-1} x \sqrt{\frac{m\omega^2}{2E}}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[x = \sqrt{\frac{2E}{m\omega^2}} \sin(\omega (t + \beta))\]</div>
+<p>This is the general solution; the constants of motion are <span class="math notranslate nohighlight">\(E\)</span> and the time <span class="math notranslate nohighlight">\(-\beta\)</span> at which <span class="math notranslate nohighlight">\(x = 0\)</span>. The latter can be shifted away with a shift in time.</p>
+<p>The flip side of this, relevant for the quantum problem, is that if we have a family of solutions <span class="math notranslate nohighlight">\(q^i(t)\)</span> to the equations of motion, we have a solution to the Hamilton-Jacobi equation. That is, let us assume we know <span class="math notranslate nohighlight">\(S(q^i(t_0),t_0)\)</span> (the initial condition) at some time <span class="math notranslate nohighlight">\(t_0\)</span>. This yields <span class="math notranslate nohighlight">\(p_i(t_0) = \frac{\del S}{\del q^i}\)</span>. At each initial point we can thus generate a trajectory <span class="math notranslate nohighlight">\(q^i(t), p_i(t) = \frac{\del S}{\del q^i(t)}\)</span>. Along each trajectory, the partial derivative <span class="math notranslate nohighlight">\(\del_t S\)</span> becomes a total derivative, so we have <span class="math notranslate nohighlight">\(d_t S + H(q^i(t), p_i(t)) = 0\)</span>. <span class="math notranslate nohighlight">\(H\)</span> is a known function and the equations of motion yield known functions <span class="math notranslate nohighlight">\(q^i(t), p_i(t)\)</span>, so we have <span class="math notranslate nohighlight">\(d_t S + F(t) = 0\)</span> which can be integrated, perhaps on a computer. We then know <span class="math notranslate nohighlight">\(S\)</span> along the family of trajectories we have computed. This is a specific example of the <em>method of characteristics</em>. The process of turning the wave equation into an equation of Hamilton0Jacobi type, and then solving the katter via the method of characteristics, is a specific example of <em>ray tracing</em>. A similar procedure for exlectromagnetic waves, for example, moving through a medium with variable index of refraction, yields the geometric optics approximation, where the individual ``rays” are the characteristics of an associated Hamilton-Jacobi-like approximation to the full wave equation.</p>
+<p>A simple example is the case of the free particle, for which</p>
+<div class="math notranslate nohighlight">
+\[\del_t S + \frac{1}{2m}(\del_x S)^2 = 0\]</div>
+<p>The characteristic equations/Hamilton’s equations are <span class="math notranslate nohighlight">\({\dot x} = p\)</span>, {\dot p} = 0<span class="math notranslate nohighlight">\(, solved by \)</span>x(t) = x_0 + p_0 t/m<span class="math notranslate nohighlight">\(. Let us say we know that at \)</span>t = 0<span class="math notranslate nohighlight">\(, \)</span>S = \half \gamma x_0 ^2<span class="math notranslate nohighlight">\(. Then \)</span>p_0 = \gamma x_0<span class="math notranslate nohighlight">\(, and \)</span>x(t) = (1 + \gamma t/m) x_0$.</p>
+<p>Now along this trajectory,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\del_t S + \frac{1}{2m} p(t) \del_x S &amp; = \del_t S + \frac{1}{2} {\dot x} \del_x S \\
+&amp; = d_t S - \frac{1}{2m} p(t)^2 = 0
+\end{align}\end{split}\]</div>
+<p>Now along the trajectory <span class="math notranslate nohighlight">\(x(t)\)</span>, <span class="math notranslate nohighlight">\(p(t) = p(0) = \gamma x_0\)</span>, so <span class="math notranslate nohighlight">\(d_t S = \frac{\gamma^2}{2m} x_0^2\)</span> or</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+S &amp; =  \half \gamma x_0^2 + \frac{\gamma^2}{2m} x_0^2 t \\
+&amp; = \half \gamma x_0^2\left(1 + \frac{\gamma}{m} t\right) \\
+&amp; = \half \gamma\frac{x(t)^2}{(1 + \gamma t/m)}
+\end{align}\end{split}\]</div>
+<p>You can check that this solves the Hamilton-Jacobi equation.</p>
+</section>
+</section>
+<section id="wkbj-as-a-semiclassical-limit">
+<h2>WKBJ as a semiclassical limit<a class="headerlink" href="#wkbj-as-a-semiclassical-limit" title="Link to this heading">#</a></h2>
+<p>The fact that the classical equations omf motion arise from the WKBJ approximation motivates the term <em>semiclassical limit</em>. You might think this is because it is an <span class="math notranslate nohighlight">\(\hbar \to 0\)</span> limit; again, that is not quite right, since (as I keep ranting on and on about) <span class="math notranslate nohighlight">\(\hbar\)</span> is a dimensionful parameter.</p>
+<p>I will sketch out a couple of ways to think about this limit. These are only sketches. Fleshing out the arguments in detail is non-trivial!</p>
+<section id="comment-large-quantum-numbers">
+<h3>Comment: large quantum numbers<a class="headerlink" href="#comment-large-quantum-numbers" title="Link to this heading">#</a></h3>
+<p>In general the story is that <span class="math notranslate nohighlight">\(S_{cl}/\hbar \gg 1\)</span>. We can see what this means in terms of the simple harmonic ocillator. If <span class="math notranslate nohighlight">\(L \sim T - V \sim n \hbar\omega\)</span>, wheer <span class="math notranslate nohighlight">\(n\)</span> is the excitation level of a state, we can guess that <span class="math notranslate nohighlight">\(S \sim n \hbar\)</span>. So <span class="math notranslate nohighlight">\(n \gg 1\)</span> is the limit; that is, we have a limit of <em>large quantum numbers</em>.</p>
+<p>Anther way we might see classical mechanics emerge is through Ehrenfest’s theorem. For the potential problem, this states</p>
+<div class="math notranslate nohighlight">
+\[m \frac{d}{dt} \vev{x^i} = - \vev{\frac{\del}{\del x^i} V(x)}\]</div>
+<p>This is exactly the classical equations of motion for <span class="math notranslate nohighlight">\(x^i\)</span> if</p>
+<div class="math notranslate nohighlight">
+\[ \vev{\frac{\del}{\del x^i} V(x)} = \frac{\del}{\del x^i} V(\vev{x^i})\]</div>
+<p>As it happens this is trivially true for the SHO, for which the WKB approximation is known to be exact. More generally, if we write <span class="math notranslate nohighlight">\({\hat x} = \vev{x} + \delta x\)</span>, we need that <span class="math notranslate nohighlight">\(\vev{x}^n \gg \vev{\delta x^n}\)</span>. The latter measures the spread of the wavefunction; we need this to be small compared to the range of variation of the position variable. This should be related to the kind of high-energy limit we are discussing in which the wavelengths used are small compared to the range of variation of the potential. We can realize this by constructing <em>coherent states</em> which realize these conditions explicitly.  In view of time, however, I will press on.</p>
+</section>
+<section id="comment-the-path-integral-picture">
+<h3>Comment: the path integral picture<a class="headerlink" href="#comment-the-path-integral-picture" title="Link to this heading">#</a></h3>
+<p>Let us return to the Feynman path integral for solutions to the time-<em>dependent</em> Schroedinger equation:</p>
+<div class="math notranslate nohighlight">
+\[\psi(x,t) = \int Dx e^{i S([x(t)])/\hbar}\]</div>
+<p>This would yield the WKB approximation if the dominant contribution to the integral was <span class="math notranslate nohighlight">\(e^{i S_{cl}[x]/\hbar}\)</span>. As it happens, this emerges fairly naturally. I will sketch out a hand-waving description here.</p>
+<p>Let us first consider the general 1d integral</p>
+<div class="math notranslate nohighlight">
+\[I(t) = \int dx e^{i t f(x)}\]</div>
+<p>As <span class="math notranslate nohighlight">\(t \to \infty\)</span>, if <span class="math notranslate nohighlight">\(f(x)\)</span> varies nontrivially with <span class="math notranslate nohighlight">\(x\)</span>, eg <span class="math notranslate nohighlight">\(f_x \sim \cO(1)\)</span>, the integrand will oscillate rapidly and the integral will vanish. The leading contributions to this integral occur when <span class="math notranslate nohighlight">\(f\)</span> changes slowly, that is, near <span class="math notranslate nohighlight">\(f_x = 0\)</span>. In this region, we can write <span class="math notranslate nohighlight">\(f(x) = f(x_0) + \half (x - x_0)^2 f''(x_0) + \ldots\)</span>. If we insert this expansion into the integrand,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+I(t) &amp; = \int dx e^{i t (f(x_0) + \half (x - x_0)^2 f''(x_0))}\left(1 + \frac{1}{4!}(x - x_0)^4 f^{(iv)}(x_0) + \ldots\right)\\
+&amp; = \sqrt{\frac{2 \pi}{t f''(x_0)}} \left(1 + \cO\left(\frac{1}{t^2}\right) + \ldots\right)
+\end{align}\end{split}\]</div>
+<p>(we expect the cubic term  in the integrand to drop out as it is odd and the exponential even). The resulting leading-order approximation is known as the <em>stationary phase</em> approximation (and is related to the saddle-point approximation for more general integrals in the complex plane).</p>
+<p>If we assume that this approximation applies to the Feynman path integral, we should replace the point <span class="math notranslate nohighlight">\(x_0\)</span> by the classical trajectory <span class="math notranslate nohighlight">\(x(t)\)</span> about which <span class="math notranslate nohighlight">\(S\)</span> is stationary. We are thus led to</p>
+<div class="math notranslate nohighlight">
+\[\psi(x,t) \sim e^{i S_{cl}[x(t)]/\hbar}\]</div>
+<p>times a prefactor. Here <span class="math notranslate nohighlight">\(S\)</span> is the classical action, and we have shown that it solves the Hamilton-Jacobi equation.</p>
+<p>In general, this works when <span class="math notranslate nohighlight">\(S_{cl}/\hbar \gg 1\)</span>. In explicit examples, you can show that this ratio controls the corrections to the semiclassical approximation, whether you work in the path integral formulation or with the Schroedinger equation. Such large actions arise from highly excited states.</p>
 </section>
 </section>
 </section>
@@ -663,6 +841,16 @@ Bi(y) \sim \begin{cases}  \frac{1}{\sqrt{\pi} y^{1/4}} e^{\frac{2}{3}y^{3/2}} &a
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bound-state-problems">Bound state problems</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-the-simple-harmonic-oscillator">Example 1: the Simple Harmonic Oscillator</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-the-linear-potential">Example 2: the Linear potential</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hamilton-jacobi-equation-and-geometric-optics">The Hamilton-Jacobi equation and geometric optics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hamilton-jacobi-from-least-action">Hamilton-Jacobi from least action</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-transformations-in-phase-space">Canonical transformations in phase space</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wkbj-as-a-semiclassical-limit">WKBJ as a semiclassical limit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comment-large-quantum-numbers">Comment: large quantum numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comment-the-path-integral-picture">Comment: the path integral picture</a></li>
 </ul>
 </li>
 </ul>

@@ -129,6 +129,8 @@ For fixed $E$ this is always valid as $x \to \infty$ as the particle becomes the
 ```
 Thus WKB works well when $n > 2$. For $n < 2$ WKB breaks down near the origin. (Note that for $n > 2$ the energy eigenstates are unbounded below, with $n = 2$ being an interesting marginal case, as we have seen in a prior problem set).
 
+You might fairly ask why we chose the scaling we did. Why is the leading singular behavior $e^{i S/\hbar}$ and not $e^{i S/\hbar^2}$ or  $e^{i S/\hbar^{1/2}}$ or some such? Why do we expand $S$ in powers of $\hbar$ rather than $\hbar^2$, $\hbar^{1/2}$? This is determined by the power of $\hbar^2$ that sits in front of the kinetic term. If we demand that all of the terms in the Schroedinger equation appear at the same order, *including the energy*, you can convince yourself tha this is the right scaling. In general you have to deduce the correct scaling; and a given problem may support various scalings for different energies and momenta. The book {cite:p}`bender1999advanced` has a good discussion of these issues. [This paper](https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/regimes-of-nearinertial-wave-dynamics/EF5D7BF32476D89A6582B8C3033252F9) of which I was a co-author encounters this issue in a situation where the resolution is nontrivial.
+
 ## Bound state problems
 
 We now consider particles in some potential well, such that $\lim_{x\to\infty} V(x) > E$. In the figure below, we have broken up the $x$ axis into three regions. In regions I, II, III the WKB approximation is expected to hold. For large $|x|$ (in regions I and III), we assume the energy is far enough below the barrier that the length scale giverning the exponential falloff of the wavefunction is small compared to the length scale over which the potential varies. In region II we assume that the energy is large enough that the wavefunction rapidly oscillates, with a space between nodes so small that the potential does not vary appreciably in this range.
@@ -237,4 +239,229 @@ Consider instead $V = g |x|$. If we go through the same exercise, we find
 ```{math}
 E = \half \left(\frac{3 g (n + \half) \pi \hbar}{2 m^{\half}}\right)^{2/3}
 ```
-The wavefunctions, as it happens, are amenable to an exact solution using Airy functions, and the resulting eigenvalues can be computed. For the ground state $n = 0$, the WKB expression is too high by $10\%$. for the first excited state, the result is too high by $1\%$. For the second excited state, teh result is low by $.5\%$. (It is worth thinking about why the $n = 0,1$ WKB answers will always be larger than the exact answer, but at higher $n$ there is no such restriction).
+The wavefunctions, as it happens, are amenable to an exact solution using Airy functions, and the resulting eigenvalues can be computed. For the ground state $n = 0$, the WKB expression is too high by $10\%$. for the first excited state, the result is too high by $1\%$. For the second excited state, the result is low by $.5\%$. (It is worth thinking about why the $n = 0,1$ WKB answers will always be larger than the exact answer, but at higher $n$ there is no such restriction).
+
+## The Hamilton-Jacobi equation and geometric optics
+
+We found that at lowest order in the WKBJ approximation, 
+```{math}
+:label: ti_hj
+\frac{1}{2m} ({\vec\nabla} S_{cl})^2 + V({\vec x}) = E
+```
+Here we have written down the equation for an $n$-dimensional nonrelativistic potential problem; the derivation is essentially the same. 
+
+As it happens this is a well-known equation in classical mechanics, the *Hamilton-Jacobi* equation. Since this course teaches classical as well as quantum mechanics, I will break here and discuss the meaning of this equation in classical mechanics.
+
+### Hamilton-Jacobi from least action
+
+Let us return to the principle of least action and consider it in phase space form. Starting with $S = \int_{t_i}^{t_f} dt L(q,{\dot q})$, we recall that to first order in variations of $q$,
+```{math}
+\delta S = \left[ \frac{\del L}{\del {\dot q}^i} \delta q^i\right]\Big|^{t_f}_{t} + \int_{t_i}^{t} dt' \left(\frac{\del L}{\del q^i} - \frac{d}{dt} \frac{\del L}{\del {\dot q}^i}\right)\delta q^i
+```
+In the usual Euler-Lagrange equations we fix the initial and final positions. Here we want to understand $S$ evaluated on classical paths *as a function of* $q(t)$, given some fixed initial condition $q(t_i)$. Since we are evaluating $S$ along classical paths, the integral vanishes, the integrand just being the classical erquations of motion, and we are left with $\delta S = \frac{\del L}{\del {\dot q}^i}(t) \delta q^i(t)$, or
+```{math}
+:label: ds_dq
+\frac{\del S}{\del q^i} = p_i
+```
+where $p_i$ is the conjugate momentum. Here since $q(t_i)$ is fixed and $q(t)$ given, $p_i$ is completely determined. 
+
+Now by definition, $\frac{d S}{d t} = L$ by definition. On the other hand, using the chain rule,
+```{math}
+L = \frac{d S}{dt} = \frac{\del S}{\del t} + \frac{\del S}{\del q^i}{\dot q^i} =  \frac{\del S}{\del t} + p_i {\dot q^i}
+```
+Since $H =  p_i {\dot q^i} - L$, we have 
+```{math}
+:label: ds_dt
+\frac{\del S}{\del t} = - H
+```
+Thus if we consider $S$ as a function of $q(t), t$, its variation $dS$ under infinitesimal variations $dq^i, dt$ of its arguments is
+```{math}
+dS = p_i dq^i - H dt
+```
+We have also shown that
+```{math}
+\frac{\del S}{\del t} + H(q^i, p_i = \frac{\del S}{\del q^i}) = 0
+```
+when evaluated along classical trajectories. This is the *Hamilton-Jacobi* equation; the function $S$ is called *Hamilton's principle function*.
+
+We have shown that by knowing the classical trajectories $q^i(t), p_i(t)$ given fixed initial conditions, the equations {eq}`ds_dq` and {eq}`ds_dt` furnish a solution $S$ to the Hamilton-Jacobi equations. Furthermore, this solution is the classical action as a function of the endpoint $q(t)$ given $q(t_i)$. Returning to the quantum problem, if we consider the time-*dependent* Schroedinger equation
+```{math}
+i\hbar \del_t \psi = - \frac{\hbar^2}{2m} \nabla^2 \psi + V(q) \psi
+```
+and write $\psi = e^{i\frac{S(q,t)}{\hbar}$ with $S = S_{cl} + \hbar S_1 + \ldots$, then the leading order $\cO(\hbar^{0})$ equation is the full Hamilton-Jacobi equation. 
+
+The equation {eq}`ti_hj` is consistent with the full Hamilton-Jacobi equations if we set
+```{math}
+S = W(q^i(t)) - E t
+```
+where $W$ is called *Hamilton's characteristic function*; here $p_i = \frac{\del W}{\del q^i}$, or $dW = p_i dq^i$. The solution is also consistent with the classical ewuations of motion for the family of trajectories with fixed energy. The functional form will be different from the solution with fixed initial conditions, as the corresponding trajectories will have varying energy (consider the 1d case of force-free motion where we fix $t$ and vary $q$ given an initial condition; this will be a family of trajectories with increasing velocity and thus energy).
+
+What we are seeing is that different solutions to the H-J equations with different specified constants yield different families of trajectories. To understand this we consider a different perspective on these equations.
+
+### Canonical transformations in phase space
+
+Last semester we briefly touched on canonical transformations as transformations in phase space which preserve the Poisson brackets and the Hamiltonian structure of the problem. That is, start with some system for which the phase space variables are $q^i, p_i$, $i \in \{1,\ldots,n\}$, such that $\{q^i, q^j\} = \{p_i, p_j\} = 0$, and $\{q^i,p_j\} = \delta^i_j$. Assume further there is a Hamiltonian $H(q,p)$ such that the system satisfies Hamilton's equations. A canonical transformation is  coordinate transformation *in phase space* to new coordinates $Q^I(q,p), P_I(q,p)$, $I - \{1,\ldots,N\}$ such that
+```{math}
+\{Q^I, Q^J\} = \{P_I, P_J\} = 0\ ; \ \ \{Q^I, P_J\} = \delta^I_J
+```
+and such that there is function $K(Q,P)$ for which Hamilton's equations for $q,p,H$ become, under the coordinate transformation, Hamilton's equations for $Q,P,K$:
+```{math}
+\begin{align}
+\frac{d Q^I}{d t} & = \frac{\del K}{\del P_I}\\
+\frac{d P_I}{d t} & = - \frac{\del K}{\del Q^I}
+\end{align}
+```
+Following the previous discussion, these are consistent with the trajectory being the minimum of the phase space action
+```{math}
+S' = \int_{t_i}^t dt' \left(P_I {\dot Q}^I - K\right)
+```
+or in differential form, $dS' = P_I dQ^I - K dt$.
+
+The variation of $S,S'$ yields the same equations of motion if $dS = dS' + dF$ where $F$ is a function of coordinates, momenta, and time; integrating this along a trajectory, it will only contribute to the endpoints and thus not appear in the equations of motion. (Note that in principle stationarity works if $dS' + dF = \lambda dS$ for some constant $\lambda$. But we can scale $\lambda$ away, by rescaling $P,Q,K$ and rewriting the form of $K$, so we will ignore this. (See chapter 10 of {cite:p}`goldstein2002classical` for a discussion of this point). 
+
+As it happens, however, $F$ determines the coordinate transformation. That is, if we write
+```{math}
+dF = p_i dq^i - P_I dQ^I - Hdt + Kdt
+```
+or equivalently
+```{math}
+\frac{dF}{dt} = p_i {\dot q}^i - P_I {\dot Q}^I + (K  - H)
+```
+The differential version treats $q, Q$ as the independent coordinates. Thus, we have
+```{math}
+\begin{align}
+p_i & = \frac{\del F}{\del q^i}\\
+P_I & = - \frac{\del F}{\del Q^I}\\
+K & = H + \frac{\del F}{\del t}
+\end{align}
+```
+If we specify $F(q, Q, t)$, then, the equations above give $p(q,Q,t)$, $P(q, Q, t)$, $K$. We can then solve for $Q, P$ in terms of $q, p$.
+
+On the other hand, writing $P dQ = d(PQ) - Q d P$, we can instead consider the equation
+```{math}
+d(F + P_I Q^I) = p_i dq^i + Q^I dP_I - Hdt + Kdt
+```
+If we set $\Phi = F + P_I Q^I = \Phi(q_i, P^I)$ we get a different set of coordinate transformations determined by $\Phi$, with 
+```{math}
+\begin{align}
+p_i & = \frac{\del \Phi}{\del q^i}\\
+Q^I & = - \frac{\del \Phi}{\del P_I}\\
+K & = H + \frac{\del \Phi}{\del t}
+\end{align}
+```
+We can consider similar generating functions that are functions of $p, P$ or of $p, Q$. These are typically classified into four types, dependening on which pair of old and new variables they are explicitly functions of.
+
+Let us therefore consider coordinates $Q^I, P_I$ that are constant in time along trajectories. These could be the initial conditions or any other set of $2n$ bits of data that label the trajectories. The corresponding Hamiltonian $K$ is therefore constant by Hamilton's equations and can be set to zero. Then we are left with 
+```{math}
+K = 0 = H + \del_t F_2(q,P,t)
+```
+where we have set $S = F_2$ to tie this to the discussion in Section 9.1 of {cite:p}`goldstein2002classical`. The variables $P_I$ appear as explicit constants of motion; we are guaranteed that $Q^I = - \frac{\del F_2}{\del P^I}$ is also constant. The equation above becomes the Hamilton-Jacobi equation
+```{math}
+H(q_i, p_i = \frac{\del F_2}{\del q^i}, t) + \frac{\del F_2}{\del t}
+```
+In the original derivation we specified $q^i(t_i)$. But as long as we have a *complete solution* with $n$ independent integration constants, then we can invert the coordinate transformations to find $q^i(Q^I, P_I, t)$, that is, we generate a trajectory.
+
+In this context, if the Hamiltonian is time-independent, we can choose a solution of the form $F_2 = S = W(q,E) - Et$. $E$ now becomes one of the constants of motion: the resulting equation
+```{math}
+H(q^i, p_i = \frac{\del W}{\del q^i}) = E
+```
+A complete solution will require $n-1$ additional constants of motion.
+
+The simplest interesting example is the 1d simple harmonic oscillator. Considering solutions of fixed energy, we have
+```{math}
+\frac{\del S}{\del x} = \sqrt{2m(E - \half m \omega^2 x^2)}
+```
+We can do an integral to find
+```{math}
+S = \int^x dx\sqrt{2m(E - \half \omega^2 x^2)} - E t
+```
+up to a constant of integration which we can absorb in to $S$ without changing the fact that $S$ solves the H-J equation.
+
+By the above discussion, $\del_E S$ is a constant of motion, which we will call $\beta$, so that
+```{math}
+\beta = \int dx \sqrt{\frac{m}{2\sqrt{2m(E - \half \omega^2 x^2)}} - t
+```
+is constant; again the constant of integraion unspecified by the indefinite integral can be absorbed into $\beta$. The result is
+```{math}
+t + \beta = \frac{1]{\omega}\sin^{-1} x \sqrt{\frac{m\omega^2}{2E}}
+```
+or
+```{math}
+x = \sqrt{\frac{2E}{m\omega^2}} \sin(\omega (t + \beta))
+```
+This is the general solution; the constants of motion are $E$ and the time $-\beta$ at which $x = 0$. The latter can be shifted away with a shift in time.
+
+The flip side of this, relevant for the quantum problem, is that if we have a family of solutions $q^i(t)$ to the equations of motion, we have a solution to the Hamilton-Jacobi equation. That is, let us assume we know $S(q^i(t_0),t_0)$ (the initial condition) at some time $t_0$. This yields $p_i(t_0) = \frac{\del S}{\del q^i}$. At each initial point we can thus generate a trajectory $q^i(t), p_i(t) = \frac{\del S}{\del q^i(t)}$. Along each trajectory, the partial derivative $\del_t S$ becomes a total derivative, so we have $d_t S + H(q^i(t), p_i(t)) = 0$. $H$ is a known function and the equations of motion yield known functions $q^i(t), p_i(t)$, so we have $d_t S + F(t) = 0$ which can be integrated, perhaps on a computer. We then know $S$ along the family of trajectories we have computed. This is a specific example of the *method of characteristics*. The process of turning the wave equation into an equation of Hamilton0Jacobi type, and then solving the katter via the method of characteristics, is a specific example of *ray tracing*. A similar procedure for exlectromagnetic waves, for example, moving through a medium with variable index of refraction, yields the geometric optics approximation, where the individual ``rays" are the characteristics of an associated Hamilton-Jacobi-like approximation to the full wave equation. 
+
+A simple example is the case of the free particle, for which 
+```{math}
+\del_t S + \frac{1}{2m}(\del_x S)^2 = 0
+```
+The characteristic equations/Hamilton's equations are ${\dot x} = p$, {\dot p} = 0$, solved by $x(t) = x_0 + p_0 t/m$. Let us say we know that at $t = 0$, $S = \half \gamma x_0 ^2$. Then $p_0 = \gamma x_0$, and $x(t) = (1 + \gamma t/m) x_0$.
+
+Now along this trajectory,
+```{math}
+\begin{align}
+\del_t S + \frac{1}{2m} p(t) \del_x S & = \del_t S + \frac{1}{2} {\dot x} \del_x S \\
+& = d_t S - \frac{1}{2m} p(t)^2 = 0
+\end{align}
+```
+Now along the trajectory $x(t)$, $p(t) = p(0) = \gamma x_0$, so $d_t S = \frac{\gamma^2}{2m} x_0^2$ or
+```{math}
+\begin{align}
+S & =  \half \gamma x_0^2 + \frac{\gamma^2}{2m} x_0^2 t \\
+& = \half \gamma x_0^2\left(1 + \frac{\gamma}{m} t\right) \\
+& = \half \gamma\frac{x(t)^2}{(1 + \gamma t/m)}
+\end{align}
+```
+You can check that this solves the Hamilton-Jacobi equation.
+
+## WKBJ as a semiclassical limit
+
+The fact that the classical equations omf motion arise from the WKBJ approximation motivates the term *semiclassical limit*. You might think this is because it is an $\hbar \to 0$ limit; again, that is not quite right, since (as I keep ranting on and on about) $\hbar$ is a dimensionful parameter. 
+
+I will sketch out a couple of ways to think about this limit. These are only sketches. Fleshing out the arguments in detail is non-trivial!
+
+### Comment: large quantum numbers
+
+In general the story is that $S_{cl}/\hbar \gg 1$. We can see what this means in terms of the simple harmonic ocillator. If $L \sim T - V \sim n \hbar\omega$, wheer $n$ is the excitation level of a state, we can guess that $S \sim n \hbar$. So $n \gg 1$ is the limit; that is, we have a limit of *large quantum numbers*.
+
+Anther way we might see classical mechanics emerge is through Ehrenfest's theorem. For the potential problem, this states
+```{math}
+m \frac{d}{dt} \vev{x^i} = - \vev{\frac{\del}{\del x^i} V(x)}
+```
+This is exactly the classical equations of motion for $x^i$ if 
+```{math}
+ \vev{\frac{\del}{\del x^i} V(x)} = \frac{\del}{\del x^i} V(\vev{x^i})
+```
+As it happens this is trivially true for the SHO, for which the WKB approximation is known to be exact. More generally, if we write ${\hat x} = \vev{x} + \delta x$, we need that $\vev{x}^n \gg \vev{\delta x^n}$. The latter measures the spread of the wavefunction; we need this to be small compared to the range of variation of the position variable. This should be related to the kind of high-energy limit we are discussing in which the wavelengths used are small compared to the range of variation of the potential. We can realize this by constructing *coherent states* which realize these conditions explicitly.  In view of time, however, I will press on.
+
+### Comment: the path integral picture
+
+Let us return to the Feynman path integral for solutions to the time-*dependent* Schroedinger equation:
+```{math}
+\psi(x,t) = \int Dx e^{i S([x(t)])/\hbar}
+```
+This would yield the WKB approximation if the dominant contribution to the integral was $e^{i S_{cl}[x]/\hbar}$. As it happens, this emerges fairly naturally. I will sketch out a hand-waving description here.
+
+Let us first consider the general 1d integral
+```{math}
+I(t) = \int dx e^{i t f(x)}
+```
+As $t \to \infty$, if $f(x)$ varies nontrivially with $x$, eg $f_x \sim \cO(1)$, the integrand will oscillate rapidly and the integral will vanish. The leading contributions to this integral occur when $f$ changes slowly, that is, near $f_x = 0$. In this region, we can write $f(x) = f(x_0) + \half (x - x_0)^2 f''(x_0) + \ldots$. If we insert this expansion into the integrand, 
+```{math}
+\begin{align}
+I(t) & = \int dx e^{i t (f(x_0) + \half (x - x_0)^2 f''(x_0))}\left(1 + \frac{1}{4!}(x - x_0)^4 f^{(iv)}(x_0) + \ldots\right)\\
+& = \sqrt{\frac{2 \pi}{t f''(x_0)}} \left(1 + \cO\left(\frac{1}{t^2}\right) + \ldots\right)
+\end{align}
+```
+(we expect the cubic term  in the integrand to drop out as it is odd and the exponential even). The resulting leading-order approximation is known as the *stationary phase* approximation (and is related to the saddle-point approximation for more general integrals in the complex plane). 
+
+If we assume that this approximation applies to the Feynman path integral, we should replace the point $x_0$ by the classical trajectory $x(t)$ about which $S$ is stationary. We are thus led to
+```{math}
+\psi(x,t) \sim e^{i S_{cl}[x(t)]/\hbar}
+```
+times a prefactor. Here $S$ is the classical action, and we have shown that it solves the Hamilton-Jacobi equation.
+
+In general, this works when $S_{cl}/\hbar \gg 1$. In explicit examples, you can show that this ratio controls the corrections to the semiclassical approximation, whether you work in the path integral formulation or with the Schroedinger equation. Such large actions arise from highly excited states.
+
