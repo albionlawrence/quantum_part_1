@@ -406,6 +406,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hamilton-jacobi-equation-and-geometric-optics">The Hamilton-Jacobi equation and geometric optics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hamilton-jacobi-from-least-action">Hamilton-Jacobi from least action</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-transformations-in-phase-space">Canonical transformations in phase space</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-transformations-and-the-hj-equation">Canonical transformations and the HJ equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method-of-characteristics">The method of characteristics</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wkbj-as-a-semiclassical-limit">WKBJ as a semiclassical limit</a><ul class="nav section-nav flex-column">
@@ -687,6 +689,9 @@ K &amp; = H + \frac{\del \Phi}{\del t}
 <div class="math notranslate nohighlight">
 \[H(q_i, p_i = \frac{\del F_2}{\del q^i}, t) + \frac{\del F_2}{\del t}\]</div>
 <p>In the original derivation we specified <span class="math notranslate nohighlight">\(q^i(t_i)\)</span>. But as long as we have a <em>complete solution</em> with <span class="math notranslate nohighlight">\(n\)</span> independent integration constants, then we can invert the coordinate transformations to find <span class="math notranslate nohighlight">\(q^i(Q^I, P_I, t)\)</span>, that is, we generate a trajectory.</p>
+</section>
+<section id="canonical-transformations-and-the-hj-equation">
+<h3>Canonical transformations and the HJ equation<a class="headerlink" href="#canonical-transformations-and-the-hj-equation" title="Link to this heading">#</a></h3>
 <p>In this context, if the Hamiltonian is time-independent, we can choose a solution of the form <span class="math notranslate nohighlight">\(F_2 = S = W(q,E) - Et\)</span>. <span class="math notranslate nohighlight">\(E\)</span> now becomes one of the constants of motion: the resulting equation</p>
 <div class="math notranslate nohighlight">
 \[H(q^i, p_i = \frac{\del W}{\del q^i}) = E\]</div>
@@ -700,15 +705,18 @@ K &amp; = H + \frac{\del \Phi}{\del t}
 <p>up to a constant of integration which we can absorb in to <span class="math notranslate nohighlight">\(S\)</span> without changing the fact that <span class="math notranslate nohighlight">\(S\)</span> solves the H-J equation.</p>
 <p>By the above discussion, <span class="math notranslate nohighlight">\(\del_E S\)</span> is a constant of motion, which we will call <span class="math notranslate nohighlight">\(\beta\)</span>, so that</p>
 <div class="math notranslate nohighlight">
-\[\beta = \int dx \sqrt{\frac{m}{2\sqrt{2m(E - \half \omega^2 x^2)}} - t\]</div>
+\[\beta = \int dx \sqrt{\frac{m}{2}}\frac{1}{\sqrt{2m(E - \half \omega^2 x^2)}} - t\]</div>
 <p>is constant; again the constant of integraion unspecified by the indefinite integral can be absorbed into <span class="math notranslate nohighlight">\(\beta\)</span>. The result is</p>
 <div class="math notranslate nohighlight">
-\[t + \beta = \frac{1]{\omega}\sin^{-1} x \sqrt{\frac{m\omega^2}{2E}}\]</div>
+\[t + \beta = \frac{1}{\omega}\sin^{-1} x \sqrt{\frac{m\omega^2}{2E}}\]</div>
 <p>or</p>
 <div class="math notranslate nohighlight">
 \[x = \sqrt{\frac{2E}{m\omega^2}} \sin(\omega (t + \beta))\]</div>
 <p>This is the general solution; the constants of motion are <span class="math notranslate nohighlight">\(E\)</span> and the time <span class="math notranslate nohighlight">\(-\beta\)</span> at which <span class="math notranslate nohighlight">\(x = 0\)</span>. The latter can be shifted away with a shift in time.</p>
-<p>The flip side of this, relevant for the quantum problem, is that if we have a family of solutions <span class="math notranslate nohighlight">\(q^i(t)\)</span> to the equations of motion, we have a solution to the Hamilton-Jacobi equation. That is, let us assume we know <span class="math notranslate nohighlight">\(S(q^i(t_0),t_0)\)</span> (the initial condition) at some time <span class="math notranslate nohighlight">\(t_0\)</span>. This yields <span class="math notranslate nohighlight">\(p_i(t_0) = \frac{\del S}{\del q^i}\)</span>. At each initial point we can thus generate a trajectory <span class="math notranslate nohighlight">\(q^i(t), p_i(t) = \frac{\del S}{\del q^i(t)}\)</span>. Along each trajectory, the partial derivative <span class="math notranslate nohighlight">\(\del_t S\)</span> becomes a total derivative, so we have <span class="math notranslate nohighlight">\(d_t S + H(q^i(t), p_i(t)) = 0\)</span>. <span class="math notranslate nohighlight">\(H\)</span> is a known function and the equations of motion yield known functions <span class="math notranslate nohighlight">\(q^i(t), p_i(t)\)</span>, so we have <span class="math notranslate nohighlight">\(d_t S + F(t) = 0\)</span> which can be integrated, perhaps on a computer. We then know <span class="math notranslate nohighlight">\(S\)</span> along the family of trajectories we have computed. This is a specific example of the <em>method of characteristics</em>. The process of turning the wave equation into an equation of Hamilton0Jacobi type, and then solving the katter via the method of characteristics, is a specific example of <em>ray tracing</em>. A similar procedure for exlectromagnetic waves, for example, moving through a medium with variable index of refraction, yields the geometric optics approximation, where the individual ``rays” are the characteristics of an associated Hamilton-Jacobi-like approximation to the full wave equation.</p>
+</section>
+<section id="the-method-of-characteristics">
+<h3>The method of characteristics<a class="headerlink" href="#the-method-of-characteristics" title="Link to this heading">#</a></h3>
+<p>The flip side of this, relevant for the quantum problem, is that if we have a family of solutions <span class="math notranslate nohighlight">\(q^i(t)\)</span> to the equations of motion, we have a solution to the Hamilton-Jacobi equation. That is, let us assume we know <span class="math notranslate nohighlight">\(S(q^i(t_0),t_0)\)</span> (the initial condition) at some time <span class="math notranslate nohighlight">\(t_0\)</span>. This yields <span class="math notranslate nohighlight">\(p_i(t_0) = \frac{\del S}{\del q^i}\)</span>. At each initial point we can thus generate a trajectory <span class="math notranslate nohighlight">\(q^i(t), p_i(t) = \frac{\del S}{\del q^i(t)}\)</span>. Along each trajectory, the partial derivative <span class="math notranslate nohighlight">\(\del_t S\)</span> becomes a total derivative, so we have <span class="math notranslate nohighlight">\(d_t S + H(q^i(t), p_i(t)) = 0\)</span>. <span class="math notranslate nohighlight">\(H\)</span> is a known function and the equations of motion yield known functions <span class="math notranslate nohighlight">\(q^i(t), p_i(t)\)</span>, so we have <span class="math notranslate nohighlight">\(d_t S + F(t) = 0\)</span> which can be integrated, perhaps on a computer. We then know <span class="math notranslate nohighlight">\(S\)</span> along the family of trajectories we have computed. This is a specific example of the <em>method of characteristics</em>. The process of turning the wave equation into an equation of Hamilton-Jacobi type, and then solving the katter via the method of characteristics, is a specific example of <em>ray tracing</em>. A similar procedure for exlectromagnetic waves, for example, moving through a medium with variable index of refraction, yields the geometric optics approximation, where the individual ``rays” are the characteristics of an associated Hamilton-Jacobi-like approximation to the full wave equation.</p>
 <p>A simple example is the case of the free particle, for which</p>
 <div class="math notranslate nohighlight">
 \[\del_t S + \frac{1}{2m}(\del_x S)^2 = 0\]</div>
@@ -846,6 +854,8 @@ I(t) &amp; = \int dx e^{i t (f(x_0) + \half (x - x_0)^2 f''(x_0))}\left(1 + \fra
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hamilton-jacobi-equation-and-geometric-optics">The Hamilton-Jacobi equation and geometric optics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hamilton-jacobi-from-least-action">Hamilton-Jacobi from least action</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-transformations-in-phase-space">Canonical transformations in phase space</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-transformations-and-the-hj-equation">Canonical transformations and the HJ equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method-of-characteristics">The method of characteristics</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wkbj-as-a-semiclassical-limit">WKBJ as a semiclassical limit</a><ul class="nav section-nav flex-column">

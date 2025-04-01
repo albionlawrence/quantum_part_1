@@ -361,6 +361,8 @@ H(q_i, p_i = \frac{\del F_2}{\del q^i}, t) + \frac{\del F_2}{\del t}
 ```
 In the original derivation we specified $q^i(t_i)$. But as long as we have a *complete solution* with $n$ independent integration constants, then we can invert the coordinate transformations to find $q^i(Q^I, P_I, t)$, that is, we generate a trajectory.
 
+### Canonical transformations and the HJ equation
+
 In this context, if the Hamiltonian is time-independent, we can choose a solution of the form $F_2 = S = W(q,E) - Et$. $E$ now becomes one of the constants of motion: the resulting equation
 ```{math}
 H(q^i, p_i = \frac{\del W}{\del q^i}) = E
@@ -379,11 +381,11 @@ up to a constant of integration which we can absorb in to $S$ without changing t
 
 By the above discussion, $\del_E S$ is a constant of motion, which we will call $\beta$, so that
 ```{math}
-\beta = \int dx \sqrt{\frac{m}{2\sqrt{2m(E - \half \omega^2 x^2)}} - t
+\beta = \int dx \sqrt{\frac{m}{2}}\frac{1}{\sqrt{2m(E - \half \omega^2 x^2)}} - t
 ```
 is constant; again the constant of integraion unspecified by the indefinite integral can be absorbed into $\beta$. The result is
 ```{math}
-t + \beta = \frac{1]{\omega}\sin^{-1} x \sqrt{\frac{m\omega^2}{2E}}
+t + \beta = \frac{1}{\omega}\sin^{-1} x \sqrt{\frac{m\omega^2}{2E}}
 ```
 or
 ```{math}
@@ -391,7 +393,9 @@ x = \sqrt{\frac{2E}{m\omega^2}} \sin(\omega (t + \beta))
 ```
 This is the general solution; the constants of motion are $E$ and the time $-\beta$ at which $x = 0$. The latter can be shifted away with a shift in time.
 
-The flip side of this, relevant for the quantum problem, is that if we have a family of solutions $q^i(t)$ to the equations of motion, we have a solution to the Hamilton-Jacobi equation. That is, let us assume we know $S(q^i(t_0),t_0)$ (the initial condition) at some time $t_0$. This yields $p_i(t_0) = \frac{\del S}{\del q^i}$. At each initial point we can thus generate a trajectory $q^i(t), p_i(t) = \frac{\del S}{\del q^i(t)}$. Along each trajectory, the partial derivative $\del_t S$ becomes a total derivative, so we have $d_t S + H(q^i(t), p_i(t)) = 0$. $H$ is a known function and the equations of motion yield known functions $q^i(t), p_i(t)$, so we have $d_t S + F(t) = 0$ which can be integrated, perhaps on a computer. We then know $S$ along the family of trajectories we have computed. This is a specific example of the *method of characteristics*. The process of turning the wave equation into an equation of Hamilton0Jacobi type, and then solving the katter via the method of characteristics, is a specific example of *ray tracing*. A similar procedure for exlectromagnetic waves, for example, moving through a medium with variable index of refraction, yields the geometric optics approximation, where the individual ``rays" are the characteristics of an associated Hamilton-Jacobi-like approximation to the full wave equation. 
+### The method of characteristics
+
+The flip side of this, relevant for the quantum problem, is that if we have a family of solutions $q^i(t)$ to the equations of motion, we have a solution to the Hamilton-Jacobi equation. That is, let us assume we know $S(q^i(t_0),t_0)$ (the initial condition) at some time $t_0$. This yields $p_i(t_0) = \frac{\del S}{\del q^i}$. At each initial point we can thus generate a trajectory $q^i(t), p_i(t) = \frac{\del S}{\del q^i(t)}$. Along each trajectory, the partial derivative $\del_t S$ becomes a total derivative, so we have $d_t S + H(q^i(t), p_i(t)) = 0$. $H$ is a known function and the equations of motion yield known functions $q^i(t), p_i(t)$, so we have $d_t S + F(t) = 0$ which can be integrated, perhaps on a computer. We then know $S$ along the family of trajectories we have computed. This is a specific example of the *method of characteristics*. The process of turning the wave equation into an equation of Hamilton-Jacobi type, and then solving the katter via the method of characteristics, is a specific example of *ray tracing*. A similar procedure for exlectromagnetic waves, for example, moving through a medium with variable index of refraction, yields the geometric optics approximation, where the individual ``rays" are the characteristics of an associated Hamilton-Jacobi-like approximation to the full wave equation. 
 
 A simple example is the case of the free particle, for which 
 ```{math}
