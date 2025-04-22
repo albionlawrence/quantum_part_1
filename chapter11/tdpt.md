@@ -1,0 +1,3 @@
+# Time dependent perturbation theory
+
+Time dependent perturbation theory is a study of the time-dependent Schroedinger equation in the presence of some perturbation. Unlike TIPT, the questions we ask are no typically "what is the actual energy eigenstate of the full system". Rather, they are of teh form "let us say I have a system with Hamiltonian $H_0$, which is initially i nan eigenstate of $H_0$. I turn on a perturbation $\eps V$. What is the probability that the system will make a transition to another eigenstate of $H_0$? If you like, you can imagine turning the perturbation on at $t = 0$ and off when the measurement is made, though there are cases of interest where this is not an option (such as an atom interacting with the electromagnetic field).
