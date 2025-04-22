@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Vector spaces &#8212; Physics 162</title>
+    <title>Quantization of the electromagnetic field &#8212; Physics 162</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"], "cO": ["\\mathcal{O}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter3/Vector_spaces';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter13/em_field';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Linear operators" href="Linear_operators.html" />
-    <link rel="prev" title="Linear algebra" href="Intro_linear_algebra.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="Identical Particles" href="identical_particles.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,11 +186,11 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter2/Intro_quantum.html">Introduction to quantum mechanics</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Intro_linear_algebra.html">Linear algebra</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Vector spaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Linear_operators.html">Linear operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Adjoint.html">Adjoints and inner products</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Operator_spectra.html">Spectra of Hermitian and Unitary Operators</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/Intro_linear_algebra.html">Linear algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Vector_spaces.html">Vector spaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Linear_operators.html">Linear operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Adjoint.html">Adjoints and inner products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Operator_spectra.html">Spectra of Hermitian and Unitary Operators</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter4/Quantum_rules.html">The Rules of Quantum Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -241,6 +241,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/tipt.html">Time-independent perturbation theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/variational.html">The Variational Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="second_quantization.html">Identical Particles and Second Quantization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Quantization of the electromagnetic field</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -299,7 +305,7 @@
       
       
       
-      <li><a href="../_sources/chapter3/Vector_spaces.md" target="_blank"
+      <li><a href="../_sources/chapter13/em_field.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +389,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Vector spaces</h1>
+    <h1>Quantization of the electromagnetic field</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -393,13 +399,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subspaces">Subspaces</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence">Linear independence</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimension-of-a-vector-space">Dimension of a vector space</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-classical-electromagnetic-field">The classical electromagnetic field</a></li>
 </ul>
             </nav>
         </div>
@@ -411,140 +411,34 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="vector-spaces">
-<h1>Vector spaces<a class="headerlink" href="#vector-spaces" title="Link to this heading">#</a></h1>
-<section id="definition">
-<h2>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
-<p>We will consider complex vector spaces but let us start with a bit of generality so that we can compare them to more familiar real vector spaces. Consider <span class="math notranslate nohighlight">\(\mathbb{F} = \mathbb{R}\)</span> or <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>. (Actually the following works for many <em>filds</em> whjich includes the rational numbers, integers modulo <span class="math notranslate nohighlight">\(p\)</span>, and so forth). A <em>vector space over</em> <span class="math notranslate nohighlight">\(\mathbb{F}\)</span> also called “real” and “complex” vector spaces for <span class="math notranslate nohighlight">\(F = \mathbb{R},\mathbb{C}\)</span> respectively, is a set <span class="math notranslate nohighlight">\(V\)</span> of elements <span class="math notranslate nohighlight">\(\ket{v}\)</span> with the following properties:</p>
-<ol class="arabic simple">
-<li><p><strong>Vector addition</strong>. For all <span class="math notranslate nohighlight">\(\ket{v},\ket{w}\in V\)</span> there is a notion of addition <span class="math notranslate nohighlight">\(\ket{v} +  \ket{w} \in V\)</span> wuth the following properties:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Addition is <em>commutative</em>: <span class="math notranslate nohighlight">\(\ket{v} + \ket{w} = \ket{w} + \ket{v}\)</span>.</p></li>
-<li><p>Addition is *associative. If there is a third vector <span class="math notranslate nohighlight">\(\ket{y} \in V\)</span>,</p></li>
-</ul>
-<div class="math notranslate nohighlight" id="equation-add-assoc">
-<span class="eqno">(141)<a class="headerlink" href="#equation-add-assoc" title="Link to this equation">#</a></span>\[(\ket{v} + \ket{w}) + \ket{y} = \ket{v} + (\ket{w} + \ket{y})\]</div>
-<ul class="simple">
-<li><p>a zero vector <span class="math notranslate nohighlight">\(\ket{0}\in V\)</span> exists such that <span class="math notranslate nohighlight">\(\ket{v} + \ket{0} = \ket{v}\)</span>.</p></li>
-</ul>
-<ol class="arabic simple" start="2">
-<li><p><strong>Scalar multiplication</strong>. For all <span class="math notranslate nohighlight">\(a \in \mathbb{F}\)</span>, <span class="math notranslate nohighlight">\(\ket{v} \in V\)</span>, there is a notion of scalar multiplication such that <span class="math notranslate nohighlight">\(a\ket{v} \in V\)</span> with the following properties:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Multiplication is <em>associative</em>: For all <span class="math notranslate nohighlight">\(b \in \mathbb{F}\)</span>, <span class="math notranslate nohighlight">\(a(b\ket{v}) = (ab)\ket{v}\)</span>, where <span class="math notranslate nohighlight">\(ab\)</span> is the standard mjultiplication of numbers in <span class="math notranslate nohighlight">\(\mathbb{F}\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(1\ket{v} = \ket{v}\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(0 \ket{v} = \ket{0}\)</span>.</p></li>
-</ul>
-<ol class="arabic simple" start="3">
-<li><p>Distributive properties</p></li>
-</ol>
-<ul class="simple">
-<li><p>For all <span class="math notranslate nohighlight">\(a\in \mathbb{F}\)</span>, <span class="math notranslate nohighlight">\(\ket{v},\ket{w} \in V\)</span>,</p></li>
-</ul>
-<div class="math notranslate nohighlight" id="equation-distributive-mult">
-<span class="eqno">(142)<a class="headerlink" href="#equation-distributive-mult" title="Link to this equation">#</a></span>\[a\left(\ket{v} + \ket{w}\right) = a \ket{v} + b \ket{w}\]</div>
-<ul class="simple">
-<li><p>for all <span class="math notranslate nohighlight">\(a,b \in \mathbb{F}\)</span>, <span class="math notranslate nohighlight">\(\ket{v} \in V\)</span>,</p></li>
-</ul>
-<div class="math notranslate nohighlight" id="equation-distributive-add">
-<span class="eqno">(143)<a class="headerlink" href="#equation-distributive-add" title="Link to this equation">#</a></span>\[(a + b)\ket{v} = a\ket{v} + b \ket{v}\]</div>
-<p>From these rules we can also deduce the existence of an <em>additive inverse</em>: for enery <span class="math notranslate nohighlight">\(\ket{v} \in V\)</span>, there exists a vector <span class="math notranslate nohighlight">\(\ket{-v} \in V\)</span> such that <span class="math notranslate nohighlight">\(\ket{v} + \ket{-v} = \ket{0}\)</span>. This can be seen bu construction: set <span class="math notranslate nohighlight">\(\ket{-v} = (-1) \ket{v}\)</span>. Then</p>
-<div class="math notranslate nohighlight" id="equation-additive-inverse">
-<span class="eqno">(144)<a class="headerlink" href="#equation-additive-inverse" title="Link to this equation">#</a></span>\[\ket{v} + \ket{-v} = \ket{v} + (-1) \ket{v} = (1 + (-1) \ket{v} = 0 \ket{v} = \ket{0}\]</div>
-<p>Note that I have not yet introduced any notion ofthe length of a vector, whetehr two vectors are orthogonal, and so on. As we will see, this requires som eadditional structure.</p>
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
-<p>Theer are a number of more and less familiar examples.</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span>, the space of <span class="math notranslate nohighlight">\(n\)</span>-component column vectors</p></li>
-</ol>
+  <section class="tex2jax_ignore mathjax_ignore" id="quantization-of-the-electromagnetic-field">
+<h1>Quantization of the electromagnetic field<a class="headerlink" href="#quantization-of-the-electromagnetic-field" title="Link to this heading">#</a></h1>
+<p>A proof of the spin-statistics theorem is beyond what we can do in this course – it is typically not taught even in a standard QFT course, though one usually sees some additional arguments for it. However, the statistics emerge naturally from the quantization of <em>fields</em>. This is something I think everybody needs to see, so I will close by quantizing the electromagnetic field. It is not quite the simplest example, but it leads to some important applications.</p>
+<p>Another way to approach this subject (particularly for massive particles) is called <em>second quantization</em>. It is equivalent to field quantization, but the starting point is to <em>assume</em> single-particle states, built multiparticle states as in the last section, and then assume that the full Hilbert space has the structure</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\ket{v} = \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix}\end{split}\]</div>
-<p>with <span class="math notranslate nohighlight">\(c_k \in \mathbb{C}\)</span>. We define vector addition and scalar multiplication in the usual way:</p>
-<div class="math notranslate nohighlight" id="equation-cn-addition">
-<span class="eqno">(145)<a class="headerlink" href="#equation-cn-addition" title="Link to this equation">#</a></span>\[\begin{split}\begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix} + \begin{pmatrix} d_1 \\ d_2 \\ \vdots \\ d_n \end{pmatrix} = \begin{pmatrix} c_1+ d_1 \\ c_2+d_2 \\ \vdots \\ c_n+d_n \end{pmatrix}\end{split}\]</div>
-<div class="math notranslate nohighlight" id="equation-cn-mult">
-<span class="eqno">(146)<a class="headerlink" href="#equation-cn-mult" title="Link to this equation">#</a></span>\[\begin{split}a \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix} = \begin{pmatrix} a c_1 \\ a c_2 \\ \vdots \\ a c_n \end{pmatrix}\end{split}\]</div>
-<p>for any <span class="math notranslate nohighlight">\(a \in \mathbb{C}\)</span>.</p>
-<p>Note we can do ths same with <span class="math notranslate nohighlight">\(c_k, d_k \in \mathbb{R}\)</span>: then we have a real vector space. Here the zero vector is defined by <span class="math notranslate nohighlight">\(c_k = 0\)</span>.</p>
-<ol class="arabic simple" start="2">
-<li><p>The space of <span class="math notranslate nohighlight">\(n\times n\)</span> complex-valued matrices <span class="math notranslate nohighlight">\(M_n(\mathbb{C})\)</span>. Addition and scalar multiplication are just matrix addition and scalar miltiplication (for <span class="math notranslate nohighlight">\(M \in M_n\)</span>, <span class="math notranslate nohighlight">\(aM\)</span> is elementwise multiplication by <span class="math notranslate nohighlight">\(a\)</span>.</p></li>
-<li><p>Degree-<span class="math notranslate nohighlight">\(n\)</span> polynomials over <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>:</p></li>
-</ol>
-<div class="math notranslate nohighlight" id="equation-degree-n">
-<span class="eqno">(147)<a class="headerlink" href="#equation-degree-n" title="Link to this equation">#</a></span>\[\ket{a_0,\ldots a_n} = a_0 + a_1 x + a_2 x^2 + \ldots a_n x^n\]</div>
-<p>with addition and scalar multiplication working in the standard way. Note that this is clearly equivalent to <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span>. Note also that there is no reason for <span class="math notranslate nohighlight">\(n\)</span> to be finite – we could work with the space of <em>all</em> polynomials.</p>
-<ol class="arabic simple" start="3">
-<li><p>Complex functions on an interval: let <span class="math notranslate nohighlight">\(x \in [0,1]\)</span>. The set of all functions <span class="math notranslate nohighlight">\(\psi(x)\)</span> forms a vector space under the standard addition and scalar multiplication of functions if we choose the right boundary conditions. These boundary conditions yield vector spaces:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Dirichlet <span class="math notranslate nohighlight">\(\psi(0) = \psi(1) = 0\)</span>.</p></li>
-<li><p>Neumann <span class="math notranslate nohighlight">\(\psi'(0) = \psi'(1) = 0\)</span></p></li>
-<li><p>Periodic <span class="math notranslate nohighlight">\(\psi(0) = \psi(1)\)</span> (so <span class="math notranslate nohighlight">\(\psi\)</span> is a function on a circle).
-However, the boundary condition <span class="math notranslate nohighlight">\(\psi(0) = a\)</span>, <span class="math notranslate nohighlight">\(\psi(1) = b\)</span> for nonzero <span class="math notranslate nohighlight">\(a,b \in \mathbb{C}\)</span> is not a vector space under standard addition of functions: the sum of two such functions does not satisfy the required boundary conditions and so is not in <span class="math notranslate nohighlight">\(V\)</span>.</p></li>
-</ul>
-<ol class="arabic simple" start="4">
-<li><p>Coplex square-integrable functions on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>: that is, functions <span class="math notranslate nohighlight">\(\psi(x)\)</span> for <span class="math notranslate nohighlight">\(x\in \mathbb{R}\)</span> such that</p></li>
-</ol>
-<div class="math notranslate nohighlight" id="equation-square-int">
-<span class="eqno">(148)<a class="headerlink" href="#equation-square-int" title="Link to this equation">#</a></span>\[\int_{-\infty}^{\infty} dx |\psi(x)|^2 &lt; \infty\]</div>
-</section>
-<section id="subspaces">
-<h2>Subspaces<a class="headerlink" href="#subspaces" title="Link to this heading">#</a></h2>
-<p>A set <span class="math notranslate nohighlight">\(M \subset V\)</span> is a <em>vector subspace</em> if it is a vector space under the same laws for addition and svcalar multiplication. A standard example is any plane through the origin, such as <span class="math notranslate nohighlight">\(V = \mathbb{C}^3\)</span>,</p>
-<div class="math notranslate nohighlight" id="equation-cthree-subspace">
-<span class="eqno">(149)<a class="headerlink" href="#equation-cthree-subspace" title="Link to this equation">#</a></span>\[\begin{split}M = \left\{ \begin{pmatrix} c_1 \\ c_2 \\ 0 \end{pmatrix} \forall c_i \in \mathbb{C} \right\}\end{split}\]</div>
-<p>Similarly, any complex line through the origin, defined as the set of vectors</p>
-<div class="math notranslate nohighlight" id="equation-complex-line">
-<span class="eqno">(150)<a class="headerlink" href="#equation-complex-line" title="Link to this equation">#</a></span>\[\begin{split}a \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix}\end{split}\]</div>
-<p>for fixed <span class="math notranslate nohighlight">\(c_k\in \mathbb{C}^n\)</span> and all <span class="math notranslate nohighlight">\(a \in \mathbb{C}^n\)</span>.</p>
-<p>A counterexample is any complex line that does not run through the origin, defined as the set of all vectors</p>
-<div class="math notranslate nohighlight" id="equation-affine-line">
-<span class="eqno">(151)<a class="headerlink" href="#equation-affine-line" title="Link to this equation">#</a></span>\[\begin{split}a \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix} + \begin{pmatrix} d_1 \\ d_2 \\ \vdots \\ d_n \end{pmatrix} \end{split}\]</div>
-<p>with <span class="math notranslate nohighlight">\(c_k,d_k\)</span> fixed and the same for all vectors in this space, and <span class="math notranslate nohighlight">\(a\)</span> any complex number. It is clear that the sum of two vectors is a different vector, if there is at least one <span class="math notranslate nohighlight">\(d_k \neq 0\)</span>.</p>
-</section>
-<section id="linear-independence">
-<h2>Linear independence<a class="headerlink" href="#linear-independence" title="Link to this heading">#</a></h2>
-<p><strong>Definition</strong>. A set of vectors <span class="math notranslate nohighlight">\(\ket{v_1},\ldots,\ket{v_m} \in V\)</span> is <em>linearly independent</em> if</p>
-<div class="math notranslate nohighlight" id="equation-lin-indep-def">
-<span class="eqno">(152)<a class="headerlink" href="#equation-lin-indep-def" title="Link to this equation">#</a></span>\[\sum_{i = 1}^m a_k \ket{v_k} = 0 \Leftrightarrow a_k = 0 \forall\ $k = 1,\ldots,n\]</div>
-<p>Let us give some examples.</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\mathbb{C}^3\)</span>. These vectors are linearly independent:</p></li>
-</ol>
+\[\cO = \cH_{no\ particles} \oplus \cH_{1\ particle} \oplus \cH_{2\ particles} \oplus \cdots\]</div>
+<p>One can then include interaction terms which allow for changes in the number of particles through absorbption and decay. This is called “second quantization” because it is built on the “first-quantized” Hilbert space of single particles. This is often a useful starting point, but we will work a different way that makes clear that we can get all of this from standard quantization applied to a <em>field</em>.</p>
+<section id="the-classical-electromagnetic-field">
+<h2>The classical electromagnetic field<a class="headerlink" href="#the-classical-electromagnetic-field" title="Link to this heading">#</a></h2>
+<p>Recall that we can write the electromagnetic field in terms of a vector and scalar potential:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}\ ; \ \ \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}\ ; \ \ \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}\end{split}\]</div>
-<p>Similarly these ar elinearly independent:</p>
+\[\begin{split}\begin{align}
+{\vec E} &amp; = {\vec\nabla} \phi + \frac{1}{c} \frac{\del}{\del t} {\vec A}\\
+{\vec B} &amp; = {\vec\nabla}\times{\vec A}
+\end{align}\end{split}\]</div>
+<p>This form automatically yields half of Maxwell’s equations:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}\ ; \ \ \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}\ ; \ \ \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}\end{split}\]</div>
-<p>However, these three are not:</p>
+\[\begin{split}\begin{align}
+{\vec\nabla}\cdot {\vec B} &amp; = 0\\
+\frac{1}{c} \frac{\del}{\del t} {\vec B} - {\vec\nabla} \times{\vec E} &amp; = 0
+\end{align}\end{split}\]</div>
+<p>The other two of Maxwell’s equations follow from the Euler-Lagrange equations associated to the following action:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}\ ; \ \ \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}\ ; \ \begin{pmatrix} 1/2 \\ 1/2 \\ 1 \end{pmatrix}\end{split}\]</div>
-<p>as we can see because</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix} + \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix} - 2 \begin{pmatrix} 1/2 \\ 1/2 \\ 1 \end{pmatrix} = 0\end{split}\]</div>
-<ol class="arabic simple" start="2">
-<li><p>In the space of functions on the interval <span class="math notranslate nohighlight">\([0,1]\)</span> satisfying periodic boundary conditions, the vectors</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[\ket{n} = \sin\left(\frac{n\pi x}{L}\right)\]</div>
-<p>are linearly independent. Similarly, for <span class="math notranslate nohighlight">\(n\)</span>th order polynomials, the monomials <span class="math notranslate nohighlight">\(\ket{k} = x^k\)</span> are a linearly independent set of <span class="math notranslate nohighlight">\(n\)</span>th order polynomials.</p>
-<section id="dimension-of-a-vector-space">
-<h3>Dimension of a vector space<a class="headerlink" href="#dimension-of-a-vector-space" title="Link to this heading">#</a></h3>
-<p><strong>Definition</strong>: the <em>dimension</em> of a vector space <span class="math notranslate nohighlight">\(V\)</span> is the maximum number of linearly independent vectors in <span class="math notranslate nohighlight">\(V\)</span>. Any such maximal collection is called a <em>basis</em>.</p>
-<p><strong>Theorem</strong>: Given a basis <span class="math notranslate nohighlight">\(\ket{k}\)</span>, <span class="math notranslate nohighlight">\(k = 1,\ldots,n\)</span>, then for any vector <span class="math notranslate nohighlight">\(\ket{v}\)</span> there is a unique set of complex numbers <span class="math notranslate nohighlight">\(a_{k - 1,\ldots,n\)</span> such that</p>
-<div class="math notranslate nohighlight" id="equation-use-of-basis">
-<span class="eqno">(153)<a class="headerlink" href="#equation-use-of-basis" title="Link to this equation">#</a></span>\[\sum_{k = 1}^n a_k \ket{k} \]</div>
-<p><em>Proof</em>. Assume the contrary, that</p>
-<div class="math notranslate nohighlight" id="equation-basis-contrary">
-<span class="eqno">(154)<a class="headerlink" href="#equation-basis-contrary" title="Link to this equation">#</a></span>\[\ket{v} = \sum_{k = 1}^n a_k \ket{k} = \sum_{k = 1}^n b_k \ket{k}\]</div>
-<p>for <span class="math notranslate nohighlight">\(a_k,b_k \in \mathbb{C}\)</span> different numbers. The point is that if this is true,</p>
-<div class="math notranslate nohighlight" id="equation-add-fakes">
-<span class="eqno">(155)<a class="headerlink" href="#equation-add-fakes" title="Link to this equation">#</a></span>\[\ket{0} = \ket{v} - \ket{v} = \sum_{k = 1}^n a_k \ket{k} - \sum_{k = 1}^n b_k \ket{k} = \sum_{k = 1}^n (a_k + b_k)\ket{k}\]</div>
-<p>but this cannot be zero of <span class="math notranslate nohighlight">\(a_k,b_k\)</span> differ in any way, so we have a contradiction to our supposition. Thus <span class="math notranslate nohighlight">\(a_k = b_k\)</span>.</p>
-</section>
+\[\begin{split}\begin{align}
+S &amp; = \frac{1}{8\pi} \int dt \int d^3 x \left[{\vec E}^2 - {\vec B}^2\right]\\
+&amp; =  \frac{1}{8\pi} \int dt \int d^3 x \left[\left( {\vec\nabla} \phi + \frac{1}{c} \frac{\del}{\del t} {\vec A}\right)^2 - ({\vec\nabla}\times{\vec A})^2\right]
+\end{align}\end{split}\]</div>
+<p>The important point is that to get the equations of motion (the remaining two Maxwell equations), we demand stationarity under variations of <span class="math notranslate nohighlight">\(\phi, {\vec A}\)</span>: clearly directly varying <span class="math notranslate nohighlight">\({\vec E}, {\vec B}\)</span> would just yield trivial equations!</p>
 </section>
 </section>
 
@@ -561,7 +455,7 @@ However, the boundary condition <span class="math notranslate nohighlight">\(\ps
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapter3"
+            path: "./chapter13"
         },
         predefinedOutput: true
     }
@@ -579,20 +473,20 @@ However, the boundary condition <span class="math notranslate nohighlight">\(\ps
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Intro_linear_algebra.html"
+       href="identical_particles.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Linear algebra</p>
+        <p class="prev-next-title">Identical Particles</p>
       </div>
     </a>
     <a class="right-next"
-       href="Linear_operators.html"
+       href="../appendix.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linear operators</p>
+        <p class="prev-next-title">Appendix</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -612,13 +506,7 @@ However, the boundary condition <span class="math notranslate nohighlight">\(\ps
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subspaces">Subspaces</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence">Linear independence</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimension-of-a-vector-space">Dimension of a vector space</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-classical-electromagnetic-field">The classical electromagnetic field</a></li>
 </ul>
   </nav></div>
 

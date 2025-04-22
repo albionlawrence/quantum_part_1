@@ -1,0 +1,35 @@
+# Quantization of the electromagnetic field
+
+A proof of the spin-statistics theorem is beyond what we can do in this course -- it is typically not taught even in a standard QFT course, though one usually sees some additional arguments for it. However, the statistics emerge naturally from the quantization of *fields*. This is something I think everybody needs to see, so I will close by quantizing the electromagnetic field. It is not quite the simplest example, but it leads to some important applications.
+
+Another way to approach this subject (particularly for massive particles) is called *second quantization*. It is equivalent to field quantization, but the starting point is to *assume* single-particle states, built multiparticle states as in the last section, and then assume that the full Hilbert space has the structure
+```{math}
+\cO = \cH_{no\ particles} \oplus \cH_{1\ particle} \oplus \cH_{2\ particles} \oplus \cdots
+```
+One can then include interaction terms which allow for changes in the number of particles through absorbption and decay. This is called "second quantization" because it is built on the "first-quantized" Hilbert space of single particles. This is often a useful starting point, but we will work a different way that makes clear that we can get all of this from standard quantization applied to a *field*.
+
+## The classical electromagnetic field
+
+Recall that we can write the electromagnetic field in terms of a vector and scalar potential:
+```{math}
+\begin{align}
+{\vec E} & = {\vec\nabla} \phi + \frac{1}{c} \frac{\del}{\del t} {\vec A}\\
+{\vec B} & = {\vec\nabla}\times{\vec A}
+\end{align}
+```
+This form automatically yields half of Maxwell's equations:
+```{math}
+\begin{align}
+{\vec\nabla}\cdot {\vec B} & = 0\\
+\frac{1}{c} \frac{\del}{\del t} {\vec B} - {\vec\nabla} \times{\vec E} & = 0
+\end{align}
+```
+
+The other two of Maxwell's equations follow from the Euler-Lagrange equations associated to the following action:
+```{math}
+\begin{align}
+S & = \frac{1}{8\pi} \int dt \int d^3 x \left[{\vec E}^2 - {\vec B}^2\right]\\
+& =  \frac{1}{8\pi} \int dt \int d^3 x \left[\left( {\vec\nabla} \phi + \frac{1}{c} \frac{\del}{\del t} {\vec A}\right)^2 - ({\vec\nabla}\times{\vec A})^2\right]
+\end{align}
+```
+The important point is that to get the equations of motion (the remaining two Maxwell equations), we demand stationarity under variations of $\phi, {\vec A}$: clearly directly varying ${\vec E}, {\vec B}$ would just yield trivial equations!

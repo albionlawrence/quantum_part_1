@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Symmetries and conservation laws &#8212; Physics 162</title>
+    <title>Time-Dependent Perturbation Theory &#8212; Physics 162</title>
   
   
   
@@ -57,13 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"], "cO": ["\\mathcal{O}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter1/Symmetries';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter12/time_dependent_pt';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hamiltonian Mechanics" href="Hamilton.html" />
-    <link rel="prev" title="Constrained Lagrangian Systems" href="Constraints.html" />
+    <link rel="next" title="Identical Particles and Second Quantization" href="../chapter13/second_quantization.html" />
+    <link rel="prev" title="The WKBJ method" href="../chapter11/wkbj.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,12 +175,12 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Intro_Classical.html">Classical Mechanics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Newton.html">Newtonian mechanics.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Lagrange.html">Lagrangian Mechanics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Constraints.html">Constrained Lagrangian Systems</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Symmetries and conservation laws</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Hamilton.html">Hamiltonian Mechanics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Newton.html">Newtonian mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Lagrange.html">Lagrangian Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Constraints.html">Constrained Lagrangian Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Symmetries.html">Symmetries and conservation laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Hamilton.html">Hamiltonian Mechanics</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter2/Intro_quantum.html">Introduction to quantum mechanics</a></li>
@@ -243,6 +241,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Time-Dependent Perturbation Theory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -299,7 +302,7 @@
       
       
       
-      <li><a href="../_sources/chapter1/Symmetries.md" target="_blank"
+      <li><a href="../_sources/chapter12/time_dependent_pt.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -370,9 +373,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -383,23 +384,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Symmetries and conservation laws</h1>
+    <h1>Time-Dependent Perturbation Theory</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-cyclic-coordinates">Example: cyclic coordinates</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noether-s-theorem">Noether’s theorem</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples.</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -409,86 +398,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="symmetries-and-conservation-laws">
-<h1>Symmetries and conservation laws<a class="headerlink" href="#symmetries-and-conservation-laws" title="Link to this heading">#</a></h1>
-<p>Consider a Lagrangian <span class="math notranslate nohighlight">\(L(q^I, \dot{q}^I)\)</span>. A <em>symmetry</em> is a transformation</p>
-<div class="math notranslate nohighlight" id="equation-gen-transf">
-<span class="eqno">(63)<a class="headerlink" href="#equation-gen-transf" title="Link to this equation">#</a></span>\[q^I \to (q^I)'(q^I)\]</div>
-<p>such that</p>
-<div class="math notranslate nohighlight" id="equation-symmetry-condition">
-<span class="eqno">(64)<a class="headerlink" href="#equation-symmetry-condition" title="Link to this equation">#</a></span>\[L(q^I, \dot{q}^I) = L((q^I)', (\dot{q}^I)') + \frac{d\Lambda(q,\dot q)}{dt}\]</div>
-<p>where <span class="math notranslate nohighlight">\((\dot{q}^I)' = \frac{d}{dt} (q^I)'\)</span>. The last term in <a class="reference internal" href="#equation-gen-transf">(63)</a> is a total derivative; thus (as one can see by studying the resulting action) it does not contribute to the equations of motion.</p>
-<p>In other words, the action is invariant up to a boundary term.</p>
-<section id="example-cyclic-coordinates">
-<h2>Example: cyclic coordinates<a class="headerlink" href="#example-cyclic-coordinates" title="Link to this heading">#</a></h2>
-<p>The simplest example is a Lagrangian which does not even depend on soem subset of the coordinates, only their velocities. Consider <span class="math notranslate nohighlight">\(L(q^I, \dot{q}^I)\)</span> to be independent of <span class="math notranslate nohighlight">\(q^k\)</span> for some <span class="math notranslate nohighlight">\(k\)</span> (but <em>still depend on</em> <span class="math notranslate nohighlight">\(\dot{q}^k\)</span>). Then the transformation <span class="math notranslate nohighlight">\(q^k \to (q^k)' = q^k + \alpha\)</span> for <span class="math notranslate nohighlight">\(\alpha\)</span> a constant real number. Clearly <span class="math notranslate nohighlight">\(\dot{q}^k\)</span> is invariant, so the entire Lagrangian is. We call <span class="math notranslate nohighlight">\(q^k\)</span> a <em>cyclic coordinate</em>.</p>
-<p>What does this mean for the equations of motion? Well, we know that</p>
-<div class="math notranslate nohighlight" id="equation-cyclic-force">
-<span class="eqno">(65)<a class="headerlink" href="#equation-cyclic-force" title="Link to this equation">#</a></span>\[{\cal F}_k = \frac{\del L}{\del q^k} = 0\]</div>
-<p>The Euler-Lagrange equations for <span class="math notranslate nohighlight">\(q^k\)</span> become:</p>
-<div class="math notranslate nohighlight" id="equation-cyclic-el">
-<span class="eqno">(66)<a class="headerlink" href="#equation-cyclic-el" title="Link to this equation">#</a></span>\[\dot{p}^k = \frac{\del L}{\del \dot{q}^k} = 0\]</div>
-<p>In other words, the generalized momentum <span class="math notranslate nohighlight">\(p^k\)</span> is <em>conserved</em>.</p>
-<p>Some examples:</p>
-<ol class="arabic simple">
-<li><p>Consider <span class="math notranslate nohighlight">\(L = \half m(\dot{x}^2 + \dot{y}^2 + \dot{z}^2) - V(x,y)\)</span>. Then <span class="math notranslate nohighlight">\(z\)</span> is a cyclic coordinate, and the momentum <span class="math notranslate nohighlight">\(p_z = m \dot{z}\)</span> is conserved, as a result of invariance of the action under translations in teh <span class="math notranslate nohighlight">\(z\)</span> direction.</p></li>
-<li><p>A particle in polar coordinates in a central force, <span class="math notranslate nohighlight">\(L = \half m (\dot{r}^2 + r^2 \dot{\phi}^2) - V(r)\)</span>. We studied this last time; the cyclic coordinate is <span class="math notranslate nohighlight">\(\phi\)</span> and the conserved conjugate momentum os <span class="math notranslate nohighlight">\(p_{\phi} = m r^2 \dot{\phi}\)</span> which is the angular momentum. Thus, invariance under rotations implies the conservation of angular momentum.</p></li>
-</ol>
-<p>These suggest a more general story to which we now turn.</p>
-</section>
-<section id="noether-s-theorem">
-<h2>Noether’s theorem<a class="headerlink" href="#noether-s-theorem" title="Link to this heading">#</a></h2>
-<p>Noether’s theorem applies to <em>continuous</em> symmetries, that is, to a continuous family of transformations <span class="math notranslate nohighlight">\((q^I)' = (q^I)'(q^I\ ; \alpha)\)</span> where <span class="math notranslate nohighlight">\(\alpha\)</span> is some real parameter and <span class="math notranslate nohighlight">\((q^I)'(q^I\ ; 0) = q^I\)</span>. Noether showed that every such famikly of symmetries implied a <em>conservation law</em>.</p>
-<p>We will provide a constuctive proof. Let <span class="math notranslate nohighlight">\((q^I)' = q^I + \delta q^I\)</span>. If this transformation is a symmetry, then</p>
-<div class="math notranslate nohighlight" id="equation-trans-lag">
-<span class="eqno">(67)<a class="headerlink" href="#equation-trans-lag" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-L(q^I, + \delta q^I, \dot{q}^I + \delta \dot{q}^I) &amp; = L(q^I \dot{q}^I) + frac{d\Lambda}{dt} \\
-= L(q^I, \dot{q}^I) + \delta q^I \frac{\del L}{\del q^I} + \delta \dot{q}^I \frac{\del L}{\del \dot{q}^I} + {\cal O}(\delta q^2)
-\end{align}\end{split}\]</div>
-<p>Working to first order in <span class="math notranslate nohighlight">\(\delta q\)</span>, the fact that this is a symmetry means that</p>
-<div class="math notranslate nohighlight" id="equation-constructing-conserved-q">
-<span class="eqno">(68)<a class="headerlink" href="#equation-constructing-conserved-q" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-\delta q^I \frac{\del L}{\del q^I} + \delta \dot{q}^I \frac{\del L}{\del \dot{q}^I} &amp; = \frac{d\Lambda}{dt}\\
-&amp; = \delta q^I \frac{\del L}{\del q^I} + \frac{d}{dt} \left(\delta q^I \frac{\del L}{\del \dot{q}^I}\right) - \delta q^I \frac{d}{dt} \frac{\del L}{\del \dot{q}^I}
-\end{align}\end{split}\]</div>
-<p>Now the first and last terms on the second line are just <span class="math notranslate nohighlight">\(\delta q^I\)</span> times the Euler-Lagrange equations, and so vanish if <span class="math notranslate nohighlight">\(q^I\)</span>(t)$ satisfies the classical equations of motion. When it does, we are left with</p>
-<div class="math notranslate nohighlight" id="equation-noether-charge-cons">
-<span class="eqno">(69)<a class="headerlink" href="#equation-noether-charge-cons" title="Link to this equation">#</a></span>\[\frac{d}{dt} \left(\delta q^I \frac{\del L}{\del \dot{q}^I} - \Lambda\right) = \frac{d}{dt} \left(\delta q^I p_I - \Lambda\right) = 0\]</div>
-<p>Thus we have a <em>conserved charge</em>, sometimes called a *Noether charge,</p>
-<div class="math notranslate nohighlight" id="equation-noerther-charge">
-<span class="eqno">(70)<a class="headerlink" href="#equation-noerther-charge" title="Link to this equation">#</a></span>\[Q = \delta q^I p_I - \Lambda\]</div>
-<p>for every infinitesimal symmetry transformation <span class="math notranslate nohighlight">\(q \to q + \delta q\)</span>.</p>
-<section id="examples">
-<h3>Examples.<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>We have given two classic examples in the discussion above, of linear and angular momentum, and I invite the student to show that the charges <span class="math notranslate nohighlight">\(Q\)</span> associated to translational and rotational invariance lead to the same conserved quantities.</p></li>
-<li><p>Similarly, one can work in Cartesian coordinates with the infinitesimal rotation
-<span class="math notranslate nohighlight">\(x \to \cos\epsilon x - \sin \epsilon y\)</span> and <span class="math notranslate nohighlight">\(y \to \cos \epsilon y + \sin \epsilon x\)</span>. For infinitesimal <span class="math notranslate nohighlight">\(\epsilon\)</span>, <span class="math notranslate nohighlight">\(\delta x = - \epsilon y\)</span> and <span class="math notranslate nohighlight">\(\delta y = \epsilon x\)</span>. For the Lagrangian <span class="math notranslate nohighlight">\(L = \half m (\dot{x}^2 + \dot{y}^2) = V(\sqrt{x^2 + y^2})\)</span>, which is clearly invariant under rotations, the associated Noether charge is</p></li>
-</ol>
-<div class="math notranslate nohighlight" id="equation-rot-noether">
-<span class="eqno">(71)<a class="headerlink" href="#equation-rot-noether" title="Link to this equation">#</a></span>\[Q = \delta x p_x + \delta y p_y = - y p_x + x p_y = L\]</div>
-<p>where <span class="math notranslate nohighlight">\(L\)</span> is the angular momentum in Cartesioan coordinates. I leave it to the student to show that this is the same as the generalized momentum <span class="math notranslate nohighlight">\(p_{\phi}\)</span> dreived in polar coordinates.</p>
-<ol class="arabic simple" start="3">
-<li><p>Another important symmetry is <em>time translation invariance</em>; the symmetry is a shift <span class="math notranslate nohighlight">\(t \to t + \eps\)</span>. Consider a Lagrangian which is explicitly time-independent. Then</p></li>
-</ol>
-<div class="math notranslate nohighlight" id="equation-time-shift">
-<span class="eqno">(72)<a class="headerlink" href="#equation-time-shift" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-L(q(t + \eps), \dot{q}(t + \eps)) &amp; = L(q + \eps \dot{q}, \dot{q} + \eps \ddot{q}) \\
-&amp; = L(q,\dot{q}) + \eps \left[\dot{q}^I \frac{\del L}{\del q^I} + \ddot{q}^I \frac{\del L}{\del \dot{q}^I}\right]\\
-&amp; = L + \eps \frac{d}{dt} L(q,\dot{q})
-\end{align}\end{split}\]</div>
-<p>The conserved quantity is thus</p>
-<div class="math notranslate nohighlight" id="equation-tt-conserved">
-<span class="eqno">(73)<a class="headerlink" href="#equation-tt-conserved" title="Link to this equation">#</a></span>\[Q = \eps (\dot{q}^I p_I - L)\]</div>
-<p>The quantity <span class="math notranslate nohighlight">\(H - \dot{q}^I p_I - L\)</span> is known as the <em>Hamiltonian</em> and the energy can be defined as the value of this Hamiltonian. As an example, for <span class="math notranslate nohighlight">\(L = \half m \dot{\vec{x}}^2 - V({\vec x})\)</span>, the Hamiltonian is clearly</p>
-<div class="math notranslate nohighlight" id="equation-simplest-h">
-<span class="eqno">(74)<a class="headerlink" href="#equation-simplest-h" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
-H &amp; = \dot{\vec x} \cdot \vec{p} - \half m \dot{\vec{x}}^2 + V({\vec x})\\
-&amp; = \frac{1}{2m}{\vec p}^2 + V
-\end{align}\end{split}\]</div>
-<p>where in the final line we used <span class="math notranslate nohighlight">\(\vec{p} = m\dot{\vec{x}}\)</span>. In this case <span class="math notranslate nohighlight">\(H\)</span> is clearly the kinetic plus potential energy. More generally, we <em>define</em> <span class="math notranslate nohighlight">\(H\)</span> as the energy of the system, and so the conservation of energy is a consequence of invariance under time translation.</p>
-</section>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="time-dependent-perturbation-theory">
+<h1>Time-Dependent Perturbation Theory<a class="headerlink" href="#time-dependent-perturbation-theory" title="Link to this heading">#</a></h1>
+<p>To be written</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -504,7 +416,7 @@ H &amp; = \dot{\vec x} \cdot \vec{p} - \half m \dot{\vec{x}}^2 + V({\vec x})\\
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapter1"
+            path: "./chapter12"
         },
         predefinedOutput: true
     }
@@ -522,20 +434,20 @@ H &amp; = \dot{\vec x} \cdot \vec{p} - \half m \dot{\vec{x}}^2 + V({\vec x})\\
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Constraints.html"
+       href="../chapter11/wkbj.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Constrained Lagrangian Systems</p>
+        <p class="prev-next-title">The WKBJ method</p>
       </div>
     </a>
     <a class="right-next"
-       href="Hamilton.html"
+       href="../chapter13/second_quantization.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Hamiltonian Mechanics</p>
+        <p class="prev-next-title">Identical Particles and Second Quantization</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -545,25 +457,6 @@ H &amp; = \dot{\vec x} \cdot \vec{p} - \half m \dot{\vec{x}}^2 + V({\vec x})\\
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-cyclic-coordinates">Example: cyclic coordinates</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noether-s-theorem">Noether’s theorem</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples.</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

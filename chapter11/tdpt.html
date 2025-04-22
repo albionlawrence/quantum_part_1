@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Time-independent perturbation theory &#8212; Physics 162</title>
+    <title>Time dependent perturbation theory &#8212; Physics 162</title>
   
   
   
@@ -62,8 +62,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter11/tdpt';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix" href="../appendix.html" />
-    <link rel="prev" title="Approximation schemes for eigenvalues" href="approximate_evals.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -175,7 +175,7 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/Newton.html">Newtonian mechanics.</a></li>
@@ -237,8 +237,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter10/hydrogen_spectra.html">Bound state spectra for the Coulomb problem</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="approximate_evals.html">Approximation schemes for eigenvalues</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Time-independent perturbation theory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="approximate_evals.html">Approximation schemes for eigenvalues</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="tipt.html">Time-independent perturbation theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variational.html">The Variational Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -368,9 +370,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -381,22 +381,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Time-independent perturbation theory</h1>
+    <h1>Time dependent perturbation theory</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-perturbation-theory-non-degenerate">First order perturbation theory (non-degenerate)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-anharmonic-oscillator">Example: anharmonic oscillator</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -406,75 +395,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="time-independent-perturbation-theory">
-<h1>Time-independent perturbation theory<a class="headerlink" href="#time-independent-perturbation-theory" title="Link to this heading">#</a></h1>
-<p>The basic setup is simple. We consider Hamiltonians of the form</p>
-<div class="math notranslate nohighlight">
-\[H = H_0 + \eps H_1\]</div>
-<p>where <span class="math notranslate nohighlight">\(\eps \ll 1\)</span>. Here we are assuming that the matrix elements of <span class="math notranslate nohighlight">\(H_1\)</span> are of the same order or smaller than those of <span class="math notranslate nohighlight">\(H_0\)</span>. We wish to solve the time-independent Schroedinger equation <span class="math notranslate nohighlight">\(H \ket{\psi} = E \ket{\psi}\)</span> when the solutions for <span class="math notranslate nohighlight">\(H_0\)</span> are known. We will also assume that the spectra of <span class="math notranslate nohighlight">\(H_0\)</span> are discrete. States in the regime with continuous spectra require a different treatment via scattering theory.</p>
-<p>Since the eigenvalues and eigenvectors <span class="math notranslate nohighlight">\(\ket{n}\)</span>, <span class="math notranslate nohighlight">\(E_n\)</span> should be those of <span class="math notranslate nohighlight">\(H_0\)</span> as <span class="math notranslate nohighlight">\(\eps \to 0\)</span>, we make the following assumptions about the true eigenvalues and eigenvectors.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-E &amp; = E^{(0)}_n + \eps E^{(1)}_n + \eps^2 E^{(2)}_n + \ldots\\
-\ket{n} &amp; = \ket{n^{(0)}} + \eps \ket{n^{(1)}} + \eps^2 \ket{n^{(2)}} + \ldots 
-\end{align}\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(H_0 \ket{n^{(0)}} = E^{(0)}_n\)</span>, and the eigenvectors are taken to be orthonormal. We then write</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}H\ket{n} &amp; = (H_0 + \eps H_1) \left( \ket{n^{(0)}} + \eps \ket{n^{(1)}} + \eps^2 \ket{n^{(2)}} + \ldots\right)\\
-&amp;= E\ket{n}\\
-&amp; = \left( E^{(0)}_n + \eps E^{(1)}_n + \eps^2 E^{(2)}_n + \ldots\right)\left(\ket{n^{(0)}} + \eps \ket{n^{(1)}} + \eps^2 \ket{n^{(2)}} + \ldots\right)\end{split}\]</div>
-<p>We then demand that this equation be solved order by order in <span class="math notranslate nohighlight">\(\eps\)</span>. The solution at order <span class="math notranslate nohighlight">\(\eps^n\)</span> is known as <span class="math notranslate nohighlight">\(n\)</span>th order perturbation theory.</p>
-<section id="first-order-perturbation-theory-non-degenerate">
-<h2>First order perturbation theory (non-degenerate)<a class="headerlink" href="#first-order-perturbation-theory-non-degenerate" title="Link to this heading">#</a></h2>
-<p>The <span class="math notranslate nohighlight">\(\eps^0\)</span> terms cancel by supposition. At <span class="math notranslate nohighlight">\(\cO(\eps)\)</span>, the terms are:</p>
-<div class="math notranslate nohighlight">
-\[H_1 \ket{n^{(0)}} + H_0 \ket{n^{(1)}} = E^1_n \ket{n^{(0)}} + E^0_n \ket{n^{(1)}}\]</div>
-<p>We first take the inner product of this equation with <span class="math notranslate nohighlight">\(\bra{n^{(0)}\)</span>, and find</p>
-<div class="math notranslate nohighlight">
-\[\bra{n^{(0)}}H_1\ket{n^{(0)}} + E^0_n \brket{n^{(0)}}{n^{(1)}} = E^1_n + E^0_n \brket{n^{(0)}}{n^{(1)}}\]</div>
-<p>or</p>
-<div class="math notranslate nohighlight" id="equation-first-order-e-correction">
-<span class="eqno">(322)<a class="headerlink" href="#equation-first-order-e-correction" title="Link to this equation">#</a></span>\[E^1_n = \bra{n^{(0)}}H_1\ket{n^{(0)}}\]</div>
-<p>Next, we take the inner product with <span class="math notranslate nohighlight">\(\bra{m^{(0)}}\)</span> for <span class="math notranslate nohighlight">\(m \neq n\)</span>. Then we have</p>
-<div class="math notranslate nohighlight">
-\[\bra{m^{(0)}} H_1 \ket{n^{(0)}} + E^0_m \brket{m^{(0)}}{n^{(0)}} = E^0_n \brket{m^{(0)}}{n^{(1)}}\]</div>
-<p>or</p>
-<div class="math notranslate nohighlight">
-\[ \brket{m^{(0)}}{n^{(1)}} = \frac{\bra{m^{(0)}} H_1 \ket{n^{(0)}}}{E^0_m - E^0_n}\]</div>
-<p>We can see that this fails if <span class="math notranslate nohighlight">\(E^0_n\)</span> is a degenerate eigenvalue, as there will be terms in the above expression with vanishing denominator. We will turn to this case later, and instead assume that there is no degeneracy. The techniques we explore here are called <em>non-degenerate perturbation theory</em>.</p>
-<p>Now <span class="math notranslate nohighlight">\(\ket{m^{(0)}}\)</span> is a complete basis in the Hilbert space, as <span class="math notranslate nohighlight">\(H_0\)</span> is a Hermitian operator. To find <span class="math notranslate nohighlight">\(\ket{n^{(1)}}\)</span>, we will need to know <span class="math notranslate nohighlight">\(\brket{n^{(0)}}{n^{(1)}}\)</span>. I will demand that <span class="math notranslate nohighlight">\(\brket{n^{(0)}}{n} = 1\)</span>, which is not yet the standard normalization. We can rescale <span class="math notranslate nohighlight">\(\ket{n}\)</span> after our calculation, but computig its norm and then dividing <span class="math notranslate nohighlight">\(\ket{n}\)</span> by it. The upshot is that since <span class="math notranslate nohighlight">\(\brket{n^{(0)}}{n^{(0)}} = 1\)</span>, and <span class="math notranslate nohighlight">\(\ket{n} = \ket{n^{(0)}} + \ldots\)</span>, all corrections to <span class="math notranslate nohighlight">\(\ket{n^{(0)}}\)</span> will be orthogonal to <span class="math notranslate nohighlight">\(\ket{n^{(0)}}\)</span>.</p>
-<p>Given this, and that <span class="math notranslate nohighlight">\(\sum_n \ket{n^{(0)}}\bra{n^{(0)}} = 1\)</span>, we have</p>
-<div class="math notranslate nohighlight" id="equation-fo-state">
-<span class="eqno">(323)<a class="headerlink" href="#equation-fo-state" title="Link to this equation">#</a></span>\[\ket{n^{(1)}} = \sum_{m\neq n} \frac{\ket{m^{(0)}} \bra{m^{(0)}} H_1 \ket{n^{(0)}}}{E_m^0 - E_n^0}\]</div>
-<section id="example-anharmonic-oscillator">
-<h3>Example: anharmonic oscillator<a class="headerlink" href="#example-anharmonic-oscillator" title="Link to this heading">#</a></h3>
-<p>The classic example is the anharmonic quantum oscillator:</p>
-<div class="math notranslate nohighlight">
-\[H = \frac{p^2}{2m} + \half m \omega^2 x^2 + \frac{\lambda}{4!} x^4\]</div>
-<p>We will do perturbation series with the parameter <span class="math notranslate nohighlight">\(\lambda\)</span>. You should be objecting that this isn’t quite right. <span class="math notranslate nohighlight">\(\lambda\)</span> has dimensions of <span class="math notranslate nohighlight">\((energy)/(length)^4\)</span>. As a dimensionful paraneter one cannot technically call it “small”. But we can combine this with the parameters of the unperturbed Hamiltonian to make a small parameter. For example, we know that we have a length scale</p>
-<div class="math notranslate nohighlight">
-\[L = \sqrt{\frac{\hbar}{m\omega}} \]</div>
-<p>and an energy scale <span class="math notranslate nohighlight">\({\cal E} = \hbar\omega\)</span>. So by dimensional analysis, the combination</p>
-<div class="math notranslate nohighlight">
-\[\eps = \frac{\lambda L^4}{{\cal E}} = \frac{\hbar \lambda}{m^2\omega^3}\]</div>
-<p>is a likely perturbation parameter. We will see that this does in fact control the correction terms in perturbation theory.</p>
-<p>The correction to the energy <span class="math notranslate nohighlight">\(E^{(0)}_k = \hbar\omega(k + \half)\)</span> in this case is taken from <a class="reference internal" href="#equation-first-order-e-correction">(322)</a>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-E^{(1)}_k &amp; = \bra{k^{(0)}} \lambda x^4 \ket{k^{(0)}}\\
-&amp; = \lambda L^4  \bra{k^{(0)}}(a + a^{\dagger})^4 \ket{k^{(0)}}\\
-&amp; = \lambda L^4 (6 k^2 + 6k + 3)
-\end{align}\end{split}\]</div>
-<p>Now for <span class="math notranslate nohighlight">\(k \sim {\cal O}(1)\)</span>, the ratio of this to the energy gap <span class="math notranslate nohighlight">\(\hbar \omega\)</span> is <span class="math notranslate nohighlight">\(\sim k^2 \eps\)</span>, confirming our point above. furthermore, note that once <span class="math notranslate nohighlight">\(k^2 \sim 1/\eps\)</span>, this correction is no longer small. This is a general feature of perturbation theory; it only works for low energies.</p>
-<p>Similarly the first order correction to the state <a class="reference internal" href="#equation-fo-state">(323)</a> gives:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-\ket{k^{(1)}} &amp; = \sum_{\ell \neq k} \frac{\lambda L^4 \ket{\ell^{(0)}} (a + a^{\dagger})^4\ket{k^{(0)}}}{\hbar\omega (\ell - k)}\\
-&amp; = \eps  \sum_{\ell \neq k} \frac{\ket{\ell^{(0)}} (a + a^{\dagger})^4\ket{k^{(0)}}}{\ell - k}
-\end{align}\end{split}\]</div>
-<p>We can see again how the dimensionless parameter <span class="math notranslate nohighlight">\(\eps\)</span> appears. The numerator is straightforward but tedious to evaluate. <span class="math notranslate nohighlight">\((a + a^{\dagger})^4\)</span> clearly connects the level <span class="math notranslate nohighlight">\(k\)</span> to the levels in the range <span class="math notranslate nohighlight">\(\ell \in \{k-4, k-2,k+2,k+4\}\)</span> (you should think about why <span class="math notranslate nohighlight">\(k - 1, k-3\)</span> do not appear). So the ratio will scale with <span class="math notranslate nohighlight">\(k^2\)</span>, and again if <span class="math notranslate nohighlight">\(\eps k^2 \sim \cO(1)\)</span>, perturbation theory will start to break down.</p>
-</section>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="time-dependent-perturbation-theory">
+<h1>Time dependent perturbation theory<a class="headerlink" href="#time-dependent-perturbation-theory" title="Link to this heading">#</a></h1>
+<p>Time dependent perturbation theory is a study of the time-dependent Schroedinger equation in the presence of some perturbation. Unlike TIPT, the questions we ask are no typically “what is the actual energy eigenstate of the full system”. Rather, they are of teh form “let us say I have a system with Hamiltonian <span class="math notranslate nohighlight">\(H_0\)</span>, which is initially i nan eigenstate of <span class="math notranslate nohighlight">\(H_0\)</span>. I turn on a perturbation <span class="math notranslate nohighlight">\(\eps V\)</span>. What is the probability that the system will make a transition to another eigenstate of <span class="math notranslate nohighlight">\(H_0\)</span>? If you like, you can imagine turning the perturbation on at <span class="math notranslate nohighlight">\(t = 0\)</span> and off when the measurement is made, though there are cases of interest where this is not an option (such as an atom interacting with the electromagnetic field).</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -507,48 +430,12 @@ E^{(1)}_k &amp; = \bra{k^{(0)}} \lambda x^4 \ket{k^{(0)}}\\
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="approximate_evals.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Approximation schemes for eigenvalues</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../appendix.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-perturbation-theory-non-degenerate">First order perturbation theory (non-degenerate)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-anharmonic-oscillator">Example: anharmonic oscillator</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
