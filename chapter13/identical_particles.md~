@@ -1,0 +1,9 @@
+# Identical Particles
+
+## Generalities
+
+We start with the Hilbert space of $N$ particles each of which are described by the same degrees of freedom. The Hilbert space is the $N$-fold tensor product of the one-parrticle Hilbert space $\CH$:
+```{math}
+\cH_N = \cH \otimes \cH \otimes\ldots \CH \equiv \cH^{\otimes N}
+```
+

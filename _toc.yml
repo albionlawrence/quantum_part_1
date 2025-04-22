@@ -62,6 +62,11 @@ chapters:
     - file: chapter11/tipt
     - file: chapter11/variational
     - file: chapter11/wkbj
+  - file: chapter12/time_dependent_pt
+  - file: chapter13/second_quantization
+    sections:
+    - file: chapter13/identical_particles
+    - file: chapter13/em_field
   - file: appendix
   - file: bibliography
 # - file: notebooks

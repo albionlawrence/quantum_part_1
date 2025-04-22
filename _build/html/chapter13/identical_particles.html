@@ -1,0 +1,608 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Identical Particles &#8212; Physics 162</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"], "cO": ["\\mathcal{O}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter13/identical_particles';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="prev" title="Identical Particles and Second Quantization" href="second_quantization.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/Carl_Eckart.jpg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/Carl_Eckart.jpg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Physics 162a <br /> Prof. Albion Lawrence <br />  Brandeis University</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter0/Overview.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/Intro_Classical.html">Classical Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Newton.html">Newtonian mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Lagrange.html">Lagrangian Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Constraints.html">Constrained Lagrangian Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Symmetries.html">Symmetries and conservation laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/Hamilton.html">Hamiltonian Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Intro_quantum.html">Introduction to quantum mechanics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/Intro_linear_algebra.html">Linear algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Vector_spaces.html">Vector spaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Linear_operators.html">Linear operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Adjoint.html">Adjoints and inner products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/Operator_spectra.html">Spectra of Hermitian and Unitary Operators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter4/Quantum_rules.html">The Rules of Quantum Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/Axioms.html">The Axioms of Quantum Mechanics.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/Spin_half.html">Example: spin-1/2 particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/entangled.html">Entangled states and density matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/bell.html">Local Realism vs. Quantum Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/Wave_mechanics.html">Wave mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/infinite_d.html">Particles on a line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/compatible_measurements.html">Compatible and incompatible measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/Hamiltonians.html">Designing Hamiltonians</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/wave_equation.html">The Schroedinger wave function and its dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/dynamics_1.html">Dynamics I</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/Interlude_1.html">Interlude: two interesting systems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/aharonov-bohm.html">The Aharonov-Bohm effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/neutrino_oscillations.html">Neutrino oscillations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter7/Wave_examples.html">Examples of nonrelativistic quantum particle dynamics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/free_particle.html">The free nonrelativistic particle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/square_well.html">The 1d square well</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/sho.html">The simple harmonic oscillator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/twostate_models.html">Two-state systems as phenomenological models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/1d_scattering.html">One-dimensional scattering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/periodic_potentials.html">Periodic potentials</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter8/FPI.html">The Feynman Path Integral</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter9/rotation_group.html">The Rotation Group in Quantum Mechanics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/transformations.html">Transformations and symmetries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/rotations.html">The Rotation Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/representations_rotations.html">Representations of the rotation group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/orbital_am.html">Orbital Angular Momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/addition_am.html">Addition of Angular Momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter9/tensor_operators.html">Tensor operators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/hydrogen.html">The Hydrogen Atom</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/two_particle_reduction.html">Reduction of the Two-Body Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/hydrogen_spectra.html">Bound state spectra for the Coulomb problem</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/approximate_evals.html">Approximation schemes for eigenvalues</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/tipt.html">Time-independent perturbation theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/variational.html">The Variational Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="second_quantization.html">Identical Particles and Second Quantization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Identical Particles</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter13/identical_particles.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Identical Particles</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalities">Generalities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-consequences">Some consequences</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="identical-particles">
+<h1>Identical Particles<a class="headerlink" href="#identical-particles" title="Link to this heading">#</a></h1>
+<section id="generalities">
+<h2>Generalities<a class="headerlink" href="#generalities" title="Link to this heading">#</a></h2>
+<p>We start with the Hilbert space of <span class="math notranslate nohighlight">\(N\)</span> particles each of which are described by the same degrees of freedom. The Hilbert space is the <span class="math notranslate nohighlight">\(N\)</span>-fold tensor product of the one-particle Hilbert space <span class="math notranslate nohighlight">\(\cH\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\cH_N = \cH \otimes \cH \otimes\ldots \cH \equiv \cH^{\otimes N}\]</div>
+<p>Now we consider the action of the permutation group <span class="math notranslate nohighlight">\(S_N\)</span> on this space. Recall that a permutation <span class="math notranslate nohighlight">\(\sigma \in S_N\)</span> shuffles</p>
+<div class="math notranslate nohighlight">
+\[	\sigma: (1,2,3,\ldots,N) \to (\sigma(1),\sigma(2),\ldots,\sigma(N))\]</div>
+<p>Thus, for example, <span class="math notranslate nohighlight">\(S_3\)</span> consists of the six permutations</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}
+\sigma_1 : &amp; (1,2,3) &amp; \to (1,2,3) \\
+\sigma_2 : &amp; &amp;  \to (2,3,1) \\
+\sigma_3 : &amp; &amp; \to (3,1,2) \\
+\sigma_4 : &amp; &amp; \to (1,3,2) \\
+\sigma_5 : &amp; &amp; \to (3,2,1) \\ 
+\sigma_6 : &amp; &amp; \to (2,1,3)
+\end{array}\end{split}\]</div>
+<p>Note that we are including the identity here. For a state</p>
+<div class="math notranslate nohighlight">
+\[\ket{\psi} = \sum_{1_1,\ldots,i_N} c_{i_1,\ldots,i_N}\ket{\psi_{i_1}}\ldots\ket{\psi_{i_N}} \in \cH_N\]</div>
+<p>a given permutation acts as</p>
+<div class="math notranslate nohighlight">
+\[\sigma: \ket{\psi} \to  \sum_{1_1,\ldots,i_N} c_{i_1,\ldots,i_N}\ket{\psi_{i_\sigma(1)}}\ldots\ket{\psi_{i_\sigma(N)}}\]</div>
+<p>which makes sense because each factor of <span class="math notranslate nohighlight">\(cH_N\)</span> is the identical Hilbert space <span class="math notranslate nohighlight">\(\cH\)</span>. This is a linear operator if we take</p>
+<div class="math notranslate nohighlight">
+\[\sigma: a \ket{\psi} + b \ket{\chi} \to a \sigma(\ket{\psi}) + b \sigma(\ket{\chi})\]</div>
+<p>For <span class="math notranslate nohighlight">\(N \geq 3\)</span>, <span class="math notranslate nohighlight">\(S_N\)</span> is a complicated, non-Abelian group with <span class="math notranslate nohighlight">\(N!\)</span> elements and a number of multidimensional irreps. The detailed structure of the group and its irreps is a mathematically interesting and important exercise that we will sadly forgo (this is an application of <em>Young Tableaux</em>: see for example <span id="id1">[<a class="reference internal" href="../markdown.html#id16" title="L.D. Landau and E.M. Lifshitz. Quantum Mechanics: Non-Relativistic Theory. Course of theoretical physics. Butterworth-Heinemann, 1991. ISBN 9780750635394. URL: https://books.google.com/books?id=J9ui6KwC4mMC.">Landau and Lifshitz, 1991</a>]</span>, <span id="id2">[<a class="reference internal" href="../markdown.html#id15" title="H. Georgi. Lie Algebras In Particle Physics: from Isospin To Unified Theories. Frontiers in Physics. Avalon Publishing, 1999. ISBN 9780738202334. URL: https://books.google.com/books?id=p58_BAAAQBAJ.">Georgi, 1999</a>]</span>). We will simply note the following two facts. The first is that <em>any</em> element of <span class="math notranslate nohighlight">\(S_N\)</span> can be written as a sequence of pairwise permutations</p>
+<div class="math notranslate nohighlight">
+\[\sigma_{ij}: (1,\ldots,i,\ldots,j,\ldots,N) \to  (1,\ldots,j,\ldots,i,\ldots,N)\]</div>
+<p>We can furthermore classify such permutations as “even” or “odd” depending on the number of such pairwise permutations. Thus, in the <span class="math notranslate nohighlight">\(S_3\)</span> example above, <span class="math notranslate nohighlight">\(\sigma_{1,2,3}\)</span> (the cyclic permutations) are even while <span class="math notranslate nohighlight">\(\sigma_{4,5,6}\)</span> are odd.</p>
+<p>Let <span class="math notranslate nohighlight">\((-1)^{\sigma} = +1\)</span> for even permutations and <span class="math notranslate nohighlight">\(-1\)</span> for odd permutations. Two one-dimensional irreps are the totally symmetric wavefunctions</p>
+<div class="math notranslate nohighlight" id="equation-symm-rep">
+<span class="eqno">(335)<a class="headerlink" href="#equation-symm-rep" title="Link to this equation">#</a></span>\[\ket{\psi} = \sum_{\sigma\in S_N} \ket{\psi_{\sigma(1)}}\ket{\psi_{\sigma(2)}}\ldots \ket{\psi_{\sigma(N)}}\]</div>
+<p>and the totally antisymmetric wavefunctions</p>
+<div class="math notranslate nohighlight" id="equation-as-rep">
+<span class="eqno">(336)<a class="headerlink" href="#equation-as-rep" title="Link to this equation">#</a></span>\[\ket{\psi} = \sum_{\sigma\in S_N} (-1)^{\sigma} \ket{\psi_{\sigma(1)}}\ket{\psi_{\sigma(2)}}\ldots \ket{\psi_{\sigma(N)}}\]</div>
+<p>Note that, crucially, in the second case, <span class="math notranslate nohighlight">\(\ket{\psi} \neq 0\)</span> only if <span class="math notranslate nohighlight">\(\ket{\psi_i} \neq \ket{\psi_j}\)</span> for <em>all</em> <span class="math notranslate nohighlight">\(i \neq j\)</span>.</p>
+<p>Now consider the system <span class="math notranslate nohighlight">\(\cH_N\)</span> with a Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> that is symmetric under permutations: that is, for and <span class="math notranslate nohighlight">\(\sigma \in \cH\)</span>, <span class="math notranslate nohighlight">\([\sigma, H] = 0\)</span>.</p>
+<p>It is a nontrivial result of relativistic quantum field theory known as the <em>spin-statistics theorem</em> (but first conjectured by Pauli) that for any set of identivcal particles, the Hilbert space consists of either the subset of <span class="math notranslate nohighlight">\(cH_N\)</span> consisting of totally symmetric or totally antisymmetric wavefunctions, and that this is correlated with the spin of the particle. More precisely:</p>
+<ol class="arabic simple">
+<li><p>For particles with <em>integer spin</em> <span class="math notranslate nohighlight">\(j = 0,1,2,\ldots\)</span>, the Hilbert space <span class="math notranslate nohighlight">\(\cH \subset \cH_N\)</span> for <span class="math notranslate nohighlight">\(N\)</span> particles is the set of totally symmetric wavefunctions. Such particles are known as <em>bosons</em>.</p></li>
+<li><p>For particles with <em>half-integer spin</em> <span class="math notranslate nohighlight">\(j = \half, \frac{3}{2}, \frac{5}{2},\ldots\)</span>, the Hilbert space <span class="math notranslate nohighlight">\(\cH \subset \cH_N\)</span> is the subset of totally antisymmetric wavefunctions. Such particles are known as <em>fermions</em>.</p></li>
+</ol>
+<p>I have made this statement for three dimensions, and it persists in higher dimensions. In <span class="math notranslate nohighlight">\(d = 1,2\)</span> the rotation group is trivial and Abelian, respectively, and the quantization of spin is no longer obvious or necessary. For <span class="math notranslate nohighlight">\(d = 2\)</span> this leads to the important phenomenon of <em>fractional statistics</em>, important for the Fractional Quantum Hall Effect.</p>
+<p>Note that in the standard model of particle physics, the bosonic particles consiste of the “force carriers” – the photon, the W and Z bosons, and the gluons – as well as the Higgs boson (which mixes with teh W and Z bosons). The <em>matter</em> particles – electrons, quarks, and neutrinos – all have spin-<span class="math notranslate nohighlight">\(\half\)</span>. The neutrons and protons are bound states which themselves have spin-<span class="math notranslate nohighlight">\(\half\)</span>, and can thus be treated as fermions.</p>
+</section>
+<section id="some-consequences">
+<h2>Some consequences<a class="headerlink" href="#some-consequences" title="Link to this heading">#</a></h2>
+<p>This fact has far-reaching consequences for the structure of quantum matter. A particularly important consequence for fermions is the <em>Pauli exclusion principle</em>. That is, if in the state <span class="xref std std-ref">as_rep</span> <span class="math notranslate nohighlight">\(\ket{\psi_i} = \ket{\psi_j}\)</span> for any <span class="math notranslate nohighlight">\(i \neq j\)</span>, the wavefunction vanishes. Thus, no two particles can occupy the same one-particle state. Now atoms are made up of fermionic constituents, and most matter we observe is made up of atoms or these constituents, the Pauli exclusion principle is key to the stability of matter, the behavior of metals (with fermionic charge carriers), the structure of white dwarves and neutron stars (in the former one can consider the nuclei and electrons separately; in the latter the bulk of the star consists entirely of neutrons, though there is some speculation that the core of the star is made up of mode exotic matter that involves strange quarks). The Pauli principle helps stabilize these stars against gravitational collapse into a black hole.</p>
+<p>Before moving on we mention some simple examples. First, let us consider the simplest case ot two spin-<span class="math notranslate nohighlight">\(\half\)</span> particles. If spin is their <em>only</em> quantum number, the Hilbert space <span class="math notranslate nohighlight">\(\cH_{\half}\otimes\cH_{\half}  = \cH_{j = 1} \oplus \cH_{j = 0}\)</span>. Now in this presentation <span class="math notranslate nohighlight">\(\cH_{j = 1}\)</span> consists of states symmetric under the action of <span class="math notranslate nohighlight">\(S_2\)</span>, while <span class="math notranslate nohighlight">\(\cH_{j = 0}\)</span> consists of states that are totally antisymmetric under the action of <span class="math notranslate nohighlight">\(S_2\)</span>. The Pauli exclusion principle means that in this case, the state must lie in the <span class="math notranslate nohighlight">\(\cH_{j = 0}\)</span> subspace.</p>
+<p>If we include additional quantum numbers we have a different story. For example, assume the particles move in space and can have one of the two spatial wavefunctions <span class="math notranslate nohighlight">\(\ket{\psi_{i = 1,2}}\)</span>. A basis of one-particle states is then <span class="math notranslate nohighlight">\(\ket{\half,\pm\half}\ket{\psi_i}\)</span>. Then we are allowed the following states of the two-particler Hilbert space:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\sqrt{2}} \ket{j = 1, m}\left(\ket{\psi_1}\ket{\psi_2} - \ket{\psi_2}\ket{\psi_1}\right)\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\sqrt{2}} \ket{j = 0}\left(\ket{\psi_1}\ket{\psi_2} + \ket{\psi_2}\ket{\psi_1}\right)\]</div>
+<p>More generally, if our identical particles come with some quantum number – the eigenvalue of some linear operator – such that each particle has a distinct quantum number, we can think of these quantum numbers as labels; if the associated quantum numbers are conserved under the Hamiltonian, the labels do not change and we can consider the particles as <em>distinguishable</em>; if we keep these labels fixed and distinct, there is no restriction on the remaining quantum numbers in that we can have a situation where when we measure two particles with distinct labels, the spin, wavefunction, and so on can be completely correlated with these labels and can be identical so long as the labels are distinct.</p>
+<p>Let us consider the situation in which we have <span class="math notranslate nohighlight">\(N\)</span> noninteracting identical particles. That is, the Hamiltonian is <span class="math notranslate nohighlight">\(H = H\otimes{\bf 1}\cdots \otimes {\bf 1} + {\bf 1}\otimes H \cdots \otimes {\bf 1} + \ldots {\bf 1}\otimes{\bf 1} \cdots \otimes H\)</span>. This clearly commutes with permutations. How consider the orthonormal energy eigenbasis <span class="math notranslate nohighlight">\(\ket{E_{n = 1,2,3,\ldots}}\)</span> of the one-particle Hilbert space <span class="math notranslate nohighlight">\(\cH\)</span>, such that <span class="math notranslate nohighlight">\(E_1 \leq E_2 \leq E_3,\ldots\)</span>. If the state <span class="math notranslate nohighlight">\(\ket{E_0}\)</span> is non-degenerate, the ground state for bosons is clearly</p>
+<div class="math notranslate nohighlight">
+\[\ket{0_{bose}} = \ket{E_1}\ldots\ket{E_1}\]</div>
+<p>(if the particles have additional degrees of freedom such as spin which are conserved quantities, then this ground state will be degenerate). The total energy is then <span class="math notranslate nohighlight">\(N E_1\)</span>.</p>
+<p>For fermions, if there are no degeneracies,</p>
+<div class="math notranslate nohighlight">
+\[\ket{0_{fermi}} = \sum_{\sigma\in S_N} (-1)^{\sigma} \ket{E_{\sigma(1)}}\cdots\ket{E_{\sigma(N)}}\]</div>
+<p>The total energy here is <span class="math notranslate nohighlight">\(\sum_{k = 1}^N E_k\)</span>. Note that if the energy level <span class="math notranslate nohighlight">\(E_N\)</span> is degenerate, the Fermi gas will have degeneracies. As an example, assume that the single particles have spin-<span class="math notranslate nohighlight">\(\half\)</span> <em>and</em> that the Hamiltonian commutes with rotations. The one-particle Hamiltonian is thus degenerate. Let us say that each energy eigenstate has only the two-fold degeneracy corresponding to the state of the spin. For an even total number <span class="math notranslate nohighlight">\(N = 2M\)</span> of such particles, the ground state is nondegenerate and has energy <span class="math notranslate nohighlight">\(E_0 = 2 \sum_{k = 1}^M E_k\)</span>. If we have an odd number of particles <span class="math notranslate nohighlight">\(N = 2M + 1\)</span>, the system has a two-fold degeneracy corresponding to one particle having energy <span class="math notranslate nohighlight">\(E_{M + 1}\)</span> and either spin state. The total energy is <span class="math notranslate nohighlight">\(E_0 = 2 \sum_{k = 1}^M E_k + E_{M + 1}\)</span>. In these cases, the largest singkle-particle energy in the ground state is known as the <em>Fermi energy</em>. Typically, the lowest-lyig excitations consists of exciting the most energetic single particle to a state just higher than the Fermi energy. for example, consider an even number <span class="math notranslate nohighlight">\(2M\)</span> of spin-<span class="math notranslate nohighlight">\(\half\)</span> fermions confined to one dimension and living in a potential well with potential energy <span class="math notranslate nohighlight">\(V = \half m \omega^2 x^2\)</span>. The ground state is nondegenerate with energy</p>
+<div class="math notranslate nohighlight">
+\[E_0 = 2 \hbar\omega \sum_{k = 1}^M (k - \half) = \hbar \omega M^2\]</div>
+<p>The first excited state has a two-fold degeneracy, with energy <span class="math notranslate nohighlight">\(E = \hbar \omega (M^2 + 1)\)</span> (you should think about why this is true).</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter13"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="second_quantization.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Identical Particles and Second Quantization</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendix.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalities">Generalities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-consequences">Some consequences</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Albion Lawrence
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
