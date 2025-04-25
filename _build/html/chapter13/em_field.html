@@ -427,8 +427,8 @@ document.write(`
 {\vec B} &amp; = {\vec\nabla}\times{\vec A}
 \end{align}\end{split}\]</div>
 <p>This form automatically yields half of Maxwell’s equations:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
+<div class="math notranslate nohighlight" id="equation-bianchi-ident">
+<span class="eqno">(337)<a class="headerlink" href="#equation-bianchi-ident" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 {\vec\nabla}\cdot {\vec B} &amp; = 0\\
 \frac{1}{c} \frac{\del}{\del t} {\vec B} - {\vec\nabla} \times{\vec E} &amp; = 0
 \end{align}\end{split}\]</div>
@@ -436,9 +436,32 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 S &amp; = \frac{1}{8\pi} \int dt \int d^3 x \left[{\vec E}^2 - {\vec B}^2\right]\\
-&amp; =  \frac{1}{8\pi} \int dt \int d^3 x \left[\left( {\vec\nabla} \phi + \frac{1}{c} \frac{\del}{\del t} {\vec A}\right)^2 - ({\vec\nabla}\times{\vec A})^2\right]
+&amp; =  \frac{1}{8\pi} \int dt \int d^3 x \left[\left( {\vec\nabla} \phi + \frac{1}{c} \frac{\del}{\del t} {\vec A}\right)^2 - ({\vec\nabla}\times{\vec A})^2\right]\\
+&amp; = \int dt L\\
+&amp; = \int dt d^3 x {\cal L}
 \end{align}\end{split}\]</div>
-<p>The important point is that to get the equations of motion (the remaining two Maxwell equations), we demand stationarity under variations of <span class="math notranslate nohighlight">\(\phi, {\vec A}\)</span>: clearly directly varying <span class="math notranslate nohighlight">\({\vec E}, {\vec B}\)</span> would just yield trivial equations!</p>
+<p>The important point is that to get the equations of motion (the remaining two Maxwell equations), we demand stationarity under variations of <span class="math notranslate nohighlight">\(\phi, {\vec A}\)</span>: clearly directly varying <span class="math notranslate nohighlight">\({\vec E}, {\vec B}\)</span> would just yield trivial equations!
+Nore here that the Lagrangian <span class="math notranslate nohighlight">\(L\)</span> is the spatial integral <span class="math notranslate nohighlight">\(\int d^3 x {\cal L}\)</span> of the {\it Lagrangian density} <span class="math notranslate nohighlight">\({\cal L}\)</span>. We can think of this as a collection of variables <span class="math notranslate nohighlight">\(\phi({\vec x}, t)\)</span>, <span class="math notranslate nohighlight">\({\vec A}({\vec x}, t)\)</span>, one for each point in space.</p>
+<p>We thus write <span class="math notranslate nohighlight">\(\phi = \phi_{cl} + \eps\delta\phi\)</span>, <span class="math notranslate nohighlight">\({\vec A} = {\vec A}_{cl} + \eps \delta{\vec A}\)</span>; expand</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+S &amp; = S_{cl}[\phi_{cl},{\vec A}_{cl} + \eps \int dt d^3 x \left[ \delta\phi \delta_{\phi} S + \delta A^i \cdot\delta_i S\right] + \cO(\eps^2)\\
+&amp; = S_{cl} + \eps S_1 + \cO(\eps^2)
+\end{align}\end{split}\]</div>
+<p>and demand <span class="math notranslate nohighlight">\(\delta_{\phi}S = \delta_i S = 0\)</span> to get equations for <span class="math notranslate nohighlight">\(\phi_{cl}, A^i_{cl}\)</span>.</p>
+<p>At first order,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+S_1 &amp; = \frac{1}{4\pi}\int dt d^3 x {\vec\nabla}\delta\phi\cdot\left({\vec \nabla} + \frac{1}{c}\frac{\del}{\del t} {\vec A}\right)\\
+&amp; = - \frac{1}{4\pi} \int dt d^3 x \delta\phi {\vec\nabla}\cdot{\vec E} + {\rm boundary\ terms}
+\end{align}\end{split}\]</div>
+<p>We will assume that the fields vanish at infinity so that the boundary terms vanish. The result is Gauss’ law without matter:</p>
+<div class="math notranslate nohighlight">
+\[{\vec \nabla} \cdot{\vec E} = 0\]</div>
+<p>We can do a similar calculation for the coefficient of <span class="math notranslate nohighlight">\(\delta A^i\)</span>: the result is Faraday’s law in the absence of currents:</p>
+<div class="math notranslate nohighlight">
+\[{\vec\nabla}\times{\vec B} - \frac{1}{c} \frac{\del {\vec E}}{\del t} = 0\]</div>
+<p>Note that when we couple to matter, these two equations get modified with source terms proportional to the charge density and current, respectively. The equations <span class="xref std std-ref">bianchi_ident</span> are, in this formalism, mathematical identities. The situation changes in the presence of magnetic charges, eg magnetic monopoles and the associated currents. These have not been observed (well, one might have been seen once), and are not required by the Standard Model of particle physics. Certain “beyond-the-standard-model” theories have them; in these electromagnetism is embedded in something much more complex. In the presence of such monopoles, one cannot globally write the electric and magnetic fields in terms of a scalar and vector potential; it is fair to say that a proper Lagrangian treatment that includes both kinds of chanrges remains an open problem.</p>
 </section>
 </section>
 
