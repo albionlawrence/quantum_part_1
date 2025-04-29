@@ -399,7 +399,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-classical-electromagnetic-field">The classical electromagnetic field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-classical-electromagnetic-field">The classical electromagnetic field</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-treatment">Lagrangian treatment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltonian-treatment">Hamiltonian treatment</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -420,6 +424,8 @@ document.write(`
 <p>One can then include interaction terms which allow for changes in the number of particles through absorbption and decay. This is called “second quantization” because it is built on the “first-quantized” Hilbert space of single particles. This is often a useful starting point, but we will work a different way that makes clear that we can get all of this from standard quantization applied to a <em>field</em>.</p>
 <section id="the-classical-electromagnetic-field">
 <h2>The classical electromagnetic field<a class="headerlink" href="#the-classical-electromagnetic-field" title="Link to this heading">#</a></h2>
+<section id="lagrangian-treatment">
+<h3>Lagrangian treatment<a class="headerlink" href="#lagrangian-treatment" title="Link to this heading">#</a></h3>
 <p>Recall that we can write the electromagnetic field in terms of a vector and scalar potential:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
@@ -432,6 +438,13 @@ document.write(`
 {\vec\nabla}\cdot {\vec B} &amp; = 0\\
 \frac{1}{c} \frac{\del}{\del t} {\vec B} - {\vec\nabla} \times{\vec E} &amp; = 0
 \end{align}\end{split}\]</div>
+<p>We note here that the vector and scalar potentials are redundant: if we shift them by the <em>gauge transformations</em></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+A_i &amp; \to a_i + p_i \Lambda \\
+\phi &amp; \to - \del_t \lambda 
+\end{align}\end{split}\]</div>
+<p>then the physical fields <span class="math notranslate nohighlight">\({\vec E}, {\vec B}\)</span> (those which apepar in the Lorentz force law and in Maxwell’s equations) are invariant. This will become important below.</p>
 <p>The other two of Maxwell’s equations follow from the Euler-Lagrange equations associated to the following action:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
@@ -462,6 +475,68 @@ S_1 &amp; = \frac{1}{4\pi}\int dt d^3 x {\vec\nabla}\delta\phi\cdot\left({\vec \
 <div class="math notranslate nohighlight">
 \[{\vec\nabla}\times{\vec B} - \frac{1}{c} \frac{\del {\vec E}}{\del t} = 0\]</div>
 <p>Note that when we couple to matter, these two equations get modified with source terms proportional to the charge density and current, respectively. The equations <span class="xref std std-ref">bianchi_ident</span> are, in this formalism, mathematical identities. The situation changes in the presence of magnetic charges, eg magnetic monopoles and the associated currents. These have not been observed (well, one might have been seen once), and are not required by the Standard Model of particle physics. Certain “beyond-the-standard-model” theories have them; in these electromagnetism is embedded in something much more complex. In the presence of such monopoles, one cannot globally write the electric and magnetic fields in terms of a scalar and vector potential; it is fair to say that a proper Lagrangian treatment that includes both kinds of chanrges remains an open problem.</p>
+</section>
+<section id="hamiltonian-treatment">
+<h3>Hamiltonian treatment<a class="headerlink" href="#hamiltonian-treatment" title="Link to this heading">#</a></h3>
+<p>We start by finding the conjugate momentum. We can consider the fields <span class="math notranslate nohighlight">\(\phi, {\vec A}\)</span> as collections of variables, one at each point <span class="math notranslate nohighlight">\({\vec x}\)</span>, and compute the associated cononical momentum. In this we can consider the position <span class="math notranslate nohighlight">\({\vec x}\)</span> as a kind of index. This is complicated by the indices being continuous, so that the analog of the Kronecker delta function is the Dirac delta function.</p>
+<p>We will adopt the definitions</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+p_{\phi} &amp; = \frac{\delta L}{\delta {\dot\phi}}\\
+p_{AI]} &amp; \equiv p_i =  \frac{\delta L}{\delta {\dot A}}({\vec x}, t)
+\end{align}\end{split}\]</div>
+<p>The right hand side of these are functional derivatives. Consider some Lagrangian</p>
+<div class="math notranslate nohighlight">
+\[L = \int d^3 x {\cal L}(\psi({\vec x}, t), {\dot\psi}({\vec x}, t))\]</div>
+<p>Write <span class="math notranslate nohighlight">\(\psi = \psi_0 + \delta\psi\)</span>, <span class="math notranslate nohighlight">\({\dot\psi} = {\dot\psi}_0 + \delta{\dot\psi}\)</span>. The functional derivatives with respect to <span class="math notranslate nohighlight">\(\psi, {\dot\psi}\)</span> can be written as:</p>
+<div class="math notranslate nohighlight">
+\[L =  \int d^3 x {\cal L}(\psi_0({\vec x}, t), {\dot\psi}_0({\vec x}, t)) + \int d^3 x \left[ \delta\psi \frac{\delta L}{\delta \psi}(psi_0,{\dot\psi}_0) + \delta{\dot\psi}   \frac{\delta L}{\delta {\dot\psi}}\right] + \cO(\delta^2)\]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+p_i &amp; = \frac{1}{4\pi c} \left(\frac{1}{c} {\dot A}^i + \del_i \phi\right)\\
+p_{\phi} &amp; = 0
+\end{align}\end{split}\]</div>
+<p>This second term is a constraint, which is intimately tied up with gauge invariance, and the fact that the vector and scalar potentials carry redundant information. It complicates writing down a Hamiltonian and associated Poisson brackets. Our solution. The general treatment of constrained Hamiltonian systems is an interesting one that we will have to leave aside; a nice review is in <span id="id1">[<a class="reference internal" href="../markdown.html#id17" title="Andrew J. Hanson, Tullio Regge, and Claudio Teitelboim. Constrained Hamiltonian Systems. Accademia Nazionale dei Lincei, 1976.">Hanson <em>et al.</em>, 1976</a>]</span> (I believe you can find PDFs online). It is also discussed in Weinberg’s quantum field theory book <span id="id2">[<a class="reference internal" href="../markdown.html#id18" title="Steven Weinberg. The Quantum theory of fields. Vol. 1: Foundations. Cambridge University Press, 6 2005. ISBN 978-0-521-67053-1, 978-0-511-25204-4. doi:10.1017/CBO9781139644167.">Weinberg, 2005</a>]</span>.</p>
+<p>At this point we will solve the constraint by “fixing a gauge”; that is, imposing a constraint on <span class="math notranslate nohighlight">\(A_i, \phi\)</span> so that the gauge redundancy is completely removed. We will find that when we solve for this constraint, we can recast the dynamics in terms of canonical variables with a familiar Hamiltonian, and quantize in the standard way.</p>
+<p>There are many gauges we can fix: we will choose the <em>Coulomb gauge</em></p>
+<div class="math notranslate nohighlight">
+\[{\vec\nabla}\cdot{\vec A} = 0\ , \ \ \phi = {\rm const.}\]</div>
+<p>My claim is that we can always find a gauge in which this holds. Given any cector potential <span class="math notranslate nohighlight">\({\vec A}\)</span>, define <span class="math notranslate nohighlight">\({\vec A}' = {\vec A} + {\vec\nabla}\Lambda\)</span>. Then <span class="math notranslate nohighlight">\({\vec A}'\)</span> will satisfy the Coulomb gauge condition if</p>
+<div class="math notranslate nohighlight">
+\[\nabla^2 \phi = - {\vec\nabla}\cdot{\vec A}\]</div>
+<p>But this is just the Poisson equation, which generally has a solution. Now, we consider the Gauss’ law</p>
+<div class="math notranslate nohighlight">
+\[{\vec \nabla} \cdot{\vec E} = \frac{1}{c}{\vec\nabla}\cdot\del_t {\vec A} + \nabla^2 \phi = 0\]</div>
+<p>The first term on the right hand side vanishes; the second term is Laplace’s equation. If there are no charges, we impose the boundary condition <span class="math notranslate nohighlight">\(\phi \to {\rm const.}\)</span> as <span class="math notranslate nohighlight">\(|{\vec x}| \to \infty\)</span>, guaranteeing the vanishing of the electric field. But then in a vacuum, the unique solution is <span class="math notranslate nohighlight">\(\phi = {\rm const.}\)</span> everywhere. (With this argument <span class="math notranslate nohighlight">\(\phi\)</span> could change with time; we could remove it with a time-dependent but spatially constant gauge transformation, although we usually demand that only gauge transformations suitably vanishing at infinity are true redundancies of the theory. At any rate this mode does not appear in the electric or magnetic fields, or in the Hamiltonian).</p>
+<p>We will start by writing the Hamiltonian for <span class="math notranslate nohighlight">\({\vec A}_i\)</span> without explicitly imposing <span class="math notranslate nohighlight">\({\vec\nabla}\cdot{\vec A} = 0\)</span> – we will solve for this constraint along the way, in such a way that the number of independent modes of <span class="math notranslate nohighlight">\(A_i, p_i\)</span> are the same. Keeping <span class="math notranslate nohighlight">\(\phi = 0\)</span> we simply write the Hamiltonian in the most boneheaded way possible:</p>
+<div class="math notranslate nohighlight">
+\[H = \int d^3 x \left[p_i(x,t) {\dot A}_i(x,t) - L(A_i, {\dot A}_i)\right] = \int d^3 x \left[ 2\pi c^2 (p_i)^2 + \frac{1}{8\pi}{\vec\nabla}\times{\vec A}\right]\]</div>
+<p>It turns out to be easier to impose Coulomb gauge after taking a Fourier transform. Writing</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+{\vec A}(x,t) &amp; = \int\frac{d^3 k}{(2\pi)^3} \left[{\vec{\tilde A}}(k,t)e^{i{\vec k}\cdot{\vec x}} + {\rm c.c.} \right]\\
+{\vec p}(x,t) &amp; = \int\frac{d^3 k}{(2\pi)^3} \frac{c|k|}{i}\left({\vec{\tilde A}}(k,t)e^{i{\vec k}\cdot{\vec x}} - {\rm c.c.} \right]
+\end{align}\end{split}\]</div>
+<p>These are the real and imahginary parts of a complex function, so they are completely independent. Now, to solve for the Coulomb gauge constraint, we note that</p>
+<div class="math notranslate nohighlight">
+\[{\vec\nabla} \cdot{\vec A} = \int\frac{d^3 k}{(2\pi)^3} \left[i {\vec k}\cdot{\vec{\tilde A}}(k,t)e^{i{\vec k}\cdot{\vec x}} - {\rm c.c.} \right]\]</div>
+<p>Thus, we must impose the condition <span class="math notranslate nohighlight">\({\vec k}\cdot{\vec{\tilde A}} = 0\)</span>. To do so, for each <span class="math notranslate nohighlight">\({\vec k}\)</span> we consider a two-dimensional basis of complex vectors <span class="math notranslate nohighlight">\({\vec \eps}^{a = 1,2}\)</span> satisfying <span class="math notranslate nohighlight">\({\vec k}\cdot{\vec \eps}^a = 0\)</span>, which are appropriately orthonormal <span class="math notranslate nohighlight">\(({\vec \eps}^a)^{\ast}\cdot{\vec \eps}^b = \delta^{ab}\)</span>. Given these, we write</p>
+<div class="math notranslate nohighlight">
+\[{\vec{\tilde A}}(k) = \sum_a {\vec\eps}^a A_a(k)\]</div>
+<p>We impose this on <span class="math notranslate nohighlight">\({\tilde A}\)</span> as it appears in both <span class="math notranslate nohighlight">\(A_i, p_i\)</span>. This would emerge from a more systematic treatment of constrained Hamiltonian systems; I will just assert here that it is the right thing to do.</p>
+<p>Next, we write the fields in a different linear combination. Defining <span class="math notranslate nohighlight">\(\omega = c|k|\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+A_a &amp; \equiv \sqrt{\frac{2\pi c^2}{\omega}} a_a\\
+Q_a &amp; \equiv \frac{1}{\sqrt{2\omega}}(a_a + a_a^*)\\
+P_a &amp; \equiv - i \sqrt{\frac{\omega}{2}}(a_a - a_a^*)
+\end{align}\end{split}\]</div>
+<p>With this redefinition,</p>
+<div class="math notranslate nohighlight">
+\[H = \sum_a \int \frac{d^3 k}{(2\pi)^3}\left(\half P_a P_a + \half \omega(k)^2 Q_a Q_a\right)\]</div>
+<p>We just have a set of simple harmonic oscillators!</p>
+</section>
 </section>
 </section>
 
@@ -529,7 +604,11 @@ S_1 &amp; = \frac{1}{4\pi}\int dt d^3 x {\vec\nabla}\delta\phi\cdot\left({\vec \
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-classical-electromagnetic-field">The classical electromagnetic field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-classical-electromagnetic-field">The classical electromagnetic field</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-treatment">Lagrangian treatment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltonian-treatment">Hamiltonian treatment</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
