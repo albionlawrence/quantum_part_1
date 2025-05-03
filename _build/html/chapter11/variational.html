@@ -446,15 +446,76 @@ document.write(`
 <section id="infinite-square-well">
 <h2>Infinite square well<a class="headerlink" href="#infinite-square-well" title="Link to this heading">#</a></h2>
 <p>We know how to solve this; the point is to see how well the variational technique works.</p>
+<p>We consider a 1d square well:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}V(x) = \begin{cases} \infty &amp; x \leq -L \\ 0 &amp; -L &lt; x &lt; L \\ \infty &amp; x \geq L \end{cases}\end{split}\]</div>
+<p>As a reminder, the ground state eigenfunction is</p>
+<div class="math notranslate nohighlight">
+\[\psi_n(x) = \frac{1}{\sqrt{L}} \cos\left(\frac{\pi x}{L}\right)\]</div>
+<p>and the energy is</p>
+<div class="math notranslate nohighlight">
+\[E_0 = \frac{\hbar^2\pi^2}{8 m L^2}\]</div>
+<p>Now let us pretend we didn’t know this. We do know that the wavefunction has to vanish for <span class="math notranslate nohighlight">\(|x| \geq L\)</span>, and that as a ground state it should have no nodes, and be parity even. We will throw caution to the wind and try</p>
+<div class="math notranslate nohighlight">
+\[\psi(x) = |L|^{\lambda} - |x|^{\lambda}\]</div>
+<p>A short computation yields</p>
+<div class="math notranslate nohighlight">
+\[\vev{E} = \frac{(\lambda + 1)(2\lambda + 1)}{2\lambda - 1} \frac{\hbar^2}{4 m^2 \eps^2}\]</div>
+<p>This is minimized when</p>
+<div class="math notranslate nohighlight">
+\[\lambda = \frac{1 + \sqrt{6}}{2} \sim 1.72\]</div>
+<p>for which</p>
+<div class="math notranslate nohighlight">
+\[\vev{A} = \frac{5 + 2\sqrt{6}}{\pi^2} E_0 \sim 1.003 E_0\]</div>
+<p>SO even with this ridiculous wavefunction we get <span class="math notranslate nohighlight">\(.3\%\)</span> accuracy.  Note that we also get the parametric dependence of <span class="math notranslate nohighlight">\(E\)</span> on <span class="math notranslate nohighlight">\(\hbar, m, L\)</span> (though dimensional analysis would have done the job in this case – you should convince yourself of this!).</p>
 </section>
 <section id="linear-potential">
 <h2>Linear potential<a class="headerlink" href="#linear-potential" title="Link to this heading">#</a></h2>
+<p>Next, consider the potential</p>
 <div class="math notranslate nohighlight">
 \[V(x) = g |x|\]</div>
-<p>Again this can be solved with Airy functions, but it is a pain and we can show that the variatoipnal method does well.</p>
+<p>This can be solved with Airy functions, but it is a pain and we can show that the variational method does well. The actual ground state energy is</p>
+<div class="math notranslate nohighlight">
+\[E_0 \sim .8086 \left(\frac{g^2 \hbar^2}{m}\right)\]</div>
+<p>Again, we demand parity symmetry, the lack of nodes, and normalizability (also of the expectation value of the Hamiltonian, since <span class="math notranslate nohighlight">\(V\)</span> grows linearly). A good trial wavefunction is</p>
+<div class="math notranslate nohighlight">
+\[\psi = \left(\frac{2\alpha}{\pi}\right)^{1/4} e^{-\alpha x^2}\]</div>
+<p>which we have selected to be properly normalized. The parameter <span class="math notranslate nohighlight">\(\alpha\)</span>, the width of the Gaussian, is what we will vary.</p>
+<p>Now</p>
+<div class="math notranslate nohighlight">
+\[\vev{E} = \int_{-\infty}^{\infty} dx \psi^*(x) \left[- \frac{\hbar^2}{2m} \frac{\del^2}{\del x^2} + g|x|\right) \psi(x) = \frac{\hbar^2\alpha}{2m} + \frac{g}{\sqrt{2\pi \alpha}\]</div>
+<p>The minimum is determined by</p>
+<div class="math notranslate nohighlight">
+\[\frac{\del \vev{E}}{\del \alpha} = \frac{\hbar^2}{2m} - \frac{g}{2\sqrt{2\pi} \alpha^{3/2}} \Rightarrow \alpha = \left(\frac{m g}{\sqrt{2\pi} \hbar^2}\right)^{2/3}\]</div>
+<p>Some algebra finally gives us</p>
+<div class="math notranslate nohighlight">
+\[\vev{E} = \frac{1}{\pi^{1/3}}\left(\frac{1}{2^{4/3}} + \frac{1}{2^{1/3}}\right)\left(\frac{g^2 \hbar^2}{m}\right)^{1/3} \sim .813 \left(\frac{g^2 \hbar^2}{m}\right)^{1/3}\]</div>
+<p>which is a <span class="math notranslate nohighlight">\(.5\%\)</span> error.</p>
 </section>
 <section id="helium-atom">
 <h2>Helium atom<a class="headerlink" href="#helium-atom" title="Link to this heading">#</a></h2>
+<p>Finally, a more realistic situation is that of the Helium atom, with fixed nucleaus and Hamiltonian for the electrons:</p>
+<div class="math notranslate nohighlight">
+\[H = \frac{{\vec p}_1^2}{2m} + \frac{{\vec p}_2^2}{2m} - \frac{2 e^2}{r_1} - \frac{2 e^2}{r_2} + \frac{e^2}{|{\vec r}_1 - {\vec r}_2|}\]</div>
+<p>here <span class="math notranslate nohighlight">\({\vec r}_i\)</span> is the distance of each electron to the nucleus.</p>
+<p>Now as it happens, the ground state is in a spin singlet state. One standard argument is that if we make an approximation that the electron-electron interaction is absent, the gorund state is clearly one in which each electron is in the ground state of the coulomb problem with a charge-2 nucleus. This is symmetric, so by the Pauli principle (which we have not yet discussed!) the spin degrees of freedom are antisymmetric.</p>
+<p>To movivate the choice of a trial wavefunction, we postulate that each electron will provide a partial screening of the charge of the nucleus. Thus, we choose the wavefunction</p>
+<div class="math notranslate nohighlight">
+\[\psi(x_1,x_2) = \left(\frac{Z^3}{\pi a_0^2}\right) e^{- Z(r_1 + r_2)/(2 a_0)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_0\)</span> is the Bohr radius of the hydrogen atom. This is the product of the ground state wavefunction for each electron in a Coulomb potential created by a nucleus with positive charge <span class="math notranslate nohighlight">\(Z e\)</span>. We then compute <span class="math notranslate nohighlight">\(\vev{E}\)</span> and vary it with respect to <span class="math notranslate nohighlight">\(Z\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\vev{E} = - 2 \frac{m e^4}{2\hbar^2} \left(4 Z - Z^2 - \frac{5}{8} Z\right)\]</div>
+<p>This is minimized when <span class="math notranslate nohighlight">\(Z = \frac{27}{16}\)</span> which we note is between <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span>, so it is consistent with our heuristic of the nucleus being partially screened by the electron.</p>
+<p>The actual ground state energy can be measured as</p>
+<div class="math notranslate nohighlight">
+\[E_0 = - 78.8\ eV\]</div>
+<p>We can try to compute this by treating the electron-electron interaction as a perturbation, with the unperturbed wavefunction being the product of the relevant ground states of the <span class="math notranslate nohighlight">\(Z = 2\)</span> Coulomb problem. This yields:</p>
+<div class="math notranslate nohighlight">
+\[E_0^{pert} = - 74.8\ eV\]</div>
+<p>which is a <span class="math notranslate nohighlight">\(5\%\)</span> error. Not too bad! The variational calculation, however, yields</p>
+<div class="math notranslate nohighlight">
+\[E_0^{var} = - 77.5\ eV\]</div>
+<p>which is a <span class="math notranslate nohighlight">\(1.6\%\)</span> error, even better.</p>
 </section>
 </section>
 
