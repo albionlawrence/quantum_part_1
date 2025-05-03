@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Identical Particles and Second Quantization &#8212; Physics 162</title>
+    <title>TDPT systematics: the Dyson series &#8212; Physics 162</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"], "cO": ["\\mathcal{O}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter13/second_quantization';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter12/dyson_series';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Identical Particles" href="identical_particles.html" />
-    <link rel="prev" title="First-order TDPT" href="../chapter12/first_order.html" />
+    <link rel="next" title="First-order TDPT" href="first_order.html" />
+    <link rel="prev" title="Transition amplitudes" href="interaction_picture.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -243,15 +243,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_order.html">First-order TDPT</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Identical Particles and Second Quantization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="identical_particles.html">Identical Particles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="em_field.html">Quantization of the electromagnetic field</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -310,7 +310,7 @@
       
       
       
-      <li><a href="../_sources/chapter13/second_quantization.md" target="_blank"
+      <li><a href="../_sources/chapter12/dyson_series.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +392,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Identical Particles and Second Quantization</h1>
+    <h1>TDPT systematics: the Dyson series</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -406,12 +406,35 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="identical-particles-and-second-quantization">
-<h1>Identical Particles and Second Quantization<a class="headerlink" href="#identical-particles-and-second-quantization" title="Link to this heading">#</a></h1>
-<p>In quantum mechanics, identical particles – multiple particles with identical properties (mass, spin, charges) behave very differently from classical particles. This underlies a lot of important properties of quantum matter.</p>
-<p>Ideally we would spend a fair amount of time on this, and study the impact of the quantum mechanics of identical particles on multielectron atoms, degenerate quantum gases, and so on. Instead I am going to briefly introduce the basics of identical fermions and bosons. Then I will launch into the quantization of the electromagnetic field, in which photons as bosonic particles will emerge naturally.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="tdpt-systematics-the-dyson-series">
+<h1>TDPT systematics: the Dyson series<a class="headerlink" href="#tdpt-systematics-the-dyson-series" title="Link to this heading">#</a></h1>
+<p>Let us focus on the TDSE in the interaction picture. You can convince yourself that if <span class="math notranslate nohighlight">\(V_S(t)\)</span> is a Hermitian operator, so is <span class="math notranslate nohighlight">\(V_I(t)\)</span>. Now the TDSE in the interaction picture</p>
+<div class="math notranslate nohighlight" id="equation-ip-tdse">
+<span class="eqno">(336)<a class="headerlink" href="#equation-ip-tdse" title="Link to this equation">#</a></span>\[i\hbar \partial_t\ket{\psi(t)}_I = \eps V_I(t) \ket{\psi(t)}_I\]</div>
+<p>is formally the same as the full TDSE with <span class="math notranslate nohighlight">\(\ket{\psi(t)}_S \to \ket{\psi(t)}_I\)</span>, <span class="math notranslate nohighlight">\(H \to V_I\)</span>. Thus <span class="math notranslate nohighlight">\(\ket{\psi(t)}_I\)</span> also undergoes unitary time evolution with U_I(t,t_0) = e^{i H_0 t/\hbar} U_S(t,0)<span class="math notranslate nohighlight">\(. We can construct it directly from this, or by writing \)</span>\ket{\psi(t)}_I = U_I(t,0) \ket{\psi(0)}$ and inserting this into <a class="reference internal" href="#equation-ip-tdse">(336)</a> to find:</p>
+<div class="math notranslate nohighlight">
+\[i\hbar \del_t U_I(t,0) = \eps V_I(t) U_I(t,0)\]</div>
+<p>We can solve this formally by noting that <span class="math notranslate nohighlight">\(U_I(0,0) = {\bf 1}\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-recursive-unitary">
+<span class="eqno">(337)<a class="headerlink" href="#equation-recursive-unitary" title="Link to this equation">#</a></span>\[U_I(t) = {\bf 1} - \frac{i}{\hbar}\int_0^t dt' \eps V_I(t') U_I(t')\]</div>
+<p>where I have suppressed the dependence on the initial time. This may not seem useful, but since we are eventuall looking for a power series in <span class="math notranslate nohighlight">\(\eps\)</span> we can solve this equation recursively. That is, plug the LHS of <a class="reference internal" href="#equation-recursive-unitary">(337)</a> into the RHS, so that</p>
+<div class="math notranslate nohighlight">
+\[U_I(t) = {\bf 1} - \frac{i\eps}{\hbar} \int_0^t dt' V_I(t') + \left(\frac{-i \eps}{\hbar}\right)^2 \int_0^t dt' \int_0^{t'} dt'' V_I(t') V_I(t'') U_I(t'') + \ldots\]</div>
+<p>Clearly we can continue this trend and write the <em>Dyson series</em></p>
+<div class="math notranslate nohighlight">
+\[U_I(t) = \sum_{n = 0}^{\infty} \left(\frac{-i \eps}{\hbar}\right)^n \int_0^t dt_1 \int_0^{t_1} dt_2 \ldots \int_0^{t_{n-1}} dt_N V_I(t_1) V_I(t_2)\ldots V_I(t_n)\]</div>
+<p>Note that the products of <span class="math notranslate nohighlight">\(V_I(t)\)</span> are arranged in descending order of the time variable in their argument. With some work, one can convince oneself that this can be written as</p>
+<div class="math notranslate nohighlight">
+\[U_I(t) = \sum_{n = 0}^{\infty} \left(\frac{-i \eps}{\hbar}\right)^n \frac{1]{n!}\int_0^t dt_1 \ldots \int_0^t dt_n T[V_I(t_1) V_I(t_2)\ldots V_I(t_n)]\]</div>
+<p>where <span class="math notranslate nohighlight">\(T\)</span> is the <em>time ordering operator</em>. That is, given a set of times <span class="math notranslate nohighlight">\(t_{i = 1,\ldots, n}\)</span>, and a permutation <span class="math notranslate nohighlight">\(\sigma \in S_n\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[t_{\sigma(1)} \geq t_{\sigma(2)} \geq \cdots \geq t_{\sigma(n)}\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[T[V_I(t_1)\ldots V_I(t_n)] = V_I(t_{\sigma(1)})V_I(t_{\sigma(2)}) \ldots V_I(t_{\sigma(n)})\]</div>
+<p>The integration region is now redundant (because before applying the <span class="math notranslate nohighlight">\(T\)</span> operator it is over all time orderings), which is taken care of by the factor of <span class="math notranslate nohighlight">\(1/n!\)</span>. We can write this expression more elegantly as</p>
+<div class="math notranslate nohighlight">
+\[U(t) = T \left[ \exp\left( - \frac{i\eps}{\hbar}\int_0^t dt' V_I(t')\right)\right]\]</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -427,7 +450,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapter13"
+            path: "./chapter12"
         },
         predefinedOutput: true
     }
@@ -445,20 +468,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../chapter12/first_order.html"
+       href="interaction_picture.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">First-order TDPT</p>
+        <p class="prev-next-title">Transition amplitudes</p>
       </div>
     </a>
     <a class="right-next"
-       href="identical_particles.html"
+       href="first_order.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Identical Particles</p>
+        <p class="prev-next-title">First-order TDPT</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

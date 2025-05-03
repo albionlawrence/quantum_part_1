@@ -243,7 +243,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="second_quantization.html">Identical Particles and Second Quantization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="identical_particles.html">Identical Particles</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Quantization of the electromagnetic field</a></li>
@@ -402,6 +407,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-classical-electromagnetic-field">The classical electromagnetic field</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-treatment">Lagrangian treatment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltonian-treatment">Hamiltonian treatment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactions-with-charged-matter">Interactions with charged matter</a></li>
 </ul>
 </li>
 </ul>
@@ -434,7 +440,7 @@ document.write(`
 \end{align}\end{split}\]</div>
 <p>This form automatically yields half of Maxwell’s equations:</p>
 <div class="math notranslate nohighlight" id="equation-bianchi-ident">
-<span class="eqno">(337)<a class="headerlink" href="#equation-bianchi-ident" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(344)<a class="headerlink" href="#equation-bianchi-ident" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 {\vec\nabla}\cdot {\vec B} &amp; = 0\\
 \frac{1}{c} \frac{\del}{\del t} {\vec B} - {\vec\nabla} \times{\vec E} &amp; = 0
 \end{align}\end{split}\]</div>
@@ -535,7 +541,89 @@ P_a &amp; \equiv - i \sqrt{\frac{\omega}{2}}(a_a - a_a^*)
 <p>With this redefinition,</p>
 <div class="math notranslate nohighlight">
 \[H = \sum_a \int \frac{d^3 k}{(2\pi)^3}\left(\half P_a P_a + \half \omega(k)^2 Q_a Q_a\right)\]</div>
-<p>We just have a set of simple harmonic oscillators!</p>
+<p>We just have a set of simple harmonic oscillators! The one complication is that they are a continuous collection. We can work with this up to a point. The Poisson brackets become</p>
+<div class="math notranslate nohighlight">
+\[\{Q_a(k), P_b(k')\} = (2\pi)^3 \delta^{(3)}({\vec k} - {\vec k}') \delta_{ab}\]</div>
+<p>and Hamilton’s equations are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+{\dot Q}_a(k) &amp; = \frac{\delta H}{\delta P_a(k)} \{Q_a(k), H\} = P_a(k)\\
+{\dot P}_a(k) &amp; = - \frac{\delta H}{\delta Q_a(k)} \{P_a(k), H\} = \omega^2(k) Q_a(k)
+\end{align}\end{split}\]</div>
+<p>We can make this easier by putting the system in a box of finite volume. If the box is cubical, with sides of length <span class="math notranslate nohighlight">\(L\)</span> and volume <span class="math notranslate nohighlight">\(V = L^3\)</span>, then with the appropriate boundary conditions, the allowed wavenumbers are:</p>
+<div class="math notranslate nohighlight">
+\[{\vec k} = \frac{2\pi {\vec n}}{L} = \left(\frac{2\pi n_x}{L}, \frac{2\pi n_y}{L}, \frac{2\pi n_z}{L}\right)\]</div>
+<p>Further rescaling <span class="math notranslate nohighlight">\(P = \sqrt{V} p\)</span>, <span class="math notranslate nohighlight">\(Q = \sqrt{V} q\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[H = \sum_{{\vec k}, a} \left(\half p_{a,{\vec k}}^2 + \half \omega(k)^2 q_{a,{\vec k}}^2\right)\]</div>
+<p>which is an ordinary harmonic oscillator for every <span class="math notranslate nohighlight">\({\vec k}, a\)</span>.</p>
+<p>Quantization is now straightforward. If we write</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+Q_a(k) &amp; = \sqrt{\frac{\hbar}{2\omega(k)}}\left(a_a(k) + a_a(k)^{\dagger}\right)\\
+P_a(k) &amp; = \sqrt{\frac{\hbar\omega}{2}}\frac{1}{i}\left((a_a(k) - a_a(k)^{\dagger}\right)
+\end{align}\end{split}\]</div>
+<p>Then <span class="math notranslate nohighlight">\(a_a\)</span> satisfies the commutation relations</p>
+<div class="math notranslate nohighlight">
+\[[a_a(k), a_b^{\dagger}(k')] = (2\pi)^3\delta^{(3)}({\vec k} - {\vec k}')\delta){ab}\]</div>
+<p>for the infinite volume case, or</p>
+<div class="math notranslate nohighlight">
+\[[a_a(k), a_b^{\dagger}(k')] = \delta_{{\vec k}, {\vec k}'}\delta){ab}\]</div>
+<p>In these cases,</p>
+<div class="math notranslate nohighlight">
+\[H = \sum_a \int \frac{d^3 k}{(2\pi)^3} \hbar \omega(k) \left(a^{\dagger}_a(k) a_a(k) + \half\right)\]</div>
+<p>or, in finite volume,</p>
+<div class="math notranslate nohighlight">
+\[H = \sum_{a,{\vec k}} \hbar \omega(k) \left(a^{\dagger}_a(k) a_a(k) + \half\right)\]</div>
+<p>We can define the vacuum via</p>
+<div class="math notranslate nohighlight">
+\[a_a\ket{0} = 0\]</div>
+<p>The excitations are (here we will work in finite volume):</p>
+<div class="math notranslate nohighlight">
+\[\frac{(a_{a_1}(k_1)^{\dagger})^{n_1}\cdots(a_{a_N}(k_N)^{\dagger})^{n_N}}{\sqrt{n_1!\cdots n_N!}} \ket{0}\]</div>
+<p>The interpretation is that we have <span class="math notranslate nohighlight">\(n_k\)</span> photons with polarization <span class="math notranslate nohighlight">\(a_k\)</span> and wavenumber <span class="math notranslate nohighlight">\(k_k\)</span>. Note that it does not matter we arrange the creation operators since they commute; furthermore, all we can do for fixed polarization and wavenumber i scount the number of photons. We can create photons at fixed locations via</p>
+<div class="math notranslate nohighlight">
+\[\ket{x_1,x_2} = \sum_{{\vec k}_1,{\vec k}_2} e^{i k_1 x_1 + i k_2 x_2} a_{a_1}(k_1)^{\dagger} a_{a_2}(k_2)^{\dagger} \ket{0}\]</div>
+<p>but since the creation operators commute, <span class="math notranslate nohighlight">\(\ket{x_1,x_2} = \ket{x_2,x_2}\)</span>. In other words, these are automatically bosons. The upshow is that by quantizing the electromagnetic field we automatically get particle-like excitations, and those particles are bosons. We can do this similarly for spin-0 particles (in fact the field theory is much simpler – the fields are just scalars <span class="math notranslate nohighlight">\(\phi(x,t)\)</span>, and there is no gauge invariance to worry about.)</p>
+<p>It is less trivial to go through this procedure for spin-<span class="math notranslate nohighlight">\(\half\)</span> particles. One needs to start with fields which are <em>GHrassman variables</em> – that is, even as classical fields they anticommute. The upshot of the spin-statistics theorem is that we <em>must</em> go this route for half-integer spins, to get fermionic particles satisfying the Pauli principle. This follows from the demands that the theory be causal (eg information cannot propagate faster than the speed of light), that the vacuum is stable and all states with particles have higher energy, and that there are no negative-probability states.</p>
+<p>Finally, give these operators, we can go back and write <em>field operators</em> which appear in the interaction Hamiltonian:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+{\hat{\vec A}} &amp; = \int \frac{d^3 k}{(2\pi)^3}\left(\frac{2\pi \hbar c^2}{\omega(k)}\right)^{1/2}\left\{ a_a(k) \eps_a(k) e^{i{\vec k}\cdot{\vec x}} + {\rm h.c.}\right\}\\
+{\hat{\vec p}} &amp; = -i \int \frac{d^3 k}{(2\pi)^3}\left(\frac{\hbar \omega(k)}{2\pi c^2}\right)^{1/2}\left\{ a_a(k) \eps_a(k) e^{i{\vec k}\cdot{\vec x}} - {\rm h.c.}\right\}
+\end{align}\end{split}\]</div>
+</section>
+<section id="interactions-with-charged-matter">
+<h3>Interactions with charged matter<a class="headerlink" href="#interactions-with-charged-matter" title="Link to this heading">#</a></h3>
+<p>We can argue for the interaction of the electromagnetic field with charged matter in several directions. One is to recall that the Hamiltonian for some set of <span class="math notranslate nohighlight">\(M\)</span> charged particle in a vector potential is</p>
+<div class="math notranslate nohighlight">
+\[H = \sum_{i = 1}^M \frac{1}{2m_i}\left({\vec p}_i - \frac{e_i}{c}{\vec A}({\vec x}_i)^2\right)\]</div>
+<p>We can expand this in powers of <span class="math notranslate nohighlight">\({\vec A}\)</span>; we have in mind time-dependent perturbation theory for which the strength of the field is the perturbation parameter. We will ignore the <span class="math notranslate nohighlight">\(\cO(A^2)\)</span> terms for now, but they are important as we go to second order. The result is</p>
+<div class="math notranslate nohighlight">
+\[H = \sum_{i = 1}^M \frac{1}{2m_i}{\vec p}_i^2 - \frac{e_i}{2m_ic}\left({\vec p}_i \cdot{\vec A}(x_i) + {\vec A}(x_i)\cdot{\vec p}_i\right)\]</div>
+<p>Now <span class="math notranslate nohighlight">\({\vec p} = \frac{\hbar}{i} {\vec \nabla}\)</span>. If <span class="math notranslate nohighlight">\({\vec A}\)</span> is in Coulomb gauge,</p>
+<div class="math notranslate nohighlight">
+\[{\vec p}\cdot{\vec A}\ket{\psi} = \frac{\hbar}{i}({\vec\nabla}\cdot{\vec A}\ket{\psi} + {\vec A}\cdot{\vec p}\ket{\psi} =  {\vec A}\cdot{\vec p}\ket{\psi}\]</div>
+<p>That is, <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(A\)</span> commute. Now we promote <span class="math notranslate nohighlight">\({\vec A}\)</span> to a field operator. As such, the <em>argument</em> cannot itself be an operator. We take care of this by writing</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+H_1 &amp; = \sum_i \frac{e_i}{m_ic}{\vec A}\cdot{\vec p}_i\\
+&amp; = \int d^3 x {\vec A}({\vec x})\sum_i e_i \delta({\vec x} - {\hat{\vec x}}_i) {\vec p}_i\\
+&amp; =  \int d^3 x {\vec A}({\vec x}) {\vec J}
+\end{align}\end{split}\]</div>
+<p>Properly speaking, to make <span class="math notranslate nohighlight">\({\vec J}\)</span> a Hermitian operator, we write it as</p>
+<div class="math notranslate nohighlight">
+\[{\hat{\vec J}} = \half \sum_i e_i \left\{{\hat{\vec p}}_i,\delta({\vec x} - {\hat {\vec x}_i})\right\}\]</div>
+<p>which is the charge current operator. The total Hamiltonian is then</p>
+<div class="math notranslate nohighlight">
+\[H = H_{particles} + H_{em} + H_1\]</div>
+<p>where <span class="math notranslate nohighlight">\(H_{particles}\)</span> is the Hamiltonian of the charged particls absent the interaction with the quantized electromagnetic field.</p>
+<p>Now we consider the process of a transition between, for example, states of some atom coupled to the electromagnetic field. The initial state <span class="math notranslate nohighlight">\(\ket{i}\)</span> will correspond to the eigenstate of the Hamiltonian of the atom, and some number of photons, so that <span class="math notranslate nohighlight">\(\ker{i}\)</span> is an eigenstate of <span class="math notranslate nohighlight">\(H_{particles} + H_{em}\)</span>. We wish to study the transition amplitude to a state <span class="math notranslate nohighlight">\(\ket{f}\)</span> which is also an eigenstate of  <span class="math notranslate nohighlight">\(H_{particles} + H_{em}\)</span>. To first order in <span class="math notranslate nohighlight">\(H_1\)</span>, the transition amplitude is:</p>
+<div class="math notranslate nohighlight">
+\[c_k = - \frac{i}{\hbar} \int_0^t dt' d^3 x \ket{f} {\hat {\vec A}}({\vec x})\cdot{\vec J} \bra{i}\]</div>
+<p>At this order, <span class="math notranslate nohighlight">\(\ket{i},\ket{f}\)</span> clearly can differ only by a single photon; <span class="math notranslate nohighlight">\({\vec J}\)</span> is proportional to the momenta and acts as a vector operator, so these transitions will be appropriately constrained by angular momentum selection rulesWith this formalism we can understand various processes such as spontaneous emission in the electromagnetic vacuum through the transition of the atom to a lower-energy state via the emission of a photon; stimulated emission between the same atomic states in the presence of photons, the amplitude of which scales as <span class="math notranslate nohighlight">\(\sqrt{N + 1}\)</span> where <span class="math notranslate nohighlight">\(N\)</span> is the number of photons with the appropriate wavenumber; and excitation of atioms via the absorption of photons.</p>
+<p>At second order in the field the transitions amplitudes are matrix elements of two powers of <span class="math notranslate nohighlight">\(H_1\)</span> and of the <span class="math notranslate nohighlight">\({\vec A}^2\)</span> term we ignored; such transitions involve the change in the number of photons by 2, 0, or -2.</p>
+<p>Such processes are discussed in a variety of textbooks, such as Shankar and Baym, which I recommend highly for further study.</p>
 </section>
 </section>
 </section>
@@ -607,6 +695,7 @@ P_a &amp; \equiv - i \sqrt{\frac{\omega}{2}}(a_a - a_a^*)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-classical-electromagnetic-field">The classical electromagnetic field</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-treatment">Lagrangian treatment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltonian-treatment">Hamiltonian treatment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactions-with-charged-matter">Interactions with charged matter</a></li>
 </ul>
 </li>
 </ul>

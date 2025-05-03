@@ -152,4 +152,114 @@ With this redefinition,
 ```{math}
 H = \sum_a \int \frac{d^3 k}{(2\pi)^3}\left(\half P_a P_a + \half \omega(k)^2 Q_a Q_a\right)
 ```
-We just have a set of simple harmonic oscillators! 
+We just have a set of simple harmonic oscillators! The one complication is that they are a continuous collection. We can work with this up to a point. The Poisson brackets become
+```{math}
+\{Q_a(k), P_b(k')\} = (2\pi)^3 \delta^{(3)}({\vec k} - {\vec k}') \delta_{ab}
+```
+and Hamilton's equations are
+```{math}
+\begin{align}
+{\dot Q}_a(k) & = \frac{\delta H}{\delta P_a(k)} \{Q_a(k), H\} = P_a(k)\\
+{\dot P}_a(k) & = - \frac{\delta H}{\delta Q_a(k)} \{P_a(k), H\} = \omega^2(k) Q_a(k)
+\end{align}
+```
+
+We can make this easier by putting the system in a box of finite volume. If the box is cubical, with sides of length $L$ and volume $V = L^3$, then with the appropriate boundary conditions, the allowed wavenumbers are:
+```{math}
+{\vec k} = \frac{2\pi {\vec n}}{L} = \left(\frac{2\pi n_x}{L}, \frac{2\pi n_y}{L}, \frac{2\pi n_z}{L}\right)
+```
+Further rescaling $P = \sqrt{V} p$, $Q = \sqrt{V} q$, we have
+```{math}
+H = \sum_{{\vec k}, a} \left(\half p_{a,{\vec k}}^2 + \half \omega(k)^2 q_{a,{\vec k}}^2\right)
+```
+which is an ordinary harmonic oscillator for every ${\vec k}, a$.
+
+Quantization is now straightforward. If we write
+```{math}
+\begin{align}
+Q_a(k) & = \sqrt{\frac{\hbar}{2\omega(k)}}\left(a_a(k) + a_a(k)^{\dagger}\right)\\
+P_a(k) & = \sqrt{\frac{\hbar\omega}{2}}\frac{1}{i}\left((a_a(k) - a_a(k)^{\dagger}\right)
+\end{align}
+```
+Then $a_a$ satisfies the commutation relations
+```{math}
+[a_a(k), a_b^{\dagger}(k')] = (2\pi)^3\delta^{(3)}({\vec k} - {\vec k}')\delta){ab}
+```
+for the infinite volume case, or
+```{math}
+[a_a(k), a_b^{\dagger}(k')] = \delta_{{\vec k}, {\vec k}'}\delta){ab}
+```
+In these cases, 
+```{math}
+H = \sum_a \int \frac{d^3 k}{(2\pi)^3} \hbar \omega(k) \left(a^{\dagger}_a(k) a_a(k) + \half\right)
+```
+or, in finite volume,
+```{math}
+H = \sum_{a,{\vec k}} \hbar \omega(k) \left(a^{\dagger}_a(k) a_a(k) + \half\right)
+```
+
+We can define the vacuum via 
+```{math}
+a_a\ket{0} = 0
+```
+The excitations are (here we will work in finite volume):
+```{math}
+\frac{(a_{a_1}(k_1)^{\dagger})^{n_1}\cdots(a_{a_N}(k_N)^{\dagger})^{n_N}}{\sqrt{n_1!\cdots n_N!}} \ket{0}
+```
+The interpretation is that we have $n_k$ photons with polarization $a_k$ and wavenumber $k_k$. Note that it does not matter we arrange the creation operators since they commute; furthermore, all we can do for fixed polarization and wavenumber i scount the number of photons. We can create photons at fixed locations via
+```{math}
+\ket{x_1,x_2} = \sum_{{\vec k}_1,{\vec k}_2} e^{i k_1 x_1 + i k_2 x_2} a_{a_1}(k_1)^{\dagger} a_{a_2}(k_2)^{\dagger} \ket{0}
+```
+but since the creation operators commute, $\ket{x_1,x_2} = \ket{x_2,x_2}$. In other words, these are automatically bosons. The upshow is that by quantizing the electromagnetic field we automatically get particle-like excitations, and those particles are bosons. We can do this similarly for spin-0 particles (in fact the field theory is much simpler -- the fields are just scalars $\phi(x,t)$, and there is no gauge invariance to worry about.)
+
+It is less trivial to go through this procedure for spin-$\half$ particles. One needs to start with fields which are *GHrassman variables* -- that is, even as classical fields they anticommute. The upshot of the spin-statistics theorem is that we *must* go this route for half-integer spins, to get fermionic particles satisfying the Pauli principle. This follows from the demands that the theory be causal (eg information cannot propagate faster than the speed of light), that the vacuum is stable and all states with particles have higher energy, and that there are no negative-probability states.
+
+Finally, give these operators, we can go back and write *field operators* which appear in the interaction Hamiltonian:
+```{math}
+\begin{align}
+{\hat{\vec A}} & = \int \frac{d^3 k}{(2\pi)^3}\left(\frac{2\pi \hbar c^2}{\omega(k)}\right)^{1/2}\left\{ a_a(k) \eps_a(k) e^{i{\vec k}\cdot{\vec x}} + {\rm h.c.}\right\}\\
+{\hat{\vec p}} & = -i \int \frac{d^3 k}{(2\pi)^3}\left(\frac{\hbar \omega(k)}{2\pi c^2}\right)^{1/2}\left\{ a_a(k) \eps_a(k) e^{i{\vec k}\cdot{\vec x}} - {\rm h.c.}\right\}
+\end{align}
+```
+
+### Interactions with charged matter
+
+We can argue for the interaction of the electromagnetic field with charged matter in several directions. One is to recall that the Hamiltonian for some set of $M$ charged particle in a vector potential is
+```{math}
+H = \sum_{i = 1}^M \frac{1}{2m_i}\left({\vec p}_i - \frac{e_i}{c}{\vec A}({\vec x}_i)^2\right)
+```
+We can expand this in powers of ${\vec A}$; we have in mind time-dependent perturbation theory for which the strength of the field is the perturbation parameter. We will ignore the $\cO(A^2)$ terms for now, but they are important as we go to second order. The result is
+```{math}
+H = \sum_{i = 1}^M \frac{1}{2m_i}{\vec p}_i^2 - \frac{e_i}{2m_ic}\left({\vec p}_i \cdot{\vec A}(x_i) + {\vec A}(x_i)\cdot{\vec p}_i\right)
+```
+Now ${\vec p} = \frac{\hbar}{i} {\vec \nabla}$. If ${\vec A}$ is in Coulomb gauge, 
+```{math}
+{\vec p}\cdot{\vec A}\ket{\psi} = \frac{\hbar}{i}({\vec\nabla}\cdot{\vec A}\ket{\psi} + {\vec A}\cdot{\vec p}\ket{\psi} =  {\vec A}\cdot{\vec p}\ket{\psi}
+```
+That is, $p$ and $A$ commute. Now we promote ${\vec A}$ to a field operator. As such, the *argument* cannot itself be an operator. We take care of this by writing
+```{math}
+\begin{align}
+H_1 & = \sum_i \frac{e_i}{m_ic}{\vec A}\cdot{\vec p}_i\\
+& = \int d^3 x {\vec A}({\vec x})\sum_i e_i \delta({\vec x} - {\hat{\vec x}}_i) {\vec p}_i\\
+& =  \int d^3 x {\vec A}({\vec x}) {\vec J}
+\end{align}
+```
+Properly speaking, to make ${\vec J}$ a Hermitian operator, we write it as
+```{math}
+{\hat{\vec J}} = \half \sum_i e_i \left\{{\hat{\vec p}}_i,\delta({\vec x} - {\hat {\vec x}_i})\right\}
+```
+which is the charge current operator. The total Hamiltonian is then
+```{math}
+H = H_{particles} + H_{em} + H_1
+```
+where $H_{particles}$ is the Hamiltonian of the charged particls absent the interaction with the quantized electromagnetic field.
+
+Now we consider the process of a transition between, for example, states of some atom coupled to the electromagnetic field. The initial state $\ket{i}$ will correspond to the eigenstate of the Hamiltonian of the atom, and some number of photons, so that $\ker{i}$ is an eigenstate of $H_{particles} + H_{em}$. We wish to study the transition amplitude to a state $\ket{f}$ which is also an eigenstate of  $H_{particles} + H_{em}$. To first order in $H_1$, the transition amplitude is:
+```{math}
+c_k = - \frac{i}{\hbar} \int_0^t dt' d^3 x \ket{f} {\hat {\vec A}}({\vec x})\cdot{\vec J} \bra{i}
+```
+At this order, $\ket{i},\ket{f}$ clearly can differ only by a single photon; ${\vec J}$ is proportional to the momenta and acts as a vector operator, so these transitions will be appropriately constrained by angular momentum selection rulesWith this formalism we can understand various processes such as spontaneous emission in the electromagnetic vacuum through the transition of the atom to a lower-energy state via the emission of a photon; stimulated emission between the same atomic states in the presence of photons, the amplitude of which scales as $\sqrt{N + 1}$ where $N$ is the number of photons with the appropriate wavenumber; and excitation of atioms via the absorption of photons.
+
+At second order in the field the transitions amplitudes are matrix elements of two powers of $H_1$ and of the ${\vec A}^2$ term we ignored; such transitions involve the change in the number of photons by 2, 0, or -2.
+
+Such processes are discussed in a variety of textbooks, such as Shankar and Baym, which I recommend highly for further study.
