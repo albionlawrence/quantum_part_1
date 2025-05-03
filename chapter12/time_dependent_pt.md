@@ -1,3 +1,3 @@
 # Time-Dependent Perturbation Theory
 
-To be written
+Time-dependent perturbation theory describes processes in which an interaction mediates transitions between two eigenstates of the unperturbed Hamitonian. For example, $H_0$ could be some atomic Hamiltonian and the perturbation $\eps H_1$ could be the interaction of the charged particles with an electromagnetic field, either classical and cntrolled by the experimenter, or quantized as we will discuss later. In this sense we are not trying to diagonalize the full Hamiltonian; rather we are interested in slow, rare transitions induced by controlled perturbations. We will build up the basic formulation systematically, and then apply this to a specific class of problems in which the transition is between near-continuum states (such as the moemnta of final decay products), for which there is a well-known general formula known as Fermi's Golden Rule. 

@@ -63,6 +63,10 @@ chapters:
     - file: chapter11/variational
     - file: chapter11/wkbj
   - file: chapter12/time_dependent_pt
+    sections:
+    - file: chapter12/interaction_picture.md
+    - file: chapter12/dyson_series.md
+    - file: chapter12/first_order.md
   - file: chapter13/second_quantization
     sections:
     - file: chapter13/identical_particles

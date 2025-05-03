@@ -1,0 +1,7 @@
+# TDPT systematics: the Dyson series
+
+Let us focus on the TDSE in the interaction picture. You can convince yourself that if $V_S(t)$ is a Hermitian operator, so is $V_I(t)$. Since the TDSE in the interaction picture
+```{math}
+i\hbar \partial_t\ket{\psi(t)}_I = \eps V_I(t) \ket{\psi(t)}_I
+```
+is formally the same as the full TDSE with $\ket{\psi(t)}_S \to \ket{\psi(t)}_I$, $H \to V_I$, 

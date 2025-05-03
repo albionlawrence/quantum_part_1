@@ -57,10 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["|#1\\rangle", 1], "bra": ["\\langle#1|", 1], "brket": ["\\langle#1|#2\\rangle", 2], "vev": ["\\langle #1 \\rangle", 1], "half": ["\\frac{1}{2}"], "eps": ["\\epsilon"], "del": ["\\partial"], "CE": ["\\cal{E}"], "CF": ["\\mathbb{F}"], "CC": ["\\mathbb{C}"], "CR": ["\\mathbb{R}"], "CZ": ["\\mathbb{Z}"], "CP": ["\\mathbb{P}"], "cH": ["\\mathcal{H}"], "cO": ["\\mathcal{O}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter12/time_dependent_pt';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Identical Particles and Second Quantization" href="../chapter13/second_quantization.html" />
+    <link rel="next" title="Transition amplitudes" href="interaction_picture.html" />
     <link rel="prev" title="The WKBJ method" href="../chapter11/wkbj.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -241,9 +243,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Time-Dependent Perturbation Theory</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Time-Dependent Perturbation Theory</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -400,7 +408,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="time-dependent-perturbation-theory">
 <h1>Time-Dependent Perturbation Theory<a class="headerlink" href="#time-dependent-perturbation-theory" title="Link to this heading">#</a></h1>
-<p>To be written</p>
+<p>Time-dependent perturbation theory describes processes in which an interaction mediates transitions between two eigenstates of the unperturbed Hamitonian. For example, <span class="math notranslate nohighlight">\(H_0\)</span> could be some atomic Hamiltonian and the perturbation <span class="math notranslate nohighlight">\(\eps H_1\)</span> could be the interaction of the charged particles with an electromagnetic field, either classical and cntrolled by the experimenter, or quantized as we will discuss later. In this sense we are not trying to diagonalize the full Hamiltonian; rather we are interested in slow, rare transitions induced by controlled perturbations. We will build up the basic formulation systematically, and then apply this to a specific class of problems in which the transition is between near-continuum states (such as the moemnta of final decay products), for which there is a well-known general formula known as Fermi’s Golden Rule.</p>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -443,11 +453,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../chapter13/second_quantization.html"
+       href="interaction_picture.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Identical Particles and Second Quantization</p>
+        <p class="prev-next-title">Transition amplitudes</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

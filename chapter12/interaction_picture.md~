@@ -1,0 +1,9 @@
+# Transition amplitudes
+
+## Solving the TDSE
+
+Consider a Hamiltonian with the following structure
+```{math}
+H = H_0 + \eps V(t)
+```
+where we know the eigenvectors $\ket{n}$ of $H_0$ and the associated eigenvalues $E_n$. At any time $t$ we can expand our state in the basis $\ket{n}$ which we take to be orthonormal (as such a basis of eigenvectors of the Hermitian operator $H_0$ always exists). 

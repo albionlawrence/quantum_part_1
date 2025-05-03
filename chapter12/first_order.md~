@@ -1,0 +1,9 @@
+# First-order TDPT
+
+Let us consider the transition amplityude between orthogonal eigenstates of $H_0$ $\ket{i}$ and $\ket{f \neq i}$. At first order in perturbation theory, the transition amplitude is
+```{math}
+\begin{align}
+{\tilde c}_{fi} & = \bra{f}\left({\bf 1} - \frac{i\eps}{\hbar} \int_0^t dt' V_I(t')\right) \ket{i}\\
+& = - \frac{i\eps}{\hbar} \int_0^t dt' \bra{f} V_I(t') \ket{i}
+\end{align}
+```
