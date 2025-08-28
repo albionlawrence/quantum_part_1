@@ -246,6 +246,7 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Transition amplitudes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_order.html">First-order TDPT</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -444,7 +445,7 @@ document.write(`
 \[c_n(t) = {\tilde c}_n(t) e^{- i E_n t/\hbar}\]</div>
 <p>Making this substitution, we find that the time derivative acting on <span class="math notranslate nohighlight">\(c_n\)</span> includes a term that cancels the <span class="math notranslate nohighlight">\(E_n c_n\)</span> term. The upshot is:</p>
 <div class="math notranslate nohighlight" id="equation-ip-tdse-exp">
-<span class="eqno">(335)<a class="headerlink" href="#equation-ip-tdse-exp" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(337)<a class="headerlink" href="#equation-ip-tdse-exp" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 i\hbar {\dot{\tilde c}}_n &amp; = \sum_m \bra{n} \eps V\ket{m} e^{i (E_n - E_m) t/\hbar} {\tilde c}_m(t)\\
 &amp; = \sum_m \bra{n} e^{i H_0 t/\hbar} \eps V e^{-i H_0 t/\hbar} \ket{m} {\tilde c}_m\\
 &amp; \equiv  \sum_m \bra{n} \eps V_I(t) \ket{m} {\tilde c}_m(t)
@@ -455,7 +456,7 @@ i\hbar {\dot{\tilde c}}_n &amp; = \sum_m \bra{n} \eps V\ket{m} e^{i (E_n - E_m) 
 <p>Here <span class="math notranslate nohighlight">\(\cO_S(t)\)</span> is a Schrodinger picture operator, which we have allowed to have explicit time-dependence (for example, if we want to subject a charged particle to a time-dependent electromagnetic field). We can also define the state in the interaction picture as</p>
 <div class="math notranslate nohighlight">
 \[\ket{\psi(t)}_I = e^{i H_0 t/\hbar} \ket{\psi(t)} = \sum_n {\tilde c}(t)\ket{n}\]</div>
-<p>This is like the Heisenberg picture, but instead of evolving the actual state from <span class="math notranslate nohighlight">\(t\)</span> back to <span class="math notranslate nohighlight">\(t = 0\)</span> with the full Hamiltonian, we do so with the unperturbed Hamiltonian <span class="math notranslate nohighlight">\(H_0\)</span>. The difference between these two protocols is a measure of the degree of interaction. Indeed, we can see from equation <a class="reference internal" href="#equation-ip-tdse-exp">(335)</a> that the Schroedinger equation can be written as</p>
+<p>This is like the Heisenberg picture, but instead of evolving the actual state from <span class="math notranslate nohighlight">\(t\)</span> back to <span class="math notranslate nohighlight">\(t = 0\)</span> with the full Hamiltonian, we do so with the unperturbed Hamiltonian <span class="math notranslate nohighlight">\(H_0\)</span>. The difference between these two protocols is a measure of the degree of interaction. Indeed, we can see from equation <a class="reference internal" href="#equation-ip-tdse-exp">(337)</a> that the Schroedinger equation can be written as</p>
 <div class="math notranslate nohighlight">
 \[i\hbar \del_t \ket{\psi(t)}_I = \eps V_I(t) \ket{\psi(t)}_I\]</div>
 <p>Since we are interested in transitions (changes of the state) induced by interactions, this formulation isolates the questions at hand.</p>

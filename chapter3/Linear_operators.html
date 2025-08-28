@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -432,13 +443,13 @@ document.write(`
 \[f: V_1 \to V_2\]</div>
 <p>such that</p>
 <div class="math notranslate nohighlight" id="equation-linear-map">
-<span class="eqno">(156)<a class="headerlink" href="#equation-linear-map" title="Link to this equation">#</a></span>\[f(a \ket{v} + b \ket{w}) = a f(\ket{v}) + b f(\ket{w})\ \ \ \forall a,b \in \CF\ ,\ \ \ket{v},\ket{w} \in V_1\]</div>
+<span class="eqno">(158)<a class="headerlink" href="#equation-linear-map" title="Link to this equation">#</a></span>\[f(a \ket{v} + b \ket{w}) = a f(\ket{v}) + b f(\ket{w})\ \ \ \forall a,b \in \CF\ ,\ \ \ket{v},\ket{w} \in V_1\]</div>
 <p>Note that we can easily prove with this that for the zero vector <span class="math notranslate nohighlight">\(\ket{0}_1 \in V_1\)</span>, <span class="math notranslate nohighlight">\(f(\ket{0}_1) = \ket{0}_2 \in V_2\)</span> where <span class="math notranslate nohighlight">\(\ket{0}_2\)</span> is the zero vector.</p>
 <ol class="arabic simple" start="2">
 <li><p>For vector spaces <span class="math notranslate nohighlight">\(V_1, V_2\)</span>, over the <em>complex</em> numbers <span class="math notranslate nohighlight">\(\CC\)</span>, an <strong>antilinear map</strong> <span class="math notranslate nohighlight">\(f\)</span> is a map <span class="math notranslate nohighlight">\(f: V_1 \to V_2\)</span> such that</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-antilinear-map">
-<span class="eqno">(157)<a class="headerlink" href="#equation-antilinear-map" title="Link to this equation">#</a></span>\[f(a \ket{v} + b \ket{w}) = a^* f(\ket{v}) + b^* f(\ket{w})\ \ \ \forall a,b \in \ \CF\ ,\ \ \ket{v},\ket{w} \in V_1\]</div>
+<span class="eqno">(159)<a class="headerlink" href="#equation-antilinear-map" title="Link to this equation">#</a></span>\[f(a \ket{v} + b \ket{w}) = a^* f(\ket{v}) + b^* f(\ket{w})\ \ \ \forall a,b \in \ \CF\ ,\ \ \ket{v},\ket{w} \in V_1\]</div>
 <p>where <span class="math notranslate nohighlight">\(a^*, b^*\)</span> are the complex conjugates of <span class="math notranslate nohighlight">\(a,b\)</span> respectively. This is important for defining adjoint vectors and normas of vectors.</p>
 <ol class="arabic simple" start="3">
 <li><p>Let <span class="math notranslate nohighlight">\(V\)</span> be a vector space over <span class="math notranslate nohighlight">\(\CF\)</span>. A <strong>linear operator</strong> <em>f</em> is a linear map <span class="math notranslate nohighlight">\(F: V \to V\)</span>.</p></li>
@@ -481,14 +492,14 @@ document.write(`
 <li><p>Operators can be added: for operators <span class="math notranslate nohighlight">\(A_1,A_2\)</span> acting on a vector space <span class="math notranslate nohighlight">\(V\)</span>, we can define</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-add-ops">
-<span class="eqno">(158)<a class="headerlink" href="#equation-add-ops" title="Link to this equation">#</a></span>\[(a A_1 + b A_2)\ket{v} \equiv a (A_1 \ket{v}) + b (A_2 \ket{v})\]</div>
+<span class="eqno">(160)<a class="headerlink" href="#equation-add-ops" title="Link to this equation">#</a></span>\[(a A_1 + b A_2)\ket{v} \equiv a (A_1 \ket{v}) + b (A_2 \ket{v})\]</div>
 <p>for any <span class="math notranslate nohighlight">\(\ket{v} \in V\)</span>, and <span class="math notranslate nohighlight">\(a,b \in \CF\)</span>.</p>
 <p>It is straightforward to see that <span class="math notranslate nohighlight">\((a A_1 + b A_2)\)</span> is thus a linear operator, Note that <span class="math notranslate nohighlight">\(A + \varnothing = A\)</span> under this rule, <span class="math notranslate nohighlight">\(A_1 + A_2 = A_2 + A_1\)</span>, and if <span class="math notranslate nohighlight">\(a = 0\)</span>, <span class="math notranslate nohighlight">\(a A = \varnothing\)</span>.</p>
 <ol class="arabic simple" start="2">
 <li><p>We can also multiply operators. For any two linear operators <span class="math notranslate nohighlight">\(A_1,A_2\)</span>, we define</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-op-mult">
-<span class="eqno">(159)<a class="headerlink" href="#equation-op-mult" title="Link to this equation">#</a></span>\[(A_1 A_2)\ket{v} = A_1(A_2\ket{v})\]</div>
+<span class="eqno">(161)<a class="headerlink" href="#equation-op-mult" title="Link to this equation">#</a></span>\[(A_1 A_2)\ket{v} = A_1(A_2\ket{v})\]</div>
 <p>With a little work you can show that <span class="math notranslate nohighlight">\(A_1 A_2\)</span> is a linear operator. Note that if <span class="math notranslate nohighlight">\(\bf{1}\)</span> is the identity operator, <span class="math notranslate nohighlight">\(\bf{1} A = A \bf{1} = A\)</span>. Multiplication is <em>associative</em>: that is, if <span class="math notranslate nohighlight">\(A_3\)</span> is also a linear operator, <span class="math notranslate nohighlight">\(((A_1 A_2) A_3) = (A_1(A_2 A_3))\)</span>. However, it does not have to be commutative. For example, for <span class="math notranslate nohighlight">\(V = \CC^n\)</span> with operators equal to <span class="math notranslate nohighlight">\(n\times n\)</span> matrices, operator multiplication is just matrix multiplication which is certainly not commutative. Consider <span class="math notranslate nohighlight">\(V = \CC^2\)</span>, and operators</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}	A_1 = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0\end{pmatrix}\ ; \ \ A_2 = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}\end{split}\]</div>
@@ -497,7 +508,7 @@ document.write(`
 \[\begin{split}A_1 A_2 = \begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}\ ; \ \ A_2 A_1 = \begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix} = - A_1 A_2 \neq A_1 A_2\end{split}\]</div>
 <p>In general we measure the lack of commutativity with the <em>commutator</em>:</p>
 <div class="math notranslate nohighlight" id="equation-commutator">
-<span class="eqno">(160)<a class="headerlink" href="#equation-commutator" title="Link to this equation">#</a></span>\[[A_1,A_2] = A_1 A_2 - A_2 A_1\]</div>
+<span class="eqno">(162)<a class="headerlink" href="#equation-commutator" title="Link to this equation">#</a></span>\[[A_1,A_2] = A_1 A_2 - A_2 A_1\]</div>
 <p>Note that the commutator is itself a linear operator.</p>
 </section>
 <section id="kernel-range-and-inverse">
@@ -508,7 +519,7 @@ document.write(`
 <li><p><strong>Definition</strong>: Consider a vector space <span class="math notranslate nohighlight">\(V\)</span> and a linear operator <span class="math notranslate nohighlight">\(A\)</span> acting on it. The *kernel<span class="math notranslate nohighlight">\( of \)</span>A$ is defined as</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-kernel">
-<span class="eqno">(161)<a class="headerlink" href="#equation-kernel" title="Link to this equation">#</a></span>\[\text{Ker}(A) = \left\{ \ket{v}\in V | A\ket{v} = \ket{0} \right\}\]</div>
+<span class="eqno">(163)<a class="headerlink" href="#equation-kernel" title="Link to this equation">#</a></span>\[\text{Ker}(A) = \left\{ \ket{v}\in V | A\ket{v} = \ket{0} \right\}\]</div>
 <p>As an example, consider <span class="math notranslate nohighlight">\(V = \CC^4\)</span>, and the operator</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}A = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 1 \\ 1 &amp; 0 &amp; 0 &amp; -1 \\ 1 &amp; 0 &amp; 0 &amp; 1 \\ 1 &amp; 0 &amp; 0 &amp; -1\end{pmatrix}\end{split}\]</div>
@@ -521,7 +532,7 @@ document.write(`
 <li><p><strong>Definition</strong>. A linear operator <span class="math notranslate nohighlight">\(A\)</span> acting on a vector space <span class="math notranslate nohighlight">\(V\)</span> is <em>injectove</em> or <em>one-to-one</em> if</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-injective">
-<span class="eqno">(162)<a class="headerlink" href="#equation-injective" title="Link to this equation">#</a></span>\[A\ket{v} = A\ket{w} \Rightarrow \ket{v} = \ket{w}\]</div>
+<span class="eqno">(164)<a class="headerlink" href="#equation-injective" title="Link to this equation">#</a></span>\[A\ket{v} = A\ket{w} \Rightarrow \ket{v} = \ket{w}\]</div>
 <p><img alt="injective map" src="../_images/injective.png" /></p>
 <p>Finally, we note that these concepts can be extended naturally to maps between <em>different</em> vector spaces, though we will not use them in that context here.</p>
 <ol class="arabic simple" start="4">
@@ -534,7 +545,7 @@ document.write(`
 <li><p><strong>Definition</strong>. Consider a linear operator <span class="math notranslate nohighlight">\(A\)</span> actig on a vector space <span class="math notranslate nohighlight">\(V\)</span>. The <em>range</em> of <span class="math notranslate nohighlight">\(A\)</span> can be fined as</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-range-op">
-<span class="eqno">(163)<a class="headerlink" href="#equation-range-op" title="Link to this equation">#</a></span>\[\text{Range}(A) = \{A\ket{v}\ \forall \ket{v} \in V\}\]</div>
+<span class="eqno">(165)<a class="headerlink" href="#equation-range-op" title="Link to this equation">#</a></span>\[\text{Range}(A) = \{A\ket{v}\ \forall \ket{v} \in V\}\]</div>
 <p>As an example consider <span class="math notranslate nohighlight">\(V = \CC^4\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}	A = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; -1 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}\end{split}\]</div>
@@ -548,7 +559,7 @@ document.write(`
 <li><p><strong>Rank-nullity theorem</strong>: For a linear operator <span class="math notranslate nohighlight">\(A\)</span> acting on a vector space <span class="math notranslate nohighlight">\(V\)</span>,</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-rank-nullity">
-<span class="eqno">(164)<a class="headerlink" href="#equation-rank-nullity" title="Link to this equation">#</a></span>\[\text{dim}(\text{Ker}(A)) + \text{Rk}(A) = \text{dim}(V)\]</div>
+<span class="eqno">(166)<a class="headerlink" href="#equation-rank-nullity" title="Link to this equation">#</a></span>\[\text{dim}(\text{Ker}(A)) + \text{Rk}(A) = \text{dim}(V)\]</div>
 <p>The proof can be found in Zweibach’s book <span id="id1">[<a class="reference internal" href="../markdown.html#id7" title="B. Zwiebach. Mastering Quantum Mechanics: Essentials, Theory, and Applications. MIT Press, 2022. ISBN 9780262046138. URL: https://books.google.com/books?id=stKMEAAAQBAJ.">Zwiebach, 2022</a>]</span>, from which much of the material in this section is taken.</p>
 <p>As an example, consider <span class="math notranslate nohighlight">\(V = \CC^4\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -647,11 +658,11 @@ T_R^{-1} T \ket{a_0,a_1,a_2,\ldots} &amp; = T_R^{-1} \ket{a_1,2 a_2,\ldots}\\
 <p>I stated before that for <span class="math notranslate nohighlight">\(V = \CC^n\)</span>, all linear operators can be represented as matrices. In fact, this is true for <em>any</em> finite-dimensional vector space.</p>
 <p>Consider a vector space <span class="math notranslate nohighlight">\(V\)</span> with dimension <span class="math notranslate nohighlight">\(n\)</span>. It will have  basis I can label <span class="math notranslate nohighlight">\(\ket{k}\)</span>, <span class="math notranslate nohighlight">\(k = 1,\ldots,n\)</span>. COnsider a linear operator <span class="math notranslate nohighlight">\(A\)</span>. Since we can write any state in this basis, we can write</p>
 <div class="math notranslate nohighlight" id="equation-matrix-rep">
-<span class="eqno">(165)<a class="headerlink" href="#equation-matrix-rep" title="Link to this equation">#</a></span>\[A\ket{k} = \sum_m A_{mk} \ket{m}\]</div>
+<span class="eqno">(167)<a class="headerlink" href="#equation-matrix-rep" title="Link to this equation">#</a></span>\[A\ket{k} = \sum_m A_{mk} \ket{m}\]</div>
 <p><span class="math notranslate nohighlight">\(A_{km}\)</span> here define <span class="math notranslate nohighlight">\(n^2\)</span> complex numbers, and can be thought of as an <span class="math notranslate nohighlight">\(n\times n\)</span> matrix.</p>
 <p>Next, consider a general vector <span class="math notranslate nohighlight">\(\ket{v} = \sum_k v_k \ket{k}\)</span>. Then</p>
 <div class="math notranslate nohighlight" id="equation-operator-rep">
-<span class="eqno">(166)<a class="headerlink" href="#equation-operator-rep" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(168)<a class="headerlink" href="#equation-operator-rep" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 A\ket{v} &amp; = \ket{v'} = \sum_k v'_k \ket{k} \\
 &amp; = \sum_k v_k A \ket{k} \\
 &amp; = \sum_{k,\ell} v_k A_{\ell k} \ket{\ell}
@@ -673,14 +684,14 @@ A_{n1} &amp; \ldots &amp; A_{nn} \end{pmatrix} \begin{pmatrix} v_1 \\ \vdots \\ 
 <p>The representation of vectors and operators as column vectors and matrices is basis-dependent. However, if we understand what the change of basis is, we can compute what a given vector and operator looks like in the new basis.</p>
 <p>Consider two bases <span class="math notranslate nohighlight">\(\ket{k}, \ket{\tilde{k}}\)</span>. We can expand the basis vectors on the second in terms of the first:</p>
 <div class="math notranslate nohighlight" id="equation-basis-change">
-<span class="eqno">(167)<a class="headerlink" href="#equation-basis-change" title="Link to this equation">#</a></span>\[\ket{\tilde{k}} = \sum_{\ell} U_{\ell k} \ket{\ell}\]</div>
+<span class="eqno">(169)<a class="headerlink" href="#equation-basis-change" title="Link to this equation">#</a></span>\[\ket{\tilde{k}} = \sum_{\ell} U_{\ell k} \ket{\ell}\]</div>
 <p>where <span class="math notranslate nohighlight">\(U_{\ell k}\)</span> are <span class="math notranslate nohighlight">\(n^2\)</span> complex numbers. Note that <span class="math notranslate nohighlight">\(U\)</span> is an invertible matrix as we can write</p>
 <div class="math notranslate nohighlight" id="equation-inverse-change">
-<span class="eqno">(168)<a class="headerlink" href="#equation-inverse-change" title="Link to this equation">#</a></span>\[\ket{k} = \sum_m V_{mk}\ket{\tilde{m}} = \sum_{mn} U_{n m} V_{m k} \ket{k}\]</div>
+<span class="eqno">(170)<a class="headerlink" href="#equation-inverse-change" title="Link to this equation">#</a></span>\[\ket{k} = \sum_m V_{mk}\ket{\tilde{m}} = \sum_{mn} U_{n m} V_{m k} \ket{k}\]</div>
 <p>This only makes sense if <span class="math notranslate nohighlight">\(U_{nm} V_{mk} = \delta_{nk}\)</span>. We can run this in the opposite direction by swapping the tilde’dd and non-tilde’d bases in the above. The result is that <span class="math notranslate nohighlight">\(V\)</span> is a left and right inverse for <span class="math notranslate nohighlight">\(U\)</span>, and thus <span class="math notranslate nohighlight">\(V = U^{-1}\)</span> as a matrix.</p>
 <p>How do operators look in the new basis? If we write</p>
 <div class="math notranslate nohighlight" id="equation-op-change">
-<span class="eqno">(169)<a class="headerlink" href="#equation-op-change" title="Link to this equation">#</a></span>\[A\ket{\tilde{k}} = \sum_{\ell} \tilde{A}_{\ell k} \ket{\tilde{\ell}}\]</div>
+<span class="eqno">(171)<a class="headerlink" href="#equation-op-change" title="Link to this equation">#</a></span>\[A\ket{\tilde{k}} = \sum_{\ell} \tilde{A}_{\ell k} \ket{\tilde{\ell}}\]</div>
 <p>then making the change of bases <span class="math notranslate nohighlight">\(\ket{\tilde{k}} = U_{\ell k} \ket{\ell}\)</span> on both sides, we find</p>
 <div class="math notranslate nohighlight">
 \[\tilde{A}_{k\ell} = U^{-1}_{km} A_{mn} U_{n\ell}\]</div>
@@ -690,10 +701,10 @@ A_{n1} &amp; \ldots &amp; A_{nn} \end{pmatrix} \begin{pmatrix} v_1 \\ \vdots \\ 
 <li><p>Given any basis <span class="math notranslate nohighlight">\(\ket{k}\)</span> of <span class="math notranslate nohighlight">\(V\)</span>, and an operator <span class="math notranslate nohighlight">\(A\)</span> represented by the matrix <span class="math notranslate nohighlight">\(A_{k\ell}\)</span>, the <em>trace</em> of <span class="math notranslate nohighlight">\(A\)</span>:</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-trace-def">
-<span class="eqno">(170)<a class="headerlink" href="#equation-trace-def" title="Link to this equation">#</a></span>\[\text{Tr}(A) = \sum_k A_{kk}\]</div>
+<span class="eqno">(172)<a class="headerlink" href="#equation-trace-def" title="Link to this equation">#</a></span>\[\text{Tr}(A) = \sum_k A_{kk}\]</div>
 <p>is independent of the choice of basis. To see this,</p>
 <div class="math notranslate nohighlight" id="equation-trace-new-basis">
-<span class="eqno">(171)<a class="headerlink" href="#equation-trace-new-basis" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(173)<a class="headerlink" href="#equation-trace-new-basis" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \text{Tr}(\tilde{A}) &amp; = U^{-1}_{mk} A_{kl} U_{lm} \\
 &amp; = U_{lm} U^{-1}_{mk} A_{kl} = \delta_{lk} A_{kl} = A_{kk} = \text{Tr}(A)
 \end{align}\end{split}\]</div>
@@ -701,7 +712,7 @@ A_{n1} &amp; \ldots &amp; A_{nn} \end{pmatrix} \begin{pmatrix} v_1 \\ \vdots \\ 
 <li><p><strong>Definition</strong>. The <em>determinant</em> of a matrix is also basis-independent. I will defer to your undergraduate linear algebra class to recall how to define the determinant of a matrix. The fact that it is basis independent comes from the fact that <span class="math notranslate nohighlight">\(\text{Det}(AB) = \text{Det}(A)\text{Det}(B) = \text{Det}(BA)\)</span>. Thus</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-det-change">
-<span class="eqno">(172)<a class="headerlink" href="#equation-det-change" title="Link to this equation">#</a></span>\[\text{Det}(\tilde{A}) = \text{Det}(U^{-1} A U) = \text{Det}(U U^{-1} A) = \text{Det}(A)\]</div>
+<span class="eqno">(174)<a class="headerlink" href="#equation-det-change" title="Link to this equation">#</a></span>\[\text{Det}(\tilde{A}) = \text{Det}(U^{-1} A U) = \text{Det}(U U^{-1} A) = \text{Det}(A)\]</div>
 </section>
 <section id="eigenvalues-and-eigenvectors">
 <h2>Eigenvalues and eigenvectors<a class="headerlink" href="#eigenvalues-and-eigenvectors" title="Link to this heading">#</a></h2>
@@ -709,7 +720,7 @@ A_{n1} &amp; \ldots &amp; A_{nn} \end{pmatrix} \begin{pmatrix} v_1 \\ \vdots \\ 
 <li><p><strong>Definition</strong>. Consider a vector space <span class="math notranslate nohighlight">\(V\)</span> and a linear operator <span class="math notranslate nohighlight">\(A\)</span> acting on it. If there is a vector <span class="math notranslate nohighlight">\(\ket{v}\)</span> and a complex number <span class="math notranslate nohighlight">\(\lambda\)</span> such that</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-evec-def">
-<span class="eqno">(173)<a class="headerlink" href="#equation-evec-def" title="Link to this equation">#</a></span>\[A \ket{v} = \lambda \ket{v}\]</div>
+<span class="eqno">(175)<a class="headerlink" href="#equation-evec-def" title="Link to this equation">#</a></span>\[A \ket{v} = \lambda \ket{v}\]</div>
 <p>then we call <span class="math notranslate nohighlight">\(\ket{v}\)</span> an <em>eigenvector</em> of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span> the associated <em>eigenvalue</em>.</p>
 <p>Note that for any eigenvector <span class="math notranslate nohighlight">\(\ket{v}\)</span> and any constant <span class="math notranslate nohighlight">\(c \in \CC\)</span>, <span class="math notranslate nohighlight">\(c\ket{v}\)</span> is also an eigenvector with the same eigenvalue.</p>
 <ol class="arabic simple" start="2">
@@ -722,7 +733,7 @@ A_{n1} &amp; \ldots &amp; A_{nn} \end{pmatrix} \begin{pmatrix} v_1 \\ \vdots \\ 
 <p>This means that <span class="math notranslate nohighlight">\(\text{Ker}(A - \lambda \bf{1})\)</span> is nontrivial, and therefore <span class="math notranslate nohighlight">\(A - \lambda \bf{1}\)</span> is not an invertibel operator.</p>
 <p>It is a basic fact that any operator <span class="math notranslate nohighlight">\(A\)</span> is invertible <em>if and only if</em> <span class="math notranslate nohighlight">\(\text{Det}(A) \neq 0\)</span>. The reson is as follows. There is a standard formula in linear algebra for the inverse:</p>
 <div class="math notranslate nohighlight" id="equation-inverse-formula">
-<span class="eqno">(174)<a class="headerlink" href="#equation-inverse-formula" title="Link to this equation">#</a></span>\[A^{-1}_{mn} = \frac{(\text{cofactor}\ A)_{mn}}{\text{Det}(A)}\]</div>
+<span class="eqno">(176)<a class="headerlink" href="#equation-inverse-formula" title="Link to this equation">#</a></span>\[A^{-1}_{mn} = \frac{(\text{cofactor}\ A)_{mn}}{\text{Det}(A)}\]</div>
 <p>where the cofactor is the determinant of the <span class="math notranslate nohighlight">\((n-1)\times(n-1)\)</span>-dimensional matrix corresponding to <span class="math notranslate nohighlight">\(A\)</span> with the <span class="math notranslate nohighlight">\(m\)</span>th row and the <span class="math notranslate nohighlight">\(n\)</span>th column deleted. This fails to be well defined precisely when the denominator vanishes.</p>
 <p>Thus, to find the eigenvalues of a matrix, we can solve the equation <span class="math notranslate nohighlight">\(\text{Det}(A - \lambda \bf{1}) = 0\)</span>. For <span class="math notranslate nohighlight">\(V\)</span> with dimension <span class="math notranslate nohighlight">\(n\)</span>, this is an <span class="math notranslate nohighlight">\(n\)</span>th order polynomial equation. A simple example is a <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix acting on <span class="math notranslate nohighlight">\(\CC^2\)</span>:</p>
 <div class="math notranslate nohighlight">

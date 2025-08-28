@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -425,34 +436,34 @@ document.write(`
 <p>We will start by considering particles on a circle with radius <span class="math notranslate nohighlight">\(R\)</span> (meaning that <span class="math notranslate nohighlight">\(x equiv x + 2\pi R\)</span>). We will model this with <span class="math notranslate nohighlight">\(N\)</span> discrete points that the particle can live on. Let the particles be spaced by an distance <span class="math notranslate nohighlight">\(\epsilon\)</span>, so that <span class="math notranslate nohighlight">\(N\epsilon = 2\pi R\)</span>. We can build a Hilbert space for a particle on this 1d lattice by stating that the state <span class="math notranslate nohighlight">\(\ket{k}\)</span> corresponds to a particle at site <span class="math notranslate nohighlight">\(k\in \{0,\ldots, N-1\}\)</span>. We can define these are orthonormal states so that <span class="math notranslate nohighlight">\(\brket{k}{l} = \delta_{kl}\)</span>. Finallly, we can extend these dinces so that <span class="math notranslate nohighlight">\(k + N\)</span> is the same as site <span class="math notranslate nohighlight">\(k\)</span> (this is reminding us that the particle lines on a circle).</p>
 <p>With this, the Hilbert space is <span class="math notranslate nohighlight">\(\CC^N\)</span>. A general state can be written as</p>
 <div class="math notranslate nohighlight" id="equation-lattice-state">
-<span class="eqno">(236)<a class="headerlink" href="#equation-lattice-state" title="Link to this equation">#</a></span>\[\ket{\psi} = \sum_k \psi_k \ket{k} \equiv \sum_k \psi(x_k) \ket{x_k}\]</div>
+<span class="eqno">(238)<a class="headerlink" href="#equation-lattice-state" title="Link to this equation">#</a></span>\[\ket{\psi} = \sum_k \psi_k \ket{k} \equiv \sum_k \psi(x_k) \ket{x_k}\]</div>
 <p>where on the far right hand side we have relabeled the states by defining
 <span class="math notranslate nohighlight">\(x_k \equiv \epsilon k\)</span>. Here <span class="math notranslate nohighlight">\(\psi(x_k)\)</span> is a complex function on the lattice, which we can call a <em>wave function</em>.</p>
 <p>The dual vector is</p>
 <div class="math notranslate nohighlight" id="equation-lattice-dual">
-<span class="eqno">(237)<a class="headerlink" href="#equation-lattice-dual" title="Link to this equation">#</a></span>\[\bra{\psi} = \sum_k \bra{x_k} \psi^*(x_k)\]</div>
+<span class="eqno">(239)<a class="headerlink" href="#equation-lattice-dual" title="Link to this equation">#</a></span>\[\bra{\psi} = \sum_k \bra{x_k} \psi^*(x_k)\]</div>
 <p>and the inner product can be written as</p>
 <div class="math notranslate nohighlight" id="equation-lattice-ip">
-<span class="eqno">(238)<a class="headerlink" href="#equation-lattice-ip" title="Link to this equation">#</a></span>\[\brket{\chi}{\psi} = \sum_{k,l} \bra{x_k} \chi^*(x_k) \psi(x_l) \ket{x_l} = \sum_k \chi^*(x_k) \psi(x_k)\]</div>
+<span class="eqno">(240)<a class="headerlink" href="#equation-lattice-ip" title="Link to this equation">#</a></span>\[\brket{\chi}{\psi} = \sum_{k,l} \bra{x_k} \chi^*(x_k) \psi(x_l) \ket{x_l} = \sum_k \chi^*(x_k) \psi(x_k)\]</div>
 <p>where in the last equality we used <span class="math notranslate nohighlight">\(\brket{x_k}{x_l} = \delta_{kl}\)</span>. This means that if <span class="math notranslate nohighlight">\(\brket{\psi}{\psi} = 1\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-norm-condition">
-<span class="eqno">(239)<a class="headerlink" href="#equation-norm-condition" title="Link to this equation">#</a></span>\[\sum_k |\psi(x_k)|^2 = 1\]</div>
+<span class="eqno">(241)<a class="headerlink" href="#equation-norm-condition" title="Link to this equation">#</a></span>\[\sum_k |\psi(x_k)|^2 = 1\]</div>
 </section>
 <section id="dual-fourier-momentum-basis">
 <h3>Dual Fourier/momentum basis<a class="headerlink" href="#dual-fourier-momentum-basis" title="Link to this heading">#</a></h3>
 <p>We can also write the following basis for <span class="math notranslate nohighlight">\(\CC^N\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-momentum-lattice">
-<span class="eqno">(240)<a class="headerlink" href="#equation-momentum-lattice" title="Link to this equation">#</a></span>\[\ket{\phi_m} = \frac{1}{\sqrt{N}} \sum_{k = 0}^{N-1} e^{\frac{2\pi i m k}{N}} \ket{x_k}
+<span class="eqno">(242)<a class="headerlink" href="#equation-momentum-lattice" title="Link to this equation">#</a></span>\[\ket{\phi_m} = \frac{1}{\sqrt{N}} \sum_{k = 0}^{N-1} e^{\frac{2\pi i m k}{N}} \ket{x_k}
 = \frac{1}{\sqrt{N}} \sum_{k = 0}^{N-1} e^{\frac{i m x_k}{R}} \ket{x_k}\]</div>
-<p>where <span class="math notranslate nohighlight">\(m \in \{0,1,2,\ldots N-1\}\)</span>. This is of the form <a class="reference internal" href="#equation-lattice-state">(236)</a> with <span class="math notranslate nohighlight">\(\psi(x_k) = \frac{1}{\sqrt{N}} e^{i m x_k/R} \equiv \phi_m(x_k)\)</span>. In other words, the wavefunction is a pure oscillating exponential.</p>
-<p>The states <span class="math notranslate nohighlight">\(\ket{\phi_m}\)</span> are orthonormal. Using <a class="reference internal" href="#equation-lattice-ip">(238)</a></p>
+<p>where <span class="math notranslate nohighlight">\(m \in \{0,1,2,\ldots N-1\}\)</span>. This is of the form <a class="reference internal" href="#equation-lattice-state">(238)</a> with <span class="math notranslate nohighlight">\(\psi(x_k) = \frac{1}{\sqrt{N}} e^{i m x_k/R} \equiv \phi_m(x_k)\)</span>. In other words, the wavefunction is a pure oscillating exponential.</p>
+<p>The states <span class="math notranslate nohighlight">\(\ket{\phi_m}\)</span> are orthonormal. Using <a class="reference internal" href="#equation-lattice-ip">(240)</a></p>
 <div class="math notranslate nohighlight" id="equation-mom-ortho">
-<span class="eqno">(241)<a class="headerlink" href="#equation-mom-ortho" title="Link to this equation">#</a></span>\[\brket{phi_m}{\phi_n} = \frac{1}{N} \sum_k e^{2\pi i (n-m)k/N} = \delta_{m,n}\]</div>
+<span class="eqno">(243)<a class="headerlink" href="#equation-mom-ortho" title="Link to this equation">#</a></span>\[\brket{phi_m}{\phi_n} = \frac{1}{N} \sum_k e^{2\pi i (n-m)k/N} = \delta_{m,n}\]</div>
 <p>The last equality can be argued for as follows. If <span class="math notranslate nohighlight">\(n = m\)</span>, it is clear that the answer is <span class="math notranslate nohighlight">\(1\)</span>. If <span class="math notranslate nohighlight">\(n\neq m\)</span>, we can use the identity</p>
 <div class="math notranslate nohighlight">
 \[\sum_{k = 0}^{N-1} x^k = \frac{1 - x^N}{1 - x}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x = e^{2\pi i (n-m)/N}\)</span>.
-Since <span class="math notranslate nohighlight">\(x^N = 1\)</span>, and the denominator is nonvanishing for <span class="math notranslate nohighlight">\(x \neq 1\)</span>, this sum vanishes, proving <a class="reference internal" href="#equation-mom-ortho">(241)</a>.</p>
+Since <span class="math notranslate nohighlight">\(x^N = 1\)</span>, and the denominator is nonvanishing for <span class="math notranslate nohighlight">\(x \neq 1\)</span>, this sum vanishes, proving <a class="reference internal" href="#equation-mom-ortho">(243)</a>.</p>
 <p>To get some intuition for this basis, let us rewrite <span class="math notranslate nohighlight">\(\ket{\psi} = \sum_k \psi(x_k) \ket{k}\)</span>. Since <span class="math notranslate nohighlight">\(\ket{\phi_m}\)</span> is a complete basis, we have the following resolution of the identity:</p>
 <div class="math notranslate nohighlight">
 \[{\bf 1} = \sum_{m=0}^{N-1} \ket{\phi_m}\bra{\phi_m}\]</div>
@@ -467,19 +478,19 @@ Since <span class="math notranslate nohighlight">\(x^N = 1\)</span>, and the den
 \[\ket{\psi} = \sum_m \left(\frac{1}{\sqrt{N}}\sum_k \psi(x_k) e^{-2\pi i m k/N}\right)\ket{\phi_m}\]</div>
 <p>Now</p>
 <div class="math notranslate nohighlight" id="equation-discrete-ft">
-<span class="eqno">(242)<a class="headerlink" href="#equation-discrete-ft" title="Link to this equation">#</a></span>\[{\tilde \psi}(m) = \frac{1}{\sqrt{N}} \sum_k \psi(x_k) e^{-2\pi m k/N}\]</div>
+<span class="eqno">(244)<a class="headerlink" href="#equation-discrete-ft" title="Link to this equation">#</a></span>\[{\tilde \psi}(m) = \frac{1}{\sqrt{N}} \sum_k \psi(x_k) e^{-2\pi m k/N}\]</div>
 <p>is simply the discrete Fourier transform of <span class="math notranslate nohighlight">\(\psi(x_k)\)</span>, and we have</p>
 <div class="math notranslate nohighlight">
 \[\ket{\psi} = \sum_m {\tilde\psi}(m) \ket{\phi_m}\]</div>
-<p>That is, the coefficients of the expansion in the basis <span class="math notranslate nohighlight">\(\ket{phi_m}\)</span> are the Fourier coefficients for <span class="math notranslate nohighlight">\(\psi(x_k)\)</span>. Note that <a class="reference internal" href="#equation-discrete-ft">(242)</a> can be reversed:</p>
+<p>That is, the coefficients of the expansion in the basis <span class="math notranslate nohighlight">\(\ket{phi_m}\)</span> are the Fourier coefficients for <span class="math notranslate nohighlight">\(\psi(x_k)\)</span>. Note that <a class="reference internal" href="#equation-discrete-ft">(244)</a> can be reversed:</p>
 <div class="math notranslate nohighlight" id="equation-discrete-ift">
-<span class="eqno">(243)<a class="headerlink" href="#equation-discrete-ift" title="Link to this equation">#</a></span>\[\psi(x_k) = \frac{1}{\sqrt{N}} \sum_m {\tilde\psi}(m) e^{2\pi i m k/N}\]</div>
+<span class="eqno">(245)<a class="headerlink" href="#equation-discrete-ift" title="Link to this equation">#</a></span>\[\psi(x_k) = \frac{1}{\sqrt{N}} \sum_m {\tilde\psi}(m) e^{2\pi i m k/N}\]</div>
 </section>
 <section id="operators">
 <h3>Operators<a class="headerlink" href="#operators" title="Link to this heading">#</a></h3>
 <p>There are two operators of interest here. The first is the <em>position operator</em>, which can be defined as</p>
 <div class="math notranslate nohighlight" id="equation-po-def">
-<span class="eqno">(244)<a class="headerlink" href="#equation-po-def" title="Link to this equation">#</a></span>\[{\hat x} \ket{x_k} = x_k \ket{x_k}\]</div>
+<span class="eqno">(246)<a class="headerlink" href="#equation-po-def" title="Link to this equation">#</a></span>\[{\hat x} \ket{x_k} = x_k \ket{x_k}\]</div>
 <p>That is, the position states are eigenstates of <span class="math notranslate nohighlight">\({\hat x}\)</span>. It is clear that <span class="math notranslate nohighlight">\({\hat x}\ket{\psi} = \ket{x\psi}\)</span>, *so long as we take <span class="math notranslate nohighlight">\(\psi\)</span> to be a function on the lattice <span class="math notranslate nohighlight">\(x_k \in \{0,\eps,\ldots (N-1) \eps = 2\pi R - \eps\}\)</span>. We thus have to be a little careful here. So far <span class="math notranslate nohighlight">\(\psi(x_k)\)</span> is just a collection of numbers. We have stated that <span class="math notranslate nohighlight">\(k = N\)</span> can be identified with <span class="math notranslate nohighlight">\(k = 0\)</span>. However for <span class="math notranslate nohighlight">\({\hat x}\)</span> to be well-defined, it must give the same answer acting on <span class="math notranslate nohighlight">\(\ket{0}\)</span>, <span class="math notranslate nohighlight">\(\ket{x_N = 2\pi R}\)</span>.</p>
 <p>Now if we measure <span class="math notranslate nohighlight">\({\hat x}\)</span>, the possible eigenvalues are <span class="math notranslate nohighlight">\(x_k\)</span>. We can ask the question, if we measure the position of the particle, with what probability will we find the result <span class="math notranslate nohighlight">\(x_k\)</span>? The corresponding projection opeator is <span class="math notranslate nohighlight">\(\CP = \ket{x_k}\bra{x_k}\)</span>, so the probability <span class="math notranslate nohighlight">\(p(x_k)\)</span> is:</p>
 <div class="math notranslate nohighlight">
@@ -502,52 +513,52 @@ Since <span class="math notranslate nohighlight">\(x^N = 1\)</span>, and the den
 <h3>Particles on a circle<a class="headerlink" href="#particles-on-a-circle" title="Link to this heading">#</a></h3>
 <p>Let us next consider the limit <span class="math notranslate nohighlight">\(\eps\to 0\)</span>, <span class="math notranslate nohighlight">\(N \to \infty\)</span>, <span class="math notranslate nohighlight">\(\eps N = 2\pi R\)</span> fixed. (We will consider <span class="math notranslate nohighlight">\(R \to\infty\)</span> later). Starting with <span class="math notranslate nohighlight">\(\eps\)</span> finite but very small, we can write inner products as</p>
 <div class="math notranslate nohighlight" id="equation-inner-limit">
-<span class="eqno">(245)<a class="headerlink" href="#equation-inner-limit" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(247)<a class="headerlink" href="#equation-inner-limit" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \brket{\chi}{\psi} &amp; = \sum_k \chi^*(x_k) \psi(x_k) \\ 
 &amp; = \eps \sum_k \frac{1}{\sqrt{\eps}} \chi^*(x_k) \frac{1}{\sqrt{\eps}} \psi(x_k)\\
 &amp; \xrightarrow[\eps\to 0]{} \int_0^{2\pi R} dx \chi^*(x) \psi(x)
 \end{align}\end{split}\]</div>
 <p>where we have rescaled the wavefunctions</p>
 <div class="math notranslate nohighlight" id="equation-wf-rescaling">
-<span class="eqno">(246)<a class="headerlink" href="#equation-wf-rescaling" title="Link to this equation">#</a></span>\[\frac{1}{\sqrt{\eps}} \psi(x) \xrightarrow[\eps\to 0]{} \psi(x)\]</div>
+<span class="eqno">(248)<a class="headerlink" href="#equation-wf-rescaling" title="Link to this equation">#</a></span>\[\frac{1}{\sqrt{\eps}} \psi(x) \xrightarrow[\eps\to 0]{} \psi(x)\]</div>
 <p>Note that the rescaled wavefunctions have dimensions of <span class="math notranslate nohighlight">\(1/\sqrt{length}\)</span>. Under this rescaling, the probability that a particle can be found at position <span class="math notranslate nohighlight">\(x\)</span> becomes:</p>
 <div class="math notranslate nohighlight">
 \[|\psi(x_k)|^2 = \eps \big| \frac{1}{\sqrt{\eps}} \psi(x_k)\big|^2 \to \eps |\psi(x)|^2 \equiv dx |\psi(x)|^2\]</div>
 <p>Under this rescaling, <span class="math notranslate nohighlight">\(dx|\psi(x)|^2\)</span> is dimensionless and can be interpreted as a probability – more specifically, the probability for the particle to be within an interval <span class="math notranslate nohighlight">\(dx\)</span> of the position <span class="math notranslate nohighlight">\(x\)</span>. The quantity <span class="math notranslate nohighlight">\(|\psi(x)|^2\)</span> has dimensions of <span class="math notranslate nohighlight">\(1/(length)\)</span>, and so can be considered as a (one-dimensional) probability density.</p>
 <p>The position eigenstates are problematic in this limit. We would like to replace them with states labeled by the continuous variable <span class="math notranslate nohighlight">\(x\)</span>. However, rewriting the state</p>
 <div class="math notranslate nohighlight" id="equation-continuum-state">
-<span class="eqno">(247)<a class="headerlink" href="#equation-continuum-state" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(249)<a class="headerlink" href="#equation-continuum-state" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \ket{\psi} &amp; = \sum_k \psi(x_k)\ket{x_k}\\
 &amp; = \eps \sum_k \frac{1}{\sqrt{\eps}} \psi(x_k) \frac{1}{\sqrt{\eps}} \ket{x_k}\\
 &amp; \xrightarrow[\eps \to 0]{} \int_0^{2\pi R} dx \psi(x) \ket{x}
 \end{align}\end{split}\]</div>
 <p>where we define</p>
 <div class="math notranslate nohighlight" id="equation-contin-pos-eigen">
-<span class="eqno">(248)<a class="headerlink" href="#equation-contin-pos-eigen" title="Link to this equation">#</a></span>\[\frac{1}{\sqrt{\eps}} \ket{x_k} \xrightarrow[\eps\to 0]{} \ket{x}\]</div>
+<span class="eqno">(250)<a class="headerlink" href="#equation-contin-pos-eigen" title="Link to this equation">#</a></span>\[\frac{1}{\sqrt{\eps}} \ket{x_k} \xrightarrow[\eps\to 0]{} \ket{x}\]</div>
 <p>Now the position states (I will be careful for now not to call them eigenstates) <span class="math notranslate nohighlight">\(\ket{x}\)</span> does not, strictly speaking, exist; it is not a vector in the Hilbert space. In particular it is clear that the norm is <span class="math notranslate nohighlight">\(1/\eps \to \infty\)</span>. The inner product in this limit is</p>
 <div class="math notranslate nohighlight" id="equation-pos-eigen-ip">
-<span class="eqno">(249)<a class="headerlink" href="#equation-pos-eigen-ip" title="Link to this equation">#</a></span>\[\frac{1}{\sqrt{\eps}} \bra{x_k} \frac{1}{\sqrt{\eps}} \ket{x_l} = \frac{1}{\eps} \delta_{kl} \xrightarrow[\eps \to 0]{} \brket{x}{x'} = \delta(x - x')\]</div>
+<span class="eqno">(251)<a class="headerlink" href="#equation-pos-eigen-ip" title="Link to this equation">#</a></span>\[\frac{1}{\sqrt{\eps}} \bra{x_k} \frac{1}{\sqrt{\eps}} \ket{x_l} = \frac{1}{\eps} \delta_{kl} \xrightarrow[\eps \to 0]{} \brket{x}{x'} = \delta(x - x')\]</div>
 <p>where <span class="math notranslate nohighlight">\(\delta(x - x')\)</span> is the Dirac delta function. Recall that <span class="math notranslate nohighlight">\(\delta(x)\)</span> vanishes for <span class="math notranslate nohighlight">\(x\neq 0\)</span>, is infinite at <span class="math notranslate nohighlight">\(x = 0\)</span>, and satisfies the constraint</p>
 <div class="math notranslate nohighlight" id="equation-ddf-norm">
-<span class="eqno">(250)<a class="headerlink" href="#equation-ddf-norm" title="Link to this equation">#</a></span>\[\int_{-L}^L dx\delta(x) = 1\]</div>
+<span class="eqno">(252)<a class="headerlink" href="#equation-ddf-norm" title="Link to this equation">#</a></span>\[\int_{-L}^L dx\delta(x) = 1\]</div>
 <p>for any finite positive <span class="math notranslate nohighlight">\(L\)</span>. This matches the fact that <span class="math notranslate nohighlight">\(\eps \sum \to \int dx\)</span>. so that</p>
 <div class="math notranslate nohighlight">
 \[\eps \sum_{k=1}^N \frac{\delta_{kl}}{\eps} = 1 \to \int_0^{2\pi R} dx \delta(x - x')\]</div>
 <p>Although the position states are not actually states in the Hilbert space, we can with some care use them consistently. The essential point is that using the above rules, if we define our state as</p>
 <div class="math notranslate nohighlight">
 \[\ket{\psi} = \int_0^{2\pi R} dx \psi(x) \ket{x}\]</div>
-<p>then using <a class="reference internal" href="#equation-pos-eigen-ip">(249)</a></p>
+<p>then using <a class="reference internal" href="#equation-pos-eigen-ip">(251)</a></p>
 <div class="math notranslate nohighlight" id="equation-continuous-norm">
-<span class="eqno">(251)<a class="headerlink" href="#equation-continuous-norm" title="Link to this equation">#</a></span>\[\brket{\chi}{\psi} = \int dx dy \chi^*(x) \brket{x}{y} \psi(y) = \int dx \chi^*(x) \psi(y)\]</div>
+<span class="eqno">(253)<a class="headerlink" href="#equation-continuous-norm" title="Link to this equation">#</a></span>\[\brket{\chi}{\psi} = \int dx dy \chi^*(x) \brket{x}{y} \psi(y) = \int dx \chi^*(x) \psi(y)\]</div>
 <p>and in particular,</p>
 <div class="math notranslate nohighlight" id="equation-cont-norm-two">
-<span class="eqno">(252)<a class="headerlink" href="#equation-cont-norm-two" title="Link to this equation">#</a></span>\[\brket{\psi}{\psi} = \int_0^{2\pi R} dx |\psi(x)|^2\]</div>
+<span class="eqno">(254)<a class="headerlink" href="#equation-cont-norm-two" title="Link to this equation">#</a></span>\[\brket{\psi}{\psi} = \int_0^{2\pi R} dx |\psi(x)|^2\]</div>
 <p>So in the continuum limit, the Hilbert space becomes the space of integrable functions on the circle <span class="math notranslate nohighlight">\(\psi(x + 2\pi R) = \psi(x)\)</span>. The wavefunctions can be extracted from the states via the formula</p>
 <div class="math notranslate nohighlight">
 \[\psi(x) = \brket{x}{\psi}\]</div>
 <p>For finite <span class="math notranslate nohighlight">\(R\)</span>, the momentum basis is, however, still well-defined. Using the limits above,</p>
 <div class="math notranslate nohighlight" id="equation-cont-mom-basis">
-<span class="eqno">(253)<a class="headerlink" href="#equation-cont-mom-basis" title="Link to this equation">#</a></span>\[\ket{\phi_m} = \frac{1}{\sqrt{N}} e^{\frac{2\pi i m k}{N}} \ket{k} \xrightarrow[\eps\to 0]{} \frac{1}{\sqrt{2\pi R}} \int_0^{2\pi R} dx e^{i m x/R}\ket{x}\]</div>
+<span class="eqno">(255)<a class="headerlink" href="#equation-cont-mom-basis" title="Link to this equation">#</a></span>\[\ket{\phi_m} = \frac{1}{\sqrt{N}} e^{\frac{2\pi i m k}{N}} \ket{k} \xrightarrow[\eps\to 0]{} \frac{1}{\sqrt{2\pi R}} \int_0^{2\pi R} dx e^{i m x/R}\ket{x}\]</div>
 <p>The corresponding wavefunction is</p>
 <div class="math notranslate nohighlight">
 \[\phi_m(x) = \frac{1}{\sqrt{2\pi R}} e^{i m x/R} \equiv \frac{1}{\sqrt{2\pi R}} e^{i p_m x/\hbar}\]</div>
@@ -557,7 +568,7 @@ Since <span class="math notranslate nohighlight">\(x^N = 1\)</span>, and the den
 \[{\bf 1} = \sum_m \ket{\phi_m}\bra{\phi_m}\]</div>
 <p>We can thus write</p>
 <div class="math notranslate nohighlight" id="equation-dual-reps">
-<span class="eqno">(254)<a class="headerlink" href="#equation-dual-reps" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(256)<a class="headerlink" href="#equation-dual-reps" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \ket{\psi} &amp; = \int_0^{2\pi R} dx \psi(x) \ket{x} \\
 &amp; = \sum_{m = - \infty}^{\infty} \int_0^{2\pi R} dx \psi(x) \ket{\phi_m}\brket{\phi_m}{x}\\
 &amp; = \sum_{m = -\infty}^{\infty} \int_0^{2\pi R} dx \frac{1}{\sqrt{2\pi R}} e^{-i m x/R} \psi(x) \ket{m}\\
@@ -569,7 +580,7 @@ Since <span class="math notranslate nohighlight">\(x^N = 1\)</span>, and the den
 <p>is the Fourier transform of <span class="math notranslate nohighlight">\(\psi(x)\)</span>.</p>
 <p>I have been careful not to call <span class="math notranslate nohighlight">\(\ket{x}\)</span> position eigenstates. It is tempting to say that we have an operator <span class="math notranslate nohighlight">\({\hat x}\)</span> such that <span class="math notranslate nohighlight">\({\hat x}\ket{x} = x\ket{x}\)</span>. This would meanthat <span class="math notranslate nohighlight">\({\hat x}\ket{\psi} = \ket{x\psi}\)</span>. But if <span class="math notranslate nohighlight">\(\psi(x)\)</span> is a periodic function, <span class="math notranslate nohighlight">\(x\psi\)</span> is not. Thus our putative operator <span class="math notranslate nohighlight">\(x\)</span> takes us out of the Hilbert space; it is not well defined. Nonetheless, it does make sense to ask whether the particle is or is not in a given position, or at least, in a given interval. We can define a projection operator by its action on wavefunctions:</p>
 <div class="math notranslate nohighlight" id="equation-position-projection">
-<span class="eqno">(255)<a class="headerlink" href="#equation-position-projection" title="Link to this equation">#</a></span>\[\begin{split}\CP_{x_0,\delta}\psi(x) = 
+<span class="eqno">(257)<a class="headerlink" href="#equation-position-projection" title="Link to this equation">#</a></span>\[\begin{split}\CP_{x_0,\delta}\psi(x) = 
 \begin{cases} 0 &amp; \text{if}\ x &lt; x_0 - \frac{\delta}{2}\\
 \psi(x) &amp; \text{if}\ x_0 - \frac{\delta}{2} &lt; x &lt; x_0 + \frac{\delta}{2}\\
 0 &amp; \text{if}\ x &gt; x_0 + \frac{\delta}{2}
@@ -595,13 +606,13 @@ Since <span class="math notranslate nohighlight">\(x^N = 1\)</span>, and the den
 \end{align}\end{split}\]</div>
 <p>where in the second to last line we integrated by parts to move the derivative acting on the exponential to one acting on <span class="math notranslate nohighlight">\(\psi\)</span>. In short,</p>
 <div class="math notranslate nohighlight" id="equation-mom-def">
-<span class="eqno">(256)<a class="headerlink" href="#equation-mom-def" title="Link to this equation">#</a></span>\[{\hat p}\ket{\psi} = \ket{\frac{\hbar}{i} \frac{\del}{\del x} \psi}\]</div>
+<span class="eqno">(258)<a class="headerlink" href="#equation-mom-def" title="Link to this equation">#</a></span>\[{\hat p}\ket{\psi} = \ket{\frac{\hbar}{i} \frac{\del}{\del x} \psi}\]</div>
 </section>
 <section id="id1">
 <h3>Particles on a line<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Finally, we can take <span class="math notranslate nohighlight">\(R \to \infty\)</span>. This means the circle should move to the real line. Since the wavefunctions started as periodic, we can define the period as <span class="math notranslate nohighlight">\([-\pi R,\pi R]\)</span> before taking the limit. The resulting Hilbert space is equivalent to the space of functions that are integrable on this line; that is, the space of square-integrable functions, or <span class="math notranslate nohighlight">\(L^2(\CR)\)</span>.</p>
 <p>In this limit, the eigenstates of <span class="math notranslate nohighlight">\({\hat p}\)</span> also become ill-defined. The allowed values of momenta are <span class="math notranslate nohighlight">\(p = \frac{\hbar m}{R}\)</span> for <span class="math notranslate nohighlight">\(m \in \CZ\)</span>. The momentum becomes continuous. One could try to stick with the eigenstates <span class="math notranslate nohighlight">\(\ket{\phi_m}\)</span> and consider them as an orthogonal set, but as we will see, it is <span class="math notranslate nohighlight">\(p\)</span> which is the physical variable.</p>
-<p>Returning to <a class="reference internal" href="#equation-dual-reps">(254)</a>, we can rewrite the third line as</p>
+<p>Returning to <a class="reference internal" href="#equation-dual-reps">(256)</a>, we can rewrite the third line as</p>
 <div class="math notranslate nohighlight">
 \[\ket{\psi} = \frac{\hbar}{R} \sum_m \int_{-\pi R}^{\pi R} dx \frac{1}{\sqrt{2\pi \hbar}} e^{- i p x/\hbar}\psi(x) \sqrt{\frac{R}{\hbar}} \ket{\phi_m}\]</div>
 <p>If we take <span class="math notranslate nohighlight">\(R \to \infty\)</span>, <span class="math notranslate nohighlight">\(\frac{\hbar}{R} \sum_m \to \int_{-\infty}^{\infty} dp\)</span>. If we take <span class="math notranslate nohighlight">\(\lim_{R\to\infty} \sqrt{\frac{R}{\hbar}} \ket{\phi_m} \to \ket{p}\)</span>, then we can show that</p>
@@ -615,11 +626,11 @@ Since <span class="math notranslate nohighlight">\(x^N = 1\)</span>, and the den
 \[\brket{p}{q} = \delta(p - q)\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight" id="equation-ft-on-line">
-<span class="eqno">(257)<a class="headerlink" href="#equation-ft-on-line" title="Link to this equation">#</a></span>\[{\tilde \psi}(p) = \int_{-\infty}^{\infty} dx \frac{e^{-i p x/\hbar}}{\sqrt{2\pi \hbar}} = \brket{p}{\psi}\]</div>
+<span class="eqno">(259)<a class="headerlink" href="#equation-ft-on-line" title="Link to this equation">#</a></span>\[{\tilde \psi}(p) = \int_{-\infty}^{\infty} dx \frac{e^{-i p x/\hbar}}{\sqrt{2\pi \hbar}} = \brket{p}{\psi}\]</div>
 <p>is the Fourier transform of the wavefunction. Note that for consistency, using <span class="math notranslate nohighlight">\({\bf 1} = \int dx \ket{x}\bra{x}\)</span>, we can show that</p>
 <div class="math notranslate nohighlight">
 \[{\tilde \psi}(p) = \brket{p}{\psi} = \int dx \brket{p}{x}\brket{x}{\psi}\]</div>
-<p>This is consistent with <a class="reference internal" href="#equation-ft-on-line">(257)</a> if</p>
+<p>This is consistent with <a class="reference internal" href="#equation-ft-on-line">(259)</a> if</p>
 <div class="math notranslate nohighlight">
 \[\brket{p}{x} = \frac{1}{\sqrt{2\pi \hbar}} e^{-i p x/\hbar}\]</div>
 <p>In other words, the momentum eigenstates are purely oscillating exponential.

@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -418,24 +429,24 @@ document.write(`
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Recall that we can write the Euler-Lagrange equations as</p>
 <div class="math notranslate nohighlight" id="equation-el-redux">
-<span class="eqno">(75)<a class="headerlink" href="#equation-el-redux" title="Link to this equation">#</a></span>\[\frac{d p_I}{dt} = {\cal F}_I(q^I, \dot{q}^I)\]</div>
+<span class="eqno">(77)<a class="headerlink" href="#equation-el-redux" title="Link to this equation">#</a></span>\[\frac{d p_I}{dt} = {\cal F}_I(q^I, \dot{q}^I)\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight" id="equation-gm-redux">
-<span class="eqno">(76)<a class="headerlink" href="#equation-gm-redux" title="Link to this equation">#</a></span>\[p_I(q_I, \dot{q}^I) = \frac{\del L}{\del \dot{q^I}}\]</div>
+<span class="eqno">(78)<a class="headerlink" href="#equation-gm-redux" title="Link to this equation">#</a></span>\[p_I(q_I, \dot{q}^I) = \frac{\del L}{\del \dot{q^I}}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight" id="equation-gf-redux">
-<span class="eqno">(77)<a class="headerlink" href="#equation-gf-redux" title="Link to this equation">#</a></span>\[{\cal F}_I(q^I, \dot{q}^I) = \frac{\del L}{\del q^I}\]</div>
+<span class="eqno">(79)<a class="headerlink" href="#equation-gf-redux" title="Link to this equation">#</a></span>\[{\cal F}_I(q^I, \dot{q}^I) = \frac{\del L}{\del q^I}\]</div>
 <p>and <span class="math notranslate nohighlight">\(L(q^I, \dot{q}^I,t)\)</span> is the Lagrangian.</p>
-<p>We can, in general, solve for <a class="reference internal" href="#equation-gm-redux">(76)</a> to get <span class="math notranslate nohighlight">\(\dot{q}^I(q^I,p_I)\)</span>. Now the state of the system can be described by specifying <span class="math notranslate nohighlight">\((q^I, p_I)\)</span>; these are coordinates in <em>phase space</em>. We will demonstrate below that if we start with</p>
+<p>We can, in general, solve for <a class="reference internal" href="#equation-gm-redux">(78)</a> to get <span class="math notranslate nohighlight">\(\dot{q}^I(q^I,p_I)\)</span>. Now the state of the system can be described by specifying <span class="math notranslate nohighlight">\((q^I, p_I)\)</span>; these are coordinates in <em>phase space</em>. We will demonstrate below that if we start with</p>
 <div class="math notranslate nohighlight" id="equation-hamilt">
-<span class="eqno">(78)<a class="headerlink" href="#equation-hamilt" title="Link to this equation">#</a></span>\[H(q^I,p_I) = p_I \dot{q}^I(q^I,p_I) - L(q^I,\dot{q}(q^I,p_I))\]</div>
+<span class="eqno">(80)<a class="headerlink" href="#equation-hamilt" title="Link to this equation">#</a></span>\[H(q^I,p_I) = p_I \dot{q}^I(q^I,p_I) - L(q^I,\dot{q}(q^I,p_I))\]</div>
 <p>then we can rewrite the equations of motion as</p>
 <div class="math notranslate nohighlight" id="equation-he-intro">
-<span class="eqno">(79)<a class="headerlink" href="#equation-he-intro" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(81)<a class="headerlink" href="#equation-he-intro" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \dot{q}^I &amp; = \frac{\del H}{\del p_I}\\
 \dot{p}_I &amp; = - \frac{\del H}{\del q^I}
 \end{align}\end{split}\]</div>
-<p>Note that when the Lagrangian is time-independent, the quantity <a class="reference internal" href="#equation-hamilt">(78)</a> is exactly the quantity which we showed, via Noether’s theorem, is conserved. <span class="math notranslate nohighlight">\(H\)</span>, called the <em>Hamiltonian</em> is the energy of this system. The equations {eq}`he_intro_ are known as <em>Hamilton’s Equations</em> and they are completely equivalent to the Euler-Lagrange equations.</p>
+<p>Note that when the Lagrangian is time-independent, the quantity <a class="reference internal" href="#equation-hamilt">(80)</a> is exactly the quantity which we showed, via Noether’s theorem, is conserved. <span class="math notranslate nohighlight">\(H\)</span>, called the <em>Hamiltonian</em> is the energy of this system. The equations {eq}`he_intro_ are known as <em>Hamilton’s Equations</em> and they are completely equivalent to the Euler-Lagrange equations.</p>
 <p>Why would we daopt this formalism?</p>
 <ol class="arabic simple">
 <li><p>If <span class="math notranslate nohighlight">\(I \in (1,\ldots, D)\)</span>, Hamilton’s equations are <span class="math notranslate nohighlight">\(2D\)</span> first order differential equations. If we specify the data <span class="math notranslate nohighlight">\((q^I,p_I)\)</span> at any initial time <span class="math notranslate nohighlight">\(t_0\)</span>,  these equations have a unique solution for all future times. Thus the state of the system at any time is copmpletely described by <span class="math notranslate nohighlight">\((q^I, p_I)\)</span>. The set of all states so specified is known as <em>phase space</em>. Thus, the space of states is given by <span class="math notranslate nohighlight">\(2D\)</span> independent variables, and we can formulate mechanics as an initial value problem.</p></li>
@@ -449,26 +460,26 @@ document.write(`
 <h2>Derivation from Lagrangian dynamics<a class="headerlink" href="#derivation-from-lagrangian-dynamics" title="Link to this heading">#</a></h2>
 <p>We start with the definition of generalized momentum in Lagrangian mechanics:</p>
 <div class="math notranslate nohighlight" id="equation-gm-deriv">
-<span class="eqno">(80)<a class="headerlink" href="#equation-gm-deriv" title="Link to this equation">#</a></span>\[p_I = \frac{\del L}{\del \dot{q}^I}(q^I, \dot{q}^I)\]</div>
+<span class="eqno">(82)<a class="headerlink" href="#equation-gm-deriv" title="Link to this equation">#</a></span>\[p_I = \frac{\del L}{\del \dot{q}^I}(q^I, \dot{q}^I)\]</div>
 <p>Assume this can be uniquely solved for <span class="math notranslate nohighlight">\(\dot{q}^I = \dot{q}^I(q^I,p_I)\)</span>. We can then performa a <em>Legendre transformation</em> to define the Hamiltonian <span class="math notranslate nohighlight">\(H(p,q)\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-legendre-trans">
-<span class="eqno">(81)<a class="headerlink" href="#equation-legendre-trans" title="Link to this equation">#</a></span>\[H(q^I,p_I) = p_I \dot{q}^I(q^I,p_I) - L(q^I,\dot{q}^I(q^I,p_I))\]</div>
+<span class="eqno">(83)<a class="headerlink" href="#equation-legendre-trans" title="Link to this equation">#</a></span>\[H(q^I,p_I) = p_I \dot{q}^I(q^I,p_I) - L(q^I,\dot{q}^I(q^I,p_I))\]</div>
 <p>The Legendre transform appears in both classical mechanics and, in various ways, in statistical mechanics. I will have to put aside the beautiful geometric interpretation of the transform, but I highly recommend <span id="id1">[<a class="reference internal" href="../markdown.html#id6" title="R. K. P. Zia, Edward F. Redish, and Susan R. McKay. Making sense of the legendre transform. American Journal of Physics, 77(7):614–622, July 2009. URL: http://dx.doi.org/10.1119/1.3119512, doi:10.1119/1.3119512.">Zia <em>et al.</em>, 2009</a>]</span>, whih you can find on the <a class="reference external" href="https://arxiv.org/abs/0806.1147">arXiv.org website</a>.</p>
 <p>Given this we can compute</p>
 <div class="math notranslate nohighlight" id="equation-he-one">
-<span class="eqno">(82)<a class="headerlink" href="#equation-he-one" title="Link to this equation">#</a></span>\[\frac{\del H}{\del p_I}\Big|_{p_{J\neq I}, q^J\ fixed} = \dot{q}^I + p_J \frac{\del \dot{q}^J}{\del p^I} - \frac{\del \dot{q}^J}{\del p^I}\frac{\del L}{\del \dot{q}^J}\]</div>
-<p>where the final term comes from using the chain rul to compute <span class="math notranslate nohighlight">\(\del L/\del p_I\)</span>. Using <a class="reference internal" href="#equation-gm-deriv">(80)</a>, this last term becomes equivalent to the second term on the right hand side, and we have one set of Hamilton’s equations:</p>
+<span class="eqno">(84)<a class="headerlink" href="#equation-he-one" title="Link to this equation">#</a></span>\[\frac{\del H}{\del p_I}\Big|_{p_{J\neq I}, q^J\ fixed} = \dot{q}^I + p_J \frac{\del \dot{q}^J}{\del p^I} - \frac{\del \dot{q}^J}{\del p^I}\frac{\del L}{\del \dot{q}^J}\]</div>
+<p>where the final term comes from using the chain rul to compute <span class="math notranslate nohighlight">\(\del L/\del p_I\)</span>. Using <a class="reference internal" href="#equation-gm-deriv">(82)</a>, this last term becomes equivalent to the second term on the right hand side, and we have one set of Hamilton’s equations:</p>
 <div class="math notranslate nohighlight" id="equation-he-two">
-<span class="eqno">(83)<a class="headerlink" href="#equation-he-two" title="Link to this equation">#</a></span>\[\dot{q}^I = \frac{\del H}{\del p_I}\]</div>
+<span class="eqno">(85)<a class="headerlink" href="#equation-he-two" title="Link to this equation">#</a></span>\[\dot{q}^I = \frac{\del H}{\del p_I}\]</div>
 <p>Similarly,</p>
 <div class="math notranslate nohighlight" id="equation-he-three">
-<span class="eqno">(84)<a class="headerlink" href="#equation-he-three" title="Link to this equation">#</a></span>\[\frac{\del H}{\del q^I}\Big|_{q^{J \neq I}, p_J\ fixed} = p_J \frac{\del \dot{q}^J}{\del q^I} - \frac{\del L}{\del q^I} \Big|_{\dot{q}^I\ fixed} - \frac{\del \dot{q}^J}{\del q^I} \frac{\del L}{\del \dot{q}^J}\]</div>
-<p>where in the first term on the right hand side, we have used the fact that we are keepig all <span class="math notranslate nohighlight">\(P_J\)</span> fixed in the partial derivative; the second two terms are the derivative of <span class="math notranslate nohighlight">\(L(q,\dot{q}(q,p))\)</span> using the chain rule. Using <a class="reference internal" href="#equation-gm-deriv">(80)</a>, the first and last terms on the right hand side cancel. Finally, we can use the EUler-Lagrange equation for the middle term to set</p>
+<span class="eqno">(86)<a class="headerlink" href="#equation-he-three" title="Link to this equation">#</a></span>\[\frac{\del H}{\del q^I}\Big|_{q^{J \neq I}, p_J\ fixed} = p_J \frac{\del \dot{q}^J}{\del q^I} - \frac{\del L}{\del q^I} \Big|_{\dot{q}^I\ fixed} - \frac{\del \dot{q}^J}{\del q^I} \frac{\del L}{\del \dot{q}^J}\]</div>
+<p>where in the first term on the right hand side, we have used the fact that we are keepig all <span class="math notranslate nohighlight">\(P_J\)</span> fixed in the partial derivative; the second two terms are the derivative of <span class="math notranslate nohighlight">\(L(q,\dot{q}(q,p))\)</span> using the chain rule. Using <a class="reference internal" href="#equation-gm-deriv">(82)</a>, the first and last terms on the right hand side cancel. Finally, we can use the EUler-Lagrange equation for the middle term to set</p>
 <div class="math notranslate nohighlight" id="equation-el-again">
-<span class="eqno">(85)<a class="headerlink" href="#equation-el-again" title="Link to this equation">#</a></span>\[\frac{\del L}{\del q^I} = \frac{d}{dt} \frac{\del L}{\del\dot{q}^I} = \dot{p}_I\]</div>
+<span class="eqno">(87)<a class="headerlink" href="#equation-el-again" title="Link to this equation">#</a></span>\[\frac{\del L}{\del q^I} = \frac{d}{dt} \frac{\del L}{\del\dot{q}^I} = \dot{p}_I\]</div>
 <p>so we have the remaining set of Hamilton’s equations,</p>
 <div class="math notranslate nohighlight" id="equation-he-four">
-<span class="eqno">(86)<a class="headerlink" href="#equation-he-four" title="Link to this equation">#</a></span>\[\dot{p}_I = - \frac{\del H}{\del q^I}\]</div>
+<span class="eqno">(88)<a class="headerlink" href="#equation-he-four" title="Link to this equation">#</a></span>\[\dot{p}_I = - \frac{\del H}{\del q^I}\]</div>
 <section id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
@@ -476,49 +487,49 @@ document.write(`
 </ol>
 <p>Start with the Lagrangian</p>
 <div class="math notranslate nohighlight" id="equation-nr-part-lag">
-<span class="eqno">(87)<a class="headerlink" href="#equation-nr-part-lag" title="Link to this equation">#</a></span>\[L(\vec{x},\dot{\vec{x}}) = \half m \dot{\vec{x}}^2 - V({\vec x})\]</div>
+<span class="eqno">(89)<a class="headerlink" href="#equation-nr-part-lag" title="Link to this equation">#</a></span>\[L(\vec{x},\dot{\vec{x}}) = \half m \dot{\vec{x}}^2 - V({\vec x})\]</div>
 <p>The generalized momentum is</p>
 <div class="math notranslate nohighlight" id="equation-nr-gen-mom">
-<span class="eqno">(88)<a class="headerlink" href="#equation-nr-gen-mom" title="Link to this equation">#</a></span>\[\vec{p} = m \dot{\vec{x}}\]</div>
+<span class="eqno">(90)<a class="headerlink" href="#equation-nr-gen-mom" title="Link to this equation">#</a></span>\[\vec{p} = m \dot{\vec{x}}\]</div>
 <p>so that <span class="math notranslate nohighlight">\(\dot{\vec{x}} = \frac{\vec p}{m}\)</span>.</p>
 <p>The Hamiltonian is thus</p>
 <div class="math notranslate nohighlight" id="equation-nr-legendre">
-<span class="eqno">(89)<a class="headerlink" href="#equation-nr-legendre" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(91)<a class="headerlink" href="#equation-nr-legendre" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 H &amp; = \vec{p} \cdot \dot{\vec{x}} - \half m \dot{\vec{x}}^2 + V({\vec x}) \\
 &amp; = \frac{\vec{p}^2}{m} - \half \frac{\vec{p}^2}{2m} + V\\
 &amp; = \frac{\vec{p}^2}{2m} + V({\vec x})
 \end{align}\end{split}\]</div>
 <p>which is indeed the total energy (kinetic plus potential). We can write Hamilton’s equations as</p>
 <div class="math notranslate nohighlight" id="equation-nr-hamilton">
-<span class="eqno">(90)<a class="headerlink" href="#equation-nr-hamilton" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(92)<a class="headerlink" href="#equation-nr-hamilton" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \dot{x}^i &amp; = \frac{\del H}{\del p_i} = \frac{p_i}{m}\\
 \dot{p}_i &amp; = - \frac{\del H}{\del x^i} = - \frac{\del V}{\del x^i}
 \end{align}\end{split}\]</div>
 <p>The first is the known relation between momentum and velocity; the second is then Newton’s laws written in terms of the momentum. If we take the time derivative of the first equation, multiply by <span class="math notranslate nohighlight">\(m\)</span>, and use the second to solve for <span class="math notranslate nohighlight">\(\dot{p}_i\)</span> we have the classic second law:</p>
 <div class="math notranslate nohighlight" id="equation-ham-second-law">
-<span class="eqno">(91)<a class="headerlink" href="#equation-ham-second-law" title="Link to this equation">#</a></span>\[m\ddot{x}^i = - \frac{\del V}{\del x^i}\]</div>
+<span class="eqno">(93)<a class="headerlink" href="#equation-ham-second-law" title="Link to this equation">#</a></span>\[m\ddot{x}^i = - \frac{\del V}{\del x^i}\]</div>
 <p>Note that this gives three second order differential equation; Hamilton’s equations give a natural unpacking of this equation into six <em>first</em>-order differential equations which are often easier to integrate (analytically or numerically).</p>
 <ol class="arabic simple" start="2">
 <li><p>Free particle in polar coordinates</p></li>
 </ol>
 <p>Here we start with</p>
 <div class="math notranslate nohighlight" id="equation-free-polar">
-<span class="eqno">(92)<a class="headerlink" href="#equation-free-polar" title="Link to this equation">#</a></span>\[L = \half m (\dot{r}^2 + r^2 \dot{\phi}^2)\]</div>
+<span class="eqno">(94)<a class="headerlink" href="#equation-free-polar" title="Link to this equation">#</a></span>\[L = \half m (\dot{r}^2 + r^2 \dot{\phi}^2)\]</div>
 <p>The generalzied momenta are:</p>
 <div class="math notranslate nohighlight" id="equation-polargenmom">
-<span class="eqno">(93)<a class="headerlink" href="#equation-polargenmom" title="Link to this equation">#</a></span>\[\begin{split}\begin{align} 
+<span class="eqno">(95)<a class="headerlink" href="#equation-polargenmom" title="Link to this equation">#</a></span>\[\begin{split}\begin{align} 
 p_r &amp; = m \dot{r} \Rightarrow \dot{r} = \frac{p_r}{m}\\
 p_{\phi} &amp; = m r^2 \dot{\phi} \Rightarrow \dot{\phi} = \frac{p_{\phi}}{m r^2}
 \end{align}\end{split}\]</div>
 <p>Thus the Hamiltonian is:</p>
 <div class="math notranslate nohighlight" id="equation-polar-ham">
-<span class="eqno">(94)<a class="headerlink" href="#equation-polar-ham" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(96)<a class="headerlink" href="#equation-polar-ham" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 H &amp; = p_r \dot{r} + p_{\phi} \dot{\phi} - \half m (\dot{r}^2 + r^2 \dot{\phi}^2)\\
 &amp; = \frac{p_r^2}{2m} + \frac{p_{\phi}^2}{2 m r^2}
 \end{align}\end{split}\]</div>
 <p>Hamilton’s equations become:</p>
 <div class="math notranslate nohighlight" id="equation-polar-he">
-<span class="eqno">(95)<a class="headerlink" href="#equation-polar-he" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(97)<a class="headerlink" href="#equation-polar-he" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \dot{r} &amp; = \frac{\del H}{\del p_r} = \frac{p_r}{m}\\
 \dot{p}_r &amp; = - \frac{\del H}{\del r} = \frac{p_{\phi}^2}{m r^3}\\
 \dot{\phi} &amp; = \frac{\del H}{\del p_{\phi}} = \frac{p_{\phi}}{m r^2}\\
@@ -530,13 +541,13 @@ H &amp; = p_r \dot{r} + p_{\phi} \dot{\phi} - \half m (\dot{r}^2 + r^2 \dot{\phi
 </ol>
 <p>As we stated before, if <span class="math notranslate nohighlight">\(\vec{B} = \vec{\nabla}\times\vec{A}\)</span> for the vector potential <span class="math notranslate nohighlight">\(\vec{A}\)</span>,the Lagrangian is:</p>
 <div class="math notranslate nohighlight" id="equation-cpb-lag">
-<span class="eqno">(96)<a class="headerlink" href="#equation-cpb-lag" title="Link to this equation">#</a></span>\[L = \half m \dot{\vec{x}}^2 + \frac{e}{c} \dot{\vec{x}}\cdot \vec{A}\]</div>
+<span class="eqno">(98)<a class="headerlink" href="#equation-cpb-lag" title="Link to this equation">#</a></span>\[L = \half m \dot{\vec{x}}^2 + \frac{e}{c} \dot{\vec{x}}\cdot \vec{A}\]</div>
 <p>The conjugate momentum is</p>
 <div class="math notranslate nohighlight" id="equation-cpb-cmom">
-<span class="eqno">(97)<a class="headerlink" href="#equation-cpb-cmom" title="Link to this equation">#</a></span>\[p_i = \frac{\del L}{\del \dot{x}^i} = m \dot{x}^i + \frac{e}{c} A^i \Rightarrow \dot{x}^i = \frac{1}{m} \left(p_i - \frac{e}{c} A^i\right)\]</div>
+<span class="eqno">(99)<a class="headerlink" href="#equation-cpb-cmom" title="Link to this equation">#</a></span>\[p_i = \frac{\del L}{\del \dot{x}^i} = m \dot{x}^i + \frac{e}{c} A^i \Rightarrow \dot{x}^i = \frac{1}{m} \left(p_i - \frac{e}{c} A^i\right)\]</div>
 <p>With a little work we find:</p>
 <div class="math notranslate nohighlight" id="equation-cpb-ham">
-<span class="eqno">(98)<a class="headerlink" href="#equation-cpb-ham" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(100)<a class="headerlink" href="#equation-cpb-ham" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 H &amp; = p_i \dot{x^i} - \half m \dot{\vec{x}}^2 - \frac{e}{c} \dot{\vec{x}}\cdot\vec{A}\\
 &amp; = \frac{1}{m} p_i \left(p_i - \frac{e}{c} A_i\right) - \frac{m}{2 m^2}\left({\vec p} - \frac{e}{c} \vec{A}\right)^2 - \frac{e}{mc} \left({\vec p} - \frac{e}{c} \vec{A}\right)^2 \\
 &amp; \ \ \ - \frac{e}{mc} \left({\vec p} - \frac{e}{c} \vec{A}\right)\cdot\vec{A}\\
@@ -550,14 +561,14 @@ H &amp; = p_i \dot{x^i} - \half m \dot{\vec{x}}^2 - \frac{e}{c} \dot{\vec{x}}\cd
 <p>We can see them emerge as follows, and along the way introduce another important concept. Any <em>observable quantity</em> <span class="math notranslate nohighlight">\(A\)</span> in classical mechanics should be a function of the state of the system, and thus of phase space: <span class="math notranslate nohighlight">\(A = A(q^I, p_I)\)</span>. (It could be constant in which case classical mechanics has nothing to say about it.). Two examples are the <span class="math notranslate nohighlight">\(i\)</span>th component of angular momentum <span class="math notranslate nohighlight">\(L_i = \half \eps_{ijk} x^j p_k\)</span>; and the energy which is the Hamiltonian itself <span class="math notranslate nohighlight">\(H(q, p)\)</span>.</p>
 <p>How does this observable change along classical trajectories?</p>
 <div class="math notranslate nohighlight" id="equation-observable-flow">
-<span class="eqno">(99)<a class="headerlink" href="#equation-observable-flow" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(101)<a class="headerlink" href="#equation-observable-flow" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \frac{dA}{dt} &amp; = \frac{d q^I}{dt} \frac{\del A}{\del q^I} + \frac{d p_I}{dt} \frac{\del A}{\del p_I} \\
 &amp; = \frac{\del H}{\del p_I} \frac{\del A}{\del q_I} - \frac{\del H}{\del q^I}\frac{\del A}{\del p_I}\\
 &amp; \equiv \{A,H\}
 \end{align}\end{split}\]</div>
 <p>The first line is just the chain rule; the second uses Hamilton’s equations; the last introduces the <em>Poisson bracket</em>. More generally, for two observables <span class="math notranslate nohighlight">\(A, B\)</span>, the Poisson bracket is defined as:</p>
 <div class="math notranslate nohighlight" id="equation-pb-def">
-<span class="eqno">(100)<a class="headerlink" href="#equation-pb-def" title="Link to this equation">#</a></span>\[\{A, B\} \equiv \frac{\del A}{\del q^I}\frac{\del B}{\del p_I} - \frac{\del A}{\del p_I}\frac{\del B}{\del q^I}\]</div>
+<span class="eqno">(102)<a class="headerlink" href="#equation-pb-def" title="Link to this equation">#</a></span>\[\{A, B\} \equiv \frac{\del A}{\del q^I}\frac{\del B}{\del p_I} - \frac{\del A}{\del p_I}\frac{\del B}{\del q^I}\]</div>
 <p>and satisfies two important properties:</p>
 <ol class="arabic simple">
 <li><p><em>Antisymmetry</em>: <span class="math notranslate nohighlight">\(\{A,B\} = - \{B,A\}\)</span>.</p></li>
@@ -565,14 +576,14 @@ H &amp; = p_i \dot{x^i} - \half m \dot{\vec{x}}^2 - \frac{e}{c} \dot{\vec{x}}\cd
 </ol>
 <p>Finally, the phase space variables we have written so far satisfy simple, “canonical” Poisson bracket relations:</p>
 <div class="math notranslate nohighlight" id="equation-canonical-brackets">
-<span class="eqno">(101)<a class="headerlink" href="#equation-canonical-brackets" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(103)<a class="headerlink" href="#equation-canonical-brackets" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \{q^I, q^J\} &amp; = 0 \\
 \{p_I, p_J\} &amp; = 0\\
 \{q^I, p_J\} &amp; = \delta^I_J
 \end{align}\end{split}\]</div>
 <p>Note that given what we drivaed at the top, <span class="math notranslate nohighlight">\(\frac{dA}{dt} = \{A, H\}\)</span>, the Hamiltonian <em>generates flows in phase space</em> of all observable quantities. These include the positions and momenta themselves; Hamilton’s equations can be compactly written as</p>
 <div class="math notranslate nohighlight" id="equation-pb-hamilton">
-<span class="eqno">(102)<a class="headerlink" href="#equation-pb-hamilton" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(104)<a class="headerlink" href="#equation-pb-hamilton" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \frac{d q^I}{dt} &amp; = \{q^I , H\}\\
 \frac{d p_I}{dt} &amp; = \{p_I, H\}
 \end{align}\end{split}\]</div>
@@ -584,17 +595,17 @@ H &amp; = p_i \dot{x^i} - \half m \dot{\vec{x}}^2 - \frac{e}{c} \dot{\vec{x}}\cd
 <p>As we discussed, one advantage of the Lagrangian formulation is that you can perform point cordinate transformations <span class="math notranslate nohighlight">\(q' = q'(q,t)\)</span> at the level of the Lagrangian; that is, we apply the Euler-Lagrange equations for <span class="math notranslate nohighlight">\(q'\)</span> to the transformed Lagrangian <span class="math notranslate nohighlight">\({\tilde L}(q',\dot{q}',t) = L(q(q'), \frac{d}{dt}q(q',t), t)\)</span>.</p>
 <p>In Hamiltonian mechanics we can work with more generat <em>canonical transformations</em>, which are a class of coordinate transformations on phase space that preserve the structure of the Poisson brackets and of Hamilton’s equations. That is, we consider <span class="math notranslate nohighlight">\(Q^A = Q^A(p_I, q^I)\)</span>, <span class="math notranslate nohighlight">\(P_A = P_a(q^I, p_I)\)</span> (with <span class="math notranslate nohighlight">\(A = 1,\ldots,D)\)</span>) such that Hamilton’s equations retain their form</p>
 <div class="math notranslate nohighlight" id="equation-can-transf-ham">
-<span class="eqno">(103)<a class="headerlink" href="#equation-can-transf-ham" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(105)<a class="headerlink" href="#equation-can-transf-ham" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \frac{d Q^A}{dt} &amp; = \frac{\del K}{\del P_A}\\
 \frac{d P_A}{dt} &amp; = - \frac{\del K}{\del Q^A}
 \end{align}\end{split}\]</div>
 <p>for some <span class="math notranslate nohighlight">\(K(Q,P,t)\)</span>. One can show that canonical transformations also preserve the Poisson bracket structure, that is, that</p>
 <div class="math notranslate nohighlight" id="equation-ct-pb">
-<span class="eqno">(104)<a class="headerlink" href="#equation-ct-pb" title="Link to this equation">#</a></span>\[\{Q^A, Q^B\} = 0\ ; \ \ \{P_A, P_B\} = 0\ ; \ \ \{Q^A,P_B\} = \delta^A_B\]</div>
+<span class="eqno">(106)<a class="headerlink" href="#equation-ct-pb" title="Link to this equation">#</a></span>\[\{Q^A, Q^B\} = 0\ ; \ \ \{P_A, P_B\} = 0\ ; \ \ \{Q^A,P_B\} = \delta^A_B\]</div>
 <p>The subject of canonical transformations is of deep importance in Hamiltonian mechanics. We will have to give it short shrift, but I recommend consulting one or more textbooks which cover this, such as <span id="id2">[<a class="reference internal" href="../markdown.html#id3" title="H. Goldstein, C.P. Poole, and J.L. Safko. Classical Mechanics. Addison Wesley, 2002. ISBN 9780201657029.">Goldstein <em>et al.</em>, 2002</a>]</span>, <span id="id3">[<a class="reference internal" href="../markdown.html#id4" title="L.D. Landau and E.M. Lifshitz. Mechanics: Volume 1. Number v. 1. Elsevier Science, 1982. ISBN 9780080503479. URL: https://books.google.com/books?id=bE-9tUH2J2wC.">Landau and Lifshitz, 1982</a>]</span>.</p>
 <p>We will focus here on <em>infinitesimal</em> canonical transformations. I will state without justification that these can be described by a single generating function <span class="math notranslate nohighlight">\(g(q^I,p_J,t)\)</span>, with the transformations being</p>
 <div class="math notranslate nohighlight" id="equation-inf-ct">
-<span class="eqno">(105)<a class="headerlink" href="#equation-inf-ct" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(107)<a class="headerlink" href="#equation-inf-ct" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 q'^I &amp; = q^I + \delta q^I = q^I + \eps \{q^I, f\}
 &amp; = q^I + \eps \frac{\del f}{\del p_I}\\
 p'_I &amp; = p_I + \delta p_i = p_I + \eps \{p_I, f\}\\
@@ -603,7 +614,7 @@ p'_I &amp; = p_I + \delta p_i = p_I + \eps \{p_I, f\}\\
 <p>for <span class="math notranslate nohighlight">\(\eps \ll 1\)</span>, where we only consider effects of these transformations to <span class="math notranslate nohighlight">\({\cal O}(\eps)\)</span>.</p>
 <p>Under this canonical transformation any observable <span class="math notranslate nohighlight">\(A(p,q)\)</span> transforms to order <span class="math notranslate nohighlight">\({\cal O}(\eps)\)</span> as:</p>
 <div class="math notranslate nohighlight" id="equation-obs-ct">
-<span class="eqno">(106)<a class="headerlink" href="#equation-obs-ct" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(108)<a class="headerlink" href="#equation-obs-ct" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \delta A &amp; = A(q^I + \delta q^I, p_I + \delta p_I) - A(q^I, p_I) \\
 &amp; = \delta q^I \frac{\del A}{\del q^I} + \delta p_I \frac{\del A}{\del p_I}\\
 &amp; = \eps \frac{\del f}{\del p_I} \frac{\del A}{\del q^I} - \eps \frac{\del f}{\del q^I} \frac{\del A}{\del p_I}\\
@@ -612,7 +623,7 @@ p'_I &amp; = p_I + \delta p_i = p_I + \eps \{p_I, f\}\\
 <p>we cal <span class="math notranslate nohighlight">\(f\)</span> the <em>generator</em> or <em>generating function</em> of this transformation.</p>
 <p>Note that such canonical transformations include time evolution, for which the generator is the Hamiltonian. You can also show that translations <span class="math notranslate nohighlight">\(q^I \to q^I + \eps a^I\)</span> are generated by <span class="math notranslate nohighlight">\(f = \eps a^I p_I\)</span>; and in 2 dimensions, rotations about the origin <span class="math notranslate nohighlight">\(\phi to \phi + \eps \Delta\)</span> are generated by <span class="math notranslate nohighlight">\(f = \eps \Delta L_z\)</span>, where <span class="math notranslate nohighlight">\(L_z\)</span> is the angular momentum.: for the latter, using <span class="math notranslate nohighlight">\(L_z = x p_y - y -Px\)</span>, we can show</p>
 <div class="math notranslate nohighlight" id="equation-rot-gen">
-<span class="eqno">(107)<a class="headerlink" href="#equation-rot-gen" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(109)<a class="headerlink" href="#equation-rot-gen" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \delta x &amp; = \eps \Delta \{x, L_z\} = - \eps \Delta y\\
 \delta y &amp; = \eps \Delta \{y, L_z\} = \eps \Delta x
 \end{align}\end{split}\]</div>
@@ -622,15 +633,15 @@ p'_I &amp; = p_I + \delta p_i = p_I + \eps \{p_I, f\}\\
 <h2>Symmetries<a class="headerlink" href="#symmetries" title="Link to this heading">#</a></h2>
 <p>In Hamiltonian mechanics, a symmetry is a canonical transformation that preserves the form of the Hamiltonian. Under infitesimal transformations, this means that:</p>
 <div class="math notranslate nohighlight" id="equation-ham-ct">
-<span class="eqno">(108)<a class="headerlink" href="#equation-ham-ct" title="Link to this equation">#</a></span>\[\delta H = \eps \{H, f\} = 0\]</div>
+<span class="eqno">(110)<a class="headerlink" href="#equation-ham-ct" title="Link to this equation">#</a></span>\[\delta H = \eps \{H, f\} = 0\]</div>
 <p>But we also know that if we consider <span class="math notranslate nohighlight">\(f\)</span> as an observable, Hamilton’s equations imply that for trajectories satisfying the equations of motion, if <span class="math notranslate nohighlight">\(f\)</span> is time-independent, then:</p>
 <div class="math notranslate nohighlight" id="equation-genf-timeevol">
-<span class="eqno">(109)<a class="headerlink" href="#equation-genf-timeevol" title="Link to this equation">#</a></span>\[\frac{d f}{dt} = \{f, H\} = 0\]</div>
+<span class="eqno">(111)<a class="headerlink" href="#equation-genf-timeevol" title="Link to this equation">#</a></span>\[\frac{d f}{dt} = \{f, H\} = 0\]</div>
 <p>So <span class="math notranslate nohighlight">\(f\)</span> is a conserved quantity. The Hamiltonian version of Noether’s theorem falls out almost automatically (though a lot went into the setup). For example, we have shown that translations by <span class="math notranslate nohighlight">\(\eps a^I\)</span> are generated by <span class="math notranslate nohighlight">\(f = a^I p_I\)</span>. If this translation is an (infinitesimal) symmetry, then
 <span class="math notranslate nohighlight">\(\delta H = \eps \{H, f\} = \eps a^I \frac{\del H}{\del q^I}\)</span>, so <span class="math notranslate nohighlight">\(H\)</span> is independent of the direction pointing along <span class="math notranslate nohighlight">\(a^I\)</span>, and the conjugate momentum <span class="math notranslate nohighlight">\(a^I p_I\)</span> is conserved.</p>
 <p>Note that time evolution itself is a canonical transformation, generated by <span class="math notranslate nohighlight">\(H\)</span>. The conservation of energy itself follows from time translation invariance from the following argument:</p>
 <div class="math notranslate nohighlight" id="equation-ham-en-cons">
-<span class="eqno">(110)<a class="headerlink" href="#equation-ham-en-cons" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(112)<a class="headerlink" href="#equation-ham-en-cons" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \frac{d H}{dt} &amp; = \dot{q}^I \frac{\del H}{\del q^I} + \dot{p}_I \frac{\del H}{\del p_I} + \frac{\del H}{\del t}\\
 &amp; = \{H, H\} + \frac{\del H}{\del t} = \frac{\del H}{\del t}
 \end{align}\end{split}\]</div>

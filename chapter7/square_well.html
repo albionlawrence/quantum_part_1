@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -416,7 +427,7 @@ document.write(`
 <h2>The infinite square well<a class="headerlink" href="#the-infinite-square-well" title="Link to this heading">#</a></h2>
 <p>This is the classic “particle in a box” problem. We consider the potential</p>
 <div class="math notranslate nohighlight" id="equation-infinite-well">
-<span class="eqno">(294)<a class="headerlink" href="#equation-infinite-well" title="Link to this equation">#</a></span>\[\begin{split}V(x) = \begin{cases} 0 &amp; - \frac{L}{2} \leq x \leq \frac{L}{2} \\
+<span class="eqno">(296)<a class="headerlink" href="#equation-infinite-well" title="Link to this equation">#</a></span>\[\begin{split}V(x) = \begin{cases} 0 &amp; - \frac{L}{2} \leq x \leq \frac{L}{2} \\
 \infty &amp; |x| &gt; \frac{L}{2} \end{cases}\end{split}\]</div>
 <p>We wish to solve the time-independent Schroedinger equation in this background.
 For finite energy, it is clear that to solve it for finite <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(\psi(x)\)</span> must vanish for <span class="math notranslate nohighlight">\(|x| &gt; L/2\)</span>. We also demand continuity so that the left hand side of <span class="math notranslate nohighlight">\(H\psi = E\psi\)</span> contains no delta function singularities. <span class="math notranslate nohighlight">\(\psi(\pm L/2) = 0\)</span>.  We thus consider wavefunctions which satisfy Dirichlet boundary conditions.</p>
@@ -425,21 +436,21 @@ For finite energy, it is clear that to solve it for finite <span class="math not
 \[- \del_y^2 \psi(y) = \CE \psi(y)\]</div>
 <p>with boundary condition <span class="math notranslate nohighlight">\(\psi(y = \pm \half) = 0\)</span>. The general solution to the above equation is, before imposing boundary conditions,</p>
 <div class="math notranslate nohighlight" id="equation-gen-solution-sw">
-<span class="eqno">(295)<a class="headerlink" href="#equation-gen-solution-sw" title="Link to this equation">#</a></span>\[\psi(y) = A \cos (\sqrt{\CE} y) + B \sin (\sqrt{CE} y)\]</div>
+<span class="eqno">(297)<a class="headerlink" href="#equation-gen-solution-sw" title="Link to this equation">#</a></span>\[\psi(y) = A \cos (\sqrt{\CE} y) + B \sin (\sqrt{CE} y)\]</div>
 <p>Note that the cosine function is even/symmetric on the line, and the sine function is odd/antisymmetric. These do not satisfy the boundary conditions for every <span class="math notranslate nohighlight">\(\CE\)</span>; the eigenvalues are fixed by the boundary conditions. The allowed values are</p>
 <div class="math notranslate nohighlight" id="equation-isw-quant">
-<span class="eqno">(296)<a class="headerlink" href="#equation-isw-quant" title="Link to this equation">#</a></span>\[\begin{split}\sqrt{\CE} = \begin{cases} (2n + 1)\pi &amp; {\rm even} (B = 0)\\
+<span class="eqno">(298)<a class="headerlink" href="#equation-isw-quant" title="Link to this equation">#</a></span>\[\begin{split}\sqrt{\CE} = \begin{cases} (2n + 1)\pi &amp; {\rm even} (B = 0)\\
 2n \pi &amp; {\rm odd} (A = 0)
 \end{cases}\end{split}\]</div>
 <p>Note that the lowest-energy state is the even wavefunction with <span class="math notranslate nohighlight">\(n = 0\)</span>; the eigenfunctions are alternating even and odd. Rescaling we can write the two possibilities as</p>
 <div class="math notranslate nohighlight" id="equation-even-eigenfunctions">
-<span class="eqno">(297)<a class="headerlink" href="#equation-even-eigenfunctions" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(299)<a class="headerlink" href="#equation-even-eigenfunctions" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 &amp; \psi_{even,n}(x)  = \sqrt{\frac{2}{L}} \cos \left(\frac{(2n+1) \pi x}{L}\right) =  \sqrt{\frac{2}{L}} \cos (k_{even,n} x)\\
 &amp; E_{n,even} = \frac{\hbar^2 k_{even,n}^2}{2m} = \frac{((2n+1)\pi\hbar)^2}{2mL^2}\ ; n \in \{0,1,2,\ldots\}
 \end{align}\end{split}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight" id="equation-odd-eigenfunctions">
-<span class="eqno">(298)<a class="headerlink" href="#equation-odd-eigenfunctions" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(300)<a class="headerlink" href="#equation-odd-eigenfunctions" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 &amp; \psi_{odd,n}(x)  = \sqrt{\frac{2}{L}} \sin \left(\frac{2 n \pi x}{L}\right) =  \sqrt{\frac{2}{L}} \sin (k_{odd,n} x)\\ 
 &amp; E_{n,odd} = \frac{\hbar^2 k_{odd,n}^2}{2m} = \frac{(2n\pi\hbar)^2}{2 m L^2}\ ; n \in \{1,2,3,\ldots\}
 \end{align}\end{split}\]</div>
@@ -504,7 +515,7 @@ A_{III} e^{-\kappa x} &amp; x &gt; \frac{L}{2}\end{cases}\end{split}\]</div>
 <li><p><em>Even solutions</em>. Here <span class="math notranslate nohighlight">\(A_{II} = B_{II}\)</span> and <span class="math notranslate nohighlight">\(A_I = A_{III}\)</span> Equivalently we can write the solution for <span class="math notranslate nohighlight">\(|x|&lt; L/2\)</span> as <span class="math notranslate nohighlight">\(\psi = C_{II} \cos k x\)</span>. We then only have to impose the continuity conditions at <span class="math notranslate nohighlight">\(x = L/2\)</span> (or equivalently <span class="math notranslate nohighlight">\(x = - L/2\)</span>), giving two complex homogenous equations in two unknowns, which is overdetermined as above. Dividing the equation for continuity of the wavefunction by the equation for continuity of the first derivatives, the constants <span class="math notranslate nohighlight">\(A,B\)</span> drop out and we are left with a transcendental equation</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-even-eigen-sw">
-<span class="eqno">(299)<a class="headerlink" href="#equation-even-eigen-sw" title="Link to this equation">#</a></span>\[\tan \frac{k L}{2} = \frac{\kappa}{k} \Rightarrow \tan \frac{\sqrt{2m(V_0 - |E|) L^2}}{2\hbar} = \sqrt{\frac{|E|}{V_0 - |E|}}\]</div>
+<span class="eqno">(301)<a class="headerlink" href="#equation-even-eigen-sw" title="Link to this equation">#</a></span>\[\tan \frac{k L}{2} = \frac{\kappa}{k} \Rightarrow \tan \frac{\sqrt{2m(V_0 - |E|) L^2}}{2\hbar} = \sqrt{\frac{|E|}{V_0 - |E|}}\]</div>
 <p>To simplify this we define</p>
 <div class="math notranslate nohighlight">
 \[\eps = \frac{\sqrt{2m(V_0 - |E|) L^2}}{2\hbar} \Rightarrow

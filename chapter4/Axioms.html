@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -414,23 +425,23 @@ document.write(`
 <li><p>Given a state <span class="math notranslate nohighlight">\(\ket{\psi} \in \cH\)</span>, a measurement of an observable <span class="math notranslate nohighlight">\(A\)</span> yields an eigenvalue <span class="math notranslate nohighlight">\(a\)</span> with probability</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-born-rule">
-<span class="eqno">(194)<a class="headerlink" href="#equation-born-rule" title="Link to this equation">#</a></span>\[p(a) = \frac{\bra{\psi} \CP_a \ket{\psi}}{\brket{\psi}{\psi}}\]</div>
-<p>This rule is sometimes called the <em>Born rule</em>. The resolution of the identity shown in <a class="reference internal" href="../chapter3/Operator_spectra.html#equation-evector-resolution-identity">(193)</a> shows that these atre consistent probabilities:</p>
+<span class="eqno">(196)<a class="headerlink" href="#equation-born-rule" title="Link to this equation">#</a></span>\[p(a) = \frac{\bra{\psi} \CP_a \ket{\psi}}{\brket{\psi}{\psi}}\]</div>
+<p>This rule is sometimes called the <em>Born rule</em>. The resolution of the identity shown in <a class="reference internal" href="../chapter3/Operator_spectra.html#equation-evector-resolution-identity">(195)</a> shows that these atre consistent probabilities:</p>
 <div class="math notranslate nohighlight" id="equation-sum-of-results">
-<span class="eqno">(195)<a class="headerlink" href="#equation-sum-of-results" title="Link to this equation">#</a></span>\[\sum_i p(a_i) = \sum_i \frac{\bra{\psi} \CP_{a_i} \ket{\psi}}{\brket{\psi}{\psi}} = \frac{\bra{\psi} \CP_{a_i}{\bf 1} \ket{\psi}}{\brket{\psi}{\psi}} = 1\]</div>
+<span class="eqno">(197)<a class="headerlink" href="#equation-sum-of-results" title="Link to this equation">#</a></span>\[\sum_i p(a_i) = \sum_i \frac{\bra{\psi} \CP_{a_i} \ket{\psi}}{\brket{\psi}{\psi}} = \frac{\bra{\psi} \CP_{a_i}{\bf 1} \ket{\psi}}{\brket{\psi}{\psi}} = 1\]</div>
 <p>For this reason, we often impose the requirement <span class="math notranslate nohighlight">\(\brket{\psi}{\psi} = 1\)</span> on physical states. This amounts to scaling <span class="math notranslate nohighlight">\(\ket{\psi} \to \frac{1}{||\psi||}\ket{\psi}\)</span>.</p>
 <p>What do I mean by such a probability, in a practical sense? As some might know, there are two major interpretations of probability: the “Bayesian approach” in which the probability quantifies ones estimation of the likelihood of an event (eg, how much would you bet on <span class="math notranslate nohighlight">\(X\)</span> happening?) and the “frequentist approach” in which the probability corresponds to the frequency that a given outcomes happens after repeated experiments. Practically it is this latter approach that one takes in testing a given prediction of probabilities. That is, one repeats an experiment <span class="math notranslate nohighlight">\(N\)</span> times, and records the number of times <span class="math notranslate nohighlight">\(N(a)\)</span> that a measurement yields result <span class="math notranslate nohighlight">\(a\)</span>. Then</p>
 <div class="math notranslate nohighlight">
 \[p(a) = \lim\limits_{N \to \infty} \frac{N(a)}{N}\]</div>
 <p>The Born rule naturally yields a further result which Commins gives the status of an independent rule. Let us do a set of repeated experiments as above, in which we prepare a fixed state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>, measure some observable <span class="math notranslate nohighlight">\(A\)</span>, and ask what the <em>average</em> result is. For a finite number <span class="math notranslate nohighlight">\(N_{experiments}\)</span> of experiments, we will denote this average as <span class="math notranslate nohighlight">\({\overline A}\)</span>, which is:</p>
 <div class="math notranslate nohighlight" id="equation-operator-av">
-<span class="eqno">(196)<a class="headerlink" href="#equation-operator-av" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(198)<a class="headerlink" href="#equation-operator-av" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 {\overline A} &amp; = \frac{1}{N_{experiments}} \sum_{experiments} a(experiment)\\
 &amp; = \frac{a N(a)}{N_{experiments}}
 \end{align}\end{split}\]</div>
 <p>In the limit <span class="math notranslate nohighlight">\(N_{experiments} \to \infty\)</span>, we call <span class="math notranslate nohighlight">\({\overline A}\)</span> the <em>expectation values</em> of <span class="math notranslate nohighlight">\(A\)</span>, defnotes <span class="math notranslate nohighlight">\(\vev{A}\)</span>. This becomes (if we take <span class="math notranslate nohighlight">\(\brket{\psi}{\psi} = 1\)</span>)</p>
 <div class="math notranslate nohighlight" id="equation-operator-ev">
-<span class="eqno">(197)<a class="headerlink" href="#equation-operator-ev" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(199)<a class="headerlink" href="#equation-operator-ev" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \vev{A} &amp; = \lim\limits_{N_{experiments}\to\infty} \overline(A) \\
 &amp; = \sum_i p(a_i) a_i \\
 &amp; = \sum_i \bra{\psi} \CP_i \ket{\psi} a_i \\
@@ -442,14 +453,14 @@ document.write(`
 <li><p>Immediately after a measurement corresponding to an observable <span class="math notranslate nohighlight">\(A\)</span> yields the result <span class="math notranslate nohighlight">\(a\)</span>, the wavefunction “collapses” to the subspace of eigenvectors of <span class="math notranslate nohighlight">\(a\)</span>:</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-measurement-result">
-<span class="eqno">(198)<a class="headerlink" href="#equation-measurement-result" title="Link to this equation">#</a></span>\[\ket{\psi} \to \frac{1}{\bra{\psi} \CP_a \ket{\psi}} \CP_a \ket{\psi}\]</div>
+<span class="eqno">(200)<a class="headerlink" href="#equation-measurement-result" title="Link to this equation">#</a></span>\[\ket{\psi} \to \frac{1}{\bra{\psi} \CP_a \ket{\psi}} \CP_a \ket{\psi}\]</div>
 <p>This “collapse of the wavefunction” is the other mystery of quantum mechanics. How does this happen? For now we will take it as given, since this is what is actually seen in experiments.</p>
 <p>My personal prejudice is that this is related to the fact that actual measurements involve coupling a large, complicated measuring device (well descvribed by classical physics) to a small quantum system. If I have time, we will model this process later once we have explored various quantum systems; it points to a plausible if very uncomfortable interpretation of the Born rule and collapse of teh wavefunction, known as the “Many Worlds Interpretation”.</p>
 <ol class="arabic simple" start="5">
 <li><p>Absent external intervention through a measurement, the time evolution of an <em>isolated</em> quantum system is described by a unitary operator:</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-quantum-dynamics">
-<span class="eqno">(199)<a class="headerlink" href="#equation-quantum-dynamics" title="Link to this equation">#</a></span>\[\ket{\psi(t)} = U(t,t_0) \ket{\psi(t_0)}\]</div>
+<span class="eqno">(201)<a class="headerlink" href="#equation-quantum-dynamics" title="Link to this equation">#</a></span>\[\ket{\psi(t)} = U(t,t_0) \ket{\psi(t_0)}\]</div>
 <p>where <span class="math notranslate nohighlight">\(t &gt; t_0\)</span> and <span class="math notranslate nohighlight">\(\ket{\psi(t)}\)</span> is the quantum state of the system at time <span class="math notranslate nohighlight">\(t\)</span>. Unitarity means that <span class="math notranslate nohighlight">\(\brket{\psi(t)}{\psi(t)} = \brket{\psi(t_0)}{\psi(t_0)}\)</span>, so that <span class="math notranslate nohighlight">\(\ket{\psi(t)}\)</span> continues to yield sensible probabilities. Note that what we mean by isolated actually takes osme careful work. For example, we will discuss the evolution of charged particles in an electromagnetic field, and take that filed to be described by some fixed background. In fact the field itself is a quantum system, and we cannot really treat the electron as isolated; one must specify the joint quantum evolution of the full system of field plus charged particle. Practically speaking we can ofetn ignore this issue and treat the electron as a quantum system whose dynamical evolution is specified by some particular operator <span class="math notranslate nohighlight">\(U(t,t_0)\)</span>.</p>
 <p>This rule implies a differential form of the dynamical equations which brings us a bit closer to what we are familiar with in classical mechanics. Given <span class="math notranslate nohighlight">\(\ket{\psi(t)}\)</span>, the state an infinitesimal time later is <span class="math notranslate nohighlight">\(\ket{\psi(t + \delta t)} = \ket{\psi(t)} + \delta t \frac{d}{dt} \ket{\psi(t)}\)</span>. Given the above evolution equations,</p>
 <div class="math notranslate nohighlight">
@@ -460,40 +471,40 @@ document.write(`
 \end{align}\end{split}\]</div>
 <p>Now since <span class="math notranslate nohighlight">\(U U^{\dagger} = {\bf 1}\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-deriv-of-resolution">
-<span class="eqno">(200)<a class="headerlink" href="#equation-deriv-of-resolution" title="Link to this equation">#</a></span>\[\frac{d}{dt} (U U^{\dagger}) = \frac{dU}{dt} U^{\dagger} + U \frac{d U^{\dagger}}{dt} = 0\]</div>
+<span class="eqno">(202)<a class="headerlink" href="#equation-deriv-of-resolution" title="Link to this equation">#</a></span>\[\frac{d}{dt} (U U^{\dagger}) = \frac{dU}{dt} U^{\dagger} + U \frac{d U^{\dagger}}{dt} = 0\]</div>
 <p>or</p>
 <div class="math notranslate nohighlight">
 \[\frac{dU}{dt} U^{\dagger} = - U \frac{d U^{\dagger}}{dt}\]</div>
 <p>Now using <span class="math notranslate nohighlight">\((AB)^{\dagger} = B^{\dagger} A^{\dagger}\)</span>, we know that</p>
 <div class="math notranslate nohighlight">
 \[\left(\frac{dU}{dt} U^{\dagger}\right)^{\dagger} = U \frac{d U^{\dagger}}{dt} = - \frac{d U}{d t} U^{\dagger}\]</div>
-<p>where the last equality comes from <a class="reference internal" href="#equation-deriv-of-resolution">(200)</a>. If we define</p>
+<p>where the last equality comes from <a class="reference internal" href="#equation-deriv-of-resolution">(202)</a>. If we define</p>
 <div class="math notranslate nohighlight" id="equation-ham-def">
-<span class="eqno">(201)<a class="headerlink" href="#equation-ham-def" title="Link to this equation">#</a></span>\[H(t) = i \hbar \frac{d U}{dt} U^{\dagger}\]</div>
+<span class="eqno">(203)<a class="headerlink" href="#equation-ham-def" title="Link to this equation">#</a></span>\[H(t) = i \hbar \frac{d U}{dt} U^{\dagger}\]</div>
 <p>with <span class="math notranslate nohighlight">\(\hbar\)</span> having units of <span class="math notranslate nohighlight">\((\text{energy}\times\text{time})\)</span>, then <span class="math notranslate nohighlight">\(H\)</span> is a Hermitian operator with units of energy, and the system satisfies the <em>time-dependent Schroedinger equation</em></p>
 <div class="math notranslate nohighlight" id="equation-tdse">
-<span class="eqno">(202)<a class="headerlink" href="#equation-tdse" title="Link to this equation">#</a></span>\[i\hbar \frac{d}{dt} \ket{\psi(t)} = H(t) \ket{\psi(t)}\]</div>
+<span class="eqno">(204)<a class="headerlink" href="#equation-tdse" title="Link to this equation">#</a></span>\[i\hbar \frac{d}{dt} \ket{\psi(t)} = H(t) \ket{\psi(t)}\]</div>
 <p>We will identify <span class="math notranslate nohighlight">\(H\)</span> with the observable corresponding to the energy of the system. I will simply assert at this point that in situations in which classical mechanics can be expected to apply (the “classical limit”), this identification will be consistent with the expected classical dynamics.</p>
 <p>The dynamics of the system are completely specified by <span class="math notranslate nohighlight">\(H(t)\)</span>, or equivalently by <span class="math notranslate nohighlight">\(U(t)\)</span>; given <span class="math notranslate nohighlight">\(\ket{\psi(t_0)}\)</span>, we know <span class="math notranslate nohighlight">\(\ket{\psi(t)}\)</span> for all future times. In this sense quantum dynamics is <em>completely deterministic and causal</em>. It is only the introduction of the measurement hypothesis which introduces any nondeterminism into the theory. Again, we might relax even about this if we recall that a measuring device is a complicated object with over <span class="math notranslate nohighlight">\(10^{23}\)</span> atoms well described by classical mechanics, and before we really become concerned about the axioms we should understand whether measurement can be well modeled via unitary quantum dynamics. But again, for now we can just accept that the axioms have served us well for over a century, providing a foundation on which modern physics, chemistry, and engineering (atomic, nuclear, and particle physics, “hard” condensed matter physics, superfluids, modern electronics, materials science, and so on and so on.)</p>
 <p>Two more comments.</p>
 <p>A. Since we often in practice measure expectation values of operators,</p>
 <div class="math notranslate nohighlight" id="equation-ev-time">
-<span class="eqno">(203)<a class="headerlink" href="#equation-ev-time" title="Link to this equation">#</a></span>\[\vev{A}(t) = \bra{\psi(t_0)} U^{\dagger}(t,t_0) A U(t,t_0) \ket{\psi}\]</div>
+<span class="eqno">(205)<a class="headerlink" href="#equation-ev-time" title="Link to this equation">#</a></span>\[\vev{A}(t) = \bra{\psi(t_0)} U^{\dagger}(t,t_0) A U(t,t_0) \ket{\psi}\]</div>
 <p>we can adopt an equivalent formalism known as the <em>Heisenberg picture</em> in which the states do not evolve, but</p>
 <div class="math notranslate nohighlight">
 \[A_H = U^{\dagger}(t,t_0) A U(t,t_0)\]</div>
 <p>We sometimes denote the original operator as the <em>Schroedinger picture</em> <span class="math notranslate nohighlight">\(A_S\)</span> and <span class="math notranslate nohighlight">\(\ket{\psi(t)}\)</span> as the state in the Schroedinger picture. If <span class="math notranslate nohighlight">\(A_S(t)\)</span> itself has some time dependence (eg you are measuring polarization along some axis which is changing with time because the photon is moving through a bent fiber optic cable or some such), then we can write</p>
 <div class="math notranslate nohighlight" id="equation-heisenberg-evolution">
-<span class="eqno">(204)<a class="headerlink" href="#equation-heisenberg-evolution" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(206)<a class="headerlink" href="#equation-heisenberg-evolution" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \frac{d A_H}{dt} &amp; = \frac{d U^{\dagger}}{dt} A_S U + U^{\dagger} \frac{\del A_S}{\del t} U + U^{\dagger} A_S \frac{dU}{dt}\\
 &amp; = \frac{d U^{\dagger}}{dt} U U^{\dagger} A_S U + U^{\dagger} A_S U U^{\dagger} \frac{dU}{dt} + U^{\dagger} \frac{\del A_S}{\del t} U\\
 &amp; = \frac{i}{i\hbar} [A_H(t),H(t)] + \left(\frac{\del A_S}{\del t}\right)_H
 \end{align}\end{split}\]</div>
 <p>where the second line comes from <span class="math notranslate nohighlight">\(U U^{\dagger} = {\bf 1}\)</span>, and the last line takes a little algebra using our definition of <span class="math notranslate nohighlight">\(H\)</span> above. We usually write this as the <em>Heisenberg equation of motion</em>,</p>
 <div class="math notranslate nohighlight" id="equation-heisenberg-eom">
-<span class="eqno">(205)<a class="headerlink" href="#equation-heisenberg-eom" title="Link to this equation">#</a></span>\[i \hbar \frac{d A_H}{dt} = [A_H, H] + \left(\frac{\del A_S}{\del t}\right)_H\]</div>
+<span class="eqno">(207)<a class="headerlink" href="#equation-heisenberg-eom" title="Link to this equation">#</a></span>\[i \hbar \frac{d A_H}{dt} = [A_H, H] + \left(\frac{\del A_S}{\del t}\right)_H\]</div>
 <p>This should remind you of the classical Hamilton’s equations in Poisson bracket form, <span class="math notranslate nohighlight">\(\frac{d}{dt} A = \{A,H\} + \frac{\del A}{\del t}\)</span>. This form of the equations of motion are sometimes computationally useful.</p>
-<p>B. Note that <a class="reference internal" href="#equation-ham-def">(201)</a> means that we can equivalently specify <span class="math notranslate nohighlight">\(U\)</span> or <span class="math notranslate nohighlight">\(H\)</span>. Hiven <span class="math notranslate nohighlight">\(H\)</span> we can write a differential equation for <span class="math notranslate nohighlight">\(U\)</span>,</p>
+<p>B. Note that <a class="reference internal" href="#equation-ham-def">(203)</a> means that we can equivalently specify <span class="math notranslate nohighlight">\(U\)</span> or <span class="math notranslate nohighlight">\(H\)</span>. Hiven <span class="math notranslate nohighlight">\(H\)</span> we can write a differential equation for <span class="math notranslate nohighlight">\(U\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\frac{d U}{dt} = \frac{1}{i\hbar} H(t) U(t,t_0)\]</div>
 <p>Since we know <span class="math notranslate nohighlight">\(U(t_0,t_0) = {\bf 1}\)</span> we have a first order differential equation with a known initial condition. In the case that <span class="math notranslate nohighlight">\(H(t) = H\)</span>, there is a clear solution:</p>

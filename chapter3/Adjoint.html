@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -442,7 +453,7 @@ document.write(`
 </ol>
 <p>Consider linear maps <span class="math notranslate nohighlight">\(f_{1,2}\)</span>, and <span class="math notranslate nohighlight">\(a,b \in \CC\)</span>. Then we can define a linear map <span class="math notranslate nohighlight">\(a f_1 * b f_2\)</span> by their action on a vector <span class="math notranslate nohighlight">\(\ket{v}\)</span>.</p>
 <div class="math notranslate nohighlight" id="equation-sum-of-linear">
-<span class="eqno">(175)<a class="headerlink" href="#equation-sum-of-linear" title="Link to this equation">#</a></span>\[(a f_1 + b f_2)(\ket{v}) = a f_1(\ket{v}) + b f_2(\ket{v})\]</div>
+<span class="eqno">(177)<a class="headerlink" href="#equation-sum-of-linear" title="Link to this equation">#</a></span>\[(a f_1 + b f_2)(\ket{v}) = a f_1(\ket{v}) + b f_2(\ket{v})\]</div>
 <p>One can show that this defines a linear map: for any <span class="math notranslate nohighlight">\(c,d\in \CC\)</span> and <span class="math notranslate nohighlight">\(\ket{v_{1,2}} \in V\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[(a f_1 + b f_2)(c \ket{v_1} + d \ket{v_2}) = c (a f_1 + b f_2)\ket{v_1} + d (a f_1 + b f_2)(\ket{v_2})\]</div>
@@ -531,7 +542,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(V = L^2(\CR)\)</span>, the space of complex square-integrable functions on the real line where <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> is represented by the function <span class="math notranslate nohighlight">\(\psi(x)\)</span>. A good inner product, which defines an adjoint map, is</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-l2adjoint">
-<span class="eqno">(176)<a class="headerlink" href="#equation-l2adjoint" title="Link to this equation">#</a></span>\[\brket{\chi}{\psi} = \int_{-\infty}^{\infty} dx \chi(x)^* \psi(x)\]</div>
+<span class="eqno">(178)<a class="headerlink" href="#equation-l2adjoint" title="Link to this equation">#</a></span>\[\brket{\chi}{\psi} = \int_{-\infty}^{\infty} dx \chi(x)^* \psi(x)\]</div>
 </section>
 <section id="additional-definitions-and-a-comment">
 <h3>Additional definitions and a comment<a class="headerlink" href="#additional-definitions-and-a-comment" title="Link to this heading">#</a></h3>
@@ -575,16 +586,16 @@ document.write(`
 <li><p>We can write <span class="math notranslate nohighlight">\(\ket{v} = \sum_i v_i \ket{i}\)</span>; the antilienarity of the adjoint map means that <span class="math notranslate nohighlight">\(\bra{v} = \sum_i \bra{i} v^*_i\)</span>. This means that</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-on-norm">
-<span class="eqno">(177)<a class="headerlink" href="#equation-on-norm" title="Link to this equation">#</a></span>\[\brket{v}{v} = \sum_{i,j} v^*_i \brket{i}{j} v_j = \sum_i |v_i|^2\]</div>
+<span class="eqno">(179)<a class="headerlink" href="#equation-on-norm" title="Link to this equation">#</a></span>\[\brket{v}{v} = \sum_{i,j} v^*_i \brket{i}{j} v_j = \sum_i |v_i|^2\]</div>
 <p>Similarly, for <span class="math notranslate nohighlight">\(\ket{w} = \sum_i w_i \ket{i}\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-inner-product-on-basis">
-<span class="eqno">(178)<a class="headerlink" href="#equation-inner-product-on-basis" title="Link to this equation">#</a></span>\[\brket{w}{v} = \sum_i w^*_i v_i\]</div>
+<span class="eqno">(180)<a class="headerlink" href="#equation-inner-product-on-basis" title="Link to this equation">#</a></span>\[\brket{w}{v} = \sum_i w^*_i v_i\]</div>
 <p>This works if we idenfity</p>
 <div class="math notranslate nohighlight" id="equation-ket-in-on-basis">
-<span class="eqno">(179)<a class="headerlink" href="#equation-ket-in-on-basis" title="Link to this equation">#</a></span>\[\begin{split}\ket{v} \to \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix}\end{split}\]</div>
+<span class="eqno">(181)<a class="headerlink" href="#equation-ket-in-on-basis" title="Link to this equation">#</a></span>\[\begin{split}\ket{v} \to \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix}\end{split}\]</div>
 <p>and thus</p>
 <div class="math notranslate nohighlight" id="equation-bra-in-on-basis">
-<span class="eqno">(180)<a class="headerlink" href="#equation-bra-in-on-basis" title="Link to this equation">#</a></span>\[\bra{v} \to \begin{pmatrix} v_1^* &amp; v_2^* &amp; \ldots &amp; v_n^* \end{pmatrix}\]</div>
+<span class="eqno">(182)<a class="headerlink" href="#equation-bra-in-on-basis" title="Link to this equation">#</a></span>\[\bra{v} \to \begin{pmatrix} v_1^* &amp; v_2^* &amp; \ldots &amp; v_n^* \end{pmatrix}\]</div>
 <p>The basis element <span class="math notranslate nohighlight">\(\ket{i}\)</span> is a column vector with all zeros except a <span class="math notranslate nohighlight">\(1\)</span> in the <span class="math notranslate nohighlight">\(i\)</span>th row.</p>
 <ol class="arabic simple" start="2">
 <li><p>If <span class="math notranslate nohighlight">\(V = M_2(\CC)\)</span>, the space of <span class="math notranslate nohighlight">\(2\times 2\)</span> complex matrices,
@@ -594,7 +605,7 @@ a natural inner product is</p></li>
 \[\brket{m}{n} = \text{tr} (m^T)^* n\]</div>
 <p>where <span class="math notranslate nohighlight">\(m,n\)</span> are <span class="math notranslate nohighlight">\(2\times 2\)</span> matrices. This clearly defines an adjoint map from <span class="math notranslate nohighlight">\(\ket{n}\)</span> to a linear map. An orthonormal basis is:</p>
 <div class="math notranslate nohighlight" id="equation-matrix-on-basis">
-<span class="eqno">(181)<a class="headerlink" href="#equation-matrix-on-basis" title="Link to this equation">#</a></span>\[\begin{split}\ket{1} \to \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} \ ; \ \ 
+<span class="eqno">(183)<a class="headerlink" href="#equation-matrix-on-basis" title="Link to this equation">#</a></span>\[\begin{split}\ket{1} \to \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} \ ; \ \ 
 \ket{2} \to \begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}\ ; \ \ 
 \ket{3} \to \begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix}\ ; \ \ 
 \ket{4} \to \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\end{split}\]</div>
@@ -603,14 +614,14 @@ a natural inner product is</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[\ket{n} \to \psi_n(x) = \sqrt{\frac{2}{L}} \sin \frac{n\pi x}{L}\]</div>
-<p>is orthonormal with respect to the inner product <a class="reference internal" href="#equation-l2adjoint">(176)</a></p>
+<p>is orthonormal with respect to the inner product <a class="reference internal" href="#equation-l2adjoint">(178)</a></p>
 </section>
 <section id="the-gram-schmidt-machine">
 <h3>The Gram-Schmidt machine<a class="headerlink" href="#the-gram-schmidt-machine" title="Link to this heading">#</a></h3>
 <p><strong>Theorem</strong>: every finite-dimensional vector space or infinite dimensional vector space with a countable basis has an orthonormal basis.</p>
 <p><strong>Proof (partial)</strong>: Given a basis <span class="math notranslate nohighlight">\(\ket{v_1},\ket{v_2},\ldots,\ket{v_d}\)</span>, we can construct a basis iteratively. Define</p>
 <div class="math notranslate nohighlight" id="equation-gs-machine">
-<span class="eqno">(182)<a class="headerlink" href="#equation-gs-machine" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(184)<a class="headerlink" href="#equation-gs-machine" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \ket{1} &amp; = \frac{\ket{v_1}}{||v_1||}\\
 \ket{2} &amp; = \frac{\ket{v_2} - \brket{1}{v_2}\ket{1}}{\sqrt{||v_2||^2 - |\brket{1}{v_2}|^2}}\\
 \ket{k} &amp; = \frac{\ket{v_k} - \sum_{n = 0}^{k-1} \ket{n}\brket{n}{v_k}}{\sqrt{||v_k||^2 = \sum_{n = 1}^{k-1} |\brket{v_k}{n}|^2}}
@@ -620,7 +631,7 @@ a natural inner product is</p></li>
 <h3>Matrix elements of operators<a class="headerlink" href="#matrix-elements-of-operators" title="Link to this heading">#</a></h3>
 <p>Since <span class="math notranslate nohighlight">\(\ket{i}\)</span> is a basis, we can write the action of operators in this basis: <span class="math notranslate nohighlight">\(A\ket{j} = A_{ij}\ket{i}\)</span>. As notation, we will sometimes write</p>
 <div class="math notranslate nohighlight" id="equation-operator-rep">
-<span class="eqno">(183)<a class="headerlink" href="#equation-operator-rep" title="Link to this equation">#</a></span>\[A = \bra{i} A_{ij} \ket{j}\]</div>
+<span class="eqno">(185)<a class="headerlink" href="#equation-operator-rep" title="Link to this equation">#</a></span>\[A = \bra{i} A_{ij} \ket{j}\]</div>
 <p>We understand this to mean</p>
 <div class="math notranslate nohighlight">
 \[A\ket{v} = \sum_{i,j} \ket{i} A_{ij} \brket{j}{v} = \sum_{i,j}A_{ij} v_j \ket{i}\]</div>
@@ -632,11 +643,11 @@ a natural inner product is</p></li>
 \[\bra{v} A \ket{w} = \sum_{i,j} v^*_i A_{ij} w_j\]</div>
 <p>A particularly important example is the identity operator <span class="math notranslate nohighlight">\(\bf{1}\)</span> for which <span class="math notranslate nohighlight">\(\bf{1}_{ij} = \delta_{ij}\)</span>. This can be represented as above by:</p>
 <div class="math notranslate nohighlight" id="equation-resolution-of-identity">
-<span class="eqno">(184)<a class="headerlink" href="#equation-resolution-of-identity" title="Link to this equation">#</a></span>\[{\bf 1} = \sum_i \ket{i}\bra{i}\]</div>
+<span class="eqno">(186)<a class="headerlink" href="#equation-resolution-of-identity" title="Link to this equation">#</a></span>\[{\bf 1} = \sum_i \ket{i}\bra{i}\]</div>
 <p>for any orthonormal basis. This is called a <em>resolution of the identity</em>, associated to a given basis.</p>
 <p>In this basis, an important operator on <span class="math notranslate nohighlight">\(A\)</span> is the <em>transpose</em>. That is given a linear operator <span class="math notranslate nohighlight">\(A\)</span>, we can define the transpose <span class="math notranslate nohighlight">\(A^T\)</span> via its matrix elements</p>
 <div class="math notranslate nohighlight" id="equation-transpose-def">
-<span class="eqno">(185)<a class="headerlink" href="#equation-transpose-def" title="Link to this equation">#</a></span>\[(A^T)_{ij} = A_{ji}\]</div>
+<span class="eqno">(187)<a class="headerlink" href="#equation-transpose-def" title="Link to this equation">#</a></span>\[(A^T)_{ij} = A_{ji}\]</div>
 <p>In particular, we can write</p>
 <div class="math notranslate nohighlight">
 \[\bra{v}A = \bra{i} v^*_k A_{ki} = \bra{i} (A^T)_{ik} v^*_k\]</div>
@@ -648,7 +659,7 @@ a natural inner product is</p></li>
 \[{\cal A} : A\ket{v} \to \bra{l} v_k^* A_{lk}^* = \bra{l} v_k^* (A^T)^*_{kl} \equiv \bra{v} A^{\dagger}\]</div>
 <p>which defines the <em>Hermitian conjugate</em> <span class="math notranslate nohighlight">\(A^{\dagger}\)</span>. We can either define it as <span class="math notranslate nohighlight">\({\cal A}: A\ket{v} \to \bra{a} A^{\dagger}\)</span> or via its matrix elements in an orthonormal basis,</p>
 <div class="math notranslate nohighlight" id="equation-hermitian-def">
-<span class="eqno">(186)<a class="headerlink" href="#equation-hermitian-def" title="Link to this equation">#</a></span>\[A^{\dagger}_{ij} = (A^T)^*_{ij} = A^*_{ji}\]</div>
+<span class="eqno">(188)<a class="headerlink" href="#equation-hermitian-def" title="Link to this equation">#</a></span>\[A^{\dagger}_{ij} = (A^T)^*_{ij} = A^*_{ji}\]</div>
 </section>
 <section id="hermitian-and-unitary-operators">
 <h3>Hermitian and unitary operators<a class="headerlink" href="#hermitian-and-unitary-operators" title="Link to this heading">#</a></h3>

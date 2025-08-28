@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -430,11 +441,11 @@ document.write(`
 <li><p><strong>Definition</strong>. Given vector spaces <span class="math notranslate nohighlight">\(V_1, V_2\)</span>, the <em>direct sum</em> <span class="math notranslate nohighlight">\(V = V_1 \oplus V_2\)</span> is the set of all <em>ordered pairs</em> <span class="math notranslate nohighlight">\(\left(\ket{v}_1,\ket{v_2}\right)\)</span> for <span class="math notranslate nohighlight">\(\ket{v}_i \in V_i\)</span>, such that</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-ds-add">
-<span class="eqno">(220)<a class="headerlink" href="#equation-ds-add" title="Link to this equation">#</a></span>\[c \left(\ket{v}_1, \ket{v}_2\right) + d \left(\ket{w}_1, \ket{w}_2\right) = \left(c\ket{v}_1 + d \ket{w}_1, c \ket{v}_2, d \ket{w}_2\right)\]</div>
+<span class="eqno">(222)<a class="headerlink" href="#equation-ds-add" title="Link to this equation">#</a></span>\[c \left(\ket{v}_1, \ket{v}_2\right) + d \left(\ket{w}_1, \ket{w}_2\right) = \left(c\ket{v}_1 + d \ket{w}_1, c \ket{v}_2, d \ket{w}_2\right)\]</div>
 <p>for all <span class="math notranslate nohighlight">\(c,d \in \CC\)</span>. If we define the zero vector as <span class="math notranslate nohighlight">\(\left(0,0\right)\)</span>, this is a vector space.</p>
 <p>Typically, we drop the ordered paits and simply write</p>
 <div class="math notranslate nohighlight" id="equation-ds-notation">
-<span class="eqno">(221)<a class="headerlink" href="#equation-ds-notation" title="Link to this equation">#</a></span>\[\left(\ket{v}_1,\ket{v}_2\right) = \ket{v}_1 + \ket{v_2}\]</div>
+<span class="eqno">(223)<a class="headerlink" href="#equation-ds-notation" title="Link to this equation">#</a></span>\[\left(\ket{v}_1,\ket{v}_2\right) = \ket{v}_1 + \ket{v_2}\]</div>
 <p>which can be understood formally if we understand <span class="math notranslate nohighlight">\(\ket{v}_1 \equiv \left(\ket{v}_1, 0\right)\)</span> and <span class="math notranslate nohighlight">\(\ket{v}_2 = \left(0,\ket{v}_2\right)\)</span>.</p>
 <ul class="simple">
 <li><p><em>Basis and dimension</em>. Given a basis <span class="math notranslate nohighlight">\(\ket{i}, i = 1,\ldots,d_1\)</span> of <span class="math notranslate nohighlight">\(V_1\)</span> and a basis <span class="math notranslate nohighlight">\(\ket{I}, I = 1,\ldots, d_2\)</span> of <span class="math notranslate nohighlight">\(V_2\)</span>, you can (and should) convince yourself that <span class="math notranslate nohighlight">\(\left(\ket{i}, 0\right)\)</span> and <span class="math notranslate nohighlight">\(\left(0, \ket{I}_2\right)\)</span> form a basis for <span class="math notranslate nohighlight">\(V_1 \oplus V_2\)</span>. This means that <span class="math notranslate nohighlight">\(\text{dim}(V_1 \oplus V_2) = \text{dim}(V_1) + \text{dim}(V_2)\)</span>.</p></li>
@@ -461,10 +472,10 @@ document.write(`
 <li><p><strong>Definition</strong>. Given vector space <span class="math notranslate nohighlight">\(V_1\)</span> with basis <span class="math notranslate nohighlight">\(\ket{i}, i = 1,\ldots, d_1\)</span> and a second vector space <span class="math notranslate nohighlight">\(V_2\)</span> with basis <span class="math notranslate nohighlight">\(\ket{I}, I = 1,\ldots, d_2\)</span>, the <em>tensor product</em> <span class="math notranslate nohighlight">\(V = V_1 \otimes V_2\)</span> is the set of all formal symbols</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-tp-def">
-<span class="eqno">(222)<a class="headerlink" href="#equation-tp-def" title="Link to this equation">#</a></span>\[\ket{\alpha} = \sum_{i, I} \alpha_{iI} \ket{i}ket{I}\]</div>
+<span class="eqno">(224)<a class="headerlink" href="#equation-tp-def" title="Link to this equation">#</a></span>\[\ket{\alpha} = \sum_{i, I} \alpha_{iI} \ket{i}ket{I}\]</div>
 <p>If <span class="math notranslate nohighlight">\(\ket{\beta}\)</span> is similarly defined with coefficients <span class="math notranslate nohighlight">\(\beta_{iI}\)</span>, then  addition is defined as</p>
 <div class="math notranslate nohighlight" id="equation-tp-add">
-<span class="eqno">(223)<a class="headerlink" href="#equation-tp-add" title="Link to this equation">#</a></span>\[c \ket{\alpha} + d \ket{\beta} = \sum_{i,I} (c \alpha_{iI} + d \beta_{iI})\ket{i}\ket{I}\]</div>
+<span class="eqno">(225)<a class="headerlink" href="#equation-tp-add" title="Link to this equation">#</a></span>\[c \ket{\alpha} + d \ket{\beta} = \sum_{i,I} (c \alpha_{iI} + d \beta_{iI})\ket{i}\ket{I}\]</div>
 <p>for any <span class="math notranslate nohighlight">\(c,d \in \CC\)</span>. If we define the zero vector via <span class="math notranslate nohighlight">\(\alpha_{iI} = 0\)</span>, then <span class="math notranslate nohighlight">\(V_1\otimes V_2\)</span> is a vector space.</p>
 <ul class="simple">
 <li><p><em>Basis and dimension</em>. Clearly <span class="math notranslate nohighlight">\(\ket{i}\ket{I}\)</span> form a complete basis, and so <span class="math notranslate nohighlight">\(\text{dim}(V_1 \otimes V_2) = \text{dim}(V_1) \times \text{dim}(V_2)\)</span>.</p></li>
@@ -495,7 +506,7 @@ This is sometimes realized as a <em>spinor</em>, a 2d vector of wavefunctions</p
 <li><p><em>Inner products</em>. If <span class="math notranslate nohighlight">\(V_{1,2}\)</span> are an inner product space, there is a natural inner product on the tensor product space indiucec by the following. Let <span class="math notranslate nohighlight">\(\ket{\alpha} = \ket{v_1}\ket{v_2}\)</span>, <span class="math notranslate nohighlight">\(\ket{\beta} = \ket{w_1}\ket{w_2}\)</span>; then we can write</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-tp-inner">
-<span class="eqno">(224)<a class="headerlink" href="#equation-tp-inner" title="Link to this equation">#</a></span>\[\brket{\beta}{\alpha} = \brket{w_1}{v_1} \brket{w_2}{v_2}\]</div>
+<span class="eqno">(226)<a class="headerlink" href="#equation-tp-inner" title="Link to this equation">#</a></span>\[\brket{\beta}{\alpha} = \brket{w_1}{v_1} \brket{w_2}{v_2}\]</div>
 <ul class="simple">
 <li><p><em>Dynamics</em> The typical structure of a Hamkiltonian in this situation is</p></li>
 </ul>
@@ -510,10 +521,10 @@ This is sometimes realized as a <em>spinor</em>, a 2d vector of wavefunctions</p
 <h2>Entangled states<a class="headerlink" href="#entangled-states" title="Link to this heading">#</a></h2>
 <p>Given a tensor product Hilbert space <span class="math notranslate nohighlight">\(\cH = \cH_1 \otimes \cH_2\)</span>, we say that a state <span class="math notranslate nohighlight">\(\ket{\alpha} \in \cH\)</span> is <em>entangled</em> if it cannot be written in the form</p>
 <div class="math notranslate nohighlight" id="equation-def-entangled">
-<span class="eqno">(225)<a class="headerlink" href="#equation-def-entangled" title="Link to this equation">#</a></span>\[\ket{\alpha} = \ket{v}_1 \ket{w}_2\]</div>
+<span class="eqno">(227)<a class="headerlink" href="#equation-def-entangled" title="Link to this equation">#</a></span>\[\ket{\alpha} = \ket{v}_1 \ket{w}_2\]</div>
 <p>An example works best to illustrate this. Consider two spin-<span class="math notranslate nohighlight">\(\half\)</span> particles. The following states form a basis of <span class="math notranslate nohighlight">\(\CC^2\otimes\CC^2\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-two-spin-basis">
-<span class="eqno">(226)<a class="headerlink" href="#equation-two-spin-basis" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(228)<a class="headerlink" href="#equation-two-spin-basis" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \ket{\psi_1} &amp; = \ket{+,z}\ket{+,z}\\
 \ket{\psi_2} &amp; = \frac{1}{\sqrt{2}}\left(\ket{+,z}\ket{-,z} + \ket{-,z}\ket{+,z}\right)\\
 \ket{\psi_3} &amp; = \ket{-,z}\ket{-,z}\\
@@ -638,10 +649,10 @@ This is sometimes realized as a <em>spinor</em>, a 2d vector of wavefunctions</p
 <li><p>The <em>von Neumann entropy</em> is:</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-vn-entropy">
-<span class="eqno">(227)<a class="headerlink" href="#equation-vn-entropy" title="Link to this equation">#</a></span>\[S_{vN} = - \text{tr} \rho \ln \rho\]</div>
+<span class="eqno">(229)<a class="headerlink" href="#equation-vn-entropy" title="Link to this equation">#</a></span>\[S_{vN} = - \text{tr} \rho \ln \rho\]</div>
 <p>Taking the log of an operator is not trivial in general. If we wrote <span class="math notranslate nohighlight">\(A = 1 + (1 - A)\)</span>, we can write it as a power series in <span class="math notranslate nohighlight">\((1-A)\)</span> using <span class="math notranslate nohighlight">\(\ln (1 + x) = 1 + x + \half x^2 + \ldots\)</span>. There are techniques for computing <span class="math notranslate nohighlight">\(S_{vN}\)</span> and it is a big industry in modern quantum theory. For now we will note that if we can write <span class="math notranslate nohighlight">\(\rho\)</span> in an orthonormal basis, <span class="math notranslate nohighlight">\(\rho = \sum_k p_k \ket{k}\bra{k}\)</span> with <span class="math notranslate nohighlight">\(\brket{k}{l} = \delta_{kl}\)</span>, then</p>
 <div class="math notranslate nohighlight" id="equation-shannon-limit">
-<span class="eqno">(228)<a class="headerlink" href="#equation-shannon-limit" title="Link to this equation">#</a></span>\[S_{vN} = - \sum_k p_k \ln p_k\]</div>
+<span class="eqno">(230)<a class="headerlink" href="#equation-shannon-limit" title="Link to this equation">#</a></span>\[S_{vN} = - \sum_k p_k \ln p_k\]</div>
 <p>Recall that <span class="math notranslate nohighlight">\(0\leq p_k \leq 1\)</span>, and <span class="math notranslate nohighlight">\(\sum_k p_k = 1\)</span>. Those familiar with classical information theory will recognize this as the Shannon entropy for a probability ensemble <span class="math notranslate nohighlight">\(p_k\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is treated as a random variable.</p>
 <ul class="simple">
 <li><ol class="arabic simple">

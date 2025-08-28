@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -483,12 +494,12 @@ Hhere <span class="math notranslate nohighlight">\(a_i\)</span> are the eigenval
 <li><p><strong>Theorem</strong>. <span class="math notranslate nohighlight">\(\forall W ]subset V\)</span> vector subspaces, there exists a subspace <span class="math notranslate nohighlight">\(W^{\perp} \subset V\)</span> such that <span class="math notranslate nohighlight">\(\forall \ket{v} \in V\)</span>, there exists a unique expression</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-ortho-decomp">
-<span class="eqno">(187)<a class="headerlink" href="#equation-ortho-decomp" title="Link to this equation">#</a></span>\[\ket{v} = \ket{w} + \ket{w^{\perp}}\]</div>
+<span class="eqno">(189)<a class="headerlink" href="#equation-ortho-decomp" title="Link to this equation">#</a></span>\[\ket{v} = \ket{w} + \ket{w^{\perp}}\]</div>
 <p>with <span class="math notranslate nohighlight">\(\ket{w} \in W\)</span>, <span class="math notranslate nohighlight">\(
 \ket{w^{\perp}} \in W^{\perp}\)</span>. This is known as an <em>orthogonal decomposition</em> of <span class="math notranslate nohighlight">\(\ket{v}\)</span>.  I will forgo a proof here.</p>
 <p>Note that we can form orthogonal/orthonormal bases <span class="math notranslate nohighlight">\(\ket{i}, \ket{I}\)</span> for <span class="math notranslate nohighlight">\(W,W^{\perp}\)</span> respectively; by teh above theorem, since any vector can be written as a sum of vectors in the wubspaces <span class="math notranslate nohighlight">\(W,W^{\perp}\)</span>, the collection of basis elemenbts <span class="math notranslate nohighlight">\(\ket{i},\ket{I}\)</span> are a basis for <span class="math notranslate nohighlight">\(V\)</span>. Thus if <span class="math notranslate nohighlight">\(d = \text{dim} V\)</span>, <span class="math notranslate nohighlight">\(d_W = \text{dim}(W)\)</span>, <span class="math notranslate nohighlight">\(d_{W^{\perp}} = \text{dim}(W^{\perp})\)</span>, we have</p>
 <div class="math notranslate nohighlight" id="equation-od-dims">
-<span class="eqno">(188)<a class="headerlink" href="#equation-od-dims" title="Link to this equation">#</a></span>\[d = d_W + d_{W^{\perp}}\]</div>
+<span class="eqno">(190)<a class="headerlink" href="#equation-od-dims" title="Link to this equation">#</a></span>\[d = d_W + d_{W^{\perp}}\]</div>
 <ol class="arabic simple" start="3">
 <li><p><strong>Definition</strong>. A <em>projection operator</em> <span class="math notranslate nohighlight">\(\CP\)</span> is a Hermitian operator such that <span class="math notranslate nohighlight">\(\CP^2 = \CP\)</span>. The reasons for calling this a projection operator will become clear as we explore its properties.</p></li>
 </ol>
@@ -509,13 +520,13 @@ Hhere <span class="math notranslate nohighlight">\(a_i\)</span> are the eigenval
 \end{pmatrix}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\text{dim}(\text{range}(\CP)) = d_P\)</span> and <span class="math notranslate nohighlight">\(\text{dim}(\text{Ker}(\CP)) = d_{P^{\perp}}\)</span>. If the eigenvectors of <span class="math notranslate nohighlight">\(\CP\)</span> with unit eigenvalues are <span class="math notranslate nohighlight">\(\ket{i}\)</span>, <span class="math notranslate nohighlight">\(i \in \{1, \ldots , d_P\}\)</span>, then we can also write</p>
 <div class="math notranslate nohighlight" id="equation-abstract-proj-rep">
-<span class="eqno">(189)<a class="headerlink" href="#equation-abstract-proj-rep" title="Link to this equation">#</a></span>\[\CP = \sum_{i = 1}^{d_P} \ket{i}\bra{i}\]</div>
+<span class="eqno">(191)<a class="headerlink" href="#equation-abstract-proj-rep" title="Link to this equation">#</a></span>\[\CP = \sum_{i = 1}^{d_P} \ket{i}\bra{i}\]</div>
 <p>In the latter case, we can show this is Hermitian by first realizing that</p>
 <div class="math notranslate nohighlight" id="equation-adjoint-vectorrep">
-<span class="eqno">(190)<a class="headerlink" href="#equation-adjoint-vectorrep" title="Link to this equation">#</a></span>\[\left(\ket{\chi}\bra{\psi}\right)^{\dagger} = \ket{\psi}\bra{\chi}\]</div>
+<span class="eqno">(192)<a class="headerlink" href="#equation-adjoint-vectorrep" title="Link to this equation">#</a></span>\[\left(\ket{\chi}\bra{\psi}\right)^{\dagger} = \ket{\psi}\bra{\chi}\]</div>
 <p>(can you shouw this?), and then showing that</p>
 <div class="math notranslate nohighlight" id="equation-projection-squared">
-<span class="eqno">(191)<a class="headerlink" href="#equation-projection-squared" title="Link to this equation">#</a></span>\[\CP^2 = \sum_i \ket{i}\bra{i} \sum_j \ket{j}\bra{j} = \sum_{i,j} \ket{i}\brket{i}{j}\bra{j} = \sum_{i,j} \ket{i}\delta_{ij} \bra{j} = \CP\]</div>
+<span class="eqno">(193)<a class="headerlink" href="#equation-projection-squared" title="Link to this equation">#</a></span>\[\CP^2 = \sum_i \ket{i}\bra{i} \sum_j \ket{j}\bra{j} = \sum_{i,j} \ket{i}\brket{i}{j}\bra{j} = \sum_{i,j} \ket{i}\delta_{ij} \bra{j} = \CP\]</div>
 </section>
 <section id="spectral-representation-of-hermitian-operators">
 <h3>Spectral representation of Hermitian operators<a class="headerlink" href="#spectral-representation-of-hermitian-operators" title="Link to this heading">#</a></h3>
@@ -524,11 +535,11 @@ Hhere <span class="math notranslate nohighlight">\(a_i\)</span> are the eigenval
 \[\CP_i = \sum_{\alpha_i = 1}^{d_i} \ket{a_i,\alpha_i}\bra{a_i,\alpha_i}\]</div>
 <p>which projects onto the subspace <span class="math notranslate nohighlight">\(V_i \subset V\)</span> of vectors with eigenvalue <span class="math notranslate nohighlight">\(a_i\)</span>. We can then write the operator <span class="math notranslate nohighlight">\(A\)</span> as</p>
 <div class="math notranslate nohighlight" id="equation-spectral-rep">
-<span class="eqno">(192)<a class="headerlink" href="#equation-spectral-rep" title="Link to this equation">#</a></span>\[A = \sum_i a_i \CP_i\]</div>
+<span class="eqno">(194)<a class="headerlink" href="#equation-spectral-rep" title="Link to this equation">#</a></span>\[A = \sum_i a_i \CP_i\]</div>
 <p>The right hand side has the same eigenvalues and eigenvector as <span class="math notranslate nohighlight">\(A\)</span>, by construction; thus it has the same matrix elements in a basis of eigenvectors of <span class="math notranslate nohighlight">\(A\)</span>, and so must be the same operator as <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p>Note that the fact that <span class="math notranslate nohighlight">\(\ket{a_i,\alpha_i}\)</span> are a complete orthonormal basis for <span class="math notranslate nohighlight">\(V\)</span> means that</p>
 <div class="math notranslate nohighlight" id="equation-evector-resolution-identity">
-<span class="eqno">(193)<a class="headerlink" href="#equation-evector-resolution-identity" title="Link to this equation">#</a></span>\[{\bf 1} = \sum_{i,\alpha_i} \ket{a_i,\alpha_i}\bra{a_i,\alpha_i} = \sum_i \CP_i\]</div>
+<span class="eqno">(195)<a class="headerlink" href="#equation-evector-resolution-identity" title="Link to this equation">#</a></span>\[{\bf 1} = \sum_{i,\alpha_i} \ket{a_i,\alpha_i}\bra{a_i,\alpha_i} = \sum_i \CP_i\]</div>
 </section>
 </section>
 </section>
