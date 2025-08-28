@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -426,11 +437,11 @@ document.write(`
 \[- \frac{\hbar^2}{2\mu} \frac{1}{r} \frac{\del^2}{\del r^2} (r\psi) - \frac{\hbar^2}{2\mu r^2} {\vec L}^2\psi - \frac{e^2}{r} \psi = E\psi\]</div>
 <p>Now all of the angular derivatives are contained in <span class="math notranslate nohighlight">\({\vec L}^2\)</span>. Thus, we can us separation of variables, and write <span class="math notranslate nohighlight">\(\psi = f(r) \chi(\theta,\phi)\)</span>. Inserting this equation, and dividing by <span class="math notranslate nohighlight">\(\psi\)</span>, we find</p>
 <div class="math notranslate nohighlight" id="equation-separated-hydrogen">
-<span class="eqno">(319)<a class="headerlink" href="#equation-separated-hydrogen" title="Link to this equation">#</a></span>\[- \frac{\hbar^2}{2\mu f} \frac{1}{r} \frac{\del^2}{\del r^2} (rf) - \frac{1}{2\mu r^2 \chi} {\vec L}^2\chi - \frac{e^2}{r} = E\]</div>
+<span class="eqno">(321)<a class="headerlink" href="#equation-separated-hydrogen" title="Link to this equation">#</a></span>\[- \frac{\hbar^2}{2\mu f} \frac{1}{r} \frac{\del^2}{\del r^2} (rf) - \frac{1}{2\mu r^2 \chi} {\vec L}^2\chi - \frac{e^2}{r} = E\]</div>
 <p>Further multiplying by <span class="math notranslate nohighlight">\(2\mu r^2\)</span>, there is only one term involving <span class="math notranslate nohighlight">\(\chi\)</span> or any other function of the angular coordinates, which is the term proportional to <span class="math notranslate nohighlight">\({\vec L}^2\chi\)</span>. Thus we can deduce that</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{\chi}{\vec L}^2 \chi = C\]</div>
-<p>for some constant <span class="math notranslate nohighlight">\(C\)</span>. Multiplying this by <span class="math notranslate nohighlight">\(\chi\)</span>, we have an eigenvalue equation for the operator <span class="math notranslate nohighlight">\({\vec L}^2\)</span>. But we know the solution – <span class="math notranslate nohighlight">\(\chi\)</span> mist be a spherical harmonic <span class="math notranslate nohighlight">\(Y_{\ell,m}(\theta,\phi)\)</span>, and <span class="math notranslate nohighlight">\(C = \hbar^2\ell(\ell + 1)\)</span>. Insering this into <a class="reference internal" href="#equation-separated-hydrogen">(319)</a>, we find:</p>
+<p>for some constant <span class="math notranslate nohighlight">\(C\)</span>. Multiplying this by <span class="math notranslate nohighlight">\(\chi\)</span>, we have an eigenvalue equation for the operator <span class="math notranslate nohighlight">\({\vec L}^2\)</span>. But we know the solution – <span class="math notranslate nohighlight">\(\chi\)</span> mist be a spherical harmonic <span class="math notranslate nohighlight">\(Y_{\ell,m}(\theta,\phi)\)</span>, and <span class="math notranslate nohighlight">\(C = \hbar^2\ell(\ell + 1)\)</span>. Insering this into <a class="reference internal" href="#equation-separated-hydrogen">(321)</a>, we find:</p>
 <div class="math notranslate nohighlight">
 \[- \frac{\hbar^2}{2\mu} \frac{1}{r} \frac{\del^2}{\del r^2}(r f(r)) = \frac{\hbar^2 \ell(\ell + 1)}{2\mu r^2} f - \frac{e^2}{r} f = E f\]</div>
 <p>Finally, if we multiply teh entire equation by <span class="math notranslate nohighlight">\(r\)</span> and define <span class="math notranslate nohighlight">\(u = r f(r)\)</span>, we have and “effective” Schroedinger equation:</p>
@@ -481,7 +492,7 @@ document.write(`
 \[- \del_{\rho}^2 u + \frac{\ell(\ell + 1)} u - \sqrt{\frac{2\mu}{\hbar^2|E|}}\frac{e^2}{\rho} u = u\]</div>
 <p>We further define <span class="math notranslate nohighlight">\(\lambda = \sqrt{\frac{2\mu}{\hbar^2 |E|}}\)</span>. Next, we strip off the large-<span class="math notranslate nohighlight">\(\rho\)</span> behavior by writing <span class="math notranslate nohighlight">\(u = e^{-\rho} G(\rho)\)</span>. The resulting equation is</p>
 <div class="math notranslate nohighlight" id="equation-g-equation">
-<span class="eqno">(320)<a class="headerlink" href="#equation-g-equation" title="Link to this equation">#</a></span>\[\frac{d}{d\rho^2}G - 2 \frac{d}{d\rho} G + \left[\frac{e^2\lambda}{\rho} - \frac{\ell(\ell + 1)}{\rho^2}\right]G = 0\]</div>
+<span class="eqno">(322)<a class="headerlink" href="#equation-g-equation" title="Link to this equation">#</a></span>\[\frac{d}{d\rho^2}G - 2 \frac{d}{d\rho} G + \left[\frac{e^2\lambda}{\rho} - \frac{\ell(\ell + 1)}{\rho^2}\right]G = 0\]</div>
 <p>These terms scale as either <span class="math notranslate nohighlight">\(\sigma^{-2}\)</span> or <span class="math notranslate nohighlight">\(\sigma^{-1}\)</span> as <span class="math notranslate nohighlight">\(\rho \to \sigma \rho\)</span>. If we expand <span class="math notranslate nohighlight">\(G\)</span> in a power series, these terms will relate successive terms, leaving the possibility that the coefficients are at least determined by a recursion relation. From the discussion above, we try</p>
 <div class="math notranslate nohighlight">
 \[G(\rho) = \rho \sum_{n = 0}^{\infty} c_n \rho^n\]</div>
@@ -498,7 +509,7 @@ document.write(`
 <p>This overwhelms the <span class="math notranslate nohighlight">\(e^{-\rho}\)</span> behavior and renders the wavefunction non-normalizable.</p>
 <p>The out is if the power series truncates at some order. Then the wavfunction scales as <span class="math notranslate nohighlight">\(\rho^m e^{-\rho}\)</span> which is normalizable as <span class="math notranslate nohighlight">\(\rho \to \infty\)</span>. This means that there is some <span class="math notranslate nohighlight">\(m = 1, 2, 3, 4...\)</span> such that <span class="math notranslate nohighlight">\(e^2 \lambda = 2(m + \ell)\)</span>. In other words,</p>
 <div class="math notranslate nohighlight" id="equation-hydrogen-energy">
-<span class="eqno">(321)<a class="headerlink" href="#equation-hydrogen-energy" title="Link to this equation">#</a></span>\[E = - \frac{\mu e^4}{2\hbar^2 n^2}\]</div>
+<span class="eqno">(323)<a class="headerlink" href="#equation-hydrogen-energy" title="Link to this equation">#</a></span>\[E = - \frac{\mu e^4}{2\hbar^2 n^2}\]</div>
 <p>where <span class="math notranslate nohighlight">\(n = 1,2,3,\ldots = (m + \ell)\)</span>. This means that</p>
 <div class="math notranslate nohighlight">
 \[\rho - \frac{\mu e^4}{\hbar^2 n} r\]</div>
@@ -511,7 +522,7 @@ document.write(`
 </section>
 <section id="the-spectrum">
 <h2>The spectrum<a class="headerlink" href="#the-spectrum" title="Link to this heading">#</a></h2>
-<p>As we stated, the bound states have energy <a class="reference internal" href="#equation-hydrogen-energy">(321)</a>. Looking back, we see that <span class="math notranslate nohighlight">\(n = \ell + m\)</span> where <span class="math notranslate nohighlight">\(m \geq 1\)</span>. Thus, for any value of <span class="math notranslate nohighlight">\(m\)</span>, we have the possible values <span class="math notranslate nohighlight">\(\ell = n - 1, n -2, \ldots 0\)</span>. For <span class="math notranslate nohighlight">\(n &gt; 1\)</span> this is a highly degenerate spectrum because for each value of <span class="math notranslate nohighlight">\(\ell\)</span> there is a <span class="math notranslate nohighlight">\(2\ell + 1\)</span>-dimensional subspace. This degeneracy is the result of an additional symmetry, that we will discuss below.</p>
+<p>As we stated, the bound states have energy <a class="reference internal" href="#equation-hydrogen-energy">(323)</a>. Looking back, we see that <span class="math notranslate nohighlight">\(n = \ell + m\)</span> where <span class="math notranslate nohighlight">\(m \geq 1\)</span>. Thus, for any value of <span class="math notranslate nohighlight">\(m\)</span>, we have the possible values <span class="math notranslate nohighlight">\(\ell = n - 1, n -2, \ldots 0\)</span>. For <span class="math notranslate nohighlight">\(n &gt; 1\)</span> this is a highly degenerate spectrum because for each value of <span class="math notranslate nohighlight">\(\ell\)</span> there is a <span class="math notranslate nohighlight">\(2\ell + 1\)</span>-dimensional subspace. This degeneracy is the result of an additional symmetry, that we will discuss below.</p>
 <p>It is standard to refer to <span class="math notranslate nohighlight">\(\ell = 0\)</span> states by <span class="math notranslate nohighlight">\(S\)</span>; <span class="math notranslate nohighlight">\(\ell = 1\)</span> states by <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(\ell = 2\)</span> states by <span class="math notranslate nohighlight">\(D\)</span>, and so on.</p>
 <p>Finally, note that the low-lying states are separated by energies of order a fraction of the magnitude of the ground state energy. As <span class="math notranslate nohighlight">\(n \to \infty\)</span> the spacing becomes finer and finer, as the energy approaches zero and the wavefunction can spread out more and more.</p>
 </section>

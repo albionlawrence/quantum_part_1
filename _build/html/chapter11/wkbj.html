@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter11/wkbj';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix" href="../appendix.html" />
+    <link rel="next" title="Time-Dependent Perturbation Theory" href="../chapter12/time_dependent_pt.html" />
     <link rel="prev" title="The Variational Method" href="variational.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -241,6 +241,17 @@
 <li class="toctree-l2"><a class="reference internal" href="tipt.html">Time-independent perturbation theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variational.html">The Variational Method</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">The WKBJ method</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
@@ -449,15 +460,15 @@ document.write(`
 <p>which we can think of as an imaginary wavenumber.</p>
 <p>If this approximation is close to true, we can approximate the wavefunction well inside the potential well with</p>
 <div class="math notranslate nohighlight" id="equation-semiclassical-wavefunctions">
-<span class="eqno">(327)<a class="headerlink" href="#equation-semiclassical-wavefunctions" title="Link to this equation">#</a></span>\[\psi(x) \sim A_+ \exp\left(\frac{i}{\hbar}\int_{x_0}^x dx' p(x')\right) + A_- \exp\left(- \frac{i}{\hbar}\int_{x_0}^x dx' p(x')\right)\]</div>
+<span class="eqno">(329)<a class="headerlink" href="#equation-semiclassical-wavefunctions" title="Link to this equation">#</a></span>\[\psi(x) \sim A_+ \exp\left(\frac{i}{\hbar}\int_{x_0}^x dx' p(x')\right) + A_- \exp\left(- \frac{i}{\hbar}\int_{x_0}^x dx' p(x')\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(p(x) = \sqrt{2m(E - V(x))}\)</span> is the classical momentum at fixed energy. Here <span class="math notranslate nohighlight">\(x_0\)</span> is a choice, that can be absorbed into <span class="math notranslate nohighlight">\(A_{\pm}\)</span>. Well below the barrier, the solution is:</p>
 <div class="math notranslate nohighlight" id="equation-below-barrier">
-<span class="eqno">(328)<a class="headerlink" href="#equation-below-barrier" title="Link to this equation">#</a></span>\[\psi(x) \sim B_+ \exp\left(\frac{1}{\hbar}\int_{x_0}^x dx' \rho(x')\right) + B_- \exp\left(- \frac{1}{\hbar}\int_{x_0}^x dx' \rho(x')\right)\]</div>
+<span class="eqno">(330)<a class="headerlink" href="#equation-below-barrier" title="Link to this equation">#</a></span>\[\psi(x) \sim B_+ \exp\left(\frac{1}{\hbar}\int_{x_0}^x dx' \rho(x')\right) + B_- \exp\left(- \frac{1}{\hbar}\int_{x_0}^x dx' \rho(x')\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(\rho(x) = - i \sqrt{2m(E - V(x))} = \sqrt{2m(V(x) - E)}\)</span> is a sort of imaginary momentum.</p>
 <p>The approximation can be expected to break down when the energy is roughly equal to the potential energy, so that the variation of the wavefunciton is not rapid. This is the region around the classical turning points. However, in this region, we can approximate the potential as a linear one, and the Schroedinger equation with a linear potential does have a solution in terms of Airy functions. If the WKB approximation starts to be good while the linear approximation is still valid, then we can use this fact to match the Airy functions to the WKB solutions and get a complete solution, including an approximation to the energy eigenvalues.</p>
 <p>To get an estimate of when this approximation words, we can ask that the change in the wavelength <span class="math notranslate nohighlight">\(\lambda(x) = \hbar/p(x)\)</span> over a distance of order the wavelength is small compared to the wavelength. This becomes</p>
 <div class="math notranslate nohighlight" id="equation-wkb-cond">
-<span class="eqno">(329)<a class="headerlink" href="#equation-wkb-cond" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(331)<a class="headerlink" href="#equation-wkb-cond" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \Big| \frac{\Delta\lambda}{\lambda}\Big| &amp; \sim \Big| \frac{\lambda\del_x \lambda}{\lambda}\Big| \\
 &amp; = |\del_x \lambda| = \Big|\frac{m\hbar V'}{(2m(E - V))^{3/2}}\Big| \\
 &amp; = \Big| \frac{m \hbar V'}{p^3}\Big| \\
@@ -474,21 +485,21 @@ document.write(`
 <p>So far this is just a rewriting, not an approximation. I am using the letter <span class="math notranslate nohighlight">\(S\)</span> to foreshadow the relationship of the WKB approximation to the emergence of classical mechanics.</p>
 <p>Putting this into the TISE, we get</p>
 <div class="math notranslate nohighlight" id="equation-se-wkb">
-<span class="eqno">(330)<a class="headerlink" href="#equation-se-wkb" title="Link to this equation">#</a></span>\[(\del_x S)^2 = 2m(E - V(x)) + i\hbar \del_x^2 S\]</div>
-<p>This is still an exact equation. But the approximation <a class="reference internal" href="#equation-semiclassical-wavefunctions">(327)</a> arises if we are allower to ignore the final term. Since this aproximation seems tied up in classical mechanics, and the last term is proportional to <span class="math notranslate nohighlight">\(\hbar\)</span>, one often says that we will perform a “small-<span class="math notranslate nohighlight">\(\hbar\)</span>” approximation. This is not quite correct. What we will be demanding is essentially that <span class="math notranslate nohighlight">\(S/\hbar \gg 1\)</span>.</p>
+<span class="eqno">(332)<a class="headerlink" href="#equation-se-wkb" title="Link to this equation">#</a></span>\[(\del_x S)^2 = 2m(E - V(x)) + i\hbar \del_x^2 S\]</div>
+<p>This is still an exact equation. But the approximation <a class="reference internal" href="#equation-semiclassical-wavefunctions">(329)</a> arises if we are allower to ignore the final term. Since this aproximation seems tied up in classical mechanics, and the last term is proportional to <span class="math notranslate nohighlight">\(\hbar\)</span>, one often says that we will perform a “small-<span class="math notranslate nohighlight">\(\hbar\)</span>” approximation. This is not quite correct. What we will be demanding is essentially that <span class="math notranslate nohighlight">\(S/\hbar \gg 1\)</span>.</p>
 <p>With this in mind, we can still write a formal expansion</p>
 <div class="math notranslate nohighlight" id="equation-hbar-expansion">
-<span class="eqno">(331)<a class="headerlink" href="#equation-hbar-expansion" title="Link to this equation">#</a></span>\[S = S_{cl} + \hbar S_1 + \hbar^2 S_2 + \ldots\]</div>
+<span class="eqno">(333)<a class="headerlink" href="#equation-hbar-expansion" title="Link to this equation">#</a></span>\[S = S_{cl} + \hbar S_1 + \hbar^2 S_2 + \ldots\]</div>
 <p>and solve the Schroedinger equation order by order in <span class="math notranslate nohighlight">\(\hbar\)</span>. We will still need to check that <span class="math notranslate nohighlight">\(\hbar S_k \ll S_{k-1}\)</span>. Note that in terms of the wavefunction <span class="math notranslate nohighlight">\(\psi\)</span> this is a <em>singular</em> expansion; the lowest-order piece is nonanalytic in <span class="math notranslate nohighlight">\(\hbar\)</span>.</p>
-<p>Plugging <a class="reference internal" href="#equation-hbar-expansion">(331)</a> into <a class="reference internal" href="#equation-se-wkb">(330)</a> and keeping only the <span class="math notranslate nohighlight">\(\hbar\)</span>-independent term, we get</p>
+<p>Plugging <a class="reference internal" href="#equation-hbar-expansion">(333)</a> into <a class="reference internal" href="#equation-se-wkb">(332)</a> and keeping only the <span class="math notranslate nohighlight">\(\hbar\)</span>-independent term, we get</p>
 <div class="math notranslate nohighlight">
 \[(\del_x S_{cl})^2 = 2m(E - V(x)) \Rightarrow 
 \frac{(\del_x S_{cl})^2}{2m} + V(x) = E\]</div>
 <p>Those who have had a good classical mechanics course will recognize this as the <em>Hamilton-Jacobi equation</em>, where <span class="math notranslate nohighlight">\(S\)</span> is the classical action. We will return to this interpretation below, which is central to ray tracing/geometric optics/the method of characteristics. The solution is</p>
 <div class="math notranslate nohighlight">
 \[S_{cl}(x) = \pm \int_{x_0}^x dx' \sqrt{2m(E - V(x'))} \equiv \pm \int_{x_0}^x dx' p(x')\]</div>
-<p>where again, <span class="math notranslate nohighlight">\(x_0\)</span> is an integration constant. We have two solutions to <span class="math notranslate nohighlight">\(S\)</span> and therefore for <span class="math notranslate nohighlight">\(\psi\)</span>. At this level of approximation we can consider linear combinations of these two solutions. Note that what we have done is true formally whether <span class="math notranslate nohighlight">\(E - V\)</span> is positive or negative. In the former case, we recover <a class="reference internal" href="#equation-semiclassical-wavefunctions">(327)</a>. In the latter case, <span class="math notranslate nohighlight">\(S\)</span> becomes imaginary, and we recover <a class="reference internal" href="#equation-below-barrier">(328)</a>.</p>
-<p>Our next step is to find <span class="math notranslate nohighlight">\(S_1\)</span>. The <span class="math notranslate nohighlight">\(\cO(\hbar)\)</span> terms in <a class="reference internal" href="#equation-se-wkb">(330)</a> are:</p>
+<p>where again, <span class="math notranslate nohighlight">\(x_0\)</span> is an integration constant. We have two solutions to <span class="math notranslate nohighlight">\(S\)</span> and therefore for <span class="math notranslate nohighlight">\(\psi\)</span>. At this level of approximation we can consider linear combinations of these two solutions. Note that what we have done is true formally whether <span class="math notranslate nohighlight">\(E - V\)</span> is positive or negative. In the former case, we recover <a class="reference internal" href="#equation-semiclassical-wavefunctions">(329)</a>. In the latter case, <span class="math notranslate nohighlight">\(S\)</span> becomes imaginary, and we recover <a class="reference internal" href="#equation-below-barrier">(330)</a>.</p>
+<p>Our next step is to find <span class="math notranslate nohighlight">\(S_1\)</span>. The <span class="math notranslate nohighlight">\(\cO(\hbar)\)</span> terms in <a class="reference internal" href="#equation-se-wkb">(332)</a> are:</p>
 <div class="math notranslate nohighlight">
 \[2 \del_x S_{cl} \del_x S_1 = i \del_x^2 S_{cl} 
 \Rightarrow \del_x S_1 = \frac{i}{2} \frac{\del_x^2 S_0}{\del_x S_0} = \frac{i}{2} \del_x \ln \del_x S_0\]</div>
@@ -503,7 +514,7 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\(p(x) = \sqrt{2m(E - V(x))}\)</span>. This prefactor has a nice semiclassical interpretation, especially for bound states. We know <span class="math notranslate nohighlight">\(\psi(x)|^2 \propto \frac{1}{p(x)}\)</span> is the probability density for the particle at position <span class="math notranslate nohighlight">\(x\)</span>. If the particle is in a potential well it will oscillate with period <span class="math notranslate nohighlight">\(T\)</span>. The fraction of time the particle will spend in a region <span class="math notranslate nohighlight">\(dx\)</span> is the time spent in that region, which is</p>
 <div class="math notranslate nohighlight">
 \[P(x)dx = \frac{dx}{v(x)} = \frac{m dx}{p(x)} \propto |\psi(x)|^2 dx\]</div>
-<p>Finally, we need to check on our approximation. Thius should be done at every order but we will here simply ask that in <a class="reference internal" href="#equation-se-wkb">(330)</a> the last term is small compared to the rest: that is, that</p>
+<p>Finally, we need to check on our approximation. Thius should be done at every order but we will here simply ask that in <a class="reference internal" href="#equation-se-wkb">(332)</a> the last term is small compared to the rest: that is, that</p>
 <div class="math notranslate nohighlight">
 \[(\del_x S_{cl})^2 \gg \hbar (\del_x^2 S_{cl})\]</div>
 <p>This means</p>
@@ -524,7 +535,7 @@ document.write(`
 <section id="bound-state-problems">
 <h2>Bound state problems<a class="headerlink" href="#bound-state-problems" title="Link to this heading">#</a></h2>
 <p>We now consider particles in some potential well, such that <span class="math notranslate nohighlight">\(\lim_{x\to\infty} V(x) &gt; E\)</span>. In the figure below, we have broken up the <span class="math notranslate nohighlight">\(x\)</span> axis into three regions. In regions I, II, III the WKB approximation is expected to hold. For large <span class="math notranslate nohighlight">\(|x|\)</span> (in regions I and III), we assume the energy is far enough below the barrier that the length scale giverning the exponential falloff of the wavefunction is small compared to the length scale over which the potential varies. In region II we assume that the energy is large enough that the wavefunction rapidly oscillates, with a space between nodes so small that the potential does not vary appreciably in this range.</p>
-<p>The WKB approximation is expected to break down at the classical turning points <span class="math notranslate nohighlight">\(A,B\)</span>&gt; Here <span class="math notranslate nohighlight">\(p(x) \to 0\)</span>, <span class="math notranslate nohighlight">\(\lambda(x) \to \infty\)</span>, and we can see that the condition <a class="reference internal" href="#equation-wkb-cond">(329)</a> breaks down. Generally, however, the potential can be well-approximated by a linear potential; the resulting Schroedinger equation is exactly solvable. If we are fortunate, the regime in which the linear approximation holds will overlap with the regime in which the WKB approximation holds, as illustrated below. In this case we can match our WKB functions to the solutions near the turning points.</p>
+<p>The WKB approximation is expected to break down at the classical turning points <span class="math notranslate nohighlight">\(A,B\)</span>&gt; Here <span class="math notranslate nohighlight">\(p(x) \to 0\)</span>, <span class="math notranslate nohighlight">\(\lambda(x) \to \infty\)</span>, and we can see that the condition <a class="reference internal" href="#equation-wkb-cond">(331)</a> breaks down. Generally, however, the potential can be well-approximated by a linear potential; the resulting Schroedinger equation is exactly solvable. If we are fortunate, the regime in which the linear approximation holds will overlap with the regime in which the WKB approximation holds, as illustrated below. In this case we can match our WKB functions to the solutions near the turning points.</p>
 <p>Let us first turn to the solutions in the WKB regions. In region I, the solution is</p>
 <div class="math notranslate nohighlight">
 \[\psi_I = \frac{C_I}{\sqrt{2m(V(x) - E)}} e^{\frac{1}{\hbar} \int^x_{x_I} dx'\sqrt{2m(V(x') - E)}}\]</div>
@@ -606,7 +617,7 @@ Bi(y) \sim \begin{cases}  \frac{1}{\sqrt{\pi} y^{1/4}} e^{\frac{2}{3}y^{3/2}} &a
 <h2>The Hamilton-Jacobi equation and geometric optics<a class="headerlink" href="#the-hamilton-jacobi-equation-and-geometric-optics" title="Link to this heading">#</a></h2>
 <p>We found that at lowest order in the WKBJ approximation,</p>
 <div class="math notranslate nohighlight" id="equation-ti-hj">
-<span class="eqno">(332)<a class="headerlink" href="#equation-ti-hj" title="Link to this equation">#</a></span>\[\frac{1}{2m} ({\vec\nabla} S_{cl})^2 + V({\vec x}) = E\]</div>
+<span class="eqno">(334)<a class="headerlink" href="#equation-ti-hj" title="Link to this equation">#</a></span>\[\frac{1}{2m} ({\vec\nabla} S_{cl})^2 + V({\vec x}) = E\]</div>
 <p>Here we have written down the equation for an <span class="math notranslate nohighlight">\(n\)</span>-dimensional nonrelativistic potential problem; the derivation is essentially the same.</p>
 <p>As it happens this is a well-known equation in classical mechanics, the <em>Hamilton-Jacobi</em> equation. Since this course teaches classical as well as quantum mechanics, I will break here and discuss the meaning of this equation in classical mechanics.</p>
 <section id="hamilton-jacobi-from-least-action">
@@ -616,14 +627,14 @@ Bi(y) \sim \begin{cases}  \frac{1}{\sqrt{\pi} y^{1/4}} e^{\frac{2}{3}y^{3/2}} &a
 \[\delta S = \left[ \frac{\del L}{\del {\dot q}^i} \delta q^i\right]\Big|^{t_f}_{t} + \int_{t_i}^{t} dt' \left(\frac{\del L}{\del q^i} - \frac{d}{dt} \frac{\del L}{\del {\dot q}^i}\right)\delta q^i\]</div>
 <p>In the usual Euler-Lagrange equations we fix the initial and final positions. Here we want to understand <span class="math notranslate nohighlight">\(S\)</span> evaluated on classical paths <em>as a function of</em> <span class="math notranslate nohighlight">\(q(t)\)</span>, given some fixed initial condition <span class="math notranslate nohighlight">\(q(t_i)\)</span>. Since we are evaluating <span class="math notranslate nohighlight">\(S\)</span> along classical paths, the integral vanishes, the integrand just being the classical erquations of motion, and we are left with <span class="math notranslate nohighlight">\(\delta S = \frac{\del L}{\del {\dot q}^i}(t) \delta q^i(t)\)</span>, or</p>
 <div class="math notranslate nohighlight" id="equation-ds-dq">
-<span class="eqno">(333)<a class="headerlink" href="#equation-ds-dq" title="Link to this equation">#</a></span>\[\frac{\del S}{\del q^i} = p_i\]</div>
+<span class="eqno">(335)<a class="headerlink" href="#equation-ds-dq" title="Link to this equation">#</a></span>\[\frac{\del S}{\del q^i} = p_i\]</div>
 <p>where <span class="math notranslate nohighlight">\(p_i\)</span> is the conjugate momentum. Here since <span class="math notranslate nohighlight">\(q(t_i)\)</span> is fixed and <span class="math notranslate nohighlight">\(q(t)\)</span> given, <span class="math notranslate nohighlight">\(p_i\)</span> is completely determined.</p>
 <p>Now by definition, <span class="math notranslate nohighlight">\(\frac{d S}{d t} = L\)</span> by definition. On the other hand, using the chain rule,</p>
 <div class="math notranslate nohighlight">
 \[L = \frac{d S}{dt} = \frac{\del S}{\del t} + \frac{\del S}{\del q^i}{\dot q^i} =  \frac{\del S}{\del t} + p_i {\dot q^i}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(H =  p_i {\dot q^i} - L\)</span>, we have</p>
 <div class="math notranslate nohighlight" id="equation-ds-dt">
-<span class="eqno">(334)<a class="headerlink" href="#equation-ds-dt" title="Link to this equation">#</a></span>\[\frac{\del S}{\del t} = - H\]</div>
+<span class="eqno">(336)<a class="headerlink" href="#equation-ds-dt" title="Link to this equation">#</a></span>\[\frac{\del S}{\del t} = - H\]</div>
 <p>Thus if we consider <span class="math notranslate nohighlight">\(S\)</span> as a function of <span class="math notranslate nohighlight">\(q(t), t\)</span>, its variation <span class="math notranslate nohighlight">\(dS\)</span> under infinitesimal variations <span class="math notranslate nohighlight">\(dq^i, dt\)</span> of its arguments is</p>
 <div class="math notranslate nohighlight">
 \[dS = p_i dq^i - H dt\]</div>
@@ -631,11 +642,11 @@ Bi(y) \sim \begin{cases}  \frac{1}{\sqrt{\pi} y^{1/4}} e^{\frac{2}{3}y^{3/2}} &a
 <div class="math notranslate nohighlight">
 \[\frac{\del S}{\del t} + H(q^i, p_i = \frac{\del S}{\del q^i}) = 0\]</div>
 <p>when evaluated along classical trajectories. This is the <em>Hamilton-Jacobi</em> equation; the function <span class="math notranslate nohighlight">\(S\)</span> is called <em>Hamilton’s principle function</em>.</p>
-<p>We have shown that by knowing the classical trajectories <span class="math notranslate nohighlight">\(q^i(t), p_i(t)\)</span> given fixed initial conditions, the equations <a class="reference internal" href="#equation-ds-dq">(333)</a> and <a class="reference internal" href="#equation-ds-dt">(334)</a> furnish a solution <span class="math notranslate nohighlight">\(S\)</span> to the Hamilton-Jacobi equations. Furthermore, this solution is the classical action as a function of the endpoint <span class="math notranslate nohighlight">\(q(t)\)</span> given <span class="math notranslate nohighlight">\(q(t_i)\)</span>. Returning to the quantum problem, if we consider the time-<em>dependent</em> Schroedinger equation</p>
+<p>We have shown that by knowing the classical trajectories <span class="math notranslate nohighlight">\(q^i(t), p_i(t)\)</span> given fixed initial conditions, the equations <a class="reference internal" href="#equation-ds-dq">(335)</a> and <a class="reference internal" href="#equation-ds-dt">(336)</a> furnish a solution <span class="math notranslate nohighlight">\(S\)</span> to the Hamilton-Jacobi equations. Furthermore, this solution is the classical action as a function of the endpoint <span class="math notranslate nohighlight">\(q(t)\)</span> given <span class="math notranslate nohighlight">\(q(t_i)\)</span>. Returning to the quantum problem, if we consider the time-<em>dependent</em> Schroedinger equation</p>
 <div class="math notranslate nohighlight">
 \[i\hbar \del_t \psi = - \frac{\hbar^2}{2m} \nabla^2 \psi + V(q) \psi\]</div>
 <p>and write <span class="math notranslate nohighlight">\(\psi = e^{i\frac{S(q,t)}{\hbar}\)</span> with <span class="math notranslate nohighlight">\(S = S_{cl} + \hbar S_1 + \ldots\)</span>, then the leading order <span class="math notranslate nohighlight">\(\cO(\hbar^{0})\)</span> equation is the full Hamilton-Jacobi equation.</p>
-<p>The equation <a class="reference internal" href="#equation-ti-hj">(332)</a> is consistent with the full Hamilton-Jacobi equations if we set</p>
+<p>The equation <a class="reference internal" href="#equation-ti-hj">(334)</a> is consistent with the full Hamilton-Jacobi equations if we set</p>
 <div class="math notranslate nohighlight">
 \[S = W(q^i(t)) - E t\]</div>
 <p>where <span class="math notranslate nohighlight">\(W\)</span> is called <em>Hamilton’s characteristic function</em>; here <span class="math notranslate nohighlight">\(p_i = \frac{\del W}{\del q^i}\)</span>, or <span class="math notranslate nohighlight">\(dW = p_i dq^i\)</span>. The solution is also consistent with the classical ewuations of motion for the family of trajectories with fixed energy. The functional form will be different from the solution with fixed initial conditions, as the corresponding trajectories will have varying energy (consider the 1d case of force-free motion where we fix <span class="math notranslate nohighlight">\(t\)</span> and vary <span class="math notranslate nohighlight">\(q\)</span> given an initial condition; this will be a family of trajectories with increasing velocity and thus energy).</p>
@@ -817,11 +828,11 @@ I(t) &amp; = \int dx e^{i t (f(x_0) + \half (x - x_0)^2 f''(x_0))}\left(1 + \fra
       </div>
     </a>
     <a class="right-next"
-       href="../appendix.html"
+       href="../chapter12/time_dependent_pt.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix</p>
+        <p class="prev-next-title">Time-Dependent Perturbation Theory</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

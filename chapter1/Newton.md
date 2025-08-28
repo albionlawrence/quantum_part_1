@@ -13,8 +13,6 @@ The classic presentation of Newton's second law of motion is the famous
 \end{align}
 ```
 
-
-
 where we have written this for $M$ particles with masses $m_k$ and positions ${\vec x}_k(t)$ in 3 dimensions. It is important that the force is considered to be a known function of time and of the positions and velocities at that time. This equation is the core of Newtonian mechanics. (The first and third laws are also deep and important of course).
 
 This is a *second order differential equation in time*. The upshot of this is that if we know the positions and velocities of the particles at some initial time $t_i$, we know the trajectories at all time. To start with, at time $t_i + \Delta t$,
@@ -30,9 +28,27 @@ This is a *second order differential equation in time*. The upshot of this is th
 
 where we have used the Taylor expansion in the small time scale $\Delta t$, and dropped all terms of order ${\cal O}(\Delta t^2)$. So with the initial conditions and the force given at initial time $t_i$, we then know the positions and velocities at $t_i + \Delta t$. The same argument gives us the positions and velocities at time $t_i + 2 \Delta t$ and so forth. Of course we still have the higher-order terms, but eventually we can take the limit $\Delta t \to 0$ and we get a contionuous trajectory determined by the initial positions and velocities.
 
-Note that this interative process is essentially how we would solve the problems on a computer, though we might find a more sophisticated representation of the time derivative to control the ${\cal O}(\Delta t^2)$ errors.
+Note that this interactive process is essentially how we would solve the problems on a computer, although we might find a more sophisticated representation of the time derivative to control the ${\cal O}(\Delta t^2)$ (and higher order) errors.
 
-The form given above is not the most general form of Newton's laws. In general, we write them as
+A simple example is a ``particle'' (a ball, a spherical cow) moving in one horizontal and one vertical direction, under the influence of a constant gravitational field, ignoring friction. This is a classic first-year undergraduate mechanics problem, but just to get back into the groove:
+```{math}
+:label: constant_grav
+\begin{align}
+m \ddot{x} & = 0\\
+m \ddot{z} & = - m g
+\end{align}
+```
+The general solution to this equation is:
+```{math}
+:label: constant_grav_solution
+\begin{align}
+x(t) & = x_0 + V_x t\\
+z(t) & = z_0 + V_z t - \half g t^2
+\end{align}
+```
+As you can see, you need to specify $x_0, z_0$ (initial positions) and $V_{x,z}$ (initial velocities), to get a unique solution. Lets say we throw it from the ground $x_0 = z_0 = 0$ with $V_{x,z} > 0$. It moves with constant horizotnal speed. As $t \to 0$, the initial velocity dominates the motion. As $t$ increases, the gravitational force begins to dominate since $t^2$ grows faster than $t$; $z$ begins to decrease again until it reaches $z = 0$. If it hits the ground these equations break down! We must specify some law for the interaction of the particle/ball/cow with the ground -- for the ball, this might be some elastic response causing the ball to bounce up again -- to determine what it will do next. (You should always know where, when, why, and how your equations break down!)
+
+The form given in Equation {eq}`newton_second` is not the most general form of Newton's laws. In general, we write them as
 
 ```{math}
 :label: second_general
@@ -48,13 +64,7 @@ where ${\vec p}(t) = {\vec p}({\vec x}(t), \dot{\vec x}(t))$ is the *momentum*. 
 
 where $c = 3\times 10^8\ m/s$ is the speed of light. (The story looks more like the classic version if we work with 4-vectors and *proper* time, but practically you solve for the proper time in terms of time and get the dynamics shown.) This more general form of ${\vec p}$ is sometimes called the *generalized momentum*; it arises naturally in Lagrangian mechanics.
 
-Another feature of Lagrangian mechanics is that it allows us to compute trajectories of systems from the initial and final positions ${\vec x}_k(t_i), {\vec x}_k(t_f)$. That you should be able to do this seems reasonable. Given initial positions and velocities you can deduce the final positions, the equations are deterministic, and the amount of data you specify each way is the same. (Actually it is more complicated than that because there can be multiple trajectories with different initial velocities and the same final positions: consider two particles moving in opposite directions on a circle, and bumping into each other later on).
 
-![Specifying trajectories](Trajectories.png)
-
-  - (a) In many cases, trajectories can be specified by initial positions and velocities, or by initial and final positions.
-  - (b) In some cases, the final positions do not specify the trajectories completely.
-  
 ## Constrained systems
 
 The next example I want to cover is an example of a system operating under a constraint, namely a bead on a wire, as shown in the picture below. The bead will move in the $(x,z)$ plane, confined to a wire whose shape is given by the function $z(x)$, and subject to the gravitational force ${\vec F}_{grav} = - m g {\hat z}$, where ${\hat z}$ is the unit vector in the $z$ direction. Here moving "up" (away from the earth) corresponds to increasing $z$. Our goal will be to find the equations of motion of $x(t)$ (since $z(t)$ is given to us by $x$), in terms of $x, \dot{x}, \ddot{x}$. 

@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -424,7 +435,7 @@ document.write(`
 <li><p>Addition is *associative. If there is a third vector <span class="math notranslate nohighlight">\(\ket{y} \in V\)</span>,</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-add-assoc">
-<span class="eqno">(141)<a class="headerlink" href="#equation-add-assoc" title="Link to this equation">#</a></span>\[(\ket{v} + \ket{w}) + \ket{y} = \ket{v} + (\ket{w} + \ket{y})\]</div>
+<span class="eqno">(143)<a class="headerlink" href="#equation-add-assoc" title="Link to this equation">#</a></span>\[(\ket{v} + \ket{w}) + \ket{y} = \ket{v} + (\ket{w} + \ket{y})\]</div>
 <ul class="simple">
 <li><p>a zero vector <span class="math notranslate nohighlight">\(\ket{0}\in V\)</span> exists such that <span class="math notranslate nohighlight">\(\ket{v} + \ket{0} = \ket{v}\)</span>.</p></li>
 </ul>
@@ -443,15 +454,15 @@ document.write(`
 <li><p>For all <span class="math notranslate nohighlight">\(a\in \mathbb{F}\)</span>, <span class="math notranslate nohighlight">\(\ket{v},\ket{w} \in V\)</span>,</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-distributive-mult">
-<span class="eqno">(142)<a class="headerlink" href="#equation-distributive-mult" title="Link to this equation">#</a></span>\[a\left(\ket{v} + \ket{w}\right) = a \ket{v} + b \ket{w}\]</div>
+<span class="eqno">(144)<a class="headerlink" href="#equation-distributive-mult" title="Link to this equation">#</a></span>\[a\left(\ket{v} + \ket{w}\right) = a \ket{v} + b \ket{w}\]</div>
 <ul class="simple">
 <li><p>for all <span class="math notranslate nohighlight">\(a,b \in \mathbb{F}\)</span>, <span class="math notranslate nohighlight">\(\ket{v} \in V\)</span>,</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-distributive-add">
-<span class="eqno">(143)<a class="headerlink" href="#equation-distributive-add" title="Link to this equation">#</a></span>\[(a + b)\ket{v} = a\ket{v} + b \ket{v}\]</div>
+<span class="eqno">(145)<a class="headerlink" href="#equation-distributive-add" title="Link to this equation">#</a></span>\[(a + b)\ket{v} = a\ket{v} + b \ket{v}\]</div>
 <p>From these rules we can also deduce the existence of an <em>additive inverse</em>: for enery <span class="math notranslate nohighlight">\(\ket{v} \in V\)</span>, there exists a vector <span class="math notranslate nohighlight">\(\ket{-v} \in V\)</span> such that <span class="math notranslate nohighlight">\(\ket{v} + \ket{-v} = \ket{0}\)</span>. This can be seen bu construction: set <span class="math notranslate nohighlight">\(\ket{-v} = (-1) \ket{v}\)</span>. Then</p>
 <div class="math notranslate nohighlight" id="equation-additive-inverse">
-<span class="eqno">(144)<a class="headerlink" href="#equation-additive-inverse" title="Link to this equation">#</a></span>\[\ket{v} + \ket{-v} = \ket{v} + (-1) \ket{v} = (1 + (-1) \ket{v} = 0 \ket{v} = \ket{0}\]</div>
+<span class="eqno">(146)<a class="headerlink" href="#equation-additive-inverse" title="Link to this equation">#</a></span>\[\ket{v} + \ket{-v} = \ket{v} + (-1) \ket{v} = (1 + (-1) \ket{v} = 0 \ket{v} = \ket{0}\]</div>
 <p>Note that I have not yet introduced any notion ofthe length of a vector, whetehr two vectors are orthogonal, and so on. As we will see, this requires som eadditional structure.</p>
 </section>
 <section id="examples">
@@ -464,9 +475,9 @@ document.write(`
 \[\begin{split}\ket{v} = \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix}\end{split}\]</div>
 <p>with <span class="math notranslate nohighlight">\(c_k \in \mathbb{C}\)</span>. We define vector addition and scalar multiplication in the usual way:</p>
 <div class="math notranslate nohighlight" id="equation-cn-addition">
-<span class="eqno">(145)<a class="headerlink" href="#equation-cn-addition" title="Link to this equation">#</a></span>\[\begin{split}\begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix} + \begin{pmatrix} d_1 \\ d_2 \\ \vdots \\ d_n \end{pmatrix} = \begin{pmatrix} c_1+ d_1 \\ c_2+d_2 \\ \vdots \\ c_n+d_n \end{pmatrix}\end{split}\]</div>
+<span class="eqno">(147)<a class="headerlink" href="#equation-cn-addition" title="Link to this equation">#</a></span>\[\begin{split}\begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix} + \begin{pmatrix} d_1 \\ d_2 \\ \vdots \\ d_n \end{pmatrix} = \begin{pmatrix} c_1+ d_1 \\ c_2+d_2 \\ \vdots \\ c_n+d_n \end{pmatrix}\end{split}\]</div>
 <div class="math notranslate nohighlight" id="equation-cn-mult">
-<span class="eqno">(146)<a class="headerlink" href="#equation-cn-mult" title="Link to this equation">#</a></span>\[\begin{split}a \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix} = \begin{pmatrix} a c_1 \\ a c_2 \\ \vdots \\ a c_n \end{pmatrix}\end{split}\]</div>
+<span class="eqno">(148)<a class="headerlink" href="#equation-cn-mult" title="Link to this equation">#</a></span>\[\begin{split}a \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix} = \begin{pmatrix} a c_1 \\ a c_2 \\ \vdots \\ a c_n \end{pmatrix}\end{split}\]</div>
 <p>for any <span class="math notranslate nohighlight">\(a \in \mathbb{C}\)</span>.</p>
 <p>Note we can do ths same with <span class="math notranslate nohighlight">\(c_k, d_k \in \mathbb{R}\)</span>: then we have a real vector space. Here the zero vector is defined by <span class="math notranslate nohighlight">\(c_k = 0\)</span>.</p>
 <ol class="arabic simple" start="2">
@@ -474,7 +485,7 @@ document.write(`
 <li><p>Degree-<span class="math notranslate nohighlight">\(n\)</span> polynomials over <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>:</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-degree-n">
-<span class="eqno">(147)<a class="headerlink" href="#equation-degree-n" title="Link to this equation">#</a></span>\[\ket{a_0,\ldots a_n} = a_0 + a_1 x + a_2 x^2 + \ldots a_n x^n\]</div>
+<span class="eqno">(149)<a class="headerlink" href="#equation-degree-n" title="Link to this equation">#</a></span>\[\ket{a_0,\ldots a_n} = a_0 + a_1 x + a_2 x^2 + \ldots a_n x^n\]</div>
 <p>with addition and scalar multiplication working in the standard way. Note that this is clearly equivalent to <span class="math notranslate nohighlight">\(\mathbb{C}^n\)</span>. Note also that there is no reason for <span class="math notranslate nohighlight">\(n\)</span> to be finite – we could work with the space of <em>all</em> polynomials.</p>
 <ol class="arabic simple" start="3">
 <li><p>Complex functions on an interval: let <span class="math notranslate nohighlight">\(x \in [0,1]\)</span>. The set of all functions <span class="math notranslate nohighlight">\(\psi(x)\)</span> forms a vector space under the standard addition and scalar multiplication of functions if we choose the right boundary conditions. These boundary conditions yield vector spaces:</p></li>
@@ -489,27 +500,27 @@ However, the boundary condition <span class="math notranslate nohighlight">\(\ps
 <li><p>Coplex square-integrable functions on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>: that is, functions <span class="math notranslate nohighlight">\(\psi(x)\)</span> for <span class="math notranslate nohighlight">\(x\in \mathbb{R}\)</span> such that</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-square-int">
-<span class="eqno">(148)<a class="headerlink" href="#equation-square-int" title="Link to this equation">#</a></span>\[\int_{-\infty}^{\infty} dx |\psi(x)|^2 &lt; \infty\]</div>
+<span class="eqno">(150)<a class="headerlink" href="#equation-square-int" title="Link to this equation">#</a></span>\[\int_{-\infty}^{\infty} dx |\psi(x)|^2 &lt; \infty\]</div>
 </section>
 <section id="subspaces">
 <h2>Subspaces<a class="headerlink" href="#subspaces" title="Link to this heading">#</a></h2>
 <p>A set <span class="math notranslate nohighlight">\(M \subset V\)</span> is a <em>vector subspace</em> if it is a vector space under the same laws for addition and svcalar multiplication. A standard example is any plane through the origin, such as <span class="math notranslate nohighlight">\(V = \mathbb{C}^3\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-cthree-subspace">
-<span class="eqno">(149)<a class="headerlink" href="#equation-cthree-subspace" title="Link to this equation">#</a></span>\[\begin{split}M = \left\{ \begin{pmatrix} c_1 \\ c_2 \\ 0 \end{pmatrix} \forall c_i \in \mathbb{C} \right\}\end{split}\]</div>
+<span class="eqno">(151)<a class="headerlink" href="#equation-cthree-subspace" title="Link to this equation">#</a></span>\[\begin{split}M = \left\{ \begin{pmatrix} c_1 \\ c_2 \\ 0 \end{pmatrix} \forall c_i \in \mathbb{C} \right\}\end{split}\]</div>
 <p>Similarly, any complex line through the origin, defined as the set of vectors</p>
 <div class="math notranslate nohighlight" id="equation-complex-line">
-<span class="eqno">(150)<a class="headerlink" href="#equation-complex-line" title="Link to this equation">#</a></span>\[\begin{split}a \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix}\end{split}\]</div>
+<span class="eqno">(152)<a class="headerlink" href="#equation-complex-line" title="Link to this equation">#</a></span>\[\begin{split}a \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix}\end{split}\]</div>
 <p>for fixed <span class="math notranslate nohighlight">\(c_k\in \mathbb{C}^n\)</span> and all <span class="math notranslate nohighlight">\(a \in \mathbb{C}^n\)</span>.</p>
 <p>A counterexample is any complex line that does not run through the origin, defined as the set of all vectors</p>
 <div class="math notranslate nohighlight" id="equation-affine-line">
-<span class="eqno">(151)<a class="headerlink" href="#equation-affine-line" title="Link to this equation">#</a></span>\[\begin{split}a \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix} + \begin{pmatrix} d_1 \\ d_2 \\ \vdots \\ d_n \end{pmatrix} \end{split}\]</div>
+<span class="eqno">(153)<a class="headerlink" href="#equation-affine-line" title="Link to this equation">#</a></span>\[\begin{split}a \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix} + \begin{pmatrix} d_1 \\ d_2 \\ \vdots \\ d_n \end{pmatrix} \end{split}\]</div>
 <p>with <span class="math notranslate nohighlight">\(c_k,d_k\)</span> fixed and the same for all vectors in this space, and <span class="math notranslate nohighlight">\(a\)</span> any complex number. It is clear that the sum of two vectors is a different vector, if there is at least one <span class="math notranslate nohighlight">\(d_k \neq 0\)</span>.</p>
 </section>
 <section id="linear-independence">
 <h2>Linear independence<a class="headerlink" href="#linear-independence" title="Link to this heading">#</a></h2>
 <p><strong>Definition</strong>. A set of vectors <span class="math notranslate nohighlight">\(\ket{v_1},\ldots,\ket{v_m} \in V\)</span> is <em>linearly independent</em> if</p>
 <div class="math notranslate nohighlight" id="equation-lin-indep-def">
-<span class="eqno">(152)<a class="headerlink" href="#equation-lin-indep-def" title="Link to this equation">#</a></span>\[\sum_{i = 1}^m a_k \ket{v_k} = 0 \Leftrightarrow a_k = 0 \forall\ $k = 1,\ldots,n\]</div>
+<span class="eqno">(154)<a class="headerlink" href="#equation-lin-indep-def" title="Link to this equation">#</a></span>\[\sum_{i = 1}^m a_k \ket{v_k} = 0 \Leftrightarrow a_k = 0 \forall\ $k = 1,\ldots,n\]</div>
 <p>Let us give some examples.</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(\mathbb{C}^3\)</span>. These vectors are linearly independent:</p></li>
@@ -536,13 +547,13 @@ However, the boundary condition <span class="math notranslate nohighlight">\(\ps
 <p><strong>Definition</strong>: the <em>dimension</em> of a vector space <span class="math notranslate nohighlight">\(V\)</span> is the maximum number of linearly independent vectors in <span class="math notranslate nohighlight">\(V\)</span>. Any such maximal collection is called a <em>basis</em>.</p>
 <p><strong>Theorem</strong>: Given a basis <span class="math notranslate nohighlight">\(\ket{k}\)</span>, <span class="math notranslate nohighlight">\(k = 1,\ldots,n\)</span>, then for any vector <span class="math notranslate nohighlight">\(\ket{v}\)</span> there is a unique set of complex numbers <span class="math notranslate nohighlight">\(a_{k - 1,\ldots,n\)</span> such that</p>
 <div class="math notranslate nohighlight" id="equation-use-of-basis">
-<span class="eqno">(153)<a class="headerlink" href="#equation-use-of-basis" title="Link to this equation">#</a></span>\[\sum_{k = 1}^n a_k \ket{k} \]</div>
+<span class="eqno">(155)<a class="headerlink" href="#equation-use-of-basis" title="Link to this equation">#</a></span>\[\sum_{k = 1}^n a_k \ket{k} \]</div>
 <p><em>Proof</em>. Assume the contrary, that</p>
 <div class="math notranslate nohighlight" id="equation-basis-contrary">
-<span class="eqno">(154)<a class="headerlink" href="#equation-basis-contrary" title="Link to this equation">#</a></span>\[\ket{v} = \sum_{k = 1}^n a_k \ket{k} = \sum_{k = 1}^n b_k \ket{k}\]</div>
+<span class="eqno">(156)<a class="headerlink" href="#equation-basis-contrary" title="Link to this equation">#</a></span>\[\ket{v} = \sum_{k = 1}^n a_k \ket{k} = \sum_{k = 1}^n b_k \ket{k}\]</div>
 <p>for <span class="math notranslate nohighlight">\(a_k,b_k \in \mathbb{C}\)</span> different numbers. The point is that if this is true,</p>
 <div class="math notranslate nohighlight" id="equation-add-fakes">
-<span class="eqno">(155)<a class="headerlink" href="#equation-add-fakes" title="Link to this equation">#</a></span>\[\ket{0} = \ket{v} - \ket{v} = \sum_{k = 1}^n a_k \ket{k} - \sum_{k = 1}^n b_k \ket{k} = \sum_{k = 1}^n (a_k + b_k)\ket{k}\]</div>
+<span class="eqno">(157)<a class="headerlink" href="#equation-add-fakes" title="Link to this equation">#</a></span>\[\ket{0} = \ket{v} - \ket{v} = \sum_{k = 1}^n a_k \ket{k} - \sum_{k = 1}^n b_k \ket{k} = \sum_{k = 1}^n (a_k + b_k)\ket{k}\]</div>
 <p>but this cannot be zero of <span class="math notranslate nohighlight">\(a_k,b_k\)</span> differ in any way, so we have a contradiction to our supposition. Thus <span class="math notranslate nohighlight">\(a_k = b_k\)</span>.</p>
 </section>
 </section>

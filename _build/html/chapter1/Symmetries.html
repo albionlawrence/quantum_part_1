@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -413,21 +424,21 @@ document.write(`
 <h1>Symmetries and conservation laws<a class="headerlink" href="#symmetries-and-conservation-laws" title="Link to this heading">#</a></h1>
 <p>Consider a Lagrangian <span class="math notranslate nohighlight">\(L(q^I, \dot{q}^I)\)</span>. A <em>symmetry</em> is a transformation</p>
 <div class="math notranslate nohighlight" id="equation-gen-transf">
-<span class="eqno">(63)<a class="headerlink" href="#equation-gen-transf" title="Link to this equation">#</a></span>\[q^I \to (q^I)'(q^I)\]</div>
+<span class="eqno">(65)<a class="headerlink" href="#equation-gen-transf" title="Link to this equation">#</a></span>\[q^I \to (q^I)'(q^I)\]</div>
 <p>such that</p>
 <div class="math notranslate nohighlight" id="equation-symmetry-condition">
-<span class="eqno">(64)<a class="headerlink" href="#equation-symmetry-condition" title="Link to this equation">#</a></span>\[L(q^I, \dot{q}^I) = L((q^I)', (\dot{q}^I)') + \frac{d\Lambda(q,\dot q)}{dt}\]</div>
-<p>where <span class="math notranslate nohighlight">\((\dot{q}^I)' = \frac{d}{dt} (q^I)'\)</span>. The last term in <a class="reference internal" href="#equation-gen-transf">(63)</a> is a total derivative; thus (as one can see by studying the resulting action) it does not contribute to the equations of motion.</p>
+<span class="eqno">(66)<a class="headerlink" href="#equation-symmetry-condition" title="Link to this equation">#</a></span>\[L(q^I, \dot{q}^I) = L((q^I)', (\dot{q}^I)') + \frac{d\Lambda(q,\dot q)}{dt}\]</div>
+<p>where <span class="math notranslate nohighlight">\((\dot{q}^I)' = \frac{d}{dt} (q^I)'\)</span>. The last term in <a class="reference internal" href="#equation-gen-transf">(65)</a> is a total derivative; thus (as one can see by studying the resulting action) it does not contribute to the equations of motion.</p>
 <p>In other words, the action is invariant up to a boundary term.</p>
 <section id="example-cyclic-coordinates">
 <h2>Example: cyclic coordinates<a class="headerlink" href="#example-cyclic-coordinates" title="Link to this heading">#</a></h2>
 <p>The simplest example is a Lagrangian which does not even depend on soem subset of the coordinates, only their velocities. Consider <span class="math notranslate nohighlight">\(L(q^I, \dot{q}^I)\)</span> to be independent of <span class="math notranslate nohighlight">\(q^k\)</span> for some <span class="math notranslate nohighlight">\(k\)</span> (but <em>still depend on</em> <span class="math notranslate nohighlight">\(\dot{q}^k\)</span>). Then the transformation <span class="math notranslate nohighlight">\(q^k \to (q^k)' = q^k + \alpha\)</span> for <span class="math notranslate nohighlight">\(\alpha\)</span> a constant real number. Clearly <span class="math notranslate nohighlight">\(\dot{q}^k\)</span> is invariant, so the entire Lagrangian is. We call <span class="math notranslate nohighlight">\(q^k\)</span> a <em>cyclic coordinate</em>.</p>
 <p>What does this mean for the equations of motion? Well, we know that</p>
 <div class="math notranslate nohighlight" id="equation-cyclic-force">
-<span class="eqno">(65)<a class="headerlink" href="#equation-cyclic-force" title="Link to this equation">#</a></span>\[{\cal F}_k = \frac{\del L}{\del q^k} = 0\]</div>
+<span class="eqno">(67)<a class="headerlink" href="#equation-cyclic-force" title="Link to this equation">#</a></span>\[{\cal F}_k = \frac{\del L}{\del q^k} = 0\]</div>
 <p>The Euler-Lagrange equations for <span class="math notranslate nohighlight">\(q^k\)</span> become:</p>
 <div class="math notranslate nohighlight" id="equation-cyclic-el">
-<span class="eqno">(66)<a class="headerlink" href="#equation-cyclic-el" title="Link to this equation">#</a></span>\[\dot{p}^k = \frac{\del L}{\del \dot{q}^k} = 0\]</div>
+<span class="eqno">(68)<a class="headerlink" href="#equation-cyclic-el" title="Link to this equation">#</a></span>\[\dot{p}^k = \frac{\del L}{\del \dot{q}^k} = 0\]</div>
 <p>In other words, the generalized momentum <span class="math notranslate nohighlight">\(p^k\)</span> is <em>conserved</em>.</p>
 <p>Some examples:</p>
 <ol class="arabic simple">
@@ -441,22 +452,22 @@ document.write(`
 <p>Noether’s theorem applies to <em>continuous</em> symmetries, that is, to a continuous family of transformations <span class="math notranslate nohighlight">\((q^I)' = (q^I)'(q^I\ ; \alpha)\)</span> where <span class="math notranslate nohighlight">\(\alpha\)</span> is some real parameter and <span class="math notranslate nohighlight">\((q^I)'(q^I\ ; 0) = q^I\)</span>. Noether showed that every such famikly of symmetries implied a <em>conservation law</em>.</p>
 <p>We will provide a constuctive proof. Let <span class="math notranslate nohighlight">\((q^I)' = q^I + \delta q^I\)</span>. If this transformation is a symmetry, then</p>
 <div class="math notranslate nohighlight" id="equation-trans-lag">
-<span class="eqno">(67)<a class="headerlink" href="#equation-trans-lag" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(69)<a class="headerlink" href="#equation-trans-lag" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 L(q^I, + \delta q^I, \dot{q}^I + \delta \dot{q}^I) &amp; = L(q^I \dot{q}^I) + frac{d\Lambda}{dt} \\
 = L(q^I, \dot{q}^I) + \delta q^I \frac{\del L}{\del q^I} + \delta \dot{q}^I \frac{\del L}{\del \dot{q}^I} + {\cal O}(\delta q^2)
 \end{align}\end{split}\]</div>
 <p>Working to first order in <span class="math notranslate nohighlight">\(\delta q\)</span>, the fact that this is a symmetry means that</p>
 <div class="math notranslate nohighlight" id="equation-constructing-conserved-q">
-<span class="eqno">(68)<a class="headerlink" href="#equation-constructing-conserved-q" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(70)<a class="headerlink" href="#equation-constructing-conserved-q" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \delta q^I \frac{\del L}{\del q^I} + \delta \dot{q}^I \frac{\del L}{\del \dot{q}^I} &amp; = \frac{d\Lambda}{dt}\\
 &amp; = \delta q^I \frac{\del L}{\del q^I} + \frac{d}{dt} \left(\delta q^I \frac{\del L}{\del \dot{q}^I}\right) - \delta q^I \frac{d}{dt} \frac{\del L}{\del \dot{q}^I}
 \end{align}\end{split}\]</div>
 <p>Now the first and last terms on the second line are just <span class="math notranslate nohighlight">\(\delta q^I\)</span> times the Euler-Lagrange equations, and so vanish if <span class="math notranslate nohighlight">\(q^I\)</span>(t)$ satisfies the classical equations of motion. When it does, we are left with</p>
 <div class="math notranslate nohighlight" id="equation-noether-charge-cons">
-<span class="eqno">(69)<a class="headerlink" href="#equation-noether-charge-cons" title="Link to this equation">#</a></span>\[\frac{d}{dt} \left(\delta q^I \frac{\del L}{\del \dot{q}^I} - \Lambda\right) = \frac{d}{dt} \left(\delta q^I p_I - \Lambda\right) = 0\]</div>
+<span class="eqno">(71)<a class="headerlink" href="#equation-noether-charge-cons" title="Link to this equation">#</a></span>\[\frac{d}{dt} \left(\delta q^I \frac{\del L}{\del \dot{q}^I} - \Lambda\right) = \frac{d}{dt} \left(\delta q^I p_I - \Lambda\right) = 0\]</div>
 <p>Thus we have a <em>conserved charge</em>, sometimes called a *Noether charge,</p>
 <div class="math notranslate nohighlight" id="equation-noerther-charge">
-<span class="eqno">(70)<a class="headerlink" href="#equation-noerther-charge" title="Link to this equation">#</a></span>\[Q = \delta q^I p_I - \Lambda\]</div>
+<span class="eqno">(72)<a class="headerlink" href="#equation-noerther-charge" title="Link to this equation">#</a></span>\[Q = \delta q^I p_I - \Lambda\]</div>
 <p>for every infinitesimal symmetry transformation <span class="math notranslate nohighlight">\(q \to q + \delta q\)</span>.</p>
 <section id="examples">
 <h3>Examples.<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
@@ -466,23 +477,23 @@ L(q^I, + \delta q^I, \dot{q}^I + \delta \dot{q}^I) &amp; = L(q^I \dot{q}^I) + fr
 <span class="math notranslate nohighlight">\(x \to \cos\epsilon x - \sin \epsilon y\)</span> and <span class="math notranslate nohighlight">\(y \to \cos \epsilon y + \sin \epsilon x\)</span>. For infinitesimal <span class="math notranslate nohighlight">\(\epsilon\)</span>, <span class="math notranslate nohighlight">\(\delta x = - \epsilon y\)</span> and <span class="math notranslate nohighlight">\(\delta y = \epsilon x\)</span>. For the Lagrangian <span class="math notranslate nohighlight">\(L = \half m (\dot{x}^2 + \dot{y}^2) = V(\sqrt{x^2 + y^2})\)</span>, which is clearly invariant under rotations, the associated Noether charge is</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-rot-noether">
-<span class="eqno">(71)<a class="headerlink" href="#equation-rot-noether" title="Link to this equation">#</a></span>\[Q = \delta x p_x + \delta y p_y = - y p_x + x p_y = L\]</div>
+<span class="eqno">(73)<a class="headerlink" href="#equation-rot-noether" title="Link to this equation">#</a></span>\[Q = \delta x p_x + \delta y p_y = - y p_x + x p_y = L\]</div>
 <p>where <span class="math notranslate nohighlight">\(L\)</span> is the angular momentum in Cartesioan coordinates. I leave it to the student to show that this is the same as the generalized momentum <span class="math notranslate nohighlight">\(p_{\phi}\)</span> dreived in polar coordinates.</p>
 <ol class="arabic simple" start="3">
 <li><p>Another important symmetry is <em>time translation invariance</em>; the symmetry is a shift <span class="math notranslate nohighlight">\(t \to t + \eps\)</span>. Consider a Lagrangian which is explicitly time-independent. Then</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-time-shift">
-<span class="eqno">(72)<a class="headerlink" href="#equation-time-shift" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(74)<a class="headerlink" href="#equation-time-shift" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 L(q(t + \eps), \dot{q}(t + \eps)) &amp; = L(q + \eps \dot{q}, \dot{q} + \eps \ddot{q}) \\
 &amp; = L(q,\dot{q}) + \eps \left[\dot{q}^I \frac{\del L}{\del q^I} + \ddot{q}^I \frac{\del L}{\del \dot{q}^I}\right]\\
 &amp; = L + \eps \frac{d}{dt} L(q,\dot{q})
 \end{align}\end{split}\]</div>
 <p>The conserved quantity is thus</p>
 <div class="math notranslate nohighlight" id="equation-tt-conserved">
-<span class="eqno">(73)<a class="headerlink" href="#equation-tt-conserved" title="Link to this equation">#</a></span>\[Q = \eps (\dot{q}^I p_I - L)\]</div>
+<span class="eqno">(75)<a class="headerlink" href="#equation-tt-conserved" title="Link to this equation">#</a></span>\[Q = \eps (\dot{q}^I p_I - L)\]</div>
 <p>The quantity <span class="math notranslate nohighlight">\(H - \dot{q}^I p_I - L\)</span> is known as the <em>Hamiltonian</em> and the energy can be defined as the value of this Hamiltonian. As an example, for <span class="math notranslate nohighlight">\(L = \half m \dot{\vec{x}}^2 - V({\vec x})\)</span>, the Hamiltonian is clearly</p>
 <div class="math notranslate nohighlight" id="equation-simplest-h">
-<span class="eqno">(74)<a class="headerlink" href="#equation-simplest-h" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(76)<a class="headerlink" href="#equation-simplest-h" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 H &amp; = \dot{\vec x} \cdot \vec{p} - \half m \dot{\vec{x}}^2 + V({\vec x})\\
 &amp; = \frac{1}{2m}{\vec p}^2 + V
 \end{align}\end{split}\]</div>

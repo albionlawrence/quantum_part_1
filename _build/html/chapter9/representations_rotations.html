@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -458,7 +469,7 @@ J_-\ket{\alpha,\beta_{min}} &amp; = 0
 \[J_{\pm} J_{\mp} = J_x^2 + J_y^2 \mp [J_x,J_y] = {\vec J}^2 - J_z^2 \pm \hbar J_z\]</div>
 <p>Therefore:</p>
 <div class="math notranslate nohighlight" id="equation-highest-weights">
-<span class="eqno">(312)<a class="headerlink" href="#equation-highest-weights" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(314)<a class="headerlink" href="#equation-highest-weights" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 J_+ J_- \ket{\alpha,\beta_{min}} &amp; = 0 = \alpha - \beta_{min}^2 + \hbar \beta_{min}\\
 J_- J_+ \ket{\alpha,\beta_{max}} &amp; = 0 = \alpha - \beta_{max}^2 - \hbar \beta_{max}
 \end{align}\end{split}\]</div>
@@ -474,7 +485,7 @@ J_- J_+ \ket{\alpha,\beta_{max}} &amp; = 0 = \alpha - \beta_{max}^2 - \hbar \bet
 <p>For this to hold, we must have</p>
 <div class="math notranslate nohighlight">
 \[	\beta_{\max} = n \hbar + \beta_{min} = n\hbar - \beta_{max} \Rightarrow \beta_{max} = \frac{n \hbar}{2}\]</div>
-<p>where <span class="math notranslate nohighlight">\(n\in \CZ, n \geq 0\)</span>. If we define <span class="math notranslate nohighlight">\(j = \frac{n}{2} \geq 0\)</span>, <span class="math notranslate nohighlight">\(\beta_{max} = \hbar j\)</span>, the second equation in <a class="reference internal" href="#equation-highest-weights">(312)</a> becomes <span class="math notranslate nohighlight">\(\alpha = \hbar^2 j(j+1)\)</span>. We then have <span class="math notranslate nohighlight">\(\beta = m \hbar\)</span>, with <span class="math notranslate nohighlight">\(m \in (-j, -j + 1, \ldots, j - 1, j)\)</span>. From here on out we denote the states <span class="math notranslate nohighlight">\(\ket{\alpha,\beta}\)</span> as <span class="math notranslate nohighlight">\(\ket{j,m}\)</span>, with <span class="math notranslate nohighlight">\(\alpha = \hbar^2 j(j+1)\)</span>, and <span class="math notranslate nohighlight">\(\beta = \hbar m\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(n\in \CZ, n \geq 0\)</span>. If we define <span class="math notranslate nohighlight">\(j = \frac{n}{2} \geq 0\)</span>, <span class="math notranslate nohighlight">\(\beta_{max} = \hbar j\)</span>, the second equation in <a class="reference internal" href="#equation-highest-weights">(314)</a> becomes <span class="math notranslate nohighlight">\(\alpha = \hbar^2 j(j+1)\)</span>. We then have <span class="math notranslate nohighlight">\(\beta = m \hbar\)</span>, with <span class="math notranslate nohighlight">\(m \in (-j, -j + 1, \ldots, j - 1, j)\)</span>. From here on out we denote the states <span class="math notranslate nohighlight">\(\ket{\alpha,\beta}\)</span> as <span class="math notranslate nohighlight">\(\ket{j,m}\)</span>, with <span class="math notranslate nohighlight">\(\alpha = \hbar^2 j(j+1)\)</span>, and <span class="math notranslate nohighlight">\(\beta = \hbar m\)</span>.</p>
 <p>Now, any rotation can be written in terms of infinitesimal rotations using <span class="math notranslate nohighlight">\(J_{x,y,z}\)</span>. Since <span class="math notranslate nohighlight">\(J_{x,y}\)</span> can be written as linear combinations of <span class="math notranslate nohighlight">\(J_{\pm}\)</span>, we can describe rotations via actions of <span class="math notranslate nohighlight">\(J_z\)</span>, <span class="math notranslate nohighlight">\(J_{\pm}\)</span>. These change the values of <span class="math notranslate nohighlight">\(m\)</span> by integers, and do not change <span class="math notranslate nohighlight">\(j\)</span>. Thus, we can write <span class="math notranslate nohighlight">\((2 j + 1)\)</span> states <span class="math notranslate nohighlight">\(\ket{j,m}\)</span> as a complete, orthonogonal basis for an irreducible representation of <span class="math notranslate nohighlight">\(SO(3)\)</span>/<span class="math notranslate nohighlight">\(SU(2)\)</span>. We can normalize them so that they are an orthonormal basis.</p>
 <p>Thus, for any <span class="math notranslate nohighlight">\(j \in \half \CZ\)</span>, there is a <span class="math notranslate nohighlight">\((2 j + 1)\)</span>-dimensional irreducible representation labeled by <span class="math notranslate nohighlight">\(j\)</span>. These are spanned by the orthonormal basis <span class="math notranslate nohighlight">\(\ket{j,m}\)</span> such that</p>
 <div class="math notranslate nohighlight">
@@ -488,10 +499,10 @@ J_- J_+ \ket{\alpha,\beta_{max}} &amp; = 0 = \alpha - \beta_{max}^2 - \hbar \bet
 \end{align}\end{split}\]</div>
 <p>Thus, after changing the normalization of <span class="math notranslate nohighlight">\(\ket{j,m}\)</span> by a phase, we can write</p>
 <div class="math notranslate nohighlight" id="equation-raising-op">
-<span class="eqno">(313)<a class="headerlink" href="#equation-raising-op" title="Link to this equation">#</a></span>\[J_+ \ket{j,m} = \hbar\sqrt{(j-m)(j+m+1)}\ket{j,m+1}\]</div>
+<span class="eqno">(315)<a class="headerlink" href="#equation-raising-op" title="Link to this equation">#</a></span>\[J_+ \ket{j,m} = \hbar\sqrt{(j-m)(j+m+1)}\ket{j,m+1}\]</div>
 <p>A similar argument yields:</p>
 <div class="math notranslate nohighlight" id="equation-lowering-op">
-<span class="eqno">(314)<a class="headerlink" href="#equation-lowering-op" title="Link to this equation">#</a></span>\[J_-\ket{j,m} = \hbar\sqrt{(j+m)(j-m+1)} \ket{j,m-1}\]</div>
+<span class="eqno">(316)<a class="headerlink" href="#equation-lowering-op" title="Link to this equation">#</a></span>\[J_-\ket{j,m} = \hbar\sqrt{(j+m)(j-m+1)} \ket{j,m-1}\]</div>
 <p>We denote these <span class="math notranslate nohighlight">\((2j + 1)\)</span>-dimensional representations as <span class="math notranslate nohighlight">\(D_j\)</span>. These are sometimes called “spin-j representations”.</p>
 <p>Now not all of these representations are in fact representations of <span class="math notranslate nohighlight">\(SO(3)\)</span>, To see this, consider the fact that rotations by <span class="math notranslate nohighlight">\(2\pi\)</span> abuot any axis should be the identity in <span class="math notranslate nohighlight">\(SO(3)\)</span>. COnsider rotations about <span class="math notranslate nohighlight">\({\hat z}\)</span>. The correesponding operator is <span class="math notranslate nohighlight">\(U(2\pi) = e^{2\pi i J_z/\hbar}\)</span>.</p>
 <p>Now, acting on <span class="math notranslate nohighlight">\(\ket{j,m}\)</span>, we have <span class="math notranslate nohighlight">\(U(2\pi) \ket{j,m} = e^{-2\pi i m}\)</span>. If <span class="math notranslate nohighlight">\(m\)</span> is an integer this is unity; if <span class="math notranslate nohighlight">\(m\)</span> is half-integer, this is <span class="math notranslate nohighlight">\(-\ket{j,m}\)</span>. Since the ideneity element of the group should map to the identity operator in the representation of the rotation group, irreps with <span class="math notranslate nohighlight">\(j = \CZ + \half\)</span> cannot be irreps of <span class="math notranslate nohighlight">\(SO(3)\)</span>. Thus the full set of irreps of <span class="math notranslate nohighlight">\(SO(3)\)</span> are <span class="math notranslate nohighlight">\(D_{j \in \CZ}\)</span>.</p>
@@ -510,7 +521,7 @@ J_- J_+ \ket{\alpha,\beta_{max}} &amp; = 0 = \alpha - \beta_{max}^2 - \hbar \bet
 <p>This expression holds for both the rotatoin matriceds and for the associate unibtary matrices in any representation, via the group homomorphism property.</p>
 <p>The problem with this is that we would need to work out the rotation matrices (or their unitary representations) for the axes <span class="math notranslate nohighlight">\(y',Z\)</span>. However, we can in fact rerite <span class="math notranslate nohighlight">\(R\)</span> in terms of rotations about the <em>original</em> axes. However, it is deducible from the pictures that we can write</p>
 <div class="math notranslate nohighlight" id="equation-conjugate-rots">
-<span class="eqno">(315)<a class="headerlink" href="#equation-conjugate-rots" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(317)<a class="headerlink" href="#equation-conjugate-rots" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 R({\hat Z},\gamma) &amp; = R({\hat y}',\beta) R({\hat z},\gamma) R({\hat y}',-\beta)\\
 R({\hat y}',\beta) &amp; = R({\hat z},\alpha) R({\hat y},\beta) R({\hat z},-\alpha)
 \end{align}\end{split}\]</div>
@@ -532,7 +543,7 @@ R(\alpha,\beta,\gamma) &amp; = R({\hat y}',\beta) R({\hat z}, \gamma) R({\hat y}
 \[U(R(\alpha,\beta,\gamma)) = e^{-i \alpha J_z/\hbar} e^{-i \beta J_y/\hbar} e^{-i \gamma J_z/\hbar}\]</div>
 <p>Thus, we write</p>
 <div class="math notranslate nohighlight" id="equation-euler-matrix">
-<span class="eqno">(316)<a class="headerlink" href="#equation-euler-matrix" title="Link to this equation">#</a></span>\[d^j_{m',m}(\alpha,\beta,\gamma) = e^{-i m' \alpha - i m\gamma} \bra{j,m} e^{-i \beta J_y/\hbar} \ket{j,m}\]</div>
+<span class="eqno">(318)<a class="headerlink" href="#equation-euler-matrix" title="Link to this equation">#</a></span>\[d^j_{m',m}(\alpha,\beta,\gamma) = e^{-i m' \alpha - i m\gamma} \bra{j,m} e^{-i \beta J_y/\hbar} \ket{j,m}\]</div>
 </section>
 <section id="examples-of-irreps">
 <h2>Examples of irreps<a class="headerlink" href="#examples-of-irreps" title="Link to this heading">#</a></h2>
@@ -545,7 +556,7 @@ R(\alpha,\beta,\gamma) &amp; = R({\hat y}',\beta) R({\hat z}, \gamma) R({\hat y}
 <p>The first nontrivial example, and one we have studied many times. In the basis <span class="math notranslate nohighlight">\(\ket{j,m} = \ket{\half,\pm \half}\)</span>, where <span class="math notranslate nohighlight">\(\ket{\half,\half}\)</span> is represented as <span class="math notranslate nohighlight">\(\begin{pmatrix} 1 \\ 0 \end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(\ket{\half,-\half}\)</span> is represented as <span class="math notranslate nohighlight">\(\begin{pmatrix} 0 \\ 1 \end{pmatrix}\)</span>, we have</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}J_z = \frac{\hbar}{2} \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} = \frac{\hbar}{2} \sigma_z\end{split}\]</div>
-<p>Now using Equations <a class="reference internal" href="#equation-raising-op">(313)</a>, {eq<code class="docutils literal notranslate"><span class="pre">lowering_op</span></code>, we have</p>
+<p>Now using Equations <a class="reference internal" href="#equation-raising-op">(315)</a>, {eq<code class="docutils literal notranslate"><span class="pre">lowering_op</span></code>, we have</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 J_+ &amp; = \hbar \begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} \\

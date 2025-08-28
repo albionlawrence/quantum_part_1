@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -395,7 +406,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-do-we-use-quantum-mechanics">When do we use quantum mechanics?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-importance-of-classical-mechanics">The importance of classical mechanics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline-of-the-course">Outline of the course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline-of-the-course">Outline of the course</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phys-162a">PHYS 162a</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phys-162b">PHYS 162b</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -417,6 +432,8 @@ document.write(`
 <li><p>nuclear physics</p></li>
 <li><p>atomic physics</p></li>
 <li><p>molecular dynamics</p></li>
+<li><p>generation of structure in early-universe cosmology, according to standard inflationary theory</p></li>
+<li><p>Conjecturally, big bang and black hole singularities</p></li>
 </ul>
 <p>It also governs the collective behavior of matter at <em>low temperatures</em>, suitably defined, such as:</p>
 <ul class="simple">
@@ -424,6 +441,7 @@ document.write(`
 <li><p>Superconductors</p></li>
 <li><p>Cold atom systems</p></li>
 <li><p>White dwarves and neutron stars (no, really)</p></li>
+<li><p>Conjecturally, black holes (in the context of the black hole information problem)</p></li>
 </ul>
 <p>At this point we should be asking “microscopic compared to what? Low temperature compared to what?” We hope to make this clear during the course. Clearly the dimensional quatity <span class="math notranslate nohighlight">\(\hbar \sim 1.05 \times 10^{-34} m^2 kg/s\)</span>, with units of <span class="math notranslate nohighlight">\((energy) \times (time)\)</span>, plays a role. For atomic physics, we are talking about scales of order angstroms, and energies of order electron volts.</p>
 <p>Our own sensory experience is well outside of this regime; for our survival we need to detect animals of order meters, understand weather patterns and geography over kilometers, and so on. So it should not surprise us that quantum mechanics is in many ways very different from classical mechanics. My personal feeling is that much of the angst people feel over the odder implicatons of quantum mechanics stem from forgetting this large disparity between the scales of the quantum and classical worlds.</p>
@@ -441,13 +459,40 @@ document.write(`
 </section>
 <section id="outline-of-the-course">
 <h2>Outline of the course<a class="headerlink" href="#outline-of-the-course" title="Link to this heading">#</a></h2>
+<p>This may change according to the level and interests of the class, particularly in the second semester.</p>
+<section id="phys-162a">
+<h3>PHYS 162a<a class="headerlink" href="#phys-162a" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Lagrangian and Hamiltonian classical mechanics.</p></li>
 <li><p>Linear algebra and Hilbert spaces. This is the correct language for quantum mechanics for very physical reasons; the linearity in linear algebra is tied directly to the fact that we can linearly superpose states to get new states and thus to phenomena such as the interference pattern of double-slit experiments.</p></li>
 <li><p>The Rules of Quantum Mechanics</p></li>
-<li><p>Applications to simple examples of one-dimensional nonrelativistic systems.</p></li>
-<li><p>Introduction to three-dimensional systems and angular momentum.</p></li>
+<li><p>Applications to simple examples of one-dimensional nonrelativistic systems and simple two-state systems.</p></li>
 </ol>
+</section>
+<section id="phys-162b">
+<h3>PHYS 162b<a class="headerlink" href="#phys-162b" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>The Feynman Path Integral</p></li>
+<li><p>Symmetries in quantum mechanics.</p></li>
+<li><p>Introduction to three-dimensional systems and angular momentum; the Hydrogen atom.</p></li>
+<li><p>Approximation schemes for the time-independent Schrodinger equation:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Perturbation theory</p></li>
+<li><p>Variational methods</p></li>
+<li><p>WKB approximation (with an interlude for Hamilton-Jacobi theory and ray-tracing).</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>Approximation schemes for time-dependent problems.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Perturbation theory</p></li>
+<li><p>Time permitting: adiabatic and sudden approximation, Born-Oppenheimer approximation.</p></li>
+</ul>
+<ol class="arabic simple" start="6">
+<li><p>Identical particles and second quantization.</p></li>
+</ol>
+</section>
 </section>
 </section>
 
@@ -517,7 +562,11 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-do-we-use-quantum-mechanics">When do we use quantum mechanics?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-importance-of-classical-mechanics">The importance of classical mechanics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline-of-the-course">Outline of the course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline-of-the-course">Outline of the course</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phys-162a">PHYS 162a</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phys-162b">PHYS 162b</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

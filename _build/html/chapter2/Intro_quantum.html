@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -428,7 +439,7 @@ document.write(`
 <p>What is the expected energy density inside the cavity? We could (following many textbooks) try to comute this from classical electromagnetism, but we will appeal to dimensional analysis.</p>
 <p>The total energy density should be an integral over all allowed frequencies:</p>
 <div class="math notranslate nohighlight" id="equation-energy-density">
-<span class="eqno">(111)<a class="headerlink" href="#equation-energy-density" title="Link to this equation">#</a></span>\[\CE(T) = \int_0^{\infty} \CE(T,\omega)\]</div>
+<span class="eqno">(113)<a class="headerlink" href="#equation-energy-density" title="Link to this equation">#</a></span>\[\CE(T) = \int_0^{\infty} \CE(T,\omega)\]</div>
 <p>Here we are assuming that the volume of the box only appears in the total energy <span class="math notranslate nohighlight">\(E = V \CE(T)\)</span>, which is a thermodynamically extensive quantity. This makes sense if the box is very large compared to the wavelength of the light inside.</p>
 <p>We have the following dimensionful quantities available to construct <span class="math notranslate nohighlight">\(\CE(T,\omega)\)</span>:</p>
 <ol class="arabic simple">
@@ -438,22 +449,22 @@ document.write(`
 </ol>
 <p>To get an energy density we can make an energy from <span class="math notranslate nohighlight">\(k_B T\)</span> and a length scale <span class="math notranslate nohighlight">\(c/\omega\)</span> (proportional to the wavelength). <span class="math notranslate nohighlight">\(\CE(T,\omega)\)</span> should have units of energy denisty per frequency. The only combination of the above yielding a quantity with the right dimensions is:</p>
 <div class="math notranslate nohighlight" id="equation-en-dens-dimanalysis">
-<span class="eqno">(112)<a class="headerlink" href="#equation-en-dens-dimanalysis" title="Link to this equation">#</a></span>\[\CE(T, omega) = A k_B T \left(\frac{\omega}{c}\right)^3 \frac{1}{\omega} = A \frac{k_B T}{c^3} \omega^2\]</div>
+<span class="eqno">(114)<a class="headerlink" href="#equation-en-dens-dimanalysis" title="Link to this equation">#</a></span>\[\CE(T, omega) = A k_B T \left(\frac{\omega}{c}\right)^3 \frac{1}{\omega} = A \frac{k_B T}{c^3} \omega^2\]</div>
 <p>where <span class="math notranslate nohighlight">\(A\)</span> is a dimensionless constant that requires a first-principles calculation to obtain. This is called the “Rayleigh” law and <span class="math notranslate nohighlight">\(A\)</span> was calculated by Rayleigh in 1900.</p>
 <p>The total energy is thus</p>
 <div class="math notranslate nohighlight" id="equation-total-energy-divergent">
-<span class="eqno">(113)<a class="headerlink" href="#equation-total-energy-divergent" title="Link to this equation">#</a></span>\[\CE(T) = \left(\frac{A k_B T}{c^3}\right) \int_0^{\infty} d\omega \omega^2 = \infty\]</div>
+<span class="eqno">(115)<a class="headerlink" href="#equation-total-energy-divergent" title="Link to this equation">#</a></span>\[\CE(T) = \left(\frac{A k_B T}{c^3}\right) \int_0^{\infty} d\omega \omega^2 = \infty\]</div>
 <p>This is sometimes termed the “ultraviolet catastrophe”.  What is needed is some new dimensionful scale, so that the integral is better behaved. One possibility is to just assume that the electromagnetic field has a largest possible frequency <span class="math notranslate nohighlight">\(\omega_{max}\)</span> and the integral is cut off.</p>
 <p>However, the real issue is that the black body spectrum does not look like this. <span class="math notranslate nohighlight">\(\CE(\omega,T)\)</span> is observable, for example by poking a small hole in the side of the black body and measuring the spectrum of teh emitted power (as illustrated above). It was already known that at high frequencies the black body spectrum follows the (phenomenological) Wien law <span class="math notranslate nohighlight">\(\CE(\omega,T) \sim \omega^3 e^{-c \omega/(k_B T}\)</span>, where <span class="math notranslate nohighlight">\(c\)</span> is some constant (which must have units of [energy <span class="math notranslate nohighlight">\(\times\)</span> time].)</p>
 <p>Planck deduced a functional form that he later justifies with a hypothesis. We well cheat and start with that hypothesis. Let us fix the polarization state and the wavenumber <span class="math notranslate nohighlight">\({\vec k}\)</span> of a mode of the electromagnetic field (ignoring boundary conditions and such, this is all very handwavy to make a point). We assume that each mode has an energy that is an integer multiple of <span class="math notranslate nohighlight">\(\omega\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-planck-rule">
-<span class="eqno">(114)<a class="headerlink" href="#equation-planck-rule" title="Link to this equation">#</a></span>\[\CE({\vec k}, {\hat n}_{pol}, \omega) = n \hbar \omega  ; \ \ n = \{0, 1,2,\ldots\}\]</div>
+<span class="eqno">(116)<a class="headerlink" href="#equation-planck-rule" title="Link to this equation">#</a></span>\[\CE({\vec k}, {\hat n}_{pol}, \omega) = n \hbar \omega  ; \ \ n = \{0, 1,2,\ldots\}\]</div>
 <p>whefre <span class="math notranslate nohighlight">\({\hat n}_{pol}\)</span> denotes one of teh two independent polarization states (linear, circular, etc). To get an expression appropriate for thermal equilibrium, we must do statistical mechanics. Boltzmann’s hypopthesis states that the probability of the mode being in the state labelled by <span class="math notranslate nohighlight">\(n\)</span> is:</p>
 <div class="math notranslate nohighlight" id="equation-boltzmann">
-<span class="eqno">(115)<a class="headerlink" href="#equation-boltzmann" title="Link to this equation">#</a></span>\[p_n = \frac{e^{-n \hbar \omega/(k_B T)}}{\sum_{m = 0}^{\infty} e^{-n \hbar \omega/(k_B T)}} = e^{-n\hbar\omega/(k_B T)}\left(1 - e^{-\hbar \omega/(k_B T)}\right)\]</div>
+<span class="eqno">(117)<a class="headerlink" href="#equation-boltzmann" title="Link to this equation">#</a></span>\[p_n = \frac{e^{-n \hbar \omega/(k_B T)}}{\sum_{m = 0}^{\infty} e^{-n \hbar \omega/(k_B T)}} = e^{-n\hbar\omega/(k_B T)}\left(1 - e^{-\hbar \omega/(k_B T)}\right)\]</div>
 <p>where we have used the classic formula <span class="math notranslate nohighlight">\(\sum_{N = 0}^{\infty} x^N = \frac{1}{1 - x}\)</span> for <span class="math notranslate nohighlight">\(x &lt; 1\)</span>. To get the thermodynamic behavior, we need to compute the average energy per mode using the above probability distribution:</p>
 <div class="math notranslate nohighlight" id="equation-average-bb-ed">
-<span class="eqno">(116)<a class="headerlink" href="#equation-average-bb-ed" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(118)<a class="headerlink" href="#equation-average-bb-ed" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \vev{\CE_n} &amp; = \sum_n \CE_n p_n \\
 &amp; = \sum_n n \hbar \omega \left(1 - e^{-\hbar\omega/(k_B T)}\right) e^{-n\hbar\omega/(k_B T)} \\
 &amp; = \left(1 - e^{-\hbar\omega/(k_B T)}\right) (k_B T)^2 \frac{\del}{\del (k_B T)} \sum_n e^{-n\beta \omega/(k_B T)}\\
@@ -462,14 +473,14 @@ document.write(`
 \end{align}\end{split}\]</div>
 <p>If we carefully sum over all wavenumbers (with fixed frequency) and polarizations, we get:</p>
 <div class="math notranslate nohighlight" id="equation-planck-spectrum">
-<span class="eqno">(117)<a class="headerlink" href="#equation-planck-spectrum" title="Link to this equation">#</a></span>\[\CE(\omega, T) = \frac{\hbar \omega^3}{\pi^2 c^3} \frac{1}{e^{\hbar \omega/(k_B T)} - 1}\]</div>
+<span class="eqno">(119)<a class="headerlink" href="#equation-planck-spectrum" title="Link to this equation">#</a></span>\[\CE(\omega, T) = \frac{\hbar \omega^3}{\pi^2 c^3} \frac{1}{e^{\hbar \omega/(k_B T)} - 1}\]</div>
 <p>One can show that this takes the Rayleigh form for <span class="math notranslate nohighlight">\(\hbar\omega \ll k_B T\)</span> and the Wien form for <span class="math notranslate nohighlight">\(\hbar\omega \gg k_B T\)</span>.
 Finally, to tie this back to our earlier dimensional analysis, we can rewrite it as:</p>
 <div class="math notranslate nohighlight" id="equation-planck-scaling">
-<span class="eqno">(118)<a class="headerlink" href="#equation-planck-scaling" title="Link to this equation">#</a></span>\[\CE(\omega,T) = k_B T\frac{\omega^2}{c^3} f\left(\frac{\hbar\omega}{k_B T}\right)\]</div>
+<span class="eqno">(120)<a class="headerlink" href="#equation-planck-scaling" title="Link to this equation">#</a></span>\[\CE(\omega,T) = k_B T\frac{\omega^2}{c^3} f\left(\frac{\hbar\omega}{k_B T}\right)\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight" id="equation-planck-sf">
-<span class="eqno">(119)<a class="headerlink" href="#equation-planck-sf" title="Link to this equation">#</a></span>\[f(x) &amp; = \frac{1}{\pi^2} \frac{x}{e^x - 1)\]</div>
+<span class="eqno">(121)<a class="headerlink" href="#equation-planck-sf" title="Link to this equation">#</a></span>\[f(x) &amp; = \frac{1}{\pi^2} \frac{x}{e^x - 1)\]</div>
 <p>In other words, the fact that we can create a new energy scale <span class="math notranslate nohighlight">\(\hbar\omega\)</span> is what allows us to write a functional form for <span class="math notranslate nohighlight">\(\CE(\omega,T)\)</span> consistent with the observed high- and low-frequency limits. Note that we now know the soure of this quantization (and we will say more about it below): light comes in “packets” consisting of individual particles known as <em>photons</em> with energy <span class="math notranslate nohighlight">\(\hbar\omega\)</span>.</p>
 <p>This <em>black body spectrum</em> is observed with exquisite prediction. As an example, a prediction of the hot big bang theory is that the early universe had a phase in which electrons, protons, and photons were in a state of thermal equilibrium with temperature <span class="math notranslate nohighlight">\(T \sim 3000K\)</span>. The photons would then have the black body spectrum at this temperature. At <span class="math notranslate nohighlight">\(t \sim 10^5\)</span> years after the big bang, the electrons and protons combined to form neutral hydrogen. The photons retained the blackbody spectrum; however, as the universe expanded, the photons redshifted. The functional form of the blackboddy spectrum is known to be retained, with the temperature appearing as a parameter that decreases with redshift. Thus, we should see a
 “cosmic microwave background radiation” (CMBR) today, a blackbody spectrum parametyerized by a temperature <span class="math notranslate nohighlight">\(T \sim 2.73K\)</span>. This has been observed to exquisite precision by the Cosmic Background Explorer (COBE) satellite which announced their results in 1992. (Different parts of the spectrum had been observed by earlier ground-based and balloon-borne experiments. This is a long and fascinating story with some interesting wrong turns. COBE showed that the spctrum was <em>truly</em> a blackbody spectrum from the Rayleigh through to the Wien range). There are small deviations from this, represented by local deciations in temperature, to a part in <span class="math notranslate nohighlight">\(10^5\)</span>. This is consistent with the hot big bang theory, and inn fact these small flcutuations are the seed for the cosmic structure we see today.</p>
@@ -487,7 +498,7 @@ Finally, to tie this back to our earlier dimensional analysis, we can rewrite it
 <p><img alt="Photelectric effect" src="../_images/photoelectric.jpeg" /></p>
 <p>Einstein’s interpretation was that light consistened of single particles or <em>\photons</em>, each of which carries an energy <span class="math notranslate nohighlight">\(\hbar \omega\)</span>. Electrons acquire kinetic energy by absorbing a single photon. To be ejected from the metal, the electron must cross a potential barrier <span class="math notranslate nohighlight">\(W = \hbar \omega_c\)</span> which is intrinsic to that metal (<span class="math notranslate nohighlight">\(W\)</span> is called the <em>work function</em> of the metal). The kinetic energy is for frequencies higher than <span class="math notranslate nohighlight">\(\omega_c\)</span> is thus</p>
 <div class="math notranslate nohighlight" id="equation-pe-ke">
-<span class="eqno">(120)<a class="headerlink" href="#equation-pe-ke" title="Link to this equation">#</a></span>\[\half m v^2 = \hbar(\omega - \omega_c)\theta(\omega - \omega_c)\]</div>
+<span class="eqno">(122)<a class="headerlink" href="#equation-pe-ke" title="Link to this equation">#</a></span>\[\half m v^2 = \hbar(\omega - \omega_c)\theta(\omega - \omega_c)\]</div>
 <p>where <span class="math notranslate nohighlight">\(\theta(x)\)</span> is the Heaviside step function. The point here is that the packets of energy Placnk suggested could be interpreted as a single quantum or particle of light called a <em>photon</em> whose energy is related to their frequency by the dimensionfuil constant <span class="math notranslate nohighlight">\(\hbar\)</span>. Increasing the intensity of light does not change the energy of each photon, but the number of photons. If there is not a single photon with enough energy to eject an electron, no electron will be ejected.</p>
 <p>Now consider an electromagnetic field with a given polarization and wave vector <span class="math notranslate nohighlight">\({\vec k}\)</span>, such that <span class="math notranslate nohighlight">\(\omega = 2\pi c |{\vec k}|\)</span>.</p>
 </section>
@@ -497,13 +508,13 @@ Finally, to tie this back to our earlier dimensional analysis, we can rewrite it
 <h3>Classical description<a class="headerlink" href="#classical-description" title="Link to this heading">#</a></h3>
 <p>Consider an electromagnetic field propagating in a vacuum along the <span class="math notranslate nohighlight">\(z\)</span> direction. The most general solution to Maxwell’s equations in this case is:</p>
 <div class="math notranslate nohighlight" id="equation-propagating-em">
-<span class="eqno">(121)<a class="headerlink" href="#equation-propagating-em" title="Link to this equation">#</a></span>\[{\vec E} = \text{Re}\ \left\{ \left[ E_x {\hat x} + E_y {\hat y} \right]e^{i (kx - \omega t)}\right\} = \text{Re}\left\{ {\vec E}_c e^{i (kx - \omega t)} \right\}\]</div>
+<span class="eqno">(123)<a class="headerlink" href="#equation-propagating-em" title="Link to this equation">#</a></span>\[{\vec E} = \text{Re}\ \left\{ \left[ E_x {\hat x} + E_y {\hat y} \right]e^{i (kx - \omega t)}\right\} = \text{Re}\left\{ {\vec E}_c e^{i (kx - \omega t)} \right\}\]</div>
 <p>where <span class="math notranslate nohighlight">\(E_{x,y} \in \mathbb{C}\)</span> so that <span class="math notranslate nohighlight">\(E_i = |E_i| e^{i\delta_i}\)</span>, and <span class="math notranslate nohighlight">\(\omega = c k\)</span>. We can rewrite this as</p>
 <div class="math notranslate nohighlight" id="equation-real-propagating">
-<span class="eqno">(122)<a class="headerlink" href="#equation-real-propagating" title="Link to this equation">#</a></span>\[{\vec E} = |E_x|\cos(kz - \omega t+ \delta_x) {\hat x} + |E_y| \cos(kx - \omega t + \delta_y)\]</div>
+<span class="eqno">(124)<a class="headerlink" href="#equation-real-propagating" title="Link to this equation">#</a></span>\[{\vec E} = |E_x|\cos(kz - \omega t+ \delta_x) {\hat x} + |E_y| \cos(kx - \omega t + \delta_y)\]</div>
 <p>The magnetic field <span class="math notranslate nohighlight">\({\vec H}\)</span> can be determined from the Maxwell equation</p>
 <div class="math notranslate nohighlight" id="equation-determine-h">
-<span class="eqno">(123)<a class="headerlink" href="#equation-determine-h" title="Link to this equation">#</a></span>\[\nabla \times {\vec E} + \frac{1}{c}\frac{\del}{\del t}\vec{H}\]</div>
+<span class="eqno">(125)<a class="headerlink" href="#equation-determine-h" title="Link to this equation">#</a></span>\[\nabla \times {\vec E} + \frac{1}{c}\frac{\del}{\del t}\vec{H}\]</div>
 <p>This supports various polarization states such as</p>
 <ol class="arabic simple">
 <li><p>Linear/plane polarization: <span class="math notranslate nohighlight">\({\vec E}_x = E e^{i\delta} {\hat n}\)</span> where <span class="math notranslate nohighlight">\(E\)</span> is a positive real number and <span class="math notranslate nohighlight">\({\hat n}\)</span> a unit vector in the <span class="math notranslate nohighlight">\(x-y\)</span> plane. In particular <span class="math notranslate nohighlight">\({\hat n} = {\hat x}, {\hat y}\)</span> correspond to plane polarization along the <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-axis respectively.</p></li>
@@ -514,33 +525,33 @@ Finally, to tie this back to our earlier dimensional analysis, we can rewrite it
 equivalently <span class="math notranslate nohighlight">\({\vec E}_c = E({\hat x} - i {\hat y})e^{i\delta}\)</span>. Thus:</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-lcp">
-<span class="eqno">(124)<a class="headerlink" href="#equation-lcp" title="Link to this equation">#</a></span>\[{\vec E}_{LCP} = E\left(\cos(kz - \omega t + \delta){\hat x} + \sin (kz - \omega t + \delta) {\hat y}\right)\]</div>
+<span class="eqno">(126)<a class="headerlink" href="#equation-lcp" title="Link to this equation">#</a></span>\[{\vec E}_{LCP} = E\left(\cos(kz - \omega t + \delta){\hat x} + \sin (kz - \omega t + \delta) {\hat y}\right)\]</div>
 <ul class="simple">
 <li><p><strong>Right circular polarization (RCP)</strong>: <span class="math notranslate nohighlight">\(E_y = i E_x = i e^{i\delta}\)</span> or <span class="math notranslate nohighlight">\({\vec E}_c = E({\hat x} + i {\hat y})e^{i\delta}\)</span>. Thus:</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-rcp">
-<span class="eqno">(125)<a class="headerlink" href="#equation-rcp" title="Link to this equation">#</a></span>\[{\vec E}_{RCP} = E\left(\cos(kz - \omega t + \delta){\hat x} + \sin (kz - \omega t + \delta) {\hat y}\right)\]</div>
+<span class="eqno">(127)<a class="headerlink" href="#equation-rcp" title="Link to this equation">#</a></span>\[{\vec E}_{RCP} = E\left(\cos(kz - \omega t + \delta){\hat x} + \sin (kz - \omega t + \delta) {\hat y}\right)\]</div>
 <p>Note that for any plane wave, <span class="math notranslate nohighlight">\({\vec E}_c\)</span> can be written as a linear combination of left- and right-circular polarizations, or as <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-plane polarizations.</p>
 <p>The energy density is</p>
 <div class="math notranslate nohighlight" id="equation-maxwell-ed">
-<span class="eqno">(126)<a class="headerlink" href="#equation-maxwell-ed" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(128)<a class="headerlink" href="#equation-maxwell-ed" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \cal{E} &amp; = \frac{1}{8\pi}\left[ {\vec E}^2 + {\vec H}^2\right]\\
 &amp; = \frac{1}{4\pi} \left[|E_x|^2\cos^2(kz - \omega t + \delta_x) + |E_y|^2\cos^2(kz - \omega t + \delta_y)\right]
 \end{align}\end{split}\]</div>
 <p>Assuming the field propagates in some volume <span class="math notranslate nohighlight">\(V\)</span>, the total energy is</p>
 <div class="math notranslate nohighlight" id="equation-total-energy">
-<span class="eqno">(127)<a class="headerlink" href="#equation-total-energy" title="Link to this equation">#</a></span>\[U = \int d^2 x z {\cal E} = \frac{V}{2\times 4\pi} \left[|E_x|^2 + |E_y|^2\right]\]</div>
+<span class="eqno">(129)<a class="headerlink" href="#equation-total-energy" title="Link to this equation">#</a></span>\[U = \int d^2 x z {\cal E} = \frac{V}{2\times 4\pi} \left[|E_x|^2 + |E_y|^2\right]\]</div>
 <p>the factor of 2 in the denominator comes from integrating the <span class="math notranslate nohighlight">\(\cos^2\)</span> factors over <span class="math notranslate nohighlight">\(z\)</span>.</p>
-<p>Now let us pass our beam through a polarizer. We call an “x-polarizer” one which admits only light polarized along the <span class="math notranslate nohighlight">\({\hat x}\)</span> direction, so that <span class="math notranslate nohighlight">\(E_x\)</span> remains unchanged by <span class="math notranslate nohighlight">\(E_y\)</span> is set to zero. In general, we can consider a polarizer aligned along any complex unit vector <span class="math notranslate nohighlight">\({\hat n}\)</span> so that any initial light wave described by <a class="reference internal" href="#equation-propagating-em">(121)</a> becomes</p>
+<p>Now let us pass our beam through a polarizer. We call an “x-polarizer” one which admits only light polarized along the <span class="math notranslate nohighlight">\({\hat x}\)</span> direction, so that <span class="math notranslate nohighlight">\(E_x\)</span> remains unchanged by <span class="math notranslate nohighlight">\(E_y\)</span> is set to zero. In general, we can consider a polarizer aligned along any complex unit vector <span class="math notranslate nohighlight">\({\hat n}\)</span> so that any initial light wave described by <a class="reference internal" href="#equation-propagating-em">(123)</a> becomes</p>
 <div class="math notranslate nohighlight" id="equation-polarized-em">
-<span class="eqno">(128)<a class="headerlink" href="#equation-polarized-em" title="Link to this equation">#</a></span>\[{\vec E}_{after} = \text{Re}\left\{ {\vec E}_c \cdot {\hat n} {\hat n} e^{i(kz - \omega t)} \right\}\]</div>
+<span class="eqno">(130)<a class="headerlink" href="#equation-polarized-em" title="Link to this equation">#</a></span>\[{\vec E}_{after} = \text{Re}\left\{ {\vec E}_c \cdot {\hat n} {\hat n} e^{i(kz - \omega t)} \right\}\]</div>
 <p>For a polarizer aligned along <span class="math notranslate nohighlight">\({\hat x}\)</span>, <span class="math notranslate nohighlight">\({\hat n} = {\hat x}\)</span>; for a polarizer admitting LCP, <span class="math notranslate nohighlight">\({\hat n}_{LCP} = \frac{1}{\sqrt{2}} \left({\hat x} - i {\hat y}\right)\)</span>; for a polarizer admitting RCP, <span class="math notranslate nohighlight">\({\hat n}_{RCP} = \frac{1}{\sqrt{2}}\left({\hat x} + i {\hat y}\right)\)</span>.</p>
 <p>This generally reduces the energy of the beam of light. For example, we can show that if we consider light polarized along <span class="math notranslate nohighlight">\({\hat n} = \frac{1}{\sqrt{2}} \left(\hat{x} + {\hat y}\right)\)</span>, that is at a <span class="math notranslate nohighlight">\(45^{\circ}\)</span> angle fromthe <span class="math notranslate nohighlight">\(x\)</span>-axis, and pass it through a polatizer aligned along the <span class="math notranslate nohighlight">\(x\)</span> axis,</p>
 <div class="math notranslate nohighlight" id="equation-field-reduction">
-<span class="eqno">(129)<a class="headerlink" href="#equation-field-reduction" title="Link to this equation">#</a></span>\[{\vec E} = E\cos(kx - \omega t + \delta)\left({\hat x} + {\hat y}\right) \rightarrow E\cos(kx - \omega t + \delta){\hat x}\]</div>
+<span class="eqno">(131)<a class="headerlink" href="#equation-field-reduction" title="Link to this equation">#</a></span>\[{\vec E} = E\cos(kx - \omega t + \delta)\left({\hat x} + {\hat y}\right) \rightarrow E\cos(kx - \omega t + \delta){\hat x}\]</div>
 <p>The energy is in this case cut in half:</p>
 <div class="math notranslate nohighlight" id="equation-energy-reduction">
-<span class="eqno">(130)<a class="headerlink" href="#equation-energy-reduction" title="Link to this equation">#</a></span>\[U_{init} = \frac{V}{8\pi}\times 2 \times |E|^2 \rightarrow U_{after} = \frac{V}{8\pi}|E|^2 = \half U_{init}\]</div>
+<span class="eqno">(132)<a class="headerlink" href="#equation-energy-reduction" title="Link to this equation">#</a></span>\[U_{init} = \frac{V}{8\pi}\times 2 \times |E|^2 \rightarrow U_{after} = \frac{V}{8\pi}|E|^2 = \half U_{init}\]</div>
 </section>
 <section id="quantum-description">
 <h3>Quantum description<a class="headerlink" href="#quantum-description" title="Link to this heading">#</a></h3>
@@ -551,45 +562,45 @@ equivalently <span class="math notranslate nohighlight">\({\vec E}_c = E({\hat x
 </ul>
 <p>Our best available interpretation is that <em>each</em> photon has a <span class="math notranslate nohighlight">\(50\%\)</span> chance of passing through this polarizer. For typical classical beams one can see that <span class="math notranslate nohighlight">\(N \gg 1\)</span>, so that the law of large numbers/central limit theorem tells us</p>
 <div class="math notranslate nohighlight" id="equation-lln-polarizer">
-<span class="eqno">(131)<a class="headerlink" href="#equation-lln-polarizer" title="Link to this equation">#</a></span>\[N \to N\left(\half + {\cal O}\left(\frac{1}{\sqrt{N}}\right)\right)\]</div>
+<span class="eqno">(133)<a class="headerlink" href="#equation-lln-polarizer" title="Link to this equation">#</a></span>\[N \to N\left(\half + {\cal O}\left(\frac{1}{\sqrt{N}}\right)\right)\]</div>
 <p>For more general polarizations,</p>
 <div class="math notranslate nohighlight" id="equation-gen-pol">
-<span class="eqno">(132)<a class="headerlink" href="#equation-gen-pol" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(134)<a class="headerlink" href="#equation-gen-pol" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 {\vec E} = \text{RE}\ \left[ E_x e^{i(kx - \omega t)} {\hat x} + E_y e^{i(kx - \omega t)} {\hat y}\right]\\
 U_{initial} &amp; = \frac{V}{8\pi}\left(|E_x|^2 + |E_y|^2\right)\\
 U_{final} &amp; = \frac{V}{8\pi} |E_x|^2
 \end{align}\end{split}\]</div>
 <p>So the probability of a single photon passing through the polarizer, given the polarization state listed above, is</p>
 <div class="math notranslate nohighlight" id="equation-single-photon-prob">
-<span class="eqno">(133)<a class="headerlink" href="#equation-single-photon-prob" title="Link to this equation">#</a></span>\[p = \frac{N_{final}}{N_{init}} \frac{\hbar\omega}{\hbar\omega} = \frac{U_{final}}{U_{init}} = \frac{|E_x|^2}{|E_x|^2 + |E_y|^2}\]</div>
+<span class="eqno">(135)<a class="headerlink" href="#equation-single-photon-prob" title="Link to this equation">#</a></span>\[p = \frac{N_{final}}{N_{init}} \frac{\hbar\omega}{\hbar\omega} = \frac{U_{final}}{U_{init}} = \frac{|E_x|^2}{|E_x|^2 + |E_y|^2}\]</div>
 <p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 For a more general polarization states, the probability of the photon passing through the polarizer aligned along the <span class="math notranslate nohighlight">\(x\)</span>-axis is</p>
 <div class="math notranslate nohighlight" id="equation-lin-polarizer-general">
-<span class="eqno">(134)<a class="headerlink" href="#equation-lin-polarizer-general" title="Link to this equation">#</a></span>\[p = \frac{|E_x|^2}{|E_x|^2 + |E_y|^2} sim \frac{N_f}{N}\]</div>
+<span class="eqno">(136)<a class="headerlink" href="#equation-lin-polarizer-general" title="Link to this equation">#</a></span>\[p = \frac{|E_x|^2}{|E_x|^2 + |E_y|^2} sim \frac{N_f}{N}\]</div>
 <p>For  single photon with fixed frequency and wavenumber,</p>
 <div class="math notranslate nohighlight" id="equation-sp-energy">
-<span class="eqno">(135)<a class="headerlink" href="#equation-sp-energy" title="Link to this equation">#</a></span>\[U_{tot} = \frac{V}{8\pi} \left(|E_x|^2 + |E_y|^2\right) = \hbar \omega\]</div>
+<span class="eqno">(137)<a class="headerlink" href="#equation-sp-energy" title="Link to this equation">#</a></span>\[U_{tot} = \frac{V}{8\pi} \left(|E_x|^2 + |E_y|^2\right) = \hbar \omega\]</div>
 <p>For an electric field satisfying this relation, we can write a “state vector” that describes the photon polarization:</p>
 <div class="math notranslate nohighlight" id="equation-state-vector-photon">
-<span class="eqno">(136)<a class="headerlink" href="#equation-state-vector-photon" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(138)<a class="headerlink" href="#equation-state-vector-photon" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 &amp; \ket{\psi} \equiv \begin{pmatrix} \psi_x \\ \psi_y \end{pmatrix}\\
 &amp; psi_i = \sqrt{\frac{V}{8\pi \hbar \omega}} E_i
 \end{align}\end{split}\]</div>
-<p>The notation <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> should here be understood in this way, as shorthand for a vector (here a two-dimensional vector with complex entries). Using <a class="reference internal" href="#equation-sp-energy">(135)</a> we can see that <span class="math notranslate nohighlight">\(|\psi_x|^2 + |\psi_y|^2 = 1\)</span>, apnd that <span class="math notranslate nohighlight">\(p_x = |\psi_x|^2\)</span>. Similarly, the probability of the same photon passing through a polarizer aligned alongthe <span class="math notranslate nohighlight">\(y\)</span> axis is <span class="math notranslate nohighlight">\(p_y = |\psi_y|^2\)</span>. It is as if the two possible outcomes are that the photon is polarized along the <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> axis. On the other hand, we could rotate both polarizers by (say) <span class="math notranslate nohighlight">\(17^{\circ}\)</span> and do the same experiment and the probability of the photon passing through each of the two perpendictular polarizers will sum to <span class="math notranslate nohighlight">\(1\)</span>.</p>
-<p>Finally, not that there is a <em>linear structure</em> to the space of photon polarizations, in that we can add two polarization vectors and get another polarization vector, up to the overall normalization constraint <a class="reference internal" href="#equation-sp-energy">(135)</a> for a single photon. In particular, if we define</p>
+<p>The notation <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> should here be understood in this way, as shorthand for a vector (here a two-dimensional vector with complex entries). Using <a class="reference internal" href="#equation-sp-energy">(137)</a> we can see that <span class="math notranslate nohighlight">\(|\psi_x|^2 + |\psi_y|^2 = 1\)</span>, apnd that <span class="math notranslate nohighlight">\(p_x = |\psi_x|^2\)</span>. Similarly, the probability of the same photon passing through a polarizer aligned alongthe <span class="math notranslate nohighlight">\(y\)</span> axis is <span class="math notranslate nohighlight">\(p_y = |\psi_y|^2\)</span>. It is as if the two possible outcomes are that the photon is polarized along the <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> axis. On the other hand, we could rotate both polarizers by (say) <span class="math notranslate nohighlight">\(17^{\circ}\)</span> and do the same experiment and the probability of the photon passing through each of the two perpendictular polarizers will sum to <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>Finally, not that there is a <em>linear structure</em> to the space of photon polarizations, in that we can add two polarization vectors and get another polarization vector, up to the overall normalization constraint <a class="reference internal" href="#equation-sp-energy">(137)</a> for a single photon. In particular, if we define</p>
 <div class="math notranslate nohighlight" id="equation-linear-basis">
-<span class="eqno">(137)<a class="headerlink" href="#equation-linear-basis" title="Link to this equation">#</a></span>\[\begin{split}&amp; \ket{\psi_x} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}\\
+<span class="eqno">(139)<a class="headerlink" href="#equation-linear-basis" title="Link to this equation">#</a></span>\[\begin{split}&amp; \ket{\psi_x} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}\\
 &amp; \ket{\psi_y} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}\end{split}\]</div>
 <p>then <em>any</em> polarization can be described by the linear combination</p>
 <div class="math notranslate nohighlight" id="equation-linear-combo">
-<span class="eqno">(138)<a class="headerlink" href="#equation-linear-combo" title="Link to this equation">#</a></span>\[\begin{split}\alpha \ket{\psi_x} + \beta \ket{\psi_y} = \begin{pmatrix} \alpha \\ \beta \end{pmatrix}\end{split}\]</div>
+<span class="eqno">(140)<a class="headerlink" href="#equation-linear-combo" title="Link to this equation">#</a></span>\[\begin{split}\alpha \ket{\psi_x} + \beta \ket{\psi_y} = \begin{pmatrix} \alpha \\ \beta \end{pmatrix}\end{split}\]</div>
 <p>with <span class="math notranslate nohighlight">\(\alpha,\beta \in \mathbb{C}\)</span>, and <span class="math notranslate nohighlight">\(|\alpha|^2 + |\beta|^2 = 1\)</span>. Similarly, we can consider the circular polarization states:</p>
 <div class="math notranslate nohighlight" id="equation-circular-basis">
-<span class="eqno">(139)<a class="headerlink" href="#equation-circular-basis" title="Link to this equation">#</a></span>\[\begin{split}&amp; \ket{\psi_{RCP}} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ i \end{pmatrix}\\
+<span class="eqno">(141)<a class="headerlink" href="#equation-circular-basis" title="Link to this equation">#</a></span>\[\begin{split}&amp; \ket{\psi_{RCP}} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ i \end{pmatrix}\\
 &amp; \ket{\psi_{LCP}} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -i \end{pmatrix}\end{split}\]</div>
-<p>You can show that any polarization state satisfying <a class="reference internal" href="#equation-sp-energy">(135)</a> can be written as</p>
+<p>You can show that any polarization state satisfying <a class="reference internal" href="#equation-sp-energy">(137)</a> can be written as</p>
 <div class="math notranslate nohighlight" id="equation-circular-combo">
-<span class="eqno">(140)<a class="headerlink" href="#equation-circular-combo" title="Link to this equation">#</a></span>\[\begin{split}{\tilde\alpha} \ket{\psi_{RCP}} + {\tilde\beta} \ket{\psi_{LCP}} = \frac{1}{\sqrt{2}}\begin{pmatrix} {\tilde \alpha} + {\tilde \beta} \\ i ({\tilde\alpha} - {\tilde\beta}) \end{pmatrix}\end{split}\]</div>
+<span class="eqno">(142)<a class="headerlink" href="#equation-circular-combo" title="Link to this equation">#</a></span>\[\begin{split}{\tilde\alpha} \ket{\psi_{RCP}} + {\tilde\beta} \ket{\psi_{LCP}} = \frac{1}{\sqrt{2}}\begin{pmatrix} {\tilde \alpha} + {\tilde \beta} \\ i ({\tilde\alpha} - {\tilde\beta}) \end{pmatrix}\end{split}\]</div>
 <p>with <span class="math notranslate nohighlight">\({\tilde\alpha}, {\tilde\beta} \in \mathbb{C}\)</span>, if <span class="math notranslate nohighlight">\(|{\tilde\alpha}|^2 + |{\tilde\beta}|^2 = 1\)</span>.</p>
 <p>The essential point here is that the states of the photon are described by a 2-coponent vector; these vectord can be added to describe other polarization states; and the components are related <em>by taking the absolute value squared</em> to the probability of certai exoperiments yielding a certain outcome.</p>
 <p>This hints at a very general structure for describing physical states and teh reults of mesurement in quantum mechanics. To set this up we need to lay down the correct mathematical language for describing such vectors, namely linear algebra.</p>

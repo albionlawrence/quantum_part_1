@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -421,28 +432,28 @@ document.write(`
 <h2>Principle of Stationary Action<a class="headerlink" href="#principle-of-stationary-action" title="Link to this heading">#</a></h2>
 <p>The basic object in Lagrangian mechanics is…you guessed it…a <em>Lagrangian</em>; this is a function of the positions and velocities of one or several particles:</p>
 <div class="math notranslate nohighlight" id="equation-lagrangian">
-<span class="eqno">(6)<a class="headerlink" href="#equation-lagrangian" title="Link to this equation">#</a></span>\[L = L(x^a_k(t), {\dot x}^a_k(t), t)\]</div>
+<span class="eqno">(8)<a class="headerlink" href="#equation-lagrangian" title="Link to this equation">#</a></span>\[L = L(x^a_k(t), {\dot x}^a_k(t), t)\]</div>
 <p>where <span class="math notranslate nohighlight">\(a \in \{1,\ldots,d\}\)</span> is the coordinate index for particles in <span class="math notranslate nohighlight">\(d\)</span> dimensions (for example, if <span class="math notranslate nohighlight">\(d = 3\)</span> we might call <span class="math notranslate nohighlight">\(x^1 \equiv x\)</span>, <span class="math notranslate nohighlight">\(x^2 \equiv y\)</span>, <span class="math notranslate nohighlight">\(x^3 \equiv z\)</span>), and <span class="math notranslate nohighlight">\(k = 1,\ldots,M\)</span> labels different particles. Note that <span class="math notranslate nohighlight">\(L\)</span> is a <em>function</em> of <span class="math notranslate nohighlight">\(x, {\dot x}\)</span> at a fixed time; thus, even if there is no explicit <span class="math notranslate nohighlight">\(t\)</span>-dependence, if <span class="math notranslate nohighlight">\(x^a(t)\)</span> is a known trajectory, <span class="math notranslate nohighlight">\(L\)</span> depends on <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <p>Given <span class="math notranslate nohighlight">\(L\)</span>, and initial and final times <span class="math notranslate nohighlight">\(t_{i,f}\)</span> we can define an <em>action functional</em> (usually called just the action):</p>
 <div class="math notranslate nohighlight" id="equation-action-definition">
-<span class="eqno">(7)<a class="headerlink" href="#equation-action-definition" title="Link to this equation">#</a></span>\[S[\{x(t)\}] = \int_{t_i}^{t_f} dt L( x^a_k(t), {\dot x}^a_k(t), t)\]</div>
+<span class="eqno">(9)<a class="headerlink" href="#equation-action-definition" title="Link to this equation">#</a></span>\[S[\{x(t)\}] = \int_{t_i}^{t_f} dt L( x^a_k(t), {\dot x}^a_k(t), t)\]</div>
 <p>For any trajectory <span class="math notranslate nohighlight">\(x^i(t)\)</span>, defined between <span class="math notranslate nohighlight">\(t_i\)</span> and <span class="math notranslate nohighlight">\(t_f\)</span>, the action is a real number. We call it a “functional” because it can be thought of as a function whose dependent variables are not a collection of discrete numbers, but functions.</p>
 <p>The principle of stationary action (sometimes call the “principle of least action”, but this is something of a misnomer). We consider all paths with fixed coordinates at <span class="math notranslate nohighlight">\(t_{i,f}\)</span>, defined as</p>
 <div class="math notranslate nohighlight" id="equation-lagrangian-bc">
-<span class="eqno">(8)<a class="headerlink" href="#equation-lagrangian-bc" title="Link to this equation">#</a></span>\[x^a_{k, } = x^a_k(t_i)\ ; \ \ x^a_{k,f} = x^a_k(t_f)\]</div>
+<span class="eqno">(10)<a class="headerlink" href="#equation-lagrangian-bc" title="Link to this equation">#</a></span>\[x^a_{k, } = x^a_k(t_i)\ ; \ \ x^a_{k,f} = x^a_k(t_f)\]</div>
 <p>A “classical trajectory” <span class="math notranslate nohighlight">\(x^a_{k,c}\)</span> is one that satisfies the boundary conditions and one for which the action does not change if we make an infinitestimal change of the path. That is, consider two trajectories:</p>
 <div class="math notranslate nohighlight" id="equation-deformed-trajectories">
-<span class="eqno">(9)<a class="headerlink" href="#equation-deformed-trajectories" title="Link to this equation">#</a></span>\[	x^a_{k,c}(t)\ ; \ x^a_{k,c}(t) + \epsilon \delta x^a_k\]</div>
+<span class="eqno">(11)<a class="headerlink" href="#equation-deformed-trajectories" title="Link to this equation">#</a></span>\[	x^a_{k,c}(t)\ ; \ x^a_{k,c}(t) + \epsilon \delta x^a_k\]</div>
 <p>satisfying the same boundary conditions. This means that <span class="math notranslate nohighlight">\(\delta x^a_{k}(t_{i,f)) = 0\)</span>. We take <span class="math notranslate nohighlight">\(\eps \ll 1\)</span> to be a small dimensionless parameters. For small enough <span class="math notranslate nohighlight">\(\eps\)</span> we can therefore expand</p>
 <div class="math notranslate nohighlight" id="equation-expand-action">
-<span class="eqno">(10)<a class="headerlink" href="#equation-expand-action" title="Link to this equation">#</a></span>\[S[\{x^a_{k,c}(t) + \epsilon \delta x^a_k)\}] = S[\{x^a_k(t)\}] + \eps \delta S^{(1)} + \eps^2 \delta S^{(2)} + {\cal O}(\eps^3)\]</div>
+<span class="eqno">(12)<a class="headerlink" href="#equation-expand-action" title="Link to this equation">#</a></span>\[S[\{x^a_{k,c}(t) + \epsilon \delta x^a_k)\}] = S[\{x^a_k(t)\}] + \eps \delta S^{(1)} + \eps^2 \delta S^{(2)} + {\cal O}(\eps^3)\]</div>
 <p>If <span class="math notranslate nohighlight">\(\Delta^{(1)}S[\{x^a_{k,c}\}] = 0\)</span>, then <span class="math notranslate nohighlight">\(x^a_{k,c}\)</span> is a classical trajectory.</p>
 </section>
 <section id="the-euler-lagrange-equations">
 <h2>The Euler-Lagrange equations<a class="headerlink" href="#the-euler-lagrange-equations" title="Link to this heading">#</a></h2>
 <p>So far this is all fairly abstract. In fact the principle of stationary action leads to a set of differential equations known as the <em>Euler-Lagrange</em> equations which generalize Newton’s second law. We can write down these equations explicitly in terms of <span class="math notranslate nohighlight">\(L\)</span>, by computing <span class="math notranslate nohighlight">\(S^{(1)}\)</span>. Let us cary out the expansion explicitly:</p>
 <div class="math notranslate nohighlight" id="equation-explicit-expansion">
-<span class="eqno">(11)<a class="headerlink" href="#equation-explicit-expansion" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(13)<a class="headerlink" href="#equation-explicit-expansion" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 S[\{x^a_{k,c}(t) + \epsilon \delta x^a_k)\}] &amp; = S[\{x^a_k(t)\}] + \eps \delta S^{(1)}+ \ldots \\
 &amp; = \int_{t_i}^{t_f} dt L(x^a_{k,c}(t) + \epsilon \delta x^a_k, \dot{x}^a_{k,c}(t) + \epsilon \delta \dot{x^a_k}) + {\cal O}(\eps^2)\\
 &amp; = S[\{x^a_k(t)\}] + \eps \int_{t_i}^{t_f} \left[ \delta x^a_k \frac{\del L}{\del x^a_k(t)} + \delta {\dot x}^a_k(t) \frac{\del L}{\del \dot{x}^a_k(t)}\right]\big|_{x = x_c}
@@ -450,23 +461,23 @@ S[\{x^a_{k,c}(t) + \epsilon \delta x^a_k)\}] &amp; = S[\{x^a_k(t)\}] + \eps \del
 \end{align}\end{split}\]</div>
 <p>where we are using the Einstein summation notation (see Appendix). Note that <span class="math notranslate nohighlight">\(L\)</span> is a standard function of the coordinates and velocities at a fixed time <span class="math notranslate nohighlight">\(t\)</span>, so that this makes sense. Now, recall that <span class="math notranslate nohighlight">\(\delta \dot{x} = \frac{d}{dt} \delta x\)</span>. Integrating the second term in the last line by parts, we find that</p>
 <div class="math notranslate nohighlight" id="equation-first-order-variation">
-<span class="eqno">(12)<a class="headerlink" href="#equation-first-order-variation" title="Link to this equation">#</a></span>\[\delta S^{(1)} = \int_{t_i}^{t_f} dt \delta x^a_k \left[ \frac{\del L}{\del x^a_k} - \frac{d}{dt} \frac{\del L}{\del \dot{x}^a_k}\right]\Big|_{x = x_c} + \delta x^a_k \frac{\del L}{\del \dot{x}^a_k} \Big|^{t = t_f}_{t = t_i} \]</div>
+<span class="eqno">(14)<a class="headerlink" href="#equation-first-order-variation" title="Link to this equation">#</a></span>\[\delta S^{(1)} = \int_{t_i}^{t_f} dt \delta x^a_k \left[ \frac{\del L}{\del x^a_k} - \frac{d}{dt} \frac{\del L}{\del \dot{x}^a_k}\right]\Big|_{x = x_c} + \delta x^a_k \frac{\del L}{\del \dot{x}^a_k} \Big|^{t = t_f}_{t = t_i} \]</div>
 <p>Now, by the boundary conditions, <span class="math notranslate nohighlight">\(\delta x^a_k(t_{i,f}) = 0\)</span> so that the final boundary term vanishes. We have demanded that <span class="math notranslate nohighlight">\(\delta S^{(1)}\)</span> vanish for <em>any</em> infinitesimal deformation of <span class="math notranslate nohighlight">\(x^a_{k,c}\)</span>, that is for <em>any</em> <span class="math notranslate nohighlight">\(\delta x^a_{k,c}\)</span> vanishing at <span class="math notranslate nohighlight">\(t_{i,f}\)</span> (at least, if <span class="math notranslate nohighlight">\(\eps\)</span> is sufficiently small). Thus, the principle of stationary action is equivalent to the <em>Euler-Lagrange equations</em>:</p>
 <div class="math notranslate nohighlight" id="equation-euler-lagrange">
-<span class="eqno">(13)<a class="headerlink" href="#equation-euler-lagrange" title="Link to this equation">#</a></span>\[\frac{\delta S}{\delta x^a_k(t)}\Big|_{x = x_c} \equiv \frac{\del L}{\del x^a_i(t)}(x^a_{k,c}, \dot{x}^a_{k,c}(t)) - \frac{d}{dt} \frac{\del L}{\del \dot{x}^a_i(t)}(x^a\
+<span class="eqno">(15)<a class="headerlink" href="#equation-euler-lagrange" title="Link to this equation">#</a></span>\[\frac{\delta S}{\delta x^a_k(t)}\Big|_{x = x_c} \equiv \frac{\del L}{\del x^a_i(t)}(x^a_{k,c}, \dot{x}^a_{k,c}(t)) - \frac{d}{dt} \frac{\del L}{\del \dot{x}^a_i(t)}(x^a\
 _{k,c}, \dot{x}^a_{k,c}(t)) = 0\]</div>
 <p>The first equality defines a <em>functional derivative</em> of <span class="math notranslate nohighlight">\(S\)</span>. In the end, all that matters is that this vanishes – that <span class="math notranslate nohighlight">\(S\)</span> does not vary at <span class="math notranslate nohighlight">\({\cal O}(\eps)\)</span>. Classical mechanics does not care whether <span class="math notranslate nohighlight">\(S\)</span> is a local or global maximum, local or global minimum, or “saddle point” in which some deformations increase the action at <span class="math notranslate nohighlight">\({\cal O}(\eps^2)\)</span> and oher deformations decrease <span class="math notranslate nohighlight">\(S\)</span>.</p>
 <p>Without going any further, we can see that this will define <span class="math notranslate nohighlight">\(d M\)</span> second order differential equations in time for the <span class="math notranslate nohighlight">\(dM\)</span> variables <span class="math notranslate nohighlight">\(x^a_k\)</span>.</p>
 <p>This formalism naturally includes Newton’s laws. Consider the following Lagrangian for a single particle with mass <span class="math notranslate nohighlight">\(m\)</span> in <span class="math notranslate nohighlight">\(d\)</span> dimensions:</p>
 <div class="math notranslate nohighlight" id="equation-newton-lag">
-<span class="eqno">(14)<a class="headerlink" href="#equation-newton-lag" title="Link to this equation">#</a></span>\[L = \half m \dot{\vec x} \cdot \dot{\vec x} - V({\vec x})\]</div>
+<span class="eqno">(16)<a class="headerlink" href="#equation-newton-lag" title="Link to this equation">#</a></span>\[L = \half m \dot{\vec x} \cdot \dot{\vec x} - V({\vec x})\]</div>
 <p>Here <span class="math notranslate nohighlight">\({\vec V}\cdot{\vec V} = V^j V^j\)</span> for any vector <span class="math notranslate nohighlight">\({\vec V}\)</span>, where <span class="math notranslate nohighlight">\(j\)</span> labels the components. The Euler-Lagrange equations give us:</p>
 <div class="math notranslate nohighlight" id="equation-el-newton">
-<span class="eqno">(15)<a class="headerlink" href="#equation-el-newton" title="Link to this equation">#</a></span>\[- \frac{\del V}{\del x^i} - m \frac{d}{dt} \dot{x}^i = 0
+<span class="eqno">(17)<a class="headerlink" href="#equation-el-newton" title="Link to this equation">#</a></span>\[- \frac{\del V}{\del x^i} - m \frac{d}{dt} \dot{x}^i = 0
 \Rightarrow m \ddot{x}^i = - \left(\vec{\nabla} V\right)^i \equiv F^i\]</div>
 <p>Here <span class="math notranslate nohighlight">\({\vec F} = - \vec{\nabla} V\)</span> is the conservative force associated to the potential <span class="math notranslate nohighlight">\(V\)</span>. Note that we have a definite restriction on systems which are well-described by Lagrangian dynamics: many forces are not easily or usefully described in the Lagrangian framework. A classic example is a particle subject to a frictional force linear in velocity:</p>
 <div class="math notranslate nohighlight" id="equation-friction-example">
-<span class="eqno">(16)<a class="headerlink" href="#equation-friction-example" title="Link to this equation">#</a></span>\[m \ddot{x} = - \lambda \dot{x} - V'(x)\]</div>
+<span class="eqno">(18)<a class="headerlink" href="#equation-friction-example" title="Link to this equation">#</a></span>\[m \ddot{x} = - \lambda \dot{x} - V'(x)\]</div>
 <p>(It is not impossible to get this from a variational principle directly in terms of <span class="math notranslate nohighlight">\(x\)</span> but this formulation ends up not being especially useful. More insight can be gained by embedding the system in a larger system so that the dynamics of <span class="math notranslate nohighlight">\(x\)</span> alone has friction; the energy lost by friction is exchanged with the larger system. But then the dynamics of all of the degrees of freedom can be described by a more conventional if complicated Lagrangian.)</p>
 <p>On the other hand, this formalism allows us to generalize away from Newton’s laws in many other directions, including other velocity-dependent forces such as the Lorentz force, and provides new tools for constraining the motion.</p>
 </section>
@@ -481,45 +492,45 @@ _{k,c}, \dot{x}^a_{k,c}(t)) = 0\]</div>
 <p>All of these can be described within the framework of Lagrangian mechanics.</p>
 <p>In general we start with a set of <em>generalize coordinates</em> <span class="math notranslate nohighlight">\(q^I\)</span>. These could be the position variables <span class="math notranslate nohighlight">\(x^a_k\)</span> for particles in Euclidean space, or anyo of the above examples. If we have a Lagrangian <span class="math notranslate nohighlight">\(L(q^I, {\dot q}^I, t)\)</span>, and an action</p>
 <div class="math notranslate nohighlight" id="equation-gen-action">
-<span class="eqno">(17)<a class="headerlink" href="#equation-gen-action" title="Link to this equation">#</a></span>\[S[\{q^I(t)\}] = \int_{t_i}^{t_f} dt L(q^I, {\dot q}^I, t)\]</div>
+<span class="eqno">(19)<a class="headerlink" href="#equation-gen-action" title="Link to this equation">#</a></span>\[S[\{q^I(t)\}] = \int_{t_i}^{t_f} dt L(q^I, {\dot q}^I, t)\]</div>
 <p>The Euler-Lagrange equations are</p>
 <div class="math notranslate nohighlight" id="equation-gen-el">
-<span class="eqno">(18)<a class="headerlink" href="#equation-gen-el" title="Link to this equation">#</a></span>\[\frac{\del L}{\del q^I} - \frac{d}{dt} \frac{\del L}{\del \dot{q}^I} = 0\]</div>
+<span class="eqno">(20)<a class="headerlink" href="#equation-gen-el" title="Link to this equation">#</a></span>\[\frac{\del L}{\del q^I} - \frac{d}{dt} \frac{\del L}{\del \dot{q}^I} = 0\]</div>
 <p>If we define the <em>generalized momentum</em> as</p>
 <div class="math notranslate nohighlight" id="equation-gen-mom">
-<span class="eqno">(19)<a class="headerlink" href="#equation-gen-mom" title="Link to this equation">#</a></span>\[p_I(q^I, \dot{q}^I) = \frac{\del L}{\del\dot{q}^I}\]</div>
+<span class="eqno">(21)<a class="headerlink" href="#equation-gen-mom" title="Link to this equation">#</a></span>\[p_I(q^I, \dot{q}^I) = \frac{\del L}{\del\dot{q}^I}\]</div>
 <p>and the <em>generalized force</em> as</p>
 <div class="math notranslate nohighlight" id="equation-gen-force">
-<span class="eqno">(20)<a class="headerlink" href="#equation-gen-force" title="Link to this equation">#</a></span>\[{\cal F}_I(q^I, \dot{q}^I) = \frac{\del L}{\del q^I}\]</div>
+<span class="eqno">(22)<a class="headerlink" href="#equation-gen-force" title="Link to this equation">#</a></span>\[{\cal F}_I(q^I, \dot{q}^I) = \frac{\del L}{\del q^I}\]</div>
 <p>then the Euler-Lagrange equations can be written as</p>
 <div class="math notranslate nohighlight" id="equation-gen-second">
-<span class="eqno">(21)<a class="headerlink" href="#equation-gen-second" title="Link to this equation">#</a></span>\[\frac{d}{dt} p_I = {\cal F}_I\]</div>
+<span class="eqno">(23)<a class="headerlink" href="#equation-gen-second" title="Link to this equation">#</a></span>\[\frac{d}{dt} p_I = {\cal F}_I\]</div>
 <p>which clearly takes the form of Newton’s second law.</p>
 <p>All of this discussion has been fairly abstract, so let us study a few examples.</p>
 <section id="particle-in-a-magnetic-field">
 <h3>Particle in a magnetic field<a class="headerlink" href="#particle-in-a-magnetic-field" title="Link to this heading">#</a></h3>
 <p>Alternatively we consider the case where we have standard coordinates but a nontrivial generalized momentum. That is, consider a particle with mass <span class="math notranslate nohighlight">\(m\)</span> and charge <span class="math notranslate nohighlight">\(e\)</span> in a static magnetic field <span class="math notranslate nohighlight">\(\vec{B}\)</span>. Maxwell’s equations (assuming no magnetic monoploes; we haven’t observed them at any rate) imply that <span class="math notranslate nohighlight">\(\vec{\nabla} \cdot \vec{B} = \)</span>, which means that in Euclidean space without any holes we can use the Poincar’e theorem to write</p>
 <div class="math notranslate nohighlight" id="equation-vector-potential">
-<span class="eqno">(22)<a class="headerlink" href="#equation-vector-potential" title="Link to this equation">#</a></span>\[\vec{B} = \vec{\nabla} \times \vec {A}\]</div>
+<span class="eqno">(24)<a class="headerlink" href="#equation-vector-potential" title="Link to this equation">#</a></span>\[\vec{B} = \vec{\nabla} \times \vec {A}\]</div>
 <p>for some <span class="math notranslate nohighlight">\(\vec{A}\)</span>. I claim the correct Lagrangian for a particle in this field is:</p>
 <div class="math notranslate nohighlight" id="equation-charged-particle-b">
-<span class="eqno">(23)<a class="headerlink" href="#equation-charged-particle-b" title="Link to this equation">#</a></span>\[L = \half m \dot{\vec{x}}^2 + \frac{e}{c} \dot{\vec{x}} \cdot \vec{A}(x)\]</div>
+<span class="eqno">(25)<a class="headerlink" href="#equation-charged-particle-b" title="Link to this equation">#</a></span>\[L = \half m \dot{\vec{x}}^2 + \frac{e}{c} \dot{\vec{x}} \cdot \vec{A}(x)\]</div>
 <p>The generalized momentum is</p>
 <div class="math notranslate nohighlight" id="equation-b-gen-mom">
-<span class="eqno">(24)<a class="headerlink" href="#equation-b-gen-mom" title="Link to this equation">#</a></span>\[p_i = \frac{\del L}{\del \dot{x}^i} = m \dot{x}^i + \frac{e}{c} A^i\]</div>
+<span class="eqno">(26)<a class="headerlink" href="#equation-b-gen-mom" title="Link to this equation">#</a></span>\[p_i = \frac{\del L}{\del \dot{x}^i} = m \dot{x}^i + \frac{e}{c} A^i\]</div>
 <p>and the generalized force is</p>
 <div class="math notranslate nohighlight" id="equation-b-gen-force">
-<span class="eqno">(25)<a class="headerlink" href="#equation-b-gen-force" title="Link to this equation">#</a></span>\[{\cal F}^i = \frac{\del L}{\del x^i} = \frac{e}{c} \dot{x}^j \del_i A^j\]</div>
+<span class="eqno">(27)<a class="headerlink" href="#equation-b-gen-force" title="Link to this equation">#</a></span>\[{\cal F}^i = \frac{\del L}{\del x^i} = \frac{e}{c} \dot{x}^j \del_i A^j\]</div>
 <p>The Euler-Lagrange equations become</p>
 <div class="math notranslate nohighlight" id="equation-b-el">
-<span class="eqno">(26)<a class="headerlink" href="#equation-b-el" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(28)<a class="headerlink" href="#equation-b-el" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 	\frac{d p^i}{dt} &amp; = m \ddot{x}^i + \frac{e}{c} \dot{x}^j \del_j A^i\\
 	&amp; = {\cal F} \\
 	&amp; = \frac{e}{c} \dot{x}^j \del_i A^j
 \end{align}\end{split}\]</div>
 <p>so that</p>
 <div class="math notranslate nohighlight" id="equation-b-eom">
-<span class="eqno">(27)<a class="headerlink" href="#equation-b-eom" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(29)<a class="headerlink" href="#equation-b-eom" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 m \ddot x^i &amp; = \frac{e}{c} {\dot x}^j (\del_i A^j - \del_j A^i)\\
 &amp; = \frac{e}{c} {\dot x}^j \epsilon_{ijk} (\vec{\nabla}\times {\vec A})^k\\
 &amp; = \frac{e}{c} {\dot x}^j \epsilon_{ijk} B^k \\
@@ -528,7 +539,7 @@ m \ddot x^i &amp; = \frac{e}{c} {\dot x}^j (\del_i A^j - \del_j A^i)\\
 <p>which is the Lorentz force law.</p>
 <p>Note that the final equations of motion depend on the magnetic field <span class="math notranslate nohighlight">\(B\)</span> and not on the vector potential <span class="math notranslate nohighlight">\(A\)</span>. People often assume that the physical fields are the electromagnetic fields, and <span class="math notranslate nohighlight">\(A\)</span> is not unquely determined since the “gauge transformation”</p>
 <div class="math notranslate nohighlight" id="equation-gauge-trans">
-<span class="eqno">(28)<a class="headerlink" href="#equation-gauge-trans" title="Link to this equation">#</a></span>\[\vec{A} \to \vec{A} + \vec{\nabla} \Lambda\]</div>
+<span class="eqno">(30)<a class="headerlink" href="#equation-gauge-trans" title="Link to this equation">#</a></span>\[\vec{A} \to \vec{A} + \vec{\nabla} \Lambda\]</div>
 <p>does not change <span class="math notranslate nohighlight">\(E\)</span> or <span class="math notranslate nohighlight">\(B\)</span>. The generalized momentum <em>does</em> depend explicitly on <span class="math notranslate nohighlight">\({\cal A}\)</span>, and so in this case is not invariant under gauge transformations.</p>
 </section>
 </section>
@@ -539,46 +550,46 @@ m \ddot x^i &amp; = \frac{e}{c} {\dot x}^j (\del_i A^j - \del_j A^i)\\
 <p>Consider a change of coordinates from <span class="math notranslate nohighlight">\(x^a_k\)</span> to <span class="math notranslate nohighlight">\(q^{I = 1,\ldots Md}\)</span>.
 In this case we can write</p>
 <div class="math notranslate nohighlight" id="equation-change-coords-lag">
-<span class="eqno">(29)<a class="headerlink" href="#equation-change-coords-lag" title="Link to this equation">#</a></span>\[ L(x, \dot{x}) = L(x(q), \dot{x}(q,\dot q) = \tilde{L}(q, \dot{q})\]</div>
+<span class="eqno">(31)<a class="headerlink" href="#equation-change-coords-lag" title="Link to this equation">#</a></span>\[ L(x, \dot{x}) = L(x(q), \dot{x}(q,\dot q) = \tilde{L}(q, \dot{q})\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight" id="equation-gc-chain">
-<span class="eqno">(30)<a class="headerlink" href="#equation-gc-chain" title="Link to this equation">#</a></span>\[\dot{x}^a_k = \dot{q}^I \frac{\del x^a_k}{\del q^I}\]</div>
+<span class="eqno">(32)<a class="headerlink" href="#equation-gc-chain" title="Link to this equation">#</a></span>\[\dot{x}^a_k = \dot{q}^I \frac{\del x^a_k}{\del q^I}\]</div>
 <p>We claim that the Euler-Lagrange equations for <span class="math notranslate nohighlight">\(x^a_k\)</span> derived from <span class="math notranslate nohighlight">\(L\)</span> and the Euler-Lagrange equations for <span class="math notranslate nohighlight">\(q^I\)</span> derived from <span class="math notranslate nohighlight">\({\tilde L}\)</span> are in fact equivalent. That is,</p>
 <div class="math notranslate nohighlight">
 \[\frac{\del L}{\del x^a_k} - \frac{d}{dt} \frac{\del L}{\del\dot{x}^a_k} = 0 \Leftrightarrow \frac{\del {\tilde L}}{\del q^I} - \frac{d}{dt} \frac{\del {\tilde L}}{\del \dot{q}^I} = 0\]</div>
 <p>The point is that you can perform your coordinate transformations at the level of the Lagrangian, and <em>then</em> compute the Euler-Lagrange equations in the new coordinates, which is often easier than computing the change of variables at the level of the equations of motion.</p>
-<p>To start with, the partial derivatives in <a class="reference internal" href="#equation-gc-chain">(30)</a></p>
+<p>To start with, the partial derivatives in <a class="reference internal" href="#equation-gc-chain">(32)</a></p>
 <div class="math notranslate nohighlight" id="equation-jacobian-mat">
-<span class="eqno">(31)<a class="headerlink" href="#equation-jacobian-mat" title="Link to this equation">#</a></span>\[{\cal M}(ak\ ; I) = \frac{\del x^a_k}{\del q^I}\]</div>
+<span class="eqno">(33)<a class="headerlink" href="#equation-jacobian-mat" title="Link to this equation">#</a></span>\[{\cal M}(ak\ ; I) = \frac{\del x^a_k}{\del q^I}\]</div>
 <p>can be thought of as an <span class="math notranslate nohighlight">\(dM \times dM\)</span> matrix at a given value of <span class="math notranslate nohighlight">\(q^I\)</span>; this is the “Jacobian” of the coordinate transformation between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(q\)</span>, and it is an invertible matrix if the coordinate transformation is itself non-singular (is a good coordinate transformation). In particular, we can define the inverse Jacobian as</p>
 <div class="math notranslate nohighlight" id="equation-inverse-jacobian">
-<span class="eqno">(32)<a class="headerlink" href="#equation-inverse-jacobian" title="Link to this equation">#</a></span>\[{\cal M}^{-1}(I\ ; ak)\]</div>
+<span class="eqno">(34)<a class="headerlink" href="#equation-inverse-jacobian" title="Link to this equation">#</a></span>\[{\cal M}^{-1}(I\ ; ak)\]</div>
 <p>By the chain rule,</p>
 <div class="math notranslate nohighlight" id="equation-jac-inv-jac">
-<span class="eqno">(33)<a class="headerlink" href="#equation-jac-inv-jac" title="Link to this equation">#</a></span>\[{\cal M}(I'\; ak) {\cal M}(ak, I) = \frac{\del q^{I'}}{\del x^a_k} \frac{\del x^a_k}{q^I} = \frac{\del q^{I'}}{\del q^I} = \delta^I_{I'}\]</div>
+<span class="eqno">(35)<a class="headerlink" href="#equation-jac-inv-jac" title="Link to this equation">#</a></span>\[{\cal M}(I'\; ak) {\cal M}(ak, I) = \frac{\del q^{I'}}{\del x^a_k} \frac{\del x^a_k}{q^I} = \frac{\del q^{I'}}{\del q^I} = \delta^I_{I'}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\delta^I_{I'}\)</span> is the Kronecker delta symbol (see the Appendix for a definition). We can similarly show that</p>
 <div class="math notranslate nohighlight" id="equation-jac-jac-inv">
-<span class="eqno">(34)<a class="headerlink" href="#equation-jac-jac-inv" title="Link to this equation">#</a></span>\[{\cal M}(ak\; I) {\cal M}^{-1}(I\; a'k') = \delta^a_{a'} \delta^k_{k'}\]</div>
+<span class="eqno">(36)<a class="headerlink" href="#equation-jac-jac-inv" title="Link to this equation">#</a></span>\[{\cal M}(ak\; I) {\cal M}^{-1}(I\; a'k') = \delta^a_{a'} \delta^k_{k'}\]</div>
 <p>To see why invertability is important let us think of the canse of <span class="math notranslate nohighlight">\(dM = 1\)</span>. Then the matrix is just <span class="math notranslate nohighlight">\({\cal M} = \frac{\del x}{\del q}\)</span>. Consider a particular point <span class="math notranslate nohighlight">\(q_0\)</span> about which we wish to study the coordinate transformation. the value of <span class="math notranslate nohighlight">\(x\)</span> is <span class="math notranslate nohighlight">\(x_0 = x(q_0)\)</span>. At an infinitesimal distance <span class="math notranslate nohighlight">\(\delta q\)</span> away from <span class="math notranslate nohighlight">\(q_0\)</span>, we have</p>
 <div class="math notranslate nohighlight" id="equation-oned-transf">
-<span class="eqno">(35)<a class="headerlink" href="#equation-oned-transf" title="Link to this equation">#</a></span>\[x(q_0 + \delta q) = x_0 + \frac{\del x}{\del q} \delta q + {\cal O}(\delta q^2)\]</div>
+<span class="eqno">(37)<a class="headerlink" href="#equation-oned-transf" title="Link to this equation">#</a></span>\[x(q_0 + \delta q) = x_0 + \frac{\del x}{\del q} \delta q + {\cal O}(\delta q^2)\]</div>
 <p>Now the inverse of <span class="math notranslate nohighlight">\(\frac{\del x}{\del q}\)</span> is just <span class="math notranslate nohighlight">\(\left(\frac{\del x}{\del q}\right)^{-1}\)</span>, so <span class="math notranslate nohighlight">\({\cal M}\)</span> fails to be invertible if it is zero. If it is zero at <span class="math notranslate nohighlight">\(q_0\)</span> the <span class="math notranslate nohighlight">\(x = x_0 + {\cal O}(\delta q^2)\)</span>. In ither words, at leading order in <span class="math notranslate nohighlight">\(\delta q\)</span>,<span class="math notranslate nohighlight">\(x\)</span> does not change and at this order the coordinate change from <span class="math notranslate nohighlight">\(q \to x\)</span> is a many-to-one map. For the rest of this section we will assume the coordinate transformation is invertible but there are many cases where it fails to be at least at a point: a good example is the transformation from Catrtesian to polar coordinates in <span class="math notranslate nohighlight">\(d = 2\)</span>, for which the origin is a singular point.</p>
 <p>Now,</p>
 <div class="math notranslate nohighlight" id="equation-gen-mom-transf">
-<span class="eqno">(36)<a class="headerlink" href="#equation-gen-mom-transf" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(38)<a class="headerlink" href="#equation-gen-mom-transf" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 p_I &amp; = \frac{\partial {\tilde L}}{\partial \dot{q}^I}\\
 &amp; = \frac{\del}{\del \dot{q}^I} L(x(q), {\cal M}(ak; I) \dot{q}^I)\\
 &amp; = {\cal M}(ak\ ; I) p^a_k
 \end{align}\end{split}\]</div>
 <p>while</p>
 <div class="math notranslate nohighlight" id="equation-gen-force-transf">
-<span class="eqno">(37)<a class="headerlink" href="#equation-gen-force-transf" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(39)<a class="headerlink" href="#equation-gen-force-transf" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 {\cal F}_I &amp; = \frac{\del}{\del q^I} L(x(q), {\cal M}(ak\ ; I) \dot{q}^I) \\
 &amp; = {\cal M}(ak\ ; I) {\cal F}^a_k + \frac{\del {\cal M}(ak\ ; J)}{\del q^I} \dot{q}^J p^a_k 
 \end{align}\end{split}\]</div>
 <p>The Euler-Lagrange equations we derive from <span class="math notranslate nohighlight">\({\tilde L}\)</span> for <span class="math notranslate nohighlight">\(q^I\)</span> are:</p>
 <div class="math notranslate nohighlight" id="equation-transf-el">
-<span class="eqno">(38)<a class="headerlink" href="#equation-transf-el" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(40)<a class="headerlink" href="#equation-transf-el" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \frac{d}{dt} p_I - {\cal F}_I &amp; = \frac{d}{dt} \left(\frac{\del x^a_k}{\del q^I} p_a^k\right) - \frac{\del x^a_k}{\del q^I} {\cal F}^a_k - \frac{\del^2 x^a_k}{\del q^I \del q^J} \dot{q}^J p^a_k \\
 &amp; = \frac{\del x^a_k}{\del q^I}\left({\dot p}^a_k - {\cal F}^a_k\right)
 + \frac{\del^2 x^a_k}{\del q^J \del q^I} \dot{q}^J p_a^k -  \frac{\del^2 x^a_k}{\del q^I \del q^J} \dot{q}^J p^a_k \\
@@ -590,16 +601,16 @@ p_I &amp; = \frac{\partial {\tilde L}}{\partial \dot{q}^I}\\
 <h3>Example: changing to polar coordinates<a class="headerlink" href="#example-changing-to-polar-coordinates" title="Link to this heading">#</a></h3>
 <p>Consider a single particle in two dimensions with the Lagrangian</p>
 <div class="math notranslate nohighlight" id="equation-twod-lagr">
-<span class="eqno">(39)<a class="headerlink" href="#equation-twod-lagr" title="Link to this equation">#</a></span>\[L = \half m (\dot{x}^2 + \dot{y}^2) - V(r = \sqrt{x^2 + y^2})\]</div>
+<span class="eqno">(41)<a class="headerlink" href="#equation-twod-lagr" title="Link to this equation">#</a></span>\[L = \half m (\dot{x}^2 + \dot{y}^2) - V(r = \sqrt{x^2 + y^2})\]</div>
 <p>The Euler-Lagrange equations are:</p>
 <div class="math notranslate nohighlight" id="equation-twod-el">
-<span class="eqno">(40)<a class="headerlink" href="#equation-twod-el" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(42)<a class="headerlink" href="#equation-twod-el" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 m \ddot{x} &amp; = - \del_x V = - \frac{x}{r} V'(r)\\
 m \ddot{y} &amp; = = \del_y V = - \frac{y}{r} V'(r)\\
 \end{align}\end{split}\]</div>
 <p>We can consider instead polar coordinates <span class="math notranslate nohighlight">\((r,\phi)\)</span>, defined by:</p>
 <div class="math notranslate nohighlight" id="equation-polar-coords">
-<span class="eqno">(41)<a class="headerlink" href="#equation-polar-coords" title="Link to this equation">#</a></span>\[x = r \cos\phi\ , \ \ y = r \sin \phi\]</div>
+<span class="eqno">(43)<a class="headerlink" href="#equation-polar-coords" title="Link to this equation">#</a></span>\[x = r \cos\phi\ , \ \ y = r \sin \phi\]</div>
 <p>To change to equations in polar coordinates, we find:</p>
 <div class="math notranslate nohighlight">
 \[\ddot{x} = \ddot{r}\cos\phi - 2 \dot{r} \dot{\phi} \sin\phi - r \ddot\phi\cos\phi\]</div>

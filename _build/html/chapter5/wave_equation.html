@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -418,7 +429,7 @@ document.write(`
 \end{align}\end{split}\]</div>
 <p>To find inner products, recall that <span class="math notranslate nohighlight">\(\brket{\chi}{\psi} = \int d^d x \chi^*(x) \psi(x)\)</span>. Thus</p>
 <div class="math notranslate nohighlight" id="equation-op-ev">
-<span class="eqno">(266)<a class="headerlink" href="#equation-op-ev" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(268)<a class="headerlink" href="#equation-op-ev" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 &amp; \bra{\chi}{\hat x}^i \ket{\psi} = \brket{\chi}{x^i\psi} = \int d^d x \chi^*(x) x^i \psi(x)\\
 &amp; \bra{\chi}{|hat p}^i \ket{\psi} = \int d^d x \chi^*(x) \frac{\hbar}{i} \frac{\del}{\del x^i} \psi(x)
 \end{align}\end{split}\]</div>
@@ -452,8 +463,8 @@ document.write(`
 \[\int d^d x |\psi({\vec x})|^2 &lt; \infty\]</div>
 <p>In general we expect that we can write the dynamics of the states in terms of the function <span class="math notranslate nohighlight">\(\psi\)</span>. First, since any state at any time can be represented by a complex function <span class="math notranslate nohighlight">\(\psi\)</span>, we can write it as <span class="math notranslate nohighlight">\(\ket{\psi(x,t)}\)</span> .For the Hamiltonians such as</p>
 <div class="math notranslate nohighlight" id="equation-3d-ham">
-<span class="eqno">(267)<a class="headerlink" href="#equation-3d-ham" title="Link to this equation">#</a></span>\[H = \frac{{\hat{\vec p}}^2}{2m} + V({\vec x})\]</div>
-<p>or <a class="reference internal" href="Hamiltonians.html#equation-mag-field-ham">(263)</a>, the quantum dynamics can be easily written as local partial differential equations for <span class="math notranslate nohighlight">\(\psi(x,t)\)</span>. Using the actions</p>
+<span class="eqno">(269)<a class="headerlink" href="#equation-3d-ham" title="Link to this equation">#</a></span>\[H = \frac{{\hat{\vec p}}^2}{2m} + V({\vec x})\]</div>
+<p>or <a class="reference internal" href="Hamiltonians.html#equation-mag-field-ham">(265)</a>, the quantum dynamics can be easily written as local partial differential equations for <span class="math notranslate nohighlight">\(\psi(x,t)\)</span>. Using the actions</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 {\hat p}_i \ket{\psi({\vec x},t)} &amp; = \ket{\frac{\hbar}{i} \frac{\del}{\del x^i} \psi(x,t)}\\
@@ -465,7 +476,7 @@ document.write(`
 \[\ket{\psi(t+\eps)} - \ket{\psi(t)} = \ket{\psi(t+\eps) - \psi(t)}\]</div>
 <p>The upshot of this is that the time-dependent Schrodinger equation can be written as</p>
 <div class="math notranslate nohighlight" id="equation-3d-wave-eqn">
-<span class="eqno">(268)<a class="headerlink" href="#equation-3d-wave-eqn" title="Link to this equation">#</a></span>\[- \frac{\hbar^2}{2m} {\vec\nabla}^2 \psi({\vec x}, t) + V({\vec x}) \psi({\vec x},t) = i\hbar \frac{\del}{\del t} \psi({\vec x}, t)\]</div>
+<span class="eqno">(270)<a class="headerlink" href="#equation-3d-wave-eqn" title="Link to this equation">#</a></span>\[- \frac{\hbar^2}{2m} {\vec\nabla}^2 \psi({\vec x}, t) + V({\vec x}) \psi({\vec x},t) = i\hbar \frac{\del}{\del t} \psi({\vec x}, t)\]</div>
 <p>Relatedly, the time-<em>independent</em> Schrodinger equation for energy eigenstates becomes</p>
 <div class="math notranslate nohighlight">
 \[- \frac{\hbar^2}{2m} {\vec\nabla}^2 \psi({\vec x}, t) + V({\vec x}) \psi({\vec x},t) = E \psi({\vec x}, t)\]</div>

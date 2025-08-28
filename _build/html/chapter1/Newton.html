@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -426,20 +437,27 @@ document.write(`
 &amp; = \dot{\vec x}_k(t_i) + \Delta t {\vec F}_k(t_i) + \ldots
 \end{align}\end{split}\]</div>
 <p>where we have used the Taylor expansion in the small time scale <span class="math notranslate nohighlight">\(\Delta t\)</span>, and dropped all terms of order <span class="math notranslate nohighlight">\({\cal O}(\Delta t^2)\)</span>. So with the initial conditions and the force given at initial time <span class="math notranslate nohighlight">\(t_i\)</span>, we then know the positions and velocities at <span class="math notranslate nohighlight">\(t_i + \Delta t\)</span>. The same argument gives us the positions and velocities at time <span class="math notranslate nohighlight">\(t_i + 2 \Delta t\)</span> and so forth. Of course we still have the higher-order terms, but eventually we can take the limit <span class="math notranslate nohighlight">\(\Delta t \to 0\)</span> and we get a contionuous trajectory determined by the initial positions and velocities.</p>
-<p>Note that this interative process is essentially how we would solve the problems on a computer, though we might find a more sophisticated representation of the time derivative to control the <span class="math notranslate nohighlight">\({\cal O}(\Delta t^2)\)</span> errors.</p>
-<p>The form given above is not the most general form of Newton’s laws. In general, we write them as</p>
+<p>Note that this interactive process is essentially how we would solve the problems on a computer, although we might find a more sophisticated representation of the time derivative to control the <span class="math notranslate nohighlight">\({\cal O}(\Delta t^2)\)</span> (and higher order) errors.</p>
+<p>A simple example is a ``particle’’ (a ball, a spherical cow) moving in one horizontal and one vertical direction, under the influence of a constant gravitational field, ignoring friction. This is a classic first-year undergraduate mechanics problem, but just to get back into the groove:</p>
+<div class="math notranslate nohighlight" id="equation-constant-grav">
+<span class="eqno">(3)<a class="headerlink" href="#equation-constant-grav" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+m \ddot{x} &amp; = 0\\
+m \ddot{z} &amp; = - m g
+\end{align}\end{split}\]</div>
+<p>The general solution to this equation is:</p>
+<div class="math notranslate nohighlight" id="equation-constant-grav-solution">
+<span class="eqno">(4)<a class="headerlink" href="#equation-constant-grav-solution" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+x(t) &amp; = x_0 + V_x t\\
+z(t) &amp; = z_0 + V_z t - \half g t^2
+\end{align}\end{split}\]</div>
+<p>As you can see, you need to specify <span class="math notranslate nohighlight">\(x_0, z_0\)</span> (initial positions) and <span class="math notranslate nohighlight">\(V_{x,z}\)</span> (initial velocities), to get a unique solution. Lets say we throw it from the ground <span class="math notranslate nohighlight">\(x_0 = z_0 = 0\)</span> with <span class="math notranslate nohighlight">\(V_{x,z} &gt; 0\)</span>. It moves with constant horizotnal speed. As <span class="math notranslate nohighlight">\(t \to 0\)</span>, the initial velocity dominates the motion. As <span class="math notranslate nohighlight">\(t\)</span> increases, the gravitational force begins to dominate since <span class="math notranslate nohighlight">\(t^2\)</span> grows faster than <span class="math notranslate nohighlight">\(t\)</span>; <span class="math notranslate nohighlight">\(z\)</span> begins to decrease again until it reaches <span class="math notranslate nohighlight">\(z = 0\)</span>. If it hits the ground these equations break down! We must specify some law for the interaction of the particle/ball/cow with the ground – for the ball, this might be some elastic response causing the ball to bounce up again – to determine what it will do next. (You should always know where, when, why, and how your equations break down!)</p>
+<p>The form given in Equation <a class="reference internal" href="#equation-newton-second">(1)</a> is not the most general form of Newton’s laws. In general, we write them as</p>
 <div class="math notranslate nohighlight" id="equation-second-general">
-<span class="eqno">(3)<a class="headerlink" href="#equation-second-general" title="Link to this equation">#</a></span>\[{\vec F}_k(t) = \frac{d\vec p_k}{dt}\]</div>
+<span class="eqno">(5)<a class="headerlink" href="#equation-second-general" title="Link to this equation">#</a></span>\[{\vec F}_k(t) = \frac{d\vec p_k}{dt}\]</div>
 <p>where <span class="math notranslate nohighlight">\({\vec p}(t) = {\vec p}({\vec x}(t), \dot{\vec x}(t))\)</span> is the <em>momentum</em>. In the classic version of Newton’s laws that most people are familiar with, <span class="math notranslate nohighlight">\({\vec p}_k = m_k {\vec x}_k\)</span>. But there are many cases for which the momentum that appears is a more complicated function of positions and velocities. One is the case of a particle in a magnetic field, which we will discuss later. Another is the case of particle mechanics in special relativity. In this case, the spatial momentum is:</p>
 <div class="math notranslate nohighlight" id="equation-sr-momentum">
-<span class="eqno">(4)<a class="headerlink" href="#equation-sr-momentum" title="Link to this equation">#</a></span>\[{\vec p}_k = \frac{m_k \dot{\vec x}_k}{\sqrt{1 - \dot{\vec x}_k^2/c^2}}\]</div>
+<span class="eqno">(6)<a class="headerlink" href="#equation-sr-momentum" title="Link to this equation">#</a></span>\[{\vec p}_k = \frac{m_k \dot{\vec x}_k}{\sqrt{1 - \dot{\vec x}_k^2/c^2}}\]</div>
 <p>where <span class="math notranslate nohighlight">\(c = 3\times 10^8\ m/s\)</span> is the speed of light. (The story looks more like the classic version if we work with 4-vectors and <em>proper</em> time, but practically you solve for the proper time in terms of time and get the dynamics shown.) This more general form of <span class="math notranslate nohighlight">\({\vec p}\)</span> is sometimes called the <em>generalized momentum</em>; it arises naturally in Lagrangian mechanics.</p>
-<p>Another feature of Lagrangian mechanics is that it allows us to compute trajectories of systems from the initial and final positions <span class="math notranslate nohighlight">\({\vec x}_k(t_i), {\vec x}_k(t_f)\)</span>. That you should be able to do this seems reasonable. Given initial positions and velocities you can deduce the final positions, the equations are deterministic, and the amount of data you specify each way is the same. (Actually it is more complicated than that because there can be multiple trajectories with different initial velocities and the same final positions: consider two particles moving in opposite directions on a circle, and bumping into each other later on).</p>
-<p><img alt="Specifying trajectories" src="../_images/Trajectories.png" /></p>
-<ul class="simple">
-<li><p>(a) In many cases, trajectories can be specified by initial positions and velocities, or by initial and final positions.</p></li>
-<li><p>(b) In some cases, the final positions do not specify the trajectories completely.</p></li>
-</ul>
 </section>
 <section id="constrained-systems">
 <h2>Constrained systems<a class="headerlink" href="#constrained-systems" title="Link to this heading">#</a></h2>
@@ -449,7 +467,7 @@ document.write(`
 <p>The point of this exercise is that it is laborious, and going over it should make you eager to find a better way to find the proper equations of motion.</p>
 <p>Now locally, at a point <span class="math notranslate nohighlight">\((x_0, x(z_0))\)</span>, the wire is curved. For infinitesimal motion, it can be approximated by a circle tangent to the curve, such that the curvature of the circle is equal to the curvature of the wire. This is sometimes called the “osculating circle”. If the circle is defined by the curve <span class="math notranslate nohighlight">\(z_R(x)\)</span>, then near a specific <span class="math notranslate nohighlight">\(x(t)\)</span>, we can expand the curves in a Taylor series in <span class="math notranslate nohighlight">\((x - x(t))\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-expand-curves">
-<span class="eqno">(5)<a class="headerlink" href="#equation-expand-curves" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(7)<a class="headerlink" href="#equation-expand-curves" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 z(x) &amp; = z(x(t)) + (x - x(t)) z'(x(t)) + \half (x - x(t))^2 z''(x(t)) \\
 &amp; \qquad \qquad+ \frac{1}{6}(x - x(t))^3 z'''(x(t)) + \ldots \\
 z_R(x) &amp; = z_R(x(t)) + (x - x(t)) z'_R(x(t)) + \half (x - x(t))^2 z''_R(x(t)) \\
@@ -459,7 +477,7 @@ z_R(x) &amp; = z_R(x(t)) + (x - x(t)) z'_R(x(t)) + \half (x - x(t))^2 z''_R(x(t)
 <p>To solve this we demand that</p>
 <ol class="arabic simple">
 <li><p>The direction <span class="math notranslate nohighlight">\({\hat n}\)</span> from <span class="math notranslate nohighlight">\((x(t), z(x(t))\)</span> along the diameter of the circle is identical to the direction normal to the curve, and</p></li>
-<li><p>The constant, linear and quadratic terms in the two equations in <a class="reference internal" href="#equation-expand-curves">(5)</a> should agree; that is,</p></li>
+<li><p>The constant, linear and quadratic terms in the two equations in <a class="reference internal" href="#equation-expand-curves">(7)</a> should agree; that is,</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[z(x(t)) = z_R(x(t))\ ; \ \ z'(x(t)) = z_R'(x(t))\ ; z''(x(t)) = z_R''(x(t))\]</div>

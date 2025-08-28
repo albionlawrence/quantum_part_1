@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -422,12 +433,12 @@ document.write(`
 <h2>Incompatible measurements and the uncertainty principle<a class="headerlink" href="#incompatible-measurements-and-the-uncertainty-principle" title="Link to this heading">#</a></h2>
 <p>Recall that we defined the variance of an observable in a given state by:</p>
 <div class="math notranslate nohighlight" id="equation-variance">
-<span class="eqno">(258)<a class="headerlink" href="#equation-variance" title="Link to this equation">#</a></span>\[(\Delta A)^2 = \bra{\psi} (A - \vev{A})^2\ket{\psi}\]</div>
+<span class="eqno">(260)<a class="headerlink" href="#equation-variance" title="Link to this equation">#</a></span>\[(\Delta A)^2 = \bra{\psi} (A - \vev{A})^2\ket{\psi}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\vev{A} = \bra{\psi}A\ket{\psi}\)</span> is the expectation value of the observable in taht state. <span class="math notranslate nohighlight">\(\vev{A}\)</span> represents the average of the outcomes of measuring <span class="math notranslate nohighlight">\(A\)</span> in a given state (where we prepare this idential state and measure <span class="math notranslate nohighlight">\(A\)</span> in it many times).  <span class="math notranslate nohighlight">\((\Delta A)^2\)</span> is an estimate of the spread or <em>variancce</em> in measurements of <span class="math notranslate nohighlight">\(A\)</span>; a cartoon of this is shown here:</p>
 <p><img alt="Illustration of variance" src="../_images/Variance.pdf" /></p>
 <p>When is the variance zero? For a Hermitian operator t requires that</p>
 <div class="math notranslate nohighlight" id="equation-variance-as-norm">
-<span class="eqno">(259)<a class="headerlink" href="#equation-variance-as-norm" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(261)<a class="headerlink" href="#equation-variance-as-norm" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \bra{\psi} (A - \vev{A})^2\ket{\psi} &amp; = \bra{\psi} (A - \vev{A})^{\dagger}(A - \vev{A})\ket{\psi} \\
 &amp; = ||(A - \vev{A})\ket{\psi}||^2
 \end{align}\end{split}\]</div>
@@ -436,10 +447,10 @@ document.write(`
 <p>Let us consider the general case <span class="math notranslate nohighlight">\([A,B] = i C\)</span> for <span class="math notranslate nohighlight">\(A,B,C\)</span> Hermitian operators.
 The <em>Uncertainty Principle</em> in this general case is state in the following theorem:</p>
 <div class="math notranslate nohighlight" id="equation-gen-uncertainty">
-<span class="eqno">(260)<a class="headerlink" href="#equation-gen-uncertainty" title="Link to this equation">#</a></span>\[\Delta A \Delta B \geq \half \vev{C}\]</div>
+<span class="eqno">(262)<a class="headerlink" href="#equation-gen-uncertainty" title="Link to this equation">#</a></span>\[\Delta A \Delta B \geq \half \vev{C}\]</div>
 <p><em>Proof</em>. If the system is in state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>, we can define</p>
 <div class="math notranslate nohighlight" id="equation-shifted-states">
-<span class="eqno">(261)<a class="headerlink" href="#equation-shifted-states" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(263)<a class="headerlink" href="#equation-shifted-states" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \ket{f_A} &amp; = (A - \vev{A})\ket{\psi}\\
 \ket{f_B} &amp; = (B - \vev{B})\ket{\psi}
 \end{align}\end{split}\]</div>

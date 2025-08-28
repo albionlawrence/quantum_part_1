@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -424,7 +435,7 @@ document.write(`
 \[\ket{j_1, j_1}_1\ket{j_2, j_2 - 1}_2 \ , {\rm and}\ \ket{j_1, j_1 - 1}_1\ket{j_2, j_2 - 1}\]</div>
 <p>In fact, from this starting pojnt we can work out recursively how <span class="math notranslate nohighlight">\(D_{j_1}\otimes D_{j_2}\)</span> decomposes. Since the maximum value of <span class="math notranslate nohighlight">\(m_{tot}\)</span> is <span class="math notranslate nohighlight">\(j_1 + j_2\)</span> and there is only one such state, <span class="math notranslate nohighlight">\(D_{j_1}\otimes D_{j_2}\)</span> contains exactly one subspace transforming as the irrep <span class="math notranslate nohighlight">\(D_{j_1 + j_2}\)</span>. By acting wit <span class="math notranslate nohighlight">\(J_{tot,-}\)</span> on this state we can find the state with <span class="math notranslate nohighlight">\(j = j_1 + j_2\)</span>, <span class="math notranslate nohighlight">\(m = j_1 + j_2 - 1\)</span>. The space of states with this value of <span class="math notranslate nohighlight">\(m\)</span> is two-dimensional. The state in this space orthogonal to the one with <span class="math notranslate nohighlight">\(j = j_1 + j_2\)</span> must therefore have <span class="math notranslate nohighlight">\(j = j_1 + j_2 - 1\)</span> and there is only one subspace of  <span class="math notranslate nohighlight">\(D_{j_1}\otimes D_{j_2}\)</span> with this value of <span class="math notranslate nohighlight">\(j\)</span>. We can cotinue this argument, stopping when we have found all irreps of the total angular momentum consistent with the dimensionality of  <span class="math notranslate nohighlight">\(D_{j_1}\otimes D_{j_2}\)</span>. We find that</p>
 <div class="math notranslate nohighlight" id="equation-addition-am-rule">
-<span class="eqno">(317)<a class="headerlink" href="#equation-addition-am-rule" title="Link to this equation">#</a></span>\[D_{j_1}\otimes D_{j_2} = \oplus_{j = |j_1 -j_2|}^{j = j_1 + j_2} D_j\]</div>
+<span class="eqno">(319)<a class="headerlink" href="#equation-addition-am-rule" title="Link to this equation">#</a></span>\[D_{j_1}\otimes D_{j_2} = \oplus_{j = |j_1 -j_2|}^{j = j_1 + j_2} D_j\]</div>
 <p>We write the basis of the left hand side as <span class="math notranslate nohighlight">\(\ket{j_1,m_1; j_2 m_2} = \ket{j_1, m_1}_1\ket{j_2,m_2}_2\)</span>, wchih I will call the “product basis”. We write the basis of the right hand side as <span class="math notranslate nohighlight">\(\ket{j,m}\)</span> (for which the minimum and maximum values of <span class="math notranslate nohighlight">\(j\)</span> are understood), which I will call the “total angular momentum basis”. The equation relating the bases is</p>
 <div class="math notranslate nohighlight">
 \[\ket{j,m} = \sum_{m_1,m_2} \ket{j_1,m_1; j_2 m_2}\brket{j_1,m_1; j_2,m_2}{j,m}\]</div>
@@ -460,7 +471,7 @@ J_{tot,-} \ket{j_1 + j_2,j_1 + j_2} &amp; \propto \ket{j_1 + j_2,j_1 + j_2 -1} \
 <section id="two-spin-half-particles">
 <h2>Two spin-<span class="math notranslate nohighlight">\(\half\)</span> particles<a class="headerlink" href="#two-spin-half-particles" title="Link to this heading">#</a></h2>
 <p>This is the simplest non-trivial example. We can also make use of the fact that both spins are described by identical Hilbert spaces.</p>
-<p>The rule <a class="reference internal" href="#equation-addition-am-rule">(317)</a>
+<p>The rule <a class="reference internal" href="#equation-addition-am-rule">(319)</a>
 gives us</p>
 <div class="math notranslate nohighlight">
 \[D_{\half}\otimes D_{\half} = D_1 \oplus D_0\]</div>

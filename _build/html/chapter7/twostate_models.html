@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -424,7 +435,7 @@ document.write(`
 <h3>Warmup: Infinite barrier<a class="headerlink" href="#warmup-infinite-barrier" title="Link to this heading">#</a></h3>
 <p>To get some intuition for this we will start with the <span class="math notranslate nohighlight">\(V_0 \to \infty\)</span> case. In this case, we take <span class="math notranslate nohighlight">\(\cH_{L,R}\)</span> to be the Hilbert space for the particle in the left or right wells, and <span class="math notranslate nohighlight">\(\cH_{\infty} = \cH_{L} \oplus \cH_{R}\)</span>. The particle can sit in either the left well or the right well, and the Hamiltonian is diagonal. The wavefunctions and eigenenergies are:</p>
 <div class="math notranslate nohighlight" id="equation-isw-eigen">
-<span class="eqno">(305)<a class="headerlink" href="#equation-isw-eigen" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(307)<a class="headerlink" href="#equation-isw-eigen" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 \psi^L_n &amp; = \begin{cases} \sqrt{\frac{2}{L}} \sin \left(\frac{\pi n (x + L + \frac{a}{2})}{L}\right) &amp; - L - \frac{a}{2} &lt; x &lt; - \frac{a}{2} \\ 0 &amp; {\rm otherwise} \end{cases} \\
 &amp; E^L_n = \frac{\hbar^2\pi^2 n^2}{2m L^2} \\
 \psi^R_n &amp; = \begin{cases} \sqrt{\frac{2}{L}} \sin \left(\frac{\pi n (x - \frac{a}{2})}{L}\right) &amp; L + \frac{a}{2} &gt; x &gt; \frac{a}{2} \\ 0 &amp; {\rm otherwise} \end{cases} \\
@@ -496,7 +507,7 @@ document.write(`
 <p>Near each local minimum, which we label by <span class="math notranslate nohighlight">\(x_L, x_R\)</span>, we can define <span class="math notranslate nohighlight">\(m \omega_{L,R}^2 = V''(x_{L,r})\)</span>. To first approximation, when the barrier between them is sufficiently high and wide, we expect sufficiently low-energy states to be harmonic oscillator states localized near <span class="math notranslate nohighlight">\(x_L\)</span> with energies <span class="math notranslate nohighlight">\(V(x_L) + \hbar \omega_L(n_L + \half)\)</span>, and low-energy states localized near <span class="math notranslate nohighlight">\(x_R\)</span> with energies <span class="math notranslate nohighlight">\(V(x_R) + \hbar \omega_R(n_R + \half)\)</span>. These get distorted by tunneling through the barrier. We assume that <span class="math notranslate nohighlight">\(V(x_L) - V(x_R) + \half \hbar(\omega_L - \omega_R)\)</span> is small compared to <span class="math notranslate nohighlight">\(\hbar\omega_{L,R}\)</span>, and that the tunneling rate <span class="math notranslate nohighlight">\(\Gamma\)</span> is much smaller than <span class="math notranslate nohighlight">\(\omega_{L,R}\)</span>. Then it is reasonable to expect that the two lowest-energy states are linear combinations of the approximate SHO ground state wavefunctions localized near <span class="math notranslate nohighlight">\(x_{L,R}\)</span>. If <span class="math notranslate nohighlight">\(V(x)\)</span> is almost symmetric, we might expect the ground state and first excited states to the the wavefunctions <span class="math notranslate nohighlight">\(\psi_{gs}, \psi_{es}\)</span> shown in the figure above.</p>
 <p>Since we no longer have any symmetry, the Hamiltonian in the basis of states localized near either <span class="math notranslate nohighlight">\(x_L\)</span> or <span class="math notranslate nohighlight">\(x_R\)</span> is the most general Hermitian matrix:</p>
 <div class="math notranslate nohighlight" id="equation-asdw">
-<span class="eqno">(306)<a class="headerlink" href="#equation-asdw" title="Link to this equation">#</a></span>\[\begin{split}H = \begin{array} E_L \\ - \Delta E e^{i\gamma} &amp; - \Delta E e^{i\gamma} \\ E_R \end{array}\end{split}\]</div>
+<span class="eqno">(308)<a class="headerlink" href="#equation-asdw" title="Link to this equation">#</a></span>\[\begin{split}H = \begin{array} E_L \\ - \Delta E e^{i\gamma} &amp; - \Delta E e^{i\gamma} \\ E_R \end{array}\end{split}\]</div>
 <p>With some work you can show that with a suitable phase change in the basis vector for the left-localized state</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{pmatrix} 1 \\ 0 \end{pmatrix} \Rightarrow e^{i \gamma} \begin{pmatrix} 1 \\ 0 \end{pmatrix} \end{split}\]</div>

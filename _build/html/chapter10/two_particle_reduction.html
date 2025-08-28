@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -438,7 +449,7 @@ document.write(`
 \end{align}\end{split}\]</div>
 <p>We can then ask, what are the conjugate momenta in terms of <span class="math notranslate nohighlight">\({\vec p}_{p,e}\)</span>? There are several ways we could do this. In the classical case, we can perform the above transformation at the level of the Lagrangian, for which we find</p>
 <div class="math notranslate nohighlight" id="equation-com-lag">
-<span class="eqno">(318)<a class="headerlink" href="#equation-com-lag" title="Link to this equation">#</a></span>\[L = \half M {\dot{\vec X}}^2 + \half \mu {\dot {\vec x}}^2 + \frac{e^2}{|{\vec x}|}\]</div>
+<span class="eqno">(320)<a class="headerlink" href="#equation-com-lag" title="Link to this equation">#</a></span>\[L = \half M {\dot{\vec X}}^2 + \half \mu {\dot {\vec x}}^2 + \frac{e^2}{|{\vec x}|}\]</div>
 <p>where <span class="math notranslate nohighlight">\(M = m_e + m_p\)</span> is the <em>total mass</em>, and</p>
 <div class="math notranslate nohighlight">
 \[\mu = \frac{m_e m_p}{m_e + m_p}\]</div>
@@ -449,14 +460,14 @@ document.write(`
 {\vec p}_{x} &amp; = \frac{m_p {\vec p}_e - m_e {\vec p}_p}{m_e + m_p}
 \end{align}\end{split}\]</div>
 <p>You can show that <span class="math notranslate nohighlight">\(\{X^i, P_j\} = \delta^i_j\)</span>, <span class="math notranslate nohighlight">\(\{x^i,p_j\} = \delta^i_j\)</span>, <span class="math notranslate nohighlight">\(\{x^i,P_j\} = \{X^i,p_j\} = 0\)</span>, as a consequence of the canonical commutation relations for the positions and momenta of the proton and electron. Alternatively, in the quantum mechanical case, if we represent the momentum operators in terms of gradients, we can derive the same relationship.</p>
-<p>We can then rewrite the Hamiltonian by taking the Legendre transform of Eq. <a class="reference internal" href="#equation-com-lag">(318)</a>, to find:</p>
+<p>We can then rewrite the Hamiltonian by taking the Legendre transform of Eq. <a class="reference internal" href="#equation-com-lag">(320)</a>, to find:</p>
 <div class="math notranslate nohighlight">
 \[H = \frac{{\vec P}^2}{2M} + \frac{{\vec p}^2}{2\mu} - \frac{e^2}{|{\vec x}|}\]</div>
 <p>where we have dropped the subscripts on <span class="math notranslate nohighlight">\(P,p\)</span>.</p>
 </section>
 <section id="separating-out-the-center-of-mass-coordinates">
 <h2>Separating out the center of mass coordinates<a class="headerlink" href="#separating-out-the-center-of-mass-coordinates" title="Link to this heading">#</a></h2>
-<p>Classically, the center of mass coordinate simply travels in a straight line; the Lagrangian <a class="reference internal" href="#equation-com-lag">(318)</a> as the equations of motion for <span class="math notranslate nohighlight">\({\vec X}\)</span>:</p>
+<p>Classically, the center of mass coordinate simply travels in a straight line; the Lagrangian <a class="reference internal" href="#equation-com-lag">(320)</a> as the equations of motion for <span class="math notranslate nohighlight">\({\vec X}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[M\ddot{\vec X} = {\dot {\vec P}} = 0\]</div>
 <p>The center of mass momentum is conserved.</p>

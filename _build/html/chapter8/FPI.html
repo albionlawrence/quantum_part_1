@@ -243,6 +243,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/wkbj.html">The WKBJ method</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/time_dependent_pt.html">Time-Dependent Perturbation Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/interaction_picture.html">Transition amplitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/dyson_series.html">TDPT systematics: the Dyson series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/first_order.html">First-order TDPT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/second_quantization.html">Identical Particles and Second Quantization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/identical_particles.html">Identical Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/em_field.html">Quantization of the electromagnetic field</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
 </ul>
@@ -477,7 +488,7 @@ K(x_2,t_2;x_0,t_0) &amp; = \bra{x_2} U(t_2,t_0) \ket{x_i}\\
 \[\bra{x_k} U(\delta t, 0) \ket{x_{k-1}} \sim \int \frac{d^d p_{k-1}}{(2\pi\hbar)^d} e^{i {\vec p}_{k-1}\cdot({\vec x}_k - {\vec x}_{k-1})/\hbar} \left(1 - \frac{i \delta t}{\hbar}\left(\frac{{\vec p}_{k-1}^2}{2m} + V({\vec x}_{k-1})\right)\right) + {\cal O}(\delta t^2)\]</div>
 <p>Now we make two approximations. First, if we write <span class="math notranslate nohighlight">\(x_k \equiv x(t_k)\)</span>, then as <span class="math notranslate nohighlight">\(\delta t \to 0\)</span>, we should be able to write <span class="math notranslate nohighlight">\((x_k - x_{k-1}) \sim \delta t {\dot x}(t_{k-1})\)</span>, We also write <span class="math notranslate nohighlight">\(p_{k-1} = p(t_{k-1})\)</span>. Secondly, to <span class="math notranslate nohighlight">\({\cal O}(\delta t^2)\)</span>, we can write <span class="math notranslate nohighlight">\(1 - i a \delta t \sim e^{-i a \delta t}\)</span>; applying this we find</p>
 <div class="math notranslate nohighlight" id="equation-st-kernel">
-<span class="eqno">(310)<a class="headerlink" href="#equation-st-kernel" title="Link to this equation">#</a></span>\[\bra{x_k} U(\delta t, 0) \ket{x_{k-1}} \sim \int \frac{d^d p(t_{k-1})}{(2\pi\hbar)^d} e^{i \delta t \left(p(t_{k-1}) \dot{x}(t_{k-1})/\hbar - \frac{p(t_{k-1})^2}{2m} - V(x(t_{k-1}))\right)}\]</div>
+<span class="eqno">(312)<a class="headerlink" href="#equation-st-kernel" title="Link to this equation">#</a></span>\[\bra{x_k} U(\delta t, 0) \ket{x_{k-1}} \sim \int \frac{d^d p(t_{k-1})}{(2\pi\hbar)^d} e^{i \delta t \left(p(t_{k-1}) \dot{x}(t_{k-1})/\hbar - \frac{p(t_{k-1})^2}{2m} - V(x(t_{k-1}))\right)}\]</div>
 </section>
 <section id="the-full-propagator">
 <h2>The full propagator<a class="headerlink" href="#the-full-propagator" title="Link to this heading">#</a></h2>
