@@ -149,10 +149,10 @@ then the Euler-Lagrange equations can be written as
 
 which clearly takes the form of Newton's second law.
 
-All of this discussion has been fairly abstract, so let us study an example.
+All of this discussion has been fairly abstract, so let us study a few examples.
 
 
-## Particle in a magnetic field
+### Particle in a magnetic field
 
 Alternatively we consider the case where we have standard coordinates but a nontrivial generalized momentum. That is, consider a particle with mass $m$ and charge $e$ in a static magnetic field $\vec{B}$. Maxwell's equations (assuming no magnetic monoploes; we haven't observed them at any rate) imply that $\vec{\nabla} \cdot \vec{B} = $, which means that in Euclidean space without any holes we can use the Poincar\'e theorem to write
 
@@ -215,39 +215,6 @@ Note that the final equations of motion depend on the magnetic field $B$ and not
 ```
 
 does not change $E$ or $B$. The generalized momentum *does* depend explicitly on ${\cal A}$, and so in this case is not invariant under gauge transformations.
-
-## Counter-example: frictional motion
-
-The question of friction came up in class. In general this does not have a straightforward Lagrangian description. Let us  explore this a little.
-
-### Linear friction without an external force
-
-Consider the case of linear velocities:
-
-```{math}
-m \ddot{q} = - \lambda {\dot q}
-```
-
-We will work in one dimension though the same techniques wiull work in higher dimensions. The above is standard friction if $\lambda > 0$. (If $\lambda < 0$ then the force increases with velocity and we get runaway behavior. You can see this by explicitly solving the above equation).
-
-Now let us try to find $L(q,{\dot q})$ which produces this. We need
-```{math}
-\frac{d}{dt} \frac{\del L}{\del {\dot q}} = \frac{\del L}{\del q}
-```
-Clearly to get the $m{\ddot q}$ term we need $L = \half m {\dot q}^2$. Getting a term linear in voleicty is another story. It must take the term ${\dot q} f(q)$ for rither the generalized force or the generalized momentum to produce such a term. But this is automatically a total derivative: we can always find an $F(q)$ such that $F'(q) = f(q)$; then ${\dot q} f(q) = \frac{d}{dt} F(q)$. This is a total derivative that will not contribute to the Euler-Lagrange equations, as you can see by adding this term.
-
-One out is to allow the Lagrangian to be time-dependent:
-```{math}
-L = \half e^{2 \lambda t/m} m {\dot q}^2
-```
-If we plug this into the action, though, we can see that we get the standard action if we change the time coordinate to $\tau = \tau_0 e^{-2\lambda t/m}$. In fact if you apply this change to the eqautions of motion for a frictional particle, you get back the standard equations of motion. One-dimensional motion is somewhat special.
-
-
-One can instead consider the following Lagrangian:
-```{math}
-S = \int dt \beta(t) (m \ddot{q} + \lambda \dot{q}) = \int dt \left(-m \dot \beta {\dot q} + \lambda \beta {\dot q})
-```
-where in the second term we have integrated by parts and ignored boundary terms. Here we consider $q,\beta$ as dynamical variables and it should be clear that the variational principle yields both the frictional equation of motion (from teh Euler-Lagrange equation for $\beta$) as well as for $\beta$. 
 
 ## Lagrangians and coordinate changes
 
