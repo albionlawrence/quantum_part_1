@@ -1,5 +1,14 @@
 # Lagrangian Mechanics
 
+Lagrangian mechanics allows for a generalization of Newton's laws. As we hinted above, it leads to a more general notion of momentum, which is important for particles moving in electromagnetic fields or through curved spaces. We will also see that it makes the imposition of constraints considerably easier than classic Newtonian mechanics. 
+
+One difference is that, at least in principle, it is not formulated in terms of an initial value problem. Rather, we specify the initial and final 
+positions ${\vec x}_k(t_i), {\vec x}_k(t_f)$. That you should be able to do this seems reasonable. Given initial positions and velocities you can deduce the final positions, the equations are deterministic, and the amount of data you specify each way is the same. (Actually it is more complicated than that because there can be multiple trajectories with different initial velocities and the same 
+final positions: consider two particles moving in opposite directions on a 
+circle, and bumping into each other later on).                                                        
+                                                                                        
+![Specifying trajectories](Trajectories.png) 
+
 ## Principle of Stationary Action
 
 The basic object in Lagrangian mechanics is...you guessed it...a *Lagrangian*; this is a function of the positions and velocities of one or several particles:
@@ -224,7 +233,7 @@ Consider a change of coordinates from $x^a_k$ to $q^{I = 1,\ldots Md}$.
 In this case we can write
 ```{math}
  :label: change_coords_lag
- L(x, \dot{x}) = L(x(q), \dot{x}(q,\dot q) = \tilde{L}(q, \dot{q})
+ L(x, \dot{x}) = L(x(q), \dot{x}(q,\dot q)) = \tilde{L}(q, \dot{q})
 ```
 
 where
