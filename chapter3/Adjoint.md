@@ -10,7 +10,7 @@ Let $V$ be a vector space over $\CC$. the *dual vector space* $V^*$ is the space
 
 1. $V^*$ is a vector space.
 
-Consider linear maps $f_{1,2}$, and $a,b \in \CC$. Then we can define a linear map $a f_1 * b f_2$ by their action on a vector $\ket{v}$. 
+Consider linear maps $f_{1,2}$, and $a,b \in \CC$. Then we can define a linear map $a f_1 + b f_2$ by their action on a vector $\ket{v}$. 
 
 ```{math}
 :label: sum_of_linear
@@ -21,7 +21,7 @@ One can show that this defines a linear map: for any $c,d\in \CC$ and $\ket{v_{1
 ```{math}
 (a f_1 + b f_2)(c \ket{v_1} + d \ket{v_2}) = c (a f_1 + b f_2)\ket{v_1} + d (a f_1 + b f_2)(\ket{v_2})
 ```
-which follows from $f_{1,2}$ being linear maps/
+which follows from $f_{1,2}$ being linear maps.
 
 2. $\text{dim}(V^*) = \text{dim}(V)$. It is instructive to show this. Consider a basis $\ket{i}$ of $V$, $i = 1,\ldots d = \text{dim}(V)$. A general vector $\ket{v}$ can be expressed as 
 ```{math}
@@ -29,9 +29,9 @@ which follows from $f_{1,2}$ being linear maps/
 ```
 for a unique set of coefficients $c_i \in \CC$. Now 
 ```{math}
-f(\ket{v}) = \sum_{i = 1}^d c_c f(\ket{i})
+f(\ket{v}) = \sum_{i = 1}^d c_i f(\ket{i})
 ```
-Thus, the map $f$ is completely specified by $d$ complex numbers $f(\ket{i}) = c_i \in CC$. Thus, if we define $f_i$ by $f_i(\ket{j}) = \delta_{ij}$, we can show that each $f_i$ is a linear map. Furthermore, $f_i$ is linearly independent of $f_{j \neq i}$ (you should convince yourself of this). 
+Thus, the map $f$ is completely specified by $d$ complex numbers $f(\ket{i}) = c_i \in \CC$. Thus, if we define $f_i$ by $f_i(\ket{j}) = \delta_{ij}$, we can show that each $f_i$ is a linear map. Furthermore, $f_i$ is linearly independent of $f_{j \neq i}$ (you should convince yourself of this). 
 
 Any function $f$ can always be written as $f = \sum_{i = 1}^d c_i f_i$, so this basis is maximal, and $f_i$ form a complete basis for $V^*$. There are $d$ such independent basis functions, so $\text{dim}(V^*) = d$. 
 
@@ -108,7 +108,7 @@ then
 
 2. $V = M_2(\CC)$. 
 ```{math}
-\brket{M_1}{M_2} = \text{tr} (M_1^{*})^T M_2) = \sum_{i,j} (M_1)^*_{ij} (M_2)_{ij}
+\brket{M_1}{M_2} = \text{tr} \left((M_1^{*})^T M_2\right) = \sum_{i,j} (M_1)^*_{ij} (M_2)_{ij}
 ```
 
 3. $V = L^2(\CR)$, the space of complex square-integrable functions on the real line where $\ket{\psi}$ is represented by the function $\psi(x)$. A good inner product, which defines an adjoint map, is
@@ -126,9 +126,9 @@ then
 - $\text{dim}(V) < \infty$, or
 - Cauchy sequences in $V$ are complete.
 
-To explain the last possibility, note that $\ket{v_i}$, $i = 1,\ldots,\infty$ is a *Cuachy sequence* if for any $\eps > 0$, there exists some integer $N$ such that 
+To explain the last possibility, note that $\ket{v_i}$, $i = 1,\ldots,\infty$ is a *Cauchy sequence* if for any $\eps > 0$, there exists some integer $N$ such that 
 ```{math}
-|| v_n - v_m || < \eps\ \forall n, m \geq N
+|| v_n - v_m || < \eps\ \forall\ n, m \geq N
 ```
 Such a sequence is *complete* if it converges to a vector in $V$.
 
@@ -136,7 +136,7 @@ Such a sequence is *complete* if it converges to a vector in $V$.
 
 ### Actions of operators
 
-Goven a linear operator $A$ and $\ket{v} \in V$, $A\ket{v}$ is a vector and $\bra{w} A \ket{v}$ is a complex number. We can therefore define $\bra{A w} \equiv \bra{w} A$ such that $\brket{A w}{v} = \bra{w} A \ket{v}$.
+Given a linear operator $A$ and $\ket{v} \in V$, $A\ket{v}$ is a vector and $\bra{w} A \ket{v}$ is a complex number. We can therefore define $\bra{A w} \equiv \bra{w} A$ such that $\brket{A w}{v} = \bra{w} A \ket{v}$.
 
 ## Orthonormal bases
 
@@ -148,7 +148,7 @@ Let $V$ be a vector space over $\CC$.
 
 2. $\ket{v},\ket{w} \in V$ are *orthogonal* if $\brket{v}{w} = 0$.
 
-3. An *orthonormal basis* is a basis $\ket{i} \in V$, $i = 1,\ldots,d = \text{dim} V$ such that for $\cal{A}: \ket{i} \to \bra{i}$, \brket{i}{j} = \delta_{ij}$. 
+3. An *orthonormal basis* is a basis $\ket{i} \in V$, $i = 1,\ldots,d = \text{dim} V$ such that for $\cal{A}: \ket{i} \to \bra{i}, \brket{i}{j} = \delta_{ij}$. 
 
 ### Examples
 
@@ -162,7 +162,7 @@ Let $V$ be a vector space over $\CC$.
  :label: inner_product_on_basis
  \brket{w}{v} = \sum_i w^*_i v_i
  ```
- This works if we idenfity 
+ This works if we identify 
  ```{math}
  :label: ket_in_on_basis
  \ket{v} \to \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix}
@@ -213,7 +213,7 @@ is orthonormal with respect to the inner product {eq}`L2adjoint`
 Since $\ket{i}$ is a basis, we can write the action of operators in this basis: $A\ket{j} = A_{ij}\ket{i}$. As notation, we will sometimes write
 ```{math}
 :label: operator_rep
-A = \bra{i} A_{ij} \ket{j}
+A = \ket{i} A_{ij} \bra{j}
 ```
 We understand this to mean
 ```{math}
@@ -279,8 +279,9 @@ An important property of this operator is that it is *norm-preserving*:
 ```{math}
 U = \begin{pmatrix} \cos\theta & \sin\theta e^{i\phi} \\ - \sin\theta e^{-i\phi} & \cos\theta \end{pmatrix}
 ```
+As we will discuss, this implements rotations on the spin components of a spin-$\half$ system.
 
-2. Two nontrivial examples for $L^2(\CR)$:
+2. Two nontrivial Hermitian examples for $L^2(\CR)$:
 - The position operator ${\hat x}: \psi(x) \to x \psi(x)$. Since
 ```{math}
 \begin{align}
@@ -298,6 +299,6 @@ as expected for a Hermitian operator.
 & = \bra{\chi}{\hat p}^{\dagger} \ket{\psi}
 \end{align}
 ```
-The second line follows from integration by larts, and the boundary terms vanish because $\psi$ is sequare integrable. In other words for every $\ket{\psi},\ket{\chi}$, $\bra{\chi} {\hat p} \ket{\psi} = \bra{\chi} {\hat p}^{\dagger} \ket{\psi}$. From this we can deduce that ${\hat p} = {\hat p}^{\dagger}$.
+The second line follows from integration by parts, and the boundary terms vanish because $\psi$ is square integrable. In other words for every $\ket{\psi},\ket{\chi}$, $\bra{\chi} {\hat p} \ket{\psi} = \bra{\chi} {\hat p}^{\dagger} \ket{\psi}$. From this we can deduce that ${\hat p} = {\hat p}^{\dagger}$.
 
 The same argument follows for the case of complex functions with periodic boundary conditions. For *Dirichlet* boundary conditions, ${\hat p}$ fails to be an operator on teh Hilbert space, as the derivative of a function with Dirichlet boundary conditions does not in general satisfy Dirichlet boundary conditions. (Similarly for Neumann boundary conditions).

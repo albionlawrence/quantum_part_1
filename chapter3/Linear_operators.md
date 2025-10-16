@@ -35,7 +35,7 @@ Abstractly we usually denote operators by capital letters $A$ and the action of 
 
 ### Examples
 
-1. The identity operator ${\bf 1}\ket{v} = \ket{v} \forall \ket{v}$. 
+1. The identity operator ${\bf 1}\ket{v} = \ket{v}\ \forall\ \ket{v}$. 
 
 2. The zero operator $\varnothing: \ket{V} \to \ket{0}$.
 
@@ -66,7 +66,7 @@ are linear operators on $V$.
 
 ## Operator algebras
 
-In general we can combine operators to form new linear operator in various ways: technically, they define an *algebra:
+In general we can combine operators to form new linear operator in various ways: technically, they define an *algebra*:
 
 1. Operators can be added: for operators $A_1,A_2$ acting on a vector space $V$, we can define
 ```{math}
@@ -155,9 +155,9 @@ Then
 
 2. **Theorem**: for any vector space $V$ and linear operator $A$ acting on that space, $\text{Range}(A)$ is a vector subspace of $V$. I leave the proof as an exercise.
 
-3. **Definition** For a vector space $V$, a linear operator $A$ acting on it is *surjective* or *onto* if $\text{range}(A) = V$. 
+3. **Definition** For a vector space $V$, a linear operator $A$ acting on it is *surjective* or *onto* if $\text{Range}(A) = V$. 
 
-4. **Definition** For a linear operator $A$ acting on a vector space $V$, the *rangk* of $A$ is $\text{Rk}(A) = \text{dim}(\text{RAnge}(A))$. 
+4. **Definition** For a linear operator $A$ acting on a vector space $V$, the *rangk* of $A$ is $\text{Rk}(A) = \text{dim}(\text{Range}(A))$. 
 
 5. **Rank-nullity theorem**: For a linear operator $A$ acting on a vector space $V$,
 
@@ -294,7 +294,7 @@ T_R^{-1} T \ket{a_0,a_1,a_2,\ldots} & = T_R^{-1} \ket{a_1,2 a_2,\ldots}\\
 ```
 so $T_R^{-1}T$ fails to be the identity operator because (once again) it strips off the constant term.
 
-6. **Definition**. A linear operator $A$ is *invertible* if $A_R^{-1}$, $A_L^{-1}$ exist.
+6. **Definition**. A linear operator $A$ is *invertible* if $A_R^{-1}$, $A_L^{-1}$ exists.
 
 7. **Theorem**. If $A$ is invertible, $A_L^{-1} = A_R^{-1} \equiv A^{-1}$.
 
@@ -340,7 +340,7 @@ In other words, given any basis, we can represent a vector as a set of $n$ compl
 The action of the operator on that vector produces a new vector which can also be represented by a column vector
 ```{math}
 A\ket{v} = \ket{v'} = \begin{pmatrix} v'_1 \\ \vdots \\ v'_n \end{pmatrix} = 
-\begin{pmatrix} A_{11} & \ldots A_{1n} \\ \vdots & \vdots & \vdots \\
+\begin{pmatrix} A_{11} & \ldots &  A_{1n} \\ \vdots & \vdots & \vdots \\
 A_{n1} & \ldots & A_{nn} \end{pmatrix} \begin{pmatrix} v_1 \\ \vdots \\ v_n \end{pmatrix}
 ```
 In other words, every finite-dimensional vector space can be represented by $\CC^n$ (as the space of $n$-dimensional column vectors), and every linear operator can be realized as an $n\times n$ matrix acting on column vectors. 

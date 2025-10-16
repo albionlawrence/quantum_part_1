@@ -254,9 +254,17 @@ If we plug this into the action, though, we can see that we get the standard act
 
 One can instead consider the following Lagrangian:
 ```{math}
-S = \int dt \beta(t) (m \ddot{q} + \lambda \dot{q}) = \int dt \left(-m \dot \beta {\dot q} + \lambda \beta {\dot q})
+S = \int dt \beta(t) (m \ddot{q} + \lambda \dot{q}) = \int dt \left(-m \dot \beta {\dot q} + \lambda \beta {\dot q}\right)
 ```
-where in the second term we have integrated by parts and ignored boundary terms. Here we consider $q,\beta$ as dynamical variables and it should be clear that the variational principle yields both the frictional equation of motion (from teh Euler-Lagrange equation for $\beta$) as well as for $\beta$. 
+where in the second term we have integrated by parts and ignored boundary terms. Here we consider $q,\beta$ as dynamical variables and it should be clear that the variational principle yields both the frictional equation of motion (from teh Euler-Lagrange equation for $\beta$) as well as for $\beta$. From this we get the following equations of motion:
+```{math}
+\begin{align}
+m \ddot{q} & = - \lambda \dot{q} \\
+m \ddot{\beta} & = \lambda \dot{\beta}
+\end{align}
+```
+So here we can see that this "auxiliary" field $\beta$, which we introduced as a Lagrange multiplier, has a runaway term: $\
+
 
 ## Lagrangians and coordinate changes
 

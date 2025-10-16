@@ -42,11 +42,11 @@ then we can rewrite the equations of motion as
 \end{align}
 ```
 
-Note that when the Lagrangian is time-independent, the quantity {eq}`hamilt` is exactly the quantity which we showed, via Noether's theorem, is conserved. $H$, called the *Hamiltonian* is the energy of this system. The equations {eq}`he_intro_ are known as *Hamilton's Equations* and they are completely equivalent to the Euler-Lagrange equations.
+Note that when the Lagrangian is time-independent, the quantity {eq}`hamilt` is exactly the quantity which we showed, via Noether's theorem, is conserved. $H$, called the *Hamiltonian* is the energy of this system. The equations {eq}`he_intro` are known as *Hamilton's Equations* and they are completely equivalent to the Euler-Lagrange equations.
 
 Why would we daopt this formalism?
 
-1. If $I \in (1,\ldots, D)$, Hamilton's equations are $2D$ first order differential equations. If we specify the data $(q^I,p_I)$ at any initial time $t_0$,  these equations have a unique solution for all future times. Thus the state of the system at any time is copmpletely described by $(q^I, p_I)$. The set of all states so specified is known as *phase space*. Thus, the space of states is given by $2D$ independent variables, and we can formulate mechanics as an initial value problem.
+1. If $I \in (1,\ldots, D)$, Hamilton's equations are $2D$ first order differential equations. If we specify the data $(q^I,p_I)$ at any initial time $t_0$,  these equations have a unique solution for all future times. Thus the state of the system at any time is completely described by $(q^I, p_I)$. The set of all states so specified is known as *phase space*. Thus, the space of states is given by $2D$ independent variables, and we can formulate mechanics as an initial value problem.
 
 2. Because Hamilton's equations are first order in time derivatives, they are particularly amenable to numerical integration.
 
@@ -81,7 +81,7 @@ Given this we can compute
 \frac{\del H}{\del p_I}\Big|_{p_{J\neq I}, q^J\ fixed} = \dot{q}^I + p_J \frac{\del \dot{q}^J}{\del p^I} - \frac{\del \dot{q}^J}{\del p^I}\frac{\del L}{\del \dot{q}^J}
 ```
 
-where the final term comes from using the chain rul to compute $\del L/\del p_I$. Using {eq}`gm_deriv`, this last term becomes equivalent to the second term on the right hand side, and we have one set of Hamilton's equations:
+where the final term comes from using the chain rule to compute $\del L/\del p_I$. Using {eq}`gm_deriv`, this last term becomes equivalent to the second term on the right hand side, and we have one set of Hamilton's equations:
 
 ```{math}
 :label: he_two
@@ -95,7 +95,7 @@ Similarly,
 \frac{\del H}{\del q^I}\Big|_{q^{J \neq I}, p_J\ fixed} = p_J \frac{\del \dot{q}^J}{\del q^I} - \frac{\del L}{\del q^I} \Big|_{\dot{q}^I\ fixed} - \frac{\del \dot{q}^J}{\del q^I} \frac{\del L}{\del \dot{q}^J}
 ```
 
-where in the first term on the right hand side, we have used the fact that we are keepig all $P_J$ fixed in the partial derivative; the second two terms are the derivative of $L(q,\dot{q}(q,p))$ using the chain rule. Using {eq}`gm_deriv`, the first and last terms on the right hand side cancel. Finally, we can use the EUler-Lagrange equation for the middle term to set 
+where in the first term on the right hand side, we have used the fact that we are keeping all $P_J$ fixed in the partial derivative; the second two terms are the derivative of $L(q,\dot{q}(q,p))$ using the chain rule. Using {eq}`gm_deriv`, the first and last terms on the right hand side cancel. Finally, we can use the Euler-Lagrange equation for the middle term to set 
 
 ```{math}
 :label: el_again
@@ -168,7 +168,7 @@ Here we start with
 L = \half m (\dot{r}^2 + r^2 \dot{\phi}^2)
 ```
 
-The generalzied momenta are:
+The generalized momenta are:
 
 ```{math}
 :label: polargenmom
@@ -204,7 +204,7 @@ Note that this last equation is a re-statement of the conservaton of angular mom
 
 3. Charged prrticle in a magnetic field. 
 
-As we stated before, if $\vec{B} = \vec{\nabla}\times\vec{A}$ for the vector potential $\vec{A}$,the Lagrangian is:
+As we stated before, if $\vec{B} = \vec{\nabla}\times\vec{A}$ for the vector potential $\vec{A}$, the Lagrangian is:
 
 ```{math}
 :label: cpb_lag
@@ -234,7 +234,7 @@ H & = p_i \dot{x^i} - \half m \dot{\vec{x}}^2 - \frac{e}{c} \dot{\vec{x}}\cdot\v
 
 Poisson brackets will seem like a simple rewriting of Hamilton's equations, but they are an important part of the geometry of classical mechanics; yield Noether's theorem as a near-tautology; and have an important quantum-mechanical analog.
 
-We can see them emerge as follows, and along the way introduce another important concept. Any *observable quantity* $A$ in classical mechanics should be a function of the state of the system, and thus of phase space: $A = A(q^I, p_I)$. (It could be constant in which case classical mechanics has nothing to say about it.). Two examples are the $i$th component of angular momentum $L_i = \half \eps_{ijk} x^j p_k$; and the energy which is the Hamiltonian itself $H(q, p)$. 
+We can see them emerge as follows, and along the way introduce another important concept. Any *observable quantity* $A$ in classical mechanics should be a function of the state of the system, and thus of phase space: $A = A(q^I, p_I)$. (It could be constant in which case classical mechanics has nothing to say about it.). Two examples are the $i^{{\rm th}}$ component of angular momentum $L_i = \half \eps_{ijk} x^j p_k$; and the energy, which is the Hamiltonian itself $H(q, p)$. 
 
 
 How does this observable change along classical trajectories?
@@ -261,7 +261,7 @@ and satisfies two important properties:
 
 2. *Jacobi identity*: $\{A,\{B,C\}\} + \{C,\{A,B\}\} + \{B, \{C,A\}\} = 0$.
 
-Finally, the phase space variables we have written so far satisfy simple, "canonical" Poisson bracket relations:
+These can be verified by brute force computation. Finally, the phase space variables we have written so far satisfy simple, "canonical" Poisson bracket relations:
 
 ```{math}
 :label: canonical_brackets
@@ -272,7 +272,7 @@ Finally, the phase space variables we have written so far satisfy simple, "canon
 \end{align}
 ```
 
-Note that given what we drivaed at the top, $\frac{dA}{dt} = \{A, H\}$, the Hamiltonian *generates flows in phase space* of all observable quantities. These include the positions and momenta themselves; Hamilton's equations can be compactly written as
+Note that given what we derived at the top, $\frac{dA}{dt} = \{A, H\}$, the Hamiltonian *generates flows in phase space* of all observable quantities. These include the positions and momenta themselves; Hamilton's equations can be compactly written as
 
 ```{math}
 :label: pb_hamilton
@@ -290,7 +290,7 @@ The Poisson bracket is a central object in classical mechanics in defining the g
 
 As we discussed, one advantage of the Lagrangian formulation is that you can perform point cordinate transformations $q' = q'(q,t)$ at the level of the Lagrangian; that is, we apply the Euler-Lagrange equations for $q'$ to the transformed Lagrangian ${\tilde L}(q',\dot{q}',t) = L(q(q'), \frac{d}{dt}q(q',t), t)$.
 
-In Hamiltonian mechanics we can work with more generat *canonical transformations*, which are a class of coordinate transformations on phase space that preserve the structure of the Poisson brackets and of Hamilton's equations. That is, we consider $Q^A = Q^A(p_I, q^I)$, $P_A = P_a(q^I, p_I)$ (with $A = 1,\ldots,D)$) such that Hamilton's equations retain their form
+In Hamiltonian mechanics we can work with more general *canonical transformations*, which are a class of coordinate transformations on phase space that preserve the structure of the Poisson brackets and of Hamilton's equations. That is, we consider $Q^A = Q^A(p_I, q^I)$, $P_A = P_a(q^I, p_I)$ (with $A = 1,\ldots,D)$) such that Hamilton's equations retain their form
 
 ```{math}
 :label: can_transf_ham
@@ -335,9 +335,9 @@ Under this canonical transformation any observable $A(p,q)$ transforms to order 
 \end{align}
 ```
 
-we cal $f$ the *generator* or *generating function* of this transformation.
+We call $f$ the *generator* or *generating function* of this transformation.
 
-Note that such canonical transformations include time evolution, for which the generator is the Hamiltonian. You can also show that translations $q^I \to q^I + \eps a^I$ are generated by $f = \eps a^I p_I$; and in 2 dimensions, rotations about the origin $\phi to \phi + \eps \Delta$ are generated by $f = \eps \Delta L_z$, where $L_z$ is the angular momentum.: for the latter, using $L_z = x p_y - y -Px$, we can show
+Note that such canonical transformations include time evolution, for which the generator is the Hamiltonian. You can also show that translations $q^I \to q^I + \eps a^I$ are generated by $f = \eps a^I p_I$; and in 2 dimensions, rotations about the origin $\phi \to \phi + \eps \Delta$ are generated by $f = \eps \Delta L_z$, where $L_z$ is the angular momentum.: for the latter, using $L_z = x p_y - y p_x$, we can show
 
 ```{math}
 :label: rot_gen
@@ -378,4 +378,4 @@ Note that time evolution itself is a canonical transformation, generated by $H$.
 \end{align}
 ```
 
-where we have used Hamiltono's equations to get to the second line, and used the antisymmetry of the bracket which implies that $\{A,A\} = 0$ for any $A$. Thus energy is conserved if the Hamiltonian lacks any *explicit* time dependence.
+where we have used Hamilton's equations to get to the second line, and used the antisymmetry of the bracket which implies that $\{A,A\} = 0$ for any $A$. Thus energy is conserved if the Hamiltonian lacks any *explicit* time dependence.

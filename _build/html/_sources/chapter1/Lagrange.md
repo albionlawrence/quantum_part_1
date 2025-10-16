@@ -1,5 +1,14 @@
 # Lagrangian Mechanics
 
+Lagrangian mechanics allows for a generalization of Newton's laws. As we hinted above, it leads to a more general notion of momentum, which is important for particles moving in electromagnetic fields or through curved spaces. We will also see that it makes the imposition of constraints considerably easier than classic Newtonian mechanics. 
+
+One difference is that, at least in principle, it is not formulated in terms of an initial value problem. Rather, we specify the initial and final 
+positions ${\vec x}_k(t_i), {\vec x}_k(t_f)$. That you should be able to do this seems reasonable. Given initial positions and velocities you can deduce the final positions, the equations are deterministic, and the amount of data you specify each way is the same. (Actually it is more complicated than that because there can be multiple trajectories with different initial velocities and the same 
+final positions: consider two particles moving in opposite directions on a 
+circle, and bumping into each other later on).                                                        
+                                                                                        
+![Specifying trajectories](Trajectories.png) 
+
 ## Principle of Stationary Action
 
 The basic object in Lagrangian mechanics is...you guessed it...a *Lagrangian*; this is a function of the positions and velocities of one or several particles:
@@ -245,9 +254,17 @@ If we plug this into the action, though, we can see that we get the standard act
 
 One can instead consider the following Lagrangian:
 ```{math}
-S = \int dt \beta(t) (m \ddot{q} + \lambda \dot{q}) = \int dt \left(-m \dot \beta {\dot q} + \lambda \beta {\dot q})
+S = \int dt \beta(t) (m \ddot{q} + \lambda \dot{q}) = \int dt \left(-m \dot \beta {\dot q} + \lambda \beta {\dot q}\right)
 ```
-where in the second term we have integrated by parts and ignored boundary terms. Here we consider $q,\beta$ as dynamical variables and it should be clear that the variational principle yields both the frictional equation of motion (from teh Euler-Lagrange equation for $\beta$) as well as for $\beta$. 
+where in the second term we have integrated by parts and ignored boundary terms. Here we consider $q,\beta$ as dynamical variables and it should be clear that the variational principle yields both the frictional equation of motion (from teh Euler-Lagrange equation for $\beta$) as well as for $\beta$. From this we get the following equations of motion:
+```{math}
+\begin{align}
+m \ddot{q} & = - \lambda \dot{q} \\
+m \ddot{\beta} & = \lambda \dot{\beta}
+\end{align}
+```
+So here we can see that this "auxiliary" field $\beta$, which we introduced as a Lagrange multiplier, has a runaway term: $\
+
 
 ## Lagrangians and coordinate changes
 
@@ -257,7 +274,7 @@ Consider a change of coordinates from $x^a_k$ to $q^{I = 1,\ldots Md}$.
 In this case we can write
 ```{math}
  :label: change_coords_lag
- L(x, \dot{x}) = L(x(q), \dot{x}(q,\dot q) = \tilde{L}(q, \dot{q})
+ L(x, \dot{x}) = L(x(q), \dot{x}(q,\dot q)) = \tilde{L}(q, \dot{q})
 ```
 
 where
