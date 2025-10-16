@@ -277,7 +277,7 @@ A A_R^{-1} = \bf{1}
 
 Again, we can furnish an example for which $A A_R^{-1} = \bf{1}$ and $A_R^{-1} A \neq \bf{1}$, by looking at the polynomials. Let 
 
-```{nath}
+```{math}
 \begin{align}
 T \ket{a_0, a_1, a_2,\ldots} & = \ket{a_1, 2 a_2, 3 a_3,\ldots}\\
 T_R^{-1} \ket{a_0,a_1,a_2,\ldots} & = \ket{0, a_0, \frac{1}{2} a_1, \frac{1}{3} a_2,\ldots}
