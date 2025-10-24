@@ -460,7 +460,7 @@ document.write(`
 <section id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>The identity operator <span class="math notranslate nohighlight">\({\bf 1}\ket{v} = \ket{v} \forall \ket{v}\)</span>.</p></li>
+<li><p>The identity operator <span class="math notranslate nohighlight">\({\bf 1}\ket{v} = \ket{v}\ \forall\ \ket{v}\)</span>.</p></li>
 <li><p>The zero operator <span class="math notranslate nohighlight">\(\varnothing: \ket{V} \to \ket{0}\)</span>.</p></li>
 <li><p>More generally, scalar multiplication by any scalar in <span class="math notranslate nohighlight">\(\CF\)</span> is a linear operator.</p></li>
 <li><p>For <span class="math notranslate nohighlight">\(C = \CC^n\)</span>, <span class="math notranslate nohighlight">\(n \times n\)</span> matrices acting on column vectors by the usual rules of matrix multiplication are all linear operators. In fact one can represent any finite-dimensional vector space of dimension <span class="math notranslate nohighlight">\(n\)</span> by <span class="math notranslate nohighlight">\(\CC^n\)</span>, and every operator as a matrix acting on <span class="math notranslate nohighlight">\(\CC^n\)</span>.</p></li>
@@ -487,7 +487,7 @@ document.write(`
 </section>
 <section id="operator-algebras">
 <h2>Operator algebras<a class="headerlink" href="#operator-algebras" title="Link to this heading">#</a></h2>
-<p>In general we can combine operators to form new linear operator in various ways: technically, they define an *algebra:</p>
+<p>In general we can combine operators to form new linear operator in various ways: technically, they define an <em>algebra</em>:</p>
 <ol class="arabic simple">
 <li><p>Operators can be added: for operators <span class="math notranslate nohighlight">\(A_1,A_2\)</span> acting on a vector space <span class="math notranslate nohighlight">\(V\)</span>, we can define</p></li>
 </ol>
@@ -554,8 +554,8 @@ document.write(`
 \[\begin{split}\text{Range}{A} = \{ \begin{pmatrix} 0 \\ c_1 \\ c_2 \\ 0 \end{pmatrix}\ \forall\ c_{1,2} \in \CC \}\end{split}\]</div>
 <ol class="arabic simple" start="2">
 <li><p><strong>Theorem</strong>: for any vector space <span class="math notranslate nohighlight">\(V\)</span> and linear operator <span class="math notranslate nohighlight">\(A\)</span> acting on that space, <span class="math notranslate nohighlight">\(\text{Range}(A)\)</span> is a vector subspace of <span class="math notranslate nohighlight">\(V\)</span>. I leave the proof as an exercise.</p></li>
-<li><p><strong>Definition</strong> For a vector space <span class="math notranslate nohighlight">\(V\)</span>, a linear operator <span class="math notranslate nohighlight">\(A\)</span> acting on it is <em>surjective</em> or <em>onto</em> if <span class="math notranslate nohighlight">\(\text{range}(A) = V\)</span>.</p></li>
-<li><p><strong>Definition</strong> For a linear operator <span class="math notranslate nohighlight">\(A\)</span> acting on a vector space <span class="math notranslate nohighlight">\(V\)</span>, the <em>rangk</em> of <span class="math notranslate nohighlight">\(A\)</span> is <span class="math notranslate nohighlight">\(\text{Rk}(A) = \text{dim}(\text{RAnge}(A))\)</span>.</p></li>
+<li><p><strong>Definition</strong> For a vector space <span class="math notranslate nohighlight">\(V\)</span>, a linear operator <span class="math notranslate nohighlight">\(A\)</span> acting on it is <em>surjective</em> or <em>onto</em> if <span class="math notranslate nohighlight">\(\text{Range}(A) = V\)</span>.</p></li>
+<li><p><strong>Definition</strong> For a linear operator <span class="math notranslate nohighlight">\(A\)</span> acting on a vector space <span class="math notranslate nohighlight">\(V\)</span>, the <em>rangk</em> of <span class="math notranslate nohighlight">\(A\)</span> is <span class="math notranslate nohighlight">\(\text{Rk}(A) = \text{dim}(\text{Range}(A))\)</span>.</p></li>
 <li><p><strong>Rank-nullity theorem</strong>: For a linear operator <span class="math notranslate nohighlight">\(A\)</span> acting on a vector space <span class="math notranslate nohighlight">\(V\)</span>,</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-rank-nullity">
@@ -647,7 +647,7 @@ T_R^{-1} T \ket{a_0,a_1,a_2,\ldots} &amp; = T_R^{-1} \ket{a_1,2 a_2,\ldots}\\
 \end{align}\end{split}\]</div>
 <p>so <span class="math notranslate nohighlight">\(T_R^{-1}T\)</span> fails to be the identity operator because (once again) it strips off the constant term.</p>
 <ol class="arabic simple" start="6">
-<li><p><strong>Definition</strong>. A linear operator <span class="math notranslate nohighlight">\(A\)</span> is <em>invertible</em> if <span class="math notranslate nohighlight">\(A_R^{-1}\)</span>, <span class="math notranslate nohighlight">\(A_L^{-1}\)</span> exist.</p></li>
+<li><p><strong>Definition</strong>. A linear operator <span class="math notranslate nohighlight">\(A\)</span> is <em>invertible</em> if <span class="math notranslate nohighlight">\(A_R^{-1}\)</span>, <span class="math notranslate nohighlight">\(A_L^{-1}\)</span> exists.</p></li>
 <li><p><strong>Theorem</strong>. If <span class="math notranslate nohighlight">\(A\)</span> is invertible, <span class="math notranslate nohighlight">\(A_L^{-1} = A_R^{-1} \equiv A^{-1}\)</span>.</p></li>
 </ol>
 <p><strong>Proof</strong>. <span class="math notranslate nohighlight">\(A_L^{-1} A A_R^{-1} = A_L^{-1} = A_R^{-1}\)</span> by associativity of operator multiplication.</p>
@@ -679,7 +679,7 @@ A\ket{v} &amp; = \ket{v'} = \sum_k v'_k \ket{k} \\
 <p>The action of the operator on that vector produces a new vector which can also be represented by a column vector</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}A\ket{v} = \ket{v'} = \begin{pmatrix} v'_1 \\ \vdots \\ v'_n \end{pmatrix} = 
-\begin{pmatrix} A_{11} &amp; \ldots A_{1n} \\ \vdots &amp; \vdots &amp; \vdots \\
+\begin{pmatrix} A_{11} &amp; \ldots &amp;  A_{1n} \\ \vdots &amp; \vdots &amp; \vdots \\
 A_{n1} &amp; \ldots &amp; A_{nn} \end{pmatrix} \begin{pmatrix} v_1 \\ \vdots \\ v_n \end{pmatrix}\end{split}\]</div>
 <p>In other words, every finite-dimensional vector space can be represented by <span class="math notranslate nohighlight">\(\CC^n\)</span> (as the space of <span class="math notranslate nohighlight">\(n\)</span>-dimensional column vectors), and every linear operator can be realized as an <span class="math notranslate nohighlight">\(n\times n\)</span> matrix acting on column vectors.</p>
 <p>You can show further (on your own time), that in the basis above, given two operators <span class="math notranslate nohighlight">\(A,B\)</span>, <span class="math notranslate nohighlight">\((AB)_{k\ell} = A_{km}B_{m\ell}\)</span>; that is, operator multiplication is just matrix multiplication.</p>

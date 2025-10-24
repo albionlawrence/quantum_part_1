@@ -430,6 +430,12 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lagrangian-mechanics">
 <h1>Lagrangian Mechanics<a class="headerlink" href="#lagrangian-mechanics" title="Link to this heading">#</a></h1>
+<p>Lagrangian mechanics allows for a generalization of Newton’s laws. As we hinted above, it leads to a more general notion of momentum, which is important for particles moving in electromagnetic fields or through curved spaces. We will also see that it makes the imposition of constraints considerably easier than classic Newtonian mechanics.</p>
+<p>One difference is that, at least in principle, it is not formulated in terms of an initial value problem. Rather, we specify the initial and final
+positions <span class="math notranslate nohighlight">\({\vec x}_k(t_i), {\vec x}_k(t_f)\)</span>. That you should be able to do this seems reasonable. Given initial positions and velocities you can deduce the final positions, the equations are deterministic, and the amount of data you specify each way is the same. (Actually it is more complicated than that because there can be multiple trajectories with different initial velocities and the same
+final positions: consider two particles moving in opposite directions on a
+circle, and bumping into each other later on).</p>
+<p><img alt="Specifying trajectories" src="../_images/Trajectories.png" /></p>
 <section id="principle-of-stationary-action">
 <h2>Principle of Stationary Action<a class="headerlink" href="#principle-of-stationary-action" title="Link to this heading">#</a></h2>
 <p>The basic object in Lagrangian mechanics is…you guessed it…a <em>Lagrangian</em>; this is a function of the positions and velocities of one or several particles:</p>
@@ -564,8 +570,14 @@ m \ddot x^i &amp; = \frac{e}{c} {\dot x}^j (\del_i A^j - \del_j A^i)\\
 <p>If we plug this into the action, though, we can see that we get the standard action if we change the time coordinate to <span class="math notranslate nohighlight">\(\tau = \tau_0 e^{-2\lambda t/m}\)</span>. In fact if you apply this change to the eqautions of motion for a frictional particle, you get back the standard equations of motion. One-dimensional motion is somewhat special.</p>
 <p>One can instead consider the following Lagrangian:</p>
 <div class="math notranslate nohighlight">
-\[S = \int dt \beta(t) (m \ddot{q} + \lambda \dot{q}) = \int dt \left(-m \dot \beta {\dot q} + \lambda \beta {\dot q})\]</div>
-<p>where in the second term we have integrated by parts and ignored boundary terms. Here we consider <span class="math notranslate nohighlight">\(q,\beta\)</span> as dynamical variables and it should be clear that the variational principle yields both the frictional equation of motion (from teh Euler-Lagrange equation for <span class="math notranslate nohighlight">\(\beta\)</span>) as well as for <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+\[S = \int dt \beta(t) (m \ddot{q} + \lambda \dot{q}) = \int dt \left(-m \dot \beta {\dot q} + \lambda \beta {\dot q}\right)\]</div>
+<p>where in the second term we have integrated by parts and ignored boundary terms. Here we consider <span class="math notranslate nohighlight">\(q,\beta\)</span> as dynamical variables and it should be clear that the variational principle yields both the frictional equation of motion (from teh Euler-Lagrange equation for <span class="math notranslate nohighlight">\(\beta\)</span>) as well as for <span class="math notranslate nohighlight">\(\beta\)</span>. From this we get the following equations of motion:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+m \ddot{q} &amp; = - \lambda \dot{q} \\
+m \ddot{\beta} &amp; = \lambda \dot{\beta}
+\end{align}\end{split}\]</div>
+<p>So here we can see that this “auxiliary” field <span class="math notranslate nohighlight">\(\beta\)</span>, which we introduced as a Lagrange multiplier, has a runaway term: $\</p>
 </section>
 </section>
 <section id="lagrangians-and-coordinate-changes">
@@ -575,7 +587,7 @@ m \ddot x^i &amp; = \frac{e}{c} {\dot x}^j (\del_i A^j - \del_j A^i)\\
 <p>Consider a change of coordinates from <span class="math notranslate nohighlight">\(x^a_k\)</span> to <span class="math notranslate nohighlight">\(q^{I = 1,\ldots Md}\)</span>.
 In this case we can write</p>
 <div class="math notranslate nohighlight" id="equation-change-coords-lag">
-<span class="eqno">(31)<a class="headerlink" href="#equation-change-coords-lag" title="Link to this equation">#</a></span>\[ L(x, \dot{x}) = L(x(q), \dot{x}(q,\dot q) = \tilde{L}(q, \dot{q})\]</div>
+<span class="eqno">(31)<a class="headerlink" href="#equation-change-coords-lag" title="Link to this equation">#</a></span>\[ L(x, \dot{x}) = L(x(q), \dot{x}(q,\dot q)) = \tilde{L}(q, \dot{q})\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight" id="equation-gc-chain">
 <span class="eqno">(32)<a class="headerlink" href="#equation-gc-chain" title="Link to this equation">#</a></span>\[\dot{x}^a_k = \dot{q}^I \frac{\del x^a_k}{\del q^I}\]</div>
