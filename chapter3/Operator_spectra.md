@@ -40,7 +40,7 @@ Hhere $a_i$ are the eigenvalues. If $a_i \neq a_j$ for $i \neq j$, we are done, 
 
 4. **Theorem**. For any Hermitian operator $A$, there exists a unitary matrix $U$ and a diagonal matrix $\Lambda$ such that $A = U^{\dagger} \Lambda U$, and the entries of $\Lambda$ are the eigenvalues, such than an eigenvalue $a_k$ with degree of degeneracy $d_k$ appears in $d_k$ entries.
 
-**Proof** (sketch). Given an orthonormal basis $\ket{i}$, $A_{ij} = \bra{i} A \ket{j}$. On the other hand there is an orthonormal basis of eigenvectors $\ket{a_k,\alpha_k}$, where $A \ket{a_k,\alpha_k} = a_k \ket{a_k,\alpha_k}$, $\alpha_k = 1,\ldots,d_k$, and $\brket{a_k,\alpha_k}{a_{\ell},\beta_{\ell}} = \delta_{kl} \delta_{\alpha_k,\beta_{\ell}$. Let us relabel $(a_k,\alpha_k) \to {\tilde a}$. Then $\bra{\tilde a} A \ket{\tilde b} = \Lambda_{{\tilde a}{\tilde b}}$, where $\Lambda$ is diagonal with the entries equal to the eigenvalues in the way described. Now using ${\bf 1} = \sum_{{\tilde a}} \ket{{\tilde a}}\bra{{\tilde a}}$, we can write
+**Proof** (sketch). Given an orthonormal basis $\ket{i}$, $A_{ij} = \bra{i} A \ket{j}$. On the other hand there is an orthonormal basis of eigenvectors $\ket{a_k,\alpha_k}$, where $A \ket{a_k,\alpha_k} = a_k \ket{a_k,\alpha_k}$, $\alpha_k = 1,\ldots,d_k$, and $\brket{a_k,\alpha_k}{a_{\ell},\beta_{\ell}} = \delta_{kl} \delta_{\alpha_k,\beta_{\ell}}$. Let us relabel $(a_k,\alpha_k) \to {\tilde a}$. Then $\bra{\tilde a} A \ket{\tilde b} = \Lambda_{{\tilde a}{\tilde b}}$, where $\Lambda$ is diagonal with the entries equal to the eigenvalues in the way described. Now using ${\bf 1} = \sum_{{\tilde a}} \ket{{\tilde a}}\bra{{\tilde a}}$, we can write
 ```{math}
 A_{ij} = \sum_{{\tilde a},{\tilde b}} \brket{i}{\tilde a}\bra{\tilde a} A \ket{\tilde b} \brket{\tilde b}{j} = U^{\dagger}_{i{\tilde a}} \Lambda_{{\tilde a}{\tilde b}} U_{{\tilde b} j}
 ```
@@ -52,7 +52,7 @@ The next theorem will be central to the uncertainty principle.
 
 5. **Theorem**. Two Hermitian operators $A,B$ are diagonal in the same orthonormal basis if and only if $[A,B] = 0$. 
 
-**Proof (partial)**. For the "only if" part, if $A,B$ are diagonal in the same basis, we use the fact that we can writ $A = U^{\dagger} \Lambda_A U$, $B = U^{\dagger} \Lambda_B U$, following the construction above. $A,B$ are diagonalized by teh same unitary matrix because this matrix implements the change of basis and by supposition the basis of eigenvectors is the same. Then since diagonal matrices commute,
+**Proof (partial)**. For the "only if" part, if $A,B$ are diagonal in the same basis, we use the fact that we can writ $A = U^{\dagger} \Lambda_A U$, $B = U^{\dagger} \Lambda_B U$, following the construction above. $A,B$ are diagonalized by the same unitary matrix because this matrix implements the change of basis and by supposition the basis of eigenvectors is the same. Then since diagonal matrices commute,
 ```{math}
 AB = U^{\dagger} \Lambda_A U U^{\dagger} \Lambda_B U = U^{\dagger} \Lambda_A \Lambda_B U = U^{\dagger} \Lambda_B \lambda_A U = U^{\dagger}\Lambda_B U U^{\dagger}\Lambda_A U = BA
 ```
@@ -63,7 +63,7 @@ For the "if" part, let $A,B$ commute. We take the case that the eigenvalues of $
 
 **Theorem** For any unitary operator $U$ we can write $U = V^{\dagger}\Lambda V$ where $V$ is a unitary matrix, and $\Lambda$ diagonal with enries of the form $e^{i\lambda}$, $\lambda \in \CR$.
 
-## Operators on the space of functions
+## Example: Operators on the space of functions
 
 For functions with periodic boundary conditions, the functions $\psi_n(x) = \frac{1}{\sqrt{L}} e^{2\pi i n x/L}$, $n \in \CZ$ are a basis (since Fourier modes are a basis of periodic functions. In this case, ${\hat p} \psi_n = \frac{2\pi \hbar n}{L} \psi_n$; this basis is a basis of eigenfunctions of ${\hat p}$. Note that ${\hat x}:\psi(x) \to x\psi(x)$ is not an operator in this space.
 
@@ -75,7 +75,7 @@ For $L^2(\CR)$, ${\hat x}$ is almost such an operator, if we focus on $\psi(x)$ 
 
 1. **Definition**. Let $V$ be a vector space over $\CC$ and $W_{1,2} \subset V$ be vector subspaces of $V$. $W_1$, $W_2$ are *orthogonal* (denoted $W_1 \perp W_2$) if $\forall \ket{w_1} \in W_1, \ket{w_2} \in W_2$, $\brket{w_1}{w_2} = 0$.
 
-2. **Theorem**. $\forall W ]subset V$ vector subspaces, there exists a subspace $W^{\perp} \subset V$ such that $\forall \ket{v} \in V$, there exists a unique expression
+2. **Theorem**. $\forall W \subset V$ vector subspaces, there exists a subspace $W^{\perp} \subset V$ such that $\forall \ket{v} \in V$, there exists a unique expression
 ```{math}
 :label: ortho_decomp
 \ket{v} = \ket{w} + \ket{w^{\perp}}
@@ -83,7 +83,7 @@ For $L^2(\CR)$, ${\hat x}$ is almost such an operator, if we focus on $\psi(x)$ 
 with $\ket{w} \in W$, $
 \ket{w^{\perp}} \in W^{\perp}$. This is known as an *orthogonal decomposition* of $\ket{v}$.  I will forgo a proof here.
 
-Note that we can form orthogonal/orthonormal bases $\ket{i}, \ket{I}$ for $W,W^{\perp}$ respectively; by teh above theorem, since any vector can be written as a sum of vectors in the wubspaces $W,W^{\perp}$, the collection of basis elemenbts $\ket{i},\ket{I}$ are a basis for $V$. Thus if $d = \text{dim} V$, $d_W = \text{dim}(W)$, $d_{W^{\perp}} = \text{dim}(W^{\perp})$, we have
+Note that we can form orthogonal/orthonormal bases $\ket{i}, \ket{I}$ for $W,W^{\perp}$ respectively; by the above theorem, since any vector can be written as a sum of vectors in the wubspaces $W,W^{\perp}$, the collection of basis elemenbts $\ket{i},\ket{I}$ are a basis for $V$. Thus if $d = \text{dim} V$, $d_W = \text{dim}(W)$, $d_{W^{\perp}} = \text{dim}(W^{\perp})$, we have
 ```{math}
 :label: od_dims
 d = d_W + d_{W^{\perp}}
