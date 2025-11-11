@@ -95,7 +95,7 @@ It is clear that each of these probabilities can be measured, in separate experi
 The experiment we have involves three spin-$\half$ particles observed by three observers Alice, Bob and Charlotte. The full state of the system is the entangled state:
 ```{math}
 :label: ghz_state
-ket{\psi} = \frac{1]{\sqrt{2}}\left(\ket{z,+}_A\ket{z,+}_B\ket{z,+}_C - 
+\ket{\psi} = \frac{1}{\sqrt{2}}\left(\ket{z,+}_A\ket{z,+}_B\ket{z,+}_C - 
 \ket{z,-}_A\ket{z,-}_B\ket{z,-}_C\right)
 ```
 Now the following three observables commute (so that they can be simultaneously diagonalized, and therefore simultaneously measured):
