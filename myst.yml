@@ -19,6 +19,13 @@ project:
   math:
     '\del': '\partial'
     '\half': '\frac{1}{2}'
+    '\cH': '{\cal H}'
+    '\cO': '{\cal O}'
+    '\CC': '{\mathbb C}'
+    '\eps': '\epsilon'
+    '\brket': '\langle #1 | #2 \rangle'
+    '\bra': '\langle #1 |'
+    '\ket': '| #1 \rangle'
   bibliography:
     - quantum.bib
   toc:

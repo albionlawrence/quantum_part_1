@@ -124,7 +124,7 @@ First, we consider the case of quantum statistical mechanics. In this case we wi
 ```{math}
 Z(\beta) = {\rm Tr} e^{-\beta H} = \int d^d x \bra{x} e^{-\beta H} \ket{x}
 ```
-This describes the propagation from $x$ back to $x$ over an *imaginary* time $- i \hbar \beta$. We could write $e^{\-\beta H} = (e^{- \frac{\beta}{N} H})^N$ and carry out the same procedure as above by inserting resolutions of the identity. We get a similar answer but $t$ is replaced by an imaginary time $t = - i \tau$. The upshot is that
+This describes the propagation from $x$ back to $x$ over an *imaginary* time $- i \hbar \beta$. We could write $e^{-\beta H} = (e^{- \frac{\beta}{N} H})^N$ and carry out the same procedure as above by inserting resolutions of the identity. We get a similar answer but $t$ is replaced by an imaginary time $t = - i \tau$. The upshot is that
 ```{math}
 Z = \int_{x(0) = x(\hbar \beta)} Dx(\tau)\exp\left(-\int_0^{\hbar \beta} d\tau \left(\frac{m}{2} (\del_{\tau} x)^2 + V(x(\tau))\right)\right)
 ```
@@ -142,7 +142,7 @@ K(x_f, t_f; x_i,t_i) \to {\cal N} \int Dx \exp\left( -\beta \int_{y_i}^{y_f}dy \
 ```
 If we take $y$ to be a position coordinate, the first term is the elastic energy for a string stretched along $y$ and defiormed in the perpednicular directions ${\vec x}$; $V(x)$ is the potential energy for each point on the string. So this is the classical partition function for an elastic string. This relationship, in which the time direction is transformed into a spatial direction, and the propagator into a classical partition fuinction for a system extended along the "imaginary time" direction, is a key relationship in modern theoretical physics.
 
-### Nonequilibrium statistical mechanics: tochastic processes
+### Nonequilibrium statistical mechanics: stochastic processes
 
 Let us consider a particle moving under both friction the influence of a random force $\delta(t)$, in a limit that the friction force $F = - \lambda {\dot x}$ exceeds $m{\ddot x}/2$. Then the equation of motion is
 ```{math}
