@@ -7,7 +7,7 @@ Here we will consider an extremely simplistic setup in which the background prob
 V(x) = \begin{cases} 0 & x < 0 \\ V_0 > 0 & 0 \leq x \leq a \\ 0 & x > \end{cases}
 ```
  
- The question we want to ask is the following. Consider a particle with fixed energy $E$ which is approaching the barrier from large negative $x$. Its initial energy is kinetic, $E = \half m v^2$. What happens after it hits the barrier?
+ The question we want to ask is the following. Consider a particle with fixed energy $E$ which is approaching the barrier from large negative $x$. Its initial energy is kinetic, $E = \frac{1}{2} m v^2$. What happens after it hits the barrier?
  
 ## Classical scattering
  
@@ -32,7 +32,7 @@ The first thing we should note is that this problem (as all scattering problems)
 Ideally one would prepare a localized wave packet and study its evolution. In general this will both propagate and spread and the interaction with the potential barrier will be somewhat complicated. Instead we will consider the following idealization. To the left or the right of the barrier, the solutions are of the form $e^{\pm i k x}$ where $E = \frac{\hbar^2 k^2}{2m}$. Recall that the probability $\rho dx = |\psi(x)|^2 dx$ that a single particle is found in an interval of length $dx$ about position $x$, where $\rho$ is the probability density. Recall from {ref}`subsec:probability_conservation` that this density satisfies a conservation law $\partial_t \rho + \partial_x J$ where
 ```{math}
 :label: scattering_flux
-J = \frac{\hbar}{2im} \left(\psi^*\del_x\psi - \del_x \psi^* \psi\right)
+J = \frac{\hbar}{2im} \left(\psi^*\partial_x\psi - \partial_x \psi^* \psi\right)
 ```
 If the wavefunction is $A e^{\pm i k x}$, then $J = |A|^2 \frac{\hbar k}{m}$. Here $\hbar k$ is the momentum of the particle, $\hbar k/m$ behaves as a velocity. Nowfor $|\psi|^2$ to be a good probability density, $A$ has units of $(length)^{-1/2}$, so $|A|^2 v$ has units of inverse time. We can think of it as the probability per unit time that the particle crosses $x$ from left to right (if $k$ and thus $v$ is positive). 
 

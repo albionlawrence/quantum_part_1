@@ -16,6 +16,9 @@ project:
       provider: github
       url: ''
       ref: master
+  math:
+    '\del': '\partial'
+    '\half': '\frac{1}{2}'
   bibliography:
     - quantum.bib
   toc:
