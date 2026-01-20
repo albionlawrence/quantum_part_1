@@ -36,7 +36,7 @@ U = - {\vec \mu}\cdot{\vec B}
 ![Stern-Gerlach device](SG_setup.jpeg)
 
 Quantum-mechanically, the story is somewhat different. Pictured above is a sketch of a device that should measure the magnetic moment (and thus the angular momentum) of a particle. The device emits particles with some fixed velocity along the $y$ axis, and randomly oriented magnetic moments. We pass the particles through a magnetic field:
-```{nath}
+```{math}
 :label: SG_bfield
 {\vec B} = b_x({\hat x}) + (B_0 + b(z)) {\hat z}
 ```

@@ -15,7 +15,7 @@ Thus, if we let $\ket{\psi'} = U(R) \ket{\psi}$,
 \psi'(x) = \brket{x}{\psi'} = \bra{x} U(R)\ket{\psi} = \brket{R^{-1} x}{\psi} = \psi(R^{-1}x)
 ```
 Let us conisder infinitesimal rotations by an angle $\theta$ about the $z$ axis, for which 
-```{nath}
+```{math}
 \begin{align}
 x & \to x - \theta y\\
 y & \to y + \theta x\\

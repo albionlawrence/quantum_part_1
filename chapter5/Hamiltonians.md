@@ -5,7 +5,7 @@
 
 Let us start with a particle on an $N$-site lattice with periodic boundary conditions. We assume that there is a binding energy $E = - |E|$ at each site, and a hopping rate $A/\hbar$ between *adjacent* sites. Since $A$ has units of energy, a natural Hamiltonian is
 ```{math}
-:lable: hopping_ham
+:label: hopping_ham
 H_{ij} = E \delta_{ij} - A \delta_{i,i+1} - A\delta_{i,i-1}
 ```
 where $i \equiv i \pm N$. In matrix form this is
@@ -96,7 +96,7 @@ Similarly,
 The Heisenberg equations of motion have the identical formal structure as the classical equations of motion! Note that if the potential $V = 0$, we have translation invariance, and $\frac{d}{dt} {\hat p}_H = 0$, that is, momentum seems to be consserved (we will see down the line that the relation between symetries and conserved quantities holds in quantum mechanics as well as classical mechanics). 
 
 We can insert these into expectation values, for which it does not matter whether we write them in the Schroedinger or Heisenberg picture. 
-```{nmath}
+```{math}
 :label: ehrenfest_theorem
 \frac{d}{dt} \vev{x} & = \frac{\vev{p}}{m}\\
 \frac{d}{dt} \vev{p} & = - \langle V(x)\rangle

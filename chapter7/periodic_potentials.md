@@ -41,7 +41,7 @@ Lets assume the lattice has spacing $a$, and $a I = x$. Then (dropping the $i$ i
 \bra{I} H \ket{\psi} = E\psi(x) - \Delta\left(\psi(x + a) + \psi(x - a)\right)
 ```
 But 
-```{nath}
+```{math}
 2 \psi(x) - \psi(x - a) - \psi(x + a) \sim - a^2 \psi''(x) + \cO(a^4)
 ```
 so our Hamiltonian is a good discrete representation of the Laplacian.

@@ -86,7 +86,7 @@ In general we write $\bra{f_v} = \bra{v}$.
 ```
 
 3. *Triangle inequality*
-```{nath}
+```{math}
 ||u + v|| \neq ||u| + ||v||
 ```
 

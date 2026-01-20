@@ -102,7 +102,7 @@ These terms scale as either $\sigma^{-2}$ or $\sigma^{-1}$ as $\rho \to \sigma \
 ```{math}
 G(\rho) = \rho \sum_{n = 0}^{\infty} c_n \rho^n
 ```
-Inserting this into Eq. {eg}`G_equation`, and collecting all terms of the same order in $\rho$, we find:
+Inserting this into Eq. {eq}`G_equation`, and collecting all terms of the same order in $\rho$, we find:
 ```{math}
 \sum_{m = 1}^{\infty} \left[c_m(m + \ell + 1)(m + \ell) - \ell(\ell + 1) c_m - (2(m + \ell) - e^2\lambda)  c_{m-1}\right]\rho^{m - 1}
 ```
