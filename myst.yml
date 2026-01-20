@@ -1,0 +1,98 @@
+version: 1
+project:
+  title: Physics 162
+  authors:
+    - name: Albion Lawrence
+  copyright: '2025'
+  exclude:
+    - _build
+    - Thumbs.db
+    - .DS_Store
+    - '**.ipynb_checkpoints'
+  github: executablebooks/jupyter-book
+  thebe:
+    binder:
+      repo: executablebooks/jupyter-book
+      provider: github
+      url: ''
+      ref: master
+  bibliography:
+    - quantum.bib
+  toc:
+    - file: intro.md
+    - file: chapter0/Overview.md
+    - file: chapter1/Intro_Classical.md
+      children:
+        - file: chapter1/Newton.md
+        - file: chapter1/Lagrange.md
+        - file: chapter1/Constraints.md
+        - file: chapter1/Symmetries.md
+        - file: chapter1/Hamilton.md
+    - file: chapter2/Intro_quantum.md
+    - file: chapter3/Intro_linear_algebra.md
+      children:
+        - file: chapter3/Vector_spaces.md
+        - file: chapter3/Linear_operators.md
+        - file: chapter3/Adjoint.md
+        - file: chapter3/Operator_spectra.md
+    - file: chapter4/Quantum_rules.md
+      children:
+        - file: chapter4/Axioms.md
+        - file: chapter4/Spin_half.md
+        - file: chapter4/entangled.md
+        - file: chapter4/bell.md
+    - file: chapter5/Wave_mechanics.md
+      children:
+        - file: chapter5/infinite_d.md
+        - file: chapter5/compatible_measurements.md
+        - file: chapter5/Hamiltonians.md
+        - file: chapter5/wave_equation.md
+        - file: chapter5/dynamics_1.md
+    - file: chapter6/Interlude_1.md
+      children:
+        - file: chapter6/aharonov-bohm.md
+        - file: chapter6/neutrino_oscillations.md
+    - file: chapter7/Wave_examples.md
+      children:
+        - file: chapter7/free_particle.md
+        - file: chapter7/square_well.md
+        - file: chapter7/sho.md
+        - file: chapter7/twostate_models.md
+        - file: chapter7/1d_scattering.md
+        - file: chapter7/periodic_potentials.md
+    - file: chapter8/FPI.md
+    - file: chapter9/rotation_group.md
+      children:
+        - file: chapter9/transformations.md
+        - file: chapter9/rotations.md
+        - file: chapter9/representations_rotations.md
+        - file: chapter9/orbital_am.md
+        - file: chapter9/addition_am
+        - file: chapter9/tensor_operators.md
+    - file: chapter10/hydrogen.md
+      children:
+        - file: chapter10/two_particle_reduction.md
+        - file: chapter10/hydrogen_spectra.md
+    - file: chapter11/approximate_evals.md
+      children:
+        - file: chapter11/tipt.md
+        - file: chapter11/variational.md
+        - file: chapter11/wkbj.md
+    - file: chapter12/time_dependent_pt.md
+      children:
+        - file: chapter12/interaction_picture.md
+        - file: chapter12/dyson_series.md
+        - file: chapter12/first_order.md
+    - file: chapter13/second_quantization.md
+      children:
+        - file: chapter13/identical_particles.md
+        - file: chapter13/em_field.md
+    - file: appendix.md
+    - file: bibliography.md
+site:
+  options:
+    logo: Carl_Eckart.jpg
+    favicon: ''
+    analytics_google: ''
+    folders: true
+  template: book-theme
