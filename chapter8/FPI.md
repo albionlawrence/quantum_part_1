@@ -122,13 +122,13 @@ The point of drawing these connections is to tantalize you with the idea that ma
 
 First, we consider the case of quantum statistical mechanics. In this case we wish to compute
 ```{math}
-Z(\beta) = {\rm Tr} e^{-\beta H} = \int d^d x \bra{x} e^{-\beta H} \ket{x}
+Z(\beta) = {\rm Tr} e^{-(\beta\hbar) H/\hbar} = \oint d^d x \bra{x} e^{-\beta\hbar H/\hbar} \ket{x}
 ```
 This describes the propagation from $x$ back to $x$ over an *imaginary* time $- i \hbar \beta$. We could write $e^{-\beta H} = (e^{- \frac{\beta}{N} H})^N$ and carry out the same procedure as above by inserting resolutions of the identity. We get a similar answer but $t$ is replaced by an imaginary time $t = - i \tau$. The upshot is that
 ```{math}
-Z = \int_{x(0) = x(\hbar \beta)} Dx(\tau)\exp\left(-\int_0^{\hbar \beta} d\tau \left(\frac{m}{2} (\del_{\tau} x)^2 + V(x(\tau))\right)\right)
+Z = \int_{x(0) = x(\hbar \beta)} Dx(\tau)\exp\left(-\frac{1}{\hbar}\int_0^{\hbar \beta} d\tau \left(\frac{m}{2} (\del_{\tau} x)^2 + V(x(\tau))\right)\right)
 ```
-In other words, the path itegral over trajectories in periodic imaginary time yields the quantum statistical mechanical partition function. 
+In other words, the path integral over trajectories in periodic imaginary time yields the quantum statistical mechanical partition function. 
 
 ### Connection to classical equilibrium statistical mechanics
 
@@ -141,6 +141,12 @@ If we set $\beta y = \frac{\tau}{\hbar}$, we have
 K(x_f, t_f; x_i,t_i) \to {\cal N} \int Dx \exp\left( -\beta \int_{y_i}^{y_f}dy \left(\frac{m x_{y}^2}{2\hbar^2\beta^2} + V(x(\tau))\right)\right)
 ```
 If we take $y$ to be a position coordinate, the first term is the elastic energy for a string stretched along $y$ and defiormed in the perpednicular directions ${\vec x}$; $V(x)$ is the potential energy for each point on the string. So this is the classical partition function for an elastic string. This relationship, in which the time direction is transformed into a spatial direction, and the propagator into a classical partition fuinction for a system extended along the "imaginary time" direction, is a key relationship in modern theoretical physics.
+
+Another way to reach a limit like this is to consider a *field theory* living in one space and one time dimension. For example we can imagine quantizing the fluctuations of a string in one (vertical) direction $h$, stretched along a direction $x$ such that each point is subject to a potential $V(h)$. In this case a good Lagrangian is
+```{math}
+L = \int dx \left(\frac{\mu}{2} {\dot h}^2 - \frac{\mu c^2}{2} (\partial_x h)^2 - V(h)\right)
+```
+Here the second term is an elastic stretching term. Now consider the path integral for the quantum partition function but in the limit that $\beta \hbar \to 0$. (Actually you have to be more careful about this and state that this is small compared to any time scale in the problem). If we expend $h$ in Fourier modes in the $\tau$ direction, the higher Fourier modes will contribute terms of the form $n^2/\beta^2 \hbar^2$ to the action; in the partition function these will be exponentiall suppressed, so that we should keep only the modes that are constant in imaginary time. The result is the classical path integral for a particle.
 
 ### Nonequilibrium statistical mechanics: stochastic processes
 
