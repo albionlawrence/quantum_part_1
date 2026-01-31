@@ -27,7 +27,7 @@ for all states $\ket{\psi'}$ and operators ${\cal O}'$, such that observed quant
 (you might think you want to know all matrix elements of ${\cal O}$, but in practice measurements can be phrased as expectation values of projecttion operators as we have discussed -- also, it happens that if you know the expectation value of ${\cal O}$ for all states, you know all matrix elements. We'll prove that at the end of this section so as not to interrupt the flow). 
 
 One can easily prove the following (see {cite:p}`bellac2006quantum` or 
-{ref}`messiah1999quantum`):
+{cite:p}`messiah1999quantum`):
 
 *Theorem*: give a transformation ${\cal T}$, we can modify the transformed states $\ket{\psi'} \to e^{i\alpha(\ket{\psi'})}\ket{\psi'}$ such that the transformation is implemented by a linear operator $U_{{\cal T}}$:
 ```{math}
@@ -130,6 +130,17 @@ U_{g_1} U_{g_2} = e^{i\alpha(g_1,g_2)} U_{g_1\cdot g_2}
 ```
 where $\alpha$ is a real number.
 
+An important concept is that of a {\it irreducible representation}, often called {\it irreps}\ from which all representations can be built. The theory of group representations is all about the properties of the irreps.
+
+To start with, give a representation $\cH$ of a group $G$, a subspace $\cH' \subset \cH$ is an {\it invariant subspace} if for energy $\ket{\psi'} \in \cH'$, and $g \in G$, $U_{g} \ket{\psi'} \in \cH'$. An example for real representations would be that the $x-y$ plane is invariant under the group of rotations about the $z$ axis. For that matter, the $z$ axis is also an invariant subspace!
+
+Next, a representation $\cH$ of $G$ is {\it irreducible}\ if the obly invariant subspace under actions of $G$ is $\cH$ itself. Otherwise, $\cH$ is {\it reducible}. Furothermore, for a reducible representation $\cH$, we can always write
+
+```{math}
+\cH = \cH_1 \oplus \cH_2 \oplus \cdots \oplus \cH_n
+```
+where $\cH_{k = 1,\ldots, n}$ are all irreducible. These factors will all be orthogonal in the Hilbert space.
+
 ## Symmetries
 
 A particularly important class of transformations are *symmetries*: transformations that preserve the system's dynamics. More precisely, they preserve the Hamiltonian:
@@ -147,6 +158,14 @@ such that $U_{{\cal T}} H_0 U_{{\cal T}}^{\dagger} = H_0$ but $U_{{\cal T}} \Del
 H = H_{strong} + H_{em} + H_{weak}
 ```
 for the interaction between nucleaons and other fundamental particles. At internucleon distances, the strong nuclear force dominates, and preserves nuclear isospin, The electromagnetic and weak interactions break it (for example via coulomb repulsion of protons as opposed to neutrons), but it is weak at these scales.
+
+### Symmetries and irreps
+
+Given a group $G$ of transformations, the Hilbert space of our quantum system generically forms a reducible representation, which can be written as a direct sum of irreps. 
+
+If the group $G$ is a symmetry, then any degenerate eigenspace of $H$ is a representation of the symmetry group. This is because any transformation by the group $G$ will not change the energy since $G$ commutes with the Hamiltonian. By the statement above, this representation can thus be written as a direct sum of irreps. We can do this for every energy eigenstate in the Hilbert space, this writing the Hilbert space as a direct sum of irreps, each irrep living in a degenerate subspace of $H$. From this we see that every irrep of a symmetry group $G$ is an eigenstace of $H$ (it could be one-dimensional or higher-dimensional).
+
+
 
 ## Continous vs. Discrete Transformations
 
