@@ -157,7 +157,7 @@ R(\alpha,\beta,\gamma) & = R({\hat y}',\beta) R({\hat z}, \gamma) R({\hat y}',-\
 & =  R({\hat z},\alpha) R({\hat y},\beta) R({\hat z},\gamma)
 \end{align}
 ```
-In the first line we used the first equation in {eq}`conjugate_rot`; in the second line we used the fact that $ R({\hat y}',-\beta) R({\hat y'},\beta) = {\bf 1}$; in the third line we used the second equation in {eq}`conjugate_rot`; in the fourth line we used the fact that successive rotations about ${\hat z}$ commute with each other; in the last equation we used $ R({\hat z}, -\alpha) R({\hat z},\alpha = {\bf 1}$.
+In the first line we used the first equation in {eq}`conjugate_rots`; in the second line we used the fact that $ R({\hat y}',-\beta) R({\hat y'},\beta) = {\bf 1}$; in the third line we used the second equation in {eq}`conjugate_rots`; in the fourth line we used the fact that successive rotations about ${\hat z}$ commute with each other; in the last equation we used $ R({\hat z}, -\alpha) R({\hat z},\alpha = {\bf 1}$.
 
 In general, a given rotation $R$ can be given a matrix representation in any irrep. We define
 ```{math}
@@ -185,7 +185,7 @@ The first nontrivial example, and one we have studied many times. In the basis $
 ```{math}
 J_z = \frac{\hbar}{2} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} = \frac{\hbar}{2} \sigma_z
 ```
-Now using Equations {eq}`raising_op`, {eq`lowering_op`, we have
+Now using Equations {eq}`raising_op`, {eq}`lowering_op`, we have
 ```{math}
 \begin{align}
 J_+ & = \hbar \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \\

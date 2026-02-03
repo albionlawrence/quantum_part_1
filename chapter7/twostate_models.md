@@ -91,12 +91,12 @@ This is exponentially small in $a\sqrt{2m V_0}/\hbar$, as discussed above. The e
 
 The Hamiltonian in the energy/parity eigenstate basis in which $\ket{+}$ is represented by $\begin{pmatrix} 1 \\ 0 \end{pmatrix}$ and $\ket{-}$ is represented by $\begin{pmatrix} 0 \\ 1 \end{pmatrix}$ is:
 ```{math}
-H = \begin{pmatrix} E_{\av} - \half \Delta E & 0 \\ 0 &  E_{av} + \half \Delta E \end{pmatrix}_{energy}
+H = \begin{pmatrix} E_{av} - \half \Delta E & 0 \\ 0 &  E_{av} + \half \Delta E \end{pmatrix}_{energy}
 ```
 
 Working in the position basis in which $\ket{L}$ is represented by $\begin{pmatrix} 1 \\ 0 \end{pmatrix}$ and $\ket{R}$ is represented by $\begin{pmatrix} 0 \\ 1 \end{pmatrix}$, we have:
 ```{math}
-H_{pos} = \begin{pmatrix} E_{\av} & - \Delta E \\ - \Delta E & E_{av} \end{pmatrix}
+H_{pos} = \begin{pmatrix} E_{av} & - \Delta E \\ - \Delta E & E_{av} \end{pmatrix}
 ```
 We can think of this off-diagonal term as a ``hopping" term that drives transitions between $\ket{L}$ and $\ket{R}$; the transition rate, after all, scales with $\Delta E$. 
 
@@ -119,7 +119,7 @@ Near each local minimum, which we label by $x_L, x_R$, we can define $m \omega_{
 Since we no longer have any symmetry, the Hamiltonian in the basis of states localized near either $x_L$ or $x_R$ is the most general Hermitian matrix:
 ```{math}
 :label: asdw
-H = \begin{array} E_L \\ - \Delta E e^{i\gamma} & - \Delta E e^{i\gamma} \\ E_R \end{array}
+H = \begin{pmatrix} E_L & - \Delta E e^{i\gamma} \\ - \Delta E e^{-i\gamma} & E_R \end{pmatrix}
 ```
 With some work you can show that with a suitable phase change in the basis vector for the left-localized state
 ```{math}

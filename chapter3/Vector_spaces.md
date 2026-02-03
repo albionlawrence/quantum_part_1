@@ -113,7 +113,7 @@ with $c_k,d_k$ fixed and the same for all vectors in this space, and $a$ any com
 **Definition**. A set of vectors $\ket{v_1},\ldots,\ket{v_m} \in V$ is *linearly independent* if
 ```{math}
 :label: lin_indep_def
-\sum_{i = 1}^m a_k \ket{v_k} = 0 \Leftrightarrow a_k = 0 \forall\ $k = 1,\ldots,n
+\sum_{i = 1}^m a_k \ket{v_k} = 0 \Leftrightarrow a_k = 0\ \forall\ k = 1,\ldots,n
 ```
 
 Let us give some examples.
@@ -151,7 +151,7 @@ are linearly independent. Similarly, for $n$th order polynomials, the monomials 
 
 **Definition**: the *dimension* of a vector space $V$ is the maximum number of linearly independent vectors in $V$. Any such maximal collection is called a *basis*. 
 
-**Theorem**: Given a basis $\ket{k}$, $k = 1,\ldots,n$, then for any vector $\ket{v}$ there is a unique set of complex numbers $a_{k - 1,\ldots,n$ such that
+**Theorem**: Given a basis $\ket{k}$, $k = 1,\ldots,n$, then for any vector $\ket{v}$ there is a unique set of complex numbers $a_{k = 1,\ldots,n}$ such that
 ```{math}
 :label: use_of_basis
 \sum_{k = 1}^n a_k \ket{k} 

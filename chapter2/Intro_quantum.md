@@ -36,7 +36,7 @@ We have the following dimensionful quantities available to construct $\CE(T,\ome
  
  ```{math}
  :label: en_dens_dimanalysis
- \CE(T, omega) = A k_B T \left(\frac{\omega}{c}\right)^3 \frac{1}{\omega} = A \frac{k_B T}{c^3} \omega^2
+ \CE(T, \omega) = A k_B T \left(\frac{\omega}{c}\right)^3 \frac{1}{\omega} = A \frac{k_B T}{c^3} \omega^2
  ```
  
 where $A$ is a dimensionless constant that requires a first-principles calculation to obtain. This is called the "Rayleigh" law and $A$ was calculated by Rayleigh in 1900.
@@ -99,7 +99,7 @@ where
 
 ```{math}
 :label: planck_sf
-f(x) & = \frac{1}{\pi^2} \frac{x}{e^x - 1)
+f(x) & = \frac{1}{\pi^2} \frac{x}{e^x - 1}
 ```
 
 In other words, the fact that we can create a new energy scale $\hbar\omega$ is what allows us to write a functional form for $\CE(\omega,T)$ consistent with the observed high- and low-frequency limits. Note that we now know the soure of this quantization (and we will say more about it below): light comes in "packets" consisting of individual particles known as *photons* with energy $\hbar\omega$.
@@ -163,7 +163,7 @@ This supports various polarization states such as
 1. Linear/plane polarization: ${\vec E}_x = E e^{i\delta} {\hat n}$ where $E$ is a positive real number and ${\hat n}$ a unit vector in the $x-y$ plane. In particular ${\hat n} = {\hat x}, {\hat y}$ correspond to plane polarization along the $x$- and $y$-axis respectively.
 
 2. Circular polarization:
-- **Left circular polarization (LCP)**: $E_y = - i E_x = - i E e^{i\delta)$, or
+- **Left circular polarization (LCP)**: $E_y = - i E_x = - i E e^{i\delta}$, or
 equivalently ${\vec E}_c = E({\hat x} - i {\hat y})e^{i\delta}$. Thus:
 
 ```{math}

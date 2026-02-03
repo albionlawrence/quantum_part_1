@@ -56,13 +56,13 @@ Thus, more energetic states travel a wider range. The frequency of oscillation i
 
 ## The quantum oscillator
 
-To solve this problem we are going to do a bit of scaling analysis. The time-independent Schroeinger equation is:
+To solve this problem we are going to do a bit of scaling analysis. The time-independent Schroedinger equation is:
 ```{math}
 - \frac{\hbar^2}{2m} \frac{\del^2}{\del x^2} \psi(x) + \half m \omega^2 x^2 \psi(x) = E \psi(x)
 ```
 Now we will let $x = L y$ and multiply the equation by $m L^2/\hbar^2$:
 ```{math}
-- \half \del_y^2 \psi(y) + \half \frac{m^2 \omega^2 L^4$}{\hbar^2} y^2 \psi(y) = \frac{mL^2}{\hbar^2} E \psi
+- \half \del_y^2 \psi(y) + \half \frac{m^2 \omega^2 L^4}{\hbar^2} y^2 \psi(y) = \frac{mL^2}{\hbar^2} E \psi
 ```
 setting $L  = \sqrt{\frac{\hbar}{m\omega}}$ and $\CE = \frac{E}{\hbar\omega}$, we have
 ```{math}
@@ -70,11 +70,11 @@ setting $L  = \sqrt{\frac{\hbar}{m\omega}}$ and $\CE = \frac{E}{\hbar\omega}$, w
 ```
 what we have learned is that the typical trange of variation of the wavefunction is set by $\sqrt{\hbar}{m\omega}$ and the energy scales are set by $\hbar\omega$. 
 
-We will solve this with a clever trick. We can write $a = \frac{1}{\sqrt{2}}(del_y + y)$ and $a^{\dagger} = \frac{1}{\sqrt{2}}(- \del_y + y)$. The fact that this is the correct expression for teh Hermitian conjugate can be deduced using the standard norm on wavefunctions, or we can note that
+We will solve this with a clever trick. We can write $a = \frac{1}{\sqrt{2}}(\del_y + y)$ and $a^{\dagger} = \frac{1}{\sqrt{2}}(- \del_y + y)$. The fact that this is the correct expression for teh Hermitian conjugate can be deduced using the standard norm on wavefunctions, or we can note that
 ```{math}
 \del_y = L \del_x = \frac{i L}{\hbar} p 
 ```
-so that if $p^{{\dagger} = p$, $()\del_y^{\dagger} = - \del_y$. Now we can write
+so that if $p^{\dagger} = p$, $()\del_y^{\dagger} = - \del_y$. Now we can write
 ```{math}
 	a^{\dagger} a = \half(-\del_y + y)(\del_y + y) = \half(-\del_y^2 + y^2 - 1)
 ```
@@ -101,7 +101,7 @@ It is an important fact that
 \end{align}
 ```
 
-We can use these facts to define the spectrum and generate solutions to the TISE. First, let us assume we have a normalized energy eigenstate $\ket{E}$ with energy $E$. Then using {eq}`aad_cr` we find
+We can use these facts to define the spectrum and generate solutions to the TISE. First, let us assume we have a normalized energy eigenstate $\ket{E}$ with energy $E$. Then using {eq}`aad_ccr` we find
 ```{math}
 \begin{align}
 H a^{\dagger} \ket{E} & = (E + \hbar\omega) a^{\dagger}\ket{E}\\
@@ -153,5 +153,5 @@ When we apply $n$ powers of $a^{\dagger} = \frac{1}{\sqrt{2}}(-\del_y + y)$ to a
 ```{math}
 \psi_n(x) = \brket{x}{n} = \frac{1}{\sqrt{2^n n!}} \left(\frac{1}{\pi^{1/4} L^{1/2}}\right) e^{- \frac{x^2}{2 L^2}} H_n\left(\frac{x}{L}\right)
 ```
-where $L = \sqrt{\frac{\hbar}{m\omega}$, and $H_n$ can be looked up in textbooks. One point of these functions is that they form a complete orthonormal basis of square-integrable functions, because they are eigenfunctions of a Hermitian operator.
+where $L = \sqrt{\frac{\hbar}{m\omega}}$, and $H_n$ can be looked up in textbooks. One point of these functions is that they form a complete orthonormal basis of square-integrable functions, because they are eigenfunctions of a Hermitian operator.
 

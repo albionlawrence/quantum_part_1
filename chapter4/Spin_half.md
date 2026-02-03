@@ -71,7 +71,7 @@ Note that I could have oriented the Stern-Gerlach device along any axis ${\hat n
 
 Now we can start playing some interesting games. For example, take a beam of $N$ particles and pass them through a Stern-Garlach device aligned along ${\hat n}$, We can then apply a filter, based on their spatial location, that only passes through particles with $S_{{\hat n}} = \frac{\hbar}{2}$. 
 
-If we measure $S_{{\hat n}$ again on the filtered particles, we will fid that with $100\%$ probability, the result will be $S_{{\hat n}} = \frac{\hbar}{2}$. Note that at this point we are assuming that the spin degree of freedom does not evolve over the course of the experiment.
+If we measure $S_{{\hat n}}$ again on the filtered particles, we will fid that with $100\%$ probability, the result will be $S_{{\hat n}} = \frac{\hbar}{2}$. Note that at this point we are assuming that the spin degree of freedom does not evolve over the course of the experiment.
 
 If instead we measure the spin of the filtered particles along the $z$-axis, where ${\hat n}\cdot{\hat z} = \cos\theta$ we find that the particles have spin $S_z = \frac{\hbar}{2}$ with probability $\cos^2 \frac{\theta}{2}$, and spin $S_z = - \frac{\hbar}{2}$ with probability $\sin^2\frac{\theta}{2}$. 
 

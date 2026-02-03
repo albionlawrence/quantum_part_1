@@ -204,7 +204,7 @@ By a similar calculation as above, we can define
 ```{math}
 \rho = \sum_{\psi} p_{\psi} \ket{\psi}\bra{\psi} 
  ```
- where the states $\ket{\psi}$ have unit norm, and $p_{\psi}$ is the probability that the system was prepared in state $\ket{\psi}$. Note that we have made no demand that the collection of states $\ket{\psi}$ are orthogonal to each other. We simply demand that $\ket{\psi]$ has unit norm, that $0 \leq p_{\ket{\psi}\leq 1$, and that $\sum_{\ket{\psi}} p_{\ket{\psi}} = 1$. 
+ where the states $\ket{\psi}$ have unit norm, and $p_{\psi}$ is the probability that the system was prepared in state $\ket{\psi}$. Note that we have made no demand that the collection of states $\ket{\psi}$ are orthogonal to each other. We simply demand that $\ket{\psi}$ has unit norm, that $0 \leq p_{\ket{\psi}} \leq 1$, and that $\sum_{\ket{\psi}} p_{\ket{\psi}} = 1$. 
 
 We call the collection of states $\ket{\psi}$ together with the probabilities $[_{\psi}$ an *ensemble*. A particularly important one is the *canonical ensemble*. If the system is not dynamically coupled to the environment, $H$ is the Hamiltonian of the system and $\ket{E,\alpha}$ is an orthonormal basis of eigenstates such that $H]ket{E,\alpha} = E \ket{E,\alpha}$, we define
 ```{math}
@@ -282,6 +282,6 @@ Recall that $0\leq p_k \leq 1$, and $\sum_k p_k = 1$. Those familiar with classi
 
 - 1. For a pure state, $p_k = \delta_{k,k_0}$ for some $k_0$ so that $S_{vN} = 0$. Similarly if $S_{vN} = 0$, the state is pure.
 - 2. For a mazimally mixed state, $S_{nV} = \ln N$, which is the maximal value.
-- 3. Imagine that we have a spin chain of $M$ spin-$\half$ particles. The Hilbert space is $(\CC^2)^{\otimes M} = \CC^{2^M}$. A maximally mixed state then has $S_{vN} = M \ln 2$. We can think of each spin-$\half$ particle contributing $\ln 2$ to the entropy. The same occurs if we have a classical ensemble consisting of $M$ statistically independent bits which can be either $0$ or $1$ with equal probability. In quantum computing we try to build devices out of tensor products of simple systems. If the simple systems have Hilbert space $\CC^2$, also called ``two-state systems" (a bit of a misnomer since there are an infinite number of sttaes), these are called *qubits*. If their Hilbert space is $\CC^3$ they are called *qutrits*. More generally if the dimension is not specified tehy are called *qudits*. 
+- 3. Imagine that we have a spin chain of $M$ spin-$\half$ particles. The Hilbert space is $(\CC^2)^{\otimes M} = \CC^{2^M}$. A maximally mixed state then has $S_{vN} = M \ln 2$. We can think of each spin-$\half$ particle contributing $\ln 2$ to the entropy. The same occurs if we have a classical ensemble consisting of $M$ statistically independent bits which can be either $0$ or $1$ with equal probability. In quantum computing we try to build devices out of tensor products of simple systems. If the simple systems have Hilbert space $\CC^2$, also called ``two-state systems" (a bit of a misnomer since there are an infinite number of sttaes), these are called *qubits*. If their Hilbert space is $\CC^3$ they are called *qutrits*. More generally if the dimension is not specified they are called *qudits*. 
 	
 There is a big industry in computing the Shannon entropy, particular for subsystems of entangled states, as this is a measure of the degree of entanglement. 

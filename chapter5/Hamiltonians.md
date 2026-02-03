@@ -129,7 +129,7 @@ H & = \frac{1}{2m} \sum_i \left(p_i - \frac{e}{c} A_i({\vec x})\right)^2\\
 & = \frac{1}{2m} \left({\vec p}^2 - \frac{e}{c} ({\vec p} \cdot{\vec A} + {\vec A}\cdot{\vec p}) + \frac{e^2}{c^2} {\vec A}^2\right)
 \end{align}
 ```
-Classically the middle two terms could be combined to $- \frac{e}{m c} {\vec A}\cdot{\vec p}$. However, when we promote this to a quantum mechanical theory we need to remember that ${\hat x}^i,{\hat{p}_j$ do not in general commute. Then the ordering matters. The ordering presented in {eq}`mag_field_ham` gives us a Hermitian operator, as demanded by the rules of quantum mechanics. In general, these kinds of ordering issues represent an ambiguity in passing from classical to quantum mechanics. This shouldn't be too surprising; classical mechanics emerges as a limit of quantum mechanics and so there is missing physics.
+Classically the middle two terms could be combined to $- \frac{e}{m c} {\vec A}\cdot{\vec p}$. However, when we promote this to a quantum mechanical theory we need to remember that ${\hat x}^i,{\hat p}_j$ do not in general commute. Then the ordering matters. The ordering presented in {eq}`mag_field_ham` gives us a Hermitian operator, as demanded by the rules of quantum mechanics. In general, these kinds of ordering issues represent an ambiguity in passing from classical to quantum mechanics. This shouldn't be too surprising; classical mechanics emerges as a limit of quantum mechanics and so there is missing physics.
 
 ## The Schroedinger wave equation
 

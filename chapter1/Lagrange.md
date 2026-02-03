@@ -43,7 +43,7 @@ A "classical trajectory" $x^a_{k,c}$ is one that satisfies the boundary conditio
 	x^a_{k,c}(t)\ ; \ x^a_{k,c}(t) + \epsilon \delta x^a_k
 ```	
 
-satisfying the same boundary conditions. This means that $\delta x^a_{k}(t_{i,f)) = 0$. We take $\eps \ll 1$ to be a small dimensionless parameters. For small enough $\eps$ we can therefore expand 
+satisfying the same boundary conditions. This means that $\delta x^a_{k}(t_{i,f}) = 0$. We take $\eps \ll 1$ to be a small dimensionless parameters. For small enough $\eps$ we can therefore expand 
 
 ```{math}
 :label: expand_action
