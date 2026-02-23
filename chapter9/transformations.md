@@ -130,11 +130,11 @@ U_{g_1} U_{g_2} = e^{i\alpha(g_1,g_2)} U_{g_1\cdot g_2}
 ```
 where $\alpha$ is a real number.
 
-An important concept is that of a {\it irreducible representation}, often called {\it irreps}\ from which all representations can be built. The theory of group representations is all about the properties of the irreps.
+An important concept is that of an *irreducible representation*, often called {\it irreps}\ from which all representations can be built. The theory of group representations is all about the properties of the irreps.
 
-To start with, give a representation $\cH$ of a group $G$, a subspace $\cH' \subset \cH$ is an {\it invariant subspace} if for energy $\ket{\psi'} \in \cH'$, and $g \in G$, $U_{g} \ket{\psi'} \in \cH'$. An example for real representations would be that the $x-y$ plane is invariant under the group of rotations about the $z$ axis. For that matter, the $z$ axis is also an invariant subspace!
+To start with, given a representation $\cH$ of a group $G$, a subspace $\cH' \subset \cH$ is an *invariant subspace* if for energy $\ket{\psi'} \in \cH'$, and $g \in G$, $U_{g} \ket{\psi'} \in \cH'$. An example for real representations would be that the $x-y$ plane is invariant under the group of rotations about the $z$ axis. For that matter, the $z$ axis is also an invariant subspace!
 
-Next, a representation $\cH$ of $G$ is {\it irreducible}\ if the obly invariant subspace under actions of $G$ is $\cH$ itself. Otherwise, $\cH$ is {\it reducible}. Furothermore, for a reducible representation $\cH$, we can always write
+Next, a representation $\cH$ of $G$ is *irreducible* if the obly invariant subspace under actions of $G$ is $\cH$ itself. Otherwise, $\cH$ is *reducible*. Furothermore, for a reducible representation $\cH$, we can always write
 
 ```{math}
 \cH = \cH_1 \oplus \cH_2 \oplus \cdots \oplus \cH_n

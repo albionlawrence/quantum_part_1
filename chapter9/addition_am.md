@@ -31,9 +31,9 @@ We write the basis of the left hand side as $\ket{j_1,m_1; j_2 m_2} = \ket{j_1, 
 ```{math}
 \ket{j,m} = \sum_{m_1,m_2} \ket{j_1,m_1; j_2 m_2}\brket{j_1,m_1; j_2,m_2}{j,m}
 ```
-and a similar one expanding the product basis vectors in terms ot the total angular momentuim basis vectors, for which the coefficients are $\brket{j,m}{j_1,m_1;j_2,m_2} = \brket{j_1,m_1; j_2,m_2}{j,m}^*$. These matrix elements are called *Clebsch-Gordon coefficients*, and they can be calculated explicitly by a combination of ladder operators and orthogonalization. They cal also be looked up in tables.
+and a similar one expanding the product basis vectors in terms ot the total angular momentuim basis vectors, for which the coefficients are $\brket{j,m}{j_1,m_1;j_2,m_2} = \brket{j_1,m_1; j_2,m_2}{j,m}^*$. These matrix elements are called *Clebsch-Gordon coefficients*, and they can be calculated explicitly by a combination of ladder operators and orthogonalization. They can also be looked up in tables.
 
-So see how this construction actually works, we start with the observation that $\brket{\brket{j_1,m_1; j_2,m_2}{j,m} = 1$. Next we compute
+To see how this construction actually works, we start with the observation that $\brket{j_1,m_1; j_2,m_2}{j,m} = 1$. Next we compute
 ```{math}
 \begin{align}
 J_{tot,-} \ket{j_1 + j_2,j_1 + j_2} & \propto \ket{j_1 + j_2,j_1 + j_2 -1} \\
