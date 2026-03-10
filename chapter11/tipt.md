@@ -28,7 +28,7 @@ The $\eps^0$ terms cancel by supposition. At $\cO(\eps)$, the terms are:
 ```{math}
 H_1 \ket{n^{(0)}} + H_0 \ket{n^{(1)}} = E^1_n \ket{n^{(0)}} + E^0_n \ket{n^{(1)}}
 ```
-We first take the inner product of this equation with $\bra{n^{(0)}$, and find
+We first take the inner product of this equation with $\bra{n^{(0)}}$, and find
 ```{math}
 \bra{n^{(0)}}H_1\ket{n^{(0)}} + E^0_n \brket{n^{(0)}}{n^{(1)}} = E^1_n + E^0_n \brket{n^{(0)}}{n^{(1)}}
 ```
@@ -94,7 +94,7 @@ We can see again how the dimensionless parameter $\eps$ appears. The numerator i
 
 ## Second order perturbation theory (non-degenerate)
 
-It is worth going out one more order so that you can see how things develop and how complicated they get. Also, it is often the case that corrections to the energy vanishes at first order. For example, let us say that we perturbed the harmonic oscillator by $-\alpha x$. (In fact this is exactly solvable; but we can still do perturbatiob theory and I'm trying to make a point. By the way, what might you worry about if the perturbation was by $g x^3$?). The first order energy shift $\bra{k^{(0)} x \ket{k^{(0)} = 0$ because the states have definite parity but $x$ has odd parity. Thus $x\ket{k}$, $ket{k$ have opposite parity, and so zero overlap.
+It is worth going out one more order so that you can see how things develop and how complicated they get. Also, it is often the case that corrections to the energy vanishes at first order. For example, let us say that we perturbed the harmonic oscillator by $-\alpha x$. (In fact this is exactly solvable; but we can still do perturbatiob theory and I'm trying to make a point. By the way, what might you worry about if the perturbation was by $g x^3$?). The first order energy shift $\bra{k^{(0)}} x \ket{k^{(0)}} = 0$ because the states have definite parity but $x$ has odd parity. Thus $x\ket{k}$, $ket{k}$ have opposite parity, and so zero overlap.
 
 The $\cO(\eps^2)$ terms in {eq}`tise_expansion` are:
 ```{math}

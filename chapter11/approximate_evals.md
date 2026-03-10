@@ -6,11 +6,11 @@ So far we have focused, for the most part, on exactly solvable problems. But no 
 
 A classic example we already discussed is the general potential $V(x)$ near its minimum. For sufficiently low energy states, such that the wavefunciton dies off rapidly away from the minimum, we have
 ```{math}
-V(x) = V(x_0) + \half V''(x_0) (x - x_0)^2 +frac{1}{6} V'''(x_0) (x - x_0)^3 + \ldots
+V(x) = V(x_0) + \half V''(x_0) (x - x_0)^2 +\frac{1}{6} V'''(x_0) (x - x_0)^3 + \ldots
 ```
 If the terms higher than quadratic are small (which will be true when $(x - x_0)$ is small enough), we can consider the non-quadratic terms as a "small correction" to the quadratic terms. (How this happens in quantum mechanics when $x 1 x_0$ is an operator, not a number we can ask to be small, we will discuss below).
 
-IN the case of the hydrogen atom, corrections from special relativity can break the large degeneracy due to teh Runge-Lenz vector. The first comes from the fact that for a free particle, the energy is 
+In the case of the hydrogen atom, corrections from special relativity can break the large degeneracy due to teh Runge-Lenz vector. The first comes from the fact that for a free particle, the energy is 
 ```{math}
 \begin{align}
 E & = \sqrt{m^2 c^4 + p^2 c^2}\\

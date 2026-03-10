@@ -27,11 +27,11 @@ Further multiplying by $2\mu r^2$, there is only one term involving $\chi$ or an
 ```{math}
 \frac{1}{\chi}{\vec L}^2 \chi = C
 ```
-for some constant $C$. Multiplying this by $\chi$, we have an eigenvalue equation for the operator ${\vec L}^2$. But we know the solution -- $\chi$ mist be a spherical harmonic $Y_{\ell,m}(\theta,\phi)$, and $C = \hbar^2\ell(\ell + 1)$. Insering this into {eq}`separated_hydrogen`, we find:
+for some constant $C$. Multiplying this by $\chi$, we have an eigenvalue equation for the operator ${\vec L}^2$. But we know the solution -- $\chi$ must be a spherical harmonic $Y_{\ell,m}(\theta,\phi)$, and $C = \hbar^2\ell(\ell + 1)$. Insering this into {eq}`separated_hydrogen`, we find:
 ```{math}
 - \frac{\hbar^2}{2\mu} \frac{1}{r} \frac{\del^2}{\del r^2}(r f(r)) = \frac{\hbar^2 \ell(\ell + 1)}{2\mu r^2} f - \frac{e^2}{r} f = E f
 ```
-Finally, if we multiply teh entire equation by $r$ and define $u = r f(r)$, we have and "effective" Schroedinger equation:
+Finally, if we multiply the entire equation by $r$ and define $u = r f(r)$, we have and "effective" Schroedinger equation:
 ```{math}
 - \frac{\hbar^2}{2\mu} \del_r^2 u(r) + \left[\frac{\hbar^2 \ell(\ell + 1)}{2\mu r^2} - \frac{e^2}{r}\right] u = E u
 ```
@@ -39,7 +39,7 @@ This is a one-dimensional Schroedinger equation with an "effective potential"
 ```{math}
 V_{eff} = \frac{\hbar^2 \ell(\ell + 1)}{2\mu r^2} - \frac{e^2}{r}
 ```
-This is sketched below. There is a COulomb potential and for $\ell \neq 0$, a "centrifugal barrier" keeping the electron from the proton. This barrier is absent for $\ell = 0$, and one might worry that the problem is ill-defined because the potential is singular. Classically, this is only a problem if we have truly point particles and fire them right at each other. Quantum-mechanically, we will see that the problem is well-defined for the correct choice of boundary conditions. In the end, $r$ is an operator, and $\vev{\frac{e^2}{r}}$ in any well-defined quantum state is finite.
+This is sketched below. There is a Coulomb potential and for $\ell \neq 0$, a "centrifugal barrier" keeping the electron from the proton. This barrier is absent for $\ell = 0$, and one might worry that the problem is ill-defined because the potential is singular. Classically, this is only a problem if we have truly point particles and fire them right at each other. Quantum-mechanically, we will see that the problem is well-defined for the correct choice of boundary conditions. In the end, $r$ is an operator, and $\vev{\frac{e^2}{r}}$ in any well-defined quantum state is finite.
 
 ![Effective potential for the Coulomb problem](effective_pot_hydrogen.png)
 
@@ -89,7 +89,7 @@ with the solution
 ```{math}
 u \sim e^{- \sqrt{\frac{2\mu |E|}{\hbar^2}} r}
 ```
-This dies off with a characteristic length scale $L = \sqrt{\frac{\hbar^2}{2\mu |E|}$. Defining $r = L \rho$, the radial Schroedinger equation becomes:
+This dies off with a characteristic length scale $L = \sqrt{\frac{\hbar^2}{2\mu |E|}}$. Defining $r = L \rho$, the radial Schroedinger equation becomes:
 ```{math}
 - \del_{\rho}^2 u + \frac{\ell(\ell + 1)} u - \sqrt{\frac{2\mu}{\hbar^2|E|}}\frac{e^2}{\rho} u = u
 ```

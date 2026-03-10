@@ -4,7 +4,7 @@ The next two techniques we wish to discuss are cases in which the Hamiltonian is
 
 The essential point is as follows. Consider any state $\ket{\psi}$. We will not worry about normalization; the expectation value ofthe Hamiltonian (the average of the measured energy over many measurements) is:
 ```{math}
-\vev{E} = \frac{\bra{\psi} H ket{\psi}}{\brket{\psi}{\psi}}
+\vev{E} = \frac{\bra{\psi} H \ket{\psi}}{\brket{\psi}{\psi}}
 ```
 Now insert a resolution of the identity ${\bf 1} = \sum_n \ket{n}\bra{n}$ where the sum is over all energy eigenstates starting with the ground state $n = 0$. Then
 ```{math}
@@ -84,7 +84,7 @@ which we have selected to be properly normalized. The parameter $\alpha$, the wi
 
 Now
 ```{math}
-\vev{E} = \int_{-\infty}^{\infty} dx \psi^*(x) \left[- \frac{\hbar^2}{2m} \frac{\del^2}{\del x^2} + g|x|\right) \psi(x) = \frac{\hbar^2\alpha}{2m} + \frac{g}{\sqrt{2\pi \alpha}
+\vev{E} = \int_{-\infty}^{\infty} dx \psi^*(x) \left[- \frac{\hbar^2}{2m} \frac{\del^2}{\del x^2} + g|x|\right] \psi(x) = \frac{\hbar^2\alpha}{2m} + \frac{g}{\sqrt{2\pi \alpha}}
 ```
 The minimum is determined by
 ```{math}

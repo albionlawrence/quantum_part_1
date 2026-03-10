@@ -6,7 +6,7 @@ Our goal here is to set up the Hilbert space and the Hamiltonian, for the prupos
 
 At its core we are studying the Coulomb attraction between two spin-$\half$ particles (the proton and the electron) moving in space. Each of them can be labeled by their position (in a position basis) and their spin. For this section of the notes we will mostly ignore the spin degrees of freedom (they will come back later). The resulting Hilbert space is
 ```{math}
-\cH = L^2(\CR^3)_1\otimes \CC^2_1\otimes L^2(\CR^3)_2\otimes \CC^2_2$
+\cH = L^2(\CR^3)_1\otimes \CC^2_1\otimes L^2(\CR^3)_2\otimes \CC^2_2
 ```
 where the subscrips label the particles, $L^2(\CR^3)$ denotes the Hilbert space related to particle position, and $\CC^2$ is the Hilbert space for the spin degrees of freedom (when the particles carry spin-$\half$). 
 
