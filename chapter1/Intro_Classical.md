@@ -2,7 +2,7 @@
 
 For the next few weeks we will focus on reviewing some basic aspects of classical mechanics and introducing the Lagrangian and Hamiltonian formalisms. There are a number of reasons we are doing this within what is nominally a quantum mechanics course.
 
-- The Lagrangian and Hamiltonian formulations are important concepts in their own right that are not always taught at the undergraduate level. (For example, while PHYS 100a covers it and is popular, it is not required).
+- The Lagrangian and Hamiltonian formulations are important concepts in their own right that are not always taught at the undergraduate level. (For example, while PHYS 100a covers it and is popular, it is not required at Brandeis).
 
 - Quantum mechanics is a microscopic theory from which classical mechanics (which gives as accounting of macroscopic phenomena that matches observations) must emerge in the appropriate limit; this is the essence of Bohr's *Correspondence Principle*. To understand this limit, we need to understand classical mechanics.
 

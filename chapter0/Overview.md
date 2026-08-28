@@ -20,9 +20,9 @@ It also governs the collective behavior of matter at *low temperatures*, suitabl
 - White dwarves and neutron stars (no, really)
 - Conjecturally, black holes (in the context of the black hole information problem)
 
-At this point we should be asking "microscopic compared to what? Low temperature compared to what?" We hope to make this clear during the course. Clearly the dimensional quatity $\hbar \sim 1.05 \times 10^{-34} m^2 kg/s$, with units of $(energy) \times (time)$, plays a role. For atomic physics, we are talking about scales of order angstroms, and energies of order electron volts.
+At this point we should be asking "microscopic compared to what? Low temperature compared to what?" We hope to make this clear during the course. Clearly the dimensional quantity $\hbar \sim 1.05 \times 10^{-34} m^2 kg/s$, with units of $(energy) \times (time)$, plays a role. For atomic physics, we are talking about length scales of order angstroms, and energies of order electron volts.
 
-Our own sensory experience is well outside of this regime; for our survival we need to detect animals of order meters, understand weather patterns and geography over kilometers, and so on. So it should not surprise us that quantum mechanics is in many ways very different from classical mechanics. My personal feeling is that much of the angst people feel over the odder implicatons of quantum mechanics stem from forgetting this large disparity between the scales of the quantum and classical worlds.
+Our own sensory experience is well outside of this regime (although the dark-adapted eye can detect single photons); for our survival we need to detect animals of order meters, understand weather patterns and geography over kilometers, and so on. So it should not surprise us that quantum mechanics is so different from classical mechanics. My personal feeling is that much of the angst people feel over the odder implicatons of quantum mechanics stem from forgetting this large disparity between the scales of the quantum and classical worlds, and the tendency for physical systems to look very different at different scales. 
 
 ## The importance of classical mechanics
 

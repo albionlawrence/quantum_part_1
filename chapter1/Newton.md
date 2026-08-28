@@ -28,9 +28,9 @@ This is a *second order differential equation in time*. The upshot of this is th
 
 where we have used the Taylor expansion in the small time scale $\Delta t$, and dropped all terms of order ${\cal O}(\Delta t^2)$. So with the initial conditions and the force given at initial time $t_i$, we then know the positions and velocities at $t_i + \Delta t$. The same argument gives us the positions and velocities at time $t_i + 2 \Delta t$ and so forth. Of course we still have the higher-order terms, but eventually we can take the limit $\Delta t \to 0$ and we get a contionuous trajectory determined by the initial positions and velocities.
 
-Note that this interactive process is essentially how we would solve the problems on a computer, although we might find a more sophisticated representation of the time derivative to control the ${\cal O}(\Delta t^2)$ (and higher order) errors.
+Note that this iterative process is essentially how we would solve the problems on a computer, although we might find a more sophisticated representation of the time derivative to control the ${\cal O}(\Delta t^2)$ (and higher order) errors.
 
-A simple example is a ``particle'' (a ball, a spherical cow) moving in one horizontal and one vertical direction, under the influence of a constant gravitational field, ignoring friction. This is a classic first-year undergraduate mechanics problem, but just to get back into the groove:
+A simple example is a "particle" (a ball, a spherical cow) moving in one horizontal and one vertical direction, under the influence of a constant gravitational field, ignoring friction. This is a classic first-year undergraduate mechanics problem, but just to get back into the groove:
 ```{math}
 :label: constant_grav
 \begin{align}
@@ -55,7 +55,7 @@ The form given in Equation {eq}`newton_second` is not the most general form of N
 {\vec F}_k(t) = \frac{d\vec p_k}{dt}
 ```
 
-where ${\vec p}(t) = {\vec p}({\vec x}(t), \dot{\vec x}(t))$ is the *momentum*. In the classic version of Newton's laws that most people are familiar with, ${\vec p}_k = m_k {\vec x}_k$. But there are many cases for which the momentum that appears is a more complicated function of positions and velocities. One is the case of a particle in a magnetic field, which we will discuss later. Another is the case of particle mechanics in special relativity. In this case, the spatial momentum is:
+where ${\vec p}(t) = {\vec p}({\vec x}(t), \dot{\vec x}(t))$ is the *momentum*. In the classic version of Newton's laws that most people are familiar with, ${\vec p}_k = m_k \dot{\vec x}_k$. But there are many cases for which the momentum that appears is a more complicated function of positions and velocities. One is the case of a particle in a magnetic field, which we will discuss later. Another is the case of particle mechanics in special relativity. In this case, the spatial momentum is:
 
 ```{math}
 :label: sr_momentum
