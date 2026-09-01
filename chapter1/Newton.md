@@ -75,7 +75,8 @@ Part of what makes this problem difficult is that there are in fact two forces o
 
 The point of this exercise is that it is laborious, and going over it should make you eager to find a better way to find the proper equations of motion.
 
-Now locally, at a point $(x_0, x(z_0))$, the wire is curved. For infinitesimal motion, it can be approximated by a circle tangent to the curve, such that the curvature of the circle is equal to the curvature of the wire. This is sometimes called the "osculating circle". If the circle is defined by the curve $z_R(x)$, then near a specific $x(t)$, we can expand the curves in a Taylor series in $(x - x(t))$:
+Now locally, at a point $(x_0, x(z_0))$, the wire is curved. Thus, a centripetal force perpendicula to the wire will be required for the bead to maintain a curved trajectory.
+To work out this required centripetal force, we note that for infinitesimal motion, it can be approximated by a circle tangent to the curve, such that the curvature of the circle is equal to the curvature of the wire. This is sometimes called the "osculating circle". If the circle is defined by the curve $z_R(x)$, then near a specific $x(t)$, we can expand the curves in a Taylor series in $(x - x(t))$:
 
 ```{math}
 :label: expand_curves
@@ -149,7 +150,7 @@ In the end, the only force in the $x$ direction is the horizontal component of t
 N_x = |N| \sin\theta = - |N|\frac{z'}{\sqrt{1 + (z')^2}}
 ```
 
-Note the minus sign; you can see from the pifcture that the force in the x direction is positive if the slope of teh bead is negative. We end up with:
+Note the minus sign; you can see from the picture that the force in the x direction is positive if the slope of teh bead is negative. We end up with:
 
 ```{math}
 m \ddot{x} = N_x = \frac{m g z' - m \dot{x}^2 z' z''}{1 + (z')^2}

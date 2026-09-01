@@ -121,7 +121,7 @@ There is a lot more to classical mechanics than just the motion of a collection 
 
 All of these can be described within the framework of Lagrangian mechanics.
 
-In general we start with a set of *generalize coordinates* $q^I$. These could be the position variables $x^a_k$ for particles in Euclidean space, or anyo of the above examples. If we have a Lagrangian $L(q^I, {\dot q}^I, t)$, and an action
+In general we start with a set of *generalized coordinates* $q^I$. These could be the position variables $x^a_k$ for particles in Euclidean space, or anyo of the above examples. If we have a Lagrangian $L(q^I, {\dot q}^I, t)$, and an action
 
 ```{math}
 :label: gen_action
@@ -237,33 +237,33 @@ Consider the case of linear velocities:
 m \ddot{q} = - \lambda {\dot q}
 ```
 
-We will work in one dimension though the same techniques wiull work in higher dimensions. The above is standard friction if $\lambda > 0$. (If $\lambda < 0$ then the force increases with velocity and we get runaway behavior. You can see this by explicitly solving the above equation).
+We will work in one dimension though the same techniques wull work in higher dimensions. The above is standard friction if $\lambda > 0$. (If $\lambda < 0$ then the force increases with velocity and we get runaway behavior. You can see this by explicitly solving the above equation).
 
 Now let us try to find $L(q,{\dot q})$ which produces this. We need
 ```{math}
 \frac{d}{dt} \frac{\del L}{\del {\dot q}} = \frac{\del L}{\del q}
 ```
-Clearly to get the $m{\ddot q}$ term we need $L = \half m {\dot q}^2$. Getting a term linear in voleicty is another story. It must take the term ${\dot q} f(q)$ for rither the generalized force or the generalized momentum to produce such a term. But this is automatically a total derivative: we can always find an $F(q)$ such that $F'(q) = f(q)$; then ${\dot q} f(q) = \frac{d}{dt} F(q)$. This is a total derivative that will not contribute to the Euler-Lagrange equations, as you can see by adding this term.
+Clearly to get the $m{\ddot q}$ term we need $L = \half m {\dot q}^2$. Getting a term linear in velocity is another story. It must take the term ${\dot q} f(q)$ for rither the generalized force or the generalized momentum to produce such a term. But this is automatically a total derivative: we can always find an $F(q)$ such that $F'(q) = f(q)$; then ${\dot q} f(q) = \frac{d}{dt} F(q)$. This is a total derivative that will not contribute to the Euler-Lagrange equations, as you can see by adding this term.
 
 One out is to allow the Lagrangian to be time-dependent:
 ```{math}
 L = \half e^{2 \lambda t/m} m {\dot q}^2
 ```
-If we plug this into the action, though, we can see that we get the standard action if we change the time coordinate to $\tau = \tau_0 e^{-2\lambda t/m}$. In fact if you apply this change to the eqautions of motion for a frictional particle, you get back the standard equations of motion. One-dimensional motion is somewhat special.
+If we plug this into the action, though, we can see that we get the standard action if we change the time coordinate to $\tau = \tau_0 e^{-2\lambda t/m}$. In fact if you apply this change to the equations of motion for a frictional particle, you get back the standard equations of motion.
 
 
-One can instead consider the following Lagrangian:
+One can also consider the following Lagrangian:
 ```{math}
 S = \int dt \beta(t) (m \ddot{q} + \lambda \dot{q}) = \int dt \left(-m \dot \beta {\dot q} + \lambda \beta {\dot q}\right)
 ```
-where in the second term we have integrated by parts and ignored boundary terms. Here we consider $q,\beta$ as dynamical variables and it should be clear that the variational principle yields both the frictional equation of motion (from teh Euler-Lagrange equation for $\beta$) as well as for $\beta$. From this we get the following equations of motion:
+where in the second term we have integrated by parts and ignored boundary terms. Here we consider $q,\beta$ as dynamical variables and it should be clear that the variational principle yields both the frictional equation of motion (from the Euler-Lagrange equation for $\beta$) as well as for $\beta$. From this we get the following equations of motion:
 ```{math}
 \begin{align}
 m \ddot{q} & = - \lambda \dot{q} \\
 m \ddot{\beta} & = \lambda \dot{\beta}
 \end{align}
 ```
-So here we can see that this "auxiliary" field $\beta$, which we introduced as a Lagrange multiplier, has a runaway term: $\
+So here we can see that this "auxiliary" field $\beta$, which we introduced as a Lagrange multiplier, has a runaway term. 
 
 
 ## Lagrangians and coordinate changes
@@ -272,9 +272,10 @@ So here we can see that this "auxiliary" field $\beta$, which we introduced as a
 
 Consider a change of coordinates from $x^a_k$ to $q^{I = 1,\ldots Md}$.
 In this case we can write
+
 ```{math}
- :label: change_coords_lag
- L(x, \dot{x}) = L(x(q), \dot{x}(q,\dot q)) = \tilde{L}(q, \dot{q})
+:label: change_coords_lag
+L(x, \dot{x}) = L(x(q), \dot{x}(q,\dot{q})) = \tilde{L}(q, \dot{q})
 ```
 
 where
