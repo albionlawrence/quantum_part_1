@@ -40,7 +40,7 @@ A "classical trajectory" $x^a_{k,c}$ is one that satisfies the boundary conditio
 
 ```{math}
 :label: deformed_trajectories
-	x^a_{k,c}(t)\ ; \ x^a_{k,c}(t) + \epsilon \delta x^a_k
+	x^a_{k,c}(t)\ ; \ x^a_{k,c}(t) + \epsilon \delta x^a_k(t)
 ```	
 
 satisfying the same boundary conditions. This means that $\delta x^a_{k}(t_{i,f}) = 0$. We take $\eps \ll 1$ to be a small dimensionless parameters. For small enough $\eps$ we can therefore expand 
@@ -50,11 +50,11 @@ satisfying the same boundary conditions. This means that $\delta x^a_{k}(t_{i,f}
 S[\{x^a_{k,c}(t) + \epsilon \delta x^a_k)\}] = S[\{x^a_k(t)\}] + \eps \delta S^{(1)} + \eps^2 \delta S^{(2)} + {\cal O}(\eps^3)
 ```
 
-If $\Delta^{(1)}S[\{x^a_{k,c}\}] = 0$, then $x^a_{k,c}$ is a classical trajectory.
+If $\delta^{(1)}S[\{x^a_{k,c}\}] = 0$, then $x^a_{k,c}$ is a classical trajectory. We call the action {\it stationary}\ at this point, in that it does not change to leading order under small deformations of the path. By analogy we can imagine a classical nonrelativistic particle with potential energy $V({\vec x})$; the particle can be stationary at the points for which ${\vec F} = - {\vec \nabla} V = 0$, at maxima, minima, or saddle points of $V$. As with that example, the action may be a local maximum, minimum, or saddle point for a given classical trajectory.
 
 ## The Euler-Lagrange equations
 
-So far this is all fairly abstract. In fact the principle of stationary action leads to a set of differential equations known as the *Euler-Lagrange* equations which generalize Newton's second law. We can write down these equations explicitly in terms of $L$, by computing $S^{(1)}$. Let us cary out the expansion explicitly:
+So far this is all fairly abstract. In fact the principle of stationary action leads to a set of differential equations known as the *Euler-Lagrange* equations which generalize Newton's second law. We can write down these equations explicitly in terms of $L$, by computing $S^{(1)}$. Let us carry out the expansion explicitly:
 
 ```{math}
 :label: explicit_expansion

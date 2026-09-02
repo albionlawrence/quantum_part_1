@@ -76,7 +76,15 @@ Part of what makes this problem difficult is that there are in fact two forces o
 The point of this exercise is that it is laborious, and going over it should make you eager to find a better way to find the proper equations of motion.
 
 Now locally, at a point $(x_0, x(z_0))$, the wire is curved. Thus, a centripetal force perpendicula to the wire will be required for the bead to maintain a curved trajectory.
-To work out this required centripetal force, we note that for infinitesimal motion, it can be approximated by a circle tangent to the curve, such that the curvature of the circle is equal to the curvature of the wire. This is sometimes called the "osculating circle". If the circle is defined by the curve $z_R(x)$, then near a specific $x(t)$, we can expand the curves in a Taylor series in $(x - x(t))$:
+To work out this required centripetal force, we note that for infinitesimal motion, it can be approximated by a circle tangent to the curve, such that the curvature of the circle is equal to the curvature of the wire. This is sometimes called the "osculating circle". 
+
+We can describe this circle geometrically in terms of the unit vecton ${\hat n}$ pointing from $(x_0,z(x_0))$ to the center, and teh radius $R$. Alternatively, we can describe in in terms of the center of the circle $(x_c,z_c)$ and the radius $R$, via the eqution
+```{math}
+(x - x_c)^2 + (z - z_c)^2 = R^2 \Rightarrow z_R(x) = z_c \pm \sqrt{(x - x_c)^2 + R^2}
+```
+Note that there are two branches since the $z$ coordinate of the circle is not in general a single-valued function of $x$. Both of these descriptions contain the same number of parameters. 
+
+If the circle is defined by the curve $z_R(x)$, then near a specific $x(t)$, we can expand the curves in a Taylor series in $(x - x(t))$:
 
 ```{math}
 :label: expand_curves
@@ -90,16 +98,13 @@ z_R(x) & = z_R(x(t)) + (x - x(t)) z'_R(x(t)) + \half (x - x(t))^2 z''_R(x(t)) \\
 
 ![Osculating circle](Osculating.png)
 
-To solve this we demand that 
-
-1. The direction ${\hat n}$ from $(x(t), z(x(t))$ along the diameter of the circle is identical to the direction normal to the curve, and 
-2. The constant, linear and quadratic terms in the two equations in {eq}`expand_curves` should agree; that is,
+To solve this we demand that rhe constant, linear and quadratic terms in the two equations in {eq}`expand_curves` should agree; that is,
 
 ```{math}
 z(x(t)) = z_R(x(t))\ ; \ \ z'(x(t)) = z_R'(x(t))\ ; z''(x(t)) = z_R''(x(t))
 ```
 
-This is enough to determine the radius R of the circle. We will not derive this here; the answer is
+This is enough to determine the radius $R$ and the location of the center of circle (it is 3 equations with 3 unknowns). I will leave the derivation to the student; the answer is
 
 ```{math}
 R = \frac{\left(1 + (z'(x(t)))^2\right)^{3/2}}{z''(x(t))}
@@ -158,5 +163,5 @@ m \ddot{x} = N_x = \frac{m g z' - m \dot{x}^2 z' z''}{1 + (z')^2}
 
 Note that the total force depends on the velocity $\dot{x}$ as well as the position.
 
-This is quite complicated! It turns out there is a much easier way to impose constraints, which will become apparent once we introduce the Lagrangian formulation of classical mechanics.
+This is quite complicated! It turns out there is a much easier way to impose constraints, which will become apparent after we introduce the Lagrangian formulation of classical mechanics, to which we now turn.
 
