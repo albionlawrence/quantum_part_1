@@ -2,7 +2,7 @@
 
 I advertised that one advantage of Lagrangian dynamics is the ability to easily incorporate constraints. I should have said, *some* constraints; there are some that Lagrangian mechanics cannot handle (just as the framework does poorly with friction). Still when it works, it is very powerful.
 
-So we will open by describing different types of constraints, and then move to redoing the mead-on-a-wire example we covered in the first week of the course.
+So we will open by describing different types of constraints, and then move to redoing the bead-on-a-wire example we covered in the first week of the course.
 
 ## Holonomic and non-holonomic constraints
 
@@ -29,7 +29,7 @@ where $I = 1, \ldots D$ and $\alpha = 1,\ldots, m < D$. This is $m$ equations in
 
 We can parameterize the space of solutions with a set of coordinates $s^i$, so that $q^I(s^i)$ lies on the space of solutions. This paramaterization may have to be *local*; for example, in the case of a sphere, we often use different parameters to describe the northern and southern hemisphere.
 
-These will turn out to be simply dealth with in Lagrangian mechanics via Lagrange multiplier techniques.
+These can be dealt with fairly simply in Lagrangian mechanics, as we will discuss below.
 
 ### Non-holonomic constraints.
 
@@ -49,7 +49,7 @@ Locally, in some infinitesimal neighborhood, this will look like a holonomic con
 F_{I,\alpha}(q^I_0) = \frac{\del f_{\alpha}}{\del q^I} \Big|_{q^I = q^I_0}
 ```
 
-wuth $f_{\alpha}(q^I_0) = 0$ (which we can achieve by a constant shift of $f$). If we *can* satisfy {eq}`integrability`, then {eq}`local_constraint` becomes 
+with $f_{\alpha}(q^I_0) = 0$ (which we can achieve by a constant shift of $f$). If we *can* satisfy {eq}`integrability`, then {eq}`local_constraint` becomes 
 
 ```{math}
 :label: infinitesimal_holonomic
@@ -65,7 +65,7 @@ An example of a *non*-holonomic constraint can be found in pp 15-16 of {cite:p}`
 
 The configuration space is described by the contact point of the disc on the x-y plane with coordinates $(x,y)$; the angle $\theta$ between the $x$-axis direction and perpendicular to the disc; and the angle $\phi$ describing the angle of a reference point on the disk's edge, with respect to the $z$ axis.
 
-The total speed of the disc is $a {\dot \phi}$; this translates to velocities:
+The total speed of the disc is $a {\dot \phi}$; this translates to velocities
 
 ```{math}
 :label: disc_constraint
@@ -75,14 +75,14 @@ The total speed of the disc is $a {\dot \phi}$; this translates to velocities:
 \end{align}
 ```
 
-For an infinitesimal motion in time, $\delta q^I = \dot{q}^I \delta t$, where here $q^{I = 1,\ldots,4} = (x,y,\phi,\theta)$. This we can write the above as
+For an infinitesimal motion in time, $\delta q^I = \dot{q}^I \delta t$, where here $q^{I = 1,\ldots,4} = (x,y,\phi,\theta)$. Thus, we can write the above as
 
 ```{math}
 F_{I,1} \delta q^I & = \delta x - a \sin\theta \delta \phi\\
 F_{I, 2} \delta q^I & = \delta y + a\cos\theta \delta \phi
 ```
 
-Starting with the first equation, there are no functions $f_1$ for which $\frac{\del f_1}{\del x} = 1$, $\frac{\del f_1}{\del y}= 0$,  $\frac{\del f_1}{\del \phi} = - a \sin\theta$, $\frac{\del f_1}{\del \theta} = 0$. The last two equations make thisclear, as you can't have the $\phi$ derivative of $f_1$ be $\theta$-dependent while $f_1$ has a vanishing $\theta$-derivative. A more algorithic wat to detect whether $F_i = \frac{\del f}{\del q^I}$ for some $f$ is to note that if it is, then 
+Starting with the first equation, there are no functions $f_1$ for which $\frac{\del f_1}{\del x} = 1$, $\frac{\del f_1}{\del y}= 0$,  $\frac{\del f_1}{\del \phi} = - a \sin\theta$, $\frac{\del f_1}{\del \theta} = 0$. The last two equations make this clear, as you can't have the $\phi$ derivative of $f_1$ be $\theta$-dependent while $f_1$ has a vanishing $\theta$-derivative. A more algorithic way to detect whether $F_i = \frac{\del f}{\del q^I}$ for some $f$ is to note that if it is, then 
 
 ```{math}
 :label: integrability_condition
@@ -96,7 +96,7 @@ since it doesn't matter in which order you take partial derivatives. Thus, for t
 \frac{\del}{\del q^I} F_{J,alpha} - \frac{\del}{\del q^J} F_{I,\alpha} = 0
 ```
 
-In fact, one can argue that in a finite "star-shaped" region, Poincare's theorem states that if this condition is met, a function $f_{\alpha}$ must exist so that $F_{I,\alpha} = \nabla_I f_{\alpha}$.  
+In fact, one can argue that in a finite "star-shaped" region, Poincare's theorem states that if Eq. {eq}`ic_local` , a function $f_{\alpha}$ must exist so that $F_{I,\alpha} = \nabla_I f_{\alpha}$.  
 
 2. Inequality constraints. Consider, in two dimensions, a particle on a rectangular billiard table with length $L_x$ in the $x$ direction and $L_y$ in teh $y$ direction. The particle is subject to the constraints
 
@@ -116,13 +116,13 @@ Clearly these cannot be written as the derivative of a function.
 F_{I,\alpha}(q) \dot{q}^I = 0
 ```
 
-and $\frac{\del F_{I,\alpha}}{\del q^J} - \frac{\del F_{J,\alpha}}{\del q^I} = 0$ then (under appropriate conditions on the region of interest) by writing $\det q^I = \delta q^I \delta t$, we can convert these to holonomic constraints. If $F_{I,\alpha}$ is not so constrained, the constraints are nonholonomic. Also, if $F_{I,\alpha}$ containsadditional dependence on $\dot{q}^I$, the constraints are nonholonomic.
+and $\frac{\del F_{I,\alpha}}{\del q^J} - \frac{\del F_{J,\alpha}}{\del q^I} = 0$ then (under appropriate conditions on the region of interest) by writing $\det q^I = \delta q^I \delta t$, we can convert these to holonomic constraints. If $F_{I,\alpha}$ is not so constrained, the constraints are nonholonomic. Also, if $F_{I,\alpha}$ contains additional dependence on $\dot{q}^I$, the constraints are nonholonomic.
 
 ## Imposing holonomic constraints
 
 ### Example: a bead on a wire
 
-We can impose the constraints in teh Lagrangian by adding an additional set of coordinates $\lambda_{\alpha}$ known as Lagrange multiplies, so that the full Lagrangian is:
+We can impose holonomic constraints in the Lagrangian framework by adding an additional set of coordinates $\lambda_{\alpha}$ known as Lagrange multipliers, so that the full Lagrangian is:
 
 ```{math}
 :label: lagrange_multiplier
@@ -208,18 +208,19 @@ The full equations of motion for a system constrained to a subspace of the confi
 \dot{p}_I - F_I - N_I = 0
 ```
 
-Iw we consider $\delta q^I$ to be an infinitesimal motion along the constraint surface. This means that $N_I \delta q^I = 0$ since the normal force is always perpendicular to this surface, and we can write
+Now, let $\delta q^I$ be an infinitesimal motion along the constraint surface. This means that $N_I \delta q^I = 0$ since the normal force is always perpendicular to this surface. We can therefore write
 
 ```{math}
 :label: dAlembert
 (\dot{p}_I - F_I) \delta q^I = 0
 ```
 
-Now if $s^i$ parameterize the constraint surface, then for $\delta q^I$ along this surface we can write
+If $s^i$ parameterizes the constraint surface, then $\delta q^I = \frac{\partial q^I}{\partial s^{\alpha}}\delta s^{\alpha}$ along this surface, and:
 
 ```{math}
 :label: dAlembert_reduced
 (\dot{p}_I - F_I) \frac{\del q^I}{\del s^i} \delta s^i = 0
 ```
 
-Thuis should hold for any $\delta s^i$ along the constraining surface. The goal is to show that $(\dot{p}_I - F_I) \frac{\del q^I}{\del s^i} = 0$ is equivalent to the equations of motion derived from ${\tilde L}$. We will leave this as a problem for the student to solve.
+for any $\delta s^{\alpha}$.
+The goal is to show that $(\dot{p}_I - F_I) \frac{\del q^I}{\del s^i} = 0$ is equivalent to the equations of motion derived from ${\tilde L}$. We will leave this as a problem for the student to solve.
