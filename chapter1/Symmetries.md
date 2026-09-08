@@ -16,11 +16,11 @@ L(q^I, \dot{q}^I) = L((q^I)', (\dot{q}^I)') + \frac{d\Lambda(q,\dot q)}{dt}
 
 where $(\dot{q}^I)' = \frac{d}{dt} (q^I)'$. The last term in {eq}`gen_transf` is a total derivative; thus (as one can see by studying the resulting action) it does not contribute to the equations of motion. 
 
-In other words, the action is invariant up to a boundary term.
+In other words, the action is *invariant* under symmetries up to a boundary term.
 
 ## Example: cyclic coordinates
 
-The simplest example is a Lagrangian which does not even depend on soem subset of the coordinates, only their velocities. Consider $L(q^I, \dot{q}^I)$ to be independent of $q^k$ for some $k$ (but *still depend on* $\dot{q}^k$). Then the transformation $q^k \to (q^k)' = q^k + \alpha$ for $\alpha$ a constant real number. Clearly $\dot{q}^k$ is invariant, so the entire Lagrangian is. We call $q^k$ a *cyclic coordinate*.
+The simplest example is a Lagrangian which is independent of some subset of the coordinates, while it depends on all components of the velocity. Specifically, let $L(q^I, \dot{q}^I)$ be independent of $q^k$ for some $k$ (but let $L$ *still depend on* $\dot{q}^k$). Under the transformation $q^k \to (q^k)' = q^k + \alpha$ for $\alpha$ a constant real number, $\dot{q}^k$ is invariant, and thus the entire Lagrangian is. We call $q^k$ a *cyclic coordinate*.
 
 What does this mean for the equations of motion? Well, we know that 
 
@@ -77,7 +77,7 @@ Now the first and last terms on the second line are just $\delta q^I$ times the 
 \frac{d}{dt} \left(\delta q^I \frac{\del L}{\del \dot{q}^I} - \Lambda\right) = \frac{d}{dt} \left(\delta q^I p_I - \Lambda\right) = 0
 ```
 
-Thus we have a *conserved charge*, sometimes called a *Noether charge, 
+Thus we have a *conserved charge*, sometimes called a *Noether charge*, 
 
 ```{math}
 :label: Noerther_charge
@@ -118,7 +118,7 @@ The conserved quantity is thus
 :label: tt_conserved
 Q = \eps (\dot{q}^I p_I - L)
 ```
-The quantity $H - \dot{q}^I p_I - L$ is known as the *Hamiltonian* and the energy can be defined as the value of this Hamiltonian. As an example, for $L = \half m \dot{\vec{x}}^2 - V({\vec x})$, the Hamiltonian is clearly
+The quantity $H - \dot{q}^I p_I - L$ is known as the *Hamiltonian* and the energy can be defined as the value of this Hamiltonian. As an example, for $L = \half m \dot{\vec{x}}^2 - V({\vec x})$, the Hamiltonian is
 
 ```{math}
 :label: simplest_H
@@ -128,6 +128,6 @@ H & = \dot{\vec x} \cdot \vec{p} - \half m \dot{\vec{x}}^2 + V({\vec x})\\
 \end{align}
 ```
 
-where in the final line we used $\vec{p} = m\dot{\vec{x}}$. In this case $H$ is clearly the kinetic plus potential energy. More generally, we *define* $H$ as the energy of the system, and so the conservation of energy is a consequence of invariance under time translation.
+where in the final line we used $\vec{p} = m\dot{\vec{x}}$. In this case $H$ is simply the kinetic plus potential energy. More generally, we *define* $H$ as the energy of the system, and so the conservation of energy is a consequence of invariance under time translation.
 
 
