@@ -21,7 +21,7 @@ Consider a cavity with walls at some temperature $T$, such that the electromagne
  
  ```{math}
  :label: energy_density
- \CE(T) = \int_0^{\infty} \CE(T,\omega)
+ \CE(T) = \int_0^{\infty}d\omega \CE(T,\omega)
  ```
  
 Here we are assuming that the volume of the box only appears in the total energy $E = V \CE(T)$, which is a thermodynamically extensive quantity. This makes sense if the box is very large compared to the wavelength of the light inside.
@@ -60,7 +60,7 @@ Planck deduced a functional form that he later justifies with a hypothesis. We w
 \CE({\vec k}, {\hat n}_{pol}, \omega) = n \hbar \omega  ; \ \ n = \{0, 1,2,\ldots\}
 ```
 
-whefre ${\hat n}_{pol}$ denotes one of teh two independent polarization states (linear, circular, etc). To get an expression appropriate for thermal equilibrium, we must do statistical mechanics. Boltzmann's hypopthesis states that the probability of the mode being in the state labelled by $n$ is:
+where ${\hat n}_{pol}$ denotes one of the two independent polarization states (linear, circular, etc). To get an expression appropriate for thermal equilibrium, we must do statistical mechanics. Boltzmann's hypopthesis states that the probability of the mode being in the state labelled by $n$ is:
 
 ```{math}
 :label: Boltzmann
@@ -104,6 +104,8 @@ f(x) & = \frac{1}{\pi^2} \frac{x}{e^x - 1}
 
 In other words, the fact that we can create a new energy scale $\hbar\omega$ is what allows us to write a functional form for $\CE(\omega,T)$ consistent with the observed high- and low-frequency limits. Note that we now know the soure of this quantization (and we will say more about it below): light comes in "packets" consisting of individual particles known as *photons* with energy $\hbar\omega$.
 
+![The CMBR blackbody spectrum](CMB_intensity.gif)
+Image from [Lawrence Berkeley Labs](https://aether.lbl.gov/www/projects/cobe/)
 
 This *black body spectrum* is observed with exquisite prediction. As an example, a prediction of the hot big bang theory is that the early universe had a phase in which electrons, protons, and photons were in a state of thermal equilibrium with temperature $T \sim 3000K$. The photons would then have the black body spectrum at this temperature. At $t \sim 10^5$ years after the big bang, the electrons and protons combined to form neutral hydrogen. The photons retained the blackbody spectrum; however, as the universe expanded, the photons redshifted. The functional form of the blackboddy spectrum is known to be retained, with the temperature appearing as a parameter that decreases with redshift. Thus, we should see a 
 "cosmic microwave background radiation" (CMBR) today, a blackbody spectrum parametyerized by a temperature $T \sim 2.73K$. This has been observed to exquisite precision by the Cosmic Background Explorer (COBE) satellite which announced their results in 1992. (Different parts of the spectrum had been observed by earlier ground-based and balloon-borne experiments. This is a long and fascinating story with some interesting wrong turns. COBE showed that the spctrum was *truly* a blackbody spectrum from the Rayleigh through to the Wien range). There are small deviations from this, represented by local deciations in temperature, to a part in $10^5$. This is consistent with the hot big bang theory, and inn fact these small flcutuations are the seed for the cosmic structure we see today.
