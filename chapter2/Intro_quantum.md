@@ -107,7 +107,7 @@ In other words, the fact that we can create a new energy scale $\hbar\omega$ is 
 ```{image} CMB_intensity.gif
 :alt: CMBR spectrum from COBE and others
 :class: bg-primary mb-1
-:width: 400px
+:width: 700px
 :align: left
 ```
 

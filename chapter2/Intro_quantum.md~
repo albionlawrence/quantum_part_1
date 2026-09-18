@@ -104,10 +104,10 @@ f(x) & = \frac{1}{\pi^2} \frac{x}{e^x - 1}
 
 In other words, the fact that we can create a new energy scale $\hbar\omega$ is what allows us to write a functional form for $\CE(\omega,T)$ consistent with the observed high- and low-frequency limits. Note that we now know the soure of this quantization (and we will say more about it below): light comes in "packets" consisting of individual particles known as *photons* with energy $\hbar\omega$.
 
-```{image} CMB_intensity.jpeg
+```{image} CMB_intensity.gif
 :alt: CMBR spectrum from COBE and others
 :class: bg-primary mb-1
-:width: 400px
+:width: 700px
 :align: left
 ```
 
