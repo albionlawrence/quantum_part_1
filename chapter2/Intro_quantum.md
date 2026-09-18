@@ -104,7 +104,7 @@ f(x) & = \frac{1}{\pi^2} \frac{x}{e^x - 1}
 
 In other words, the fact that we can create a new energy scale $\hbar\omega$ is what allows us to write a functional form for $\CE(\omega,T)$ consistent with the observed high- and low-frequency limits. Note that we now know the soure of this quantization (and we will say more about it below): light comes in "packets" consisting of individual particles known as *photons* with energy $\hbar\omega$.
 
-![The CMBR blackbody spectrum](CMB_intensity.gif)
+![The CMBR blackbody spectrum](CMB_intensity.jpeg)
 Image from [Lawrence Berkeley Labs](https://aether.lbl.gov/www/projects/cobe/)
 
 This *black body spectrum* has been observed with exquisite prediction. As an example, a prediction of the hot big bang theory is that the early universe had a phase in which electrons, protons, and photons were in a state of thermal equilibrium with temperature $T \sim 3000K$. The photons would then have the black body spectrum at this temperature. At $t \sim 10^5$ years after the big bang, the electrons and protons combined to form neutral hydrogen. The photons retained the blackbody spectrum; however, as the universe expanded, the photons redshifted. The functional form of the blackboddy spectrum is known to be retained, with the temperature appearing as a parameter that decreases with redshift. Thus, we should see a 
