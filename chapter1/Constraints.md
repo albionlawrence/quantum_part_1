@@ -35,7 +35,7 @@ These can be dealt with fairly simply in Lagrangian mechanics, as we will discus
 
 This is basically every other type of constraint and there are several ways a constraint can fail to be holonomic.
 
-1. Non-integrable constraint. Let is impose constraints locally on each point of the ambient space. That is, locally at each point $q^I_0$, we demand that motion away from this point by an infinitestimal $\delta q^I$ must satisfy
+1. Non-integrable constraint. Let is impose constraints locally on each point of the ambient space. That is, locally at each point $q^I_0$, we demand that motion away from this point by an infinitesimal $\delta q^I$ must satisfy
 
 ```{math}
 :label: local_constraint
@@ -93,7 +93,7 @@ since it doesn't matter in which order you take partial derivatives. Thus, for t
 
 ```{math}
 :label: ic_local
-\frac{\del}{\del q^I} F_{J,alpha} - \frac{\del}{\del q^J} F_{I,\alpha} = 0
+\frac{\del}{\del q^I} F_{J,\alpha} - \frac{\del}{\del q^J} F_{I,\alpha} = 0
 ```
 
 In fact, one can argue that in a finite "star-shaped" region, Poincare's theorem states that if Eq. {eq}`ic_local` , a function $f_{\alpha}$ must exist so that $F_{I,\alpha} = \nabla_I f_{\alpha}$.  

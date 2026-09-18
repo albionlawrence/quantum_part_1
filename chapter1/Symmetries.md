@@ -20,7 +20,7 @@ In other words, the action is *invariant* under symmetries up to a boundary term
 
 ## Example: cyclic coordinates
 
-The simplest example is a Lagrangian which is independent of some subset of the coordinates, while it depends on all components of the velocity. Specifically, let $L(q^I, \dot{q}^I)$ be independent of $q^k$ for some $k$ (but let $L$ *still depend on* $\dot{q}^k$). Under the transformation $q^k \to (q^k)' = q^k + \alpha$ for $\alpha$ a constant real number, $\dot{q}^k$ is invariant, and thus the entire Lagrangian is. We call $q^k$ a *cyclic coordinate*.
+The simplest example is a Lagrangian which is independent of some subset of the coordinates, while it depends on all components of the velocity. Specifically, let $L(q^I, \dot{q}^I)$ be independent of $q^k$ for some $k$ (but let $L$ *still depends on* $\dot{q}^k$). Under the transformation $q^k \to (q^k)' = q^k + \alpha$ for $\alpha$ a constant real number, $\dot{q}^k$ is invariant, and thus the entire Lagrangian is. We call $q^k$ a *cyclic coordinate*.
 
 What does this mean for the equations of motion? Well, we know that 
 
@@ -40,7 +40,7 @@ In other words, the generalized momentum $p^k$ is *conserved*.
 
 Some examples:
 
-1. Consider $L = \half m(\dot{x}^2 + \dot{y}^2 + \dot{z}^2) - V(x,y)$. Then $z$ is a cyclic coordinate, and the momentum $p_z = m \dot{z}$ is conserved, as a result of invariance of the action under translations in teh $z$ direction.
+1. Consider $L = \half m(\dot{x}^2 + \dot{y}^2 + \dot{z}^2) - V(x,y)$. Then $z$ is a cyclic coordinate, and the momentum $p_z = m \dot{z}$ is conserved, as a result of invariance of the action under translations in the $z$ direction.
 
 2. A particle in polar coordinates in a central force, $L = \half m (\dot{r}^2 + r^2 \dot{\phi}^2) - V(r)$. We studied this last time; the cyclic coordinate is $\phi$ and the conserved conjugate momentum os $p_{\phi} = m r^2 \dot{\phi}$ which is the angular momentum. Thus, invariance under rotations implies the conservation of angular momentum.
 
@@ -48,14 +48,14 @@ These suggest a more general story to which we now turn.
 
 ## Noether's theorem
 
-Noether's theorem applies to *continuous* symmetries, that is, to a continuous family of transformations $(q^I)' = (q^I)'(q^I\ ; \alpha)$ where $\alpha$ is some real parameter and $(q^I)'(q^I\ ; 0) = q^I$. Noether showed that every such famikly of symmetries implied a *conservation law*.
+Noether's theorem applies to *continuous* symmetries, that is, to a continuous family of transformations $(q^I)' = (q^I)'(q^I\ ; \alpha)$ where $\alpha$ is some real parameter and $(q^I)'(q^I\ ; 0) = q^I$. Noether showed that every such family of symmetries implied a *conservation law*.
 
 We will provide a constuctive proof. Let $(q^I)' = q^I + \delta q^I$. If this transformation is a symmetry, then
 
 ```{math}
 :label: trans_lag
 \begin{align}
-L(q^I, + \delta q^I, \dot{q}^I + \delta \dot{q}^I) & = L(q^I \dot{q}^I) + frac{d\Lambda}{dt} \\
+L(q^I, + \delta q^I, \dot{q}^I + \delta \dot{q}^I) & = L(q^I \dot{q}^I) + \frac{d\Lambda}{dt} \\
 = L(q^I, \dot{q}^I) + \delta q^I \frac{\del L}{\del q^I} + \delta \dot{q}^I \frac{\del L}{\del \dot{q}^I} + {\cal O}(\delta q^2)
 \end{align}
 ```
@@ -70,7 +70,7 @@ Working to first order in $\delta q$, the fact that this is a symmetry means tha
 \end{align}
 ```
 
-Now the first and last terms on the second line are just $\delta q^I$ times the Euler-Lagrange equations, and so vanish if $q^I$(t)$ satisfies the classical equations of motion. When it does, we are left with
+Now the first and last terms on the second line are just $\delta q^I$ times the Euler-Lagrange equations, and so vanish if $q^I(t)$ satisfies the classical equations of motion. When it does, we are left with
 
 ```{math}
 :label: Noether_charge_cons
@@ -99,7 +99,7 @@ $x \to \cos\epsilon x - \sin \epsilon y$ and $y \to \cos \epsilon y + \sin \epsi
 Q = \delta x p_x + \delta y p_y = - y p_x + x p_y = L
 ```
 
-where $L$ is the angular momentum in Cartesioan coordinates. I leave it to the student to show that this is the same as the generalized momentum $p_{\phi}$ dreived in polar coordinates.
+where $L$ is the angular momentum in Cartesian coordinates. I leave it to the student to show that this is the same as the generalized momentum $p_{\phi}$ dreived in polar coordinates.
 
 3. Another important symmetry is *time translation invariance*; the symmetry is a shift $t \to t + \eps$. Consider a Lagrangian which is explicitly time-independent. Then 
 
@@ -118,16 +118,18 @@ The conserved quantity is thus
 :label: tt_conserved
 Q = \eps (\dot{q}^I p_I - L)
 ```
-The quantity $H - \dot{q}^I p_I - L$ is known as the *Hamiltonian* and the energy can be defined as the value of this Hamiltonian. As an example, for $L = \half m \dot{\vec{x}}^2 - V({\vec x})$, the Hamiltonian is
+The quantity $H = \dot{q}^I p_I - L$ is known as the *Hamiltonian* and the energy is defined as the value of the Hamiltonian: that is, energy is the quantity which is conserved as a result of time translation invariance. 
+
+As an example, consider $L = \half m \dot{\vec{x}}^2 - V({\vec x}) = T - V$; here $T = \half m \dot{\vec{x}}^2$ is the kinetic energy and $V$ is the potential energy. The Hamiltonian is
 
 ```{math}
 :label: simplest_H
 \begin{align}
 H & = \dot{\vec x} \cdot \vec{p} - \half m \dot{\vec{x}}^2 + V({\vec x})\\
-& = \frac{1}{2m}{\vec p}^2 + V
+& = \frac{1}{2m}{\vec p}^2 + V = T + V
 \end{align}
 ```
 
-where in the final line we used $\vec{p} = m\dot{\vec{x}}$. In this case $H$ is simply the kinetic plus potential energy. More generally, we *define* $H$ as the energy of the system, and so the conservation of energy is a consequence of invariance under time translation.
+where in the final line we used $\vec{p} = m\dot{\vec{x}}$. In this case $H$ is simply the kinetic plus potential energy. 
 
 

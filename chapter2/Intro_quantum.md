@@ -39,7 +39,7 @@ We have the following dimensionful quantities available to construct $\CE(T,\ome
  \CE(T, \omega) = A k_B T \left(\frac{\omega}{c}\right)^3 \frac{1}{\omega} = A \frac{k_B T}{c^3} \omega^2
  ```
  
-where $A$ is a dimensionless constant that requires a first-principles calculation to obtain. This is called the "Rayleigh" law and $A$ was calculated by Rayleigh in 1900.
+where $A$ is a dimensionless constant that requires a first-principles calculation to obtain. This is called the "Rayleigh" law and $A$ was calculated by Rayleigh in 1900, and it matches the observed spectrum at sufficiently low frequencies.
 
 The total energy is thus
  
@@ -48,12 +48,12 @@ The total energy is thus
  \CE(T) = \left(\frac{A k_B T}{c^3}\right) \int_0^{\infty} d\omega \omega^2 = \infty
  ```
  
-This is sometimes termed the "ultraviolet catastrophe".  What is needed is some new dimensionful scale, so that the integral is better behaved. One possibility is to just assume that the electromagnetic field has a largest possible frequency $\omega_{max}$ and the integral is cut off. 
+This is sometimes termed the "ultraviolet catastrophe".  What is needed is some new dimensionful scale, so that $\CE(T,\omega)$ can have a functional dependence on $\omega$ that dies off quickly enough at large $\omega$ that the integral is better behaved. One possibility is to just assume that the electromagnetic field has a largest possible frequency $\omega_{max}$ and the integral is cut off, which amounts to multiplying $\CE(T,\omega)$ by $\theta(\omega_{max} - \omega)$. 
 
 
 However, the real issue is that the black body spectrum does not look like this. $\CE(\omega,T)$ is observable, for example by poking a small hole in the side of the black body and measuring the spectrum of teh emitted power (as illustrated above). It was already known that at high frequencies the black body spectrum follows the (phenomenological) Wien law $\CE(\omega,T) \sim \omega^3 e^{-c \omega/(k_B T}$, where $c$ is some constant (which must have units of [energy $\times$ time].)
 
-Planck deduced a functional form that he later justifies with a hypothesis. We well cheat and start with that hypothesis. Let us fix the polarization state and the wavenumber ${\vec k}$ of a mode of the electromagnetic field (ignoring boundary conditions and such, this is all very handwavy to make a point). We assume that each mode has an energy that is an integer multiple of $\omega$:
+Planck deduced a functional form that he later justifies with a hypothesis. We will cheat and start with that hypothesis. Let us fix the polarization state and the wavenumber ${\vec k}$ of a mode of the electromagnetic field (ignoring boundary conditions and such, this is all very handwavy to make a point). We assume that each mode has an energy that is an integer multiple of $\omega$:
 
 ```{math}
 :label: planck_rule
@@ -107,8 +107,8 @@ In other words, the fact that we can create a new energy scale $\hbar\omega$ is 
 ![The CMBR blackbody spectrum](CMB_intensity.gif)
 Image from [Lawrence Berkeley Labs](https://aether.lbl.gov/www/projects/cobe/)
 
-This *black body spectrum* is observed with exquisite prediction. As an example, a prediction of the hot big bang theory is that the early universe had a phase in which electrons, protons, and photons were in a state of thermal equilibrium with temperature $T \sim 3000K$. The photons would then have the black body spectrum at this temperature. At $t \sim 10^5$ years after the big bang, the electrons and protons combined to form neutral hydrogen. The photons retained the blackbody spectrum; however, as the universe expanded, the photons redshifted. The functional form of the blackboddy spectrum is known to be retained, with the temperature appearing as a parameter that decreases with redshift. Thus, we should see a 
-"cosmic microwave background radiation" (CMBR) today, a blackbody spectrum parametyerized by a temperature $T \sim 2.73K$. This has been observed to exquisite precision by the Cosmic Background Explorer (COBE) satellite which announced their results in 1992. (Different parts of the spectrum had been observed by earlier ground-based and balloon-borne experiments. This is a long and fascinating story with some interesting wrong turns. COBE showed that the spctrum was *truly* a blackbody spectrum from the Rayleigh through to the Wien range). There are small deviations from this, represented by local deciations in temperature, to a part in $10^5$. This is consistent with the hot big bang theory, and inn fact these small flcutuations are the seed for the cosmic structure we see today.
+This *black body spectrum* has been observed with exquisite prediction. As an example, a prediction of the hot big bang theory is that the early universe had a phase in which electrons, protons, and photons were in a state of thermal equilibrium with temperature $T \sim 3000K$. The photons would then have the black body spectrum at this temperature. At $t \sim 10^5$ years after the big bang, the electrons and protons combined to form neutral hydrogen. The photons retained the blackbody spectrum; however, as the universe expanded, the photons redshifted. The functional form of the blackboddy spectrum is known to be retained, with the temperature appearing as a parameter that decreases with redshift. Thus, we should see a 
+"cosmic microwave background radiation" (CMBR) today, a blackbody spectrum parametyerized by a temperature $T \sim 2.73K$. This has been observed to exquisite precision by the Cosmic Background Explorer (COBE) satellite which announced their results in 1992. (Different parts of the spectrum had been observed by earlier ground-based and balloon-borne experiments. This is a long and fascinating story with some interesting wrong turns. COBE showed that the spctrum was *truly* a blackbody spectrum from the Rayleigh through to the Wien range). There are small deviations from this, represented by local deviations in temperature, to a part in $10^5$. This is consistent with the hot big bang theory, and in fact these small flucutuations are the seed for the cosmic structure we see today.
 
 ## The photoelectric effect
 
@@ -123,7 +123,7 @@ Hertz observed the following in 1887:
 
 ![Photelectric effect](photoelectric.jpeg)
 
-Einstein's interpretation was that light consistened of single particles or *\photons*, each of which carries an energy $\hbar \omega$. Electrons acquire kinetic energy by absorbing a single photon. To be ejected from the metal, the electron must cross a potential barrier $W = \hbar \omega_c$ which is intrinsic to that metal ($W$ is called the *work function* of the metal). The kinetic energy is for frequencies higher than $\omega_c$ is thus
+Einstein's interpretation was that light consisted of single particles or *photons*, each of which carries an energy $\hbar \omega$. Electrons acquire kinetic energy by absorbing a single photon. To be ejected from the metal, the electron must cross a potential barrier $W = \hbar \omega_c$ which is intrinsic to that metal ($W$ is called the *work function* of the metal). The kinetic energy for frequencies higher than $\omega_c$ is thus
 
 ```{math}
 :label: pe_ke
@@ -132,8 +132,6 @@ Einstein's interpretation was that light consistened of single particles or *\ph
 
 where $\theta(x)$ is the Heaviside step function. The point here is that the packets of energy Placnk suggested could be interpreted as a single quantum or particle of light called a *photon* whose energy is related to their frequency by the dimensionfuil constant $\hbar$. Increasing the intensity of light does not change the energy of each photon, but the number of photons. If there is not a single photon with enough energy to eject an electron, no electron will be ejected.
 
-
-Now consider an electromagnetic field with a given polarization and wave vector ${\vec k}$, such that $\omega = 2\pi c |{\vec k}|$. 
 
 ## Photon polarization
 
@@ -226,7 +224,7 @@ U_{init} = \frac{V}{8\pi}\times 2 \times |E|^2 \rightarrow U_{after} = \frac{V}{
 
 ### Quantum description
 
-If we apply Planck and Einstein's insights, the beam of light consists of photons with energy $U = N\hbar \omega$. Consider the case above of light polarized at $45^{\circ}$ from teh $x$-axis passing through a polarizer aligned along the $x$ axos. Then $U_{final} = \half N \hbar \omega$ and the number of photons is cut in half. But now we should be asking:
+If we apply Planck and Einstein's insights, the beam of light consists of photons with energy $U = N\hbar \omega$. Consider the case above of light polarized at $45^{\circ}$ from the $x$-axis passing through a polarizer aligned along the $x$ axos. Then $U_{final} = \half N \hbar \omega$ and the number of photons is cut in half. But now we should be asking:
 
 - *which* photons pass through the polarizer?
 - also what if $N$ is odd?
@@ -255,15 +253,14 @@ So the probability of a single photon passing through the polarizer, given the p
 p = \frac{N_{final}}{N_{init}} \frac{\hbar\omega}{\hbar\omega} = \frac{U_{final}}{U_{init}} = \frac{|E_x|^2}{|E_x|^2 + |E_y|^2}
 ```
 
-<<<<<<< HEAD
-For a more general polarization states, the probability of the photon passing through the polarizer aligned along the $x$-axis is
+For more general polarization states, the probability of the photon passing through the polarizer aligned along the $x$-axis is
 
 ```{math}
 :label: lin_polarizer_general
-p = \frac{|E_x|^2}{|E_x|^2 + |E_y|^2} sim \frac{N_f}{N}
+p = \frac{|E_x|^2}{|E_x|^2 + |E_y|^2} \sim \frac{N_f}{N}
 ```
 
-For  single photon with fixed frequency and wavenumber, 
+For a single photon with fixed frequency and wavenumber, 
 
 ```{math}
 :label: sp_energy
@@ -314,7 +311,7 @@ You can show that any polarization state satisfying {eq}`sp_energy` can be writt
 
 with ${\tilde\alpha}, {\tilde\beta} \in \mathbb{C}$, if $|{\tilde\alpha}|^2 + |{\tilde\beta}|^2 = 1$. 
 
-The essential point here is that the states of the photon are described by a 2-coponent vector; these vectord can be added to describe other polarization states; and the components are related *by taking the absolute value squared* to the probability of certai exoperiments yielding a certain outcome.
+The essential point here is that the states of the photon are described by a 2-component vector; these vectors can be added to describe other polarization states; and to get the probability of a given experiment yielding a specific outcome in the form of a specific polarization, one takes *the absolute value squared* of the projection of the vector along that direction. 
 
 This hints at a very general structure for describing physical states and teh reults of mesurement in quantum mechanics. To set this up we need to lay down the correct mathematical language for describing such vectors, namely linear algebra.
 
