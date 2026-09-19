@@ -32,7 +32,7 @@ a\left(\ket{v} + \ket{w}\right) = a \ket{v} + b \ket{w}
 (a + b)\ket{v} = a\ket{v} + b \ket{v}
 ```
 
-From these rules we can also deduce the existence of an *additive inverse*: for enery $\ket{v} \in V$, there exists a vector $\ket{-v} \in V$ such that $\ket{v} + \ket{-v} = \ket{0}$. This can be seen bu construction: set $\ket{-v} = (-1) \ket{v}$. Then
+From these rules we can also deduce the existence of an *additive inverse*: for every $\ket{v} \in V$, there exists a vector $\ket{-v} \in V$ such that $\ket{v} + \ket{-v} = \ket{0}$. This can be seen by construction: set $\ket{-v} = (-1) \ket{v}$. Then
 ```{math}
 :label: additive_inverse
 \ket{v} + \ket{-v} = \ket{v} + (-1) \ket{v} = (1 + (-1) \ket{v} = 0 \ket{v} = \ket{0}
