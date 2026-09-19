@@ -209,7 +209,7 @@ Now let us pass our beam through a polarizer. We call an "x-polarizer" one which
 
 ```{math}
 :label: polarized_em
-{\vec E}_{after} = \text{Re}\left\{ {\vec E}_c \cdot {\hat n} {\hat n} e^{i(kz - \omega t)} \right\}
+{\vec E}_{after} = \text{Re}\left\{ {\vec E}_c \cdot {\hat n}^{\ast} {\hat n} e^{i(kz - \omega t)} \right\}
 ```
 
 For a polarizer aligned along ${\hat x}$, ${\hat n} = {\hat x}$; for a polarizer admitting LCP, ${\hat n}_{LCP} = \frac{1}{\sqrt{2}} \left({\hat x} - i {\hat y}\right)$; for a polarizer admitting RCP, ${\hat n}_{RCP} = \frac{1}{\sqrt{2}}\left({\hat x} + i {\hat y}\right)$.
@@ -221,7 +221,7 @@ This generally reduces the energy of the beam of light. For example, we can show
 {\vec E} = E\cos(kx - \omega t + \delta)\left({\hat x} + {\hat y}\right) \rightarrow E\cos(kx - \omega t + \delta){\hat x}
 ```
 
-The energy is in this case cut in half:
+The energy in this case is cut in half:
 
 ```{math}
 :label: energy_reduction
@@ -233,7 +233,7 @@ U_{init} = \frac{V}{8\pi}\times 2 \times |E|^2 \rightarrow U_{after} = \frac{V}{
 If we apply Planck and Einstein's insights, the beam of light consists of photons with energy $U = N\hbar \omega$. Consider the case above of light polarized at $45^{\circ}$ from the $x$-axis passing through a polarizer aligned along the $x$ axos. Then $U_{final} = \half N \hbar \omega$ and the number of photons is cut in half. But now we should be asking:
 
 - *which* photons pass through the polarizer?
-- also what if $N$ is odd?
+- what if $N$ is odd?
 
 Our best available interpretation is that *each* photon has a $50\%$ chance of passing through this polarizer. For typical classical beams one can see that $N \gg 1$, so that the law of large numbers/central limit theorem tells us
 
@@ -279,7 +279,7 @@ For an electric field satisfying this relation, we can write a "state vector" th
 :label: state_vector_photon
 \begin{align}
 & \ket{\psi} \equiv \begin{pmatrix} \psi_x \\ \psi_y \end{pmatrix}\\
-& psi_i = \sqrt{\frac{V}{8\pi \hbar \omega}} E_i
+& \psi_i = \sqrt{\frac{V}{8\pi \hbar \omega}} E_i
 \end{align}
 ```
 

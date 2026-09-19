@@ -2,11 +2,11 @@
 
 ## Definition
 
-We will consider complex vector spaces but let us start with a bit of generality so that we can compare them to more familiar real vector spaces. Consider $\mathbb{F} = \mathbb{R}$ or $\mathbb{C}$. (Actually the following works for many *filds* whjich includes the rational numbers, integers modulo $p$, and so forth). A *vector space over* $\mathbb{F}$ also called "real" and "complex" vector spaces for $F = \mathbb{R},\mathbb{C}$ respectively, is a set $V$ of elements $\ket{v}$ with the following properties:
+Quantum mechanics involves complex vector spaces, but in time we will also want to consider real vector spaces, and they are also vector spaces yo may be more familiar with, so we will start by defining them together. Consider a *field* $\mathbb{F}$ which for us will always be $\mathbb{R}$ or $\mathbb{C}$. The basic idea of a field (defined in any decent abstract algebra textbook, or Wikipedia is an honorable source) is that the operations of addition, multiplication, subtraction, and division have the you are used to for real numbers. (Other important examples of fields include the rational numbers and integers modulo $p$.) A *vector space over* $\mathbb{F}$, called "real" and "complex" vector spaces for $F = \mathbb{R},\mathbb{C}$ respectively, is a set $V$ of elements $\ket{v}$ with the following properties:
 
 1. **Vector addition**. For all $\ket{v},\ket{w}\in V$ there is a notion of addition $\ket{v} +  \ket{w} \in V$ wuth the following properties:
   - Addition is *commutative*: $\ket{v} + \ket{w} = \ket{w} + \ket{v}$.
-  - Addition is *associative. If there is a third vector $\ket{y} \in V$,
+  - Addition is *associative*. If there is a third vector $\ket{y} \in V$,
 
 ```{math}
 :label: add_assoc
@@ -38,7 +38,7 @@ From these rules we can also deduce the existence of an *additive inverse*: for 
 \ket{v} + \ket{-v} = \ket{v} + (-1) \ket{v} = (1 + (-1) \ket{v} = 0 \ket{v} = \ket{0}
 ```
 
-Note that I have not yet introduced any notion ofthe length of a vector, whetehr two vectors are orthogonal, and so on. As we will see, this requires som eadditional structure.
+Note that I have not yet introduced any notion of the length of a vector, of whether two vectors are orthogonal, and so on. As we will see, these require some additional structure.
 
 ## Examples
 
@@ -63,22 +63,23 @@ for any $a \in \mathbb{C}$.
 
 Note we can do ths same with $c_k, d_k \in \mathbb{R}$: then we have a real vector space. Here the zero vector is defined by $c_k = 0$.
 
-2. The space of $n\times n$ complex-valued matrices $M_n(\mathbb{C})$. Addition and scalar multiplication are just matrix addition and scalar miltiplication (for $M \in M_n$, $aM$ is elementwise multiplication by $a$.
+2. The space of $n\times n$ complex-valued matrices $M_n(\mathbb{C})$. Addition and scalar multiplication are just matrix addition and scalar miltiplication (for $M \in M_n$, $aM$ is elementwise multiplication by $a$.)
 
 3. Degree-$n$ polynomials over $\mathbb{C}$: 
 ```{math}
 :label: degree_n 
 \ket{a_0,\ldots a_n} = a_0 + a_1 x + a_2 x^2 + \ldots a_n x^n
 ```
-with addition and scalar multiplication working in the standard way. Note that this is clearly equivalent to $\mathbb{C}^n$. Note also that there is no reason for $n$ to be finite -- we could work with the space of *all* polynomials.
+with addition and scalar multiplication working in the standard way. Note that this is clearly equivalent to $\mathbb{C}^n$. Note also that there is no reason for $n$ to be finite &mdash; we could work with the space of *all* polynomials.
 
 3. Complex functions on an interval: let $x \in [0,1]$. The set of all functions $\psi(x)$ forms a vector space under the standard addition and scalar multiplication of functions if we choose the right boundary conditions. These boundary conditions yield vector spaces:
 - Dirichlet $\psi(0) = \psi(1) = 0$.
 - Neumann $\psi'(0) = \psi'(1) = 0$
 - Periodic $\psi(0) = \psi(1)$ (so $\psi$ is a function on a circle).
+
 However, the boundary condition $\psi(0) = a$, $\psi(1) = b$ for nonzero $a,b \in \mathbb{C}$ is not a vector space under standard addition of functions: the sum of two such functions does not satisfy the required boundary conditions and so is not in $V$.
 
-4. Coplex square-integrable functions on $\mathbb{R}$: that is, functions $\psi(x)$ for $x\in \mathbb{R}$ such that
+4. Complex square-integrable functions on $\mathbb{R}$: that is, functions $\psi(x)$ for $x\in \mathbb{R}$ such that
 ```{math}
 :label: square_int
 \int_{-\infty}^{\infty} dx |\psi(x)|^2 < \infty
@@ -86,7 +87,7 @@ However, the boundary condition $\psi(0) = a$, $\psi(1) = b$ for nonzero $a,b \i
 
 ## Subspaces
 
-A set $M \subset V$ is a *vector subspace* if it is a vector space under the same laws for addition and svcalar multiplication. A standard example is any plane through the origin, such as $V = \mathbb{C}^3$, 
+A set $M \subset V$ is a *vector subspace* if it is a vector space under the same laws for addition and scalar multiplication. A standard example is any plane through the origin, such as $V = \mathbb{C}^3$, 
 ```{math}
 :label: cthree_subspace
 M = \left\{ \begin{pmatrix} c_1 \\ c_2 \\ 0 \end{pmatrix} \forall c_i \in \mathbb{C} \right\}
@@ -99,14 +100,14 @@ a \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix}
 ```
 for fixed $c_k\in \mathbb{C}^n$ and all $a \in \mathbb{C}^n$. 
 
-A counterexample is any complex line that does not run through the origin, defined as the set of all vectors
+A counterexample is any complex line that does not run through the origin, defined as the set of all vectors of the form
 
 ```{math}
 :label: affine_line
 a \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix} + \begin{pmatrix} d_1 \\ d_2 \\ \vdots \\ d_n \end{pmatrix} 
 ```
 
-with $c_k,d_k$ fixed and the same for all vectors in this space, and $a$ any complex number. It is clear that the sum of two vectors is a different vector, if there is at least one $d_k \neq 0$.
+with $c_k,d_k$ fixed and the same for all vectors in this space, and $a$ any complex number. It is clear that the sum of two vectors is not in this set, if there is at least one $d_k \neq 0$.
 
 ## Linear independence
 
@@ -123,7 +124,7 @@ Let us give some examples.
 \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}\ ; \ \ \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}\ ; \ \ \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}
 ```
 
-Similarly these ar elinearly independent:
+Similarly these are linearly independent:
 
 ```{math}
 \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}\ ; \ \ \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}\ ; \ \ \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}
@@ -135,7 +136,7 @@ However, these three are not:
 \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}\ ; \ \ \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}\ ; \ \begin{pmatrix} 1/2 \\ 1/2 \\ 1 \end{pmatrix}
 ```
 
-as we can see because 
+because 
 
 ```{math}
 \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix} + \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix} - 2 \begin{pmatrix} 1/2 \\ 1/2 \\ 1 \end{pmatrix} = 0
