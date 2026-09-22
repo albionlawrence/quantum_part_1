@@ -246,7 +246,7 @@ For more general polarizations,
 ```{math}
 :label: gen_pol
 \begin{align}
-{\vec E} = \text{RE}\ \left[ E_x e^{i(kx - \omega t)} {\hat x} + E_y e^{i(kx - \omega t)} {\hat y}\right]\\
+{\vec E} = \text{Re}\ \left[ E_x e^{i(kx - \omega t)} {\hat x} + E_y e^{i(kx - \omega t)} {\hat y}\right]\\
 U_{initial} & = \frac{V}{8\pi}\left(|E_x|^2 + |E_y|^2\right)\\
 U_{final} & = \frac{V}{8\pi} |E_x|^2
 \end{align}
@@ -283,7 +283,7 @@ For an electric field satisfying this relation, we can write a "state vector" th
 \end{align}
 ```
 
-The notation $\ket{\psi}$ should here be understood in this way, as shorthand for a vector (here a two-dimensional vector with complex entries). Using {eq}`sp_energy` we can see that $|\psi_x|^2 + |\psi_y|^2 = 1$, apnd that $p_x = |\psi_x|^2$. Similarly, the probability of the same photon passing through a polarizer aligned alongthe $y$ axis is $p_y = |\psi_y|^2$. It is as if the two possible outcomes are that the photon is polarized along the $x$ or $y$ axis. On the other hand, we could rotate both polarizers by (say) $17^{\circ}$ and do the same experiment and the probability of the photon passing through each of the two perpendictular polarizers will sum to $1$. 
+The notation $\ket{\psi}$ should here be understood in this way, as shorthand for a vector (here a two-dimensional vector with complex entries). Using {eq}`sp_energy` we can see that $|\psi_x|^2 + |\psi_y|^2 = 1$, apnd that $p_x = |\psi_x|^2$. Similarly, the probability of the same photon passing through a polarizer aligned alongthe $y$ axis is $p_y = |\psi_y|^2$. It is as if the two possible outcomes are that the photon is polarized along the $x$ or $y$ axis. On the other hand, we could rotate both polarizers by (say) $17^{\circ}$ and do the same experiment and the probability of the photon passing through each of the two perpendicular polarizers will sum to $1$. 
 
 Finally, not that there is a *linear structure* to the space of photon polarizations, in that we can add two polarization vectors and get another polarization vector, up to the overall normalization constraint {eq}`sp_energy` for a single photon. In particular, if we define
 
