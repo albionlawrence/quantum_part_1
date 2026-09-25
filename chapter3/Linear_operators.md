@@ -2,7 +2,7 @@
 
 In classical mechanics we saw that the states of the system were described as points on phase space. Observables of the system were functions on phase space, that could be described as generators of infinitesimal transformations.
 
-In quantum mechanics, the space of ppossible states are described as vectors in a complex vector space (recall the discussion of photon polarization). Observables and generators of transformations are described as *operators* which map vectors to other vectors. More specifically, the correspond to *linear operators* which respect the linear structure of the vector space (addition and scalkar multiplication).
+In quantum mechanics, the space of ppossible states are described as vectors in a complex vector space (recall the discussion of photon polarization). Observables and generators of transformations are described as *operators* which map vectors to other vectors. More specifically, the correspond to *linear operators* which respect the linear structure of the vector space (addition and scalar multiplication).
 
 ## Definitions
 
@@ -41,7 +41,7 @@ Abstractly we usually denote operators by capital letters $A$ and the action of 
 
 3. More generally, scalar multiplication by any scalar in $\CF$ is a linear operator.
 
-4. For $C = \CC^n$, $n \times n$ matrices acting on column vectors by the usual rules of matrix multiplication are all linear operators. In fact one can represent any finite-dimensional vector space of dimension $n$ by $\CC^n$, and every operator as a matrix acting on $\CC^n$.
+4. For $V = \CC^n$, $n \times n$ matrices acting on column vectors by the usual rules of matrix multiplication are all linear operators. In fact one can represent any finite-dimensional vector space of dimension $n$ by $\CC^n$, and every operator as a matrix acting on $\CC^n$.
 
 5. A more interesting example: consider the (infinite-dimensional) space of all polynomials. We can represent these as 
 ```{math}
@@ -62,7 +62,7 @@ T \ket{a_0,a_1,\ldots} = \ket{a_1,2 a_2,3 a_3,\ldots} = \sum_{k = 1}^{\infty}k_{
 
 are linear operators on $V$.
 
-6. Relatedly, consider the vector space of square-integrable complex functions. You can convince yourself that multiplication by $x$ and differentiation are linear operators. There are some subtleties here; it can be that these take the function out of the Hilbert space (eg multiplication can, if $f$ falls off as $1/|x|$ at infinity).
+6. Relatedly, consider the vector space of square-integrable complex functions. You can convince yourself that multiplication by $x$ and differentiation are linear operators. There are some subtleties here; it can be that these take the function out of the Hilbert space (eg multiplication can do so, if $f$ falls off as $1/|x|$ at infinity).
 
 ## Operator algebras
 
