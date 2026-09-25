@@ -102,7 +102,7 @@ Note that the commutator is itself a linear operator.
 
 ### Kernel of an operator and injective maps
 
-1. **Definition**: Consider a vector space $V$ and a linear operator $A$ acting on it. The *kernel$ of $A$ is defined as
+1. **Definition**: Consider a vector space $V$ and a linear operator $A$ acting on it. The *kernel* of $A$ is defined as
 ```{math}
 :label: kernel
 \text{Ker}(A) = \left\{ \ket{v}\in V | A\ket{v} = \ket{0} \right\}
@@ -118,9 +118,9 @@ You can show that
 
 Note that this is a vector subspace of $\CC^4$. This is no accident, as we can prove:
 
-2. **Theorem**. For any vector space $V$ and linear operator $A$ acting on it, $\text{Ker}(A)$ is a vector subspace of $V$. (The proof in your problem set for the week).
+2. **Theorem**. For any vector space $V$ and linear operator $A$ acting on it, $\text{Ker}(A)$ is a vector subspace of $V$. (You should be able to prove this without too much trouble).
 
-3. **Definition**. A linear operator $A$ acting on a vector space $V$ is *injectove* or *one-to-one* if
+3. **Definition**. A linear operator $A$ acting on a vector space $V$ is *injective* or *one-to-one* if
 ```{math}
 :label: injective
 A\ket{v} = A\ket{w} \Rightarrow \ket{v} = \ket{w}
@@ -134,7 +134,7 @@ Finally, we note that these concepts can be extended naturally to maps between *
 
 ### Range and surjective maps
 
-1. **Definition**. Consider a linear operator $A$ actig on a vector space $V$. The *range* of $A$ can be fined as
+1. **Definition**. Consider a linear operator $A$ acting on a vector space $V$. The *range* of $A$ can be defined as
 
 ```{math}
 :label: range_op
@@ -224,7 +224,7 @@ A_L^{-1}\left( A\ket{v_1} - A\ket{v_2}\right) & = A_L^{-1} \ket{\varnothing} = 0
 ```
 Thus $\ket{v_1} = \ket{v_2}$ and $A$ is one-to-one.
 
- On the other hand, assume that $A$ is one-to-one. Now consider a basis $\ket{v_i}$ of $V$. Now any linear combination $\sum_i c_i\ket{v_i} = 0$ if and only if $c_i = 0\ \forall\ i$. Since $A$ is a linear map, consider $\sum_i c_i A \ket{v_i} = A (\sum_i c_i \ket{v_i})$. Since $A$ is one-to-one, this can only be zero if $\sum_i c_i \ket{v_i} = 0$ which as we have already said means that $c_i = 0$. Therefore, $A\ket{v_i} \equiv \ket{w_i}$ is also a linearly independent set of vectors, and a basis for $V$. We can then *define*
+ On the other hand, assume that $A$ is one-to-one. Consider a basis $\ket{v_i}$ of $V$. Now, any linear combination $\sum_i c_i\ket{v_i} = 0$ if and only if $c_i = 0\ \forall\ i$. Since $A$ is a linear map, consider $\sum_i c_i A \ket{v_i} = A (\sum_i c_i \ket{v_i})$. Since $A$ is one-to-one, this can only be zero if $\sum_i c_i \ket{v_i} = 0$ which as we have already said means that $c_i = 0$. Therefore, $A\ket{v_i} \equiv \ket{w_i}$ is also a linearly independent set of vectors, and a basis for $V$. We can then *define*
  
  ```{math}
  A_L^{-1} \ket{w_i} = \ket{v_i}
@@ -242,7 +242,7 @@ for any $c_i$, so $A_L^{-1} A = \bf{1}$.
 ```{math}
 A\ket{v} = \ket{w}
 ```
-for $\ket{v}$ given $\ket{w}$ by acting on both sides of the equation by $A_L^{-1}$ to ket $\ket{v} = A_L^{-1} \ket{w}$. However, we *cannot necessarily check that this is a solution*: we can act on both sides by $A$ but then $A \ket{v} = A A_L^{-1} \ket{w}$  and we have no guarantee that $A A_L^{-1} = \bf{id}$. This becomes a particular issue for infinite-dimensional vector spaces. Consider the space of all polynomials
+for $\ket{v}$ given $\ket{w}$ by acting on both sides of the equation by $A_L^{-1}$ to get $\ket{v} = A_L^{-1} \ket{w}$. However, we *cannot necessarily check that this is a solution*: we can act on both sides by $A$ but then $A \ket{v} = A A_L^{-1} \ket{w}$  and we have no guarantee that $A A_L^{-1} = \bf{id}$. This becomes a particular issue for infinite-dimensional vector spaces. Consider the space of all polynomials
 
 ```{math}
 \ket{a_0,a_1,a_2,\ldots} \Rightarrow \sum_{k=0}^{\infty} a_k x^k
@@ -311,7 +311,7 @@ so $T_R^{-1}T$ fails to be the identity operator because (once again) it strips 
 
 I stated before that for $V = \CC^n$, all linear operators can be represented as matrices. In fact, this is true for *any* finite-dimensional vector space. 
 
-Consider a vector space $V$ with dimension $n$. It will have  basis I can label $\ket{k}$, $k = 1,\ldots,n$. COnsider a linear operator $A$. Since we can write any state in this basis, we can write 
+Consider a vector space $V$ with dimension $n$. It will have  basis we can label $\ket{k}$, $k = 1,\ldots,n$. Consider a linear operator $A$. Since we can write any state in this basis, we can write 
 
 ```{math}
 :label: matrix_rep
@@ -451,9 +451,6 @@ f(x) = f_0 + f_1 x + f_2 x^2 + \ldots
 then we can define
 ```{math}
 f(A) = f_0 \bf{1} + f_1 A + f_2 A^2 + \ldots
-```
-(We will find other ways to descibr operators once we have introduced Hermitian operators).
-
 
 A particularly important example is the exponential of an operator:
 ```{math}
@@ -469,7 +466,7 @@ Thus
 ```
 In other words, $e^{\lambda A} e^{-\lambda A}$ is $\lambda$-independent, so we can find its value by setting $\lambda = 1$.
 
-On the other hand, while for orderinary numbers $a,b$, $e^a e^b = e^{a + b}$ this fails to be true when re replac e $a,b$ with operators. To see this, we will loot at the first few terms in the Taylor series
+On the other hand, while for ordinary numbers $a,b$, $e^a e^b = e^{a + b}$ this fails to be true when we replace $a,b$ with operators. To see this, we will look at the first few terms in the Taylor series
 ```{math}
 \begin{align}
 e^{\lambda A} e^{\lambda B} & = (1 + \lambda A + \half \lambda^2 A^2 + \ldots)(1 + \lambda B + \half \lambda^2 B^2)\\
