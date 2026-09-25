@@ -2,7 +2,7 @@
 
 ## Definition
 
-Quantum mechanics involves complex vector spaces, but in time we will also want to consider real vector spaces, and they are also vector spaces yo may be more familiar with, so we will start by defining them together. Consider a *field* $\mathbb{F}$ which for us will always be $\mathbb{R}$ or $\mathbb{C}$. The basic idea of a field (defined in any decent abstract algebra textbook, or Wikipedia is an honorable source) is that the operations of addition, multiplication, subtraction, and division have the you are used to for real numbers. (Other important examples of fields include the rational numbers and integers modulo $p$.) A *vector space over* $\mathbb{F}$, called "real" and "complex" vector spaces for $F = \mathbb{R},\mathbb{C}$ respectively, is a set $V$ of elements $\ket{v}$ with the following properties:
+Quantum mechanics involves complex vector spaces, but in time we will also want to consider real vector spaces, and they are also vector spaces you may be more familiar with, so we will start by defining them together. Consider a *field* $\mathbb{F}$ which for us will always be $\mathbb{R}$ or $\mathbb{C}$. The basic idea of a field (defined in any decent abstract algebra textbook, or Wikipedia is an honorable source) is that the operations of addition, multiplication, subtraction, and division have the you are used to for real numbers. (Other important examples of fields include the rational numbers and integers modulo $p$.) A *vector space over* $\mathbb{F}$, called "real" and "complex" vector spaces for $F = \mathbb{R},\mathbb{C}$ respectively, is a set $V$ of elements $\ket{v}$ with the following properties:
 
 1. **Vector addition**. For all $\ket{v},\ket{w}\in V$ there is a notion of addition $\ket{v} +  \ket{w} \in V$ wuth the following properties:
   - Addition is *commutative*: $\ket{v} + \ket{w} = \ket{w} + \ket{v}$.
@@ -20,7 +20,7 @@ Quantum mechanics involves complex vector spaces, but in time we will also want 
   - $1\ket{v} = \ket{v}$.
   - $0 \ket{v} = \ket{0}$.
   
-3. Distributive properties
+3. **Distributive properties**
 - For all $a\in \mathbb{F}$, $\ket{v},\ket{w} \in V$,
 ```{math}
 :label: distributive_mult
@@ -42,7 +42,7 @@ Note that I have not yet introduced any notion of the length of a vector, of whe
 
 ## Examples
 
-Theer are a number of more and less familiar examples.
+There are a number of more and less familiar examples.
 
 1. $\mathbb{C}^n$, the space of $n$-component column vectors
 ```{math}
