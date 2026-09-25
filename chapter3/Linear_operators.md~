@@ -25,9 +25,9 @@ f(a \ket{v} + b \ket{w}) = a^* f(\ket{v}) + b^* f(\ket{w})\ \ \ \forall a,b \in 
 ```
 where $a^*, b^*$ are the complex conjugates of $a,b$ respectively. This is important for defining adjoint vectors and normas of vectors.
 
-3. Let $V$ be a vector space over $\CF$. A **linear operator** *f* is a linear map $F: V \to V$. 
+3. Let $V$ be a vector space over $\CF$. A **linear operator** $F$ is a linear map $F: V \to V$. 
 
-For $\CF = \CC$, an **antilinear operator** *g* is an antilinear map $g: V \to V$. 
+For $\CF = \CC$, an **antilinear operator** $g$ is an antilinear map $g: V \to V$. 
 
 Antilinear operators include the operator that implements time reversal, which is important in various condensed matter physics and particle physics contexts.
 

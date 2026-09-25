@@ -98,7 +98,7 @@ Similarly, any complex line through the origin, defined as the set of vectors
 :label: complex_line
 a \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix}
 ```
-for fixed $c_k\in \mathbb{C}^n$ and all $a \in \mathbb{C}^n$. 
+for fixed $c_k\in \mathbb{C}^n$ and all $a \in \mathbb{C}$. 
 
 A counterexample is any complex line that does not run through the origin, defined as the set of all vectors of the form
 
