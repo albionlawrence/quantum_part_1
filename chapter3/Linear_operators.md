@@ -157,7 +157,7 @@ Then
 
 3. **Definition** For a vector space $V$, a linear operator $A$ acting on it is *surjective* or *onto* if $\text{Range}(A) = V$. 
 
-4. **Definition** For a linear operator $A$ acting on a vector space $V$, the *rangk* of $A$ is $\text{Rk}(A) = \text{dim}(\text{Range}(A))$. 
+4. **Definition** For a linear operator $A$ acting on a vector space $V$, the *rank* of $A$ is $\text{Rk}(A) = \text{dim}(\text{Range}(A))$. 
 
 5. **Rank-nullity theorem**: For a linear operator $A$ acting on a vector space $V$,
 
@@ -210,7 +210,7 @@ For all the below we will consider a veector space $V$ and a linear operator $A$
 
 2. **Theorem**: $A_L^{-1}$ exists if and only if $A$ is one-to-one.
 
-**Proof**: First assume $A_L^{-1}$ iexists. Now consider $\ket{v_{1,2}}$ such that
+**Proof**: First assume $A_L^{-1}$ exists. Now consider $\ket{v_{1,2}}$ such that
 
 ```{math}
 A\ket{v_1} = A \ket{v_2}
@@ -242,7 +242,14 @@ for any $c_i$, so $A_L^{-1} A = \bf{1}$.
 ```{math}
 A\ket{v} = \ket{w}
 ```
-for $\ket{v}$ given $\ket{w}$ by acting on both sides of the equation by $A_L^{-1}$ to get $\ket{v} = A_L^{-1} \ket{w}$. However, we *cannot necessarily check that this is a solution*: we can act on both sides by $A$ but then $A \ket{v} = A A_L^{-1} \ket{w}$  and we have no guarantee that $A A_L^{-1} = \bf{id}$. This becomes a particular issue for infinite-dimensional vector spaces. Consider the space of all polynomials
+for $\ket{v}$ given $\ket{w}$ by acting on both sides of the equation by $A_L^{-1}$ to get 
+
+```{math}
+:label: left_inverse
+\ket{v} = A_L^{-1} \ket{w}
+```
+
+However, we *cannot necessarily check that this is a solution*: we can act on both sides of {eq}`left_inverse` by $A$ but then $A \ket{v} = A A_L^{-1} \ket{w}$  and we have no guarantee that $A A_L^{-1} = \bf{id}$. This becomes a particular issue for infinite-dimensional vector spaces. Consider the space of all polynomials
 
 ```{math}
 \ket{a_0,a_1,a_2,\ldots} \Rightarrow \sum_{k=0}^{\infty} a_k x^k
@@ -333,7 +340,7 @@ A\ket{v} & = \ket{v'} = \sum_k v'_k \ket{k} \\
 
 Since the expansion in a given basis is unique, we have $v'_{\ell} = A_{\ell k} v_k$.
 
-In other words, given any basis, we can represent a vector as a set of $n$ complex numbers $v_k$. Of course we can arrange these numbers as a column vector
+Given any basis, we can represent a vector as a set of $n$ complex numbers $v_k$. Of course we can arrange these numbers as a column vector
 ```{math}
 \ket{v} \to \begin{pmatrix} v_1 \\ \vdots \\ v_n \end{pmatrix}
 ```
@@ -362,7 +369,7 @@ where $U_{\ell k}$ are $n^2$ complex numbers. Note that $U$ is an invertible mat
 :label: inverse_change
 \ket{k} = \sum_m V_{mk}\ket{\tilde{m}} = \sum_{mn} U_{n m} V_{m k} \ket{k}
 ```
-This only makes sense if $U_{nm} V_{mk} = \delta_{nk}$. We can run this in the opposite direction by swapping the tilde'dd and non-tilde'd bases in the above. The result is that $V$ is a left and right inverse for $U$, and thus $V = U^{-1}$ as a matrix.
+This only makes sense if $U_{nm} V_{mk} = \delta_{nk}$. We can run this in the opposite direction by swapping the tilde'd and non-tilde'd bases in the above. The result is that $V$ is a left and right inverse for $U$, and thus $V = U^{-1}$ as a matrix.
 
 How do operators look in the new basis? If we write
 ```{math}
@@ -391,7 +398,7 @@ is independent of the choice of basis. To see this,
 \end{align}
 ```
 
-2. **Definition**. The *determinant* of a matrix is also basis-independent. I will defer to your undergraduate linear algebra class to recall how to define the determinant of a matrix. The fact that it is basis independent comes from the fact that $\text{Det}(AB) = \text{Det}(A)\text{Det}(B) = \text{Det}(BA)$. Thus
+2. The *determinant* of a matrix is also basis-independent. I will defer to your undergraduate linear algebra class to recall how to define the determinant of a matrix. The fact that it is basis independent comes from the fact that $\text{Det}(AB) = \text{Det}(A)\text{Det}(B) = \text{Det}(BA)$. Thus
 ```{math}
 :label: det_change
 \text{Det}(\tilde{A}) = \text{Det}(U^{-1} A U) = \text{Det}(U U^{-1} A) = \text{Det}(A)
