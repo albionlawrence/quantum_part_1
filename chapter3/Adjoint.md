@@ -1,6 +1,6 @@
 # Adjoints and inner products
 
-The next step is to get somme notion of the lenth or *norm* of a vector, and relatedly, some more generalized notion of a dot product that tells us how aligned two vectors are, in cluding whether they are in some sense orthogonal. Nothing we have discussed so far gives us such a notion. For example, two vectors can be linearly independent without being orthognoal. We must add additional structure to make sense of such notions. 
+The next step is to get some notion of the length or *norm* of a vector, and relatedly, some more generalized notion of a dot product that tells us how aligned two vectors are, including whether they are in some sense orthogonal. Nothing we have discussed so far gives us such a notion. For example, two vectors can be linearly independent without being orthognoal. We must add additional structure to make sense of such notions. 
 
 ## Dual vector spaces
 
