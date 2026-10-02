@@ -2,7 +2,7 @@
 
 In classical mechanics we saw that the states of the system were described as points on phase space. Observables of the system were functions on phase space, that could be described as generators of infinitesimal transformations.
 
-In quantum mechanics, the space of ppossible states are described as vectors in a complex vector space (recall the discussion of photon polarization). Observables and generators of transformations are described as *operators* which map vectors to other vectors. More specifically, the correspond to *linear operators* which respect the linear structure of the vector space (addition and scalar multiplication).
+In quantum mechanics, the space of possible states are described as vectors in a complex vector space (recall the discussion of photon polarization). Observables and generators of transformations are described as *operators* which map vectors to other vectors. More specifically, they correspond to *linear operators* which respect the linear structure of the vector space (addition and scalar multiplication).
 
 ## Definitions
 
@@ -23,7 +23,7 @@ Note that we can easily prove with this that for the zero vector $\ket{0}_1 \in 
 :label: antilinear_map
 f(a \ket{v} + b \ket{w}) = a^* f(\ket{v}) + b^* f(\ket{w})\ \ \ \forall a,b \in \ \CF\ ,\ \ \ket{v},\ket{w} \in V_1
 ```
-where $a^*, b^*$ are the complex conjugates of $a,b$ respectively. This is important for defining adjoint vectors and normas of vectors.
+where $a^*, b^*$ are the complex conjugates of $a,b$ respectively. This is important for defining adjoint vectors and norms of vectors.
 
 3. Let $V$ be a vector space over $\CF$. A **linear operator** $F$ is a linear map $F: V \to V$. 
 
@@ -66,7 +66,7 @@ are linear operators on $V$.
 
 ## Operator algebras
 
-In general we can combine operators to form new linear operator in various ways: technically, they define an *algebra*:
+We can combine operators to form new linear operators in various ways. Technically, they define an *algebra*:
 
 1. Operators can be added: for operators $A_1,A_2$ acting on a vector space $V$, we can define
 ```{math}
@@ -150,7 +150,7 @@ As an example consider $V = \CC^4$,
 Then
 
 ```{math}
-\text{Range}{A} = \{ \begin{pmatrix} 0 \\ c_1 \\ c_2 \\ 0 \end{pmatrix}\ \forall\ c_{1,2} \in \CC \}
+\text{Range}({A}) = \{ \begin{pmatrix} 0 \\ c_1 \\ c_2 \\ 0 \end{pmatrix}\ \forall\ c_{1,2} \in \CC \}
 ```
 
 2. **Theorem**: for any vector space $V$ and linear operator $A$ acting on that space, $\text{Range}(A)$ is a vector subspace of $V$. I leave the proof as an exercise.
@@ -204,7 +204,7 @@ One can show that $\ket{v_k}$ are all linearly independent. The rank of $A$ and 
 
 ### Inverses
 
-For all the below we will consider a veector space $V$ and a linear operator $A$ acting on $V$.
+For all the below we will consider a vector space $V$ and a linear operator $A$ acting on $V$.
 
 1. **Definition**. $A_L^{-1}$ is the *left inverse* if $A_L^{-1} A = \bf{1}$.
 
@@ -311,7 +311,7 @@ so $T_R^{-1}T$ fails to be the identity operator because (once again) it strips 
 
 9. **Theorem**. Consider $V$ such that $dim(V) = d < \infty$. Then $A$ being invertible, $A$ being one-to-one, and $A$ being onto are all equivalent.
 
-**Proof**. This follows from the rank-nullity theorem. We have shown that $A$ being invertible means it is one-to-one and onto. If $A$ is one-to-one, then $\text{dim}(\text{Ker}(A)) = 0$, so by the rank-nullity theorem $A$ has rank $n$; this means $A$ has all of $V$ as its image so it is onto. Similarly if $A$ is onto, the rank-nullity theorem shows that $\text{dim}(\text{Ker}(A)) = 0$ so $A$ is one-to-one.
+**Proof**. This follows from the rank-nullity theorem. We have shown that $A$ being invertible means it is one-to-one and onto. If $A$ is one-to-one, then $\text{dim}(\text{Ker}(A)) = 0$, so by the rank-nullity theorem $A$ has rank $n$; this means $A$ has all of $V$ as its image so it is onto. Similarly if $A$ is onto, the rank-nullity theorem shows that $\text{dim}(\text{Ker}(A)) = 0$ so $A$ is one-to-one. In both of these last cases, $A$ ends up being one-to-one and onto, and so it is also invertible by the previous theorem.
 
 
 ## Matrix representations
@@ -398,7 +398,7 @@ is independent of the choice of basis. To see this,
 \end{align}
 ```
 
-2. The *determinant* of a matrix is also basis-independent. I will defer to your undergraduate linear algebra class to recall how to define the determinant of a matrix. The fact that it is basis independent comes from the fact that $\text{Det}(AB) = \text{Det}(A)\text{Det}(B) = \text{Det}(BA)$. Thus
+2. The *determinant* of a matrix is also basis-independent. You can check the notes or text from undergraduate linear algebra class to recall how to define the determinant of a matrix. The fact that it is basis independent comes from the fact that $\text{Det}(AB) = \text{Det}(A)\text{Det}(B) = \text{Det}(BA)$. Thus
 ```{math}
 :label: det_change
 \text{Det}(\tilde{A}) = \text{Det}(U^{-1} A U) = \text{Det}(U U^{-1} A) = \text{Det}(A)
@@ -416,7 +416,7 @@ then we call $\ket{v}$ an *eigenvector* of $A$ and $\lambda$ the associated *eig
 
 Note that for any eigenvector $\ket{v}$ and any constant $c \in \CC$, $c\ket{v}$ is also an eigenvector with the same eigenvalue.
 
-2. **Definition**. Let $\ket{v_k}$ be $K \leq \text{dim}(V)$ linearly independent eigenvectors of $A$ with the *same* eigenvalue $\lambda$. Then $\lambda$ is called a *degenerate* eigenvalue, and $\ket{v_k}$ span a *degenerate subspace* associated with $A,\lambda$. We can show there is a maximal set of such linearly independent eigenvectors for a fixed eigenvalue. These fprm the basis of a subspace of $V$ valled the *degenerate subspace* associated with $\lambda$. The dimension of this subspace is called the *geometric multiplicity* of the eigenvalue.
+2. **Definition**. Let $\ket{v_k}$ be $K \leq \text{dim}(V)$ linearly independent eigenvectors of $A$ with the *same* eigenvalue $\lambda$. Then $\lambda$ is called a *degenerate* eigenvalue, and $\ket{v_k}$ span a *degenerate subspace* associated with $A,\lambda$. We can show there is a maximal set of such linearly independent eigenvectors for a fixed eigenvalue. These form the basis of a subspace of $V$ called the *degenerate subspace* associated with $\lambda$. The dimension of this subspace is called the *geometric multiplicity* of the eigenvalue.
 
 3. With a little thought you can show that the basis vectors for two degenerate subspaces associated to distinct eigenvalues are a linearly independent set of vectors.
 
@@ -424,7 +424,7 @@ Note that for any eigenvector $\ket{v}$ and any constant $c \in \CC$, $c\ket{v}$
 ```{math}
 (A - \lambda \bf{1})\ket{v} = 0
 ```
-This means that $\text{Ker}(A - \lambda \bf{1})$ is nontrivial, and therefore $A - \lambda \bf{1}$ is not an invertibel operator.
+This means that $\text{Ker}(A - \lambda \bf{1})$ is nontrivial, and therefore $A - \lambda \bf{1}$ is not an invertible operator.
 
 It is a basic fact that any operator $A$ is invertible *if and only if* $\text{Det}(A) \neq 0$. The reson is as follows. There is a standard formula in linear algebra for the inverse:
 ```{math}
@@ -458,6 +458,7 @@ f(x) = f_0 + f_1 x + f_2 x^2 + \ldots
 then we can define
 ```{math}
 f(A) = f_0 \bf{1} + f_1 A + f_2 A^2 + \ldots
+```
 
 A particularly important example is the exponential of an operator:
 ```{math}
@@ -473,7 +474,7 @@ Thus
 ```
 In other words, $e^{\lambda A} e^{-\lambda A}$ is $\lambda$-independent, so we can find its value by setting $\lambda = 1$.
 
-On the other hand, while for ordinary numbers $a,b$, $e^a e^b = e^{a + b}$ this fails to be true when we replace $a,b$ with operators. To see this, we will look at the first few terms in the Taylor series
+While $e^a e^b = e^{a + b}$ for ordinary numbers $a, b$, this fails to be true when we replace $a,b$ with operators. To see this, we will look at the first few terms in the Taylor series
 ```{math}
 \begin{align}
 e^{\lambda A} e^{\lambda B} & = (1 + \lambda A + \half \lambda^2 A^2 + \ldots)(1 + \lambda B + \half \lambda^2 B^2)\\

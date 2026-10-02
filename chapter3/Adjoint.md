@@ -1,5 +1,7 @@
 # Adjoints and inner products
 
+The next step is to get somme notion of the lenth or *norm* of a vector, and relatedly, some more generalized notion of a dot product that tells us how aligned two vectors are, in cluding whether they are in some sense orthogonal. Nothing we have discussed so far gives us such a notion. For example, two vectors can be linearly independent without being orthognoal. We must add additional structure to make sense of such notions. 
+
 ## Dual vector spaces
 
 ### Definition
@@ -52,14 +54,14 @@ If $V = \CC^3$ is represented as the space of column vectors. we can represent $
 ```{math}
 \ket{1} = \begin{pmatrix}1 \\ 0 \\ 0 \end{pmatrix}\ ; \ket{2} = \begin{pmatrix}0 \\ 1 \\ 0 \end{pmatrix}\ ; \ket{3} = \begin{pmatrix}0 \\ 0 \\ 1 \end{pmatrix}
 ```
-We can define any linear map $f$ by $f(\ket{i} = c_i$. Then if $\ket{v} = \sum_i a_i \ket{i}$, 
+We can define any linear map $f$ by $f(\ket{i}) = c_i$. Then if $\ket{v} = \sum_i a_i \ket{i}$, 
 ```{math}
 f(\ket{v}) = \sum_i c_i a_i = \begin{pmatrix} c_1 & c_2 & c_3 \end{pmatrix} \begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix}
 ```
 
 ## Adjoint maps
 
-Since $\dim V = \dim V^*$, we expect that there is an isomorphism (a map that is one-to-one and onto) between them. Choosing such a map leads to a choice of "inner product" on $V$ itself: a way of assigning to $\ket{v}$ a number corresponding to some notion of its length.
+Since $\dim V = \dim V^*$, we expect that there is an isomorphism (a map that is one-to-one and onto) between them. Choosing such a map leads to a choice of "inner product" on $V$ itself: a way of assigning to $\ket{v}$ a number corresponding to some notion of its length, or of assigning to two vectors $\ket{v}, \ket{w}$ some notion of a "dot product" between them.
 
 ### Definition
 
@@ -301,4 +303,4 @@ as expected for a Hermitian operator.
 ```
 The second line follows from integration by parts, and the boundary terms vanish because $\psi$ is square integrable. In other words for every $\ket{\psi},\ket{\chi}$, $\bra{\chi} {\hat p} \ket{\psi} = \bra{\chi} {\hat p}^{\dagger} \ket{\psi}$. From this we can deduce that ${\hat p} = {\hat p}^{\dagger}$.
 
-The same argument follows for the case of complex functions with periodic boundary conditions. For *Dirichlet* boundary conditions, ${\hat p}$ fails to be an operator on teh Hilbert space, as the derivative of a function with Dirichlet boundary conditions does not in general satisfy Dirichlet boundary conditions. (Similarly for Neumann boundary conditions).
+The same argument follows for the case of complex functions with periodic boundary conditions. For *Dirichlet* boundary conditions, ${\hat p}$ fails to be an operator on the Hilbert space, as the derivative of a function with Dirichlet boundary conditions does not in general satisfy Dirichlet boundary conditions. (Similarly for Neumann boundary conditions).

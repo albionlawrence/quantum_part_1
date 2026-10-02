@@ -147,14 +147,14 @@ Consider an electromagnetic field propagating in a vacuum along the $z$ directio
 
 ```{math}
 :label: propagating_em
-{\vec E} = \text{Re}\ \left\{ \left[ E_x {\hat x} + E_y {\hat y} \right]e^{i (kx - \omega t)}\right\} = \text{Re}\left\{ {\vec E}_c e^{i (kx - \omega t)} \right\}
+{\vec E} = \text{Re}\ \left\{ \left[ E_x {\hat x} + E_y {\hat y} \right]e^{i (kz - \omega t)}\right\} = \text{Re}\left\{ {\vec E}_c e^{i (kz - \omega t)} \right\}
 ```
 
 where $E_{x,y} \in \mathbb{C}$ so that $E_i = |E_i| e^{i\delta_i}$, and $\omega = c k$. We can rewrite this as
 
 ```{math}
 :label: real_propagating
-{\vec E} = |E_x|\cos(kz - \omega t+ \delta_x) {\hat x} + |E_y| \cos(kx - \omega t + \delta_y)
+{\vec E} = |E_x|\cos(kz - \omega t+ \delta_x) {\hat x} + |E_y| \cos(kx - \omega t + \delta_y) {\hat y}
 ```
 
 The magnetic field ${\vec H}$ can be determined from the Maxwell equation
@@ -181,7 +181,7 @@ equivalently ${\vec E}_c = E({\hat x} - i {\hat y})e^{i\delta}$. Thus:
 
 ```{math}
 :label: rcp
-{\vec E}_{RCP} = E\left(\cos(kz - \omega t + \delta){\hat x} + \sin (kz - \omega t + \delta) {\hat y}\right)
+{\vec E}_{RCP} = E\left(\cos(kz - \omega t + \delta){\hat x} - \sin (kz - \omega t + \delta) {\hat y}\right)
 ```
 
 Note that for any plane wave, ${\vec E}_c$ can be written as a linear combination of left- and right-circular polarizations, or as $x$- and $y$-plane polarizations. 
@@ -246,7 +246,7 @@ For more general polarizations,
 ```{math}
 :label: gen_pol
 \begin{align}
-{\vec E} = \text{RE}\ \left[ E_x e^{i(kx - \omega t)} {\hat x} + E_y e^{i(kx - \omega t)} {\hat y}\right]\\
+{\vec E} = \text{Re}\ \left[ E_x e^{i(kx - \omega t)} {\hat x} + E_y e^{i(kx - \omega t)} {\hat y}\right]\\
 U_{initial} & = \frac{V}{8\pi}\left(|E_x|^2 + |E_y|^2\right)\\
 U_{final} & = \frac{V}{8\pi} |E_x|^2
 \end{align}
@@ -283,7 +283,7 @@ For an electric field satisfying this relation, we can write a "state vector" th
 \end{align}
 ```
 
-The notation $\ket{\psi}$ should here be understood in this way, as shorthand for a vector (here a two-dimensional vector with complex entries). Using {eq}`sp_energy` we can see that $|\psi_x|^2 + |\psi_y|^2 = 1$, apnd that $p_x = |\psi_x|^2$. Similarly, the probability of the same photon passing through a polarizer aligned alongthe $y$ axis is $p_y = |\psi_y|^2$. It is as if the two possible outcomes are that the photon is polarized along the $x$ or $y$ axis. On the other hand, we could rotate both polarizers by (say) $17^{\circ}$ and do the same experiment and the probability of the photon passing through each of the two perpendictular polarizers will sum to $1$. 
+The notation $\ket{\psi}$ should here be understood in this way, as shorthand for a vector (here a two-dimensional vector with complex entries). Using {eq}`sp_energy` we can see that $|\psi_x|^2 + |\psi_y|^2 = 1$, apnd that $p_x = |\psi_x|^2$. Similarly, the probability of the same photon passing through a polarizer aligned alongthe $y$ axis is $p_y = |\psi_y|^2$. It is as if the two possible outcomes are that the photon is polarized along the $x$ or $y$ axis. On the other hand, we could rotate both polarizers by (say) $17^{\circ}$ and do the same experiment and the probability of the photon passing through each of the two perpendicular polarizers will sum to $1$. 
 
 Finally, not that there is a *linear structure* to the space of photon polarizations, in that we can add two polarization vectors and get another polarization vector, up to the overall normalization constraint {eq}`sp_energy` for a single photon. In particular, if we define
 

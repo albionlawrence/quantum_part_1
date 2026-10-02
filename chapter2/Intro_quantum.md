@@ -147,14 +147,14 @@ Consider an electromagnetic field propagating in a vacuum along the $z$ directio
 
 ```{math}
 :label: propagating_em
-{\vec E} = \text{Re}\ \left\{ \left[ E_x {\hat x} + E_y {\hat y} \right]e^{i (kx - \omega t)}\right\} = \text{Re}\left\{ {\vec E}_c e^{i (kx - \omega t)} \right\}
+{\vec E} = \text{Re}\ \left\{ \left[ E_x {\hat x} + E_y {\hat y} \right]e^{i (kz - \omega t)}\right\} = \text{Re}\left\{ {\vec E}_c e^{i (kz - \omega t)} \right\}
 ```
 
 where $E_{x,y} \in \mathbb{C}$ so that $E_i = |E_i| e^{i\delta_i}$, and $\omega = c k$. We can rewrite this as
 
 ```{math}
 :label: real_propagating
-{\vec E} = |E_x|\cos(kz - \omega t+ \delta_x) {\hat x} + |E_y| \cos(kx - \omega t + \delta_y)
+{\vec E} = |E_x|\cos(kz - \omega t+ \delta_x) {\hat x} + |E_y| \cos(kx - \omega t + \delta_y) {\hat y}
 ```
 
 The magnetic field ${\vec H}$ can be determined from the Maxwell equation
@@ -181,7 +181,7 @@ equivalently ${\vec E}_c = E({\hat x} - i {\hat y})e^{i\delta}$. Thus:
 
 ```{math}
 :label: rcp
-{\vec E}_{RCP} = E\left(\cos(kz - \omega t + \delta){\hat x} + \sin (kz - \omega t + \delta) {\hat y}\right)
+{\vec E}_{RCP} = E\left(\cos(kz - \omega t + \delta){\hat x} - \sin (kz - \omega t + \delta) {\hat y}\right)
 ```
 
 Note that for any plane wave, ${\vec E}_c$ can be written as a linear combination of left- and right-circular polarizations, or as $x$- and $y$-plane polarizations. 
