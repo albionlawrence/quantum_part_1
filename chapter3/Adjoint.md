@@ -41,12 +41,12 @@ Any function $f$ can always be written as $f = \sum_{i = 1}^d c_i f_i$, so this 
 ```{math}
 \brket{f}{v} \equiv f(\ket{v})
 ```
-as a "bra(c)ket". I didn't do this, please blame Dirac. Anyhow the notation is unfortunately standard. With this notation we can define the linear structure of $V^*$ as
+as a "bra(c)ket". I didn't do this, please blame Dirac. The terminology is unfortunately now standard. With this notation we can define the linear structure of $V^*$ as
 ```{math}
 \bra{a f_1 + b f_2} = a \bra{f_1} + b \bra{f_2}
 ```
 
-4. Finally, The dual vector space for $V^*$ is $V$, or $(V^*)^* = V$: for any $\ket{v}$ the map from $V^* \to \CC$ is just $\ket{v}: f \to \brket{f}{v}$.
+4. Finally, the dual vector space for $V^*$ is $V$, or $(V^*)^* = V$: for any $\ket{v}$ the map from $V^* \to \CC$ is just $\ket{v}: f \to \brket{f}{v}$.
 
 ### Example
 
@@ -134,7 +134,7 @@ To explain the last possibility, note that $\ket{v_i}$, $i = 1,\ldots,\infty$ is
 ```
 Such a sequence is *complete* if it converges to a vector in $V$.
 
-4. There is no unique adjoint map.
+5. There is no unique adjoint map.
 
 ### Actions of operators
 
@@ -154,7 +154,7 @@ Let $V$ be a vector space over $\CC$.
 
 ### Examples
 
-1. We can write $\ket{v} = \sum_i v_i \ket{i}$; the antilienarity of the adjoint map means that $\bra{v} = \sum_i \bra{i} v^*_i$. This means that 
+1. We can write $\ket{v} = \sum_i v_i \ket{i}$; the antilinearity of the adjoint map means that $\bra{v} = \sum_i \bra{i} v^*_i$. This means that 
 ```{math}
 :label: on_norm
 \brket{v}{v} = \sum_{i,j} v^*_i \brket{i}{j} v_j = \sum_i |v_i|^2
@@ -270,7 +270,7 @@ Note that this does not mean the operator has real matrix elements. The followin
 \sigma_y = \begin{pmatrix} 0 & i \\ -i & 0 \end{pmatrix}
 ```
 
-2. **Definition**. A *Unitary operator* is an operator $U$ such that $U^{\dagger} = U^{-1}$. 
+2. **Definition**. A *unitary operator* is an operator $U$ such that $U^{\dagger} = U^{-1}$. 
 
 An important property of this operator is that it is *norm-preserving*:
 ```{math}

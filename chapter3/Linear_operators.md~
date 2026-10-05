@@ -470,7 +470,7 @@ It is straightforward to show that $e^{\lambda A} e^{-\lambda A} = \bf{1}$. Firs
 ```
 Thus
 ```{math}
-\frac{d}{d\lambda} e^{\lambda A} e^{-\lambda A} = e^{\lambda A} A e^{-\lambda A} + e^{\lambda A} (-a) e^{-\lambda A} = 0
+\frac{d}{d\lambda} e^{\lambda A} e^{-\lambda A} = e^{\lambda A} A e^{-\lambda A} + e^{\lambda A} (-A) e^{-\lambda A} = 0
 ```
 In other words, $e^{\lambda A} e^{-\lambda A}$ is $\lambda$-independent, so we can find its value by setting $\lambda = 1$.
 
