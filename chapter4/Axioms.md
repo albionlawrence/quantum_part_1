@@ -6,7 +6,7 @@ A good reason for doing this is that the rules are very different from how we ap
 
 I will state the rules in a somewhat different order and grouping as compared to Commins. (Also one of his rules can be derived as a consequence). It comes to the same in the end, and you should read both.
 
-1. The space of physical states of a quantum system is a Hilbert space $\cH$. (COntrast with classical mechanics, for which the space of states is a *phase space* of positions and momenta). 
+1. The space of physical states of a quantum system is a Hilbert space $\cH$. (Contrast with classical mechanics, for which the space of states is a *phase space* of positions and momenta). 
 
 Some examples:
 - For photons traveling with fixed direction and wavenumber, the space of photon polarizations is $\cH = \CC^2$.
@@ -20,7 +20,7 @@ Some examples:
 :label: born_rule
 p(a) = \frac{\bra{\psi} \CP_a \ket{\psi}}{\brket{\psi}{\psi}}
 ```
-This rule is sometimes called the *Born rule*. The resolution of the identity shown in {eq}`evector_resolution_identity` shows that these atre consistent probabilities:
+This rule is sometimes called the *Born rule*. The resolution of the identity shown in {eq}`evector_resolution_identity` shows that these are consistent probabilities:
 ```{math}
 :label: sum_of_results
 \sum_i p(a_i) = \sum_i \frac{\bra{\psi} \CP_{a_i} \ket{\psi}}{\brket{\psi}{\psi}} = \frac{\bra{\psi} \CP_{a_i}{\bf 1} \ket{\psi}}{\brket{\psi}{\psi}} = 1
@@ -61,7 +61,7 @@ The probabilistic nature of measurement is a big part of people's discomfort wit
 ```
 This "collapse of the wavefunction" is the other mystery of quantum mechanics. How does this happen? For now we will take it as given, since this is what is actually seen in experiments.
 
-My personal prejudice is that this is related to the fact that actual measurements involve coupling a large, complicated measuring device (well descvribed by classical physics) to a small quantum system. If I have time, we will model this process later once we have explored various quantum systems; it points to a plausible if very uncomfortable interpretation of the Born rule and collapse of teh wavefunction, known as the "Many Worlds Interpretation".
+My personal prejudice is that this is related to the fact that actual measurements involve coupling a large, complicated measuring device (well descvribed by classical physics) to a small quantum system. If I have time, we will model this process later once we have explored various quantum systems; it points to a plausible if very uncomfortable interpretation of the Born rule and collapse of the wavefunction, known as the "Many Worlds Interpretation".
 
 5. Absent external intervention through a measurement, the time evolution of an *isolated* quantum system is described by a unitary operator:
 ```{math}

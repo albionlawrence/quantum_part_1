@@ -29,14 +29,14 @@ for $a \neq b$ this is only possible if $\brket{b}{a} = 0$.
 
 I will only sketch a proof.
 
-- The eigenvalues satisfy $\text{det}(A - a {\bf 1}) = 0$ is a $D$th-order polynomial equation in $a$ (where $d = \text{dim}(V)$). Thus
+- The eigenvalues satisfy $\text{det}(A - a {\bf 1}) = 0$. The left hand side is a $d^{th}$-order polynomial equation in $a$ (where $d = \text{dim}(V)$). Thus
 ```{math}
 \text{det}(A - a {\bf 1}) = c \prod_{I = 1}^d (a - a_i)
 ```
-There are always $d$ complex roots to this equation. If $A = A^{\dagger}$ all eigenbvalues are real so all $a_i$ are real. There are still $d$ roots.
-Hhere $a_i$ are the eigenvalues. If $a_i \neq a_j$ for $i \neq j$, we are done, as $\brket{a_i}{a_j} = \delta_{ij}$ and there are $d$ such eigenvectors.
+We can write the right hand side in this form because there are always $d$ complex roots to a $d^{th}$ order polynomial equation. If $A = A^{\dagger}$ all eigenvalues are real so all $a_i$ are real. There are still $d$ roots.
+Here $a_i$ are the eigenvalues. If $a_i \neq a_j$ for $i \neq j$, we are done, as $\brket{a_i}{a_j} = \delta_{ij}$ and there are $d$ such eigenvectors.
 
-- If there are $d_k$ identical eigenvalues, one needs to show (and I will not) that this means the space of vectors which are eigenvectors of $A$ with eigenvalue $a_k$ form a $d_k$-dimensional subspace. This can be made into an orthonormal basis via teh Gram-Schmidt machine.
+- If there are $d_k$ identical eigenvalues, one needs to show (and I will not) that this means the space of vectors which are eigenvectors of $A$ with eigenvalue $a_k$ form a $d_k$-dimensional subspace. This can be made into an orthonormal basis via the Gram-Schmidt machine.
 
 4. **Theorem**. For any Hermitian operator $A$, there exists a unitary matrix $U$ and a diagonal matrix $\Lambda$ such that $A = U^{\dagger} \Lambda U$, and the entries of $\Lambda$ are the eigenvalues, such than an eigenvalue $a_k$ with degree of degeneracy $d_k$ appears in $d_k$ entries.
 
@@ -52,9 +52,9 @@ The next theorem will be central to the uncertainty principle.
 
 5. **Theorem**. Two Hermitian operators $A,B$ are diagonal in the same orthonormal basis if and only if $[A,B] = 0$. 
 
-**Proof (partial)**. For the "only if" part, if $A,B$ are diagonal in the same basis, we use the fact that we can writ $A = U^{\dagger} \Lambda_A U$, $B = U^{\dagger} \Lambda_B U$, following the construction above. $A,B$ are diagonalized by the same unitary matrix because this matrix implements the change of basis and by supposition the basis of eigenvectors is the same. Then since diagonal matrices commute,
+**Proof (partial)**. For the "only if" part, if $A,B$ are diagonal in the same basis, we use the fact that we can write $A = U^{\dagger} \Lambda_A U$, $B = U^{\dagger} \Lambda_B U$, following the construction above. $A,B$ are diagonalized by the same unitary matrix because this matrix implements the change of basis and by supposition the basis of eigenvectors is the same. Then since diagonal matrices commute,
 ```{math}
-AB = U^{\dagger} \Lambda_A U U^{\dagger} \Lambda_B U = U^{\dagger} \Lambda_A \Lambda_B U = U^{\dagger} \Lambda_B \lambda_A U = U^{\dagger}\Lambda_B U U^{\dagger}\Lambda_A U = BA
+AB = U^{\dagger} \Lambda_A U U^{\dagger} \Lambda_B U = U^{\dagger} \Lambda_A \Lambda_B U = U^{\dagger} \Lambda_B \Lambda_A U = U^{\dagger}\Lambda_B U U^{\dagger}\Lambda_A U = BA
 ```
 
 For the "if" part, let $A,B$ commute. We take the case that the eigenvalues of $A,B$ are distinct (see for example {cite:p}`bellac2006quantum`). Then if $A \ket{a_i} = a_i \ket{a_i}$, $A(B \ket{a_i}) = BA \ket{a_i} = a_i B \ket{a_i}$. That is, $B\ket{a_i}$ is an eigenvector of $A$. But by supposition the subspace of eigenvectors with a fixed eigenvalue is one-dimensional, $B\ket{a_i} = b_i \ket{a_i}$ for some $b_i$ which is clearly an eigenvalue of $b_i$. 
@@ -65,7 +65,7 @@ For the "if" part, let $A,B$ commute. We take the case that the eigenvalues of $
 
 ## Example: Operators on the space of functions
 
-For functions with periodic boundary conditions, the functions $\psi_n(x) = \frac{1}{\sqrt{L}} e^{2\pi i n x/L}$, $n \in \CZ$ are a basis (since Fourier modes are a basis of periodic functions. In this case, ${\hat p} \psi_n = \frac{2\pi \hbar n}{L} \psi_n$; this basis is a basis of eigenfunctions of ${\hat p}$. Note that ${\hat x}:\psi(x) \to x\psi(x)$ is not an operator in this space.
+For functions with periodic boundary conditions, the functions $\psi_n(x) = \frac{1}{\sqrt{L}} e^{2\pi i n x/L}$, $n \in \CZ$ are a basis (since Fourier modes are a basis of periodic functions). In this case, ${\hat p} \psi_n = \frac{2\pi \hbar n}{L} \psi_n$; this basis is a basis of eigenfunctions of ${\hat p}$. Note that ${\hat x}:\psi(x) \to x\psi(x)$ is not an operator in this space.
 
 For $L^2(\CR)$, ${\hat x}$ is almost such an operator, if we focus on $\psi(x)$ falling off fast enough (faster than $\frac{1}{|x|^{3/2}}$). The fact that it fails in some cases means that ${\hat x}$ is not a *bounded* operator. One can also show the same for the momentum operator ${\hat p} = \frac{\hbar}{i} \frac{\del}{\del x}$. Nonetheless, these operators are useful and we will use them. I will table a discussion of them for a week or two, when we get to wave mechanics.
 
@@ -118,7 +118,7 @@ In the latter case, we can show this is Hermitian by first realizing that
 :label: adjoint_vectorrep
 \left(\ket{\chi}\bra{\psi}\right)^{\dagger} = \ket{\psi}\bra{\chi}
 ```
-(can you shouw this?), and then showing that
+(can you show this?), and then showing that
 ```{math}
 :label: projection_squared
 \CP^2 = \sum_i \ket{i}\bra{i} \sum_j \ket{j}\bra{j} = \sum_{i,j} \ket{i}\brket{i}{j}\bra{j} = \sum_{i,j} \ket{i}\delta_{ij} \bra{j} = \CP
