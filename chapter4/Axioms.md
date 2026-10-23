@@ -2,7 +2,7 @@
 
 One can make a case that the best way to introduce quantum mechanics is to just jump right in. The rules are comparatively simple, if somewhat abstract. We will take that approach and then proceed to applying the rules to various examples. In this way we can build some intuition for how the rules work. 
 
-A good reason for doing this is that the rules are very different from how we approach classical mechanics. Furthermore, they yield predictions that have withstood over a century of experimental tests. So perhaps we should just state what the rules are and get used to them. The infamous philosophivcal puzzles amount to: where do these rules come from? We will allude to these, and in coming lectures eliminate one class of possibilities.
+A good reason for doing this is that the rules are very different from how we approach classical mechanics. Furthermore, they yield predictions that have withstood over a century of experimental tests. So perhaps we should just state what the rules are and get used to them. The infamous philosophical puzzles amount to: where do these rules come from? We will allude to these, and in coming lectures eliminate one class of possibilities.
 
 I will state the rules in a somewhat different order and grouping as compared to Commins. (Also one of his rules can be derived as a consequence). It comes to the same in the end, and you should read both.
 
@@ -68,7 +68,7 @@ My personal prejudice is that this is related to the fact that actual measuremen
 :label: quantum_dynamics
 \ket{\psi(t)} = U(t,t_0) \ket{\psi(t_0)}
 ```
-where $t > t_0$ and $\ket{\psi(t)}$ is the quantum state of the system at time $t$. Unitarity means that $\brket{\psi(t)}{\psi(t)} = \brket{\psi(t_0)}{\psi(t_0)}$, so that $\ket{\psi(t)}$ continues to yield sensible probabilities. Note that what we mean by isolated actually takes osme careful work. For example, we will discuss the evolution of charged particles in an electromagnetic field, and take that filed to be described by some fixed background. In fact the field itself is a quantum system, and we cannot really treat the electron as isolated; one must specify the joint quantum evolution of the full system of field plus charged particle. Practically speaking we can ofetn ignore this issue and treat the electron as a quantum system whose dynamical evolution is specified by some particular operator $U(t,t_0)$. 
+where $t > t_0$ and $\ket{\psi(t)}$ is the quantum state of the system at time $t$. Unitarity means that $\brket{\psi(t)}{\psi(t)} = \brket{\psi(t_0)}{\psi(t_0)}$, so that $\ket{\psi(t)}$ continues to yield sensible probabilities. Note that what we mean by isolated actually takes osme careful work. For example, we will discuss the evolution of charged particles in an electromagnetic field, and take that field to be described by some fixed background. In fact the field itself is a quantum system, and we cannot really treat the electron as isolated; one must specify the joint quantum evolution of the full system of field plus charged particle. Practically speaking we can ofetn ignore this issue and treat the electron as a quantum system whose dynamical evolution is specified by some particular operator $U(t,t_0)$. 
 
 This rule implies a differential form of the dynamical equations which brings us a bit closer to what we are familiar with in classical mechanics. Given $\ket{\psi(t)}$, the state an infinitesimal time later is $\ket{\psi(t + \delta t)} = \ket{\psi(t)} + \delta t \frac{d}{dt} \ket{\psi(t)}$. Given the above evolution equations,
 ```{math}

@@ -1,6 +1,6 @@
 # Example: spin-1/2 particles
 
-The goal of these notes is to consider the rules of quantum mechanics for the simplest possible case, $V = \CC^2$. This is a physics course so we should give a physical realization of this simplest case! One such realization is the angular momentum states of "spin-$\half$ particles. We will give a broad-brush and not precisely motivated description of such systems. A fuller description will have to wait until we discuss the theory of angular momentum.
+The goal of these notes is to consider the rules of quantum mechanics for the simplest possible case, $V = \CC^2$. This is a physics course so we should give a physical realization of this simplest case! One such realization is the angular momentum states of spin-$\half$ particles. We will give a broad-brush and not precisely motivated description of such systems. A fuller description will have to wait until we discuss the theory of angular momentum.
 
 ## Classical picture of magnetic moments
 
@@ -38,7 +38,7 @@ U = - {\vec \mu}\cdot{\vec B}
 Quantum-mechanically, the story is somewhat different. Pictured above is a sketch of a device that should measure the magnetic moment (and thus the angular momentum) of a particle. The device emits particles with some fixed velocity along the $y$ axis, and randomly oriented magnetic moments. We pass the particles through a magnetic field:
 ```{math}
 :label: SG_bfield
-{\vec B} = b_x({\hat x}) + (B_0 + b(z)) {\hat z}
+{\vec B} = b_x(x) {\hat x} + (B_0 + b(z)) {\hat z}
 ```
 We assume $B_0 \gg b_{x,z}$. It turns out that for the most part we can ignore $b_x(x)$ for this experiment (I will not go into this here); I mention it because we do need to ensure that ${\vec\nabla}\cdot{\vec B} = 0$. In general charged particles will bend in this field due to the Lorentz force, and the magnetic moment will precess about the magnetic field. We will assume that the former effect can be ignored or taken into account; classically, the latter will not change $\mu_z$ if we ignore $b_x$.
 
@@ -53,7 +53,7 @@ Now, the *classical* expectation is that in general, if the particles are emitte
 
 ![Result of Stern-Gerlach experiment](SG_result.jpeg)
 
-What is actually observed is very different. As illustrated in the figure above, the particles reach a discrete set of $z$ values, consistent with the allowed values of the magnemic moment being
+What is actually observed is very different. As illustrated in the figure above, the particles reach a discrete set of $z$ values, consistent with the allowed values of the magnetic moment being
 ```{math}
 :label: allowed_mm_sg
 \mu_z = g \left(\frac{q}{2m}\right) m\hbar 
@@ -71,7 +71,7 @@ Note that I could have oriented the Stern-Gerlach device along any axis ${\hat n
 
 Now we can start playing some interesting games. For example, take a beam of $N$ particles and pass them through a Stern-Garlach device aligned along ${\hat n}$, We can then apply a filter, based on their spatial location, that only passes through particles with $S_{{\hat n}} = \frac{\hbar}{2}$. 
 
-If we measure $S_{{\hat n}}$ again on the filtered particles, we will fid that with $100\%$ probability, the result will be $S_{{\hat n}} = \frac{\hbar}{2}$. Note that at this point we are assuming that the spin degree of freedom does not evolve over the course of the experiment.
+If we measure $S_{{\hat n}}$ again on the filtered particles, we will find that with $100\%$ probability, the result will be $S_{{\hat n}} = \frac{\hbar}{2}$. Note that at this point we are assuming that the spin degree of freedom does not evolve over the course of the experiment.
 
 If instead we measure the spin of the filtered particles along the $z$-axis, where ${\hat n}\cdot{\hat z} = \cos\theta$ we find that the particles have spin $S_z = \frac{\hbar}{2}$ with probability $\cos^2 \frac{\theta}{2}$, and spin $S_z = - \frac{\hbar}{2}$ with probability $\sin^2\frac{\theta}{2}$. 
 
@@ -90,7 +90,7 @@ p(S_{{\hat z}} = |\brket{\pm,{\hat z}}{+,{\hat n}}|^2 = |\alpha_{\pm}|^2
 
 ![Unit vector in polar coordinates](unit_vector.jpeg)
 
-Consider the unit vector ${\hat n}$ in polar coordinates, as displayed in the picture above. From what I have given you can calculate $\alpha_{\pm}$. You have to compute the eigenstate of $S_{{\hat n}}$, given the edefinition above, and noting that the matrices I gave you are written in the basis of eigenstates of $S_{{\hat z}}$. You can show that 
+Consider the unit vector ${\hat n}$ in polar coordinates, as displayed in the picture above. From what I have given you can calculate $\alpha_{\pm}$. You have to compute the eigenstate of $S_{{\hat n}}$, given the definition above, and noting that the matrices I gave you are written in the basis of eigenstates of $S_{{\hat z}}$. You can show that 
 ```{math}
 :label: expansion_sg
 \begin{align}
