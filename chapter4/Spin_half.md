@@ -4,11 +4,13 @@ The goal of these notes is to consider the rules of quantum mechanics for the si
 
 ## Classical picture of magnetic moments
 
-Although I keep saying "we should just take quantum mechanics at face value" it is sometimes good to know how they relate to classical analogs; here in particular we will introduce some concepts that are best explained by relating the quantum and classical cases.
+It has been observed (and I will assert) that elementary particles, as well as constituents such as atoms, carry an intrinsic angular momentum and a magnetic moment aligned with that momentum. We should therefore be able to probe the dynamics of the spin (and, as I will argue, measure it), by placing the particle in a magnetic field.
+
+To understand the dynamics of the spin, we then need to know the associated Hamiltonian. As even in physics, we must make an educated guess and shore up that guess with observations. One source of guessing is to consider related classical systems. Although I say (and believe) that we should take quantum mechanics at face value, there can be good reasons for this approach. One is that classical mechanics has to emerge from quantum mechanics, so quantum dynamics that fits with some classical picture has a good chance of providing such a limit. Another is just that it gives us some clues as to what to do.
 
 ![Classical current loop](current_loop.png)
 
-To warm up, let us consider a particle with charge $q$ and mass $%m$ moving in a circular orbit with radius $R$ and constant tangential speed $v$. Classically, we can say:
+Thus, let us consider a particle with charge $q$ and mass $m$ moving in a circular orbit with radius $R$ and constant tangential speed $v$. Classically, we can say:
 
 - The period of the motion is $T = \frac{2\pi R}{v}$. 
 
@@ -58,7 +60,7 @@ What is actually observed is very different. As illustrated in the figure above,
 :label: allowed_mm_sg
 \mu_z = g \left(\frac{q}{2m}\right) m\hbar 
 ```
-Here $g$ is a dimensionless number that depends on the particle and is called the *gyromagnetic ratio*; while $m \in [-s, -s + 1, - s + 2,\ldots, s]$, and $s$ is an integer or half-integer. If we set $q = e$ where $e$ is the electron charge, we find $g = 2$ for the electron, $g = 5.59$ for the proton, and $g = - 3.83$ for the neutron. The discrete values of $\mu_z$ are perhaps more surprising. Note that in the case of the electron, proton, and neutron, $s = 1/2$, so $m = \pm \half$.
+We call $\mu_B = \frac{e\hbar}{2 m}$ the *Bohr magneton* for the particle. $g$ is a dimensionless number that depends on the particle and is called the *gyromagnetic ratio*; while $m \in [-s, -s + 1, - s + 2,\ldots, s]$, and $s$ is an integer or half-integer. If we set $q = e$ where $e$ is the electron charge, we find $g = 2$ for the electron, $g = 5.59$ for the proton, and $g = - 3.83$ for the neutron. The discrete values of $\mu_z$ are perhaps more surprising. Note that in the case of the electron, proton, and neutron, $s = 1/2$, so $m = \pm \half$.
 
 In the language we have developed, the point is that the particles have an intrinsic "spin" angular momentum which is associated with a set of operators ${\vec S}$, The components $S_i = \frac{\hbar}{2} \sigma_i$, where $\sigma_i$ are the Pauli matrices.
 ```{math}
