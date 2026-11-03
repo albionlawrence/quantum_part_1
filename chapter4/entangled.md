@@ -1,12 +1,14 @@
 # Entangled states and density matrices
 
-## Direct sums and tensor products
+Now that we have established the basic rules for quantum systems, I would like to start building interesting quantum systems and exploring the consequences. The simplest version (and one of great contemporary interest) is a coupled set of spins. These could be multiple particles that collide and interact; or they could be a lattice of spins (models of this type are central to the study of quantum materials, particularly with respect to their magnetic properties). 
 
-There are different ways to combine vector spaces to get new vectors spaces. We are particularly interested in the tensor product, but the direct sum is also important and the contrast is illuminating
+To do so I need to add a bit more linear algebra into the mix. Tbe basic point is that if I have a single spin degree of freedom described by ${\cal H} = \mathbb{C}^2$, I need some way of combining such Hilbert spaces into a larger Hilbert space. As it happens, there are two canonical ways to do this -- the *direct sum* and the *tensor product*. It is the second that we will need here: the direct sum will appear later. However, I think it is helpful to introduce them both at the same time.
+ 
+## Direct sums and tensor products
 
 ### Direct sums
 
-The direct sum $V = V_1 \oplus V_2$ is a method for adding new directions to the Hilbert space. For example, $\CR^3$ can be thought of as a combination of $\CR^2$ represented as the $x-y$ plane, and $\CR$ thought of as the $z$ axis. Another example would be a particle hopping between two sites; in one site there are three states. If these sites were ions and the particle an electron, they could be possible excitation levels of the particle at that site. The particle could be at either one site or the other, in any state associated to that site, or a linear combination of the two sites.
+The direct sum $V = V_1 \oplus V_2$ is a method for adding new directions to the Hilbert space. For example, $\CR^3$ can be thought of as a combination of $\CR^2$ represented as the $x-y$ plane, and $\CR$ thought of as the $z$ axis. Another example would be a particle hopping between two sites, where there are three states in each site, corresponding to ${\cal H} = \mathbb{C}^3$ associated to each site. If these sites were ions and the particle an electron, they could be possible excitation levels of the particle at that site. The particle could be at either one site or the other, in any state associated to that site, or a linear combination of the two sites. In this case, I claim that the full Hilbert space is $\mathbb{C}^6$. But let us proceed to the general case.
 
 - **Definition**. Given vector spaces $V_1, V_2$, the *direct sum* $V = V_1 \oplus V_2$ is the set of all *ordered pairs* $\left(\ket{v}_1,\ket{v_2}\right)$ for $\ket{v}_i \in V_i$, such that 
 ```{math}
@@ -15,7 +17,7 @@ c \left(\ket{v}_1, \ket{v}_2\right) + d \left(\ket{w}_1, \ket{w}_2\right) = \lef
 ```
 for all $c,d \in \CC$. If we define the zero vector as $\left(0,0\right)$, this is a vector space.
 
-Typically, we drop the ordered paits and simply write 
+Typically, we drop the ordered pairs and simply write 
 ```{math}
 :label: ds_notation
 \left(\ket{v}_1,\ket{v}_2\right) = \ket{v}_1 + \ket{v_2}
@@ -38,13 +40,13 @@ M \in M_5(\CC) = \begin{pmatrix} A^{11}_{2\times 2} & A^{12}_{2\times 3} \\ A^{2
 ```
 then $A^{11}, A^{22}$ are the embeddings of linear operators acting on $V_1,V_2$ respectively, while $A^{12}, A^{21}\neq 0$ lead to new operators that only have meaning in the direct sum.
 
-As an example, if $V_1$ corresponds to the states of an electron on one site, and $V_2$ the states of an electron on another site, then of the Hamiltonian is a sum $H = H_1 + H_2$ with $H_i$ acting on $V_i$, the eigenstates correspond to particles living on one site or another, and if the particle starts on a site it will stay on that site. On the other hand, if $H$ contains terms that mix the two sites, the eigenstates are lienar combinations of the particle being on one site or another; relatedly, the state vector of a partcile that starts on one site will acquire a component correspond to the particle siting on the other site.
+As an example, if $V_1$ corresponds to the states of an electron on one site, and $V_2$ the states of an electron on another site, then of the Hamiltonian is a sum $H = H_1 + H_2$ with $H_i$ acting on $V_i$, the eigenstates correspond to particles living on one site or another, and if the particle starts on a site it will stay on that site. On the other hand, if $H$ contains terms that mix the two sites, the eigenstates are linear combinations of the particle being on one site or another; relatedly, the state vector of a particle that starts on one site will acquire a component correspond to the particle siting on the other site.
 
 ## Tensor products
 
-The tensor product emerges when you want to add an attribute to a given system. That is, consider a particle for which you can specify the position and spin degree of freedom. In this case the particle has position *and* spin, you can't either be in position ${\vec x}$ *or* have spin-up along the $z$ direction. Similarly, you might want to describe the states of *two* distinguishable particles such as a proton and an electron. You always have to say what each particle is doing.
+The tensor product emerges when you want to add an attribute to a given system, or consider a collection of quantum systems (such as a collection of particles). That is, consider a particle for which you can specify the position and spin degree of freedom. In this case the particle has position *and* spin, you can't either be in position ${\vec x}$ *or* have spin-up along the $z$ direction. Similarly, you might want to describe the states of *two* distinguishable particles such as a proton and an electron. You always have to say what each particle is doing.
 
-The definition is a little more formal. 
+The definition is a little formal. 
 
 - **Definition**. Given vector space $V_1$ with basis $\ket{i}, i = 1,\ldots, d_1$ and a second vector space $V_2$ with basis $\ket{I}, I = 1,\ldots, d_2$, the *tensor product* $V = V_1 \otimes V_2$ is the set of all formal symbols
 ```{math}
@@ -107,6 +109,8 @@ can be thought of as two magnetic momnents in a magnetic filed ${\vec B} = B {\h
 
 ## Entangled states
 
+A difference from classical mechanics is that the states of a quantum system can be correlated in highly novel ways. These correlations are at the heart of modern applications of quanutm mechanics to computation; they also play a central role in contemporary discussions of quantum gravity. 
+
 Given a tensor product Hilbert space $\cH = \cH_1 \otimes \cH_2$, we say that a state $\ket{\alpha} \in \cH$ is *entangled* if it cannot be written in the form
 ```{math}
 :label: def_entangled
@@ -122,19 +126,19 @@ An example works best to illustrate this. Consider two spin-$\half$ particles. T
 \ket{\psi_4} & = \frac{1}{\sqrt{2}} \left(\ket{+,z}\ket{-,z} - \ket{-,z}\ket{+,z}\right)
 \end{align}
 ```
-$\ket{\psi_{1,2}}$ are clearly unentangled. $\ket{\psi_{2,4}}$ are entangled and in fact there is no way to write them as unentangled states. We will show a tool that can test whether the state of two systems is entangled or not, when we introduce density matrices and the *von Neumann entropy*.
+$\ket{\psi_{1,2}}$ are clearly unentangled. $\ket{\psi_{2,4}}$ are entangled and in fact there is no way to write them as unentangled states. Below, we will provide a tool that can test whether the state of two systems is entangled or not, when we introduce density matrices and the *von Neumann entropy*.
 
 As we can see from the above, quantum entanglement denotes a correlation between the state of two degrees of freedom in a tensor product. This yields some surprising results. For example, assume that we prepare the two spin states of a particle in $\ket{\psi_4}$. We can do this in such a way that the two particles are separated by a large distance. Even at this separation, the results of measuring $S_z$ for the first particle are *always* correlated with the results of measuring $S_z$ for the second particle: if one is measured as spin up, the other is measured as spin down. This is true even if the measurements are made simultaneously, so that no light signal could pass between the two particles. This is the famous *Einstein-Podolsky-Rosen* paradox. Note that since the particles would have to be prepared with the spins so entangled when they were in causal contact, and then separated -- there is nothing acausal about how the states were constructed.  The puzzle is over whether there is anything acausal about the measurement process. Note that there is no way to use EPR states to communicate, since an experimentalist measuring $S_z$ for either particle will get each of $\pm \frac{\hbar}{2}$ $50\%$ of the time; they have no control over the result, and only know it is correlated with the spin of the other particle if they knew in advance the pair were so prepared. If causality in a special-relativistic context means simply ``information cannot be transmitted at speeds faster than light" then it is arguably safe here.
 
 ## Density matrices
 
-Density matrices capture cases where we have imperfect kmowledge of the quantum system. They typically arise because the state of the system we are interested in studying was prepared through coupling to degrees of freedom whose state we do not observe, *and* the system's state is entangled with the unobserved degrees of freedom.
+Density matrices capture cases where we have imperfect knowledge of the quantum system. They typically arise because the state of the system we are interested in studying was prepared through coupling to degrees of freedom whose state we do not observe, *and* the system's state is entangled with the unobserved degrees of freedom.
 
-We will thuis start with a purely quantum description of such a stuation, in which both the observed "system" is coupled to some unobserved degrees of freedom, called the "environment". This setup is a subject of intensive study which goes onder the name of {\it open quantum systems}. We will then provide a more phenomenological output in which the density matrix reflects some classical uncertainty regarding the preparation of the state.
+We will thus start with a purely quantum description of such a situation, in which the observed "system" is coupled to some unobserved degrees of freedom, called the "environment". This setup is a subject of intensive study which goes onder the name of {\it open quantum systems}. We will then provide a more phenomenological output in which the density matrix reflects some classical uncertainty regarding the preparation of the state.
 
 ### Open quantum systems.
 
-In open quantum systems we imagine that the Hilbert spacecan be written as a tensor product $\cH = \cH_{sys}\otimes \cH_{env}$. Some examples:
+In open quantum systems we imagine that the Hilbert space can be written as a tensor product $\cH = \cH_{sys}\otimes \cH_{env}$. Some examples:
 
 1. {\it Local region of an extended system}.
 
@@ -142,7 +146,7 @@ In open quantum systems we imagine that the Hilbert spacecan be written as a ten
 
 Pictured above is a one-dimensional *spin chain*; a lattice of sites with each site oddupied by a spin-$\half$ particle. If theer are $N$ sites, the Hilbert space is $\CC^2 \otimes \CC ^2\otimes \ldots \CC^2 = (\CC^2)^{\otimes N} \cong \CC^{2N}$; that is, $N$ copies of $\CC^2$ combined in a tensor product structure. We can imagine that the observed spins correspond to $M < N$ contiguous sites (in the picture, $M = 6$).
 
-2. {\it Particle in imperfect vacuum}. Here $\cH_{sys}$ is the Hilbert space of some particle; $\cH_{env}$ is the Hilbert space of soem unobserved gas particles which can interact/collide  with the observed particle.
+2. *Particle in imperfect vacuum*. Here $\cH_{sys}$ is the Hilbert space of some particle; $\cH_{env}$ is the Hilbert space of some unobserved gas particles which can interact/collide  with the observed particle.
 
 If $\ket{i}$ is an othonormal basis for $\cH_{sys}$ and $\ket{I}$ an orthonormalbasis for $\cH_{env}$, then as we discussed above, a general state of $\cH$ is:
 ```{math}
